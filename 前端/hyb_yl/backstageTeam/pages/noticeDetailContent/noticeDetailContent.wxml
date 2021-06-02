@@ -1,0 +1,21 @@
+<view class="notice_details">
+    <view class="notice_title">
+        <view class="title_text font_co333">{{noticeDetail.title}}</view>
+        <view class="font_co999 font_si12 notice_name">
+            <view class="setTop" wx:if="{{noticeDetail.menttypes==0?false:true}}">[置顶]</view>
+            <view>
+                <text class="notice_name_text">{{noticeDetail.title}}</text>
+                <text>{{noticeDetail.updateTime}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="notice_text font_si18 font_333">{{noticeDetail.teamtext}}</view>
+    <view bindtap="previewImage" class="novice_img_view" data-index="{{index}}" wx:if="{{noticeDetail.thumbarr}}">
+        <image class="novice_img {{(index+1)%3!=0?'margin_right':''}}" data-url="{{item}}" mode="aspectFill" src="{{item}}" wx:for="{{noticeDetail.thumbarr}}" wx:key="{{index}}"></image>
+    </view>
+</view>
+<view style="height: 110rpx;"></view>
+<view class="foot_view" wx:if="{{managerRole!=3}}">
+    <view bindtap="delBtn" class="foot_btn del_btn font_si18 font_cofff">删除</view>
+    <navigator class="foot_btn font_si18 font_cofff linear_btn" url="/hyb_yl/backstageTeam/pages/announce/announce?g_id={{noticeDetail.g_id}}&menttypes={{noticeDetail.menttypes}}&bianji=1">编辑公告</navigator>
+</view>

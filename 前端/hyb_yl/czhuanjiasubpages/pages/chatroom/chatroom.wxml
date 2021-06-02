@@ -1,0 +1,105 @@
+<view class="orderbox">
+    <view class="titles">患者信息</view>
+    <view class="infobox">
+        <view class="infoboxgroup">
+            <view>基本信息</view>
+            <view>{{usedetail.names}} | {{usedetail.sex}} | {{usedetail.age}} | {{usedetail.tizhong}}kg</view>
+        </view>
+        <view class="infoboxgroup">
+            <view>肝肾功能</view>
+            <view>{{usedetail.gan_index==0?'肾功能正常':'肾功能异常'}} </view>
+        </view>
+        <view class="infoboxgroup">
+            <view>婚姻状况</view>
+            <view>{{usedetail.hunyin}}</view>
+        </view>
+        <view class="infoboxgroup">
+            <view>过敏史</view>
+            <view>无</view>
+        </view>
+    </view>
+</view>
+<block wx:for="{{list}}" wx:key="key">
+    <view class="ordertime">{{item.time}}</view>
+    <view class="orderboxss" wx:if="{{item.role=='0'}}">
+        <view class="titles">第{{item.len+1}}次提问</view>
+        <view class="mess">症状描述：{{item.content.text}}</view>
+        <view class="imgbox">
+            <image bindtap="previewImg" data-index="{{index}}" data-src="{{pic}}" mode="aspectFill" src="{{pic}}" wx:for="{{item.content.upload_picture_list}}" wx:for-item="pic" wx:key="index"></image>
+        </view>
+    </view>
+    <view class="orderbox doctorbox" wx:if="{{item.role=='1'}}">
+        <view class="doctor">
+            <image src="{{item.advertisement}}"></image>
+            <view>{{item.z_name}} 医生</view>
+        </view>
+        <view class="symptom">{{item.content.text}}</view>
+        <view class="imgbox">
+            <image bindtap="previewImg" data-img="{{pic}}" data-imglist="{{item.content.upload_picture_list}}" data-index="{{index}}" data-src="{{pic}}" mode="aspectFill" src="{{pic}}" wx:for="{{item.content.upload_picture_list}}" wx:for-item="pic" wx:key="index"></image>
+        </view>
+    </view>
+</block>
+<view class="orderbox" wx:if="{{ifpay!=='7'&&ifgb!=='1'}}">问题将在<text>{{dumiao}}</text>后自动结束，如需追问，请及时提交</view>
+<view class="orderbox" wx:if="{{ifgb=='1'&&ifpay==0}}">未支付,订单已超时</view>
+<view class="orderbox" wx:if="{{ifgb=='1'&&ifpay==1}}">已支付，未接诊订单已超时</view>
+<view class="orderbox" wx:if="{{ifgb=='1'&&ifpay==8}}">已取消</view>
+<view bindtap="tuikuan" class="ifjiezhen" wx:if="{{detail.ifpay=='1'}}">已通知医生接诊，医生接诊后会尽快回复你 <text>取消提问</text>
+</view>
+<block wx:if="{{detail.ifpay=='3'}}">
+    <view class="orderbox">订单已完成</view>
+    <view bindtap="tuikuan" class="ifjiezhen" wx:if="{{money!=='0.00'}}">对订单有疑问？ <text>申请退款</text>
+    </view>
+</block>
+<view class="evaluate" wx:if="{{evaluate&&detail.ifpay=='3'}}">
+    <view class="evaluateimg">
+        <image bindtap="xingclick" data-num="{{index+1}}" data-type="a" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/xing.png?sign=9d2bc2baf7cde15487c591a13ab53fa5&t=1590829197" wx:for="{{xing}}" wx:key="x0"></image>
+        <image bindtap="xingclick" data-num="{{index+1}}" data-type="b" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/xing1.png?sign=2d181daae718e5cd01d99e1c260a573f&t=1590829160" wx:for="{{5-xing}}" wx:key="x1"></image>
+    </view>
+    <view class="evaluatehint">评价</view>
+    <text bindtap="closeevaluate" class="closeevaluate">×</text>
+</view>
+<view class="forms">
+    <view bindtap="buttonclick" class="formsimgs" data-id="{{id}}" data-open="{{open}}">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/more.png?sign=25a46e7799731f30fb74ee8958035082&t=1583488929"></image>
+        <text>更多</text>
+    </view>
+    <view bindtap="sqchufang" class="formsimgs">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/order.png?sign=cd76d7db4bdd4cc70944e3607e955df8&t=1583488982"></image>
+        <text>申请处方</text>
+    </view>
+    <view bindtap="tabtwoinput" class="ques" data-id="{{item.id}}" wx:if="{{ifpay=='0'&&ifgb=='1'}}">再次提问</view>
+    <view bindtap="tabinputpay" class="ques" data-id="{{item.id}}" wx:if="{{ifpay=='0'&&ifgb=='0'}}">支付订单</view>
+    <view bindtap="tuikuan" class="ques" data-money="{{item.money}}" wx:if="{{ifpay=='1'}}">待接诊</view>
+    <view bindtap="tabinput" class="ques" wx:if="{{ifpay=='2'&&addnum!==0}}">回复医生(可继续追问{{addnum}}次)</view>
+    <view bindtap="tabtwoinput" class="ques" wx:if="{{ifpay=='3'||ifpay=='4'||ifpay=='5'||ifpay=='6'||ifpay=='7'||ifpay=='8'||addnum==0}}">再次提问</view>
+</view>
+<form bindsubmit="submitformzw" wx:if="{{shouwtab}}">
+    <view class="zhuiwen">
+        <view class="zhuiwen-tit">回答 <text bindtap="closezhuiwen">×</text>
+        </view>
+        <view class="zhuiwen-textarea">
+            <input focus="true" name="zhuiwen" placeholder="描述时请尽量详细和准确，充分利用追问机会"></input>
+        </view>
+        <view class="sendbox">
+            <view class="lists-item">
+                <view class="img" wx:for="{{upload_picture_list}}" wx:key="index">
+                    <image bindtap="previewImage" class="icons" data-src="{{item}}" src="{{item}}"></image>
+                    <image bindtap="clearImg" class="close" data-ind="{{index}}" src="/hyb_yl/images/error.png"></image>
+                </view>
+                <image bindtap="uploadimg" class="add" mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/chat_msg/pic.png?sign" wx:if="{{upload_picture_list.length<=2}}"></image>
+            </view>
+            <button formType="submit" size="mini">发送</button>
+        </view>
+    </view>
+</form>
+<modal bindcancel="cancelM" bindconfirm="confirmM" cancelText="取消" confirmText="提交" hidden="{{hiddenmodalput}}" title="评价">
+    <textarea autoFocus bindinput="iName" maxlength="50" placeholder="请输入评价" style="width:100%;height:200rpx;position: relative;" type="text">
+        <view class="num_text">{{text_num}}/50</view>
+    </textarea>
+</modal>
+<view class="popboxempty" wx:if="{{popshow}}"></view>
+<view class="popbox" wx:if="{{msgmb=='yes'}}">
+    <view class="ptiontit">请允许接收订阅消息</view>
+    <view class="ptiontextt">为了及时的告知医生已回复你的问题，请勾选【所有】消息类型并允许</view>
+    <button bindtap="ptiontitbtn" class="ptiontitbtn" formType="submit" hoverClass="none">我知道了</button>
+</view>

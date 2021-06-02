@@ -1,0 +1,57 @@
+<view class="padding">
+    <view class="department">
+        <text class="name">骨科</text>
+        <view>
+            <text class="people">总服务人数</text>
+            <text class="number">4</text>
+        </view>
+    </view>
+    <view class="department" style="flex-wrap: wrap;">
+        <view class="specialEffect">
+            <navigator url="/hyb_yl/backstageMethod/pages/hospital/hospital">
+                <view class="nameSize">科室协诊</view>
+                <view class="fontSize">助力诊断患者状况</view>
+            </navigator>
+        </view>
+        <view class="specialEffect">
+            <navigator url="/hyb_yl/backstageMethod/pages/doctor/doctor">
+                <view class="nameSize">便协转诊</view>
+                <view class="fontSize">快速选择医生转诊</view>
+            </navigator>
+        </view>
+    </view>
+    <view class="introduce">
+        <view class="name">科室介绍</view>
+        <view class="content">
+      {{keshidoc[0].hos_desc}}
+    </view>
+    </view>
+    <view>
+        <text class="name">推荐医生</text>
+    </view>
+    <scroll-view scrollX="true">
+        <view class="scroll">
+            <view class="information" data-index="{{index}}" wx:for="{{keshidoc}}" wx:key="index">
+                <navigator url="/hyb_yl/backstageTeam/pages/doctorIntro/doctorIntro?zid={{item.zid}}">
+                    <view bindtap="open" class="flex">
+                        <view class="posi">
+                            <image class="imgSize" src="{{item.z_thumbs}}"></image>
+                            <view class="whether" wx:if="{{item.state==1}}">已认证</view>
+                        </view>
+                        <view>
+                            <view class="nameFont">{{item.z_name}}</view>
+                            <view class="fontBrief ">{{item.nksname}}</view>
+                            <view class="fontBrief">{{item.z_zhicheng}}</view>
+                            <view class="fontBrief">{{item.z_yiyuan}}</view>
+                        </view>
+                    </view>
+                    <view class="flex">
+                        <view class="fontBrief">服务人数<text class="number">{{item.helpnum}}</text>
+                        </view>
+                    </view>
+                    <view class="fontBrief">擅长：{{item.z_zhenzhi}}</view>
+                </navigator>
+            </view>
+        </view>
+    </scroll-view>
+</view>

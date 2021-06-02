@@ -1,0 +1,29 @@
+<view class="service-set">
+    <view class="service-set-tit">
+        <view>{{title}}</view>
+        <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/down.png?sign=97f5dcf780d78d4e47384c142cf6ac97&t=1590827066"></image>
+    </view>
+    <form bindreset="formReset" bindsubmit="formSubmit">
+        <view class="service-list">
+            <view class="service-item">
+                <view class="ser-tit">普通：</view>
+                <input name="ptmoney" placeholder="请输入患者问诊价格" placeholderClass="place" type="range" value="{{detail.ptmoney}}"></input>
+            </view>
+            <view class="service-item">
+                <view class="ser-tit">免费可追问次数：</view>
+                <input name="ptzhuiw" placeholder="请输入患者追问次数" placeholderClass="place" type="number" value="{{detail.ptzhuiw}}"></input>
+            </view>
+            <view class="service-item">
+                <view class="ser-tit">会员：</view>
+                <input name="hymoney" placeholder="请输入会员问诊价格" placeholderClass="place" type="range" value="{{detail.hymoney}}"></input>
+            </view>
+            <view class="service-item">
+                <view class="ser-tit">免费可追问次数：</view>
+                <input name="hyzhuiw" placeholder="请输入会员追问次数" placeholderClass="place" type="number" value="{{detail.hyzhuiw}}"></input>
+            </view>
+        </view>
+        <view class="bottom-button">
+            <button ariaDisabled="false" class="common-button" formType="submit" role="button">确 定</button>
+        </view>
+    </form>
+</view>

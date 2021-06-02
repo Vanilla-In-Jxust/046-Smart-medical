@@ -1,0 +1,24 @@
+<view>
+    <view class="contbox">
+        <view class="cont_list" wx:for="{{fwlist}}" wx:key="*this">
+            <view class="packLeft">
+                <view catchtap="choose" class="selectImg" data-ff_id="{{item.ff_id}}" data-index="{{index}}">
+                    <image src="{{item.isshow?'/hyb_yl/images/selected.png':'/hyb_yl/images/no_select.png'}}"></image>
+                </view>
+            </view>
+            <view bindtap="server" class="packRight" data-ff_id="{{item.ff_id}}" data-title="{{item.fw_name}}">
+                <view class="rightbox">
+                    <view class="packImg">
+                        <image src="{{item.fw_pic}}"></image>
+                    </view>
+                    <view class="pack_right">
+                        <view class="title">{{item.fw_name}}</view>
+                        <view class="price">{{item.fw_money}}元</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="step" class="sign" style="background-color:{{bgc}}">下一步</view>
+    <view class="foot"></view>
+</view>

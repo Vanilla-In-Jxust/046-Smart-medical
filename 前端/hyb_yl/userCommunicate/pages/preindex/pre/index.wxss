@@ -1,0 +1,399 @@
+page {
+    background: #f0f0f0;
+    width: 100%;
+}
+
+.page_all {
+    width: 100%;
+}
+
+.pagea_activ {
+    height: 100vh;
+    overflow: hidden;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.all {
+    position: relative;
+    padding: 0rpx 20rpx;
+}
+
+.hint {
+    width: 100%;
+    height: 60rpx;
+    background: #fffad4;
+    display: flex;
+    align-items: center;
+    padding: 0px 20rpx;
+    font-size: 24rpx;
+    color: #333;
+}
+
+.patientIntr {
+    padding: 0rpx 25rpx;
+    margin-top: 20rpx;
+    border-radius: 10rpx;
+    background: #ffffff;
+}
+
+.PatientIntr_list {
+    padding: 30rpx 0rpx;
+    border-bottom: 1rpx solid #eaeaea;
+}
+
+.arrowImg {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.two {
+    width: 100%;
+    height: auto;
+    padding: 0px 25rpx;
+}
+
+.two>view {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px #f0f0f0;
+}
+
+.two .two_up {
+    color: #333;
+}
+
+.two .two_center {
+    height: auto;
+}
+
+.two .two_center checkbox-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+}
+
+.two .two_center checkbox-group label {
+    height: 100rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.two .two_center checkbox-group label .label_l {
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.two .two_center checkbox-group label .label_l checkbox .wx-checkbox-input {
+    width: 30rpx;
+    height: 30rpx;
+    border-radius: 50%;
+}
+
+.two .two_center checkbox-group label .label_l checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    background: #4ea4f1;
+}
+
+.two .two_center checkbox-group label .label_l checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    text-align: center;
+    font-size: 22rpx;
+    color: #fff;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.two .two_center checkbox-group label .label_r {
+    display: flex;
+    align-items: center;
+    border-left: solid 1px rgb(207,207,207);
+    padding-left: 20rpx;
+}
+
+.two .two_center checkbox-group label .label_r image {
+    width: 35rpx;
+    height: 40rpx;
+    margin-right: 5rpx;
+}
+
+.two .two_center checkbox-group label .label_r text {
+    color: #999;
+}
+
+.two .two_down {
+    color: #4b9bf0;
+}
+
+.sick_mask {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    z-index: 9999;
+}
+
+.sick_mask .sickm_all {
+    height: 500rpx;
+    width: 650rpx;
+    background: white;
+    border-radius: 15rpx;
+    padding: 30rpx;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    transform: translate(-50%,-50%);
+}
+
+.sick_mask .sickm_all view:nth-of-type(1) {
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sick_mask .sickm_all view:nth-of-type(1) text {
+    font-size: 38rpx;
+}
+
+.sick_mask .sickm_all view:nth-of-type(2) {
+    height: 250rpx;
+    display: flex;
+}
+
+.sick_mask .sickm_all view:nth-of-type(2) textarea {
+    width: 100%;
+    height: 75%;
+    border-radius: 10rpx;
+    background: #f6f8f7;
+    padding: 10rpx;
+    border: solid 1px #dee0df;
+}
+
+.sick_mask .sickm_all view:nth-of-type(3) {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sick_mask .sickm_all view:nth-of-type(3) button {
+    width: 46%;
+    height: 90rpx;
+    margin: 0;
+    position: relative;
+    z-index: 99999;
+}
+
+.sick_mask .sickm_all view:nth-of-type(3) button:nth-of-type(1) {
+    border: solid 1px #4ca7f0;
+    background: #e1f3ff;
+    color: #4ca7f0;
+}
+
+.sick_mask .sickm_all view:nth-of-type(3) button:nth-of-type(2) {
+    background: #4ca7f0;
+    color: white;
+}
+
+.diag {
+    padding: 0rpx 25rpx;
+}
+
+.textbox {
+    border: 1rpx solid #eaeaea;
+    width: 100%;
+    height: 240rpx;
+    font-size: 26rpx;
+    color: #999;
+    border-radius: 10rpx;
+}
+
+.five {
+    width: 100%;
+    height: 300rpx;
+    background: white;
+    margin-top: 10rpx;
+    padding: 0px 24rpx;
+    border-radius: 10rpx;
+}
+
+.five>view:nth-of-type(1) {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 2px #f0f0f0;
+}
+
+.five>view:nth-of-type(2) {
+    height: 200rpx;
+    display: flex;
+    align-items: center;
+}
+
+.five view:nth-of-type(2) .img-item {
+    width: 160rpx;
+    height: 160rpx;
+    position: relative;
+    margin: 0px 10rpx;
+}
+
+.five view:nth-of-type(2) .img-item .delicon {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    right: -20rpx;
+    top: -20rpx;
+}
+
+.five view:nth-of-type(2) .img-item image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+}
+
+.five view:nth-of-type(2) image {
+    width: 200rpx;
+    height: 159rpx;
+    border-radius: 10rpx;
+}
+
+.six {
+    width: 100%;
+    margin-top: 10rpx;
+    background: #FFFFFF;
+    border-radius: 10rpx;
+}
+
+.six view:nth-of-type(1) {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    padding: 0px 24rpx;
+    align-items: center;
+    border-bottom: solid 1px #f0f0f0;
+}
+
+.six view:nth-of-type(2) {
+    width: 100%;
+    height: 250rpx;
+    padding: 24rpx;
+}
+
+.six view:nth-of-type(2) checkbox-group {
+    margin-top: 5rpx;
+}
+
+.six view:nth-of-type(2) label {
+    margin: 0px 10rpx;
+}
+
+.six view:nth-of-type(2) input {
+    padding: 24rpx 0px;
+    padding-left: 10rpx;
+    border: solid 1rpx #cecdcd;
+    border-radius: 10rpx;
+    margin-top: 40rpx;
+}
+
+.seven {
+    width: 100%;
+    height: auto;
+    margin-top: 10rpx;
+    background: white;
+}
+
+.seven_title {
+    padding: 0px 24rpx;
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px #cecdcd;
+}
+
+.seven_sign {
+    width: 100%;
+    padding: 0px 24rpx;
+}
+
+.seven_sign radio-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.seven_sign radio-group label {
+    margin: 10rpx 0px;
+    display: flex;
+}
+
+.seven_sign radio-group label view {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10rpx;
+}
+
+.seven_sign radio-group label view text:nth-of-type(1) {
+    font-size: 30rpx;
+}
+
+.seven_sign radio-group label view text:nth-of-type(2) {
+    color: #999;
+    font-size: 28rpx;
+}
+
+.posfix {
+    width: 100%;
+    height: 110rpx;
+    position: fixed;
+    bottom: 0px;
+    background: white;
+    display: flex;
+    padding-left: 24rpx;
+    z-index: 999;
+}
+
+.posfix .posfix_l {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 24rpx;
+}
+
+.posfix .posfix_l view:nth-of-type(1) text {
+    display: block;
+}
+
+.posfix .posfix_l view:nth-of-type(1) text:nth-of-type(2) {
+    color: #666;
+    font-size: 28rpx;
+}
+
+.posfix .posfix_l view:nth-of-type(2) text {
+    color: #e11e1c;
+    font-size: 40rpx;
+}
+
+.posfix .posfix_r {
+    width: 30%;
+    height: 100%;
+    background: #47a1ef;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 30rpx;
+}
+
+.posfix .posfix_r button {
+    border: 0;
+    color: white;
+}

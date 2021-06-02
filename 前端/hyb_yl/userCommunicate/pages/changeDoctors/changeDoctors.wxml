@@ -1,0 +1,76 @@
+<view class="oval">
+    <view class="searchbox">
+        <view class="searchView">
+            <icon class="searchbtn" color="#999999" size="15" type="search"></icon>
+            <input bindconfirm="search" bindinput="getSearch" placeholder="请输入绿通人员" type="text" value="{{keyword}}"></input>
+        </view>
+    </view>
+</view>
+<view class="tabbox fixed">
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="0">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">{{zongheText?zongheText:'综合排序'}}</text>
+    </view>
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="1">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">筛选</text>
+    </view>
+</view>
+<view class="poplist" wx:if="{{popshow}}">
+    <view bindtap="hidepop" class="poplistempty"></view>
+    <view class="poplistfff">
+        <block wx:if="{{tabdex==0}}">
+            <view bindtap="itemchecked" class="poplistfffitem {{item.checked?'itemactive':''}}" data-dex="{{index}}" data-text="{{item.items}}" wx:for="{{zongheList}}">
+				{{item.items}}
+			</view>
+        </block>
+        <view class="shanxuanbox" wx:if="{{tabdex==1}}">
+            <view class="shanxuanboxtop">
+                <view class="shanxuanbox-item">
+                    <view class="shanxuanbox-item-title">医生职称</view>
+                    <view class="shanxuanbox-item-arrs">
+                        <view bindtap="typesclick1" class="{{shanxuanitem.checked?'shaixuanactive':''}}" data-dex="{{index}}" data-index="{{index}}" data-zhicheng="{{item.id}}" wx:for="{{section2}}" wx:for-item="shanxuanitem" wx:key="s2">{{shanxuanitem.job_name}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="shanxuanboxbot">
+                <view bindtap="resultclick">重置</view>
+                <view bindtap="submitclick">完成</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="shequbox {{openmore?'listmores':''}}" wx:if="{{shequlist.length>1}}">
+    <view bindtap="shequclick" class="{{shequdex==index?'activesshequ':''}}" data-biaoqian="{{item}}" data-dex="{{index}}" wx:for="{{shequlist}}" wx:key="s">{{item}}</view>
+</view>
+<view class="opens {{openmore?'openmores':''}}" wx:if="{{shequlist.length>1}}">
+    <text bindtap="openmore">{{openmore?'收起':'展开'}}</text>
+</view>
+<view class="searchresult" style="{{shequlist.length>1?'':'margin-top:190rpx'}}">
+    <view bindtap="navigator" class="yishneginfo" data-id="{{item.id}}" data-server="{{pinyin}}" data-zid="{{item.zid}}" wx:for="{{list}}" wx:key="d">
+        <view class="info-img">
+            <image src="{{item.thumb}}"></image>
+        </view>
+        <view class="userinfo-body">
+            <view class="doctor-info">
+                <text class="doctor-name">{{item.title}}</text>
+                <text class="doctor-section">{{item.job?item.job:''}}</text>
+            </view>
+            <view class="doctor-hospital">
+                <text class="doctor-section-info">{{item.keshi}}</text>
+                <text class="doctor-hosptial-name">{{item.hospital}}</text>
+            </view>
+            <view class="doctor-tags">
+				擅长：{{item.authority}}
+			</view>
+            <view class="doctor-answer-star">
+                <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/xing.png?sign=2d7380cd43847995a856339cef85f9d4&t=1590737215"></image>
+                <view class="doctor-star">{{item.score}}</view>
+                <view class="answer-count">月回答{{item.xn_reoly}}</view>
+                <view class="prescription-count"> 月处方{{item.xn_cf}} </view>
+                <view class="reply-time-str">{{item.xytime}}响应</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="searchresultsss" wx:if="{{searchCont!=''}}">
+    <view class="searchresultitem" wx:for="{{searchlist}}" wx:key="f">{{item}}</view>
+</view>

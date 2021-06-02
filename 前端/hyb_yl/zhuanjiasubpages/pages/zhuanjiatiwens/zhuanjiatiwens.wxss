@@ -1,0 +1,441 @@
+page {
+    background: #fff;
+}
+
+.editor {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: auto;
+    padding: 0 32rpx;
+    background-color: #fff;
+}
+
+.editor,.editor .tips {
+    display: flex;
+    width: 100%;
+}
+
+.editor .tips {
+    margin-top: 30rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid #ebebeb;
+}
+
+.editor .tips-left {
+    margin-right: 30rpx;
+}
+
+.editor .tips-left-image {
+    width: 112rpx;
+    height: 112rpx;
+    border: 1rpx solid #ebebeb;
+    border-radius: 8rpx;
+}
+
+.editor .tips-right {
+    flex: 1;
+}
+
+.editor .tips-right .profile {
+    display: flex;
+    align-items: center;
+}
+
+.editor .tips-right .profile .name {
+    flex-shrink: 0;
+    color: #333;
+    font-weight: 500;
+    font-size: 34rpx;
+    line-height: 38rpx;
+}
+
+.editor .tips-right .profile .tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 36rpx;
+    margin-left: 20rpx;
+    overflow-y: hidden;
+}
+
+.editor .tips-right .profile .tags .tag {
+    padding: 4rpx;
+    color: #fa0;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    background-color: #fffaf0;
+}
+
+.editor .tips-right .hint {
+    position: relative;
+    margin: 16rpx 0;
+    padding: 20rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 28rpx;
+    line-height: 42rpx;
+    background: #fafafa;
+    border-radius: 8rpx;
+}
+
+.editor .tips-right .hint:before {
+    position: absolute;
+    top: 20rpx;
+    left: -8rpx;
+    display: inline-block;
+    width: 18rpx;
+    height: 18rpx;
+    background: #fafafa;
+    border-radius: 3rpx;
+    transform: rotate(45deg);
+    content: " ";
+}
+
+.editor .textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 300rpx;
+    padding: 20rpx 0 40rpx;
+    font-size: 32rpx;
+}
+
+.editor .textarea-common {
+    font-size: 34rpx;
+    line-height: 51rpx;
+}
+
+.editor .textarea-normal {
+    width: 100%;
+    height: 306rpx;
+    color: #333;
+    font-weight: 100;
+}
+
+.editor .attachment-contain {
+    width: 100%;
+    padding: 40rpx 0;
+}
+
+.upload-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+}
+
+.upload-list-item {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 153rpx;
+    height: 153rpx;
+    margin-right: 24rpx;
+}
+
+.upload-list-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    border-radius: 8rpx;
+}
+
+.upload-list-add-image {
+    display: block;
+    width: 48rpx;
+}
+
+.upload-list-add-text {
+    margin-top: 12rpx;
+    color: #999;
+    font-size: 22rpx;
+    line-height: 26rpx;
+}
+
+.upload-list-desc {
+    flex: 1;
+    margin-left: 16rpx;
+    color: #999;
+    font-weight: 300;
+    font-size: 26rpx;
+    line-height: 28rpx;
+}
+
+.textarea-bottom-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 32rpx 0;
+}
+
+.radio-prescription-suggestion {
+    width: 40rpx;
+    transform: scale(.7);
+}
+
+.prescription-suggestion-tip {
+    height: 32rpx;
+    padding-left: 16rpx;
+    color: #333;
+    font-size: 28rpx;
+    line-height: 1;
+}
+
+.bottom-button {
+    width: 100%;
+    padding: 40rpx 0 80rpx;
+}
+
+.common-button {
+    width: auto;
+    height: 94rpx;
+    line-height: 94rpx;
+    text-align: center;
+    background-color: #0087E0;
+    color: #fff;
+    border: 1rpx solid #0087E0;
+    margin: 0;
+    border-radius: 47rpx;
+}
+
+.imglist {
+    box-sizing: border-box;
+    width: 153rpx;
+    height: 153rpx;
+    margin-right: 24rpx;
+    position: relative;
+}
+
+.imglist image {
+    width: 100%;
+    height: 100%;
+}
+
+.imglist>image:nth-of-type(1) {
+    width: 35rpx;
+    height: 35rpx;
+    position: absolute;
+    top: -15rpx;
+    right: -15rpx;
+}
+
+.zixunbox {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.zixunbox text {
+    padding: 8rpx 20rpx;
+    border-radius: 50rpx;
+    border: 1rpx solid #E9EAEA;
+    color: #B8B8B8;
+    margin-right: 25rpx;
+    margin-top: 25rpx;
+}
+
+.zixunbox text.jinyong {
+    color: #999;
+    border: 1rpx solid #999;
+}
+
+.zixunbox text.onon {
+    color: #47D1BA;
+    border: 1rpx solid #47D1BA;
+    background: rgba(71,209,186,0.1);
+}
+
+.nameBox {
+    display: flex;
+    align-items: center;
+    padding: 20rpx 0;
+    border-bottom: 2rpx solid #eaeaea;
+    width: 100%;
+}
+
+.name {
+    width: 200rpx;
+    margin-right: 20rpx;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.picker {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.df {
+    width: calc(100% - 230rpx);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+input {
+    font-size: 30rpx;
+}
+
+.zhe {
+    background: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9;
+}
+
+.cont {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    padding: 0 20rpx 120rpx;
+    max-height: 100%;
+    overflow: hidden;
+    overflow-y: auto;
+    box-sizing: border-box;
+    height: 600rpx;
+}
+
+.item {
+    padding: 30rpx 0;
+    border-bottom: 2rpx solid #eaeaea;
+}
+
+.item_top {
+    display: flex;
+    align-items: center;
+}
+
+.img {
+    width: 120rpx;
+    height: 120rpx;
+    background: #999;
+    border-radius: 50%;
+    margin-right: 30rpx;
+}
+
+.item_name {
+    font-size: 30rpx;
+    color: #333;
+    margin-bottom: 20rpx;
+}
+
+checkbox .wx-checkbox-input {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    margin-right: 30rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    background: rgb(0,135,224);
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    width: 30rpx;
+    height: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    font-size: 26rpx;
+    color: #fff;
+    background: transparent;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.item_bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 20rpx;
+}
+
+.remove,.addNum {
+    border-radius: 50%;
+    width: 40rpx;
+    height: 40rpx;
+    text-align: center;
+    line-height: 40rpx;
+    color: #fff;
+    background: rgb(212,212,212);
+}
+
+.num {
+    color: #333;
+    margin: 0 20rpx;
+}
+
+.addNum {
+    background: rgb(0,135,224);
+}
+
+.FlieDf {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.fileName {
+    color: #999;
+    font-size: 26rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.audio {
+    width: 200rpx;
+}
+
+.stopBtn {
+    width: 400rpx;
+    text-align: center;
+    height: 88rpx;
+    border-radius: 20rpx;
+    background: red;
+    color: #fff;
+    line-height: 88rpx;
+}
+
+.audioBox {
+    position: fixed;
+    bottom: 80rpx;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.textarea {
+    width: 100%;
+    height: 300rpx;
+    font-size: 28rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.textBox {
+    margin-top: 30rpx;
+    position: relative;
+}
+
+.num {
+    bottom: 20rpx;
+    right: 20rpx;
+    color: #999;
+    font-size: 26rpx;
+}

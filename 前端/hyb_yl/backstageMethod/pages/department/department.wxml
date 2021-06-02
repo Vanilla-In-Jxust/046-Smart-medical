@@ -1,0 +1,15 @@
+<view class="W_seek_box">
+    <view class="W_seek_input">
+        <input bindinput="input" class="W_seek_input1" placeholder="搜索名字全称" placeholderStyle="color:#ccc" value=""></input>
+        <image class="W_seek_input_img" src="/assets/images/ss.png"></image>
+    </view>
+    <view bindtap="grabble" class="seet">搜索</view>
+</view>
+<view class="list">
+    <view class="specific" data-index="{{index}}" wx:for="{{keshi}}" wx:key="index">
+        <navigator url="/hyb_yl/backstageMethod/pages/departmentIntroduce/departmentIntroduce?nksid={{item.id}}">
+            <image class="imgSize" src="{{item.hos_pic}}"></image>
+        </navigator>
+        <view class="fontSize">{{item.name}}</view>
+    </view>
+</view>

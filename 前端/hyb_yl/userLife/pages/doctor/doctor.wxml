@@ -1,0 +1,34 @@
+<view class="df bsbb pt50 bgcf bdb2" wx:for="{{arr}}" wx:key="chooseDoctor">
+    <view class="df jcc w20">
+        <view class="df bd bdr w122 h122">
+            <image class="bdr w122 h122" mode="aspectFill" src="{{item.z_thumbs}}"></image>
+        </view>
+    </view>
+    <view class="w80">
+        <view class="df fdc jcsb bsbb pt10 pb20 h122 bdb2">
+            <view class="df">
+                <view class="fs30 c32 mr10">{{item.z_name}}</view>
+                <view class="fs28 c32 mr10">{{item.nksname}}</view>
+                <view class="fs28 c32">{{item.z_yiyuan}}</view>
+            </view>
+            <view class="df aife">
+                <view class="fs26 c6 mr10 shenglue">{{item.z_zhenzhi}}</view>
+                <view class="bsbb p10 bgc_ffaa04 cf fs24 bdr10" wx:if="{{item.z_zhicheng}}">{{item.z_zhicheng}}</view>
+            </view>
+        </view>
+        <view class="df jcsb aic h80 bsbb pr30">
+            <view class="df">
+                <view class="fs24 c_d74d25 mr20">{{item.wzmoney==0?'免费咨询':item.wzmoney}}</view>
+                <view class="fs24 c1">{{item.helpnum}}人已咨询</view>
+            </view>
+            <checkbox-group bindtap="checkboxChange" data-index="{{index}}" name="doctor">
+                <label class="checkbox">
+                    <checkbox></checkbox>
+                </label>
+            </checkbox-group>
+        </view>
+    </view>
+</view>
+<view class="pb120"></view>
+<button bindtap="complete" class="bdn df aic jcc bgc_green  btn_tijiao cf fs30 pf" style="background-color:{{bgc}}" wx:if="{{countPic!==''}}">提交(￥{{countPic}})</button>
+<button bindtap="complete" class="bdn df aic jcc bgc_green  btn_tijiao cf fs30 pf" style="background-color:{{bgc}}" wx:else>请选择医生</button>

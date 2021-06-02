@@ -1,0 +1,144 @@
+<view class="step-number">
+    <view class="step-container {{index==stepnum?'highlight':''}}" wx:for="{{steps}}" wx:key="s">
+        <view class="number">{{index+1}}</view>
+        <view class="content arrow">{{item}}</view>
+    </view>
+</view>
+<view class="containerbox flexd">
+    <view class="searchbox">
+        <image src="https://img1.dxycdn.com/2019/0618/951/3351883874748937075-22.png"></image>
+        <input placeholder="搜索疾病、症状、药品名" type="text"></input>
+    </view>
+</view>
+<view class="containerbox" style="padding-top: 210rpx;padding-bottom: 136rpx;">
+    <view catchtap="drupdetail" class="drupitem" data-dex="{{index}}" wx:for="{{druplist}}" wx:key="d">
+        <view class="header">
+            <image src="{{item.sthumb}}"></image>
+            <view class="drug-category"> {{item.fenlname}} </view>
+        </view>
+        <view class="drug-item-body">
+            <view class="drupname">{{item.sname}}</view>
+            <view class="packing">{{item.pp_title}}</view>
+            <view class="manufacturer">{{item.sdescribe}}</view>
+            <view class="price">
+                <view class="detail">￥{{item.smoney}}</view>
+                <view catchtap="{{item.peisong=='1'?'AddClick':''}}" class="{{item.peisong=='1'?'count-add':'count-peisong'}}" data-dex="{{index}}" wx:if="{{item.num==0}}">{{item.peisong=='1'?'选择该药':'不支持'}}</view>
+                <view class="show-all-contain" wx:else>
+                    <image catchtap="handleNumberClick" class="price-image" data-dex="{{index}}" data-id="{{item.sid}}" data-type="reduce" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/jians.png?sign=9a582b6bf85f2396b619289b79a9b353&t=1584089287"></image>
+                    <text class="show-all-contain-text">{{item.num}}</text>
+                    <image catchtap="handleNumberClick" class="price-image" data-dex="{{index}}" data-id="{{item.sid}}" data-type="add" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/jias.png?sign=8af684f47af2031e909c97b6f32ebed4&t=1584089264"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="bottom-container ">
+    <view class="image-contain {{sum==0?'':'image-contain-selected'}}">
+        <image bindtap="{{sum==0?'':'handleShowSelectDrugs'}}" src="https://img1.dxycdn.com/2019/0621/756/3352414041216931391-22.png "></image>
+        <view class="tips" hidden="{{sum==0}}">{{sum}}</view>
+    </view>
+    <view class="select-number ">
+        <view>已选{{kinds}}种药品</view>
+    </view>
+    <view bindtap="handleNextStep" class="next" data-role="1" wx:if="{{sum!=0}}">下一步</view>
+    <view class="next gray" wx:else>下一步</view>
+</view>
+<view class="drupdetails" wx:if="{{detailspop}}">
+    <view class="empty"></view>
+    <view class="detailsbox {{detailspop?'popactived':''}}">
+        <view class="popup-hd">
+            <view bindtap="handleCloseTap" class="popup-close">×</view>
+        </view>
+        <view class="popup-bd">
+            <view class="drupitem">
+                <view class="header">
+                    <image src="{{detail.sthumb}}"></image>
+                    <view class="drug-category"> {{detail.fenlname}} </view>
+                </view>
+                <view class="drug-item-body">
+                    <view class="drupname">{{detail.sname}}</view>
+                    <view class="price">
+                        <view class="detail">￥{{detail.smoney}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="copyrightbox">
+                <view class="copyrightitem">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/renzheng.png?sign=99d87d2d65c67c848a10aaf43bafb66e&t=1583825248"></image>
+                    <text>药监认证</text>
+                </view>
+                <view class="copyrightitem">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/people.png?sign=717fc4019448bfc2a03ac538022f7ed8&t=1583825298"></image>
+                    <text>药师审核</text>
+                </view>
+                <view class="copyrightitem">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yinsi.png?sign=f45888dbb9b06874e8d079f99d6018f5&t=1583825342"></image>
+                    <text>隐私包装</text>
+                </view>
+            </view>
+            <view class="inventory-contain">
+                <view class="inventory-item">
+                    <view class="title">批准文号</view>
+                    <view class="field">{{detail.doc_num}} </view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">品牌名称</view>
+                    <view class="field">{{detail.pp_title}} </view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">成份</view>
+                    <view class="field">{{detail.component}}</view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">性状</view>
+                    <view class="field">{{detail.character}}</view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">适应症</view>
+                    <view class="field">{{detail.adapt}} </view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">用法用量</view>
+                    <view class="field">{{detail.use}}</view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">不良反应</view>
+                    <view class="field">{{detail.adverse_reactions}}</view>
+                </view>
+            </view>
+            <view class="prescription-contain"> 确认添加即视为承诺本人使用过该药品，并无不良反应 </view>
+        </view>
+    </view>
+</view>
+<view class="drupdetails" wx:if="{{cartpop}}">
+    <view class="empty"></view>
+    <view class="detailsbox {{cartpop?'popactived':''}}">
+        <view class="popup-hd">
+			药品清单
+			<view bindtap="handleClosecart" class="popup-close">×</view>
+        </view>
+        <view class="drug-select-contain">
+            <view class="drupitem" wx:for="{{cartlist}}" wx:key="d">
+                <view class="header">
+                    <image src="{{item.sthumb}}"></image>
+                    <view class="drug-category"> {{item.fenlname}} </view>
+                </view>
+                <view class="drug-item-body">
+                    <view class="drupname">
+						{{item.sname}}
+						<image bindtap="deletedrup" data-dex="{{index}}" data-id="{{item.sid}}" src="../../../images/del_01.png"></image>
+                    </view>
+                    <view class="manufacturer">{{item.sdescribe}}</view>
+                    <view class="price">
+                        <view class="detail">￥{{item.smoney}}</view>
+                        <view class="show-all-contain">
+                            <image catchtap="handleNumberClick" class="price-image" data-id="{{item.sid}}" data-index="{{index}}" data-type="reduces" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/jians.png?sign=9a582b6bf85f2396b619289b79a9b353&t=1584089287"></image>
+                            <text class="show-all-contain-text">{{item.num}}</text>
+                            <image catchtap="handleNumberClick" class="price-image" data-id="{{item.sid}}" data-index="{{index}}" data-type="adds" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/jias.png?sign=8af684f47af2031e909c97b6f32ebed4&t=1584089264"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

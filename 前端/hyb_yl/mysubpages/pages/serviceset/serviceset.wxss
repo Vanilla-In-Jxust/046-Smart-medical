@@ -1,0 +1,55 @@
+.service-set {
+    width: 654rpx;
+    padding: 0 24rpx;
+    margin: 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.service-set-tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx 0;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.service-set-tit image {
+    width: 24rpx;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    padding: 30rpx 0;
+    border-top: 1rpx solid #EAEAEA;
+}
+
+.ser-tit {
+    width: 260rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.place {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.bottom-button {
+    width: 100%;
+    padding: 40rpx 0 80rpx;
+}
+
+.common-button {
+    width: auto;
+    height: 94rpx;
+    line-height: 94rpx;
+    text-align: center;
+    background-color: #0087E0;
+    color: #fff;
+    border: 1rpx solid #0087E0;
+    margin: 0;
+    border-radius: 47rpx;
+}

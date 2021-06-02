@@ -1,0 +1,13 @@
+<view class="W_li" wx:for="{{arr}}" wx:key="{{ index }}">
+    <view bindtap="shu" class="W_li_img_box" data-patientId="{{item.userId}}">
+        <image class="W_li_img" src="{{item.u_thumb?item.u_thumb:'/assets/images/head.png'}}"></image>
+    </view>
+    <view bindtap="shu" class="W_li_text" data-patientId="{{item.userId}}">
+        <view class="W_li_text_name">
+            <text class="W_li_text_namea">{{item.u_name}}</text>
+            <image class="W_li_text_namea_img" src="{{item.gender=='0'?'/assets/images/nva.png':'/assets/images/nana.png'}}"></image>
+            <text class="W_li_text_nameDate">{{item.myage?item.myage:''}} {{item.myage?'岁':''}}</text>
+        </view>
+        <view class="remarkName" wx:if="{{item.beizhu==null?false:true}}">备注: {{item.beizhu}}</view>
+    </view>
+</view>

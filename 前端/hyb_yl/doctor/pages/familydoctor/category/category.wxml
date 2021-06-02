@@ -1,0 +1,15 @@
+<view>
+    <view class="navbar">
+        <text bin: bindtap="navbarTab" class="item {{currentIndex==index?'active':''}}" data-index="{{index}}" wx:for="{{navbar}}" wx:key="unique">{{item}}</text>
+    </view>
+    <view class="cont">
+        <view hidden="{{currentIndex!=0}}">
+            <packlist bind:myevent="packserver" list="{{packlist}}"></packlist>
+        </view>
+        <view hidden="{{currentIndex!=1}}">
+            <packlist bind:myevent="teampack" list="{{packlist}}"></packlist>
+            <view class="footbox"></view>
+        </view>
+    </view>
+    <view style="height:120rpx;"></view>
+</view>

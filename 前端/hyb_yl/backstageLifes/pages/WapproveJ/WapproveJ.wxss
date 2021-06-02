@@ -1,0 +1,39 @@
+.click {
+    width: 100%;
+    float: left;
+}
+
+.xxx {
+    width: 100%;
+    height: 20rpx;
+}
+
+.nav {
+    float: left;
+    padding: 10rpx 20rpx;
+    background: #fff;
+    margin-top: 20rpx;
+    margin-left: 30rpx;
+    border: 1rpx #ccc solid;
+    color: #999;
+    font-size: 28rpx;
+    border-radius: 40rpx;
+}
+
+.add_citying {
+    border: 1rpx #3b4ca9 solid;
+    color: #3b4ca9;
+}
+
+.foor {
+    width: 90%;
+    height: 80rpx;
+    background: linear-gradient(to right,#6699ff,#3b4ac9);
+    float: left;
+    line-height: 80rpx;
+    text-align: center;
+    color: #fff;
+    border-radius: 80rpx;
+    margin-top: 40rpx;
+    margin-left: 5%;
+}

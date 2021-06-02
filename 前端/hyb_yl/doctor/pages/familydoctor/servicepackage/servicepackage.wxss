@@ -1,0 +1,137 @@
+page {
+    width: 100%;
+    height: 100%;
+    background-color: #fafcfb;
+    font-family: "Microsoft YaHei";
+}
+
+.header {
+    background: #f9faf5;
+    color: #5b5b59;
+    position: fixed;
+    left: 0rx;
+    top: 0rpx;
+    z-index: 2;
+    width: 100%;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    padding-left: 50rpx;
+}
+
+.contbox {
+    margin-top: 60rpx;
+    background: white;
+    padding-bottom: 20rpx;
+}
+
+.cont_list {
+    padding: 30rpx 40rpx 0rpx;
+    display: flex;
+}
+
+.selectImg {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.selectImg image {
+    width: 100%;
+    height: 100%;
+}
+
+.packLeft {
+    width: 100rpx;
+    line-height: 100rpx;
+}
+
+.packRight {
+    display: flex;
+    height: 200rpx;
+    width: 100%;
+    border-radius: 10rpx;
+    box-shadow: 0 0 10rpx rgb(230,230,230);
+    background: white;
+}
+
+.rightbox {
+    padding: 35rpx 20rpx 35rpx 45rpx;
+    display: flex;
+    flex: 1;
+}
+
+.packImg {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 10rpx;
+}
+
+.packImg image {
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+}
+
+.pack_right {
+    flex: 1;
+}
+
+.title {
+    margin-left: 40rpx;
+    font-size: 35rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    white-space: normal!important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 95rpx;
+}
+
+.price {
+    margin-left: 40rpx;
+    color: red;
+    font-size: 30rpx;
+}
+
+.contract {
+    background: white;
+    margin-top: 20rpx;
+    height: 90rpx;
+    display: flex;
+    padding: 0rpx 20rpx;
+}
+
+.switchImg {
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 25rpx;
+}
+
+.switchImg image {
+    width: 100%;
+    height: 100%;
+}
+
+.agreeFont {
+    font-size: 24rpx;
+    color: #333;
+    text-decoration: underline;
+    padding-left: 15rpx;
+    line-height: 90rpx;
+}
+
+.sign {
+    width: 550rpx;
+    height: 80rpx;
+    font-size: 30rpx;
+    color: white;
+    border-radius: 70rpx;
+    line-height: 80rpx;
+    text-align: center;
+    margin: 100rpx auto 0rpx;
+}
+
+.foot {
+    height: 200rpx;
+}

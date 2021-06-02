@@ -1,0 +1,31 @@
+<view class="W_li" wx:for="{{arr}}" wx:key="{{ index }}">
+    <view bindtap="shu" class="W_li_img_box" data-patientId="{{item.u_id}}">
+        <image class="W_li_img" src="{{item.u_thumb}}"></image>
+    </view>
+    <view bindtap="shu" class="W_li_text" data-patientId="{{item.u_id}}">
+        <view class="W_li_text_name">
+            <text class="W_li_text_namea">{{item.u_name}} </text>
+            <image class="W_li_text_namea_img" src="{{item.sex=='女'?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nva.png?sign=94ae2b015d924a176efda9da83727729&t=1578556124':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nana.png?sign=d3af4a3063e2d6e81bd149d3c05f4123&t=1578556143'}}"></image>
+            <text class="W_li_text_nameDate">{{item.age?item.age:''}} {{item.age?'岁':''}}</text>
+        </view>
+        <view class="remarkName" wx:if="{{item.beizhu==null?false:true}}">备注: {{item.beizhu}}</view>
+    </view>
+    <view bindtap="sectionalizationImg1" class="setting" data-name="{{item.beizhu}}" data-q_id="{{item.q_id}}" data-u_id="{{item.u_id}}">
+        <image class="sectionalization_img1" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzdian.png?sign=6c2d494120ae811742adc20b58d9646f&t=1577154238"></image>
+    </view>
+</view>
+<view class="cancel_view" wx:if="{{Wshow}}">
+    <view class="cancel_in">
+        <view class="font_si18 font_co333 cancel_in_title">解约确认</view>
+        <view class="cancel_content">
+            <view class="font_si14 font_co333 cancel_content_in_top">解约原因</view>
+            <view class="cancel_content_in font_">
+                <view bindtap="menuClick" class="cancel_text {{_num==index?'cancel_active':''}}" data-num="{{index}}" data-text="{{item}}" data-uuid="{{textID[index]}}" wx:for="{{text}}" wx:key="{{ index }}">{{item}}</view>
+            </view>
+        </view>
+        <view class="cancel_bottom">
+            <view bindtap="Wcall" class="cancel_bottom_left">我再想想</view>
+            <view bindtap="Wconfirm" class="cancel_bottom_right">解约</view>
+        </view>
+    </view>
+</view>

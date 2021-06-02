@@ -1,0 +1,35 @@
+page {
+    background-color: #f2f3f7;
+}
+
+.placeholder {
+    font-size: 36rpx;
+    color: #ccc;
+}
+
+.text_input {
+    height: 900rpx;
+    width: 100%;
+    padding: 40rpx 30rpx;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+
+.save_view {
+    background-color: #fff;
+    height: 104rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.save_btn {
+    line-height: 80rpx;
+    border-radius: 40rpx;
+    text-align: center;
+}

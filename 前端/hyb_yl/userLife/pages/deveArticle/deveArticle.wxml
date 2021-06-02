@@ -1,0 +1,17 @@
+<view>
+    <view class="oval">
+        <view class="articel_title">{{article.h_title}}</view>
+        <view class="doctorBox">
+            <image class="headImg" src="{{article.z_thumbs}}"></image>
+            <view>
+                <view class="df aic docIntr">
+                    <view>{{item.z_name}}</view>
+                    <view>{{article.z_zhiwu}}</view>
+                    <view>{{articel.hospital}}</view>
+                </view>
+                <view class="fbsj">{{article.z_sfbime}}dfs </view>
+            </view>
+        </view>
+        <view class="wzCont">{{article.h_text}}</view>
+    </view>
+</view>

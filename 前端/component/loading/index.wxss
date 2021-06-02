@@ -1,0 +1,142 @@
+@-webkit-keyframes loading-identifier {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(180deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(1turn) scale(1);
+    }
+
+    75% {
+        transform: rotate(540deg) scale(1);
+    }
+
+    to {
+        transform: rotate(2turn) scale(1);
+    }
+}
+
+@keyframes loading-identifier {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+
+    25% {
+        transform: rotate(180deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(1turn) scale(1);
+    }
+
+    75% {
+        transform: rotate(540deg) scale(1);
+    }
+
+    to {
+        transform: rotate(2turn) scale(1);
+    }
+}
+
+.d-loading-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    opacity: 0;
+    transition: all .3s;
+}
+
+.d-loading-container.active {
+    opacity: 1;
+}
+
+.d-loading {
+    position: relative;
+    width: 60rpx;
+    height: 60rpx;
+    animation: loading-identifier 2.5s infinite linear;
+}
+
+.d-loading .ball,.d-loading .line {
+    background-color: #00c792;
+}
+
+.d-loading .ball-0 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20rpx;
+    height: 20rpx;
+    margin-top: -10rpx;
+    margin-left: -10rpx;
+    border-radius: 10rpx;
+}
+
+.d-loading .ball-1 {
+    position: absolute;
+    top: 0rpx;
+    right: 3rpx;
+    width: 16rpx;
+    height: 16rpx;
+    border-radius: 8rpx;
+}
+
+.d-loading .ball-2 {
+    position: absolute;
+    top: 7rpx;
+    left: 7rpx;
+    width: 14rpx;
+    height: 14rpx;
+    border-radius: 7rpx;
+}
+
+.d-loading .ball-3 {
+    position: absolute;
+    right: 7rpx;
+    bottom: 7rpx;
+    width: 15rpx;
+    height: 15rpx;
+    border-radius: 7.5rpx;
+}
+
+.d-loading .ball-4 {
+    position: absolute;
+    bottom: 8rpx;
+    left: 6rpx;
+    width: 12rpx;
+    height: 12rpx;
+    border-radius: 6rpx;
+}
+
+.d-loading .line {
+    position: absolute;
+    top: 50%;
+    width: 58rpx;
+    height: 2rpx;
+    margin-top: -1rpx;
+}
+
+.d-loading .line-0 {
+    transform: rotate(45deg);
+}
+
+.d-loading .line-1 {
+    transform: rotate(135deg) translate(-5rpx);
+}
+
+.show-in-view {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}

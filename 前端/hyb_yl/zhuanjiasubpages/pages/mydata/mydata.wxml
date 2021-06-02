@@ -1,0 +1,76 @@
+<view class="mydata-box">
+    <view class="mydata-list">
+        <view class="mydata-item">
+            <view class="mydata-tit">头像</view>
+            <view class="mydata-ri">
+                <image class="pho" src="../../../images/touxiang.png"></image>
+                <image class="next" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+            </view>
+        </view>
+        <view class="mydata-item">
+            <view class="mydata-tit">姓名</view>
+            <view class="mydata-ri">
+                <view>倒霉熊</view>
+                <image class="next" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+            </view>
+        </view>
+        <view class="mydata-item">
+            <view class="mydata-tit">性别</view>
+            <view class="mydata-ri">
+                <view>男</view>
+                <image class="next" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+            </view>
+        </view>
+    </view>
+    <view class="mydata-list">
+        <view class="mydata-item">
+            <view class="mydata-tit">实名认证</view>
+            <view class="mydata-ri">
+                <view class="mydata-rz">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/rz.png?sign=371eda119fe160b15d8d959efc67686c&t=1591239389"></image>
+                    <view>已认证</view>
+                </view>
+                <image class="next" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+            </view>
+        </view>
+    </view>
+    <view class="mydata-list">
+        <view class="mydata-item">
+            <view class="mydata-tit">医院</view>
+            <view class="mydata-ri">
+                <view>山西太原白求恩医院</view>
+                <image class="next" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+            </view>
+        </view>
+        <view class="mydata-item">
+            <view class="mydata-tit">科室</view>
+            <view class="mydata-ri">
+                <view>骨科</view>
+                <image class="next" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+            </view>
+        </view>
+        <view class="mydata-item">
+            <view class="mydata-tit">职称</view>
+            <view class="mydata-ri">
+                <view>主治医生</view>
+                <image class="next" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+            </view>
+        </view>
+    </view>
+    <view class="mydata-list">
+        <view class="mydata-item">
+            <view class="mydata-tit">擅长</view>
+            <view class="mydata-ri">
+                <view>脊柱、关节外科</view>
+                <image class="next" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+            </view>
+        </view>
+        <view class="mydata-item">
+            <view class="mydata-tit">简介</view>
+            <view class="mydata-ri">
+                <view>倒霉熊，男，硕士研究生毕业，太原白求恩医院</view>
+                <image class="next" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+            </view>
+        </view>
+    </view>
+</view>

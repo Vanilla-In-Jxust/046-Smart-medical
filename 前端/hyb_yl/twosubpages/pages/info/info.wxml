@@ -1,0 +1,19 @@
+<view class="tabs">
+    <scroll-view scrollX class="scroll-view" scrollIntoView="{{tabdex}}" scrollWithAnimation="true">
+        <view bindtap="tablick" data-id="{{item.ids}}" data-titles="{{item.tit}}" wx:for="{{tabs}}" wx:key="a">
+            <text class="{{tabdex==item.ids?'actives':''}}">{{item.tit}}</text>
+        </view>
+    </scroll-view>
+</view>
+<view class="trust-review">
+    <image class="trust-review-image" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/pingshen.png?sign=db0ec337b0bbbf6932da028f7833ecfa&t=1585216890"></image>
+    <view class="trust-review-content" wx:if="{{info.zid!='0'}}">由 {{info.z_name}}{{info.keshi}}{{info.zhicheng}} 审核通过</view>
+</view>
+<view class="scrollbox">
+    <view class="contentlist">
+        <view class="tab-title">{{name}}</view>
+        <view class="tab-text">
+            <rich-text nodes="{{detail}}"></rich-text>
+        </view>
+    </view>
+</view>

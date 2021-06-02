@@ -1,0 +1,14 @@
+<view>
+    <view class="" style="padding:10rpx 20rpx;">
+        <view class="reportTitle">上传体检报告</view>
+        <view class="titledesc">请按体检报告页码顺序拍照上传</view>
+    </view>
+    <view class="addimg">
+        <view class="img-item" wx:for="{{img2}}" wx:key="index">
+            <image data-index="{{index}}" mode="aspectFill" name="imgs" src="{{item}}"></image>
+            <image catchtap="downimg2" class="delicon" data-index="{{index}}" mode="aspectFit" src="/hyb_yl/images/close.png"></image>
+        </view>
+        <image bindtap="uploadimg2" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/tianjiatu.jpg?sign=69e012faccb5061e4fd0dfac56ba2a24&t=1571479509"></image>
+    </view>
+    <button catchtap="next" class="nextpage_btn">提交</button>
+</view>

@@ -1,0 +1,175 @@
+<view class="hintmes" wx:if="{{hint}}">请点击此处收藏小程序</view>
+<view class="head">
+    <picker bindchange="cityChose" range="{{cityList}}" rangeKey="name">
+        <view class="headOption">
+            <view>{{cityName?cityName:'全国'}}</view>
+            <image mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/chengshixuanze.png?sign=568c10acbb735dd44c9ce3435fd46445&t=1593398712"></image>
+        </view>
+    </picker>
+    <view bindtap="searchbtn" class="searchbox" wx:if="{{baseinfo.is_search=='1'}}">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/search_ff.png?sign=52e66d96ec80103d916e6b607b95c7cc&t=1590717965"></image>
+        <text>输入诊所、医生、症状</text>
+    </view>
+</view>
+<view class="overall" wx:if="{{huandengpian.length>0}}">
+    <swiper autoplay circular indicatorDots class="lunbo" duration="1500" interval="4000">
+        <swiper-item wx:for="{{huandengpian}}" wx:for-item="show_thumb" wx:key="unique">
+            <image src="{{show_thumb.thumb}}"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="overall" style="padding-top:25rpx;">
+    <view class="onebox">
+        <view class="onetop" style="padding-bottom:0;">
+            <block wx:for="{{menuArr}}" wx:for-item="list" wx:key="key">
+                <view class="onelist" wx:if="{{index<3}}" wx:for="{{list}}" wx:key="key">
+                    <form bindsubmit="buttonsite" reportSubmit="true">
+                        <input hidden="true" name="title" value="{{item.serh_name}}"></input>
+                        <input hidden="true" name="link" value="{{item.serh_url}}"></input>
+                        <input hidden="true" name="ser_key" value="{{item.server_key}}"></input>
+                        <input hidden="true" name="id" value="{{item.id}}"></input>
+                        <button class="btn-n" data-data="{{fuwu.fuwu_name}}" formType="submit">
+                            <view class="iconImg">
+                                <image src="{{item.serh_thumb}}"></image>
+                            </view>
+                            <view class="listfont maintitle">{{item.serh_name}}</view>
+                            <view class="listfont">{{item.serh_ftitle}}</view>
+                        </button>
+                    </form>
+                </view>
+            </block>
+        </view>
+        <view class="onetop" style="padding-top:10rpx;">
+            <block wx:for="{{menuArr}}" wx:for-item="list" wx:key="key">
+                <view class="onelist {{list.length>3?'numlist':''}}" wx:if="{{index>2}}" wx:for="{{list}}" wx:key="key">
+                    <form bindsubmit="buttonsite" reportSubmit="true">
+                        <input hidden="true" name="title" value="{{item.serh_name}}"></input>
+                        <input hidden="true" name="link" value="{{item.serh_url}}"></input>
+                        <input hidden="true" name="ser_key" value="{{item.server_key}}"></input>
+                        <input hidden="true" name="id" value="{{item.id}}"></input>
+                        <button class="btn-n" data-data="{{fuwu.fuwu_name}}" formType="submit">
+                            <view class="iconImg">
+                                <image src="{{item.serh_thumb}}"></image>
+                            </view>
+                            <view class="listfont">{{item.serh_name}}</view>
+                        </button>
+                    </form>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="divder"></view>
+    <view class="featurebox" wx:if="{{teserver.length>1}}">
+        <view class="featureTilte">
+            <view class="titleLeft">特色服务</view>
+        </view>
+        <view class="scrollBox">
+            <scroll-view scrollX class="scroll-view">
+                <block wx:for="{{teserver}}" wx:for-item="list" wx:key="key">
+                    <view bindtap="{{item.pinyin}}" class="scroll-item" data-index="index" data-key="{{item.pinyin}}" data-name="{{item.name}}" data-url="{{item.url}}" wx:for="{{list}}" wx:key="key">
+                        <navigator hoverClass="none">
+                            <view class="featurTitle">{{item.name}}</view>
+                            <view class="featurCont">{{item.desc}}</view>
+                            <view class="immedi" style="color:{{colorArr[index]}};border-color:{{colorArr[index]}}">{{item.button}}</view>
+                        </navigator>
+                    </view>
+                </block>
+            </scroll-view>
+        </view>
+    </view>
+    <view class="divder"></view>
+    <view class="featurebox" wx:if="{{hotanswer.length>0}}">
+        <view class="featureTilte">
+            <view class="titleLeft">{{baseinfo.hot_title?baseinfo.hot_title:'热门话题'}}</view>
+            <view bindtap="hotmore" class="titleRight">
+				更多
+				<image class="arrowImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/arrow.png?sign=d8bec434e9a3266690d636079c8a4bb5&t=1576567271"></image>
+            </view>
+        </view>
+        <view bindtap="hotdetail" class="hottopic" data-id="{{item.id}}" data-state="{{item.state}}" data-title="{{item.title}}" data-typs="{{item.typs}}" wx:for="{{hotanswer}}">
+            <view class="name_box">
+                <image class="userhead" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/header_01.png?sign=f9f8c8a1a95aac19e1d32cd26aa3381f&t=1591177626"></image>
+                <view class="name">{{item.names}}</view>
+            </view>
+            <view class="hottopictit">{{item.title}}</view>
+            <view class="doctorinfo">
+                <image src="{{item.advertisement}}"></image>
+                <view class="doctorinfoname">{{item['z_name']}}</view>
+                <view class="doctorinfoname">{{item.zhicheng?item.zhicheng:''}}</view>
+                <view class="doctorinfonhelp">已帮助{{item.help}}人</view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{hot_adv.length!==0}}">
+        <view bindtap="links" class="adimgs" data-url="{{hot_adv[0].link}}" wx:if="{{hot_adv}}">
+            <image src="{{hot_adv[0].thumb}}" style="width:100%;height:200rpx;"></image>
+        </view>
+    </block>
+    <view class="divder"></view>
+    <view class="featurebox">
+        <view class="featureTilte">
+            <view class="titleLeft"> {{baseinfo.tj_title?baseinfo.tj_title:'今日推荐'}}</view>
+            <view bindtap="zhuanbingfuwu" class="titleRight">
+				更多
+				<image class="arrowImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/arrow.png?sign=d8bec434e9a3266690d636079c8a4bb5&t=1576567271"></image>
+            </view>
+        </view>
+        <view class="zhuanBox">
+            <block wx:for="{{fenleiArr}}" wx:for-item="list" wx:key="key">
+                <view wx:for="{{list}}" wx:key="unique">
+                    <view class="zhuanList">
+                        <form bindsubmit="zbfw" reportSubmit="true">
+                            <input hidden="true" name="id" value="{{item.id}}"></input>
+                            <input hidden="true" name="zid" value="{{item.zid}}"></input>
+                            <input hidden="true" name="index" value="{{index}}"></input>
+                            <input hidden="true" name="zx_id" value="{{item.zx_id}}"></input>
+                            <button class="btn-n recommend" formType="submit">
+                                <view class="whereTo" style="color:{{item.background}}">{{item.zx_name}}</view>
+                                <view class="recommendtit" style="color:{{item.color}}">{{item.title}}</view>
+                                <view class="zhuanImg">
+                                    <image mode="widthFix" src="{{item.thumb}}"></image>
+                                </view>
+                            </button>
+                        </form>
+                    </view>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class="divder"></view>
+    <view class="featurebox" wx:if="{{baseinfo.is_hospital=='1'&&hospital.length>0}}">
+        <view class="featureTilte">
+            <view class="titleLeft">附近机构</view>
+            <view bindtap="goHospitalList" class="titleRight">
+				更多
+				<image class="arrowImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/arrow.png?sign=d8bec434e9a3266690d636079c8a4bb5&t=1576567271"></image>
+            </view>
+        </view>
+        <view class="yiyuanBox">
+            <view bindtap="goback" class="cont_item" data-hid="{{item.hid}}" data-name="{{item.name}}" wx:for="{{hospital}}">
+                <image class="item_img" mode="aspectFill" src="{{item.logo}}"></image>
+                <view class="item_right">
+                    <view class="df1">
+                        <view class="item_name">{{item.agentname}}</view>
+                        <view>评分 <text class="num">{{item.score}}</text>
+                        </view>
+                    </view>
+                    <view class="df1 c9">
+                        <view class="city">{{item.address}}</view>
+                        <view>{{item.juli}}km</view>
+                    </view>
+                    <view class="rule">
+						就诊：{{item.wenzhen}} | 预约：{{item.yuyue}}
+					</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="bq">
+        <image src="{{bq_thumb}}"></image>
+        <text>{{bq_name}}</text>
+    </view>
+</view>
+<view bindtap="tanchu" class="firstbox" wx:if="{{firstmask}}"></view>
+<import src="../../../template/template.wxml"></import>
+<template is="tabBar" data="{{footer:footer}}"></template>

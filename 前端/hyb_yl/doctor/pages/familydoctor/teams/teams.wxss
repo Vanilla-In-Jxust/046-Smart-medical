@@ -1,0 +1,194 @@
+page {
+    width: 100%;
+    height: 100%;
+    font-family: "Microsoft YaHei";
+    background: #fafcfb;
+    font-size: 30rpx;
+}
+
+.headerbox {
+    width: 100%;
+    background: white;
+}
+
+.head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10rpx 20rpx;
+}
+
+.line {
+    height: 20rpx;
+    background: #fafcfb;
+}
+
+.portraut {
+    text-align: center;
+    flex: 1;
+    color: #1773bc;
+}
+
+.userImg {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.userImg image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.sign {
+    font-size: 40rpx;
+}
+
+.hospitalName {
+    margin-top: 10rpx;
+}
+
+.teambox {
+    margin-top: 20rpx;
+}
+
+.team {
+    padding: 0 20rpx;
+}
+
+.feature {
+    background: #f2fbf8;
+    color: #1773bc;
+    line-height: 76rpx;
+    padding: 0 20rpx;
+}
+
+.server {
+    padding: 0rpx 20rpx;
+    background: white;
+    color: #333;
+    line-height: 60rpx;
+}
+
+.memberbox {
+    display: flex;
+}
+
+.mem {
+    margin-right: 20rpx;
+    padding-top: 15rpx;
+}
+
+.member {
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    margin-bottom: 10rpx;
+}
+
+.member image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.name {
+    font-weight: bold;
+    text-align: center;
+}
+
+.list {
+    padding: 0rpx 5rpx 0 15rpx;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    line-height: 70rpx;
+    border-bottom: 1rpx solid #f7f9f8;
+}
+
+.packname {
+    color: #333;
+}
+
+.money {
+    color: #292b2a;
+    padding-right: 8rpx;
+}
+
+.list_right {
+    display: flex;
+}
+
+.arrowImg {
+    width: 38rpx;
+    height: 38rpx;
+    padding-top: 10rpx;
+}
+
+.arrowImg image {
+    width: 100%;
+    height: 100%;
+}
+
+.aware {
+    padding: 20rpx;
+    background: white;
+    font-size: 30rpx;
+    color: #999;
+    border-bottom: 1rpx solid #eaeaea;
+}
+
+.serbox {
+    line-height: 46rpx;
+    color: #000;
+    font-size: 28rpx;
+}
+
+.packName {
+    font-weight: bold;
+    color: #000;
+}
+
+.serverPrice {
+    font-size: 28rpx;
+    color: #999;
+    margin-right: 10rpx;
+}
+
+.hei {
+    height: 160rpx;
+}
+
+.foot {
+    width: 100%;
+    height: 150rpx;
+    background: #fafcfb;
+    position: fixed;
+    left: 0rpx;
+    bottom: 0rpx;
+    z-index: 1;
+}
+
+.btnbox {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.btnbox button {
+    color: #Fff;
+    background: skyblue;
+    font-size: 30rpx;
+}
+
+.signfont {
+    width: 100%;
+    height: 100rpx;
+    font-size: 40rpx;
+    color: white;
+    line-height: 100rpx;
+    text-align: center;
+    bottom: 0rpx;
+    position: fixed;
+}

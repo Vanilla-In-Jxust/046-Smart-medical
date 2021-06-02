@@ -1,0 +1,300 @@
+page {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    box-sizing: border-box;
+    background: #f2f2f2;
+    overflow-x: hidden;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.all {
+    position: relative;
+}
+
+.title {
+    width: 100%;
+    height: 100rpx;
+    padding: 0px 24rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px #e4e4e4;
+}
+
+.title>view {
+    width: 10rpx;
+    height: 40rpx;
+    background: #fbb12c;
+    margin-right: 15rpx;
+}
+
+.title text {
+    font-size: 36rpx;
+}
+
+.addinfo {
+    padding: 0px 24rpx;
+}
+
+.addinfo checkbox-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.addinfo checkbox-group label {
+    width: 100%;
+    padding: 20rpx 0px;
+    border-bottom: solid 1px #e4e4e4;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.addinfo checkbox-group label .label_l {
+    font-size: 32rpx;
+}
+
+.addinfo checkbox-group label .label_r {
+    width: 120rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 10rpx;
+}
+
+.addinfo checkbox-group label .label_r image {
+    width: 35rpx;
+    height: 45rpx;
+}
+
+.addinfo checkbox-group label .label_r text {
+    font-size: 28rpx;
+    color: #666;
+}
+
+radio .wx-radio-input {
+    height: 40rpx;
+    width: 40rpx;
+    margin-top: -4rpx;
+    border-radius: 50%;
+    border: 2rpx solid #999;
+    background: transparent;
+}
+
+radio .wx-radio-input.wx-radio-input-checked {
+    background: #4ca6f2;
+    border: solid 1px #999;
+}
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+    border-radius: 50%;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    background: #4ca6f2;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.addinfo .addtext {
+    color: #45a8ff;
+    font-size: 32rpx;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+}
+
+.one {
+    background: white;
+}
+
+.two {
+    width: 100%;
+    margin-top: 10rpx;
+    background: white;
+}
+
+radio-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0px 24rpx;
+}
+
+radio-group radio {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: solid 1px #e4e4e4;
+}
+
+radio-group radio text {
+    font-size: 34rpx;
+}
+
+.two .textarea {
+    width: 100%;
+    height: 380rpx;
+    padding: 30rpx;
+}
+
+.two .textarea textarea {
+    width: 100%;
+    height: 100%;
+    border-radius: 10rpx;
+    background: #f8f8f8;
+    border: solid 1px #ebebeb;
+    box-sizing: border-box;
+    padding: 20rpx;
+}
+
+.two .two_img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 24rpx;
+}
+
+.two .two_img .addlogo {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.two .two_img .imgs {
+    width: 120rpx;
+    height: 120rpx;
+    position: relative;
+    margin: 0px 10rpx;
+}
+
+.two .two_img .imgs .img_sin {
+    width: 100%;
+    height: 100%;
+}
+
+.two .two_img .imgs .close {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    top: -25rpx;
+    right: -25rpx;
+}
+
+.two_input {
+    width: 90%;
+    height: 240rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.two_input input {
+    width: 94%;
+    height: 100rpx;
+    background: #f2f2f2;
+    margin-left: 10rpx;
+    padding-left: 15rpx;
+    font-size: 34rpx;
+    border-radius: 10rpx;
+    border: solid 1px rgb(211,210,210);
+}
+
+.btn {
+    background: #47a1ed;
+    border: 0;
+    color: white;
+    font-size: 36rpx;
+    width: 50%;
+    height: 80rpx;
+    margin: auto;
+    margin-top: 60rpx;
+    margin-bottom: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.all_active {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    display: flex;
+}
+
+.mask .mask_sign {
+    width: 90%;
+    height: 450rpx;
+    background: white;
+    margin: auto;
+    border-radius: 10rpx;
+    padding: 0px 24rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.mask .mask_sign text {
+    line-height: 80rpx;
+    text-align: center;
+    display: block;
+    font-size: 36rpx;
+}
+
+.mask .mask_sign textarea {
+    width: 100%;
+    height: 200rpx;
+    border-radius: 20rpx;
+    background: #f8f8f8;
+    box-sizing: border-box;
+    padding: 10rpx;
+}
+
+.mask .mask_btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mask .mask_btn button {
+    margin: 0px;
+    padding: 0px;
+    width: 45%;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 34rpx;
+    border: solid 1px #4ca6f2;
+}
+
+.mask .mask_btn button:nth-of-type(1) {
+    background: #d2e8ff;
+    color: #4ca6f2;
+}
+
+.mask .mask_btn button:nth-of-type(2) {
+    background: #4ca6f2;
+    color: white;
+}

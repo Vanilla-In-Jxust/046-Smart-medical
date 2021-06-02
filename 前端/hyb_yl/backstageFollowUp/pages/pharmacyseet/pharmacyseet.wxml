@@ -1,0 +1,18 @@
+<view class="box-x">
+    <scroll-view bindscrolltolower="lower" scrollY="true" style="height:{{height}}px">
+        <view bindtap="navClick" class="for_list" data-id="{{item.id}}" wx:for="{{objx}}" wx:key="{{ index }}">
+            <view class="for_list_auto">
+                <view class="for_list_auto_box">
+                    <image class="for_list_auto_box_img" src="{{arr[index]}}"></image>
+                    <text class="for_list_auto_box_text">{{item.nmTag}}</text>
+                    <text class="for_list_auto_box_text1">{{item.effectTimeString}}</text>
+                </view>
+                <view class="for_list_text">
+          {{item.content}}
+         </view>
+                <image class="for_list_text_img" src="/assets/images/more.png"></image>
+            </view>
+        </view>
+        <view class="font_co999 font_si14 more_text public_white" wx:if="{{noFlag}}">已到底部</view>
+    </scroll-view>
+</view>

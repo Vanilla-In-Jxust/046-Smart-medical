@@ -1,0 +1,4 @@
+<view class="box">
+    <input bindinput="input" class="input" placeholderStyle="color:#ccc" value="{{wznameModifier}}"></input>
+</view>
+<view bindtap="onClock" class="foot">确定</view>

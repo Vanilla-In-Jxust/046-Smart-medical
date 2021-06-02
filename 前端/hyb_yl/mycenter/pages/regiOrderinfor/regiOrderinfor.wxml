@@ -1,0 +1,46 @@
+<view class="problem">
+    <view class="pro-tit">问题描述</view>
+    <view class="pro-con">问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述问题描述</view>
+</view>
+<view class="user-infor">
+    <image src="../../../images/touxiang.png"></image>
+    <view class="user-infor-r">
+        <view class="user-in-rt">
+            <view class="user-rt-l">任芳 <view>主治医师</view>
+            </view>
+            <view class="user-pri">挂号费￥10</view>
+        </view>
+        <view class="user-tip">南京军区南京总医院 皮肤性病科</view>
+    </view>
+</view>
+<view class="order-num">
+    <view class="order-num-tit">订单编号</view>
+    <view class="order-ri">12554414552</view>
+</view>
+<view class="order-num">
+    <view class="order-num-tit">挂号时间</view>
+    <view class="order-ri">2020-02-17 14:00</view>
+</view>
+<view class="order-list">
+    <view class="order-li-item">
+        <view>优惠券抵扣价格</view>
+        <view>-￥2</view>
+    </view>
+    <view class="order-li-item">
+        <view>实付金额</view>
+        <view style="color:#E03737">￥8</view>
+    </view>
+</view>
+<view class="bar"></view>
+<view class="order-btn" wx:if="{{paystate==0}}">
+    <view class="btn1">取消支付</view>
+    <view class="btn2">继续支付￥8</view>
+</view>
+<view class="order-btn" wx:if="{{paystate==1}}">
+    <view class="btn1"></view>
+    <view class="btn2">去退款</view>
+</view>
+<view class="order-btn" wx:if="{{paystate==2}}">
+    <view class="btn1"></view>
+    <view class="btn2">确认完成</view>
+</view>

@@ -1,0 +1,400 @@
+page {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+.ovalAll {
+    padding: 0rpx 30rpx;
+}
+
+.headbg {
+    background: linear-gradient(to bottom,#2476E5,#896EF7);
+    height: 180rpx;
+    display: flex;
+    padding-top: 30rpx;
+    color: white;
+}
+
+.clockImg {
+    width: 50rpx;
+    height: 50rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.setMeal {
+    border-bottom: 30rpx solid #F6F6F6;
+    padding-bottom: 30rpx;
+    margin-top: -50rpx;
+}
+
+.setMealBox {
+    background: #FFFFFF;
+    border-radius: 20rpx;
+    width: 690rpx;
+    box-shadow: 0rpx 0rpx 20rpx #f5f4f9;
+}
+
+.mealCont {
+    padding: 25rpx;
+}
+
+.orderListmaps {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10rpx;
+}
+
+.mapsgrop {
+    padding-bottom: 26rpx;
+}
+
+.orderListmaps image {
+    width: 46rpx;
+    height: 46rpx;
+}
+
+.mealImg {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 20rpx;
+}
+
+.mealCont_title {
+    border-bottom: 1rpx solid #f5f4f9;
+    display: flex;
+    color: #333;
+    font-size: 26rpx;
+    padding-bottom: 25rpx;
+}
+
+.tcTop {
+    padding: 25rpx 0rpx;
+    display: flex;
+    align-items: center;
+}
+
+.tcTitle {
+    font-size: 38rpx;
+    color: #333;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.tongy {
+    padding: 10rpx 15rpx;
+    background: #ededed;
+    border-radius: 20rpx;
+    font-size: 25rpx;
+}
+
+.tcHint {
+    font-size: 24rpx;
+    color: #bdbdbd;
+    padding-bottom: 25rpx;
+}
+
+.tcPrice {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 25rpx;
+    align-items: center;
+    color: #464646;
+}
+
+.tcxq {
+    padding: 10rpx 15rpx;
+    border: 1rpx solid #bdbdbd;
+    border-radius: 20rpx;
+    font-size: 28rpx;
+}
+
+.orderBox {
+    background: #FFFFFF;
+    padding-top: 20rpx;
+    border-bottom: 30rpx solid #F6F6F6;
+}
+
+.orderTop {
+    padding-top: 30rpx;
+    border-bottom: 1rpx solid #bdbdbd;
+}
+
+.orderTop:last-child {
+    border-bottom: none;
+}
+
+.orderList {
+    display: flex;
+    align-items: center;
+    padding-bottom: 30rpx;
+}
+
+.orderList_left {
+    color: #464646;
+    font-size: 30rpx;
+    margin-right: 15rpx;
+}
+
+.orderList_right {
+    color: #606060;
+    font-size: 28rpx;
+}
+
+.copy {
+    margin-left: 20rpx;
+    padding: 6rpx 15rpx;
+    border-radius: 30rpx;
+    border: 1rpx solid #bdbdbd;
+    font-size: 25rpx;
+}
+
+.Amounts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30rpx;
+    padding-top: 30rpx;
+}
+
+.Amouts_left {
+    color: #363636;
+}
+
+.Amouts_right {
+    color: #484848;
+}
+
+.sum_Amounts {
+    padding: 50rpx 0rpx 30rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sum_price {
+    color: #ea7734;
+    font-size: 30rpx;
+    padding-left: 10rpx;
+}
+
+.footbox {
+    width: 100%;
+    height: 100rpx;
+    background: white;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    padding-left: 30rpx;
+}
+
+.footbox2 {
+    width: 100%;
+    height: 100rpx;
+    background: white;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.totals {
+    font-size: 30rpx;
+    color: #333;
+    line-height: 100rpx;
+}
+
+.totals text {
+    color: #E03939;
+}
+
+.fuk2 {
+    background: #0087E0;
+    color: #FFFFFF;
+    font-size: 32rpx;
+    width: 100%;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.fuk {
+    background: #0087E0;
+    color: #FFFFFF;
+    font-size: 32rpx;
+    width: 40%;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.tijianxiang {
+    font-size: 34rpx;
+    color: #333333;
+    border-bottom: 1rpx solid #F7F7F7;
+    line-height: 80rpx;
+}
+
+.ordernums {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 34rpx;
+    color: #333333;
+    padding: 30rpx;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+}
+
+.tellsview {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.tellhint {
+    font-size: 26rpx;
+    color: #C1C1C1;
+    margin-top: 20rpx;
+}
+
+.tijiantitle {
+    width: 100%;
+}
+
+.tijiantext {
+    width: 100%;
+    font-size: 30rpx;
+    margin-top: 10rpx;
+}
+
+.paytypes {
+    font-size: 32rpx;
+    color: #6d6d6d;
+}
+
+.tijianxiangeqimg {
+    width: 260rpx;
+    height: 260rpx;
+    margin: 30rpx auto 50rpx;
+}
+
+.itemlistss {
+    border-bottom: 1rpx solid #F7F7F7;
+}
+
+.tijianxiangboor {
+    font-size: 34rpx;
+    color: #333333;
+    line-height: 80rpx;
+    position: relative;
+    display: flex;
+}
+
+.openfalse::after {
+    content: "";
+    width: 16rpx;
+    height: 16rpx;
+    border-bottom: 1rpx solid #969696;
+    border-right: 1rpx solid #969696;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.opentrue {
+    display: block;
+}
+
+.opentrue .overText {
+    width: 100%;
+    overflow: visible;
+    text-decoration: none;
+    white-space: pre-wrap;
+}
+
+.openfalse {
+    display: block;
+}
+
+.openfalse .overText {
+    width: 100%;
+    overflow: visible;
+    text-decoration: none;
+    white-space: pre-wrap;
+}
+
+.opentrue::after {
+    content: "";
+    width: 16rpx;
+    height: 16rpx;
+    border-top: 1rpx solid #969696;
+    border-right: 1rpx solid #969696;
+    position: absolute;
+    top: 40%;
+    right: 0;
+    transform: translateY(-50%) rotate(-45deg);
+}
+
+.overText {
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+}
+
+.zhe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    background: #fff;
+    width: 60%;
+    border-radius: 20rpx;
+    padding: 30rpx;
+}
+
+.contBox {
+    padding: 20rpx 0;
+}
+
+.contBox .name {
+    white-space: nowrap;
+    margin-bottom: 20rpx;
+    text-align: center;
+}
+
+.input {
+    border: 2rpx solid #eaeaea;
+    padding: 10rpx;
+    box-sizing: content-box;
+    border-radius: 10rpx;
+}
+
+.btn {
+    width: 120rpx;
+    height: 66rpx;
+    background: #2476E5;
+    color: #fff;
+    text-align: center;
+    line-height: 66rpx;
+    margin: 0 auto;
+    border-radius: 20rpx;
+}

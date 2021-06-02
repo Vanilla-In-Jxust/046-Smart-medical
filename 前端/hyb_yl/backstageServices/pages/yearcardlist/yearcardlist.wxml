@@ -1,0 +1,32 @@
+<view class="topTabSwiper">
+    <view bindtap="checkCurrent" class="tab {{currentData==index?'tabBorer':''}}" data-current="{{index}}" wx:for="{{tablist}}" wx:key="t">
+        <text>{{item}}</text>
+    </view>
+</view>
+<view class="successbox">
+    <view class="carditem" wx:for="{{list}}">
+        <view class="vip-card">
+            <image class="vip-card-image" src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/3325176099507743447-22.png?sign=6397f38b027d976a3be05e4666a35d26&t=1594460848"></image>
+            <view bindtap="handleClickCard" class="vip-card-body">
+                <view class="vip-card-tit">{{item.typs}}</view>
+                <view class="name">
+                    <text>{{item.z_name}}</text>
+                    <text class="card-tag">医生年卡</text>
+                </view>
+                <view class="section">
+                    <text>{{item.keshi}}</text>
+                    <text class="job">{{item.hospital}}</text>
+                </view>
+                <view class="price">
+                    <view class="now">
+                        <text class="price-now-text">{{item.money}}</text>元</view>
+                </view>
+                <image class="vip-card-body-image" src="{{item.advertisement}}"></image>
+            </view>
+        </view>
+        <view class="cardtime">
+            <view class="cardtime-left">免费问诊{{item.wz_num}}次 有效期{{item.status=='0'?item.times:item.end_time}}{{item.status=='0'?'年':''}}</view>
+            <view bindtap="pay" class="cardtime-right" data-hh_num="{{item.hh_num}}" data-id="{{item.id}}" data-jd_num="{{item.jd_num}}" data-money="{{item.money}}" data-times="{{item.times}}" data-wz_num="{{item.wz_num}}" data-wz_zhekou="{{item.wz_zhekou}}" data-yid="{{item.yid}}" data-zid="{{item.zid}}" wx:if="{{item.status=='0'}}">去支付</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,13 @@
+<scroll-view scrollY bindscrolltolower="getMore" class="scrollView">
+    <view class="rule_list" wx:for="{{list}}" wx:key="{{index}}">
+        <text class="rule_list_title">{{item.title}}</text>
+        <view class="rule_list_content" wx:for="{{item.contentFormat}}" wx:key="{{index}}">
+            <view style="{{item.style}}" wx:if="{{!item.src&&item.value}}">{{item.value}}</view>
+            <view style="{{item.style}}" wx:if="{{!item.src&&!item.value}}">{{item}}</view>
+        </view>
+    </view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}"></view>
+</scroll-view>

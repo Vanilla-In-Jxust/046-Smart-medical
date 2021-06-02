@@ -1,0 +1,63 @@
+<view class="modalview">
+    <view class="height_88 public_white font_co333 font_si14 center scope_view">
+        <view bindtap="select" class="center scope" data-id="1">
+            <text class="choose_name {{selectIndex==1?'font_co3b':''}}">{{regionName}}</text>
+            <image class="city_img" src="{{selectIndex==1?'/assets/shop_images/up_3b.png':'/assets/shop_images/down01.png'}}"></image>
+        </view>
+        <view bindtap="select" class="center hospital_scope" data-id="2">
+            <text class="hospital_name {{selectIndex==2?'font_co3b':''}}">{{hospitalName}}</text>
+            <image class="city_img" src="{{selectIndex==2?'/assets/shop_images/up_3b.png':'/assets/shop_images/down01.png'}}"></image>
+        </view>
+        <view bindtap="select" class="center scope" data-id="3">
+            <text class="choose_name {{selectIndex==3?'font_co3b':''}}">{{sectionName}}</text>
+            <image class="city_img" src="{{selectIndex==3?'/assets/shop_images/up_3b.png':'/assets/shop_images/down01.png'}}"></image>
+        </view>
+    </view>
+    <view class="change_area public_white font_si14 font_co333 {{selectIndex==1?'slidown':isShow?'slidup':''}} {{qyshow?'disappear':''}}">
+        <view class="province">
+            <view bindtap="selectPartsAll" class="province_view" data-index="-1">区域</view>
+            <view bindtap="selectParts" class="province_view {{provinceIndex==index?'province_active':''}}" data-id="{{item.id}}" data-index="{{index}}" data-province="{{item.province}}" wx:for="{{provinceList}}" wx:key="{{ index }}">{{item.name}}</view>
+        </view>
+        <view class="city">
+            <view bindtap="selectCity" class="city_view {{cityIndex==index?'city_active':''}}" data-city="{{item.name}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{provinceList[provinceListIndex].erji}}" wx:key="{{ index }}">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="change_hospital public_white font_si14 font_co333 {{selectIndex==2?'slidown':isShow?'slidup':''}} {{pxshow?'disappear':''}}">
+        <view class="hospital_text">
+            <view bindtap="selectHosptalAll" class="{{hospitalIndex=='-1'?'hospital_active':''}}" data-hospital="{{item}}" data-index="-1">所有医院</view>
+            <view bindtap="selectHosptal" class="{{hospitalIndex==index?'hospital_active':''}}" data-hospital="{{item.hos_name}}" data-index="{{index}}" wx:for="{{hospitalList}}" wx:key="{{ index }}">{{item.hos_name}}</view>
+        </view>
+    </view>
+    <view class="change_office public_white font_si14 font_co333 {{selectIndex==3?'slidown':isShow?'slidup':''}} {{nzshow?'disappear':''}}">
+        <view class="office_text">
+            <view bindtap="selectSectionAll" class="{{sectionIndex=='-1'?'hospital_active':''}}" data-index="-1" data-section="{{item}}">所有科室</view>
+            <view bindtap="selectSection" class="{{sectionIndex==index?'hospital_active':''}}" data-index="{{index}}" data-section="{{item}}" wx:for="{{codeData}}" wx:key="{{ index }}">{{item}}</view>
+        </view>
+    </view>
+</view>
+<view class="fixed">
+    <view class="W_seek_box">
+        <view class="W_seek_input">
+            <input bindinput="input" class="W_seek_input1" placeholder="搜索名字全称" placeholderStyle="color:#ccc" value=""></input>
+            <image class="W_seek_input_img" src="/assets/images/ss.png"></image>
+        </view>
+        <view bindtap="grabble" class="seet">搜索</view>
+    </view>
+</view>
+<view style="height:180rpx;border:1rpx solid #ffffff;"></view>
+<navigator url="/hyb_yl/backstageTeam/pages/doctorIntro/doctorIntro?zid={{item.zid}}" wx:for="{{zhuanjia}}" wx:key="index">
+    <view bindtap="choice" class="personal">
+        <image class="imgSize" src="{{item.z_thumbs}}"></image>
+        <view class="title">
+            <view class="titleName">{{item.z_name}}</view>
+            <view>
+                <text class="titleTitle">{{item.z_zhicheng}}</text>
+                <text class="titleTitle fontLife">{{item.z_yiyuan}}</text>
+            </view>
+            <view class="titleTitle">服务人数
+        <text class="titleNumber">{{item.helpnum}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="good titleTitle">擅长：{{item.z_zhenzhi}}</view>
+</navigator>

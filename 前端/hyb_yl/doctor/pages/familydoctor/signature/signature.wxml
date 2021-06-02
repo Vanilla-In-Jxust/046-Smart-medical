@@ -1,0 +1,15 @@
+<view>
+    <view class="oval">
+        <view class="signatureBox">
+            <view class="handCenter">
+                <canvas binderror="canvasIdErrorCallback" bindtouchend="canvasEnd" bindtouchmove="canvasMove" bindtouchstart="canvasStart" canvasId="canvas" class="handWriting" disableScroll="true" id="canvas" touchcancel="canvasEnd"></canvas>
+            </view>
+        </view>
+    </view>
+    <view class="selfFont">提示：本人或监护人在此签名</view>
+    <view class="btnbox">
+        <view bindtap="cancel" class="btnstyle" style="background-color:{{bgc}}">取消</view>
+        <view bindtap="cleardraw" class="btnstyle" style="background-color:{{bgc}}">清除</view>
+        <view bindtap="getimg" class="btnstyle" style="background-color:{{bgc}}">确定</view>
+    </view>
+</view>

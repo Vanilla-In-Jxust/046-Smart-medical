@@ -1,0 +1,15 @@
+<view class="all">
+    <view class="tel">
+        <view class="tel_text">
+            <text>{{keywords=='dianhuawenzhen'?'现在请您再次确认您的接听号码':''||keywords=='tuwenwenzhen'?'请您再次确认接受回复的的手机号码':''}}</text>
+        </view>
+        <view class="tel_input">
+            <input bindinput="getel" name="phone" placeholder="请输入手机号码" type="number" value="{{tel}}"></input>
+        </view>
+        <view class="tel_btn">
+            <button catchtap="nextpage">
+        提交，下一步
+      </button>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "科普频道",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "ovalLogin": "/component/ovalLogin/ovalLogin"
+    }
+}

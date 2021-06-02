@@ -1,0 +1,239 @@
+<view class="top">
+	提示:此信息只有医生能看见
+</view>
+<view class="">
+    <form bindsubmit="bindsubmit">
+        <view class="oval">
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <label>患者姓名</label>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <input name="names" placeholder="{{myinfo.names?myinfo.names:'请填写患者姓名'}}" type="text" value="{{myinfo.names}}"></input>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>患者性别</text>
+                    </view>
+                </view>
+                <view>
+                    <radio-group bindchange="radioChange">
+                        <view class="questionBox">
+                            <label class="chosesex {{item.checked==true?'active':'unselected'}}" data-id="{{index}}" wx:for="{{items}}" wx:key="{{index}}">
+                                <radio checked="{{item.checked}}" value="{{item.name}}"></radio>
+                                <text class="text">{{item.value}}</text>
+                            </label>
+                        </view>
+                    </radio-group>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>出生日期</text>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <picker bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" end="2020-09-01" mode="date" range="{{multiArray}}" start="1900-09-01" value="{{multiIndex}}">
+                        <input disabled="{{true}}" name="datetime" placeholder="请选择出生日期" value="{{time}}"></input>
+                    </picker>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <label>体重(kg)</label>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <input name="tizhong" placeholder="{{myinfo.tizhong?myinfo.tizhong:'请填写患者体重'}}" type="text" value="{{myinfo.tizhong}}"></input>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <label>身高(cm)</label>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <input name="shengao" placeholder="{{myinfo.shengao?myinfo.shengao:'请填写患者身高'}}" type="text" value="{{myinfo.shengao}}"></input>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>婚姻状况</text>
+                    </view>
+                </view>
+                <view>
+                    <radio-group bindchange="radioChangehunyin">
+                        <view class="questionBox">
+                            <label class="chosesex {{item.checked==true?'active':'unselected'}}" data-id="{{index}}" wx:for="{{huny}}" wx:key="{{index}}">
+                                <radio checked="{{item.checked}}" value="{{item.name}}"></radio>
+                                <text class="text">{{item.value}}</text>
+                            </label>
+                        </view>
+                    </radio-group>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <label>职业</label>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <input name="zhiye" placeholder="{{myinfo.zhiye?myinfo.zhiye:'请填写患者职业'}}" type="text" value="{{myinfo.zhiye}}"></input>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <label>血型</label>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <input name="xuex" placeholder="{{myinfo.xuex?myinfo.xuex:'请填写患者血型'}}" type="text" value="{{myinfo.xuex}}"></input>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>所在城市</text>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <picker bindchange="changeRegin" mode="region" value="{{region}}">
+                        <view>
+                            <input disabled="true" name="city" placeholder="所在城市" value="{{region[0]}} - {{region[1]}} - {{region[2]}}"></input>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>患者关系</text>
+                    </view>
+                </view>
+                <view>
+                    <view class="questionBox">
+                        <view bindtap="choseRelation" class="qustionList {{sick_index===item.index?'ptich_active':'unselected'}}" data-index="{{item.index}}" wx:for="{{sickrela}}" wx:key="this">{{item.relation}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>肝功能</text>
+                    </view>
+                </view>
+                <view>
+                    <view class="questionBox">
+                        <view bindtap="ganbut" class="qustionList {{gan_index===item.index?'ptich_active':'unselected'}}" data-index="{{item.index}}" wx:for="{{gansite}}" wx:key="this">{{item.relation}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>肾功能</text>
+                    </view>
+                </view>
+                <view>
+                    <view class="questionBox">
+                        <view bindtap="shenbut" class="qustionList {{shen_index===item.index?'ptich_active':'unselected'}}" data-index="{{item.index}}" wx:for="{{shensite}}" wx:key="this">{{item.relation}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>备孕情况</text>
+                    </view>
+                </view>
+                <view>
+                    <view class="questionBox">
+                        <view bindtap="beiyunbut" class="qustionList {{be_index===item.index?'ptich_active':'unselected'}}" data-index="{{item.index}}" wx:for="{{beiyunsite}}" wx:key="this">{{item.relation}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>高血压病史</text>
+                    </view>
+                </view>
+                <view>
+                    <view class="questionBox">
+                        <view bindtap="feritinbut" class="qustionList {{feritin_index===item.index?'ptich_active':'unselected'}}" data-index="{{item.index}}" wx:for="{{feritinsite}}" wx:key="this">{{item.relation}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>糖尿病病史</text>
+                    </view>
+                </view>
+                <view>
+                    <view class="questionBox">
+                        <view bindtap="diabetesbut" class="qustionList {{diabetes_index===item.index?'ptich_active':'unselected'}}" data-index="{{item.index}}" wx:for="{{diabetessite}}" wx:key="this">{{item.relation}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>药物过敏史</text>
+                    </view>
+                </view>
+                <view>
+                    <view class="questionBox">
+                        <view bindtap="allergybut" class="qustionList {{allergy_index===item.index?'ptich_active':'unselected'}}" data-index="{{item.index}}" wx:for="{{allergysite}}" wx:key="this">{{item.relation}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>联系方式</text>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <input bindtap="checkphone" data-phone="{{myinfo.tel?myinfo.tel:myphone}}" disabled="disabled" name="tel" placeholder="{{myinfo.tel?myinfo.tel:'请输入联系方式'}}" placeholderClass="placeholder" type="number" value="{{myinfo.tel?myinfo.tel:myphone}}"></input>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>证件</text>
+                    </view>
+                </view>
+                <view>
+                    <view class="questionBox">
+                        <view bindtap="certificate" class="qustionList {{pap_index===index?'ptich_active':'unselected'}}" data-index="{{index}}" wx:for="{{papers}}" wx:key="this">{{item.cert}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>证件号（选填）</text>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <input name="numcard" placeholder="{{myinfo.numcard?myinfo.numcard:'请输入证件号码'}}" placeholderClass="placeholder" type="idcard" value="{{myinfo.numcard}}"></input>
+                </view>
+            </view>
+            <text class="userinfo">*用户信息将严格对外保密</text>
+        </view>
+        <view class="" style="height:110rpx;"></view>
+        <input name="{{huny1}}" style="display:none" type="text"></input>
+        <button formType="submit" hoverClass="buttonAfter" style="background-color:{{bgc}}">保存</button>
+    </form>
+</view>

@@ -1,0 +1,73 @@
+<view>
+    <view class="top">
+        <text>{{hospital}}</text>
+        <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/ic_arrow_gray_right2x.png?sign=95aea39227ee7d584fe6dfb526272dbe&t=1568770727"></image>
+        <text>{{z_name}}</text>
+        <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/ic_arrow_gray_right2x.png?sign=95aea39227ee7d584fe6dfb526272dbe&t=1568770727"></image>
+        <text>预约{{z_name}}手术</text>
+    </view>
+    <view class="headbox">
+        <view class="one">
+            <view class="one_Center">
+                <view class="makeTitle c3 fs30">预约本人手术</view>
+                <view class="oneContbox df fdc">
+                    <view class="df aic oneCont_list">
+                        <image class="listImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/check.png?sign=d1aac2361477cd2685aa521a2856a3e4&t=1578129280"></image>
+                        <view class="fs26 pl15">视频面对面看诊</view>
+                    </view>
+                    <view class="df aic oneCont_list">
+                        <image class="listImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/check.png?sign=d1aac2361477cd2685aa521a2856a3e4&t=1578129280"></image>
+                        <view class="fs26 pl15">制定手术方案</view>
+                    </view>
+                    <view class="df aic oneCont_list">
+                        <image class="listImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/check.png?sign=d1aac2361477cd2685aa521a2856a3e4&t=1578129280"></image>
+                        <view class="fs26 pl15">制定手术方案</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="headbox">
+        <view class="serveflow">
+            <view class="serverflow_Title fwb fs3">服务流程</view>
+            <view class="flowbox df fdc ">
+                <view class="flowlist df">
+                    <image class="flowImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/flow.png?sign=8ef51ca8d06d1d1e92e6668f4e461558&t=1578131196"></image>
+                    <view class="fs26 c6 pl50 flowCont">患者提交病情资料并支付</view>
+                </view>
+                <view class="flowlist df">
+                    <image class="flowImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/flow.png?sign=8ef51ca8d06d1d1e92e6668f4e461558&t=1578131196"></image>
+                    <view class="fs26 c6 pl50 flowCont">患者提交病情资料并支付</view>
+                </view>
+                <view class="flowlist df">
+                    <image class="flowImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/flow.png?sign=8ef51ca8d06d1d1e92e6668f4e461558&t=1578131196"></image>
+                    <view class="fs26 c6 pl50 flowCont">患者提交病情资料并支付</view>
+                </view>
+                <view class="flowlist df">
+                    <image class="flowImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/flow.png?sign=8ef51ca8d06d1d1e92e6668f4e461558&t=1578131196"></image>
+                    <view class="fs26 c6 pl50 flowCont" style="border:none">预约费用(不含手术费)<text style="color:#fb5c6e">{{money}}元</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="headbox">
+        <view class="serveFlow">
+            <view class="serverflow_Title fwb fs3">服务提示</view>
+            <text class="fs26 c3" style="display:block;padding:0rpx 10rpx">{{tishi}}</text>
+        </view>
+    </view>
+    <view class="four">
+        <radio-group bindchange="radioChange" class="radio-group"></radio-group>
+        <label catchtap="changeradio" class="radio">
+            <radio checked="{{items.checked}}" value="{{items.name}}"></radio>
+        </label>
+        <navigator url="/hyb_yl/userCommunicate/pages/preindex/agreeinfo/index?key={{key}}">
+            <text style="color:#4aa0ed;font-size:26rpx;">{{items.value}}</text>
+        </navigator>
+    </view>
+    <view style="height:100rpx;"></view>
+    <view bindtap="yuyue" class="posview">
+  立即预约
+</view>
+</view>

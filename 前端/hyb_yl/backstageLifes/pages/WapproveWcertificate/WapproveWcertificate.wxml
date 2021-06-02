@@ -1,0 +1,13 @@
+<view class="text">胸牌</view>
+<view class="W_Img_Box">
+  点击上传
+  <image bindtap="Img" class="W_Img" src="{{img?img:'/assets/images/xiong1.png'}}"></image>
+</view>
+<view class="text">执业证书</view>
+<view class="text1">医生请上传"执业医师证书"</view>
+<view class="text1">护士请上传"执业护士证书"</view>
+<view class="W_Img_Box">
+  点击上传
+  <image bindtap="Img1" class="W_Img" src="{{img1?img1:'/assets/images/xiong1.png'}}"></image>
+</view>
+<view bindtap="foot" class="foot">保存</view>

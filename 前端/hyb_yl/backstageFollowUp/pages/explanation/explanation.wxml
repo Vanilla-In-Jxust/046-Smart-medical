@@ -1,0 +1,91 @@
+<view class="title_view">
+    <view class="classify_view font_si16 font_co333 ">
+        <view bindtap="changeTitle" class="classify_text {{current==1?'add_citying':''}}" data-current="1">我的患者咨询
+      <view class="classify_text_red" hidden="{{nonReadBoo}}">{{nonReadBooText}}</view>
+        </view>
+        <view bindtap="changeTitle" class="classify_text {{current==2?'add_citying':''}}" data-current="2">团队患者咨询
+      <view class="classify_text_red" hidden="{{nonReadBoo1}}">{{nonReadBooText1}}</view>
+        </view>
+    </view>
+    <view class="nav" wx:if="{{current==1}}">
+        <view bindtap="clickNum" class="navClick {{_num==0?'add_citying':''}}" data-num="0">未完成</view>
+        <view bindtap="clickNum" class="navClick {{_num==1?'add_citying':''}}" data-num="1">已完成</view>
+    </view>
+</view>
+<view class="{{current==1?'margin_more':'margin_top'}}"></view>
+<block wx:if="{{current==1}}">
+    <scroll-view scrollY bindscrolltolower="getMore" class="exp_scroll">
+        <view bindtap="tiaozhuan1" class="information" data-bl_id="{{item.bl_id}}" data-docopenid="{{item.docopenid}}" data-docroom="{{item.docroom}}" data-ifover="{{item.ifover}}" data-j_id="{{item.j_id}}" data-myroom="{{item.myroom}}" data-orders="{{item.orders}}" data-u_name="{{item.u_name}}" data-u_thumb="{{item.u_thumb}}" data-useropenid="{{item.useropenid}}" data-z_name="{{item.z_name}}" data-z_thumbs="{{item.z_thumbs}}" data-zid="{{item.zid}}" wx:for="{{resultListOne}}" wx:key="{{ index }}">
+            <view class="informationImgBox">
+                <image class="informationImg" mode="aspectFill" src="{{item.u_thumb?item.u_thumb:'/assets/images/head.png'}}"></image>
+            </view>
+            <view class="informationText">
+                <view class="informationTextName">
+                    <view class="informationTextName1">{{item.names}}</view>
+                    <image class="informationTextNameImg" src="{{item.sex=='女'?'/https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nva.png?sign=36b27b27373c73a65ec421d17745cfaf&t=1572254583':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nana.png?sign=773c627e3387df18ae4048426f7e5f05&t=1572254566'}}"></image>
+                    <view class="informationTextName2" wx:if="{{item.age}}">{{item.age}}岁</view>
+                </view>
+                <view class="informationText1">{{item.msg}}</view>
+                <view class="informationText2">咨询时间： {{item.time}}</view>
+            </view>
+            <view class="informationRight">
+                <view class="informationRightText" style="  color: #3b4ca9;" wx:if="{{item.status==0&&item.nonReadCount==0}}">未完成</view>
+                <view class="informationRightText" style="  color: #3b4ca9;" wx:if="{{item.r_state==2&&item.if_over==0}}">{{item.unread}}条新消息</view>
+                <view class="informationRightText" style="color: #999;" wx:if="{{item.status==1}}">已完成</view>
+            </view>
+        </view>
+        <view class="loading_view" hidden="{{loadingBoo}}">
+            <text>加载中...</text>
+        </view>
+        <view class="more_text" hidden="{{moreBooOne}}">没有更多了~</view>
+    </scroll-view>
+    <scroll-view scrollY bindscrolltolower="getMore" class="exp_scroll" wx:if="{{_num==1&&!explanBooTwo}}">
+        <view bindtap="tiaozhuan2" class="information" data-doctorId="{{item.doctorId}}" data-sessionId="{{item.orderId}}" data-signType="{{item.medType}}" data-userId="{{item.patientSimpleVo.userId}}" wx:for="{{resultListTwo}}" wx:key="{{ index }}">
+            <view class="informationImgBox">
+                <image class="informationImg" mode="aspectFill" src="{{item.u_thumb?item.u_thumb:'/assets/images/head.png'}}"></image>
+            </view>
+            <view class="informationText">
+                <view class="informationTextName">
+                    <view class="informationTextName1">{{item.names}}</view>
+                    <image class="informationTextNameImg" src="{{item.sex=='1'?'/https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nva.png?sign=36b27b27373c73a65ec421d17745cfaf&t=1572254583':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nana.png?sign=773c627e3387df18ae4048426f7e5f05&t=1572254566'}}"></image>
+                    <view class="informationTextName2" wx:if="{{item.age}}">{{item.age}}岁</view>
+                </view>
+                <view class="informationText1">{{item.msg}}</view>
+                <view class="informationText2">咨询时间： {{item.time}}</view>
+            </view>
+            <view class="informationRight">
+                <view class="informationRightText" style="color: #3b4ca9;" wx:if="{{item.status==0&&item.nonReadCount==0}}">未完成</view>
+                <view class="informationRightText" style="color: #3b4ca9;" wx:if="{{item.status==1&&item.nonReadCount!=0}}">{{item.nonReadCount}}条新消息</view>
+                <view class="informationRightText" style="color: #999;" wx:if="{{item.status==1&&item.nonReadCount==0}}">已完成</view>
+            </view>
+        </view>
+        <view class="loading_view" hidden="{{loadingBoo}}">
+            <text>加载中...</text>
+        </view>
+        <view class="more_text" hidden="{{moreBooTwo}}">没有更多了~</view>
+    </scroll-view>
+    <view class="view_no" wx:if="{{_num==0&&explanBooOne}}">暂无此项记录~</view>
+    <view class="view_no" wx:if="{{_num==1&&explanBooTwo}}">暂无此项记录~</view>
+</block>
+<block wx:if="{{current==2}}">
+    <scroll-view scrollY class="team_scroll">
+        <view bindtap="tiaozhuan3" class="list_view" data-teamId="{{item.teamId}}" data-teamName="{{item.teamName}}" wx:for="{{TeamList}}" wx:key="{{index}}">
+            <image class="list_img" mode="aspectFill" src="{{item.teamHeaderUrl}}"></image>
+            <view class="list_name">
+                <text class="font_si18 font_co333 team_name">{{item.teamName}}</text>
+                <view class="list_team font_si12 font_co999">
+                    <view>
+                        <text>医护人数</text>
+                        <text class="number_text">{{item.doctorNurseCount}}</text>
+                    </view>
+                    <view class="team_right">
+                        <text>患者人数</text>
+                        <text class="number_text">{{item.patientCount}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="news_view" wx:if="{{item.nonReadTipCount>0}}">{{item.nonReadTipCount}}</view>
+        </view>
+    </scroll-view>
+    <view class="view_no" wx:if="{{TeamListFlag}}">暂无此项记录~</view>
+</block>

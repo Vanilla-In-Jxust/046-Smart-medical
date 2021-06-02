@@ -1,0 +1,58 @@
+<view class="Illnessmess m25">
+    <view class="Illnessmesstitle">问题描述</view>
+    <view class="Illnessmesstext">症状描述：{{info.describe.text}}
+	</view>
+    <view class="Illnessimgs" wx:if="{{info.describe.typedate=='1'&&info.describe.upload_picture_list}}">
+        <image src="{{info.advertisement}}" wx:for="{{info.describe.upload_picture_list}}"></image>
+    </view>
+</view>
+<view class="elsemess m25">
+    <view class="servepackage">
+        <image src="{{info.advertisement}}"></image>
+        <view class="servepackageinfo">
+            <view class="info-top">
+                <view>
+                    <text>{{info.z_name}}</text>
+                    <text>{{info.zhicheng}}</text>
+                </view>
+                <view>￥{{info.money}}/次</view>
+            </view>
+            <view class="info-bott">{{info.hospital}} {{info.keshi}}</view>
+        </view>
+    </view>
+</view>
+<view class="totalsbox m25">
+    <view class="ordergroup">
+        <view>订单编号</view>
+        <view>{{info.back_orser}}</view>
+    </view>
+</view>
+<view class="totalsbox m25">
+    <view class="ordergroup">
+        <view>挂号时间</view>
+        <view>{{info.year}} {{info.week}}</view>
+    </view>
+</view>
+<view class="totalsbox">
+    <view class="fukuan" style="margin-bottom:20rpx;">
+        <view>优惠券抵扣金额</view>
+        <view>-￥{{info.coupon_dk}}</view>
+    </view>
+    <view class="fukuan">
+        <view>实付金额</view>
+        <view class="money">￥{{info.money}}</view>
+    </view>
+</view>
+<view class="eqcord" wx:if="{{currentData!=0}}">
+    <image src="../../../images/reweim.png"></image>
+    <view>就诊时，请出示您的二维码</view>
+</view>
+<view class="footbtn">
+    <block wx:if="{{info.ifpay==0}}">
+        <view bindtap="cancel" data-id="{{info.id}}">取消支付</view>
+        <view bindtap="gopay" data-back_orser="{{info.back_orser}}" data-id="{{info.id}}" data-j_id="{{info.j_id}}" data-key_words="yuanchengguahao" data-money="{{info.money}}" data-zid="{{info.zid}}">确认支付￥{{info.money}}</view>
+    </block>
+    <view bindtap="refund" data-id="{{info.id}}" data-money="{{info.money}}" wx:if="{{info.ifpay==1&&info.money!=='0.00'}}">申请退款</view>
+    <view bindtap="deleteitem" data-id="{{info.id}}" wx:if="{{info.ifpay=='3'||info.ifpay=='4'||info.ifpay=='6'||info.ifpay=='7'||info.ifpay=='8'}}">删除订单</view>
+    <view bindtap="cancel" data-id="{{info.id}}" wx:if="{{info.ifpay==1&&info.money=='0.00'}}">取消订单</view>
+</view>

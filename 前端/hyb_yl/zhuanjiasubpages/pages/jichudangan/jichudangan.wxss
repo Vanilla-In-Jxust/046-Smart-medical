@@ -1,0 +1,96 @@
+view {
+    box-sizing: border-box;
+}
+
+.bg_box {
+    position: relative;
+}
+
+.bg_cont {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: #fff;
+}
+
+.heng {
+    width: 200rpx;
+    background: #fff;
+    height: 2rpx;
+    margin: 20rpx 0;
+    border-radius: 2rpx;
+}
+
+.dfc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fs40 {
+    font-size: 40rpx;
+    font-weight: bold;
+    margin-bottom: 20rpx;
+}
+
+.fs30 {
+    font-size: 30rpx;
+}
+
+.bingshi {
+    background: #fff;
+    border-radius: 30rpx;
+    width: 95%;
+    margin: 0 auto;
+    position: relative;
+    top: -44rpx;
+}
+
+.title {
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 24rpx 0;
+}
+
+.title::before {
+    content: '';
+    width: 10rpx;
+    height: 32rpx;
+    background: rgb(0,136,224);
+    display: block;
+    margin-right: 24rpx;
+    border-radius: 20rpx;
+}
+
+.pd24 {
+    padding: 0 24rpx;
+}
+
+.bingshiitem {
+    padding: 24rpx 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2rpx solid #eaeaea;
+}
+
+.fs28 {
+    font-size: 28rpx;
+}
+
+.c9 {
+    color: #999;
+}
+
+.c3 {
+    color: #333;
+}

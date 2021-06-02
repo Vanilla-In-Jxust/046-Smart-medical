@@ -1,0 +1,15 @@
+<view class="ask-guide-header-title">快捷服务</view>
+<view class="single-image-container">
+    <image class="single-image" mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/3370449695519609444-22.png?sign=96e678d9fb8d5b186200806ebe5d958e&t=1584871823"></image>
+</view>
+<view class="ask-content">
+    <view bindtap="fastnavigate" class="ask-box-des" data-id="{{item.id}}" data-ser_key="{{item.server_key}}" data-tit="{{item.titles}}" data-url="{{item.ser_url}}" wx:for="{{types}}" wx:key="a">
+        <image class="ask-box-img" src="{{item.pluginimgs}}"></image>
+        <view class="ask-box-text">
+            <text class="ask-box-des-title">{{item.titles}}</text>
+            <text class="ask-box-des-detail">{{item.serh_ftitle}}</text>
+        </view>
+    </view>
+</view>
+<import src="../../../template/template.wxml"></import>
+<template is="tabBar" data="{{footer:footer}}"></template>

@@ -1,0 +1,26 @@
+<view class="box">
+    <view class="scroll">
+        <view class="tab_box">
+            <view bindtap="tabChose" class="tab {{tabIndex==0?'active':''}}" data-index="0" data-zx_id="">全部</view>
+            <view bindtap="tabChose" class="tab {{tabIndex==index+1?'active':''}}" data-index="{{index+1}}" data-zx_id="{{item.zx_id}}" wx:for="{{tabList}}">{{item.zx_name}}</view>
+        </view>
+    </view>
+    <view class="serve">
+        <block wx:if="{{zixun.length!=0}}">
+            <view class="serve-bottom" wx:for="{{zixun}}" wx:key="key">
+                <view bindtap="btdetail" class="bsbb pl10 pr10" data-id="{{item.id}}" data-p_id="{{item.p_id}}" data-zid="{{item.zid}}">
+                    <view class="dfcc">
+                        <view class="leftBox">
+                            <view class="list-title2 p0 text-overs">{{item.title}}</view>
+                            <view class="list-title2 p0 {{item.title.length>14?'text-overs1':'text-overs'}}" style="font-size:26rpx;color:#999;">{{item.content}}</view>
+                        </view>
+                        <view>
+                            <image mode="aspectFill" src="{{item.thumb}}" style="width:150rpx;height:150rpx;"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </block>
+        <view class="pf wu" wx:if="{{zixun==0}}">暂无数据</view>
+    </view>
+</view>

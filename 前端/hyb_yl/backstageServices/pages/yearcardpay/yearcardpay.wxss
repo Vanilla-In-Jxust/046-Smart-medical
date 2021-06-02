@@ -1,0 +1,199 @@
+page {
+    background: #fff;
+    box-sizing: border-box;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.vipcard {
+    padding: 0 30rpx;
+    background: #fff;
+}
+
+.vip-card {
+    position: relative;
+    height: 360rpx;
+    box-shadow: 0 3rpx 6rpx 0 rgba(0,0,0,0.12);
+    border-radius: 12rpx;
+}
+
+.vipcard-card {
+    padding: 20rpx 0 60rpx;
+}
+
+.vip-card-image {
+    width: 100%;
+    height: 360rpx;
+}
+
+.vip-card-body {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 260rpx;
+}
+
+.vip-card-body .name {
+    position: absolute;
+    left: 40rpx;
+    top: 40rpx;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.05);
+    font-size: 38rpx;
+    line-height: 42rpx;
+}
+
+.vip-card-body .name .card-tag {
+    margin-left: 15rpx;
+}
+
+.vip-card-body .section {
+    position: absolute;
+    left: 40rpx;
+    top: 94rpx;
+    font-size: 26rpx;
+    line-height: 30rpx;
+    color: #fff;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.05);
+    font-weight: 300;
+}
+
+.vip-card-body .section .job {
+    margin-left: 26rpx;
+}
+
+.vip-card-body .price {
+    position: absolute;
+    left: 40rpx;
+    top: 164rpx;
+    color: #fff;
+    font-size: 26rpx;
+}
+
+.vip-card-body .price .now {
+    position: relative;
+    display: inline-block;
+}
+
+.price-now-text {
+    font-size: 50rpx;
+    font-weight: 600;
+    line-height: 54rpx;
+    margin-right: 4rpx;
+}
+
+.price-now-text {
+    font-size: 26rpx;
+    opacity: 0.8;
+    text-decoration: line-through;
+    line-height: 40rpx;
+    margin-right: 4rpx;
+}
+
+.vip-card-body .price .origin {
+    color: #fff;
+    font-weight: 100;
+    font-size: 20rpx;
+    line-height: 24rpx;
+    position: relative;
+    display: inline-block;
+    margin-left: 8rpx;
+}
+
+.vip-card-body-image {
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    top: 30rpx;
+    right: 40rpx;
+}
+
+.vip-card-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100rpx;
+    border-radius: 0 0 12rpx 12rpx;
+}
+
+.vipcard-rights {
+    padding-bottom: 320rpx;
+}
+
+.footer-info {
+    position: absolute;
+    left: 40rpx;
+    top: 42rpx;
+    font-size: 22rpx;
+    line-height: 30rpx;
+    color: #999;
+}
+
+.footer-info-buycard {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 80rpx);
+    color: #ebebeb;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.05);
+}
+
+.footer-info-buycard-stock-text {
+    font-weight: 500;
+    color: #fff;
+}
+
+.vippay-tips-txt {
+    color: #999;
+    font-size: 24rpx;
+}
+
+.vippay-action {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 98rpx;
+}
+
+.vippay-action-price,.vippay-action .button {
+    padding: 30rpx 0;
+    font-size: 32rpx;
+    line-height: 36rpx;
+    text-align: center;
+}
+
+.vippay-action-price {
+    width: 40%;
+    background-color: #fff;
+}
+
+.vippay-action-price .all {
+    color: #666;
+}
+
+.vippay-action-price .number {
+    color: #00ad7f;
+    font-weight: 700;
+}
+
+.vippay-action-pay {
+    flex: 1;
+    background-color: #00c792;
+}
+
+.vippay-action .button {
+    color: #fff;
+}
+
+.vippay-action-price,.vippay-action .button {
+    padding: 30rpx 0;
+    font-size: 32rpx;
+    line-height: 36rpx;
+    text-align: center;
+}

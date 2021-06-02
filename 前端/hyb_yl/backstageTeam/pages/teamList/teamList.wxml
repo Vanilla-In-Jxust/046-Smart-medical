@@ -1,0 +1,89 @@
+<view class="list_head font_si16 font_co333">
+    <view bindtap="tapFun" class="{{currentIndex==1?'active':''}}" data-current="1">我创建的
+  </view>
+    <view bindtap="tapFun" class="{{currentIndex==2?'active':''}}" data-current="2">我加入的
+    <view class="classify_text_red" hidden="{{nonReadBoo}}"></view>
+    </view>
+</view>
+<view style="height: 120rpx;"></view>
+<scroll-view scrollY bindscrolltolower="getMoreMyTeam" class="scroll_view" wx:if="{{currentIndex==1}}">
+    <navigator class="add_view" url="/hyb_yl/backstageTeam/pages/createTeam/createTeam?zid={{zid}}">
+        <text class="font_si16 font_co333">创建新的团队</text>
+        <image class="more_images" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Wtui.png?sign=05b6b1222f343012f65993d5c4db798f&t=1571450602"></image>
+    </navigator>
+    <view class="wz_tablist">
+        <view bindtap="tapFun1" class="wz_tablist1 {{tablistIndex==1?'active1':''}}" data-current="1">线上科室
+      <image class="wz_shanjiao" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/tabsan.jpg?sign=da7a67092fd0cf61f846189de6c61ad1&t=1571450635" wx:if="{{tabshow}}"></image>
+        </view>
+        <view bindtap="tapFun1" class="wz_tablist1 {{tablistIndex==2?'active1':''}}" data-current="2">自由团体
+      <image class="wz_shanjiao1" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/tabsan1.jpg?sign=1fa0938c542dea7cf29439cd23a05dc2&t=1571450651" wx:if="{{tabshow1}}"></image>
+        </view>
+    </view>
+    <view class="list_view {{index!=0?'border_top':''}}" wx:for="{{myTeamList}}" wx:key="{{index}}">
+        <view bindtap="teaminfo" class="wznavigator" data-t_id="{{item.t_id}}" data-teamname="{{item.teamname}}" data-teampic="{{item.teampic}}" data-teamtext="{{item.teamtext}}" data-z_name="{{item.z_name}}" data-z_thumbs="{{item.z_thumbs}}" data-zid="{{zid}}">
+            <image class="list_icon" mode="aspectFill" src="{{item.teampic}}"></image>
+            <view class="list_content">
+                <view class="title_top">
+                    <view class="content_title font_si18 font_co333">{{item.teamname}}</view>
+                </view>
+                <view class="font_si12 font_co999 content_bottom">
+                    <view class="content_bottom_left">
+                        <text>医护人数</text>
+                        <text class="content_bottom_left_right">{{item.docnum.docnum}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="wz_hint">
+            <navigator class="wz" url="/hyb_yl/backstageTeam/pages/notice/notice?t_id={{item.t_id}}&teamname={{item.teamname}}&type=1&managerRole={{item.dnTeamMember.managerRole}}&teampic={{item.teampic}}" wx:if="{{item.unreadNewsQuantity?true:false}}">
+                <text class="font_co3b font_si14 wz">新公告</text>
+            </navigator>
+        </view>
+    </view>
+    <view class="none_team font_si16 font_co999" wx:if="{{myTeamList.length==''}}">暂未创建此类团队</view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBooOne}}">没有更多了~</view>
+</scroll-view>
+<scroll-view scrollY bindscrolltolower="getMoreOtherTeam" class="scroll_view" wx:if="{{currentIndex==2}}">
+    <view bindtap="join" class="add_view">
+        <text class="font_si16 font_co333">寻找新的团队</text>
+        <image class="more_images" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Wtui.png?sign=05b6b1222f343012f65993d5c4db798f&t=1571450602"></image>
+    </view>
+    <view class="wz_tablist">
+        <view bindtap="tapFun2" class="wz_tablist1 {{tablistIndex1==1?'active1':''}}" data-current="1">线上科室
+      <image class="wz_shanjiao" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/tabsan.jpg?sign=da7a67092fd0cf61f846189de6c61ad1&t=1571450635" wx:if="{{tabshow2}}"></image>
+        </view>
+        <view bindtap="tapFun2" class="wz_tablist1 {{tablistIndex1==2?'active1':''}}" data-current="2">自由团体
+      <image class="wz_shanjiao1" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/tabsan1.jpg?sign=1fa0938c542dea7cf29439cd23a05dc2&t=1571450651" wx:if="{{tabshow12}}"></image>
+        </view>
+    </view>
+    <view class="list_view {{index!=0?'border_top':''}}" wx:for="{{joinTeamList}}" wx:key="{{index}}">
+        <view bindtap="teaminfo" class="wznavigator" data-t_id="{{item.t_id}}" data-teamname="{{item.teamname}}" data-teampic="{{item.teampic}}" data-teamtext="{{item.teamtext}}" data-yao_type="{{item.yao_type}}" data-z_name="{{item.z_name}}" data-z_thumbs="{{item.z_thumbs}}" data-zid="{{zid}}">
+            <image class="list_icon" mode="aspectFill" src="{{item.teampic}}"></image>
+            <view class="list_content">
+                <view class="title_top">
+                    <view class="content_title font_si18 font_co333">{{item.teamname}}</view>
+                </view>
+                <view class="font_si12 font_co999 content_bottom">
+                    <view class="content_bottom_left">
+                        <text>医护人数</text>
+                        <text class="content_bottom_left_right">{{item.docnum.docnum}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="wz_hint">
+            <navigator class="wz" url="/hyb_yl/backstageTeam/pages/notice/notice?teamId={{item.teamId}}&teamName={{item.teamName}}&type=1&managerRole={{item.dnTeamMember.managerRole}}&teamimg={{item.teamHeaderUrl}}" wx:if="{{item.unreadNewsQuantity?true:false}}">
+                <text class="font_co3b font_si14 wz">新公告</text>
+            </navigator>
+            <view class="wz_Isnotset" wx:if="{{item.yao_type==3}}">申请中</view>
+        </view>
+    </view>
+    <view class="none_team font_si16 font_co999" wx:if="{{!joinTeamList}}">暂未加入团队</view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBooTwo}}">没有更多了~</view>
+</scroll-view>

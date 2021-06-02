@@ -1,0 +1,59 @@
+<navigator class="said_title" url="{{gotoUrl}}?sourceType=1&zid={{zid}}">
+    <text class="font_si16 font_co333">已选择患者</text>
+    <view class="patients_number font_si14 font_co999">
+        <view wx:if="{{count>0}}">共{{count}}人</view>
+        <view wx:if="{{count==0}}">未选择</view>
+    </view>
+    <image class="patient_more_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Wtui.png?sign=fd5b45867543e620dc7b2ba57fca1e2d&t=1577674639" wx:if="{{count>0}}"></image>
+</navigator>
+<view class="said_content">
+    <view class="said_textarea" wx:if="{{currenttype==1}}">
+        <textarea bindinput="getText" bindlinechange="bindlinechange" class="textarea" maxlength="200" placeholder="输入文字（最多200字）" placeholderStyle="font_si18 font_coccc" showConfirmBar="" style="height: {{textareaHeight}}rpx;" value="{{monentIdeaText}}"></textarea>
+    </view>
+    <view class="said_textarea" wx:if="{{currenttype==2}}">
+        <view class="voice_view">
+            <image catchtouchend="touchend" catchtouchstart="touchstart" class="voice_image {{voiceFlag?'scale_animation':''}}" src="/assets/images/voice.png" wx:if="{{!soundFlag}}"></image>
+            <view class="sound_view_view" wx:if="{{soundFlag}}">
+                <view catchtap="toPlay" class="sound_view">
+                    <view class="sound_view_left"></view>
+                    <image class="sound_img {{playFlag?'sound_animation':''}}" src="/assets/images/sound.png"></image>
+                </view>
+                <view class="time_view font_co999 font_si14">{{time}}"</view>
+                <view catchtap="againBtn" class="again_btn font_si16">重录</view>
+            </view>
+        </view>
+    </view>
+    <view class="said_content_tap font_si16 font_co333">
+        <view bindtap="tapSaidType" class="said_content_tap_text {{saidtype==1?'said_content_tap_active':''}}" data-saidtype="1">图片</view>
+        <view bindtap="tapSaidType" class="said_content_tap_text {{saidtype==2?'said_content_tap_active':''}}" data-saidtype="2">患教</view>
+    </view>
+    <view class="said_type" wx:if="{{saidtype==1}}">
+        <view class="said_type_img_view" wx:for="{{imgArr}}" wx:key="{{index}}">
+            <image catchtap="previewImage" class="said_type_img" data-url="{{item}}" mode="aspectFill" src="{{item}}"></image>
+            <view class="public_white icon_view">
+                <icon catchtap="delImage" class="img_icon" color="red" data-index="{{index}}" size="18" type="clear"></icon>
+            </view>
+        </view>
+        <view bindtap="chooseImage" class="said_type_add_img said_type_img" wx:if="{{!addImgFlag}}">+</view>
+    </view>
+    <navigator class="said_type_article" url="/hyb_yl/backstageLife/pages/chooseSaid/chooseSaid?zid={{zid}}" wx:if="{{saidtype==2&&hjlistinfo}}">
+        <view class="said_type_article_left font_si16 font_co333">
+            <view class="said_type_article_left_top">{{hjlistinfo.h_title}}</view>
+            <view class="said_type_article_left_bottom font_si12 font_co999">
+                <text>{{hjlistinfo.h_admin}}</text>
+                <text class="said_type_article_left_bottom_time">{{hjlistinfo.sfbtime}}</text>
+                <text>{{hjlistinfo.nmType?hjlistinfo.nmType:hjlistinfo.collectModule}}</text>
+            </view>
+        </view>
+        <view class="said_type_article_img_view said_type_article_img">
+            <image class="said_type_article_img" src="{{hjlistinfo.h_pic}}"></image>
+            <view class="said_type_article_imgview_absolute said_type_article_img" wx:if="{{hjlistinfo.eduType==2}}">
+                <image class="vd_img" src="/assets/images/vd.png"></image>
+            </view>
+        </view>
+    </navigator>
+    <view class="said_type_article" style="justify-content: center;" wx:if="{{saidtype==2&&!hjlistinfo}}">
+        <navigator class="said_type_add_img said_type_img" style="margin: 0;" url="/hyb_yl/backstageLife/pages/chooseSaid/chooseSaid?zid={{zid}}">+</navigator>
+    </view>
+</view>
+<view bindtap="publishBtn" class="save">立即发表</view>

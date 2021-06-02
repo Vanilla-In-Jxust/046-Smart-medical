@@ -1,0 +1,62 @@
+<view wx:if="{{cartInfos}}">
+    <view class="padding">
+        <image class="img" src="/assets/images/796.png"></image>
+        <view style="flex: 1;">
+            <view class="flex">
+                <view class="font30 name">治疗胃癌</view>
+                <view>
+                    <text class="sign">￥</text>
+                    <text class="price font30">20000</text>
+                    <text class="sign">.00</text>
+                </view>
+            </view>
+            <view class="flex">
+                <view class="font30">小花</view>
+                <view class="font30">123456789</view>
+            </view>
+            <view class="font30 address">山西 太原 山西大医院</view>
+            <view class="font30">2018-12-12 08:00-09:00</view>
+        </view>
+    </view>
+    <view class="site-matter">
+        <text class="site-matter-text font_co333">付款方式</text>
+        <text class="site-matter-text1">微信支付</text>
+    </view>
+    <navigator class="site-matter-a" url="/hyb_yl/shopsub/pages/bill/bill">
+        <text class="site-matter-text font_co333">发票信息</text>
+        <view>
+            <view class="site-matter-texta1">{{TypeName}}
+        <image class="site-matter-texta-img" src="/assets/shop_images/more01.png"></image>
+            </view>
+        </view>
+    </navigator>
+    <view class="site-matter-b">
+        <view class="site-matter-b-text font_co333">留 言</view>
+        <textarea bindinput="visitorsBook" bindlinechange="bindlinechange" class="font_co333 site-matter-b-input" placeholder="请输入您的留言" style="height: {{height}}rpx;"></textarea>
+    </view>
+    <view class="mg_top10"></view>
+    <view class="total">
+        <text class="font_co333 font_si14">商品总额</text>
+        <text class="font_si14 font_cofa6">￥{{inTotal/100}}</text>
+    </view>
+    <view class="public_line"></view>
+    <view wx:if="{{integraldVo}}">
+        <view class="public_line"></view>
+        <view class="total">
+            <text class="font_co333 font_si14">积分折现</text>
+            <text class="font_si14 font_cofa6">-￥{{reduceMoney/100}}</text>
+        </view>
+        <view class="public_line"></view>
+        <view class="total">
+            <text class="font_co333 font_si14" wx:if="{{switchFlag}}">用{{integral}}积分兑换{{reduceMoney/100}}元</text>
+            <text class="font_co333 font_si14" wx:if="{{!switchFlag}}">是否使用积分</text>
+            <switch bindchange="switchChange" checked="{{switchFlag}}"></switch>
+        </view>
+    </view>
+    <view class="foor-a"></view>
+    <view class="foor">
+        <text class="font_co333">应付金额 : </text>
+        <text class="foot-text">￥{{totalPrice?(totalPrice+postFee-reduceMoney)/100:'0'}}</text>
+        <view bindtap="clickUrl" class="foot-tj">提交订单</view>
+    </view>
+</view>

@@ -1,0 +1,33 @@
+view {
+    box-sizing: border-box;
+}
+
+.box {
+    padding: 24rpx;
+}
+
+.list {
+    padding: 24rpx;
+    background: #fff;
+    border-radius: 50rpx;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2rpx solid #eaeaea;
+    padding: 24rpx 0;
+    font-size: 30rpx;
+    color: #333;
+    white-space: nowrap;
+}
+
+.df {
+    display: flex;
+    align-items: center;
+}
+
+.item:last-child {
+    border-bottom: 0;
+}

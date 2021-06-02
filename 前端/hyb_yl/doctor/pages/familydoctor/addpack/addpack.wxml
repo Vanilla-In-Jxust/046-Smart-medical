@@ -1,0 +1,124 @@
+<view>
+    <view class="oval">
+        <view class="packlist">
+            <view class="packtitle">上传服务包缩略图</view>
+            <view class="packright">
+                <view bindtap="takePictures" class="cameImg" wx:if="{{attendSuccessImg==''}}">
+                    <image src="/images/camera.png"></image>
+                </view>
+                <view class="packImg" wx:if="{{attendSuccessImg!=''}}">
+                    <image src="{{attendSuccessImg}}"></image>
+                </view>
+            </view>
+        </view>
+        <view class="cont">
+            <view class="contlist">
+                <view class="contlistbox">
+                    <view class="listLeft">选择人群</view>
+                    <view class="listRight">
+                        <view bindtap="choosecrowd" class="throng">
+                            <input disabled="true" placeholder="请选择人群" placeholderStyle="color:#999" type="text" value="{{people}}"></input>
+                        </view>
+                        <view class="arrowImg">
+                            <image src="/images/arrowImg.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="contlist">
+                <view class="contlistbox">
+                    <view class="listLeft">服务包标题</view>
+                    <view class="listRight">
+                        <view class="throng">
+                            <input bindinput="title" placeholder="请输入服务包标题" placeholderStyle="color:#999" type="text" value="{{title}}"></input>
+                        </view>
+                        <view class="arrowImg">
+                            <image src="/images/arrowImg.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="contlist">
+                <view class="contlistbox">
+                    <view class="listLeft">服务包介绍</view>
+                    <view class="listRight">
+                        <view class="throng">
+                            <input bindtap="packinfo" placeholder="请描述服务包介绍" placeholderStyle="color:#999" type="text" value="{{packinfo}}"></input>
+                        </view>
+                        <view class="arrowImg">
+                            <image src="/images/arrowImg.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="contlist">
+                <view class="contlistbox">
+                    <view class="listLeft">服务包价格</view>
+                    <view class="listRight">
+                        <view class="throng">
+                            <input bindinput="packprice" placeholder="请输入服务包价格" placeholderStyle="color:#999" type="text" value="{{packprice}}"></input>
+                        </view>
+                        <view class="arrowImg">
+                            <image src="/images/arrowImg.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="contlist">
+                <view class="period">
+                    <view class="listLeft">有效期</view>
+                    <view class="listRight">
+                        <view bindtap="switchTime" class="throng">
+                            <input disabled="true" placeholder="请选择有效期" placeholderStyle="color:#999" type="text" value="{{timecont}}"></input>
+                        </view>
+                        <view class="arrowImg">
+                            <image src="/images/arrowImg.png"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="dredgebox">
+            <view class="dre">
+                <view class="dre_left">是否开通服务包</view>
+                <view class="dre_right">
+                    <switch checked bindchange="whether" colo="#5CC9AC"></switch>
+                </view>
+            </view>
+        </view>
+        <view class="footbox">
+            <view bindtap="question" class="add">
+                <view class="addImg">
+                    <image src="/images/addpack.png"></image>
+                </view>
+        确认添加
+      </view>
+        </view>
+    </view>
+</view>
+<view class="choosebox {{mask?'show':'hide'}}">
+    <view class="crowdbox">
+        <view class="choosetitle">选择人群</view>
+        <view class="crowdcenter">
+            <view catchtap="crowdbtn" class="crowlist {{current==index?'crowlist_active':''}}" data-id="{{index}}" wx:for="{{crowd}}" wx:key="*this">
+                <view>{{item.title}}</view>
+                <view class="{{current==index?'show':'hide'}}">
+                    <image class="pitch" src="/images/pitch.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="choosebox {{time?'show':'hide'}}">
+    <view class="crowdbox">
+        <view class="choosetitle">选择人群</view>
+        <view class="crowdcenter">
+            <view catchtap="timebtn" class="crowlist {{timeindex==index?'crowlist_active':''}}" data-id="{{index}}" wx:for="{{timelist}}" wx:key="*this">
+                <view>{{item.time}}</view>
+                <view class="{{timeindex==index?'show':'hide'}}">
+                    <image class="pitch" src="/images/pitch.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

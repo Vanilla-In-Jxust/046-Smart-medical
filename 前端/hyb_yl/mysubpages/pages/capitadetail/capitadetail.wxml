@@ -1,0 +1,37 @@
+<view class="capita-list">
+    <view class="capita-item" wx:for="{{list}}">
+        <view class="capita-top">
+            <view>时间：{{item.created}}</view>
+            <view class="capita-state">{{item.title}}</view>
+        </view>
+        <view class="capita-infor">
+            <view class="capita-infor-le">
+                <image src="{{item.u_thumb}}"></image>
+                <view class="capita-in-t">
+                    <view class="capita-la">{{item.u_name}}
+           </view>
+                    <view class="capita-ordernum">订单号：{{item.back_orser}}</view>
+                </view>
+            </view>
+            <view class="capita-price">
+                <view class="price">￥{{item.money}}</view>
+                <view>分成金额</view>
+            </view>
+        </view>
+        <view class="capita-sm">说明：该{{item.title}}包含流量费用</view>
+        <view class="capita-pri-list">
+            <view class="capita-pri-item">
+                <view class="price">￥{{item.old_money}}</view>
+                <view>订单金额</view>
+            </view>
+            <view class="capita-pri-item">
+                <view class="price">￥{{item.money}}</view>
+                <view>实际金额</view>
+            </view>
+            <view class="capita-pri-item">
+                <view class="price">￥{{item.fee}}</view>
+                <view>平台分成</view>
+            </view>
+        </view>
+    </view>
+</view>

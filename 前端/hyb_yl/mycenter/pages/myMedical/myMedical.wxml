@@ -1,0 +1,14 @@
+<view class="medical-con" wx:for="{{medical}}">
+    <view class="medical-item" wx:for="{{item.hjlist}}" wx:for-item="items" wx:key="index">
+        <view class="medi-le">
+            <view class="medi-tit">{{items.h_title}}</view>
+            <view class="medi-infor">
+                <image class="pho-img" src="{{items.advertisement}}"></image>
+                <view>{{items.z_name?items.z_name:''}}</view>
+                <view>{{items.name?items.name:''}}</view>
+                <view class="medi-time">{{items.created}}发布</view>
+            </view>
+        </view>
+        <image class="medi-pho" src="{{items.h_pic}}"></image>
+    </view>
+</view>

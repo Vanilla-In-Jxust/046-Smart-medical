@@ -1,0 +1,32 @@
+<view class="box">
+    <view class="rule">
+        <view class="fs28 c3">订阅消息说明</view>
+        <view class="fs24 c9">订阅次数表示你还能收到多少条消息</view>
+    </view>
+    <view class="cont">
+        <view>
+            <view>授权订阅消息</view>
+        </view>
+        <view bindtap="addNum" class="btn">订阅</view>
+    </view>
+    <view class="cont">
+        <view>
+            <view>授权体检订阅消息</view>
+        </view>
+        <view bindtap="addNumtij" class="btn">订阅</view>
+    </view>
+    <view class="cont">
+        <view>
+            <view>用户签约消息提醒</view>
+            <view class="fs24 c9">可接受{{qianynum}}条消息</view>
+        </view>
+        <view bindtap="addNum2" class="btn" data-key="qianynum">订阅 +1</view>
+    </view>
+    <view class="cont">
+        <view>
+            <view>提现审核结果通知</view>
+            <view class="fs24 c9">可接受{{tixiannum}}条消息</view>
+        </view>
+        <view bindtap="addNum3" class="btn" data-key="tixiannum">订阅 +1</view>
+    </view>
+</view>

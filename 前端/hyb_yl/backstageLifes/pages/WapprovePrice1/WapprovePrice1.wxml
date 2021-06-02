@@ -1,0 +1,34 @@
+<view class="option">
+    <view bindtap="option" class="optionName {{stype=='专家坐诊'?'selected':''}}" id="专家坐诊">专家坐诊</view>
+    <view bindtap="option" class="optionName {{stype=='手术快约'?'selected':''}}" id="手术快约">手术快约</view>
+    <view bindtap="option" class="optionName {{stype=='点名会诊'?'selected':''}}" id="点名会诊">点名会诊</view>
+</view>
+<view class="padding"></view>
+<scroll-view scrollY style="height:{{Height}}px;">
+    <view class="details" wx:for="{{people}}" wx:key=" index">
+        <view bindtap="personal" class="detailsAvatar">
+            <image class="Avatar" src="{{item.u_thumb}}"></image>
+        </view>
+        <view bindtap="personal" class="information">
+            <view>
+                <text class="name">{{item.name}}</text>
+                <image class="gender" src="{{item.mysex=='女'?'/assets/images/nva.png':'/assets/images/nana.png'}}"></image>
+                <text class="age">{{item.myage}}岁</text>
+            </view>
+            <view class="phoneNumber">
+                <view catchtap="dialOut" class="phoneNumberSize" data-phoneNumber="{{item.myphone}}">联系电话 {{item.myphone}}</view>
+            </view>
+            <view class="specificTime flex">
+                <text>预约时间</text>
+                <view class="specificTimes">{{item.tttime}}</view>
+            </view>
+        </view>
+        <view class="labels" wx:if="{{item.ifover==0}}">
+            <view bindtap="overdz" class="label" data-fu_id="{{item.fu_id}}">确定到诊</view>
+        </view>
+        <view class="labels" wx:else>
+            <view bindtap="overdz" class="label" data-fu_id="{{item.fu_id}}">已到诊</view>
+        </view>
+    </view>
+</scroll-view>
+<my-none none="{{none}}" wx:if="{{people.length==0}}"></my-none>

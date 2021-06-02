@@ -1,0 +1,91 @@
+<view class="fixed_top">
+    <view class="z_index">
+        <view>
+            <view class="mg_top10"></view>
+            <view class="search_view height_96 public_white font_co333 font_si16 center">
+                <image class="serach_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/4.gif?sign=3f183d793dbcf0c5e249f82217488dcf&t=1571453707"></image>
+                <input bindinput="changeInput" class="search" placeholder="请输入医生姓名、医院、科室、擅长查找" placeholderClass="font_coccc font_si" type=""></input>
+            </view>
+            <view class="height_88 public_white font_co333 font_si14 center scope_view">
+                <view bindtap="select" class="center scope" data-id="1">
+                    <text class="choose_name {{selectIndex==1?'font_co3b':''}}">{{regionName}}</text>
+                    <image class="city_img" src="{{selectIndex==1?'/assets/images/up_3b.png':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/down01.png?sign=f9535f6a80c1a29ba3ed4b2194f667c9&t=1571453729'}}"></image>
+                </view>
+                <view bindtap="select" class="center hospital_scope" data-id="3">
+                    <text class="hospital_name {{selectIndex==3?'font_co3b':''}}">{{hospitalName}}</text>
+                    <image class="city_img" src="{{selectIndex==3?'/assets/images/up_3b.png':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/down01.png?sign=f9535f6a80c1a29ba3ed4b2194f667c9&t=1571453729'}}"></image>
+                </view>
+                <view bindtap="select" class="center scope" data-id="2">
+                    <text class="choose_name {{selectIndex==2?'font_co3b':''}}">{{sectionName}}</text>
+                    <image class="city_img" src="{{selectIndex==2?'/assets/images/up_3b.png':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/down01.png?sign=f9535f6a80c1a29ba3ed4b2194f667c9&t=1571453729'}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="change_area public_white font_si14 font_co333 {{selectIndex==1?'slidown':isShow?'slidup':''}} {{qyshow?'disappear':''}}">
+        <view class="province">
+            <view bindtap="selectPartsAll" class="province_view" data-index="-1">区域</view>
+            <view bindtap="selectParts" class="province_view {{provinceIndex==index?'province_active':''}}" data-id="{{item.id}}" data-index="{{index}}" data-province="{{item.province}}" wx:for="{{provinceList}}" wx:key="{{ index }}">{{item.province}}</view>
+        </view>
+        <view class="city">
+            <view bindtap="selectCity" class="city_view {{cityIndex==index?'city_active':''}}" data-city="{{item.city}}" data-index="{{index}}" wx:for="{{cityList}}" wx:key="{{ index }}">{{item.city}}</view>
+        </view>
+    </view>
+    <view class="change_hospital public_white font_si14 font_co333 {{selectIndex==3?'slidown':isShow?'slidup':''}} {{pxshow?'disappear':''}}">
+        <view class="hospital_text">
+            <view bindtap="selectHosptalAll" class="{{hospitalIndex=='-1'?'hospital_active':''}}" data-hospital="{{item}}" data-index="-1">所有医院</view>
+            <view bindtap="selectHosptal" class="{{hospitalIndex==index?'hospital_active':''}}" data-hospital="{{item.name}}" data-index="{{index}}" wx:for="{{hospitalList}}" wx:key="{{ index }}">{{item.name}}</view>
+        </view>
+    </view>
+    <view class="change_office public_white font_si14 font_co333 {{selectIndex==2?'slidown':isShow?'slidup':''}} {{nzshow?'disappear':''}}">
+        <view class="office_text">
+            <view bindtap="selectSectionAll" class="{{sectionIndex=='-1'?'hospital_active':''}}" data-index="-1" data-section="{{item}}">所有科室</view>
+            <view bindtap="selectSection" class="{{sectionIndex==index?'hospital_active':''}}" data-index="{{index}}" data-section="{{item}}" wx:for="{{codeData}}" wx:key="{{ index }}">{{item}}</view>
+        </view>
+    </view>
+</view>
+<scroll-view bindscrolltolower="getMore" class="scroll-view public_white" scrollY="true">
+    <view wx:for="{{zhuanjia}}" wx:key="{{ index }}">
+        <navigator class="public_white" url="/hyb_yl/backstageOther/pages/intro/intro?zid={{item.zid}}&jobType={{jobType}}&arr={{arr}}">
+            <view class="mg_top10" wx:if="{{index!=0}}"></view>
+            <view class="doctor_view">
+                <view class="doctor_view_right">
+                    <image class="doctor_img" mode="aspectFill" src="{{item.z_thumbs}}"></image>
+                    <view class="font_si14 font_co999 name_view">
+                        <view class="nmHospital">
+                            <view class="img_right">
+                                <text class="font_co333 name_text font_si16">{{item.z_name}}</text>
+                                <text class="font_co333">{{item.z_zhiwu}}</text>
+                                <view class="shop_view font_cofa6 font_si12" wx:if="{{item.doctor.activeFlag==0}}">停业中</view>
+                            </view>
+                            <view class="font_si12 font_co666  be_good">
+                                <text class="job">{{item.doctor.jobType==1?'[医生]':''}}</text>
+                                <text class="hospital_view">{{item.z_yiyuan}}</text>
+                                <text class="font_co333">{{item.name}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="font_si14 sign">邀请</view>
+                </view>
+                <view class="font_si12 font_co999 sign_number">
+                    <view>
+                        <text>签约人数</text>
+                        <text class="people_number font_co3b">{{item.helpnum}}</text>
+                    </view>
+                    <view>
+                        <text>服务次数</text>
+                        <text class="people_number font_co3b">{{item.helpnum}}</text>
+                    </view>
+                </view>
+                <view class="font_si12 font_co666 be_good_cotent text-overflow">
+                    <text class="font_co333">擅长：</text>{{item.z_zhenzhi}}</view>
+            </view>
+        </navigator>
+    </view>
+    <view class="noData font_si18 font_co333" wx:if="{{noDataBoo}}">未找到相关信息，请重新查找~</view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <image class="loading" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/loading.gif?sign=f0b626c0b988a71132887f82b90b2054&t=1571453752"></image>
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">没有更多了~</view>
+</scroll-view>

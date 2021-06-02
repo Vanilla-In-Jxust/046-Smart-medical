@@ -1,0 +1,13 @@
+<view bindtap="commodity" class="frame" data-sid="{{item.sid}}" wx:for="{{fuwu}}" wx:key="index">
+    <view class="notice">
+        <image class="img" src="{{item.suoltu}}"></image>
+        <view class="satisfied">满意:{{item.satisfied}}% </view>
+        <view class="purchase">已购买:{{item.about}}人</view>
+        <view class="silhouette"></view>
+        <view class="title">{{item.sname}}</view>
+    </view>
+    <view class="money">
+        <text class="sign">￥</text>
+        <text class="price">{{item.smoney}}</text>
+    </view>
+</view>

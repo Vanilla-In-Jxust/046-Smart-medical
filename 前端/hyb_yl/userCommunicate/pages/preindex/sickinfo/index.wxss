@@ -1,0 +1,176 @@
+page {
+    width: 100%;
+    min-height: 100vh;
+    background: white;
+}
+
+.top {
+    padding: 10rpx 20px;
+    color: #c17a64;
+    font-size: 24rpx;
+    background: #fbf6d6;
+}
+
+.oval {
+    padding: 0rpx 15rpx;
+}
+
+.registList {
+    padding: 25rpx 10rpx;
+    border-bottom: 1rpx solid #efefef;
+}
+
+.sickname {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sickname .sickLeft {
+    font-size: 34rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.bi {
+    color: #db3535;
+    font-size: 28rpx;
+    padding-left: 10rpx;
+}
+
+.choosePatient {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.choosePatient text {
+    font-size: 30rpx;
+    color: #787877;
+    white-space: nowrap;
+    font-weight: bold;
+}
+
+.choosePatient image {
+    width: 30rpx;
+    height: 30rpx;
+    padding-left: 10rpx;
+}
+
+.registbox {
+    width: 100%;
+    height: 70rpx;
+    margin-top: 10rpx;
+}
+
+.registbox input {
+    width: 100%;
+    height: 100%;
+    font-size: 32rpx;
+}
+
+.questionBox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.unselected {
+    border: 1rpx solid #ccc;
+    color: #ccc;
+}
+
+.ptich_active {
+    border: 1rpx solid #0089df;
+    color: #0089df;
+}
+
+.chosesex_active {
+    border: 1rpx solid #0089df;
+    color: #0089df;
+}
+
+.chosesex radio,.qustionList checkbox {
+    display: none;
+}
+
+.label {
+    margin-left: 10rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.qustionList {
+    text-align: center;
+    white-space: nowrap;
+    padding: 10rpx 20rpx;
+    font-size: 26rpx;
+    margin-top: 15rpx;
+    margin-right: 15rpx;
+    border-radius: 40rpx;
+}
+
+.chosesex {
+    text-align: center;
+    white-space: nowrap;
+    font-size: 26rpx;
+    margin-top: 15rpx;
+    margin-right: 15rpx;
+    border-radius: 40rpx;
+    width: 90rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+}
+
+.chosesex.active {
+    font-size: 26rpx;
+    margin-top: 15rpx;
+    margin-right: 15rpx;
+    border-radius: 40rpx;
+    width: 90rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: center;
+    white-space: nowrap;
+    border: 1rpx solid #0089df;
+}
+
+.text {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.chosesex.active .text {
+    color: #0089df;
+    font-size: 14px;
+}
+
+.userinfo {
+    color: #c8171f;
+    font-weight: bold;
+    font-size: 28rpx;
+}
+
+button {
+    background: #4fa4f4;
+    width: 100%;
+    position: fixed;
+    left: 0rpx;
+    bottom: 0rpx;
+    border: 0;
+    color: white;
+    border-radius: 0;
+    height: 100rpx;
+    line-height: 100rpx;
+    z-index: 111;
+}
+
+button::after {
+    border-radius: 0;
+    color: #FFFFFF!important;
+}
+
+.buttonAfter {
+    color: #FFFFFF;
+}

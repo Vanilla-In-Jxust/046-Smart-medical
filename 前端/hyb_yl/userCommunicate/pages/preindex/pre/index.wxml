@@ -1,0 +1,123 @@
+<view class="page_all {{pagescroll?'pagea_activ':''}}">
+    <view class="hint">
+        <text>请详细填写详细，便于医生了解情况</text>
+    </view>
+    <view class="all">
+        <form bindreset="formReset" bindsubmit="formSubmit">
+            <view class="patientIntr df fdc c3">
+                <view class="PatientIntr_list df aic jcsb">
+                    <label class="fs26 c3">患者姓名:</label>
+                    <view class="df aic jcsb fs26 pl20" style="flex:1;">
+                        <input disabled bindtap="selectuser" name="names" placeholder="请选择患者" style="flex:1;" value="{{names}}"></input>
+                        <image class="arrowImg" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/ic_arrow_gray_right2x.png?sign=95aea39227ee7d584fe6dfb526272dbe&t=1568770727"></image>
+                    </view>
+                </view>
+                <view class="PatientIntr_list df aic jcsb">
+                    <label class="fs26 c3">联系方式:</label>
+                    <view class="df aic jcsb fs26 pl20" style="flex:1;">
+                        <input name="tel" placeholder="输入联系号码" style="flex:1" type="number" value="{{tel}}"></input>
+                    </view>
+                </view>
+                <view class="PatientIntr_list df aic jcsb" style="border-bottom:none;">
+                    <label class="fs26 c3">所在城市:</label>
+                    <view class="df aic jcsb fs26 pl20" style="flex:1;">
+                        <picker bindchange="changeRegin" mode="region" value="{{region}}">
+                            <view>{{region[0]}} - {{region[1]}} - {{region[2]}}</view>
+                        </picker>
+                        <image class="arrowImg" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/ic_arrow_gray_right2x.png?sign=95aea39227ee7d584fe6dfb526272dbe&t=1568770727"></image>
+                    </view>
+                </view>
+            </view>
+            <view style="background:#FFFFFF; border-radius:10rpx;margin-top:10rpx">
+                <view class="two">
+                    <view class="PatientIntr_list fs30 fwb c3">疾病诊断</view>
+                    <view class="two_center" wx:if="{{sick_items.length>0}}">
+                        <checkbox-group bindchange="sickChange">
+                            <label class="checkbox" wx:for="{{sick_items}}" wx:key="index">
+                                <view catchtap="center" class="label_l" data-index="{{index}}">
+                                    <checkbox checked="{{item.checked}}" value="{{item.name}}"></checkbox>{{item.value}}
+                  </view>
+                                <view catch:tap="del" class="label_r" data-index="{{index}}">
+                                    <image mode="aspectFit" src="/hyb_yl/images/del_01.png"></image>
+                                    <text>删除</text>
+                                </view>
+                            </label>
+                        </checkbox-group>
+                    </view>
+                    <view class="two_down fs30">
+                        <text catch:tap="showsickm">+添加新疾病</text>
+                    </view>
+                </view>
+                <view class="diag">
+                    <view class="PatientIntr_list fs30 fwb c3" style="border:none">病情主诉</view>
+                    <view class="c9 fs26 pb20">还有什么要对医生说的，如发病诱因，症状，病情加重或缓解情况，家族史等等，可以在这里补充</view>
+                    <textarea bindinput="bingzs" class="textbox" disabled="{{textkey}}" placeholder="输入病情"></textarea>
+                    <view class="PatientIntr_list df aic jcsb" style="border:none">
+                        <label class="fs26 c3">手术医院:</label>
+                        <view class="df aic jcsb fs26 pl20" style="flex:1;">
+                            <input name="hospitalname" placeholder="填写医院名称"></input>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="five fs26 c3">
+                <view>
+                    <text>术前检查资料</text>
+                    <text style="color:red">(至少1张)</text>
+                </view>
+                <view>
+                    <view class="img-item" wx:for="{{img}}" wx:key="index">
+                        <image data-index="{{index}}" mode="aspectFill" name="imgs" src="{{item}}"></image>
+                        <image catchtap="downimg" class="delicon" data-index="{{index}}" mode="aspectFit" src="/hyb_yl/images/close.png"></image>
+                    </view>
+                    <image bindtap="uploadimg" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/tianjiatu.jpg?sign=69e012faccb5061e4fd0dfac56ba2a24&t=1571479509"></image>
+                </view>
+            </view>
+            <view class="six fs26 c3">
+                <view>
+                    <text>患者其他情况</text>
+                    <text style="color:red">（选填）</text>
+                </view>
+                <view>
+                    <checkbox-group bindchange="checkboxChange">
+                        <label class="checkbox" wx:for="{{items}}" wx:key="index">
+                            <checkbox checked="{{item.checked}}" value="{{item.name}}"></checkbox>{{item.value}}
+            </label>
+                    </checkbox-group>
+                    <input name="othersick" placeholder="其他慢性疾病"></input>
+                </view>
+            </view>
+            <view style="width:100%;height:110rpx;margin-top:20rpx;background:#f0f0f0"></view>
+            <view class="posfix">
+                <view class="posfix_l">
+                    <view>
+                        <text>预约费用</text>
+                        <text>(不含手术费)</text>
+                    </view>
+                    <view>
+                        <text>{{money}}元</text>
+                    </view>
+                </view>
+                <view class="posfix_r" style="background-color:{{bgc}}">
+                    <button plain formType="submit" openType="submit">
+            提交
+          </button>
+                </view>
+            </view>
+        </form>
+        <view catchtouchmove="{{true}}" class="sick_mask" hidden="{{sickm_key}}">
+            <view class="sickm_all">
+                <view>
+                    <text>添加疾病名称/症状</text>
+                </view>
+                <view>
+                    <textarea bindinput="getarea" value="{{textarea}}"></textarea>
+                </view>
+                <view>
+                    <button catchtap="sickmask2" data-index="0" formType="reset" style="color:{{bgc}};border:solid 1px {{bgc}};">取消</button>
+                    <button catchtap="sickmask" data-index="1" formType="reset" style="background:{{bgc}}">确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

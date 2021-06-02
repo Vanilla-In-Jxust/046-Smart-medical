@@ -1,0 +1,199 @@
+page {
+    background: #fff;
+    box-sizing: border-box;
+    padding: 25rpx;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.membership-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 60rpx;
+}
+
+.membership-card {
+    position: relative;
+    box-sizing: border-box;
+    width: 329rpx;
+    padding: 28rpx;
+    border-radius: 8rpx;
+    margin-right: 25rpx;
+}
+
+.membership-cards {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    width: 329rpx;
+    padding: 28rpx;
+    border-radius: 12rpx;
+    margin: 0 14rpx;
+    border: 1rpx solid #D1D0CF;
+}
+
+.scroll_w {
+    width: 100%;
+    height: 236rpx;
+    white-space: nowrap;
+}
+
+.membership-card-title {
+    height: 32rpx;
+    color: #e6c37e;
+    font-size: 28rpx;
+    line-height: 32rpx;
+}
+
+.membership-card-price-container {
+    display: flex;
+    align-items: center;
+    margin-top: 28rpx;
+}
+
+.membership-card-price {
+    display: flex;
+    align-items: center;
+    color: #e6c37e;
+}
+
+.membership-card-price .symbol {
+    height: 28rpx;
+    font-weight: 600;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.membership-card-price .number {
+    height: 52rpx;
+    margin-left: 4rpx;
+    font-weight: 500;
+    font-size: 48rpx;
+    line-height: 52rpx;
+}
+
+.membership-card-discount {
+    height: 28rpx;
+    margin-left: 20rpx;
+    color: #999;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    text-decoration: line-through;
+    opacity: .5;
+}
+
+.membership-card-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 26rpx;
+}
+
+.membership-card-days {
+    height: 26rpx;
+    color: #e6c37e;
+    font-weight: 300;
+    font-size: 22rpx;
+    line-height: 26rpx;
+}
+
+.membership-card-icon-gold {
+    display: block;
+    width: 20rpx;
+    height: 20rpx;
+}
+
+.membership-card-recommend {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 96rpx;
+    height: 32rpx;
+    transform: translate(12rpx,-50%);
+}
+
+.membership-card-unchecked-plain {
+    background-color: #fff;
+    border: 2rpx solid #d9d9d9;
+}
+
+.membership-card-unchecked-plain .membership-card-price,.membership-card-unchecked-plain .membership-card-title {
+    color: #b38c3e;
+}
+
+.membership-card-unchecked-plain .membership-card-discount {
+    opacity: 1;
+}
+
+.membership-card-checked-plain {
+    background: #fff6e5;
+    border: 2rpx solid #b38c3e;
+}
+
+.membership-card-checked .membership-card-price,.membership-card-checked .membership-card-title {
+    color: #b38c3e;
+}
+
+.membership-card-checked .membership-card-discount {
+    opacity: 1;
+}
+
+.membership-card-checked .membership-card-days {
+    color: #b38c3e;
+}
+
+.membership-pay-money {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60rpx;
+    border-top: 1rpx solid #F5F5F5;
+}
+
+.membership-pay-money-title {
+    height: 32rpx;
+    color: #666;
+    font-size: 28rpx;
+    line-height: 32rpx;
+}
+
+.membership-pay-money-price {
+    height: 64rpx;
+    margin-top: 24rpx;
+    color: #333;
+    font-weight: 600;
+    font-size: 60rpx;
+    line-height: 64rpx;
+}
+
+.paybutton {
+    width: 100%;
+    text-align: center;
+    line-height: 90rpx;
+    background: #0088DE;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 50rpx;
+    margin-top: 120rpx;
+}
+
+.header {
+    width: 100%;
+    padding-left: 14rpx;
+    line-height: 100rpx;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.header .on {
+    color: #FFFFFF;
+    border: 1rpx solid #B39961;
+    box-shadow: 0 3rpx 10rpx rgb(153,125,65);
+}

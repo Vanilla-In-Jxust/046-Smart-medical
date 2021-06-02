@@ -1,0 +1,136 @@
+<view class="mg_top10"></view>
+<form bindreset="formReset" bindsubmit="formSubmit">
+    <view class="team-box">
+        <view class="team-create">
+            <view class="data-item">
+                <view class="title">LOGO：</view>
+                <image bindtap="chooseimg" class="pho-icon" src="{{thumb}}" wx:if="{{thumb}}"></image>
+                <image bindtap="chooseimg" class="pho-icon" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/camera.png?sign=c6965ccfcbe9cdb1d4f77f20d3b6f356&t=1591445889" wx:else></image>
+            </view>
+            <view class="data-item">
+                <view class="title">荣誉资质：</view>
+                <image bindtap="chooseimgpath" class="pho-icon" src="{{imgpath}}" wx:if="{{imgpath}}"></image>
+                <image bindtap="chooseimgpath" class="pho-icon" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/camera.png?sign=c6965ccfcbe9cdb1d4f77f20d3b6f356&t=1591445889" wx:else></image>
+            </view>
+            <view class="team-item">
+                <view class="team-tit">团队名称：</view>
+                <input name="title" placeholder="请输入团队名称" placeholderClass="plafont" value="{{info.title}}"></input>
+            </view>
+            <view class="team-item">
+                <view class="team-tit">联系电话：</view>
+                <input name="telphone" placeholder="请输入联系电话" placeholderClass="plafont" type="number" value="{{info.telphone}}"></input>
+            </view>
+            <view class="team-item">
+                <view class="team-tit">团队类别：</view>
+                <picker bindchange="bindtypeChange" class="picker" name="type" range="{{typeArray}}" value="{{typeindex}}">
+                    <view class="picker-tt">
+						{{typeArray[typeindex]?typeArray[typeindex]:'请选择您的团队类别'}}
+					</view>
+                </picker>
+                <image class="next" mode="widthFix" src="../../../images/yjt.png"></image>
+            </view>
+            <view class="team-item">
+                <view class="team-tit">所属社区：</view>
+                <picker bindchange="bindshequChange" class="picker" name="shequ" range="{{shequArray}}" value="{{shequindex}}">
+                    <view class="picker-tt">
+						{{shequArray[shequindex]?shequArray[shequindex]:'请选择您的社区'}}
+					</view>
+                </picker>
+                <image class="next" mode="widthFix" src="../../../images/yjt.png"></image>
+            </view>
+        </view>
+        <view class="team-create">
+            <view class="team-item">
+                <view class="team-tit">所在地：</view>
+                <picker bindchange="bindRegionChange" customItem="{{customItem}}" mode="region" value="{{region}}">
+                    <view class="picker" wx:if="{{isindex==0}}">
+							{{cityData[0]}}-{{cityData[1]}}-{{cityData[2]}}
+						</view>
+                    <view class="placeinp" wx:else>请选择您的所在地</view>
+                </picker>
+                <image class="next" mode="widthFix" src="../../../images/arrow_03.png"></image>
+            </view>
+        </view>
+        <view class="team-create">
+            <view class="team-item">
+                <view class="team-tit">是否在列表显示：</view>
+                <radio-group bindchange="radioChange" class="radio-group" name="is_index">
+                    <radio checked="{{is_index=='0'}}" class="radio" color="#0088DE" value="0">
+                        <text>否</text>
+                    </radio>
+                    <radio checked="{{is_index=='1'}}" class="radio" color="#0088DE" value="1">
+                        <text>是</text>
+                    </radio>
+                </radio-group>
+            </view>
+        </view>
+        <view class="team-create">
+            <view class="team-item">
+                <view class="team-tit">一级机构：</view>
+                <picker bindchange="bindjgoneChange" class="picker" name="jigou_one" range="{{jigou_onearr}}" value="{{jigou_oneindex}}">
+                    <view class="picker-tt">
+						{{jigou_onearr[jigou_oneindex]?jigou_onearr[jigou_oneindex]:'请选择您的机构'}}
+					</view>
+                </picker>
+                <image class="next" mode="widthFix" src="../../../images/yjt.png"></image>
+            </view>
+            <view class="team-item">
+                <view class="team-tit">二级级机构：</view>
+                <picker bindchange="bindjgtwoChange" class="picker" name="jigou_two" range="{{jigou_twoarr}}" value="{{jigou_twoindex}}">
+                    <view class="picker-tt">
+						{{jigou_twoarr[jigou_twoindex]?jigou_twoarr[jigou_twoindex]:'请选择您的机构'}}
+					</view>
+                </picker>
+                <image class="next" mode="widthFix" src="../../../images/yjt.png"></image>
+            </view>
+            <view class="team-item">
+                <view class="team-tit">一级科室：</view>
+                <picker bindchange="bindksoneChange" class="picker" name="keshi_one" range="{{keshi_onearr}}" value="{{keshi_oneindex}}">
+                    <view class="picker-tt">
+						{{keshi_onearr[keshi_oneindex]?keshi_onearr[keshi_oneindex]:'请选择您的一级科室'}}
+					</view>
+                </picker>
+                <image class="next" mode="widthFix" src="../../../images/yjt.png"></image>
+            </view>
+            <view class="team-item">
+                <view class="team-tit">二级科室：</view>
+                <picker bindchange="bindkstwoChange" class="picker" name="keshi_two" range="{{keshi_twoarr}}" value="{{keshi_twoindex}}">
+                    <view class="picker-tt">
+						{{keshi_twoarr[keshi_twoindex]?keshi_twoarr[keshi_twoindex]:'请选择您的二级科室'}}
+					</view>
+                </picker>
+                <image class="next" mode="widthFix" src="../../../images/yjt.png"></image>
+            </view>
+        </view>
+        <view class="team-create">
+            <view class="team-item">
+                <view class="team-tit">擅长：</view>
+                <view class="team-tip-t">请选择您的擅长</view>
+            </view>
+            <checkbox-group class="be-list" name="checkbox">
+                <label bindtap="clicks" class=" be-list-item {{item.checked?'be-list-item-act':''}}" data-index="{{index}}" wx:for="{{label_arr}}" wx:key="{{belist}}">
+                    <checkbox checked="{{item.checked}}" data-val="{{item.name}}" hidden="false" name="label[]" value="{{item.name}}"></checkbox> {{item.name}}
+				</label>
+            </checkbox-group>
+        </view>
+        <view class="team-create">
+            <view class="team-item">
+                <view class="team-tit">虚拟月回答：</view>
+                <input name="xn_answer" placeholder="请输入虚拟月回答" placeholderClass="plafont" type="number" value="{{info.xn_answer}}"></input>
+            </view>
+            <view class="team-item">
+                <view class="team-tit">虚拟月处方：</view>
+                <input name="xn_chufang" placeholder="请输入虚拟月处方" placeholderClass="plafont" type="number" value="{{info.xn_chufang}}"></input>
+            </view>
+            <view class="team-item">
+                <view class="team-tit">响应时间：</view>
+                <input name="times" placeholder="请输入响应时间" placeholderClass="plafont" type="number" value="{{info.times}}"></input>
+            </view>
+            <view class="team-item">
+                <view class="team-tit">简介：</view>
+            </view>
+            <textarea class="bref" name="content" placeholder="请输入团队简介介绍" placeholderClass="plafont" value="{{info.content}}">{{info.content}}</textarea>
+        </view>
+    </view>
+    <button class="sure-create" formType="submit">确认创建团队</button>
+</form>

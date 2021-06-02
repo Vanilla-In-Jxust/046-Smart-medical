@@ -1,0 +1,65 @@
+page {
+    background: #ffffff;
+}
+
+.option {
+    display: flex;
+    background: #ffffff;
+}
+
+.term {
+    flex: 1;
+    font-size: 30rpx;
+    line-height: 80rpx;
+    border-bottom: 1rpx solid #ffffff;
+    text-align: center;
+}
+
+.fontColor {
+    color: #3b4ca9;
+    border-bottom: 1rpx solid #3b4ca9;
+}
+
+.list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20rpx 0;
+    box-sizing: border-box;
+    border-bottom: 1rpx solid #f0f0f0;
+    margin: 0 20rpx;
+}
+
+.imgSize {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 100rpx;
+}
+
+.name {
+    font-size: 30rpx;
+    line-height: 50rpx;
+}
+
+.grade {
+    font-size: 26rpx;
+    line-height: 40rpx;
+    color: #999;
+}
+
+.situation {
+    width: 60rpx;
+    background: red;
+    font-size: 20rpx;
+    line-height: 30rpx;
+    padding: 0 10rpx;
+    box-sizing: border-box;
+    color: #ffffff;
+    border-radius: 8rpx;
+    margin-left: 92rpx;
+}
+
+.right {
+    text-align: right;
+}

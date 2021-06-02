@@ -1,0 +1,31 @@
+<view class="doc-order-tab">
+    <view bindtap="doctab" class="doc-tab-item {{docindex==index?'doc-tab-item-act':''}}" data-dex="{{index+1}}" wx:for="{{tabitem}}" wx:key="key">{{item}}</view>
+</view>
+<view style="height:100rpx;"></view>
+<view class="doc-list-box" wx:if="{{!list.length==0}}">
+    <view bindtap="getchar" class="doc-list-item" data-back_orser="{{item.back_orser}}" data-id="{{item.c_id?item.c_id:item.id}}" data-ifpay="{{item.ispay?item.ispay:item.ifpay}}" data-j_id="{{key_words=='yuanchengkaifang'?item.userid:item.j_id}}" data-key_words="{{key_words}}" data-openid="{{item.openid}}" data-overtime="{{item.overtime}}" data-typedate="{{item.content.typedate}}" wx:for="{{list}}" wx:key="key">
+        <view class="doc-list-time">
+            <view>时间：{{item.time}} </view>
+            <view class="doc-state">
+                <view class="doc-c" wx:if="{{item.state==0}}">咨询中</view>
+                <view class="doc-cc" wx:if="{{item.state==1}}">已回复</view>
+                <view class="doc-cc" wx:if="{{item.state==2}}">已结束</view>
+                <view class="doc-cc" wx:if="{{item.state==3}}">已退回</view>
+            </view>
+        </view>
+        <view class="doc-infor">
+            <view class="doc-in-ri">
+                <view class="doc-ri-name">{{item.names}}
+					<view>{{item.sex}} {{item.age}}岁</view>
+                </view>
+                <view class="doc-des">病情描述：{{item.content.text}}</view>
+                <view class="doc-des">订单号:{{item.orders}}</view>
+            </view>
+            <view catchtap="twentrec" class="spbtn" data-back_orser="{{item.back_orser}}" data-id="{{item.id}}" data-j_id="{{item.j_id}}" data-openid="{{item.openid}}" data-overtime="{{item.overtime}}" data-private="{{item.privateNum}}" data-typedate="{{item.typedate}}" data-z_telephone="{{z_telephone}}" wx:if="{{key_words=='tuwenwenzhen'&&item.ifpay=='1'}}">确认接诊</view>
+            <view catchtap="entrec" class="spbtn" data-back_orser="{{item.back_orser}}" data-j_id="{{item.j_id}}" data-openid="{{item.openid}}" data-overtime="{{item.overtime}}" data-private="{{item.privateNum}}" data-typedate="{{item.typedate}}" data-z_telephone="{{z_telephone}}" wx:if="{{key_words=='dianhuajizhen'&&item.ifpay=='1'}}">电话接诊</view>
+            <view catchtap="joinm" class="spbtn" data-back_orser="{{item.back_orser}}" data-id="{{item.id}}" data-j_id="{{item.j_id}}" data-openid="{{item.openid}}" data-orders="{{item.orders}}" data-overtime="{{item.overtime}}" data-roomID="{{item.roomID}}" data-sdkAppID="{{item.sdkAppID}}" data-template="1v1" data-typedate="{{item.typedate}}" data-userId="{{item.userId2}}" data-userSig="{{item.userSig2}}" wx:if="{{key_words=='shipinwenzhen'&&item.ifpay=='1'||key_words=='shipinwenzhen'&&item.ifpay=='2'}}">视频接诊</view>
+            <view catchtap="chufangentr" class="spbtn" data-back_orser="{{item.back_orser}}" data-id="{{item.id}}" data-j_id="{{item.userid}}" data-openid="{{item.openid}}" data-overtime="{{item.overtime}}" data-private="{{item.privateNum}}" data-typedate="{{item.typedate}}" data-z_telephone="{{z_telephone}}" wx:if="{{key_words=='yuanchengkaifang'&&item.ispay=='1'}}">确认接诊</view>
+        </view>
+    </view>
+</view>
+<view class="doc-no" wx:else>暂无数据显示</view>

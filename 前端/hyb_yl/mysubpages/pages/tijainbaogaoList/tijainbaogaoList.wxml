@@ -1,0 +1,35 @@
+<view class="tabbox" wx:if="{{!zid}}">
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="{{index}}" wx:for="{{tablist}}" wx:key="pp">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">{{item.types}}</text>
+    </view>
+</view>
+<block wx:if="{{!zid}}"></block>
+<view class="tab_box">
+    <view bindtap="chose_tab" class="{{tabState==0?'tab_active':''}}" data-index="0">检验报告</view>
+    <view bindtap="chose_tab" class="{{tabState==1?'tab_active':''}}" data-index="1">基因报告</view>
+    <view bindtap="chose_tab" class="{{tabState==2?'tab_active':''}}" data-index="2">体检报告</view>
+</view>
+<view class="poplist" wx:if="{{popshow}}">
+    <view class="poplistempty"></view>
+    <view class="poplistfff">
+        <view bindtap="itemchecked" class="poplistfffitem {{item.checked?'itemactive':''}}" data-dex="{{index}}" wx:for="{{tablist[tabdex].list}}">
+			{{item.items}}
+		</view>
+    </view>
+</view>
+<view class="sickbox">
+    <view bindtap="reportDetailClick" class="sickitem" data-id="{{item.id}}" wx:for="{{list}}" wx:key="ss">
+        <view class="sickitem-left">
+            <view class="sickiteminfo">
+                <view>{{item.names}}</view>
+                <view>{{item.sex}} {{item.age}}岁</view>
+            </view>
+        </view>
+        <view class="sickitem-center">
+            <view>{{item.time}}</view>
+            <view>{{item.hospital}}</view>
+            <view>订单编号：{{item.ordernums}}</view>
+        </view>
+        <view class="sickbtn {{item.states==0?'btn1':item.states==1?'btn2':'btn3'}}">{{type}}报告</view>
+    </view>
+</view>

@@ -1,0 +1,28 @@
+<view class="head_view">
+    <view>
+        <image class="integral_img" src="/assets/images/integral.png"></image>
+        <text class="inter_num">{{integral}}</text>
+    </view>
+    <navigator class="rule_view" hoverClass="hoverClass" url="/hyb_yl/backstageLifes/pages/integrationRule/integrationRule?nodes={{nodes}}">积分规则</navigator>
+</view>
+<view class="mg_top10"></view>
+<view class="inter_detail font_si16 font_co333">积分明细</view>
+<view class="title">
+    <view bindtap="sort" class="tilte_name {{currentIndex==0?'font_co3b':''}}" data-current="0">全部</view>
+    <view bindtap="sort" class="tilte_name {{currentIndex==1?'font_co3b':''}}" data-current="1">收入</view>
+    <view bindtap="sort" class="tilte_name {{currentIndex==2?'font_co3b':''}}" data-current="2">支出</view>
+</view>
+<scroll-view bindscrolltolower="getMore" class="scroll_view" scrollY="true" wx:if="{{!detailFlag}}">
+    <view class="list_view" wx:for="{{integralList}}" wx:key="{{index}}">
+        <view class="list_left">
+            <text class="list_left_top font_si14 font_co333">{{item.description}}</text>
+            <text class="font_si12 font_co999">{{item.dateTime}}</text>
+        </view>
+        <view class="list_right {{item.type==1?'font_co3b':item.type==2?'cut_color':''}}">{{item.type==1?'+':''}}{{item.credit}}</view>
+    </view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">已到底部</view>
+</scroll-view>
+<view class="font_co999 font_si14 detail" wx:if="{{detailFlag}}">暂无此项明细</view>

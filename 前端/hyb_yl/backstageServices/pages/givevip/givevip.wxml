@@ -1,0 +1,27 @@
+<view class="membership-gift-container">
+    <view class="membership-gift" style="background-image: url({{setting_zengsong_thumb}});">
+        <view class="membership-gift-header">
+            <image class="membership-gift-header-icon" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20200606163210.png?sign=69e7fa1765d3b7daa07475a1a3866b47&t=1591432361"></image>
+            <view class="membership-gift-header-title">{{setting_title}}</view>
+        </view>
+        <view class="membership-gift-desc">{{setting_content}}</view>
+    </view>
+</view>
+<view class="gift-send-write">
+    <view class="gift-send-title">填写祝福</view>
+    <view class="dxd-textarea" style="background: transparent;padding-top: 0;padding-bottom: 10px;">
+        <textarea bindinput="zhufuyu" class="dxd-textarea__textarea" disabled="{{lingqu==1?true:false}}" maxlength="50" placeholder="请填写祝福语" placeholderStyle="color: #999999;font-weight: 300;font-size: 13px;" style="height: 51px;font-size: 17px;color: #4D4D4D;font-weight: 300;line-height: 1.5;" value="{{zhufu}}"></textarea>
+    </view>
+</view>
+<view class="gift-send-title">赠送流程</view>
+<view class="single-image-container" style="padding: 0 32px;background: transparent;">
+    <image class="single-image" mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/3384161642752508639-22.png?sign=eb12cd68668af2ff7ae37045a1da5ca0&t=1584503080"></image>
+</view>
+<view class="givebtn" wx:if="{{lingqu==0}}">
+    <button openType="share" wx:if="{{buyId!=0}}">立即赠送</button>
+    <button bindtap="zengli" wx:else>立即赠送</button>
+</view>
+<view class="givebtn" wx:if="{{lingqu==1}}">
+    <button bindtap="islingqu">立即领取</button>
+</view>
+<ovalLogin wx:if="{{!bigMask}}"></ovalLogin>

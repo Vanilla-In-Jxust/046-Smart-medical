@@ -1,0 +1,9 @@
+<view class="xx"></view>
+<view bindlongpress="longTap" bindtap="click" bindtouchend="bindTouchEnd" bindtouchstart="bindTouchStart" class="wrap" data-id="{{item.id}}" wx:for="{{arr}}" wx:key="{{ index }}">
+    <view class="img-box">
+        <image class="img" src="{{item.bankLogo?item.bankLogo:'/assets/images/wap_img.png'}}"></image>
+    </view>
+    <view class="name">{{item.bankName}}（ 尾数{{item.bankNumberMask}} ）</view>
+    <image class="right-img" src="/assets/images/wzdui.png" wx:if="{{item.defaultPay==0?fales:true}}"></image>
+</view>
+<view bindtap="newclick" class="new">+</view>

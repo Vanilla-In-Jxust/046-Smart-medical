@@ -1,0 +1,43 @@
+<view class="headimg">
+    <image src="{{detail.pluginimgs}}"></image>
+</view>
+<view class="containers">
+    <view class="groupitem">
+        <view class="groupitem-tit">什么是家庭医生制</view>
+        <rich-text nodes="{{detail.serh_content}}"></rich-text>
+    </view>
+    <view class="groupitem">
+        <view class="groupitem-tit">服务内容</view>
+        <view class="servesbox">
+            <rich-text nodes="{{detail.serh_content}}"></rich-text>
+        </view>
+    </view>
+    <view class="groupitem">
+        <view class="groupitem-tit">签约流程</view>
+        <view class="steps">
+            <view class="stepspay">
+                <rich-text nodes="{{detail.serh_liuc}}"></rich-text>
+            </view>
+            <view class="xieyihint">
+                <view>协议说明：</view>
+                <rich-text nodes="{{detail.serh_xiey}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <view class="radios">
+        <radio bindchange="radioChange" checked="{{argeen}}" color="#0087E0">
+            <text>订阅并同意<text style="color:#0087E0;">《签约协议》</text>
+            </text>
+        </radio>
+    </view>
+</view>
+<view bindtap="gosign" class="sign">去签约</view>
+<view catchtap="closezhe" class="zhe" wx:if="{{xieyi}}">
+    <view catchtap="function(){}" class="cont">
+        <view catchtap="function(){}" class="title">问诊协议</view>
+        <view catchtap="function(){}" class="rule_box">
+            <rich-text nodes="{{detail.tui_money}}"></rich-text>
+        </view>
+        <view catchtap="closezhe" class="rule_btn">我知道了</view>
+    </view>
+</view>

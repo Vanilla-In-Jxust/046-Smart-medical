@@ -1,0 +1,2 @@
+<view class="box"></view>
+<view bindtap="click" class="li" data-id="{{item.groupId}}" wx:for="{{groups}}" wx:key="{{ index }}">{{item.groupName}}</view>

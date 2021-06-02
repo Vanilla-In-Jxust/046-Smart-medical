@@ -1,0 +1,25 @@
+<view class="all">
+    <text class="question">推荐你使用极速问诊服务</text>
+    <view class="title">
+        <view class="sign">
+            <view class="biao"></view>
+            <text>极速问诊不是张宏伟医生回复</text>
+        </view>
+        <view class="sign">
+            <view class="biao"></view>
+            <text>系统会根据您的病情匹配合适医生</text>
+        </view>
+        <view class="sign">
+            <view class="biao"></view>
+            <text>您会在30分钟内得到医生回复</text>
+        </view>
+    </view>
+    <view class="btn">
+        <button plain catchtap="naviter" data-index="0">
+      再想想
+    </button>
+        <button plain catchtap="jisu" data-index="1">
+      申请极速问诊
+    </button>
+    </view>
+</view>

@@ -1,0 +1,174 @@
+page {
+    background: #f2f3f7;
+}
+
+.subject_for {
+    margin-bottom: 20rpx;
+}
+
+.text {
+    width: 100%;
+    height: 154rpx;
+    background: #f5f5f7;
+    line-height: 154rpx;
+    text-align: center;
+    font-size: 34rpx;
+    font-weight: bold;
+}
+
+.canvas_box {
+    width: 100%;
+    background: #fff;
+    padding-top: 30rpx;
+    margin-top: 20rpx;
+}
+
+.left {
+    width: 50%;
+}
+
+.name_view {
+    margin-left: 30rpx;
+    text-align: left;
+    font-family: PingFang-SC-Bold;
+    font-size: 32rpx;
+    font-weight: 650;
+    letter-spacing: 0px;
+    color: #333333;
+    padding-bottom: 30rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.dateChange {
+    width: 600rpx;
+    height: 60rpx;
+    margin: 0 auto;
+    background-color: #f0f0f0;
+    border-radius: 30rpx;
+    display: flex;
+    align-items: center;
+}
+
+.dateChange view {
+    font-size: 32rpx;
+    flex: 1;
+    height: 52rpx;
+    text-align: center;
+    line-height: 52rpx;
+}
+
+.active {
+    background: linear-gradient(to right,#6699ff,#3b4ca9);
+    color: #fff;
+    border-radius: 30rpx;
+}
+
+.unit {
+    padding-top: 50rpx;
+    padding-bottom: 5rpx;
+    font-size: 20rpx;
+    padding-left: 25rpx;
+}
+
+.left_h1 {
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-indent: 30rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+}
+
+.left_h2 {
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-indent: 30rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.left_h11 {
+    height: 50rpx;
+    margin-top: 30rpx;
+    line-height: 50rpx;
+    text-indent: 30rpx;
+    font-size: 30rpx;
+    font-weight: bold;
+    float: right;
+}
+
+.left_h22 {
+    height: 50rpx;
+    line-height: 50rpx;
+    text-indent: 30rpx;
+    font-size: 24rpx;
+    color: #ccc;
+    float: right;
+    width: 100%;
+}
+
+.right_box {
+    width: 122rpx;
+    height: 50rpx;
+    float: left;
+}
+
+.right_box_text_B {
+    font-size: 22rpx;
+    color: #ccc;
+    float: left;
+    width: 100%;
+    height: 50rpx;
+    line-height: 50rpx;
+    position: relative;
+    font-weight: normal;
+}
+
+.right_box_B {
+    position: absolute;
+    width: 17rpx;
+    height: 17rpx;
+    border-radius: 17rpx;
+    top: 16rpx;
+    left: 7rpx;
+    background: #ff2e51;
+}
+
+.canvas {
+    width: 100%;
+    height: 420rpx;
+    display: block;
+    position: relative;
+    padding: 0 30rpx;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.foot {
+    width: 100%;
+    height: 80rpx;
+    background: #fafafa;
+    line-height: 80rpx;
+    color: #333;
+    font-size: 26rpx;
+    text-indent: 30rpx;
+    font-weight: bold;
+}
+
+.foot>text {
+    color: #333;
+    font-weight: normal;
+    text-indent: 20rpx;
+}
+
+.limit_text {
+    display: inline-block;
+    margin: 0 10rpx 0 5rpx;
+}
+
+.exa_none {
+    height: 500rpx;
+    line-height: 500rpx;
+    text-align: center;
+}

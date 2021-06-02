@@ -1,0 +1,39 @@
+<view class="capita-top">
+    <view class="capita-pri">
+        <view>我的总金额</view>
+        <view class="price">￥{{info.count}}</view>
+    </view>
+    <view class="capita-show">
+        <view class="capita-show-item">
+            <view>{{info.qianyue}}</view>
+            <view class="capita-tip">签约金额</view>
+        </view>
+        <view class="capita-show-item">
+            <view>{{info.wz_money}}</view>
+            <view class="capita-tip">问诊金额</view>
+        </view>
+    </view>
+</view>
+<view class="capita-list">
+    <view bindtap="capitainfor" class="capita-item" data-dex="{{index}}" data-keyword="{{item.key_words}}" data-title="{{item.titlme}}" wx:for="{{capitalist}}">
+        <image src="{{item.info.icon}}"></image>
+        <view>{{item.titlme}}</view>
+    </view>
+</view>
+<view class="capita-sz">
+    <view class="capita-tit">今日收支</view>
+    <view class="capita-sz-list">
+        <view class="sz-item">
+            <view>今日收入</view>
+            <view class="sz-n">{{info.today_money}}</view>
+        </view>
+        <view class="sz-item">
+            <view>今日支出</view>
+            <view class="sz-n le">{{info.today_pay}}</view>
+        </view>
+    </view>
+    <view class="capita-tt">
+        <view class="cap-le"></view>
+        <view class="cap-ri"></view>
+    </view>
+</view>

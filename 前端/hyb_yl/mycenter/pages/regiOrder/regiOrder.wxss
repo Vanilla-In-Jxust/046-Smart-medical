@@ -1,0 +1,303 @@
+page {
+    width: 100%;
+    height: 100%;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.tab {
+    height: 88rpx;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #e1e1e1;
+    background: #fff;
+    padding: 0rpx 25rpx;
+}
+
+.tab .son {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+}
+
+.tab .active {
+    border-bottom: 4rpx solid #0087e0;
+}
+
+.center1 {
+    width: 100%;
+    padding: 0 0 30rpx;
+    background: #f1f2f6;
+}
+
+.center1 .order {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.center1 .order .header {
+    width: 100%;
+    display: flex;
+    font-size: 30rpx;
+}
+
+.center1 .order .header .time {
+    width: 70%;
+    padding-top: 20rpx;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 30rpx;
+    color: #131313;
+}
+
+.center1 .order .header .status {
+    width: 30%;
+    padding-top: 20rpx;
+    padding-right: 25rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #9E83FA;
+}
+
+.center1 .order .header .status .del {
+    width: 42rpx;
+    height: 42rpx;
+    margin-left: 24rpx;
+}
+
+.center1 .order .header .nostatus {
+    width: 30%;
+    padding: 20rpx 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c2c1c6;
+}
+
+.center1 .load {
+    width: 100%;
+    background: #fff;
+    padding: 30rpx;
+    display: flex;
+}
+
+.center1 .car {
+    width: 10%;
+    height: 100%;
+    text-align: center;
+}
+
+.center1 .car image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.center1 .info {
+    width: 90%;
+    height: 100%;
+}
+
+.center1 .info .address {
+    width: 100%;
+    height: 60%;
+    font-size: 28rpx;
+    margin-bottom: 6rpx;
+}
+
+.center1 .info .time {
+    width: 100%;
+    height: 40%;
+    font-size: 26rpx;
+    display: flex;
+    align-items: center;
+}
+
+.center1 .goods {
+    padding: 30rpx;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid #EEEEEE;
+    justify-content: space-between;
+}
+
+.center1 .goods .good {
+    width: 160rpx;
+    height: 160rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.center1 .goods .good image {
+    width: 100%;
+}
+
+.center1 .goods .info {
+    width: 77%;
+    align-items: center;
+    font-size: 30rpx;
+    color: #4c4c4c;
+    padding-left: 20rpx;
+}
+
+.center1 .num {
+    width: 100%;
+    padding: 20rpx 30rpx;
+    background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 30rpx;
+}
+
+.center1 .num text:nth-child(1) {
+    margin-right: 30rpx;
+}
+
+.center1 .operate {
+    background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.center1 .operate .son {
+    width: 160rpx;
+    padding: 10rpx 0;
+    font-size: 22rpx;
+    border: 1rpx solid #eeeeee;
+    border-radius: 50rpx;
+    margin-left: 14rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center1 .operate .again {
+    color: #fff;
+    background: #0087E0;
+}
+
+.center1 .noOrder {
+    width: 100%;
+    background: #fff;
+    padding-bottom: 70rpx;
+}
+
+.center1 .noOrder .pic {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80rpx 0 20rpx 0;
+}
+
+.center1 .noOrder .pic image {
+    display: block;
+    width: 180rpx;
+    height: 200rpx;
+}
+
+.center1 .noOrder .no {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+    color: #959595;
+}
+
+.nonelist {
+    text-align: center;
+    padding-top: 200rpx;
+}
+
+.nonelist image {
+    margin-bottom: 20rpx;
+    width: 510rpx;
+    height: 230rpx;
+}
+
+.center1 .operate .deltbn {
+    color: #F9F9F9;
+    background: #CACACA;
+}
+
+.center1 .goods .info .info-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-tit-name {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    color: #333;
+    margin-bottom: 6rpx;
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.info-tit-name view {
+    margin-left: 16rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.info-price {
+    color: #DE2222;
+    font-size: 34rpx;
+    width: 25%;
+    text-align: right;
+}
+
+.center1 .goods .info .info-title view:last-child text:first-child {
+    font-size: 24rpx;
+}
+
+.center1 .goods .info .info-subtit {
+    margin-top: 15rpx;
+    font-size: 28rpx;
+    color: #5D5D5D;
+}
+
+.center1 .goods .info .info-time {
+    font-size: 22rpx;
+    color: #777777;
+    margin-top: 12rpx;
+}
+
+.operate-box {
+    display: flex;
+    justify-content: space-between;
+    padding: 20rpx 30rpx;
+}
+
+.operate-all-pri {
+    display: flex;
+    align-items: center;
+    font-size: 24rpx;
+    color: #333;
+}
+
+.operate-all-pri view {
+    color: #DE2222;
+}
+
+.info-disc {
+    display: flex;
+    justify-content: space-between;
+    padding: 14rpx 30rpx;
+    font-size: 24rpx;
+    color: #333;
+}

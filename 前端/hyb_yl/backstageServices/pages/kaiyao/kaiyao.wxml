@@ -1,0 +1,65 @@
+<view class="step-number">
+    <view class="step-container {{index==stepnum?'highlight':''}}" wx:for="{{steps}}" wx:key="s">
+        <view class="number">{{index+1}}</view>
+        <view class="content arrow">{{item}}</view>
+    </view>
+</view>
+<form bindsubmit="infomationbtn">
+    <view class="containerbox">
+        <view class="quick-ask-contain">
+            <view class="quick-ask-header">
+                <view>描述症状</view>
+                <view class="quick-ask-subtitle"></view>
+            </view>
+            <textarea bindinput="textarr" class="dxd-textarea__textarea" name="zhengzhuang" placeholder="请在此描述所患疾病和症状" value="{{textareatxt}}"></textarea>
+        </view>
+        <view class="quick-ask-contain">
+            <view class="speedtit">快速描述常见疾病</view>
+            <view class="fast-labels-items">
+                <view bindtap="chooseLabel" class="fast-labels-label" data-dex="{{index}}" wx:for="{{speedlist}}">{{item.tit}}</view>
+            </view>
+        </view>
+        <view class="radios">
+            <radio bindchange="radioChange" checked="{{argeen}}" color="#0087E0">
+                <text>我确认已在医院就诊过，并已明确用药方案</text>
+            </radio>
+        </view>
+        <view class="attachment-contain">
+            <view class="pingzhengbox">
+                <view class="pztitle">上传处方凭证</view>
+                <view bindtap="nopingzheng" class="meiyoupz">
+                    <text>没有处方凭证</text>
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/xianyiwen.png?sign=c31d13d6f17772e80cdb83dcdb32f11d&t=1583939242"></image>
+                </view>
+            </view>
+            <view class="upload-list">
+                <view class="imglist" wx:for="{{upload_picture_list}}" wx:key="{{index}}">
+                    <image bindtap="deleteimg" data-index="{{index}}" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Schu.png?sign=d27c9797be112e6c00069e9cea3db59a&t=1571479530"></image>
+                    <image mode="aspectFill" src="{{item}}"></image>
+                </view>
+                <view class="upload-list-item" wx:if="{{upload_picture_list.length!=9}}">
+                    <view bindtap="uploadimg" class="upload-list-add">
+                        <image class="upload-list-add-image" mode="widthFix" role="img" src="https://img1.dxycdn.com/2019/1101/756/3377141806470101131-22.png" style="height: 24px;"></image>
+                        <view class="upload-list-add-text">图片/视频</view>
+                    </view>
+                </view>
+                <view class="upload-list-desc" wx:if="{{upload_picture_list.length==0}}">
+                    <text>上传的内容仅对医生可见</text>
+                </view>
+            </view>
+        </view>
+        <button ariaDisabled="false" class="common-button" formType="submit" role="button" style="background-color:{{bgc}}">下一步</button>
+    </view>
+</form>
+<view class="popsbox" wx:if="{{popif}}">
+    <view class="emptyview"></view>
+    <view class="tips-modal">
+        <view bindtap="closepop" class="closepop">×</view>
+        <view class="title">没有处方凭证？</view>
+        <view class="content">
+            <view class="content-item"> • 开药问诊仅限有处方凭证的复诊用户 </view>
+            <view class="content-item"> • 如果没有处方凭证，可问医生开处方 </view>
+        </view>
+        <view bindtap="navUrgent" class="action">问医生开处方</view>
+    </view>
+</view>

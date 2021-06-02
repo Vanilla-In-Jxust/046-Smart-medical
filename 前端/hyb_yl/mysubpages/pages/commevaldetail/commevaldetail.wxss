@@ -1,0 +1,289 @@
+page {
+    width: 100%;
+    height: 100%;
+    background: #f7f7f5;
+    color: #222;
+}
+
+.fixation {
+    width: 100%;
+    height: 120rpx;
+    background: #f9fbfa;
+    position: fixed;
+    left: 0rpx;
+    top: 0rpx;
+    z-index: 1;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+.zhan {
+    text-align: right;
+    color: red;
+}
+
+.fixationbox {
+    padding: 0rpx 20rpx;
+}
+
+.medicine {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    background: #ffffff;
+}
+
+.medic_left {
+    width: 80rpx;
+    height: 80rpx;
+    margin-top: 10rpx;
+    margin-left: 10rpx;
+    margin-right: 20rpx;
+}
+
+.medic_right {
+    padding-right: 20rpx;
+    flex: 1;
+    padding-top: 15rpx;
+}
+
+.medicintro {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 30rpx;
+}
+
+.oval {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+    background: white;
+    margin-top: 140rpx;
+}
+
+.headbox {
+    display: flex;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.headImg {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+    background: white;
+}
+
+.headImg image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.headname {
+    font-size: 30rpx;
+    margin-right: 20rpx;
+    margin-left: 20rpx;
+    line-height: 60rpx;
+}
+
+.evaloffic {
+    line-height: 60rpx;
+}
+
+.evaloffic text {
+    font-size: 24rpx;
+    background: red;
+    color: white;
+    padding: 0rpx 5rpx;
+    border-radius: 5rpx;
+}
+
+.eval_left {
+    flex: 1;
+}
+
+.evalTime {
+    display: flex;
+    justify-content: space-between;
+}
+
+.imgbox {
+    width: 100%;
+    display: flex;
+    height: 40rpx;
+}
+
+.startImg {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.startImg image {
+    width: 100%;
+    height: 100%;
+}
+
+.timefont {
+    width: 200rpx;
+    font-size: 24rpx;
+    color: #8d8d8d;
+    line-height: 48rpx;
+    text-align: right;
+}
+
+.drugcont {
+    font-size: 28rpx;
+    padding-top: 20rpx;
+    padding-bottom: 15rpx;
+}
+
+.shou {
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.bigImg {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30rpx;
+}
+
+.imglist {
+    width: 100%;
+    margin-bottom: 20rpx;
+}
+
+.standbox {
+    font-size: 24rpx;
+    color: #9c9a9c;
+    line-height: 56rpx;
+}
+
+.replybox {
+    margin-top: 20rpx;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    background: #fff;
+}
+
+.replyList {
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+}
+
+.replyFont {
+    line-height: 80rpx;
+    color: #000;
+    font-size: 30rpx;
+}
+
+.reply_head {
+    display: flex;
+    padding-bottom: 20rpx;
+}
+
+.reply_center {
+    padding-left: 20rpx;
+    font-size: 26rpx;
+    color: #000;
+}
+
+.replyTime {
+    color: #a0a0a2;
+    font-size: 24rpx;
+}
+
+.reply_cont {
+    font-size: 26rpx;
+    padding-bottom: 20rpx;
+}
+
+.replyfoot {
+    height: 300rpx;
+    text-align: center;
+    line-height: 300rpx;
+    color: #d2d2d2;
+    font-size: 26rpx;
+}
+
+.footbox {
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+    position: fixed;
+    left: 0rpx;
+    bottom: 0rpx;
+    box-shadow: 0rpx -10rpx 10rpx #dfdfdf;
+    z-index: 1;
+}
+
+.foot {
+    display: flex;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+}
+
+.inputbox {
+    width: 600rpx;
+    height: 60rpx;
+    border-radius: 80rpx;
+    background: #f6f8f7;
+    margin-top: 20rpx;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 100%;
+    padding-left: 15rpx;
+    font-size: 28rpx;
+}
+
+.send {
+    width: 100rpx;
+    height: 55rpx;
+    text-align: center;
+    line-height: 55rpx;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+    margin-left: 15rpx;
+}
+
+.send_no {
+    border: 1rpx solid #f6f8f7;
+    color: #000;
+}
+
+.send_active {
+    background: red;
+    color: white;
+}
+
+.goTop {
+    height: 80rpx;
+    width: 80rpx;
+    position: fixed;
+    bottom: 140rpx;
+    background: #fff;
+    right: 30rpx;
+    border-radius: 50%;
+}
+
+.topImg {
+    margin: 15rpx 15rpx;
+    width: 50rpx;
+    height: 50rpx;
+}

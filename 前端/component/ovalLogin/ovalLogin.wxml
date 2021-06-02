@@ -1,0 +1,17 @@
+<view class="mask" wx:if="{{maskshow}}"></view>
+<view wx:if="{{maskCont}}">
+    <view class="maskCont">
+        <view class="sqTitle">需要您的授权</view>
+        <view class="smallHint">为了提供更好的服务</view>
+        <view class="smallHint">请在稍后的服务中点击确认</view>
+        <view class="imgbox">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/chat_msg/wx.png?sign=039a4ca8cc6b7a0c0bc5f437d418b981&t=1581917816"></image>
+        </view>
+        <view class="deng">
+            <button bindtap="quxiao" style="color:#666;">取消</button>
+            <view class="line"></view>
+            <button bindgetuserinfo="bindGetUserInfo" formType="submit" hoverClass="none" lang="zh_CN" openType="getUserInfo">同意</button>
+        </view>
+    </view>
+</view>
+<view bindtap="tanchu" class="firstbox" wx:if="{{firstmask}}"></view>

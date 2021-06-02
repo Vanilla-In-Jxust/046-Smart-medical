@@ -1,0 +1,11 @@
+<view class="section-list">
+    <view class="section-item" wx:if="{{item.list.length>=1}}" wx:for="{{officelist}}" wx:key="s">
+        <view class="name">{{item.titles}}</view>
+        <view class="containers">
+            <view bindtap="handleTap" class="item" data-id="{{lites.id}}" data-item="" data-tit="{{item.titles}}" wx:for="{{item.list}}" wx:for-item="lites" wx:key="w">
+                <image class="image" mode="scaleToFill" role="img" src="{{lites.detail_cover_url}}"></image>
+                <text class="text" style="color:{{lites.color}}">{{lites.name}}</text>
+            </view>
+        </view>
+    </view>
+</view>

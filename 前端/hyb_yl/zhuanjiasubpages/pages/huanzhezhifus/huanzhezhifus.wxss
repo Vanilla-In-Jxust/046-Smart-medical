@@ -1,0 +1,447 @@
+view {
+    box-sizing: border-box;
+}
+
+page {
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.teamgroup {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 25rpx;
+    border-bottom: 1rpx solid #F9F9F9;
+}
+
+.teamimg {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 10rpx;
+}
+
+.teaminfo {
+    width: 82%;
+}
+
+.teaminfotitle {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-weight: 600;
+    font-size: 50rpx;
+    line-height: 64rpx;
+    word-break: break-all;
+}
+
+.profile-vip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 38rpx;
+    padding: 0 12rpx;
+    color: #fff;
+    font-size: 26rpx;
+    background-color: #0087E0;
+    border-radius: 19rpx;
+    margin-left: 8rpx;
+}
+
+.profile-vip-icon {
+    display: block;
+    width: 28rpx;
+    height: 28rpx;
+    margin-right: 4rpx;
+}
+
+.profile-vip-arrow {
+    display: block;
+    width: 24rpx;
+    height: 24rpx;
+}
+
+.doctor-profile-card-info {
+    margin-top: 25rpx;
+    color: #333;
+    font-weight: 300;
+    font-size: 28rpx;
+    line-height: 32rpx;
+}
+
+.doctor-profile-card-section {
+    margin-right: 20rpx;
+}
+
+.doctor-profile-card-hospital {
+    display: flex;
+    margin-top: 16rpx;
+}
+
+.doctor-profile-card-hospital-content {
+    height: 32rpx;
+    color: #333;
+    font-weight: 300;
+    font-size: 28rpx;
+    line-height: 32rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+}
+
+.tag {
+    margin-bottom: 12rpx;
+    padding: 4rpx;
+    color: gray;
+    font-weight: 400;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    white-space: nowrap;
+    background-color: #ebebeb;
+    border-radius: 4rpx;
+}
+
+.doctor-profile-card-hospital-shanchang {
+    color: #333;
+    font-weight: 300;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.elsemess {
+    padding: 0 25rpx;
+}
+
+.servepackage {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0;
+    border-bottom: 1rpx solid #F9F9F9;
+}
+
+.servepackage image {
+    width: 85rpx;
+    height: 85rpx;
+    border-radius: 10rpx;
+}
+
+.servepackageinfo {
+    width: 85%;
+}
+
+.info-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-top view:first-child {
+    color: #454545;
+    font-size: 32rpx;
+}
+
+.info-top view:last-child {
+    color: #E72D2D;
+    font-size: 34rpx;
+}
+
+.info-top view:first-child text:first-child {
+    overflow: hidden;
+    color: #333;
+    font-weight: 500;
+    font-size: 34rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.info-top view:first-child text:last-child {
+    margin: 0 12rpx;
+    overflow: hidden;
+    color: #333;
+    font-size: 28rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 36rpx;
+    overflow-y: hidden;
+}
+
+.tag {
+    padding: 4rpx;
+    color: #fa0;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    background-color: #fffaf0;
+}
+
+.info-bott {
+    color: #333;
+    font-weight: 300;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.elsegroup {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #525252;
+    font-size: 32rpx;
+    border-bottom: 1rpx solid #F9F9F9;
+    padding: 30rpx 0;
+    flex-wrap: wrap;
+}
+
+.elsegroup view:last-child {
+    color: #333;
+    font-weight: 300;
+    font-size: 28rpx;
+}
+
+.elsegroup>view>text {
+    padding: 2rpx 6rpx;
+    border: 1rpx solid #EACCCF;
+    border-radius: 5rpx;
+    font-size: 24rpx;
+    position: relative;
+}
+
+.elsegroup>view>text::after {
+    content: "";
+    width: 12rpx;
+    height: 12rpx;
+    border-top: 1rpx solid #EACCCF;
+    border-left: 1rpx solid #EACCCF;
+    position: absolute;
+    top: 10rpx;
+    left: -8rpx;
+    transform: rotate(-45deg);
+}
+
+.youhui {
+    position: relative;
+    padding-right: 25rpx;
+}
+
+.youhui view:last-child::after {
+    content: "";
+    width: 15rpx;
+    height: 15rpx;
+    border-top: 1rpx solid #D6D6D6;
+    border-right: 1rpx solid #D6D6D6;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.publicity {
+    font-size: 28rpx;
+    color: #A0A0A0;
+    margin-top: 8rpx;
+}
+
+.publicity text {
+    color: #EBE293;
+}
+
+.footpay {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+}
+
+.radios {
+    font-size: 32rpx;
+    color: #7F7F7F;
+    text-align: left;
+    margin-bottom: 25rpx;
+}
+
+.radios radio {
+    transform: scale(0.8);
+    margin-left: -25rpx;
+}
+
+.payandtotal {
+    padding: 15rpx 25rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1rpx solid #F9F9F9;
+}
+
+.payandtotal view:first-child text:first-child {
+    font-size: 26rpx;
+    color: #989898;
+}
+
+.payandtotal view:first-child text:last-child {
+    font-size: 32rpx;
+    color: #E72D2D;
+}
+
+.payandtotal view:last-child {
+    width: 55%;
+    text-align: center;
+    line-height: 85rpx;
+    font-size: 30rpx;
+    color: #fff;
+    background: #0087E0;
+    border-radius: 50rpx;
+}
+
+.Illnessmess {
+    width: 100%;
+    padding: 25rpx;
+    border-bottom: 1rpx solid #F9F9F9;
+}
+
+.Illnessmesstext {
+    font-size: 28rpx;
+    color: #8B8B8B;
+    margin-bottom: 20rpx;
+}
+
+.Illnessimgs {
+    width: 100%;
+}
+
+.Illnessimgs image {
+    width: 85rpx;
+    height: 85rpx;
+    border-radius: 8rpx;
+    margin-right: 10rpx;
+}
+
+.package {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28rpx;
+    background: #fff;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.package {
+    margin-top: 30rpx;
+}
+
+.package,.package-body {
+    display: flex;
+    align-items: center;
+}
+
+.package-body-image {
+    width: 64rpx;
+    height: 64rpx;
+    margin-right: 12rpx;
+}
+
+.package-body-content-title {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-weight: 500;
+    font-size: 28rpx;
+    line-height: 32rpx;
+}
+
+.package-body-content-detail {
+    display: flex;
+    align-items: center;
+    max-width: 500rpx;
+    margin-top: 8rpx;
+}
+
+.package-body-content-detail-text {
+    color: #666;
+    font-size: 22rpx;
+    line-height: 26rpx;
+}
+
+.package-body-content-detail-img {
+    width: 26rpx;
+    height: 26rpx;
+    margin-left: 8rpx;
+}
+
+.package-body-content-detail-img .image {
+    display: block;
+    width: 26rpx;
+    height: 26rpx;
+}
+
+.package-foot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.package .price-vertical .package-foot-price {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.package .price-vertical .package-foot-price-now {
+    color: #b38c3e;
+    font-weight: 500;
+    font-size: 34rpx;
+    line-height: 38rpx;
+}
+
+.package .price-vertical .package-foot-price-origin {
+    margin-top: 4rpx;
+    color: #666;
+    font-size: 22rpx;
+    line-height: 26rpx;
+}
+
+.package-foot-filter {
+    display: flex;
+    align-items: center;
+    margin-top: -2rpx;
+    transform: scale(.7);
+}
+
+.package-foot-filter .radio {
+    width: 40rpx;
+    margin-left: 24rpx;
+}
+
+.mustread {
+    width: 100%;
+    padding: 25rpx;
+    background: #FAFAFA;
+}
+
+.mustreadtit {
+    font-size: 26rpx;
+    color: #BCBCBC;
+}
+
+.mustreadtxt {
+    font-size: 24rpx;
+    color: #BCBCBC;
+    margin-top: 10rpx;
+}
+
+.mustreadtxt view {
+    line-height: 45rpx;
+}

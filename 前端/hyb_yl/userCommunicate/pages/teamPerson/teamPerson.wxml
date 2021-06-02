@@ -1,0 +1,51 @@
+<view class="team-tab">
+    <view bindtap="teamtab" class="team-item {{teamindex==index?'team-item-act':''}} " data-dex="{{index}}" wx:for="{{teamitem}}">{{item}}</view>
+</view>
+<view class="team-list" wx:if="{{teamindex==0}}">
+    <view bindtap="teamindex" class="team-item-list" data-zid="{{item.zid}}" wx:for="{{list}}">
+        <view class="team-top">
+            <image class="pho" src="{{item['advertisement']}}"></image>
+            <view class="team-ri">
+                <view class="team-tit">
+                    <view>{{item.z_name}}</view>
+                    <view class="team-address">{{item.zhicehng}}</view>
+                </view>
+                <view class="team-zc">{{item.keshi}}  {{item.jigou}}</view>
+                <view class="team-sc">擅长：{{item.authority}}</view>
+                <view class="team-xx">
+                    <view class="team-start">
+                        <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/start.png?sign=3ab26ae6acd400d178daae014084e739&t=1591585512"></image>
+                        <view>{{item.score}}</view>
+                    </view>
+                    <view class="team-xx-t">月问答：{{item.xn_reoly}} 月处方：{{item.xn_cf}} {{item.xytime}}分钟响应</view>
+                </view>
+            </view>
+        </view>
+        <view class="yq" wx:if="{{item.status=='0'}}">待加入</view>
+        <view class="yq" wx:if="{{item.status=='1'}}">已加入</view>
+        <view class="yq" wx:if="{{item.status=='2'}}">已拒绝</view>
+    </view>
+</view>
+<view class="team-list" wx:if="{{teamindex==1}}">
+    <view bindtap="teamindex" class="team-item-list" wx:for="{{list}}">
+        <view class="team-top">
+            <image class="pho" src="{{item.advertisement}}"></image>
+            <view class="team-ri">
+                <view class="team-tit">
+                    <view>{{item.z_name}}</view>
+                    <view class="team-address">{{item.zhicehng}}</view>
+                </view>
+                <view class="team-zc">{{item.keshi}}  {{item.jigou}}</view>
+                <view class="team-sc">擅长：{{item.authority}}</view>
+                <view class="team-xx">
+                    <view class="team-start">
+                        <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/start.png?sign=3ab26ae6acd400d178daae014084e739&t=1591585512"></image>
+                        <view>{{item.score}}</view>
+                    </view>
+                    <view class="team-xx-t">月问答：{{item.xn_reoly}} 月处方：{{item.xn_cf}} {{item.xytime}}分钟响应</view>
+                </view>
+            </view>
+        </view>
+        <view bindtap="yaoqing" class="yq" data-y_openid="{{item.openid}}" data-y_zid="{{item.zid}}">邀请</view>
+    </view>
+</view>

@@ -1,0 +1,63 @@
+<view style="background:#FFFFFF;">
+    <view class="headbox">
+        <view class="">
+            <view class="searchbox">
+                <navigator class="searchView" hoverClass="hoverClass" url="/hyb_yl/mysubpages/pages/search/search">
+                    <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/search_ff.png?sign=52e66d96ec80103d916e6b607b95c7cc&t=1590717965" style="width:40rpx;"></image>
+                    <input disabled="true" placeholder="请输入商品名称搜索" placeholderClass="place" placeholderStyle="color:#fff" type="text"></input>
+                </navigator>
+            </view>
+            <view class="">
+                <swiper circular autoplay="{{true}}" class="mallSwiper" duration="400" indicatorActiveColor="#FFFFFF" indicatorColor="#ccc" indicatorDots="true" interval="2500">
+                    <swiper-item wx:for="{{imageArr.goodslunb}}" wx:key="key">
+                        <image bindtap="{{gotoAdFlag?'':'gotoAd'}}" class="swiperImg" data-activityid="{{item.activityId}}" data-id="{{item.id}}" data-index="{{index}}" data-targetview="1" src="{{item}}"></image>
+                    </swiper-item>
+                </swiper>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="oval" style="background:#FFFFFF;">
+    <view class="commtypebox">
+        <navigator class="commtype" hoverClass="hoverClass" url="/hyb_yl/mysubpages/pages/shopType/shopType?fid={{item.fid}}&fenlname={{item.fenlname}}" wx:for="{{proList.category}}" wx:key="key">
+            <image class="food_type_img " src="{{item.fenlpic}}"></image>
+            <view class="commText">{{item.fenlname}}</view>
+        </navigator>
+    </view>
+</view>
+<view class="oval">
+    <view class="featureTilte">
+        <view class="titleLeft">热门商品</view>
+        <view bindtap="goback" class="titleRight">
+      更多
+      <image class="arrowImg" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/arrow.png?sign=d8bec434e9a3266690d636079c8a4bb5&t=1576567271"></image>
+        </view>
+    </view>
+    <view class="shopbox df jcsb">
+        <navigator class="shoplist" url="/hyb_yl/mysubpages/pages/product/product?fid={{item.fid}}&sid={{item.sid}}" wx:for="{{proList.item}}" wx:key="key">
+            <view class="shopImg">
+                <image src="{{item.sthumb}}"></image>
+            </view>
+            <view class="shopIntr">
+                <view class="shopName">
+                    <view class="text2">{{item.sname}}</view>
+                </view>
+                <view class="shopPirce">
+                    <view class="price">
+                        <text style="align-self:flex-end; font-size:24rpx;">￥</text>{{item.smoney}}</view>
+                    <view>
+                        <text class="font_si16 font_co999">...</text>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<view class="no_product font_si16 font_co666" wx:if="{{noFlag}}">暂无商品</view>
+<navigator class="new_car_view" url="/hyb_yl/mysubpages/pages/shopList/shopList">
+    <image class="new_car" src="https://lg-o8nytxik-1257013711.cos.ap-shanghai.myqcloud.com/new_car.png"></image>
+</navigator>
+<import src="../../template/template.wxml"></import>
+<ovalLogin wx:if="{{!bigMask}}"></ovalLogin>
+<import src="../../../template/template.wxml"></import>
+<template is="tabBar" data="{{footer:footer}}"></template>

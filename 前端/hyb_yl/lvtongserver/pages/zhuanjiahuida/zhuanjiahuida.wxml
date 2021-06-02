@@ -1,0 +1,73 @@
+<view class="orderbox">
+    <view class="titles">患者信息</view>
+    <view class="infobox">
+        <view class="infoboxgroup">
+            <view>基本信息</view>
+            <view>{{usedetail.names}} | {{usedetail.sex}} | {{usedetail.age}} | {{usedetail.tizhong}}kg</view>
+        </view>
+        <view class="infoboxgroup">
+            <view>肾功能：</view>
+            <view>{{usedetail.shen_index==0?'正常':'异常'}} </view>
+        </view>
+        <view class="infoboxgroup">
+            <view>肝功能：</view>
+            <view>{{usedetail.gan_index==0?'正常':'异常'}} </view>
+        </view>
+        <view class="infoboxgroup">
+            <view>婚姻状况</view>
+            <view>{{usedetail.hunyin}}</view>
+        </view>
+    </view>
+</view>
+<block wx:for="{{list.message}}" wx:key="key">
+    <view class="ordertime">{{item.created}}</view>
+    <view class="orderboxss" wx:if="{{item.role==0}}">
+        <view class="mess">症状描述：{{item.content.text}}</view>
+        <view class="imgbox">
+            <image bindtap="previewImg" data-index="{{index}}" data-src="{{pic}}" mode="aspectFill" src="{{pic}}" wx:for="{{item.content.upload_picture_list}}" wx:for-item="pic" wx:key="index"></image>
+        </view>
+    </view>
+    <view class="orderbox doctorbox" wx:if="{{item.role==1}}">
+        <view class="doctor">
+            <image src="{{list.doc.thumb}}"></image>
+            <view>{{list.doc.title}} </view>
+        </view>
+        <view class="symptom">{{item.content.text}}</view>
+        <view class="imgbox">
+            <image src="{{pic}}" wx:for="{{item.content.upload_picture_list}}" wx:for-item="pic" wx:key="p"></image>
+        </view>
+    </view>
+</block>
+<view class="forms">
+    <view bindtap="buttonclick" class="formsimgs">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/more.png?sign=25a46e7799731f30fb74ee8958035082&t=1583488929"></image>
+        <text>更多</text>
+    </view>
+    <view bindtap="succ" class="formsimgs" data-id="{{list.id}}" wx:if="{{list.ifpay=='2'}}">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/order.png?sign=cd76d7db4bdd4cc70944e3607e955df8&t=1583488982"></image>
+        <text>订单完成</text>
+    </view>
+    <view bindtap="jiezhen" class="ques" data-id="{{list.id}}" wx:if="{{list.ifpay==='1'}}"> 确认接诊</view>
+    <view bindtap="tabinput2" class="ques" wx:if="{{list.ifpay==='2'}}"> 回答问题</view>
+    <view class="ques" wx:if="{{list.ifpay==='3'||list.ifpay=='4'||list.ifpay==6||list.ifpay==8}}"> 订单已完成</view>
+    <view class="ques" wx:if="{{list.ifpay==='7'}}"> 订单已关闭</view>
+</view>
+<form bindsubmit="submitformzw" wx:if="{{shouwtab}}">
+    <view class="zhuiwen">
+        <view class="zhuiwen-tit">回答 <text bindtap="closezhuiwen">×</text>
+        </view>
+        <view class="zhuiwen-textarea">
+            <textarea name="zhuiwen" placeholder="描述时请尽量详细和准确，充分利用追问机会"></textarea>
+        </view>
+        <view class="sendbox">
+            <view class="lists-item">
+                <view class="img" wx:for="{{upload_picture_list}}" wx:key="index">
+                    <image bindtap="previewImage" class="icons" data-src="{{item}}" src="{{item}}"></image>
+                    <image bindtap="clearImg" class="close" data-ind="{{index}}" src="/hyb_yl/images/error.png"></image>
+                </view>
+                <image bindtap="uploadimg" class="add" mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/chat_msg/pic.png?sign" wx:if="{{upload_picture_list.length<=2}}"></image>
+            </view>
+            <button formType="submit" size="mini">发送</button>
+        </view>
+    </view>
+</form>

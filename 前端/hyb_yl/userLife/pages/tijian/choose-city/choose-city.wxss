@@ -1,0 +1,92 @@
+.city {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: #f4f4f4;
+}
+
+.city_scroll {
+    height: 100%;
+}
+
+.bg-white {
+    background: #fff;
+}
+
+.hide {
+    display: none!important;
+}
+
+.city_search {
+    padding: 20rpx 30rpx;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+.city_search_input {
+    height: 60rpx;
+    background: #e7e7e7;
+    border-radius: 30px;
+    padding: 0 30rpx;
+}
+
+.city_label {
+    padding: 12rpx 0 0;
+    line-height: 58rpx;
+    font-size: 28rpx;
+    color: #808080;
+}
+
+.city_location,.city_hot_city {
+    padding: 0 30rpx;
+}
+
+.city_block {
+    padding: 0 32rpx;
+    height: 80rpx;
+    line-height: 80rpx;
+    margin-right: 20rpx;
+    display: inline-block;
+    margin-bottom: 20rpx;
+}
+
+.city_spell {
+    padding: 18rpx 30rpx 0;
+    line-height: 52rpx;
+    color: #808080;
+    font-size: 28rpx;
+    position: sticky;
+    top: 0;
+    background: #f4f4f4;
+}
+
+.city_item {
+    margin-left: 30rpx;
+    border-bottom: 1px solid #e3e3e3;
+    font-size: 32rpx;
+    color: #333;
+    height: 88rpx;
+    line-height: 88rpx;
+}
+
+.city_item:last-child {
+    border-bottom: none;
+}
+
+.city_bar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30rpx;
+    height: 100%;
+    color: #808080;
+    font-size: 24rpx;
+    line-height: 32rpx;
+}

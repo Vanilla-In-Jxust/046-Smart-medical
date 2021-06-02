@@ -1,0 +1,5 @@
+@import "../intro/intro.wxss";
+
+.offices {
+    margin: 10rpx 30rpx 5rpx 0;
+}

@@ -1,0 +1,99 @@
+<view class="cancel_view" wx:if="{{Wshow}}">
+    <view class="cancel_in">
+        <view class="font_si18 font_co333 cancel_in_title">解约确认</view>
+        <view class="cancel_content">
+            <view class="font_si14 font_co333 cancel_content_in_top">解约原因</view>
+            <view class="cancel_content_in font_">
+                <view bindtap="menuClick" class="cancel_text {{_num==index?'cancel_active':''}}" data-num="{{index}}" data-text="{{item}}" data-uuid="{{textID[index]}}" wx:for="{{text}}" wx:key="{{ index }}">{{item}}</view>
+            </view>
+        </view>
+        <view class="cancel_bottom">
+            <view bindtap="call" class="cancel_bottom_left">我再想想</view>
+            <view bindtap="wzconfirm" class="cancel_bottom_right">解约</view>
+        </view>
+    </view>
+</view>
+<view class="WZwrap-top">
+    <view class="WZwrap-left">
+        <view class="WZwrap-position"></view>
+        <view class="WZwrap-leftBox">
+            <view class="WZwrap-leftBox1">
+                <view class="WZwrap-leftBox1a"></view>
+                <view class="WZwrap-leftBox1b"></view>
+            </view>
+            <view class="WZwrap-leftBox2">共计{{sumCount}}患者</view>
+        </view>
+    </view>
+    <view class="WZwrap-right">
+        <view bindtap="seet" class="WZwrap-rightSeet">
+            <image class="WZwrap-Seetimg" src="/assets/images/wzseet.png"></image>
+            <text class="">患者名</text>
+        </view>
+    </view>
+</view>
+<view class="WZwrap-headline">
+  分组
+  <view bindtap="listnew" class="WZwrap-headlineNew">
+        <text>+</text> 新建</view>
+</view>
+<view class="WZwrap-forbox">
+    <view bindlongpress="longTap" bindtouchend="bindTouchEnd" bindtouchstart="bindTouchStart" catchtap="clickanv" class="WZwrap-for" data-groupId="{{item.groupId}}" data-name="{{item.groupName}}" style=" background: linear-gradient(to right, #{{background[index%4]}}  , #{{background1[index%4]}});" wx:for="{{groups}}" wx:key="{{ index }}">
+        <view class="WZwrap-forname">{{item.groupName}}</view>
+        <view class="WZwrap-forname1">
+            <view catchtap="assign" class="WZwrap-forname1text" data-groupId="{{item.groupId}}" data-groupname="{{item.groupName}}" wx:if="{{item.principal?true:false}}">责任人：{{item.principal.doctorName}}</view>
+            <view catchtap="assign" class="WZwrap-forname1show" data-groupId="{{item.groupId}}" data-groupname="{{item.groupName}}" wx:if="{{item.principal?false:true}}">指定责任人</view>
+            <view class="WZwrap-forname1textbox">{{item.count?item.count:'0'}}</view>
+        </view>
+    </view>
+    <view class="xx" style="width: 100%;text-align: center;color: #999;line-height: 200rpx;" wx:if="{{grouping}}">暂无分组</view>
+</view>
+<view class="WZwrap-headline">
+  未分组
+</view>
+<view class="WZ-ungroupedfor" wx:for="{{UnbankedRegister}}" wx:key="{{ index }}">
+    <view bindtap="shu" class="WZ-ungroupedforimg" data-patientId="{{item.userId}}">
+        <image class="WZ-ungroupedforimg1" src="{{item.userIcon?item.userIcon:'/assets/images/head.png'}}"></image>
+    </view>
+    <view bindtap="shu" class="WZ-ungroupedfortext" data-patientId="{{item.userId}}">
+        <view class="remarkName">
+            <view>{{item.name}}</view>
+            <view class="distance">
+                <image src="/assets/images/dingwei2.png"></image>
+                <text>{{item.doctor.distance>0?item.doctor.distance+'千米':'获取距离失败'}}</text>
+            </view>
+        </view>
+        <view class="remarkName1" wx:if="{{item.remarkName==null?false:true}}">备注: {{item.remarkName}}</view>
+    </view>
+    <view bindtap="Wmovement" class="WZ-ungroupedfortext-img" data-name="{{item.remarkName}}" data-patientId="{{item.userId}}">
+        <image class="WZ-ungroupedfortext-img1" src="/assets/images/wzdian.png"></image>
+    </view>
+</view>
+<view class="xx" style="width: 100%;text-align: center;color: #999;line-height: 300rpx;" wx:if="{{xx}}">暂无患者</view>
+<view class="wz-NewBox" wx:if="{{hiddenmodalput}}">
+    <view class="wz-NewBox1">
+        <view class="wz-NewBoxheadline">新建组</view>
+        <view class="wz-NewBoxseetBox">
+            <input autoFocus bindinput="Winput" class="wz-NewBoxseet" maxlength="14" placeholder="新建组名" placeholderStyle="  text-align: center;color: #ccc;" type="text"></input>
+        </view>
+        <view class="wz-Newfoot">
+            <view bindtap="cancel" class="wz-Newfootcancel">取消</view>
+            <view bindtap="confirm" class="wz-Newfootcancel1">确定</view>
+        </view>
+    </view>
+</view>
+<view class="wz-NewBox" wx:if="{{hiddenmodalput1}}">
+    <view class="wz-NewBox1">
+        <view class="wz-NewBoxheadline">重命名分组</view>
+        <view class="wz-NewBoxseetBox">
+            <input autoFocus bindinput="Winputa" class="wz-NewBoxseet" maxlength="14" placeholder="{{creatername}}" placeholderStyle="  text-align: center;color: #ccc;" type="text"></input>
+        </view>
+        <view class="wz-Newfoot">
+            <view bindtap="cancela" class="wz-Newfootcancel">取消</view>
+            <view bindtap="confirma" class="wz-Newfootcancel1">确定</view>
+        </view>
+    </view>
+</view>
+<navigator class="out_btn" url="/hyb_yl/backstageFollowUp/pages/ChangePatient/ChangePatient?patientType=2&teamId={{teamId}}">
+    <image class="out_image" src="/assets/images/out.png"></image>
+    <text class="font_cofff out_text">发医说</text>
+</navigator>

@@ -1,0 +1,14 @@
+<view class="wrap">
+    <view class="wrap_top">
+        <view class="wrap_text">
+            <view class="wrap_name">{{info.teamname}}</view>
+            <view class="wrap_name1">[团队长] 	{{z_name}}</view>
+            <view class="wrap_name2 text-overflow">简介：{{info.teamtext}}</view>
+        </view>
+        <image class="png" src="{{z_thumbs}}"></image>
+    </view>
+    <view class="box">
+        <image catchtap="previewImage" class="can_img" src="{{info.tderweima}}"></image>
+        <view class="box_text">让患者微信扫一扫，签约团队</view>
+    </view>
+</view>

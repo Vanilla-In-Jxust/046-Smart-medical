@@ -1,0 +1,47 @@
+<form bindsubmit="infomationbtn">
+    <view class="quick-ask-contain">
+        <view class="quick-ask-header">
+            <view>描述症状</view>
+            <view class="quick-ask-subtitle"></view>
+        </view>
+        <textarea class="dxd-textarea__textarea" name="zhengzhuang" placeholder="描述病情现状，医生根据你的病情合理开具处方"></textarea>
+    </view>
+    <view class="quick-ask-contain" style="padding-top:25rpx;">
+        <view class="quick-ask-header">
+            <view class="quick-ask-header-dis">需要的药品
+				<text>(选填)</text>
+            </view>
+            <view class="quick-ask-subtitle"></view>
+        </view>
+        <textarea class="dxd-textarea__textarea" name="yaopin" placeholder="描述病情现状，医生根据你的病情合理开具处方"></textarea>
+    </view>
+    <view class="quick-ask-contain" style="padding-top:25rpx;">
+        <view class="quick-ask-header">
+            <view class="quick-ask-header-dis">想开多久的要
+				<text>(选填)</text>
+            </view>
+            <view class="quick-ask-subtitle"></view>
+        </view>
+        <view class="commonchecked">
+            <view bindtap="checkcommon" class="{{item.checked?'active':''}}" data-i="{{index}}" data-timeleng="{{item.text}}" wx:for="{{checkboxlist}}" wx:key="i">{{item.text}}</view>
+        </view>
+    </view>
+    <view class="attachment-contain">
+        <view class="upload-list">
+            <view class="imglist" wx:for="{{upload_picture_list}}" wx:key="{{index}}">
+                <image bindtap="deleteimg" data-index="{{index}}" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Schu.png?sign=d27c9797be112e6c00069e9cea3db59a&t=1571479530"></image>
+                <image mode="aspectFill" src="{{item}}"></image>
+            </view>
+            <view class="upload-list-item" wx:if="{{upload_picture_list.length!=9}}">
+                <view bindtap="uploadimg" class="upload-list-add">
+                    <image class="upload-list-add-image" mode="widthFix" role="img" src="https://img1.dxycdn.com/2019/1101/756/3377141806470101131-22.png" style="height: 24px;"></image>
+                    <view class="upload-list-add-text">图片/视频</view>
+                </view>
+            </view>
+            <view class="upload-list-desc" wx:if="{{upload_picture_list.length==0}}">
+                <text>上传的内容仅对医生可见</text>
+            </view>
+        </view>
+    </view>
+    <button ariaDisabled="false" class="common-button" formType="submit" role="button">下一步</button>
+</form>

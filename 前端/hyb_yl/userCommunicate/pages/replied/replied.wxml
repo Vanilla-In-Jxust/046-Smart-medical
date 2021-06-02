@@ -1,0 +1,88 @@
+<view class="fixed_top public_white" id="mjltest">
+    <view catchtap="toDoctor" class="bgc_linear intro_head font_cofff font_si12">
+        <image class="dco_img" mode="aspectFill" src="{{contactList.doctorBaseInfoVO.userIcon}}"></image>
+        <view class="doc_view">
+            <view class="font_si18 doc_name">
+                <text>{{contactList.doctorBaseInfoVO.doctorName}}</text>
+                <text class="job_type font_si14">{{contactList.doctorBaseInfoVO.jobType==1?'[医生]':contactList.doctorBaseInfoVO.jobType==2?'[护士]':''}}</text>
+            </view>
+        </view>
+        <image class="more_img" src="/assets/shop_images/txmore.png"></image>
+    </view>
+    <block wx:if="{{!upFlag}}">
+        <scroll-view scrollY class="font_si16 font_co333 public_white quest_view">
+      {{contactList.dpMedOrderVo.msgTxt}}
+    </scroll-view>
+        <view class="scroll_box">
+            <scroll-view scrollX class="quest_img_view public_white" wx:if="{{contactList.dpMedOrderVo.msgPicSmall.length>0}}">
+                <image catchtap="previewImage" class="quest_img" data-imgindex="{{index}}" mode="aspectFill" src="{{item}}" wx:for="{{contactList.dpMedOrderVo.msgPicSmall}}" wx:key="{{ index }}"></image>
+            </scroll-view>
+        </view>
+    </block>
+    <view class="font_si14 font_co333 center prompt height_96 public_white">
+        <view>
+            <switch bindchange="switch1Change" checked="{{authStateBoo}}" data-target="1" wx:if="{{switchBoo}}"></switch>
+            <text class="font_co999">{{switchText}}</text>
+        </view>
+        <view class="center right_view">
+            <text bindtap="closeBtn" class="font_co999 over_replide">结束咨询</text>
+            <view bindtap="packUp" class="over_btn font_co3b font_si14">{{upText}}</view>
+        </view>
+    </view>
+</view>
+<view class="view_top" style="height: {{text_height}}px;" wx:if="{{!serviceFlag}}"></view>
+<view class="view_top" style="height: 236rpx;" wx:if="{{serviceFlag}}"></view>
+<scroll-view scrollY bindscrolltoupper="scrolltoupper" class="font_si12 font_co999 quest_time" scrollTop="{{scrollTop}}" style="height: {{scroll_height}}px; padding-bottom: {{!serviceFlag?text_padding+'px':174+'rpx'}};">
+    <view class="loading_view" hidden="{{loadingBoo}}"></view>
+    <view class="dialog_box">
+        <view wx:for="{{oppositeList}}" wx:key="{{ index }}">
+            <view class="opposite" wx:if="{{item.from==doctorId}}">
+                <text class="font_si12 font_co3b opposite_time" wx:if="{{item.parting==1}}">以下是最新消息</text>
+                <text class="font_si12 font_co999 opposite_time">{{item.ctime}}</text>
+                <view class="opposite_in">
+                    <view class="opposite_img_view">
+                        <image class="opposite_img" mode="aspectFill" src="{{contactList.doctorBaseInfoVO.userIcon}}"></image>
+                    </view>
+                    <text bindtap="toPlay" class="video_text_left font_si14 public_white font_co333" data-index="{{index}}" data-src="{{item.msg}}" wx:if="{{item.msgType=='SINGLE_VIDEO'}}">{{item.playFlag?'播放中...':item.duration+'"'}}<text class="opposite_text"></text>
+                    </text>
+                    <text class="opposite_content_text font_si14 public_white font_co333" wx:if="{{item.msgType=='SINGLE_TEXT'}}">{{item.msg}}<text class="opposite_text"></text>
+                    </text>
+                    <image catchtap="bigImage" class="own_img_img" data-bigimg="{{item.bigImg}}" mode="widthFix" src="{{item.msg}}" style="width: 220rpx;" wx:if="{{item.msgType=='SINGLE_IMAGE'}}"></image>
+                </view>
+            </view>
+            <view class="opposite_own" wx:else>
+                <text class="font_si12 font_co999 opposite_time">{{item.ctime}}</text>
+                <view class="opposite_in opposite_in_own">
+                    <text bindlongtap="backout" class="own_content_text font_si14 public_bgc3b font_cofff" data-backmsg="{{item.seqId}}" data-index="{{index}}" wx:if="{{item.msgType=='SINGLE_TEXT'}}">{{item.msg}}<text class="opposite_own_text public_bgc3b"></text>
+                    </text>
+                    <image bindlongpress="backout" catchtap="bigImage" class="own_img" data-backmsg="{{item.seqId}}" data-bigimg="{{item.bigImg}}" data-index="{{index}}" mode="widthFix" src="{{item.msg}}" style="width: 200rpx;" wx:if="{{item.msgType=='SINGLE_IMAGE'}}"></image>
+                    <text bindlongtap="backout" bindtap="toPlay" class="video_text public_bgc3b font_cofff font_si14" data-backmsg="{{item.seqId}}" data-index="{{index}}" data-src="{{item.msg}}" wx:if="{{item.msgType=='SINGLE_VIDEO'}}">{{item.playFlag?'播放中...':item.duration+'"'}}<text class="opposite_own_text public_bgc3b"></text>
+                    </text>
+                    <image class="opposite_img" mode="aspectFill" src="{{contactList.patientIcon?contactList.patientIcon:'/assets/shop_images/head.png'}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class=" fixed_bottom" id="textarea_bottom">
+    <form bindsubmit="{{imgBoo?'':'sendMsg'}}" catchtap="{{disableFlag?'toast':''}}" class="center edit_text form">
+        <view bindtouchend="shopRecord" bindtouchstart="{{disableFlag?'toast':'getRecord'}}" class="text_record" wx:if="{{recordFlag}}">{{record_text}}</view>
+        <textarea autoHeight="{{heightFlag}}" bindinput="getText" bindlinechange="bindlinechange" class="edit_input font_si18 font_co333" cursorSpacing="20" disabled="{{disableFlag}}" fixed="true" maxlength="500" name="textarea" placeholder="" showConfirmBar="" style="height: {{height}}rpx;" type="" value="{{textMsg}}" wx:if="{{!recordFlag}}"></textarea>
+        <button class="sendBtn font_cofff font_si12 {{imgBoo?'bgeb':'public_bgc3b'}}" formType="submit" wx:if="{{!recordFlag}}">
+            <image class="send_img" src="/assets/images/send.png"></image>
+        </button>
+    </form>
+    <view class="edit_text_bottom">
+        <navigator hoverClass="hoverClass" url="/hyb_yl/index/common/common"></navigator>
+        <view bindtap="goText">
+            <image class="edit_bottom_img" src="{{recordFlag?'/assets/images/text01.png':'/assets/images/text02.png'}}"></image>
+        </view>
+        <view bindtap="toRecord">
+            <image class="edit_bottom_img" src="{{recordFlag?'/assets/images/yuy02.png':'/assets/images/yuy01.png'}}"></image>
+        </view>
+        <view bindtap="{{disableFlag?'toast':'sendChooseImg'}}">
+            <image class="edit_bottom_img" src="/assets/images/LL.png"></image>
+        </view>
+        <navigator hoverClass="hoverClass" url="/hyb_yl/index/common/common"></navigator>
+    </view>
+</view>

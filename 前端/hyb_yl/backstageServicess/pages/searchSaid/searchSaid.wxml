@@ -1,0 +1,30 @@
+<view class="search_patient">
+    <view class="search_view">
+        <image class="serach_img" src="/assets/images/wzseet.png"></image>
+        <input bindinput="serachBtn" class="input" placeholder="关键词" placeholderClass="font_co999 font_si14"></input>
+    </view>
+</view>
+<view style="height: 114rpx;"></view>
+<scroll-view scrollY bindscrolltolower="getMore" class="scroll_view">
+    <view bindtap="getSaid" class="classify_list" data-index="{{index}}" wx:for="{{list}}" wx:key="{{index}}">
+        <view class="classify_list_left">
+            <view class="font_co333 font_si18 text-overflow classify_list_left_top">{{item.title}}</view>
+            <view class="classify_list_left_bottom font_si12 font_co999">
+                <text>{{item.name}}</text>
+                <text class="classify_list_time">{{item.releaseDayTime}}</text>
+                <text>{{item.nmType}}</text>
+            </view>
+        </view>
+        <view class="classify_list_img_view classify_list_img">
+            <image class="classify_list_img" src="{{item.coverImg}}"></image>
+            <view class="classify_list_img_view_absolute classify_list_img" wx:if="{{item.eduType==2}}">
+                <image class="vd_img" src="/assets/images/vd.png"></image>
+            </view>
+        </view>
+    </view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">没有更多了~</view>
+</scroll-view>
+<view style="height: 400rpx; line-height: 400rpx; text-align: center; color: #666; font-size: 32rpx;" wx:if="{{noFlag}}">未找到相关搜索，请重新查找</view>

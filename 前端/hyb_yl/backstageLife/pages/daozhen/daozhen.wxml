@@ -1,0 +1,30 @@
+<view class="dabj">
+    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/dzbj.png?sign=bfd0396df65e50fa7efc3eb6ee8e74eb&t=1584934978"></image>
+</view>
+<view class="selclass">
+    <view class="titles">选择科室</view>
+    <view class="keshilist">
+        <view bindtap="selclass" class="keshiitem {{current==index?'active':''}}" data-dex="{{index}}" wx:for="{{keshilist}}" wx:key="{{index}}">
+            <view class="kstit">{{item.title}}</view>
+            <image class="keshiimg" src="{{current==index?item.selimg:item.imgs}}"></image>
+            <view class="kstit">
+                <image src="../../../images/pitch.png" wx:if="{{current==index}}"></image>
+                <text>{{item.moner}}元/次</text>
+            </view>
+        </view>
+    </view>
+    <view class="times">急诊时间：07:00-次日01:45</view>
+</view>
+<view class="pingjia">
+    <view class="titles">选择科室</view>
+    <view class="pingjiabox">
+        <view class="pjitem">
+            <view class="pjuser">
+                <text>19666666</text>
+                <text>很满意</text>
+            </view>
+            <view class="pjcontent">和交互大航海时代放声大和交互大航海时代放声大哭混分巨兽的和交互大航海时代放声大哭混分巨兽的和交互大航海时代放声大哭混分巨兽的哭混分巨兽的</view>
+        </view>
+    </view>
+</view>
+<view bindtap="comego" class="btns">马上问诊</view>

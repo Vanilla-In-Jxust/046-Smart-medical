@@ -1,0 +1,23 @@
+<form bindsubmit="submit">
+    <view class="textarea">
+        <textarea bindconfirm="handleConfirm" bindinput="handleContentInput" class="textarea-normal textarea-common" cursor="-1" focus="1" maxlength="500" placeholder="{{key_words=='tijianjiedu'?'请填写综合建议':'请详细描述你的病情'}}" placeholderClass="textarea-placeholder" selectionEnd="-1" selectionStart="-1"></textarea>
+    </view>
+    <view class="upload-list">
+        <view class="imglist" wx:for="{{upload_picture_list}}" wx:key="{{index}}">
+            <image bindtap="deleteimg" data-index="{{index}}" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Schu.png?sign=d27c9797be112e6c00069e9cea3db59a&t=1571479530"></image>
+            <image mode="aspectFill" src="{{item}}"></image>
+        </view>
+        <view class="upload-list-item" wx:if="{{upload_picture_list.length!=9}}">
+            <view bindtap="uploadimg" class="upload-list-add">
+                <image class="upload-list-add-image" mode="widthFix" role="img" src="https://img1.dxycdn.com/2019/1101/756/3377141806470101131-22.png" style="height: 24px;"></image>
+                <view class="upload-list-add-text">图片</view>
+            </view>
+        </view>
+        <view class="upload-list-desc">
+            <text>上传的内容仅对医生可见</text>
+        </view>
+    </view>
+    <view class="bottom-button">
+        <button ariaDisabled="false" bindtap="submit" class="common-button" role="button">发送</button>
+    </view>
+</form>

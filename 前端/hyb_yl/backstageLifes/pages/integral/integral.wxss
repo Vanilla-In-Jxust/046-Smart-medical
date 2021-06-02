@@ -1,0 +1,105 @@
+page {
+    background: #f2f3f7;
+}
+
+.head_view {
+    height: 360rpx;
+    background-image: linear-gradient(0deg,#7587e6 0%,#3b4ca9 100%);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.integral_img {
+    height: 40rpx;
+    width: 40rpx;
+    margin-right: 14rpx;
+    margin-bottom: 20rpx;
+}
+
+.inter_num {
+    font-size: 80rpx;
+    color: #fff;
+    display: inline-block;
+}
+
+.rule_view {
+    font-size: 24rpx;
+    color: #fff;
+    position: absolute;
+    top: 0rpx;
+    right: 0rpx;
+    padding: 30rpx 30rpx 30rpx 30rpx;
+}
+
+.inter_detail {
+    background-color: #fff;
+    padding-left: 30rpx;
+    line-height: 96rpx;
+}
+
+.title {
+    height: 88rpx;
+    display: flex;
+    justify-content: space-around;
+    font-size: 28rpx;
+    color: #333;
+    background-color: #fff;
+    align-items: center;
+    position: sticky;
+}
+
+.tilte_name {
+    line-height: 88rpx;
+    padding: 0 40rpx;
+}
+
+.list_view {
+    padding: 30rpx 30rpx 20rpx 30rpx;
+    border-top: 1rpx solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}
+
+.list_left {
+    display: flex;
+    flex-direction: column;
+}
+
+.list_left_top {
+    display: inline-block;
+    margin-bottom: 10rpx;
+    max-width: 500rpx;
+}
+
+.list_right {
+    font-size: 48rpx;
+}
+
+.cut_color {
+    color: #4ca724;
+}
+
+.exchange {
+    width: 180rpx;
+    height: 72rpx;
+    background-color: #fff;
+    box-shadow: 0px 16rpx 16rpx 0px rgba(59,76,169,0.18);
+    border-radius: 36rpx;
+    line-height: 72rpx;
+    text-align: center;
+    margin-top: 40rpx;
+}
+
+.scroll_view {
+    max-height: 90vh;
+}
+
+.detail {
+    height: 500rpx;
+    line-height: 500rpx;
+    text-align: center;
+}

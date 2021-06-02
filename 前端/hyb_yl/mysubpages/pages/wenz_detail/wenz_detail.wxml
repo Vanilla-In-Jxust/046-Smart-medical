@@ -1,0 +1,112 @@
+<view class="fixed_top" id="mjltest">
+    <view class="message">
+        <view class="messageImgBox">
+            <image class="messageImg" mode="aspectFill" src="{{touxiang1?touxiang1:'/assets/images/head.png'}}"></image>
+        </view>
+        <view class="messageTextBox">
+            <view class="messageText1">{{f_name}}</view>
+            <view class="messageText2">
+                <image class="messageText2Img" src="{{t_msg.mysex=='男'?'/assets/images/nana.png':'/assets/images/nva.png'}}"></image>
+            </view>
+            <view class="messageText3" wx:if="{{contactList[0].patientSimpleVo.age}}">{{t_msg.myage}}岁</view>
+        </view>
+        <view class="messageRught">
+            <image bindtap="lookPaint" class="messageRughtImg {{show?'':'messageRughtImg_margin'}}" src="/assets/images/setting.png"></image>
+            <view bindtap="Clickshow1" class="messageText2Img1" wx:if="{{show}}">
+        问题查看
+      </view>
+        </view>
+    </view>
+    <view class="ImageText" wx:if="{{hide}}">
+        <view class="ImageText">
+            <scroll-view scrollY class="font_si16 font_co333 public_white quest_view">
+        {{centendata[0].content}}
+      </scroll-view>
+            <view class="scroll_box">
+                <scroll-view scrollX class="quest_img_view public_white">
+                    <image catchtap="previewImage" class="quest_img" data-imgindex="{{index}}" data-list="{{item.pictures}}" data-src="{{item}}" mode="aspectFill" src="{{item}}" wx:for="{{centendata[0].f_ipic}}" wx:key="{{index}}"></image>
+                </scroll-view>
+            </view>
+            <view class="prompt">
+                <text>服务时间：{{goby}}</text>
+                <view class="left_view">
+                    <text bindtap="closeBtn" class="over_replide">结束咨询</text>
+                    <view bindtap="Clickshow" class="up_view">
+                        <view class="font_si14 font_co3b">收起</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="height: 120rpx;"></view>
+<scroll-view scrollY bindscrolltoupper="scrolltoupper" class="font_si12 font_co999 quest_time" scrollTop="{{scrollTop}}" style="height: {{scroll_height}}px; padding-bottom: 180rpx">
+    <view class="dialog_box" id="hei">
+        <view wx:for="{{centendata}}" wx:key="{{index}}">
+            <view class="opposite" wx:if="{{item.is_show_right!==1}}">
+                <text class="font_si12 font_co3b opposite_time" style="color: #3b4ca9;" wx:if="{{centendata.length==1}}">以下是最新消息</text>
+                <text class="font_si12 font_co999 opposite_time">{{item.time}}</text>
+                <view class="opposite_in">
+                    <view class="opposite_img_view">
+                        <view class="ltt" wx:if="{{item.ifkf==1}}">
+                            <image class="opposite_img" mode="aspectFill" src="{{item.z_thumbs?item.z_thumbs:'/assets/images/head.png'}}"></image>
+                            <text>在线医生</text>
+                        </view>
+                        <view class="ltt" wx:else>
+                            <image class="opposite_img" mode="aspectFill" src="{{touxiang1?touxiang1:'/assets/images/head.png'}}"></image>
+                            <text>{{f_name}}</text>
+                        </view>
+                    </view>
+                    <text bindlongtap="backout" bindtap="toPlay" class="video_text_left font_si14 public_white font_co333" data-backmsg="{{item.seqId}}" data-index="{{index}}" data-src="{{item.content}}" wx:if="{{item.typetext==3}}">{{item.playFlag?'播放中...':'播放'}}<text class="opposite_text"></text>
+                    </text>
+                    <text class="opposite_content_text font_si14 public_white font_co333" wx:if="{{item.typetext==0}}">{{item.content}}<text class="opposite_text" style="word-break:break-all;"></text>
+                    </text>
+                    <image catchtap="bigImage" class="own_img_img" data-src="{{item.content}}" mode="widthFix" src="{{item.content}}" style="width: 220rpx;" wx:if="{{item.typetext==2}}"></image>
+                    <image bindlongpress="backout" catchtap="bigImage" class="own_img_img" data-src="{{url}}attachment/{{item.content}}" mode="widthFix" src="{{url}}attachment/{{item.content}}" style="width: 220rpx;" wx:if="{{item.typetext==1}}"></image>
+                </view>
+            </view>
+            <view class="opposite_own" wx:else>
+                <text class="font_si12 font_co999 opposite_time">{{item.time}}</text>
+                <view class="opposite_in opposite_in_own">
+                    <div bindlongtap="backout" class="own_content_text font_si14 public_bgc3b font_cofff" data-backmsg="{{item.seqId}}" data-index="{{index}}" wx:if="{{item.typetext==0}}">
+                        <text style="width:100%">{{item.content}} </text>
+                    </div>
+                    <image bindlongpress="backout" catchtap="bigImage" class="own_img" data-index="{{index}}" data-src="{{item.content}}" mode="widthFix" src="{{item.content}}" style="width: 220rpx;" wx:if="{{item.typetext==2}}"></image>
+                    <image bindlongpress="backout" catchtap="bigImage" class="own_img" data-index="{{index}}" data-src="{{item.content}}" mode="widthFix" src="{{item.content}}" style="width: 220rpx;" wx:if="{{item.typetext==1}}"></image>
+                    <text bindlongtap="backout" bindtap="toPlay" class="video_text public_bgc3b font_cofff font_si14" data-backmsg="{{item.seqId}}" data-index="{{index}}" data-src="{{item.content}}" wx:if="{{item.typetext==3}}">{{item.playFlag?'播放中...':'播放'}}<text class="opposite_own_text public_bgc3b"></text>
+                    </text>
+                    <image class="opposite_img" mode="aspectFill" src="{{touxiang?touxiang:'/assets/images/head.png'}}" wx:if="{{item.ifkf==3}}"></image>
+                    <image class="opposite_img" mode="aspectFill" src="/assets/images/head.png" wx:else></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="click fixed_bottom" id="textarea_bottom">
+    <scroll-view class="scroll" scrollX="true" style=" white-space: nowrap; display: flex" wx:if="{{tempFilePaths!=''}}">
+        <view class="scroll-view-item" id="green">
+            <image class="scroll-view-item-img" src="{{tempFilePaths}}"></image>
+            <image bindtap="scrollS" class="scroll-S" data-text="{{index}}" src="/assets/images/Schu.png"></image>
+        </view>
+    </scroll-view>
+    <form bindsubmit="add" class="public_white center edit_text from" reportSubmit="true" wx:if="{{if_over!=='1'}}">
+        <view catchtouchend="shopRecord" catchtouchstart="{{disableFlag?'toast':'getRecord'}}" class="text_record" wx:if="{{recordFlag}}">{{record_text}}</view>
+        <block wx:else>
+            <textarea autoHeight="{{heightFlag}}" bindinput="getText" bindlinechange="bindlinechange" class="edit_input font_si14 font_co333" cursorSpacing="20" disabled="{{disableFlag}}" fixed="true" maxlength="500" name="textarea" style="height: {{height}}rpx;" value="{{news_input_val}}"></textarea>
+            <button class="sendBtn font_cofff font_si12 {{imgBoo?'bgeb':'public_bgc3b'}}" formType="submit">
+                <image class="send_img" src="/assets/images/send.png"></image>
+            </button>
+        </block>
+    </form>
+    <view class="edit_text_bottom">
+        <view bindtap="goText">
+            <image class="edit_bottom_img" src="{{recordFlag?'/assets/images/text01.png':'/assets/images/text02.png'}}"></image>
+        </view>
+        <view bindtap="toRecord">
+            <image class="edit_bottom_img" src="{{recordFlag?'/assets/images/yuy02.png':'/assets/images/yuy01.png'}}"></image>
+        </view>
+        <view bindtap="sendChooseImg">
+            <image class="edit_bottom_img" src="/assets/images/LL.png"></image>
+        </view>
+    </view>
+</view>

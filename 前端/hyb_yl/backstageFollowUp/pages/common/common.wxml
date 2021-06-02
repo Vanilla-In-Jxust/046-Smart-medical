@@ -1,0 +1,34 @@
+<view class="height_96 common_head font_si16 fixed_top">
+    <view bindtap="list" class="common_text {{currentIndex==1?'active':''}}" data-index="1">自定义</view>
+    <view bindtap="list" class="common_text {{currentIndex==2?'active':''}}" data-index="2">系统默认</view>
+</view>
+<view style="height: 96rpx;"></view>
+<scroll-view class="scroll_view font_si16 font_co333">
+    <view class="self_view" wx:for="{{selfList}}" wx:key="{{index}}">
+        <view catchtap="goUp" class="up_view" data-index="{{index}}">
+            <image class="up_img" src="/assets/images/shot_up.png"></image>
+        </view>
+        <view catchtap="goDown" class="down_view" data-index="{{index}}">
+            <image class="down_img" src="/assets/images/shot_down.png"></image>
+        </view>
+        <view catchtap="delBtn" class="del_view" data-id="{{item.id}}" data-index="{{index}}">
+            <image class="del_img" src="/assets/images/del_img.png"></image>
+        </view>
+        <text catchtap="getContent" data-text="{{item.templateContent}}">{{item.templateContent}}</text>
+        <navigator class="img_view" hoverClass="hoverClass" url="/hyb_yl/backstageOther/pages/editcatchphrase/editcatchphrase?id={{item.id}}&sort={{item.sort}}">
+            <image class="edit_img" src="/assets/images/edit.png"></image>
+        </navigator>
+    </view>
+    <view class="font_co666 font_si16" style="height: 500rpx; line-height: 500rpx; text-align: center;">竟然没有一条~</view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBooOne}}">没有更多了~</view>
+</scroll-view>
+<scroll-view class="scroll_view font_si16 font_co333">
+    <view catchtap="getContent" class="self_view" data-text="{{item.templateContent}}" wx:for="{{defaulList}}" wx:key="{{index}}">
+        <text>{{item.templateContent}}</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBooTwo}}">没有更多了~</view>
+</scroll-view>
+<view style="height: 104rpx;"></view>
+<navigator class="font_si18 font_co3b new_view " url="/hyb_yl/backstageFollowUp/pages/catchphrase/catchphrase?maxSort={{maxSort}}">
+    <view class="height_80 public_white new_text">新建</view>
+</navigator>

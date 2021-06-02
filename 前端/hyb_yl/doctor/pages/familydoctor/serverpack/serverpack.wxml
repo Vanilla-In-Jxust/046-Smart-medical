@@ -1,0 +1,14 @@
+<view>
+    <view class="oval">
+        <view bindtap="packdetail" class="packbox" data-ff_id="{{item.ff_id}}" wx:for="{{classify}}" wx:key="*this">
+            <view class="packclass">
+                <view class="packname">{{item.fw_name}}</view>
+                <view class="packRight">
+                    <view class="arrowImg">
+                        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/packArr.png?sign=73514c4d76a44404bfd6669b312b0b16&t=1572331594"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

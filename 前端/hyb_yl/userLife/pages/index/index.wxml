@@ -1,0 +1,18 @@
+<form bindsubmit="subClick">
+    <view class="bsbb bgcf pl30 pr40 pt30">
+        <textarea bindinput="input" class="h240 fs26 w" maxlength="500" name="symptom" placeholder="请详细描述您的症状、疾病和身体状况,便于医生更准确的分析(10-500字），为保护您的隐私,请勿在咨询中透露您的真实姓名、手机号、微信号等信息。" placeholderClass="c8"></textarea>
+        <view class="mt190">
+            <view class="c65 fs24">上传相关图片(检查报告、患处照片、药品等)</view>
+        </view>
+        <view class="df fww bsbb pt50">
+            <view class="pr mr30 mb50" wx:for="{{imgArr}}" wx:key="unique">
+                <image class="w106 h106" mode="aspectFill" src="{{item}}"></image>
+                <view bindtap="delImg" class="pa del cf fs22 df aic jcc" data-index="{{index}}">X</view>
+            </view>
+            <view class="pr mr30 mb50">
+                <image bindtap="addImg" class="w106 h106" mode="aspectFill" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/jia.gif?sign=2d83f876813d526de656fce7a8dd355a&t=1569290310" wx:if="{{imgArr.length<9}}"></image>
+            </view>
+        </view>
+    </view>
+    <button class="bdn df aic jcc bgc_green btn_tijiao cf fs30" formType="submit" style="background-color:{{bgc}}">提交问题</button>
+</form>

@@ -1,0 +1,22 @@
+<view bindtap="commodity" class="frame" data-sid="{{item.sid}}" wx:for="{{fuwu}}" wx:key="index">
+    <view class="notice">
+        <image class="img" src="{{item.suoltu}}"></image>
+        <view class="silhouette"></view>
+        <view class="title">{{item.sname}}</view>
+    </view>
+    <view class="money">
+        <text class="sign">￥</text>
+        <text class="price">{{item.smoney}}</text>
+    </view>
+    <view class="fanhui" style="box-sizing: border-box;z-index: 999;position: absolute;background:{{bgc}};">
+        <navigator hoverClass="none" openType="redirect" url="/hyb_yl/tabBar/index/index">
+            <image src="/hyb_yl/images/index.png"></image>
+        </navigator>
+    </view>
+    <view class="empty" wx:if="{{fuwu.length==0||fuwu==null}}">
+        <view>
+            <image src="/hyb_yl/images/empty.png"></image>
+        </view>
+        <view>抱歉！还没有内容</view>
+    </view>
+</view>

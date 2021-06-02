@@ -1,0 +1,105 @@
+page {
+    background: #f2f3f7;
+}
+
+.placeholder {
+    font-size: 36rpx;
+    color: #999;
+}
+
+.title {
+    background-color: #fff;
+    padding: 20rpx 30rpx;
+    margin: 20rpx 0;
+    display: flex;
+    align-items: center;
+}
+
+.title_input {
+    width: 100%;
+}
+
+.content {
+    background-color: #fff;
+    padding: 30rpx;
+}
+
+.content_input {
+    width: 100%;
+}
+
+.announce_img {
+    background-color: #fff;
+    padding: 30rpx 0 30rpx 30rpx;
+    margin-top: 20rpx;
+    display: flex;
+    flex-flow: wrap;
+}
+
+.ann_add_view {
+    height: 160rpx;
+    width: 160rpx;
+    background-color: #f2f4ff;
+    border-radius: 8rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ann_add_img {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.add_img {
+    height: 160rpx;
+    width: 160rpx;
+    border-radius: 8rpx;
+    display: block;
+    margin-right: 18rpx;
+    margin-bottom: 10rpx;
+}
+
+.foot_view {
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 104rpx;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    justify-content: center;
+}
+
+.foot_btn {
+    width: 690rpx;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.pic_view {
+    position: relative;
+}
+
+.icon_view {
+    position: absolute;
+    top: -16rpx;
+    right: 4rpx;
+    border-radius: 50%;
+    height: 40rpx;
+    width: 40rpx;
+}
+
+.top_view {
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    padding: 0 30rpx;
+    justify-content: space-between;
+    background-color: #fff;
+}

@@ -1,0 +1,101 @@
+<view class="hot-sale-page">
+    <view class="swiper-tab">
+        <view bindtap="swichNav" class="tab-item on" data-current="0">体检</view>
+    </view>
+    <swiper bindchange="swiperChange" class="swiper-tab-content" current="0" duration="200" style="height: 660px">
+        <swiper-item class="long" style="position: absolute; width: 100%; height: 100%; transform: translate(0%, 0px) translateZ(0px);">
+            <view bindscrolltolower="lower" style="height: auto">
+                <view class="head">
+                    <view>
+                        <view class="grid">
+                            <view bindtap="checkItemTap" class="grid-item" data-id="{{item.id}}" data-index="{{index}}" style="width:20%;" wx:for="{{cate}}" wx:key="key">
+                                <view class="grid-item-wrapper {{xuan==index?'active':''||id==item.id?'active':''}}">
+                                    <view class="grid-border-icon"></view>
+                                    <image class="grid-icon" mode="aspectFit" role="img" src="{{item.thumb}}"></image>
+                                    <text class="grid-text">{{item.title}}</text>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="a-dropdown-wrapper">
+                    <view class="a-dropdown-nav" id="a-dropdown-nav">
+                        <view bindtap="_onNavItemTap" class="a-dropdown-nav-item" data-index="0" hoverClass="a-dropdown-nav-item-hover">
+                            <text>默认排序</text>
+                            <view class="triangle"></view>
+                        </view>
+                    </view>
+                    <view class="a-dropdown-contents">
+                        <view>
+                            <view class="a-dropdown-list-items">
+                                <view bindtap="_onListItemTap" catchtap="_catchListItemTap" class="a-dropdown-list-item" data-index="0" data-parentindex="0" data-tag-code="P3" data-tag-name="默认排序" hoverClass="a-dropdown-list-item-hover">
+                                    <view class="a-dropdown-list-item-line">
+                                        <text class="a-dropdown-list-item-content">默认排序</text>
+                                        <view class="a-dropdown-list-item-check"></view>
+                                        <view class="a-dropdown-list-item-bottom"></view>
+                                    </view>
+                                </view>
+                                <view bindtap="_onListItemTap" catchtap="_catchListItemTap" class="a-dropdown-list-item" data-index="1" data-parentindex="0" data-tag-code="P1" data-tag-name="价格从高到低" hoverClass="a-dropdown-list-item-hover">
+                                    <view class="a-dropdown-list-item-line">
+                                        <text class="a-dropdown-list-item-content"> 价格从高到低</text>
+                                        <view class="a-dropdown-list-item-check"></view>
+                                        <view class="a-dropdown-list-item-bottom"></view>
+                                    </view>
+                                </view>
+                                <view bindtap="_onListItemTap" catchtap="_catchListItemTap" class="a-dropdown-list-item last" data-index="2" data-parentindex="0" data-tag-code="P2" data-tag-name="价格从低到高" hoverClass="a-dropdown-list-item-hover">
+                                    <view class="a-dropdown-list-item-line">
+                                        <text class="a-dropdown-list-item-content">价格从低到高</text>
+                                        <view class="a-dropdown-list-item-check"></view>
+                                        <view class="a-dropdown-list-item-bottom"></view>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                        <scroll-view class="a-dropdown-contents">
+                            <view>
+                                <view class="a-dropdown-list-items">
+                                    <view bindtap="_onListItemTap" catchtap="_catchListItemTap" class="a-dropdown-list-item" data-index="0" data-parentindex="0" data-tag-code="P3" data-tag-name="默认排序" hoverClass="a-dropdown-list-item-hover">
+                                        <view class="a-dropdown-list-item-line">
+                                            <text class="a-dropdown-list-item-content"> 默认排序</text>
+                                            <view class="a-dropdown-list-item-check"></view>
+                                            <view class="a-dropdown-list-item-bottom"></view>
+                                        </view>
+                                    </view>
+                                    <view bindtap="_onListItemTap" catchtap="_catchListItemTap" class="a-dropdown-list-item" data-index="1" data-parentindex="0" data-tag-code="P1" data-tag-name="价格从高到低" hoverClass="a-dropdown-list-item-hover">
+                                        <view class="a-dropdown-list-item-line">
+                                            <text class="a-dropdown-list-item-content">价格从高到低</text>
+                                            <view class="a-dropdown-list-item-check"></view>
+                                            <view class="a-dropdown-list-item-bottom"></view>
+                                        </view>
+                                    </view>
+                                    <view bindtap="_onListItemTap" catchtap="_catchListItemTap" class="a-dropdown-list-item last" data-index="2" data-parentindex="0" data-tag-code="P2" data-tag-name="价格从低到高" hoverClass="a-dropdown-list-item-hover">
+                                        <view class="a-dropdown-list-item-line">
+                                            <text class="a-dropdown-list-item-content">价格从低到高</text>
+                                            <view class="a-dropdown-list-item-check"></view>
+                                            <view class="a-dropdown-list-item-bottom"></view>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </scroll-view>
+                        <view class="a-dropdown-placeholder"></view>
+                        <view bindtap="_catchBgTap" class="a-dropdown-bg"></view>
+                        <view class="product-view">
+                            <view bindtap="goDetail" class="package_item_box white" data-tid="{{item.id}}" wx:for="{{list}}" wx:key="key">
+                                <image class="package_img" role="img" src="{{item.thumb}}"></image>
+                                <view class="package_right">
+                                    <view class="title">{{item.title}}</view>
+                                    <view class="describle">{{item.content}}</view>
+                                    <view class="number">
+                                        <text class="price">￥{{item.price}}</text>
+                                        <text class="people">{{item.haveBuyNumber}}已约</text>
+                                    </view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>

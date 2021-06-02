@@ -1,0 +1,59 @@
+page {
+    background: #fff;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+    padding-bottom: 110rpx;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.ask-guide-header-title {
+    margin-top: 40rpx;
+    color: #333;
+    font-weight: 500;
+    font-size: 60rpx;
+}
+
+.single-image-container {
+    padding: 30px 0 30px;
+}
+
+.single-image {
+    height: 52px;
+}
+
+.ask-box-des {
+    flex-flow: row nowrap;
+    align-items: center;
+    padding: 60rpx 0;
+    display: flex;
+}
+
+.ask-box-img {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 32rpx;
+}
+
+.ask-box-text {
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+}
+
+.ask-box-des-title {
+    color: #333;
+    font-weight: 500;
+    font-size: 36rpx;
+    line-height: 1.11;
+}
+
+.ask-box-des-detail {
+    margin-top: 20rpx;
+    color: #999;
+    font-weight: 300;
+    font-size: 28rpx;
+    line-height: 1.14;
+}

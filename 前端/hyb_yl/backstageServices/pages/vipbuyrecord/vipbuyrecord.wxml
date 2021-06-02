@@ -1,0 +1,27 @@
+<view class="record" wx:for="{{recordlist}}">
+    <view class="record-item">
+        <image class="vipbg" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/vipbg2.png?sign=0c75b28d03cc165c8ce98c61f034db76&t=1591438055"></image>
+        <view class="record-card">
+            <view class="card-top">
+                <view class="cardt-le">
+                    <view class="card-v">
+                        <image class="vip-icon" mode="widthFix" src="{{item.huiyuan_thumb}}"></image>
+                        <view>{{item.huiyuan_title}}</view>
+                    </view>
+                    <view class="card-pri">
+                        <view>￥</view>
+                        <view class="price">{{item.price}}</view>
+                    </view>
+                </view>
+                <view class="card-xf" wx:if="{{item.type==0}}">会员购买</view>
+                <view class="card-xf renew" wx:if="{{item.type==1}}">会员续费</view>
+                <view class="card-xf allbg" wx:if="{{item.type==2}}">会员转增</view>
+            </view>
+            <view class="card-tip">使用限制 ：{{item['shiyongxianzhi']}}</view>
+            <view class="card-time">
+                <view>到期时间{{item.starttime}}-{{item.endtime}}</view>
+                <view>时长：{{item.shichang}}天</view>
+            </view>
+        </view>
+    </view>
+</view>

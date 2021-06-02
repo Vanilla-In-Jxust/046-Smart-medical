@@ -1,0 +1,23 @@
+<view class="text">使用的药品</view>
+<view class="img">
+    <view wx:for="{{obj}}" wx:key="{{ index }}">
+        <view class="img-box">
+      无图片
+      <image class="img_a" src="{{item.nmOrdItemImg}}"></image>
+        </view>
+    </view>
+</view>
+<view class="deta">
+    出现药效的时间
+    <view class="deta_r">
+      {{testDate}}
+      <image class="deta_r_img" src="/assets/images/more.png"></image>
+    </view>
+</view>
+<view class="tab">
+    <view class="tab_a" data-id="{{casKey[index]}}" data-index="{{index}}" data-text="{{item}}" id="{{_num==index?'active':''}}" wx:for="{{casArrayx}}" wx:key="{{ index }}">
+        <image class="tab_a_img {{imagess[index]}}" src="{{imagess[index]}}"></image>
+        <text class="tab_a_text">{{item}}</text>
+    </view>
+</view>
+<view class="textarea">的花时间的哈世界顶级卡数据的哈山口{{objx.content}}</view>

@@ -1,0 +1,30 @@
+<view class="oval">
+    <view class="searchbox">
+        <view class="searchView">
+            <icon class="searchbtn" color="#999999" size="15" type="search"></icon>
+            <input bindinput="getSearch" placeholder="搜索医院" type="text" value="{{searchCont}}"></input>
+        </view>
+    </view>
+</view>
+<view class="all">
+    <view class="searchHistory">
+        <view class="history_title">
+            <view class="searchFont">热门搜索</view>
+            <view class="clearFont"></view>
+        </view>
+        <view class="historybox">
+            <view bindtap="searchHistory" class="historyList" data-item="{{item}}" wx:for="{{findArr}}" wx:key="*this">
+                <text>{{item}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="searchresult" wx:if="{{searchCont!=''}}">
+    <view bindtap="listitembtn" class="searchresultitem" data-name="{{item.names}}" wx:for="{{searchlist}}" wx:key="f">
+        <view class="listitem">
+            <view>{{item.names}}</view>
+            <view>{{item.citys}}</view>
+        </view>
+        <view class="listitem-grade" wx:if="{{item.grade}}">医保</view>
+    </view>
+</view>

@@ -1,0 +1,35 @@
+<view class="option">
+    <view bindtap="option" class="term {{i==0?'fontColor':''}}" data-id="0">
+        <picker bindchange="bindRegionChange" customItem="{{customItem}}" mode="region" value="{{local}}">
+      {{local}}
+    </picker>
+    </view>
+    <view bindtap="option" class="term {{i==1?'fontColor':''}}" data-id="1">
+        <picker bindchange="bindRegionChange2" range="{{departments}}" value="{{index}}">
+      {{department}}
+    </picker>
+    </view>
+    <view bindtap="option" class="term {{i==3?'fontColor':''}}" data-id="3">
+        <picker bindchange="bindRegionChange4" range="{{screens}}" value="{{index}}">
+      {{screen}}
+    </picker>
+    </view>
+</view>
+<view>
+    <navigator data-index="{{index}}" url="/hyb_yl/backstageMethod/pages/department/department" wx:for="{{lists}}" wx:key="index">
+        <view class="list">
+            <image class="imgSize" src="{{item.img}}"></image>
+            <view>
+                <view class="name">{{item.name}}</view>
+                <view class="grade">{{item.grade}} {{item.type}}</view>
+                <view class="grade">评分：{{item.score}}分</view>
+                <view class="grade">接诊量：{{item.amount}}次</view>
+            </view>
+            <view class="right">
+                <view class="situation">{{item.situation}}</view>
+                <view class="grade">距离{{item.distance}}km</view>
+                <view class="grade">每单分润{{item.branch}}%</view>
+            </view>
+        </view>
+    </navigator>
+</view>

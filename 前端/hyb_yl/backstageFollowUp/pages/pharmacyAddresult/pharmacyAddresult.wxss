@@ -1,0 +1,122 @@
+.text {
+    width: 100%;
+    height: 80rpx;
+    background: #fff;
+    border-bottom: 1rpx #ccc solid;
+    margin-top: 20rpx;
+    font-size: 32rpx;
+    color: #333;
+    line-height: 80rpx;
+    text-indent: 30rpx;
+}
+
+.img {
+    width: 100%;
+    height: 180rpx;
+    background: #fff;
+}
+
+.img-box {
+    background: #ccc;
+    width: 120rpx;
+    height: 120rpx;
+    float: left;
+    margin-left: 30rpx;
+    margin-top: 30rpx;
+    position: relative;
+    line-height: 120rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: #333;
+}
+
+.img_a {
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 999;
+}
+
+.deta {
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+    margin-top: 20rpx;
+    margin-bottom: 20rpx;
+    line-height: 100rpx;
+    text-indent: 30rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.deta_r {
+    width: 250rpx;
+    height: 100rpx;
+    float: right;
+    margin-right: 30rpx;
+    color: #7a7a7a;
+}
+
+.deta_r_img {
+    width: 40rpx;
+    height: 40rpx;
+    float: right;
+    margin-top: 30rpx;
+}
+
+.tab {
+    width: 100%;
+    height: 100rpx;
+    border-bottom: 1rpx solid #ccc;
+    background: #fff;
+}
+
+.tab_a {
+    height: 100rpx;
+    float: left;
+    position: relative;
+    filter: grayscale(100%);
+}
+
+.tab_a_text {
+    float: left;
+    line-height: 100rpx;
+    font-size: 30rpx;
+    color: #333;
+    margin-left: 80rpx;
+    margin-right: 10rpx;
+}
+
+.textarea {
+    width: 100%;
+    height: 500rpx;
+    background: #fff;
+    font-size: 30rpx;
+    padding-top: 20rpx;
+    text-indent: 30rpx;
+}
+
+.foot {
+    width: 695rpx;
+    height: 100rpx;
+    background: linear-gradient(to right,#6699ff,#3b4ac9);
+    border-radius: 100rpx;
+    line-height: 100rpx;
+    text-align: center;
+    color: #fff;
+    margin: 20rpx auto;
+}
+
+.tab_a_img {
+    width: 38rpx;
+    height: 38rpx;
+    position: absolute;
+    top: 30rpx;
+    left: 30rpx;
+}
+
+#active {
+    filter: grayscale(0%);
+}

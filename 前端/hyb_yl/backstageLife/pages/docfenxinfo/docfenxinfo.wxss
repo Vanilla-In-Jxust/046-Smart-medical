@@ -1,0 +1,416 @@
+.on {
+    color: #3b4ac9;
+    font-weight: 650;
+}
+
+.pad_30 {
+    padding: 0 30rpx;
+}
+
+.more_scorll {
+    max-height: calc(100vh - 100rpx);
+    padding-bottom: 100rpx;
+    box-sizing: border-box;
+}
+
+.swiper {
+    height: 100vh;
+}
+
+.digital {
+    width: 1rpx;
+    height: 30rpx;
+    background-color: #f0f0f0;
+}
+
+.communit_head view {
+    flex: 1;
+    text-align: center;
+    line-height: 96rpx;
+}
+
+.border_top {
+    border-top: 1rpx solid #f0f0f0;
+}
+
+.margin_top {
+    margin-top: 20rpx;
+}
+
+.condition_head {
+    padding-top: 30rpx;
+}
+
+.condition_head_img {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.condition_head_name {
+    margin-bottom: 8rpx;
+}
+
+.condition_content {
+    line-height: 52rpx;
+    padding: 30rpx 0 20rpx;
+}
+
+.condition_content_com {
+    padding: 30rpx 0 10rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    position: relative;
+}
+
+.test_text {
+    opacity: 0.7;
+}
+
+.condition_content_com_position {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 60rpx;
+    line-height: 60rpx;
+    background: linear-gradient(to right,rgba(255,255,255,0),white 50%,white);
+    padding-left: 90rpx;
+}
+
+.condition_img_view {
+    padding-bottom: 30rpx;
+    flex-wrap: wrap;
+}
+
+.condition_img {
+    width: 218rpx;
+    height: 218rpx;
+    border-radius: 8rpx;
+    margin-bottom: 10rpx;
+}
+
+.condition_img_right {
+    margin-left: 17rpx;
+}
+
+.commentator_name {
+    position: relative;
+    z-index: 1000;
+    display: inline-block;
+}
+
+.commentator {
+    padding: 30rpx 0 30rpx 30rpx;
+    background-color: #f8f8f8;
+    line-height: 44rpx;
+    border-radius: 8rpx;
+    position: relative;
+}
+
+.much {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: -5rpx;
+    left: 20rpx;
+    transform: rotate(45deg);
+    background-color: #f8f8f8;
+    z-index: 1;
+}
+
+.review_img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 5rpx;
+}
+
+.comment_view {
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.comment_view_left {
+    padding-right: 40rpx;
+    height: 100%;
+}
+
+.mask {
+    padding-right: 40rpx;
+    height: 100%;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40rpx;
+}
+
+.com_view {
+    padding-right: 30rpx;
+    height: 100%;
+}
+
+.praise_img {
+    margin-bottom: 5rpx;
+}
+
+.state_img {
+    width: 122rpx;
+    height: 122rpx;
+    position: fixed;
+    bottom: 120rpx;
+    right: 38rpx;
+    z-index: 10000;
+}
+
+.top_img {
+    position: fixed;
+    right: 46rpx;
+    bottom: 30rpx;
+    width: 98rpx;
+    height: 98rpx;
+    z-index: 10000;
+}
+
+.comImg_view {
+    flex-wrap: wrap;
+}
+
+.comImg {
+    width: 148rpx;
+    height: 148rpx;
+    margin-right: 15rpx;
+    margin-top: 10rpx;
+    border-radius: 8rpx;
+}
+
+.record_none {
+    height: 500rpx;
+    text-align: center;
+    line-height: 500rpx;
+}
+
+.close_view {
+    height: 500rpx;
+    line-height: 500rpx;
+    text-align: center;
+}
+
+page {
+    padding: 0;
+}
+
+.margin_top {
+    margin: 0 0 20rpx;
+}
+
+.critic_content {
+    flex: 1;
+    padding-right: 40rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+    padding-bottom: 40rpx;
+    font-size: 30rpx;
+}
+
+.critic_content_title {
+    justify-content: space-between;
+    padding-bottom: 20rpx;
+}
+
+.critic_view {
+    display: flex;
+    padding: 40rpx 0 0 24rpx;
+}
+
+.critic_content_content {
+    line-height: 44rpx;
+    float: left;
+}
+
+.condition_img_view {
+    padding-bottom: 0;
+}
+
+.like_view {
+    background-color: #f0f0f0;
+    height: 100rpx;
+    box-sizing: border-box;
+}
+
+.like_view view {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    line-height: 96rpx;
+}
+
+.big_img {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 20rpx;
+}
+
+.bottom_line {
+    width: 1rpx;
+    height: 40rpx;
+    background-color: #ccc;
+}
+
+.input_img {
+    width: 64rpx;
+    height: 64rpx;
+    border-radius: 50%;
+}
+
+.dynamicComments {
+    padding: 0 20rpx 0 24rpx;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.input_text {
+    flex: 1;
+    padding-top: 24rpx;
+    padding: 30rpx 20rpx 16rpx 34rpx;
+}
+
+.dynamicPicture {
+    height: 50rpx;
+    width: 50rpx;
+}
+
+.send_btn {
+    line-height: 70rpx;
+    width: 100rpx;
+    border-radius: 6rpx;
+    text-align: center;
+    margin-left: 20rpx;
+}
+
+.picture_view {
+    box-sizing: border-box;
+    width: 100%;
+    padding-left: 30rpx;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.picture_add {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.scroll_img {
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+}
+
+.upload_view {
+    width: 100rpx;
+    height: 100rpx;
+    display: inline-block;
+    margin: 30rpx 20rpx 30rpx 0;
+}
+
+.comImg_view {
+    flex-wrap: wrap;
+}
+
+.comImg {
+    width: 180rpx;
+    height: 180rpx;
+    margin-right: 13rpx;
+    margin-top: 10rpx;
+}
+
+.top_img {
+    bottom: 110rpx;
+}
+
+.gif {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.user_name {
+    flex: 1;
+}
+
+.comment_back {
+    background-color: #f8f8f8;
+    margin-top: 20rpx;
+    border-radius: 8rpx;
+    padding: 20rpx 20rpx 20rpx;
+}
+
+.comment_back_list {
+    padding: 8rpx;
+    font-size: 30rpx;
+    color: #999;
+    position: relative;
+}
+
+.reply {
+    margin: 0 10rpx;
+}
+
+.mask {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+}
+
+.icon_view {
+    position: absolute;
+    right: -10rpx;
+    top: -10rpx;
+    z-index: 1000;
+    height: 38rpx;
+    width: 38rpx;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lookMore {
+    padding-top: 30rpx;
+    padding-bottom: 10rpx;
+    text-align: center;
+}
+
+.revert {
+    font-size: 24rpx;
+    margin-left: 10rpx;
+}
+
+.new_comm {
+    padding-left: 30rpx;
+    padding-top: 30rpx;
+    background-color: #fff;
+}
+
+.no_comm {
+    padding-top: 200rpx;
+    text-align: center;
+}
+
+.textBtn {
+    display: flex;
+    align-items: center;
+}
+
+.btnBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    color: #000;
+    padding: 20rpx;
+}

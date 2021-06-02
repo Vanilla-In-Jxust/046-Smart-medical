@@ -1,0 +1,20 @@
+<view class="subject_for" wx:if="{{canvasFlag_top}}">
+    <view style="height: 10rpx;"></view>
+    <view wx:for="{{importantData}}" wx:key="{{ key }}">
+        <view class="canvas_box">
+            <view class="name_view">{{item[0].nmIndexLis}}-变化图</view>
+            <view class="unit">
+                <text class="font_co999">{{item[0].nmIndexLis}}（ {{item[0].nmQuantiUnit}} ）</text>
+            </view>
+        </view>
+        <view class="container">
+            <canvas bindtouchend="touchEndHandler" bindtouchmove="moveHandler" bindtouchstart="touchHandler" canvasId="abc" class="canvas" disableScroll="true" id="abc"></canvas>
+        </view>
+        <view class="foot">
+            <text>正常范围</text>
+            <text class="limit_text">{{item[0].nmIndexLis}}：{{item[0].limitLow}}-{{item[0].limitHigh}}</text>
+            <text>{{item[0].nmQuantiUnit}}</text>
+        </view>
+    </view>
+</view>
+<view class="exa_none font_si16 font_co666" wx:if="{{canvasFlag}}">暂无重要指标</view>

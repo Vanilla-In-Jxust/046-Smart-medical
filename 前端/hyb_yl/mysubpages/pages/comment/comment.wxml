@@ -1,0 +1,38 @@
+<view class="swiper-tab">
+    <view class="swiper-tab-right"></view>
+    <view class="per">
+        <text class="font_si12 font_co333">好评度</text>
+        <text class="font_cofa6 one">
+            <text class="font_si16 font_wt">{{commList.goodDegree}}</text>
+            <text class="font_si12">%</text>
+        </text>
+    </view>
+</view>
+<view class="swiper-box" lowerThreshold="50" wx:if="{{estimates?true:false}}">
+    <scroll-view bindscrolltolower="moreOrder" scrollY="true">
+        <view wx:for="{{estimates}}" wx:key="{{ index }}">
+            <view class="{{index==0?'':'public_line'}}"></view>
+            <view class="comment public_white pad_24">
+                <view class="comm_user center">
+                    <view class="center">
+                        <text class="comm_person font_si14 font_co999">{{item.picMask}}</text>
+                        <image class="cimm_start" src="https://lg-o8nytxik-1257013711.cos.ap-shanghai.myqcloud.com/start02.png" wx:for="{{item.star}}" wx:key="{{ index }}"></image>
+                    </view>
+                </view>
+                <text class="comm_content font_si14 font_co333">{{item.estimate}}</text>
+                <view>
+                    <text class="font_si12 font_co999 one">{{item.createTime}}</text>
+                    <text class="font_si12 font_co999">	|	数量x{{item.itemParam}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="loading_view" hidden="{{loadingBoo}}">
+            <image class="loading" src="/assets/shop_images/loading.gif"></image>
+            <text class="font_co999 font_si14">加载中...</text>
+        </view>
+        <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">没有更多了~</view>
+    </scroll-view>
+</view>
+<view class="commBoo font_si18 font_co999" hidden="{{commBoo}}">
+  竟然没有一条评论~~
+</view>

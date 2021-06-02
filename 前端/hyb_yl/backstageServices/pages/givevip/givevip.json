@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "ovalLogin": "/component/ovalLogin/ovalLogin"
+    },
+    "navigationBarTitleText": "赠送会员"
+}

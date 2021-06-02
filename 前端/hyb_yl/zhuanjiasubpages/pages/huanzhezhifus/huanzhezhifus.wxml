@@ -1,0 +1,60 @@
+<view class="teamgroup">
+    <image class="teamimg" src="{{info.thumb}}"></image>
+    <view class="teaminfo">
+        <view class="teaminfotitle">
+            <view class="teamname">{{info.title}}</view>
+            <view class="profile-vip">
+                <image class="profile-vip-icon" role="img" src="https://img1.dxycdn.com/2019/0618/340/3351878911914226168-22.png"></image>
+        {{info.c_name}}
+        <image class="profile-vip-arrow" role="img" src="https://img1.dxycdn.com/2019/0619/199/3352097899411675726-22.png"></image>
+            </view>
+        </view>
+        <view class="doctor-profile-card-info">
+            <text class="doctor-profile-card-section">最高医务职称</text>
+            <text class="doctor-profile-card-title">{{info.zhicheng}}</text>
+        </view>
+        <view class="doctor-profile-card-hospital limit">
+            <view class="tag">优秀</view>
+            <view class="doctor-profile-card-hospital-content"> {{info.jigou}} </view>
+        </view>
+        <view class="doctor-profile-card-hospital-shanchang">该社区团队擅长<block wx:for="{{info.label}}">{{item}}</block>
+        </view>
+    </view>
+</view>
+<view class="elsemess">
+    <view class="servepackage">
+        <image src="{{info.server.icon}}"></image>
+        <view class="servepackageinfo">
+            <view class="info-top">
+                <text>{{info.server.titlme}}</text>
+                <text>￥{{info.server.ptmoney}}</text>
+            </view>
+            <view class="info-bott">
+                <rich-text nodes="{{info.server.server_content}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <view class="elsegroup youhui">
+        <view>优惠方式</view>
+        <view>问诊代金券-新人专享 8元</view>
+    </view>
+    <view class="elsegroup">
+        <view>有效时间</view>
+        <view>{{info.start}}-{{info.end}}</view>
+    </view>
+</view>
+<view class="footpay">
+    <view class="radios">
+        <radio bindchange="radioChange" checked="{{argeen}}" color="#0087E0">
+            <text>订阅并同意<text style="color:#0087E0;">《签约协议》</text>
+            </text>
+        </radio>
+    </view>
+    <view class="payandtotal">
+        <view>
+            <text>合计:</text>
+            <text>￥{{money}}</text>
+        </view>
+        <view bindtap="paybtn">立即支付</view>
+    </view>
+</view>

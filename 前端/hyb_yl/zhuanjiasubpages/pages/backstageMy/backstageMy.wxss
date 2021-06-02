@@ -1,0 +1,267 @@
+@import "../../../../wxss/14.wxss";
+
+page {
+    background: #f5f5f7;
+}
+
+.backs-top {
+    position: relative;
+    width: 100%;
+    height: 280rpx;
+}
+
+.backs-top image {
+    width: 100%;
+    height: 100%;
+}
+
+.backs-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 700rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25rpx;
+    padding-top: 65rpx;
+}
+
+.backs-le-pho {
+    display: flex;
+    align-items: center;
+}
+
+.backs-le-pho image {
+    width: 120rpx;
+    height: 120rpx;
+    border: 2rpx solid #fff;
+    border-radius: 50%;
+    margin-right: 26rpx;
+}
+
+.backs-tit {
+    display: flex;
+    align-items: flex-end;
+    font-size: 30rpx;
+    color: #fff;
+}
+
+.backs-bq {
+    margin-left: 20rpx;
+    font-size: 22rpx;
+    color: #fff;
+}
+
+.doc-state {
+    padding: 6rpx 10rpx;
+    margin-left: 25rpx;
+    color: #0087E0;
+    font-size: 22rpx;
+    background: #fff;
+    border-radius: 8rpx;
+}
+
+.backs-yy {
+    margin-top: 25rpx;
+    font-size: 26rpx;
+    color: #fff;
+}
+
+.modify-zl {
+    display: flex;
+    align-items: center;
+    font-size: 26rpx;
+    color: #fff;
+}
+
+.modify-zl image {
+    width: 24rpx;
+    height: 24rpx;
+    margin-right: 15rpx;
+}
+
+.backs-box {
+    position: relative;
+    width: 700rpx;
+    padding: 0 30rpx;
+}
+
+.backs-zslist {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 700rpx;
+    height: 100rpx;
+    margin: 0 25rpx;
+    margin-top: -50rpx;
+    background: #fff;
+    border-radius: 30rpx;
+    z-index: 2;
+}
+
+.backs-num {
+    font-size: 30rpx;
+    color: #E00000;
+}
+
+.backs-zsitem {
+    font-size: 24rpx;
+    color: #333;
+    text-align: center;
+}
+
+.backs-list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 660rpx;
+    padding: 24rpx 20rpx;
+    border-radius: 30rpx;
+    background: #fff;
+    margin-top: 24rpx;
+}
+
+.backs-le {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.backs-le image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+}
+
+.backs-ri image {
+    width: 46rpx;
+    height: 46rpx;
+}
+
+.backs-mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 991;
+}
+
+.backs-popup {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 700rpx;
+    padding: 25rpx;
+    background: #fff;
+    border-radius: 30rpx 30rpx 0 0;
+    z-index: 992;
+    transition: all .2s cubic-bezier(.25,.5,.5,.9);
+    transform: translate3d(0,100%,0);
+}
+
+.on {
+    transform: translate3d(0,0,0);
+}
+
+.popup-tit {
+    margin: 20rpx 0;
+    margin-bottom: 50rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.poput-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 25rpx;
+    border-bottom: 1rpx solid #EAEAEA;
+    margin-bottom: 60rpx;
+}
+
+.poput-t {
+    font-size: 28rpx;
+    color: #333;
+}
+
+.poput-tip {
+    margin-top: 14rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.poput-sele {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.zhe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.zhe .cont {
+    width: 80%;
+    background: #fff;
+    border-radius: 10rpx;
+    padding: 60rpx 40rpx;
+}
+
+.rule_box {
+    height: 418rpx;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.zhe .title {
+    font-size: 36rpx;
+    text-align: center;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 30rpx;
+}
+
+.rule_btn {
+    width: 100%;
+    height: 88rpx;
+    font-size: 32rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 88rpx;
+    border-radius: 20rpx;
+    margin: 30rpx auto;
+    background: #004cbe;
+}
+
+.W_name {
+    width: 100%;
+    height: 100rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+    background: #fff;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.W_imgName1 {
+    height: 100rpx;
+    float: left;
+    line-height: 100rpx;
+    text-indent: 30rpx;
+    font-size: 30rpx;
+    color: #333;
+    white-space: nowrap;
+}

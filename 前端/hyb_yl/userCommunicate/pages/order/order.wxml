@@ -1,0 +1,49 @@
+<view class="tab">
+    <view bindtap="chooseTab" class="son {{current==index?'active':''}}" data-i="{{index}}" wx:for="{{tab}}" wx:key="{{index}}">{{item.name}}</view>
+</view>
+<view wx:if="{{list.length!=0}}">
+    <view class="center1" wx:for="{{list}}" wx:key="{{key}}">
+        <view class="order">
+            <view class="header">
+                <view class="time">订单号：{{item.orderNo}}</view>
+                <view class="status">{{item.code}}
+						</view>
+            </view>
+            <view bindtap="ordersinfo" class="drupmes" data-cid="{{item.cid}}" data-id="{{item.id}}" data-orderStatus="{{item.orderStatus}}" wx:for="{{item.cartlist}}" wx:for-item="items">
+                <view class="drupmes-img">
+                    <image src="{{items.sthumb}}"></image>
+                </view>
+                <view class="drupmesbox">
+                    <view class="drupmes-mess">
+                        <view>{{items.sname}}</view>
+                        <view>x{{items.num}}</view>
+                    </view>
+                    <view class="drupmes-site">{{items.zyf.title}}</view>
+                    <view class="drupmes-site">{{items.use}}</view>
+                    <view class="drupmes-price">￥{{items.smoney}}</view>
+                </view>
+            </view>
+            <view class="num">
+                <text>共{{item.cartlist.length}}件商品 合计:</text>
+                <text class="totalMoney">￥{{item.totalMoney}}</text>
+            </view>
+            <view class="operate">
+                <view bindtap="delete" class="shanchuBtn" data-id="{{item.id}}" data-money="{{item.totalMoney}}" data-orders="{{item.orderNo}}">删除订单</view>
+                <view class="df_right">
+                    <view bindtap="zhifu" class="son again" data-id="{{item.id}}" data-money="{{item.totalMoney?item.totalMoney:item.realTotalMoney}}" data-orderStatus="{{item.orderStatus}}" data-orders="{{item.orderNo}}" wx:if="{{item.orderStatus=='-2'}}">去支付</view>
+                    <view bindtap="tixing" class="son again" data-id="{{item.id}}" wx:if="{{item.orderStatus=='0'}}">提醒发货</view>
+                    <view bindtap="chakwliu" class="son" data-id="{{item.id}}" data-orderStatus="{{item.orderStatus}}" data-orderss="{{item.orderNo}}" data-orderunique="{{item.orderunique}}" wx:if="{{item.orderStatus=='1'}}">查看物流</view>
+                    <view bindtap="enter" class="son again" data-id="{{item.id}}" wx:if="{{item.orderStatus=='1'}}">确认收货</view>
+                    <view bindtap="goumai" class="son" wx:if="{{item.orderStatus=='2'||item.orderStatus=='1'}}">再次购买</view>
+                    <view bindtap="pingjia" class="son again" data-id="{{item.id}}" data-sid="{{item.sid}}" wx:if="{{item.orderStatus=='2'}}">评价晒单</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:else>
+    <view class="nonelist">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+        <view class="fs28">暂时还没有订单哦</view>
+    </view>
+</view>

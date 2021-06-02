@@ -1,0 +1,34 @@
+<view class="oval">
+    <view class="searchbox">
+        <view class="searchView">
+            <icon class="searchbtn" color="#999999" size="15" type="search"></icon>
+            <input bindinput="getSearch" placeholder="搜索医院" type="text" value="{{checkword}}"></input>
+        </view>
+    </view>
+</view>
+<view class="all" wx:if="{{findArr.length>0}}">
+    <view class="searchHistory">
+        <view class="history_title">
+            <view class="searchFont">热门搜索</view>
+            <view class="clearFont"></view>
+        </view>
+        <view class="historybox">
+            <view bindtap="searchHistory" class="historyList" data-checkword="{{item.keywords}}" wx:for="{{findArr}}" wx:key="*this">
+                <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/huo.png?sign=8363c1b0301699a1de4d55ea243a8a77&t=1584685530" wx:if="{{index==0}}"></image>
+                <text>{{item.keywords}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="searchresult" wx:if="{{checkword!=''}}">
+    <view bindtap="listitembtn" class="searchresultitems" data-checkword="{{item.agentname}}" wx:for="{{searchlisttip}}" wx:key="f">{{item.agentname}}</view>
+</view>
+<view class="searchresult" wx:if="{{hospitalist.length>0}}">
+    <view bindtap="listitembtns" class="searchresultitem" data-hid="{{item.hid}}" wx:for="{{hospitalist}}" wx:key="f">
+        <view class="listitem">
+            <view>{{item.agentname}}</view>
+            <view>{{item.address}}-{{item.xxaddress}}</view>
+        </view>
+        <view class="listitem-grade">{{item.grade_name}}</view>
+    </view>
+</view>

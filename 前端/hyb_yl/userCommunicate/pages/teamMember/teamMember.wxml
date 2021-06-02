@@ -1,0 +1,43 @@
+<view wx:if="{{doctor}}">
+    <view class="bgc_linear intro_head_head font_cofff font_si12">
+        <image class="dco_img" mode="aspectFill" src="{{doctor.userIcon}}"></image>
+        <view class="flex_column doc_view">
+            <view class="font_si18 doc_name">
+                <view>
+                    <text>{{doctor.doctorName}}</text>
+                    <text class="offices_text font_si14">{{doctor.nmDepartment}}</text>
+                </view>
+                <text class="font_si12 my_dco" wx:if="{{!myDcoBoo}}">已签约</text>
+            </view>
+            <view class="offices">
+                <text class="job_text">{{doctor.jobType==1?'[医生]':doctor.jobType==2?'[护士]':''}}</text>
+                <text>{{doctor.nmHospital}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="signingContract height_80 public_white font_si14 font_co999">
+        <view>
+            <text>签约人数</text>
+            <text class="font_co3b per_number">{{doctor.patientCount}}</text>
+        </view>
+        <view>
+            <text>服务次数             </text>
+            <text class="font_co3b per_number">{{doctor.askNum}}</text>
+        </view>
+    </view>
+    <view class="mg_top10"></view>
+    <view class="public_white intro_content">
+        <view class="details_head">
+            <text class="font_si16 font_co333">擅长疾病</text>
+            <view class="center font_si14 font_co666 details_head_content">
+                <view class="center_view" wx:for="{{doctor.bgGoodAt}}" wx:key="{{ index }}">{{item}}</view>
+            </view>
+        </view>
+        <view class="details_head details_head_bg" wx:if="{{doctor.briefIntroduce}}">
+            <text class="font_si16 font_co333">个人简介</text>
+            <view class="center font_si14 font_co666 details_head_content">
+        {{doctor.briefIntroduce}}
+      </view>
+        </view>
+    </view>
+</view>

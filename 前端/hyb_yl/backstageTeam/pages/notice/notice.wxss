@@ -1,0 +1,125 @@
+page {
+    background-color: #f5f5f7;
+}
+
+.head_view {
+    height: 88rpx;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.left_view {
+    display: flex;
+    align-items: center;
+}
+
+.name_view {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: #333;
+    margin-left: 20rpx;
+}
+
+.left_img {
+    height: 60rpx;
+    width: 60rpx;
+    border-radius: 60rpx;
+    margin-right: 30rpx;
+}
+
+.right_image {
+    width: 50rpx;
+    height: 50rpx;
+    margin-right: 30rpx;
+    margin-left: 40rpx;
+}
+
+.notice_content {
+    box-sizing: border-box;
+}
+
+.notice_details {
+    background-color: #fff;
+    padding: 30rpx;
+    margin-top: 20rpx;
+}
+
+.notice_title {
+    border-bottom: 1rpx solid #e0e0e0;
+}
+
+.notice_name {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10rpx;
+    margin-bottom: 15rpx;
+}
+
+.notice_name_text {
+    display: inline-block;
+    margin-right: 15rpx;
+}
+
+.notice_text {
+    margin: 30rpx 0 20rpx 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.novice_img {
+    height: 204rpx;
+    width: 204rpx;
+    border-radius: 8rpx;
+}
+
+.margin_right {
+    margin-right: 8rpx;
+}
+
+.foot_view {
+    position: fixed;
+    z-index: 1000;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 104rpx;
+    display: flex;
+    align-items: center;
+    background-color: #f2f3f7;
+    justify-content: center;
+}
+
+.foot_btn {
+    width: 690rpx;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.no_view {
+    height: 500rpx;
+    line-height: 500rpx;
+    text-align: center;
+}
+
+.hoverClass {
+    background-color: #fff;
+}
+
+.setTop {
+    font-size: 32rpx;
+    color: #3b4ca9;
+    float: left;
+}

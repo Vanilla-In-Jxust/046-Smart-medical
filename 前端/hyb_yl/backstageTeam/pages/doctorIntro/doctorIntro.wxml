@@ -1,0 +1,55 @@
+<view class="bgc_linear intro_head_head font_cofff font_si12">
+    <image class="dco_img" src="{{zhuanjia.z_thumbs}}"></image>
+    <view class="doc_view">
+        <view class="font_si18 doc_name">
+            <view>
+                <text>{{zhuanjia.z_name}}</text>
+                <text class="offices_text font_si14">{{zhuanjia.name}}</text>
+            </view>
+        </view>
+        <view class="offices">
+            <text class="job_text">[{{text}}]</text>
+            <text>{{zhuanjia.z_yiyuan}}</text>
+        </view>
+    </view>
+    <view class="distance">
+        <image src="/assets/images/dingwei.png"></image>
+        <text>{{tool.fixed(zhuanjia.juli)>0?tool.fixed(zhuanjia.juli)+'千米':'距离获取中..'}}</text>
+    </view>
+</view>
+<view class="signingContract height_80 public_white font_si14 font_co999">
+    <view>
+        <text>签约人数</text>
+        <text class="font_co3b per_number">{{zhuanjia.z_yy_fens?zhuanjia.z_yy_fens:'0'}}</text>
+    </view>
+    <view>
+        <text>服务次数</text>
+        <text class="font_co3b per_number">{{zhuanjia.helpnum?zhuanjia.helpnum:'0'}}</text>
+    </view>
+</view>
+<view style="height: 20rpx;"></view>
+<view class="public_white intro_content">
+    <view class="details_head">
+        <text class="font_si16 font_co333">擅长疾病</text>
+        <view class="center font_si14 font_co666 details_head_content">
+            <view class="center_view" wx:for="{{zhuanjia.z_zhenzhi}}">{{item}}</view>
+        </view>
+    </view>
+    <view class="details_head details_head_bg">
+        <text class="font_si16 font_co333">个人简介</text>
+        <view class="center font_si14 font_co666 details_head_content">
+      {{zhuanjia.z_content}}
+    </view>
+    </view>
+</view>
+<view class="padding" wx:if="{{type!=='1'}}">
+    <button bindtap="OK" class="Yes" data-zhuanjia="{{zhuanjia}}">确认转诊</button>
+</view>
+<wxs module="tool">
+var fixed = (function(num) {
+    return (num.toFixed(2))
+});
+module.exports = ({
+    fixed: fixed,
+});
+</wxs>

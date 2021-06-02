@@ -1,0 +1,112 @@
+<view class="doc-user">
+    <view class="doc-user-le">
+        <image class="doc-pho" src="{{info.advertisement}}" wx:if="{{state=='2'}}"></image>
+        <image class="doc-pho" src="{{info[0].advertisement}}" wx:if="{{state=='1'}}"></image>
+        <view class="doc-i-infor">
+            <view class="doc-user-name" wx:if="{{state=='2'}}">
+                <view>{{info.z_name}}</view>
+            </view>
+            <view class="doc-user-name" wx:if="{{state=='1'}}">
+                <view>{{info[0].z_name}}</view>
+                <view class="doc-na-tx">{{info[0].zhicheng}}</view>
+            </view>
+            <view class="doc-yy">{{info[0].keshi}} {{info[0].jigou}}</view>
+        </view>
+    </view>
+    <view bindtap="followtab" class="doc-user-follow" data-zid="{{info.zid?info.zid:info[0].zid}}">{{isfollow}}</view>
+</view>
+<view class="bar"></view>
+<view class="patientEva">
+    <view class="patient-title">
+        <view>患者评价</view>
+        <view class="patient-star">
+            <image class="star-icon" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/xing.png?sign=fc18ae36c6d77aecac63ba30ae679e10&t=1592018875" wx:if="{{state=='2'}}" wx:for="{{info.score}}"></image>
+            <image class="star-icon" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/xing.png?sign=fc18ae36c6d77aecac63ba30ae679e10&t=1592018875" wx:if="{{state=='1'}}" wx:for="{{info[0].score}}"></image>
+        </view>
+    </view>
+    <view class="patient-item">
+        <view class="pat-item-tit">满意度</view>
+        <view class="pat-item-con" wx:if="{{info.score>4||info[0].score>4}}">非常满意，无可挑剔</view>
+        <view class="pat-item-con" wx:if="{{info.score>=3&&info.score<=4||info[0].score>=3&&info[0].score<=4}}">比较满意，有待提交</view>
+        <view class="pat-item-con" wx:if="{{info.score<3||info[0].score<3}}">不满意</view>
+    </view>
+    <view class="patient-item" wx:if="{{state=='2'}}">
+        <view class="pat-item-tit">评价内容</view>
+        <view class="pat-item-con">回答耐心，细致，全面，非常满意，再次感谢！！</view>
+    </view>
+    <view class="patient-item" wx:if="{{state=='1'&&info[0].pingjia}}">
+        <view class="pat-item-tit">评价内容</view>
+        <view class="pat-item-con">{{info[0].pingjia.content}}</view>
+    </view>
+</view>
+<view class="patient-pro-box" wx:if="{{state=='2'}}">
+    <view class="patient-pro-item">
+        <view class="patient-pro-time">{{info['created']}}</view>
+        <view class="patient-item-c">
+            <view class="patient-con">{{info.title}}</view>
+        </view>
+    </view>
+    <view class="patient-pro-item ">
+        <view class="patient-pro-time">{{info['created']}}</view>
+        <view class="patient-item-c bgcolor">
+            <view class="patient-doc">
+                <image class="doc-img" src="{{info.advertisement}}"></image>
+                <view>{{info.z_name}}</view>
+            </view>
+            <view class="patient-con">{{info.content}}</view>
+        </view>
+    </view>
+</view>
+<view class="patient-pro-box" wx:if="{{state=='1'}}" wx:for="{{info}}">
+    <view class="patient-pro-item" wx:if="{{item.role=='0'}}">
+        <view class="patient-pro-time">{{item['xdtime']}}</view>
+        <view class="patient-item-c">
+            <view class="patient-tit">第{{item.len}}次提问</view>
+            <view class="patient-con">{{item.content.text}}</view>
+        </view>
+    </view>
+    <view class="patient-pro-item " wx:if="{{item.role=='1'}}">
+        <view class="patient-pro-time">{{item['created']}}</view>
+        <view class="patient-item-c bgcolor">
+            <view class="patient-doc">
+                <image class="doc-img" src="{{item.advertisement}}"></image>
+                <view>{{item.z_name}}</view>
+            </view>
+            <view class="patient-con">{{item.content.text}}</view>
+            <image class="doc-img" src="{{items}}" wx:for="{{item.content.upload_picture_list}}" wx:for-item="items"></image>
+        </view>
+    </view>
+</view>
+<view class="problem-bot" wx:if="{{state=='1'&&info.length>0}}">
+    <view class="pro-btn-le">
+        <view class="problem-btn">
+            <image class="pro-icon" mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/index_hover.png?sign=aca92de1d718d91eecaf7083ee3c671c&t=1590657257"></image>
+            <view>首页</view>
+        </view>
+        <button class="problem-btn" openType="share">
+            <image class="pro-icons" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/share.png?sign=dcec55393ac23c52d0698d843f48b428&t=1590657300"></image>
+            <view>分享</view>
+        </button>
+    </view>
+    <view bindtap="tiwen" class="quiz" data-zid="{{info[0].zid}}" wx:if="{{info[0].zid!=''&&info[0].zid!='null'&&info[0].zid!=null}}">
+		向该医生提问(图文:{{info[0].server?info[0].server:''}})
+	</view>
+</view>
+<view class="problem-bot" wx:if="{{state=='2'}}">
+    <view class="pro-btn-le">
+        <view class="problem-btn">
+            <image class="pro-icon" mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/index_hover.png?sign=aca92de1d718d91eecaf7083ee3c671c&t=1590657257"></image>
+            <view>首页</view>
+        </view>
+        <button class="problem-btn" openType="share">
+            <image class="pro-icons" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/share.png?sign=dcec55393ac23c52d0698d843f48b428&t=1590657300"></image>
+            <view>分享</view>
+        </button>
+    </view>
+    <view bindtap="tiwen" class="quiz" data-zid="{{info.zid}}" wx:if="{{info.zid!=''&&info.zid!='null'&&info.zid!=null}}">
+		向该医生提问(图文:{{info[0].server?info[0].server:''}})
+	</view>
+</view>
+<view class="bottomText" wx:if="{{state=='1'&&info.length==0}}">
+		暂无数据
+	</view>

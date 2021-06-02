@@ -1,0 +1,214 @@
+page {
+    background: #fff;
+}
+
+.top_view {
+    width: 100%;
+    background-color: #fff;
+    z-index: 10000;
+}
+
+video {
+    width: 100%;
+    height: 420rpx;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+scroll-view {
+    max-height: 60vh;
+}
+
+.intro_title {
+    height: 80rpx;
+    font-size: 26rpx;
+    color: #666;
+    line-height: 80rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+    display: flex;
+    align-items: center;
+}
+
+.title_list {
+    flex: 1;
+    height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+.active_line {
+    width: 58rpx;
+    height: 6rpx;
+    background-image: linear-gradient(to right,#7587e6 0%,#3b4ca9 100%);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-29rpx);
+}
+
+.intro_title_title {
+    font-size: 30rpx;
+    color: #333;
+    padding: 20rpx;
+}
+
+.intro_content {
+    padding: 0 20rpx 20rpx 20rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.Push_people {
+    border-bottom: 1rpx solid #f0f0f0;
+    margin-left: 30rpx;
+}
+
+.people_in {
+    height: 120rpx;
+    display: flex;
+    align-items: center;
+}
+
+.people_icon {
+    height: 60rpx;
+    width: 60rpx;
+    border-radius: 50%;
+    margin-right: 30rpx;
+}
+
+.people_msg {
+}
+
+.people_content {
+    margin: 0 15rpx;
+}
+
+.people_name {
+    font-size: 26rpx;
+    color: #333;
+    margin-bottom: 4rpx;
+}
+
+.people_time {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.comment_content {
+    margin: 0rpx 60rpx 30rpx 90rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.click {
+    width: 100%;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0rpx;
+}
+
+.edit_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20rpx 30rpx 20rpx 30rpx;
+    box-sizing: border-box;
+    border-top: 1rpx solid #f0f0f0;
+}
+
+.edit_text_img {
+    width: 50rpx;
+    height: 50rpx;
+    margin: 0 30rpx 0 20rpx;
+}
+
+.edit_input {
+    background-color: #f5f6fa;
+    border-radius: 36rpx;
+    padding: 12rpx 20rpx 12rpx 30rpx;
+    flex: 1;
+    font-size: 32rpx;
+    color: #333;
+    border: 1rpx solid #ebebeb;
+}
+
+.sendBtn {
+    border-radius: 36rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.send_img {
+    margin: 0 0rpx 0 30rpx;
+    height: 60rpx;
+    width: 60rpx;
+    display: block;
+}
+
+.edit_text_bottom {
+    height: 90rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.edit_bottom_img {
+    display: block;
+    width: 48rpx;
+    height: 48rpx;
+    margin: 15rpx 30rpx;
+}
+
+.voice_btn_view {
+    padding-top: 4rpx;
+}
+
+.voice_btn_img {
+    height: 52rpx;
+    width: 52rpx;
+    margin: 0 30rpx 0 0;
+}
+
+.ppt-view {
+    background-color: #fff;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30rpx;
+    border-bottom: 20rpx solid #f2f3f7;
+}
+
+.ppt {
+    width: 100%;
+    height: 160rpx;
+    background: #f7f7f7;
+}
+
+.ppt-img {
+    height: 160rpx;
+    float: left;
+    margin-right: 10rpx;
+}
+
+.ppt-img-q {
+    padding: 30rpx 20rpx;
+    float: left;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
+    background-color: red;
+    text-align: center;
+    background-image: linear-gradient(to right,#ff9674 0%,#ff9574 100%);
+    border-radius: 8rpx;
+    color: #fff;
+}
+
+.ppt-text {
+    width: 500rpx;
+    height: 110rpx;
+    float: left;
+    margin-top: 30rpx;
+    color: #333;
+    font-size: 32rpx;
+}

@@ -1,0 +1,74 @@
+<view class="patient-top">
+    <view class="patient-search">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzseet.png?sign=049710cbe6553e684a7a28a1271049e1&t=1572487623"></image>
+        <input bindconfirm="search" bindinput="changes" placeholder="搜索症状、疾病、医院、科室、医生名..." placeholderStyle="font-size:22rpx;color:#999"></input>
+    </view>
+</view>
+<view class="team-tab">
+    <view bindtap="allisshow" class="team-item ">
+        <view>排序</view>
+        <image class="organ-down" mode="widthFix" src="../../../images/down-h.png"></image>
+    </view>
+    <view bindtap="isstates" class="team-item ">
+        <view>状态</view>
+        <image class="organ-down" mode="widthFix" src="../../../images/down-h.png"></image>
+    </view>
+    <view bindtap="isscreen" class="team-item ">
+        <view>筛选</view>
+        <image class="organ-down" mode="widthFix" src="../../../images/down-h.png"></image>
+    </view>
+</view>
+<view class="team-list">
+    <view bindtap="teamindex" class="team-item-list" wx:for="{{list}}">
+        <view class="team-top">
+            <image class="pho" src="{{item.advertisement}}"></image>
+            <view class="team-ri">
+                <view class="team-tit">
+                    <view>{{item.z_name}}</view>
+                    <view class="team-label">{{item.job_name}}</view>
+                </view>
+                <view class="team-zc">{{item.keshi}}{{item.hospital}}</view>
+                <view class="team-sc">擅长：{{item.authority}}</view>
+                <view class="team-xx">
+                    <view class="team-start">
+                        <image src="../../../images/start.png"></image>
+                        <view>5.0</view>
+                    </view>
+                    <view class="team-xx-t">月回答:{{item.xn_reoly}} 月处方:{{item.xn_cf}} {{item.xytime}}响应</view>
+                </view>
+                <view class="team-ms">专业审核优秀</view>
+            </view>
+        </view>
+        <view class="team-states">
+            <view bindtap="shenhe" class="team-btn" data-exa="{{item.exa}}" data-zid="{{item.zid}}" wx:if="{{item.exa==1}}">已通过审核</view>
+            <view bindtap="shenhe" class="team-btn" data-exa="{{item.exa}}" data-zid="{{item.zid}}" wx:if="{{item.exa==0}}">未审核</view>
+        </view>
+    </view>
+</view>
+<view bindtap="closeallshow" class="organ-mask" wx:if="{{ispopup||isstate||isscreen}}"></view>
+<view class="[\"expert-popup\",{{ispopup?'on':''}}">
+    <view bindtap="allitembtn" class="[\"all-exitem\",{{popupindex==index?'textact':''}}]" data-index="{{index}}" wx:for="{{compre}}">{{item}}</view>
+</view>
+<view class="[\"expert-popup\",{{isstate?'on':''}}">
+    <view bindtap="screenitembtn" class="[\"all-exitem\",{{screenindex==index?'textact':''}}]" data-index="{{index}}" wx:for="{{screen}}">{{item}}</view>
+</view>
+<view class="[\"expert-popup\",{{isscreen?'on':''}}">
+    <view class="bort">
+        <view class="state-item">
+            <view class="state-tit">医生职称</view>
+            <view class="state-mode">
+                <view bindtap="statelistbtn" class="[\"mode-item\",{{stateitem1==index?'state-act':''}}]" data-dexs="1" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{doctitle}}">{{item.job_name}}</view>
+            </view>
+        </view>
+        <view class="state-item">
+            <view class="state-tit">科室</view>
+            <view class="state-mode">
+                <view bindtap="statelistbtn" class="[\"mode-item\",{{stateitem2==index?'state-act':''}}]" data-dexs="2" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{keshi_arr}}">{{item.name}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="state-btns">
+        <view bindtap="resalts" class="state-resalt">重置</view>
+        <view bindtap="statesuss" class="state-suss">完成</view>
+    </view>
+</view>

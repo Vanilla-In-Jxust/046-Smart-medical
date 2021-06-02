@@ -1,0 +1,9 @@
+<view class="top"></view>
+<view class="word" wx:for="{{arr}}" wx:key="{{ index }}">
+    <view class="wordTextBox">
+        <view class="wordText1">{{item.title}}
+      <text class="wordText1Tenm">{{ymd[index]}} {{hm[index]}} </text>
+        </view>
+        <view class="wordText2">{{item.message}}</view>
+    </view>
+</view>

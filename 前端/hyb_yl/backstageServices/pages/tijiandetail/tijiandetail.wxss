@@ -1,0 +1,185 @@
+page {
+    background: #F6F6F6;
+    box-sizing: border-box;
+    padding-bottom: 150rpx;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.m25 {
+    margin-bottom: 25rpx;
+}
+
+.Illnessmess {
+    width: 100%;
+    padding: 30rpx;
+    background: #fff;
+}
+
+.Illnessmesstitle {
+    font-size: 34rpx;
+    color: #333333;
+    margin-bottom: 20rpx;
+}
+
+.Illnessmesstext {
+    font-size: 28rpx;
+    color: #8B8B8B;
+    margin-bottom: 20rpx;
+}
+
+.Illnessimgs {
+    width: 100%;
+}
+
+.Illnessimgs image {
+    width: 85rpx;
+    height: 85rpx;
+    border-radius: 8rpx;
+    margin-right: 10rpx;
+}
+
+.elsemess {
+    padding: 0 30rpx;
+    background: #fff;
+}
+
+.servepackage {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 30rpx 0;
+    border-bottom: 1rpx solid #F9F9F9;
+}
+
+.servepackage image {
+    width: 85rpx;
+    height: 85rpx;
+    border-radius: 10rpx;
+}
+
+.servepackageinfo {
+    width: 85%;
+}
+
+.info-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info-top view:first-child {
+    color: #454545;
+    font-size: 32rpx;
+}
+
+.info-top view:first-child text:first-child {
+    overflow: hidden;
+    color: #333;
+    font-weight: 500;
+    font-size: 34rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.info-top view:first-child text:last-child {
+    margin: 0 12rpx;
+    overflow: hidden;
+    color: #333;
+    font-size: 28rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.info-top view:last-child {
+    color: #E72D2D;
+    font-size: 34rpx;
+}
+
+.info-bott {
+    color: #333;
+    font-weight: 300;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.totalsbox {
+    padding: 30rpx;
+    background-color: #fff;
+}
+
+.fukuan {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 32rpx;
+}
+
+.fukuan view {
+    color: #464646;
+}
+
+.fukuan view.money {
+    color: #e83535;
+}
+
+.ordergroup {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+}
+
+.ordergroup view:first-child {
+    color: #464646;
+    margin-right: 20rpx;
+}
+
+.ordergroup view:last-child {
+    color: #9D9D9D;
+}
+
+.footbtn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.footbtn view {
+    line-height: 90rpx;
+    text-align: center;
+}
+
+.footbtn view:first-child {
+    font-size: 32rpx;
+    color: #0F8EE2;
+    width: 42%;
+    background: #fff;
+}
+
+.footbtn view:last-child {
+    width: 58%;
+    color: #fff;
+    background: #0087E0;
+}
+
+.eqcord {
+    text-align: center;
+    margin-top: 50rpx;
+}
+
+.eqcord image {
+    width: 260rpx;
+    height: 260rpx;
+}
+
+.eqcord view {
+    font-size: 26rpx;
+    text-align: center;
+    color: #999999;
+}

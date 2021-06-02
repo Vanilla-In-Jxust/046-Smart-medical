@@ -1,0 +1,55 @@
+<view class="search">
+    <view class="search-bar">
+        <view class="search-bar-container">
+            <button bindtap="searchConfirmHandler" class="search-bar-confirm">
+                <image class="image" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/search_ff.png?sign=52e66d96ec80103d916e6b607b95c7cc&t=1590717965"></image>
+            </button>
+            <input bindconfirm="searchs" bindinput="getvalus" class="search-bar-input" placeholder="症状、疾病" value="{{searchvals}}"></input>
+        </view>
+    </view>
+</view>
+<view class="disease-info-list">
+    <view class="main-cards">
+        <view bindtap="handleTap" class="left-card" data-detail="查疾病" data-type="0">
+            <image class="card-image" mode="aspectFill" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/cha1.png?sign=1b757fd188d4a87d3584c5445d4e3cbe&t=1585151023"></image>
+        </view>
+        <view class="right-card">
+            <view bindtap="handleTap" class="card" data-detail="查症状" data-type="1">
+                <image class="card-image" mode="aspectFill" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/cha2.png?sign=091600412fee959e979b3001c172ef6a&t=1585151038"></image>
+            </view>
+            <view bindtap="handleTap" class="card third-card" data-detail="查疫苗" data-type="2">
+                <image class="card-image" mode="aspectFill" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/cha3.png?sign=c9e637d15d36572f9ad3d4910dea37e6&t=1585151047"></image>
+            </view>
+        </view>
+    </view>
+    <view class="secondary-cards">
+        <view bindtap="handleTap" class="secondary-cards-card" data-detail="{{item.title}}" data-type="{{item.type}}" wx:for="{{chatwo}}" wx:key="{{index}}">
+            <image class="secondary-cards-card-image" mode="aspectFill" src="{{item.imgs}}"></image>
+        </view>
+    </view>
+    <view bindtap="todetail" class="content-card" data-id="{{item.id}}" data-title="{{item.title}}" wx:for="{{list}}" wx:key="{{index}}">
+        <view class="content-card-left">
+            <view class="title">{{item.title}}</view>
+            <view class="content">
+                <rich-text nodes="{{item.content}}"></rich-text>
+            </view>
+        </view>
+        <view class="content-card-image">
+            <image class="image" mode="aspectFill" src="{{item.thumb}}"></image>
+        </view>
+    </view>
+</view>
+<view class="searchbox" wx:if="{{searchvals.length!=0}}">
+    <view class="searchlist">
+        <view class="searchtit">感冒</view>
+        <view class="searchtextlist">
+            <view>健康的客户距离尽量你</view>
+            <view>健康的客户距离尽量你</view>
+            <view>健康的客户距离尽量你</view>
+        </view>
+        <view class="searchicon">
+            <text>症状诊断</text>
+            <text>治疗疾病</text>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,114 @@
+<view class="Illnessmess">
+    <view class="Illnessmesstext">症状描述：{{conets.text}}</view>
+    <view class="Illnessimgs" wx:for="{{conets.upload_picture_list}}" wx:key="key">
+        <image src="{{item}}"></image>
+    </view>
+</view>
+<view class="elsemess">
+    <view class="servepackage" wx:if="{{key_words===''}}">
+        <image src="../../../images/touxiang.png"></image>
+        <view class="servepackageinfo">
+            <view class="info-top">
+                <text>惠民服务包</text>
+                <text>￥{{money}}</text>
+            </view>
+            <view class="info-bott">惠民服务包包含的具体内容</view>
+        </view>
+    </view>
+    <view class="servepackage" wx:if="{{xiangqing.length!='0'}}">
+        <image src="{{xiangqing.advertisement}}"></image>
+        <view class="servepackageinfo">
+            <view class="info-top">
+                <view>
+                    <text>{{xiangqing.z_name}}</text>
+                    <text>{{xiangqing.groupid}}</text>
+                </view>
+                <view wx:if="{{key_words==='tuwenwenzhen'||key_words==='3'}}">￥{{zmoney}}</view>
+                <view wx:if="{{key_words==='dianhuajizhen'||key_words==='shipinwenzhen'}}">￥{{zmoney}}/分钟</view>
+            </view>
+            <view class="info-bott">{{xiangqing.level_name}}以上医生接诊 {{xiangqing.ctname}}</view>
+            <view class="tags">
+                <view class="tag" wx:for="{{xiangqing.jingxuan}}">{{item}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="elsegroup youhui" wx:if="{{leixing!='lvtong'}}">
+        <view>优惠方式</view>
+        <view wx:if="{{coupon_title=='暂无优惠券可用'}}">{{coupon_title}}</view>
+        <view wx:else>{{coupon_title}} {{coupon_dk}}元</view>
+    </view>
+    <view class="elsegroup" wx:if="{{leixing!='lvtong'}}">
+        <view>回复时间</view>
+        <view>预计{{xiangqing.xytime}}内回复，超过24小时自动退款</view>
+    </view>
+    <block wx:if="{{inquiry!=='-1'}}">
+        <view class="elsegroup" wx:if="{{key_words==='dianhuajizhen'||key_words==='shipinwenzhen'}}">
+            <view style="width:100%;">预约时间</view>
+            <view style="width:100%;margin-top:10rpx">{{data_time}}</view>
+        </view>
+        <view class="elsegroup" wx:if="{{key_words==='dianhuajizhen'||key_words==='shipinwenzhen'}}">
+            <view>接听手机 <text wx:if="{{key_words==='dianhuajizhen'}}">非常重要</text>
+            </view>
+            <view>{{phone}}</view>
+        </view>
+        <view class="elsegroup" wx:if="{{key_words==='tuwenwenzhen'||key_words==='yuanchengkaifang'}}">
+            <view>
+                <view>公开问题</view>
+                <view class="publicity">
+                    <text>3,793,056</text>人公开了问题，帮助更多的人</view>
+            </view>
+            <switch bindchange="switchChange" checked="{{switchChecked}}" color="#0088DE"></switch>
+        </view>
+    </block>
+    <view bindtap="onRadioChange" class="package" style="background-image: url(https://img1.dxycdn.com/2020/0102/859/3388638697334526434-22.png);" wx:if="{{zhuanjia_year&&!is_yearcard&&key_words!='yuanchengkaifang'}}">
+        <view class="package-body">
+            <image class="package-body-image" mode="widthFix" role="img" src="https://img1.dxycdn.com/2019/0829/202/3365248949685657412-22.png"></image>
+            <view class="package-body-content">
+                <view class="package-body-content-title" style="color: #b38c3e; font-weight: 600;"> 购买医生卡 本单免费 </view>
+                <view class="package-body-content-detail">
+                    <view class="package-body-content-detail-text" style="color: #b38c3e;">可向该医生问诊{{xiangqing.yearcad.wz_num}}次(含本次)</view>
+                    <view catch:tap="handleNavDetail" class="package-body-content-detail-img">
+                        <image class="image" role="img" src="https://img1.dxycdn.com/2019/0815/350/3362648200958991523-22.png"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="package-foot price-vertical">
+            <view class="package-foot-price">
+                <view class="package-foot-price-now">￥{{xiangqing.yearcad.new_price}}</view>
+                <view class="package-foot-price-origin">可省¥{{xiangqing.yearcad.newmoney}}</view>
+            </view>
+            <view class="package-foot-filter">
+                <radio bindtap="yearcard" checked="{{radio?'checked':''}}" class="radio" color="#808080" style="transform: scale(1.2)"></radio>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="mustread">
+    <view class="mustreadtit">买前必读</view>
+    <view class="mustreadtxt">
+        <view>
+            <rich-text nodes="{{html}}"></rich-text>
+        </view>
+    </view>
+</view>
+<view class="footpay">
+    <view class="radios" wx:if="{{key_words===''}}">
+        <radio bindchange="radioChange" color="#0087E0"></radio>
+        <view>签约并同意<text bindtap="bindiqanyue" style="color:#0087E0;">《签约协议》</text>
+        </view>
+    </view>
+    <view class="radios" wx:if="{{key_words!==''}}">
+        <radio catchtap="radioChange" checked="{{argeen}}" color="#0087E0" data-argeen="{{argeen}}"></radio>
+        <view>我确认遵守<text bindtap="bindwenzhen" style="color:#0087E0;">《问诊协议》</text>
+        </view>
+    </view>
+    <view class="payandtotal">
+        <view>
+            <text>合计:</text>
+            <text>￥{{zmoney?zmoney:money}}</text>
+        </view>
+        <view bindtap="paybtn" wx:if="{{zmoney!=='0.00'}}">立即支付</view>
+        <view bindtap="paybtn" wx:if="{{zmoney=='0.00'}}">立即问诊</view>
+    </view>
+</view>

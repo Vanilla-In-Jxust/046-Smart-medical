@@ -1,0 +1,137 @@
+.doc-order-tab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 98rpx;
+    background: #fff;
+}
+
+.doc-tab-item {
+    position: relative;
+    height: 98rpx;
+    width: 20%;
+    line-height: 98rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.doc-tab-item-act {
+    color: #0087E0;
+}
+
+.doc-tab-item-act::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 24rpx;
+    height: 7rpx;
+    background: #0087E0;
+    border-radius: 4rpx;
+}
+
+.doc-list-box {
+    margin-bottom: 30rpx;
+}
+
+.doc-list-item {
+    width: 665rpx;
+    padding: 0 24rpx;
+    margin: 0 24rpx;
+    margin-top: 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.doc-list-time {
+    display: flex;
+    justify-content: space-between;
+    padding: 28rpx 0;
+    border-bottom: 1rpx solid #EAEAEA;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.doc-state {
+    display: flex;
+    align-items: center;
+}
+
+.doc-state image {
+    width: 34rpx;
+    height: 34rpx;
+}
+
+.doc-c {
+    color: #51C855;
+}
+
+.doc-cc {
+    color: #999999;
+}
+
+.doc-infor {
+    display: flex;
+    padding: 20rpx 0;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.doc-infor image {
+    width: 125rpx;
+    height: 125rpx;
+    margin-right: 22rpx;
+    border: 2rpx solid #0088DE;
+    border-radius: 50%;
+}
+
+.doc-ri-name {
+    display: flex;
+    align-items: flex-end;
+    font-size: 30rpx;
+    color: #333;
+    margin-bottom: 20rpx;
+}
+
+.doc-ri-name view {
+    font-size: 22rpx;
+    margin-left: 20rpx;
+}
+
+.doc-des {
+    font-size: 26rpx;
+    color: #666;
+    margin-bottom: 2rpx;
+    width: 500rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.doc-no {
+    width: 100%;
+    padding: 20rpx 0;
+    font-size: 28rpx;
+    color: #666;
+    text-align: center;
+}
+
+.spbtn {
+    background: #4281f2;
+    color: #fff;
+    font-size: 26rpx;
+    padding: 0 20rpx;
+    border-radius: 10rpx;
+    height: 66rpx;
+    line-height: 66rpx;
+    white-space: nowrap;
+    margin-left: 20rpx;
+}

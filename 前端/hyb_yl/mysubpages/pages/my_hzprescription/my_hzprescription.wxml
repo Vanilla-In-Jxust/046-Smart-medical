@@ -1,0 +1,14 @@
+<view bindtap="look_detail" class="prescriptionitem" data-id="{{item.id}}" data-orderStatus="{{item.orderStatus}}" wx:for="{{infos}}" wx:key="k">
+    <view class="diseases">
+        <view>诊断：{{item.content.text}}</view>
+    </view>
+    <view class="proposal">建议用药(共{{item.cartlist.length}}种){{item.content.text1}}</view>
+    <view class="ptbottom">
+        <view class="pttimes">
+            <view>{{item.z_name}} {{item.ctname}}</view>
+            <view>{{item.created}}</view>
+        </view>
+        <view bindtap="look_detail" class="ptbtn" data-id="{{item.id}}" style="background:{{bgc}}">申请续方 <text wx:if="{{item.ifpay=='1'}}">立减5元</text>
+        </view>
+    </view>
+</view>

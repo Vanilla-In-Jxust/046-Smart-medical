@@ -1,0 +1,17 @@
+Page({
+    data: {},
+    onLoad: function(o) {
+        var n = wx.getStorageSync("color");
+        wx.setNavigationBarColor({
+            frontColor: "#ffffff",
+            backgroundColor: n
+        });
+    },
+    onReady: function() {},
+    onShow: function() {},
+    onHide: function() {},
+    onUnload: function() {},
+    onPullDownRefresh: function() {},
+    onReachBottom: function() {},
+    onShareAppMessage: function() {}
+});

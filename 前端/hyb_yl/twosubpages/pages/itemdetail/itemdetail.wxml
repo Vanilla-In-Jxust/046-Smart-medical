@@ -1,0 +1,25 @@
+<view class="module-margin">
+    <image mode="widthFix" src="{{adv.thumb}}" style="height: 166.667px;"></image>
+</view>
+<block wx:if="{{type!='1'}}" wx:for="{{list}}" wx:key="{{index}}">
+    <view class="module" wx:if="{{item.list.length!=0}}">
+        <view class="module-title">
+            <view class="module-title-icon"></view>
+            <view> {{item.ctname}} </view>
+            <view class="module-title-icon"></view>
+        </view>
+        <view class="module-text" wx:if="{{item.describe!=''}}"> {{item.describe}} </view>
+        <view class="lists">
+            <view bindtap="listitem" class="module-entry module-custom-item" data-id="{{items.id}}" data-title="{{items.title}}" wx:for="{{item.list}}" wx:for-item="items" wx:key="items">
+                <view class="entry">{{items.title}}</view>
+            </view>
+        </view>
+    </view>
+</block>
+<view bindtap="listitems" class="module" data-id="{{item.id}}" data-title="{{item.title}}" wx:if="{{type=='1'}}" wx:for="{{info}}" wx:key="{{index}}">
+    <view class="lists">
+        <view class="module-entry module-custom-item" data-id="{{item.id}}" data-title="{{item.title}}">
+            <view class="entry">{{item.ctname}}</view>
+        </view>
+    </view>
+</view>

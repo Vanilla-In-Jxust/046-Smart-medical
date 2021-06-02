@@ -1,0 +1,32 @@
+<view class="step-number">
+    <view class="step-container {{index==stepnum?'highlight':''}}" wx:for="{{steps}}" wx:key="s">
+        <view class="number">{{index+1}}</view>
+        <view class="content arrow">{{item}}</view>
+    </view>
+</view>
+<form bindsubmit="infomationbtn">
+    <view class="containerbox">
+        <view class="quick-ask-contain">
+            <view class="quick-ask-header">
+                <view>描述症状</view>
+                <view class="quick-ask-subtitle"></view>
+            </view>
+            <view class="miaoshutext">{{text}}</view>
+        </view>
+        <view class="quick-ask-contain">
+            <view class="quick-ask-header">
+                <view>诊断</view>
+                <view class="quick-ask-subtitle"></view>
+            </view>
+            <textarea class="dxd-textarea__textarea" name="zhenduan" placeholder="请在此输入诊断结果" value="{{textareatxt}}"></textarea>
+        </view>
+        <view class="quick-ask-contain">
+            <view class="quick-ask-header">
+                <view>建议用药</view>
+                <view class="quick-ask-subtitle"></view>
+            </view>
+            <textarea class="dxd-textarea__textarea" name="yongyao" placeholder="请在此输入建议用药" value="{{textareatxt}}"></textarea>
+        </view>
+        <button ariaDisabled="false" class="common-button" data-text="{{text}}" formType="submit" role="button">下一步</button>
+    </view>
+</form>

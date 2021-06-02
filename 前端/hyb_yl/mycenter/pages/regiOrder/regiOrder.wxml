@@ -1,0 +1,213 @@
+<view class="tab">
+    <view bindtap="chooseTab" class="son {{current==index?'active':''}}" data-i="{{index}}" wx:for="{{tab}}" wx:key="index">{{item.name}}</view>
+</view>
+<view hidden="{{current!=0}}">
+    <view wx:if="{{unscramble.length!=0}}">
+        <view class="center1" wx:for="{{unscramble}}" wx:key="key">
+            <view class="order">
+                <view class="header">
+                    <view class="time">订单编号：{{item.ordernums}}</view>
+                    <view class="status">{{item.code}}</view>
+                </view>
+                <view bindtap="lookdetail" class="goods" data-id="{{item.tid}}" data-item="{{item}}" data-sid="{{item.sid}}">
+                    <view class="good">
+                        <image src="{{item.t_thumb}}"></image>
+                    </view>
+                    <view class="info">
+                        <view class="info-title">
+                            <view class="info-tit-name"> {{item.t_name}} <view>主任医师</view>
+                            </view>
+                            <view class="info-price">
+                                <text>￥</text>
+                                <text>{{item.money}}</text>
+                            </view>
+                        </view>
+                        <view class="info-subtit">山西白求恩医院    胸内科</view>
+                        <view class="info-time">挂号时间：{{item.time}} </view>
+                    </view>
+                </view>
+                <view class="info-disc">
+                    <view>优惠</view>
+                    <view>-￥2</view>
+                </view>
+                <view class="operate-box">
+                    <view class="operate-all-pri">共1个项目  <view>￥8</view>
+                    </view>
+                    <view class="operate">
+                        <view catchtap="delete" class="son again deltbn" data-id="{{item.id}}" data-index="{{index}}">取消订单</view>
+                        <view catchtap="zhifu" class="son again" data-id="{{item.id}}" data-money="{{item.money}}" data-order="{{item.ordernums}}">去支付</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="nonelist">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+            <view class="fs28">暂时还没有订单哦</view>
+        </view>
+    </view>
+</view>
+<view hidden="{{current!=1}}">
+    <view wx:if="{{wzf.length!=0}}">
+        <view bindtap="lookdetail" class="center1" data-item="{{item}}" wx:for="{{wzf}}" wx:key="key">
+            <view class="order">
+                <view class="header">
+                    <view class="time">订单编号：{{item.ordernums}}</view>
+                    <view class="status">{{item.code}}</view>
+                </view>
+                <view class="goods" data-id="{{item.tid}}" data-sid="{{item.sid}}">
+                    <view class="good">
+                        <image src="{{item.t_thumb}}"></image>
+                    </view>
+                    <view class="info">
+                        <view class="info-title">
+                            <view class="info-tit-name"> {{item.t_name}} <view>主任医师</view>
+                            </view>
+                            <view class="info-price">
+                                <text>￥</text>
+                                <text>{{item.money}}</text>
+                            </view>
+                        </view>
+                        <view class="info-subtit">山西白求恩医院    胸内科</view>
+                        <view class="info-time">挂号时间：{{item.time}} </view>
+                    </view>
+                </view>
+                <view class="info-disc">
+                    <view>优惠</view>
+                    <view>-￥2</view>
+                </view>
+                <view class="operate-box">
+                    <view class="operate-all-pri">共1个项目  <view>￥8</view>
+                    </view>
+                    <view class="operate">
+                        <view catchtap="zhifu" class="son again" data-id="{{item.id}}" data-money="{{item.money}}" data-order="{{item.ordernums}}">去退款</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="nonelist">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+            <view class="fs28">暂时还没有订单哦</view>
+        </view>
+    </view>
+</view>
+<view hidden="{{current!=2}}">
+    <view wx:if="{{ySuccess.length!=0}}">
+        <view bindtap="lookdetail" class="center1" data-item="{{item}}" wx:for="{{ySuccess}}" wx:key="key">
+            <view class="order">
+                <view class="header">
+                    <view class="time">订单编号：{{item.ordernums}}</view>
+                    <view class="status">{{item.code}}</view>
+                </view>
+                <view class="goods" data-id="{{item.tid}}" data-sid="{{item.sid}}">
+                    <view class="good">
+                        <image src="{{item.t_thumb}}"></image>
+                    </view>
+                    <view class="info">
+                        <view class="info-title">
+                            <view class="info-tit-name"> {{item.t_name}} <view>主任医师</view>
+                            </view>
+                            <view class="info-price">
+                                <text>￥</text>
+                                <text>{{item.money}}</text>
+                            </view>
+                        </view>
+                        <view class="info-subtit">山西白求恩医院    胸内科</view>
+                        <view class="info-time">挂号时间：{{item.time}}</view>
+                    </view>
+                </view>
+                <view class="info-disc">
+                    <view>优惠</view>
+                    <view>-￥2</view>
+                </view>
+                <view class="operate-box">
+                    <view class="operate-all-pri">共1个项目  <view>￥8</view>
+                    </view>
+                    <view class="operate">
+                        <view class="son again" data-id="{{item.id}}">确定完成</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="nonelist">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+            <view class="fs28">暂时还没有订单哦</view>
+        </view>
+    </view>
+</view>
+<view hidden="{{current!=3}}">
+    <view wx:if="{{ySuccess.length!=0}}">
+        <view bindtap="lookdetail" class="center1" data-item="{{item}}" wx:for="{{tijians}}" wx:key="key">
+            <view class="order">
+                <view class="header">
+                    <view class="time">订单编号：{{item.ordernums}}</view>
+                    <view class="status">{{item.code}}</view>
+                </view>
+                <view class="goods" data-id="{{item.tid}}" data-sid="{{item.sid}}">
+                    <view class="good">
+                        <image src="{{item.t_thumb}}"></image>
+                    </view>
+                    <view class="info">
+                        <view class="info-title">
+                            <view class="info-tit-name"> {{item.t_name}} <view>主任医师</view>
+                            </view>
+                            <view class="info-price">
+                                <text>￥</text>
+                                <text>{{item.money}}</text>
+                            </view>
+                        </view>
+                        <view class="info-subtit">山西白求恩医院    胸内科</view>
+                        <view class="info-time">挂号时间：{{item.time}} </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="nonelist">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+            <view class="fs28">暂时还没有订单哦</view>
+        </view>
+    </view>
+</view>
+<view hidden="{{current!=4}}">
+    <view wx:if="{{ySuccess.length!=0}}">
+        <view bindtap="lookdetail" class="center1" data-item="{{item}}" wx:for="{{concals}}" wx:key="key">
+            <view class="order">
+                <view class="header">
+                    <view class="time">订单编号：{{item.ordernums}}</view>
+                    <view class="status">{{item.code}}</view>
+                </view>
+                <view class="goods" data-id="{{item.tid}}" data-sid="{{item.sid}}">
+                    <view class="good">
+                        <image src="{{item.t_thumb}}"></image>
+                    </view>
+                    <view class="info">
+                        <view class="info-title">
+                            <view class="info-tit-name"> {{item.t_name}} <view>主任医师</view>
+                            </view>
+                            <view class="info-price">
+                                <text>￥</text>
+                                <text>{{item.money}}</text>
+                            </view>
+                        </view>
+                        <view class="info-subtit">山西白求恩医院    胸内科</view>
+                        <view class="info-time">挂号时间：{{item.time}}  </view>
+                    </view>
+                </view>
+                <view class="operate"></view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="nonelist">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+            <view class="fs28">暂时还没有订单哦</view>
+        </view>
+    </view>
+</view>

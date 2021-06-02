@@ -1,0 +1,140 @@
+<view class="backs-top">
+    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/my-bg-blue.png?sign=11988740c787144117d243bbcb101bc5&t=1591238829"></image>
+    <view class="backs-text">
+        <view class="backs-le-pho">
+            <image src="{{info.advertisement}}"></image>
+            <view class="backs-ri">
+                <view class="backs-tit">
+                    <view>{{info.z_name}}</view>
+                    <view class="doc-state" style="color:{{bg_color}}">{{info.name}}</view>
+                    <view class="doc-state" style="color:{{bg_color}}">{{info.gzstype==0?'休息中':'工作中'}}</view>
+                </view>
+                <view class="backs-yy">{{info.agentname}}</view>
+            </view>
+        </view>
+        <view bindtap="editdata" class="modify-zl">
+            <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/xg.png?sign=4bfc9b3ca6ec9d426d0e88d8f80d5810&t=1591238514"></image>
+            <view>修改资料</view>
+        </view>
+    </view>
+</view>
+<view class="backs-zslist">
+    <view bindtap="mo_money" class="backs-zsitem" data-zid="{{zid}}" data-zmoney="{{total_money?total_money:info.shouyi}}">
+        <view class="backs-num">{{total_money?total_money:info.shouyi}}</view>
+        <view>钱包</view>
+    </view>
+    <view class="backs-zsitem">
+        <view class="backs-num">{{info.qianyue_user}}</view>
+        <view>签约</view>
+    </view>
+    <view class="backs-zsitem">
+        <view class="backs-num">{{info.pt_user}}</view>
+        <view>问诊数</view>
+    </view>
+</view>
+<view class="backs-box">
+    <view bindtap="nkset" class="backs-list">
+        <view class="backs-le">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/my2.png?sign=c121b4a36255640e38bc5c08df86afc2&t=1591238359"></image>
+            <view>年卡设置</view>
+        </view>
+        <view class="backs-ri">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+        </view>
+    </view>
+    <view bindtap="statesetshow" class="backs-list">
+        <view class="backs-le">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/my3.png?sign=7c12b9e779d9f9b8bca95211b43b9ec4&t=1591238374"></image>
+            <view>工作状态设置</view>
+        </view>
+        <view class="backs-ri">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+        </view>
+    </view>
+    <view bindtap="pingjia" class="backs-list">
+        <view class="backs-le">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/my4.png?sign=40d615d98f2f20fa160d9a45c21c85f3&t=1591238392"></image>
+            <view>患者评价</view>
+        </view>
+        <view class="backs-ri">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+        </view>
+    </view>
+    <view bindtap="qianyue" class="backs-list">
+        <view class="backs-le">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/my5.png?sign=8068a2aa66515570adff8bb0362de0d4&t=1591238403"></image>
+            <view>签约邀请记录</view>
+        </view>
+        <view class="backs-ri">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+        </view>
+    </view>
+    <view bindtap="gohome" class="backs-list">
+        <view class="backs-le">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/my6.png?sign=211b48426082cd75d3aee6dbd2f6c969&t=1591238413"></image>
+            <view>回到前台</view>
+        </view>
+        <view class="backs-ri">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+        </view>
+    </view>
+    <view bindtap="radioChange" class="backs-list">
+        <view class="backs-le">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/my7.png?sign=7372ce7d2d8216389251cccf06abeb28&t=1591238427"></image>
+            <view>帮助手册</view>
+        </view>
+        <view class="backs-ri">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+        </view>
+    </view>
+    <view bindtap="zijin" class="backs-list">
+        <view class="backs-le">
+            <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/1.png?sign=e49c77c9498096b676d0558a2b44247c&t=1594206154"></image>
+            <view>资金中心</view>
+        </view>
+        <view class="backs-ri">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+        </view>
+    </view>
+    <view bindtap="server" class="backs-list">
+        <view class="backs-le">
+            <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/2.png?sign=8f7eff7e6c574f4c21ae0a008263da39&t=1594206174"></image>
+            <view>开通服务</view>
+        </view>
+        <view class="backs-ri">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+        </view>
+    </view>
+    <view bindtap="set_jurisdiction" class="backs-list">
+        <view class="backs-le">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/mytab6-4.png?sign=c92a0f1aa8172e9796c02057824ab78c&t=1590657216"></image>
+            <view>设置</view>
+        </view>
+        <view class="backs-ri">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/yjt.png?sign=eda8b15e46588dcc1cc2bd70f4f2b58a&t=1591238450"></image>
+        </view>
+    </view>
+</view>
+<view bindtap="closepopup" class="backs-mask" wx:if="{{ispopup}}"></view>
+<view class="backs-popup {{ispopup?'on':''}}">
+    <view class="popup-tit">工作状态设置</view>
+    <view bindtap="stateset" class="poput-item" data-dex="{{index}}" wx:for="{{stateset}}">
+        <view class="poput-item-le">
+            <view class="poput-t">{{item.title}}</view>
+            <view class="poput-tip">{{item.tip}}</view>
+        </view>
+        <image class="poput-sele" src="{{stateindex==index?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/check-act.png?sign=66446e8d28089298362807c76d07c6b9&t=1591238746':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/check.png?sign=8cbba675b7beecef70ae3bc0db88e258&t=1591238728'}}"></image>
+    </view>
+</view>
+<view catchtap="closezhe" class="zhe" wx:if="{{xieyi}}">
+    <view catchtap="function(){}" class="cont">
+        <view catchtap="function(){}" class="title">帮助手册</view>
+        <view catchtap="function(){}" class="rule_box">
+            <rich-text nodes="{{baseinfo.content}}"></rich-text>
+        </view>
+        <view catchtap="closezhe" class="rule_btn">我知道了</view>
+    </view>
+</view>
+<view style="height:150rpx;"></view>
+<import src="../../../../template/backstageTemplate.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

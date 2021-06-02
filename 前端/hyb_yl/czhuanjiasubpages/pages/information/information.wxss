@@ -1,0 +1,163 @@
+page {
+    background: #FAFAFA;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.have {
+    padding: 25rpx;
+    font-size: 22rpx;
+    color: #B8B8B8;
+}
+
+.inputitem {
+    padding: 25rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    border-bottom: 25rpx solid #F4F4F4;
+}
+
+.inputitem view {
+    font-size: 32rpx;
+    color: #343434;
+}
+
+.inputitem input {
+    width: 76%;
+    font-size: 32rpx;
+    color: #343434;
+    text-align: right;
+}
+
+.inputitem view.timesview view:first-child {
+    font-size: 32rpx;
+    color: #343434;
+}
+
+.inputitem view.timesview view:last-child {
+    font-size: 28rpx;
+    color: #B8B8B8;
+    margin-top: 8rpx;
+}
+
+.inputitem view.result {
+    font-size: 30rpx;
+    color: #C2C2C2;
+}
+
+.formbox {
+    padding: 25rpx;
+    background: #fff;
+}
+
+.title {
+    font-size: 32rpx;
+    color: #343434;
+    margin-bottom: 25rpx;
+}
+
+.formgroup {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 30rpx;
+    color: #555555;
+}
+
+.formgroup textarea {
+    width: 100%;
+    height: 200rpx;
+}
+
+.attachment-contain {
+    margin-top: 25rpx;
+    padding-top: 25rpx;
+    border-top: 1rpx solid #F8F8F8;
+}
+
+.upload-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+}
+
+.upload-list-item {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 153rpx;
+    height: 153rpx;
+    margin-right: 24rpx;
+}
+
+.upload-list-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    border-radius: 8rpx;
+}
+
+.upload-list-add-image {
+    display: block;
+    width: 48rpx;
+}
+
+.upload-list-add-text {
+    margin-top: 12rpx;
+    color: #999;
+    font-size: 22rpx;
+    line-height: 26rpx;
+}
+
+.upload-list-desc {
+    flex: 1;
+    margin-left: 16rpx;
+    color: #999;
+    font-weight: 300;
+    font-size: 26rpx;
+    line-height: 28rpx;
+}
+
+.btnbox {
+    padding: 25rpx;
+}
+
+.common-button {
+    width: auto;
+    height: 94rpx;
+    line-height: 94rpx;
+    text-align: center;
+    background-color: #0087E0;
+    color: #fff;
+    border: 1rpx solid #0087E0;
+    margin: 0;
+    border-radius: 47rpx;
+    margin-top: 80rpx;
+}
+
+.imglist {
+    box-sizing: border-box;
+    width: 153rpx;
+    height: 153rpx;
+    margin-right: 24rpx;
+    position: relative;
+}
+
+.imglist>image:nth-of-type(1) {
+    width: 35rpx;
+    height: 35rpx;
+    position: absolute;
+    top: -15rpx;
+    right: -15rpx;
+}

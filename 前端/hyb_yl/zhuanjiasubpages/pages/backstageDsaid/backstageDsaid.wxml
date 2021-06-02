@@ -1,0 +1,156 @@
+<view class="wrap-top">
+    <view bindtap="clickNum" class="add_city {{_num==1?'add_citying':''}}" data-num="1" style="color:{{bgc}}">公共患教
+    <view class="bottom" style="color:{{bgc}}" wx:if="{{show}}"></view>
+    </view>
+    <view bindtap="clickNum" class="add_city {{_num==2?'add_citying':''}}" data-num="2" style="color:{{bgc}}">个人患教
+    <view class="bottom" style="color:{{bgc}}" wx:if="{{show1}}"></view>
+    </view>
+</view>
+<view class="my" wx:if="{{show1}}">
+    <view class="wrap_name">
+        <view class="box_list">
+            <view class="box_list-for">
+                <view class="box_list-forText">获得阅读</view>
+                <view class="box_list-forText1">{{yuedu?yuedu:'0'}}</view>
+            </view>
+            <view class="box_list-for">
+                <view class="box_list-forText">获得赞</view>
+                <view class="box_list-forText1">{{dianzan?dianzan:'0'}}</view>
+            </view>
+            <view class="box_list-for">
+                <view class="box_list-forText">获得转发</view>
+                <view class="box_list-forText1">{{zhuanfa?zhuanfa:'0'}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="box_seet">
+        <view class="box_seet_headline">私有患教</view>
+        <view bindtap="jiagere" data-z_yy_sheng="{{z_yy_sheng}}">
+            <view class="jia">
+                <image class="seet" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzjia.png?sign=11497130c3b4e1a7ac63cad565fa8ee8&t=1572492880"></image>
+            </view>
+        </view>
+        <navigator url="/hyb_yl/backstageLife/pages/myseet/myseet">
+            <view class="jia">
+                <image class="seet" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzseet.png?sign=049710cbe6553e684a7a28a1271049e1&t=1572487623"></image>
+            </view>
+        </navigator>
+    </view>
+    <scroll-view scrollX="true" style="height: 80rpx; white-space:nowrap; position: relative;">
+        <view class="navigation">
+            <view bindtap="bindlist" class="navigationAll {{nav==0?'navigationAllcolor':''}}" data-id="" data-nav="0" data-zid="{{zid}}">全部</view>
+            <view bindtap="bindlist" class="navigationAll {{nav==index+1?'navigationAllcolor':''}}" data-id="{{item.hj_id}}" data-nav="{{index+1}}" data-zid="{{zid}}" wx:for="{{Wpost}}" wx:key="key">{{item.hj_name}}</view>
+        </view>
+    </scroll-view>
+    <scroll-view bindscrolltolower="lower" scrollY="true" style="max-height:{{height}}px">
+        <view class="list" wx:for="{{hjlist}}" wx:key="key">
+            <view bindlongpress="longTap" bindtouchend="bindTouchEnd" bindtouchstart="bindTouchStart" class="list1" data-groupId="{{item.eduId}}">
+                <view bindtap="particulars" class="list_headline" data-h_id="{{item.h_id}}" data-h_leixing="{{item.h_leixing}}" data-index="{{index}}">
+                    <view class="list_headline_text">{{item.h_title?item.h_title:''}}</view>
+                    <view class="name_time">{{item.hospital}}-{{item.z_name?item.z_name:''}} {{item.created}} </view>
+                    <view class="like_box">
+                        <view class="like">
+                            <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yanjing.png?sign=f360b082c851678812b457b5a9966eca&t=1572492923"></image>
+                            <view class="list_img_text">{{item.h_read}}</view>
+                        </view>
+                        <view class="like">
+                            <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzzan.png?sign=5aba05b275b9f0dda43e878cfa6ef4ef&t=1572492942"></image>
+                            <view class="list_img_text">{{item.h_dianzan}}</view>
+                        </view>
+                        <view class="like">
+                            <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzzuan.png?sign=d5939f27da16d9bb553b3b99d61c7653&t=1572492957"></image>
+                            <view class="list_img_text">{{item.h_zhuanfa}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="list_headline_boximg">
+                    <view class="headline_view list_headline_boximg1 ">
+                        <image bindtap="particulars" class="list_headline_boximg1" data-h_id="{{item.h_id}}" data-h_leixing="{{item.h_leixing}}" data-index="{{index}}" src="{{item.h_pic}}"></image>
+                        <view bindtap="particulars" class="list_headline_boximg1  headline_view_absolute" data-h_id="{{item.h_id}}" data-h_leixing="{{item.h_leixing}}" data-index="{{index}}" wx:if="{{item.eduType==2}}">
+                            <image class="headline_view_absolute_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/vd.png?sign=b2fb6a7bc9cdaef2c198da9d881781b2&t=1572493115"></image>
+                        </view>
+                    </view>
+                    <view bindtap="share" class="share" data-index="{{index}}" data-item="{{item}}">
+                        <image class="share_masturbation" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/masturbation.png?sign=e3a83e5ba66b51344e88513527eff357&t=1572487450"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="wx_c" wx:if="{{wzshow}}">暂无患教~</view>
+        <view style=" width: 100%;line-height: 100rpx;text-align: center;color: #333;font-size: 32rpx;" wx:if="{{meiyou1}}">已到底部</view>
+    </scroll-view>
+</view>
+<view class="my" wx:if="{{show}}">
+    <scroll-view bindscrolltolower="lower1" scrollY="true" style="max-height:{{height}}px">
+        <view class="com_seetBox">
+            <navigator url="/hyb_yl/backstageLife/pages/commonalityseet/commonalityseet">
+                <view class="com_seetBox1">
+                    <image class="com_seetimg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzseet.png?sign=049710cbe6553e684a7a28a1271049e1&t=1572487623"></image>
+                    <view class="com_input">关键词</view>
+                </view>
+            </navigator>
+        </view>
+        <view class="com_headline">
+            <text class="com_headlineTetx">-</text> 患教类目
+      <text class="com_headlineTetx">-</text>
+        </view>
+        <view class="com-xx" style="  background: #fff;"></view>
+        <view class="com_headline-list">
+            <view bindtap="clicknav" class="com_headline-listfor" data-hj_id="{{item.hj_id}}" style="background-color:{{randomColorArr[key]}}" wx:for="{{Wpost}}" wx:for-index="key">{{item.hj_name}}</view>
+        </view>
+        <view class="com-xx" style="  background: #f2f3f7;"></view>
+        <view class="com_headline">
+            <view bindtap="clickNum1" class="add_city {{_num1==0?'add_citying':''}}" data-num="0" style="color:{{bgc}}">最新患教
+      </view>
+            <view bindtap="clickNum1" class="add_city {{_num1==1?'add_citying':''}}" data-num="1" style="color:{{bgc}}">热门患教
+      </view>
+        </view>
+        <view class="list" style="float: left;" wx:for="{{hjlist}}" wx:key="key">
+            <view class="list1">
+                <view bindtap="particulars" class="list_headline" data-h_id="{{item.h_id}}" data-h_leixing="{{item.h_leixing}}" data-index="{{index}}">
+                    <view class="list_headline_text">{{item.h_title?item.h_title:''}}</view>
+                    <view class="name_time">{{item.hospital}} {{item.created}} </view>
+                    <view class="like_box">
+                        <view class="like">
+                            <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yanjing.png?sign=e22d779f657e6cb2d137127a14325c02&t=1572487594"></image>
+                            <view class="list_img_text">{{item.h_read}}</view>
+                        </view>
+                        <view class="like">
+                            <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzzan.png?sign=3195aaaba45e40b9a5213c45f7228d24&t=1572487558"></image>
+                            <view class="list_img_text">{{item.h_dianzan}}</view>
+                        </view>
+                        <view class="like">
+                            <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yanjing.png?sign=f0f9ebf0fd3db4ac49d7670c7690a237&t=1572487576"></image>
+                            <view class="list_img_text">{{item.h_zhuanfa}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="list_headline_boximg">
+                    <view class="headline_view list_headline_boximg1 ">
+                        <image bindtap="particulars" class="list_headline_boximg1" data-id="{{item.eduId}}" data-index="{{index}}" src="{{item.h_pic}}"></image>
+                        <view bindtap="particulars" class="list_headline_boximg1 headline_view_absolute" data-id="{{item.eduId}}" data-index="{{index}}" wx:if="{{item.eduType==2}}">
+                            <image class="headline_view_absolute_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/vd.png?sign=b2fb6a7bc9cdaef2c198da9d881781b2&t=1572493115"></image>
+                        </view>
+                    </view>
+                    <view bindtap="sharePublic" class="share" data-index="{{index}}">
+                        <image class="share_masturbation" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/masturbation.png?sign=e3a83e5ba66b51344e88513527eff357&t=1572487450"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="wx_c" wx:if="{{wzshow1}}">暂无患教</view>
+        <view style=" width: 100%;line-height: 100rpx;text-align: center;color: #333;font-size: 32rpx;" wx:if="{{meiyou}}">已到底部</view>
+    </scroll-view>
+</view>
+<view bindtap="wrap" class="wrap" wx:if="{{showshow==0}}">
+    <view class="alet">
+        <view class="alet_text">{{texttext?texttext:'提示'}}</view>
+        <view class="alet_text1">{{texttext1?texttext1:'网络繁忙请稍后'}}</view>
+        <navigator url="/hyb_yl/index/Wapprove/Wapprove" wx:if="{{forbidden}}">
+            <view class="alet_text2">{{nameText}}</view>
+        </navigator>
+        <image bindtap="alet" class="scc" src="/assets/images/scc.png" wx:if="{{forbidden}}"></image>
+    </view>
+</view>
+<import src="../../../../template/backstageTemplate.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

@@ -1,0 +1,85 @@
+<view class="all">
+    <view class="top">
+        <view class="top_c">
+			{{detail.title}}
+		</view>
+        <view class="top_down">
+            <image mode="aspectFit" src="{{detail.advertisement}}"></image>
+            <view>
+                <text wx:if="{{detail.z_name!=''&&detail.z_name!=null&&detail.z_name!='null'}}">{{detail.z_name}}</text>
+                <text>{{detail.level_name!=''&&detail.level_name!=null&&detail.level_name!='null'?detail.level_name:''}}&nbsp;&nbsp;发表于：{{detail.time}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="news-detail">
+        <view class="news-content wxParse custom-wxParse">
+            <rich-text img bindtap="tap" nodes="{{html}}"></rich-text>
+        </view>
+    </view>
+    <view class="copyright">
+        <text>{{detail.agentname!=''&&detail.agentname!='null'&&detail.agentname!=null?detail.agentname:''}}版权所有，未经许可不的转载。</text>
+    </view>
+    <view class="helpshare">
+        <view bindtap="diangood" class="hs_l {{hs_l_key?'hs_l_activ':''}}" wx:if="{{!hs_l_key}}">
+            <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/icon1.png?sign=184ed88cf03f2b4c628e81f18d00b275&t=1569461684"></image>
+            <text>有帮助({{dz}})</text>
+        </view>
+        <view class="hs_l {{hs_l_key?'hs_l_activ':''}}" wx:if="{{hs_l_key}}">
+            <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/assets/images/icon1.png?sign=5da25d5e942976eac33e125a2029ed6e&t=1585299393" wx:if="{{hs_l_key}}"></image>
+            <text>有帮助({{dz}})</text>
+        </view>
+        <view class="hs_r">
+            <button plain openType="share" style="border:0">
+                <view>
+                    <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wx1.png?sign=79a34e14b99d1c0507603766ddd10213&t=1547431751"></image>
+                </view>
+            </button>
+            <view catchtap="hasmask">
+                <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/assets/images/tab03.png?sign=2af46bcb38ff135ceda66b5475780636&t=1585298998"></image>
+            </view>
+        </view>
+    </view>
+    <view class="sciens">
+        <view class="scan_title">
+			相关文章
+		</view>
+        <view bindtap="xgdetail" class="scan_sign" data-id="{{item.id}}" data-zid="{{item.zid}}" wx:for="{{listall}}" wx:key="key">
+            <view>
+                <text>{{item.title}}</text>
+                <text>{{item.content}}</text>
+            </view>
+            <image mode="aspectFit" src="{{item.thumb}}"></image>
+        </view>
+    </view>
+    <view wx:if="{{listall.length>=5}}">
+        <view bindtap="goBack" class="more">
+			更多{{detail.total}}篇文章
+		</view>
+    </view>
+</view>
+<view class="posfix">
+    <view bindtap="navicate">
+        <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/index_hover.png?sign=aca92de1d718d91eecaf7083ee3c671c&t=1590657257"></image>
+        <text>首页</text>
+    </view>
+    <button plain hoverClass="none" openType="share">
+        <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/share.png?sign=dcec55393ac23c52d0698d843f48b428&t=1590657300" style="width:50rpx;height:50rpx"></image>
+        <text>分享</text>
+    </button>
+</view>
+<view bindtap="mask_key" class="mask" hidden="{{maskey}}">
+    <view class="mask_sign">
+        <image mode="widthFix" src="{{img}}"></image>
+        <button bindtap="maskbtn" wx:if="{{maskbtn_key}}">
+            <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/assets/images/down.svg?sign=3e7a78c847ff902665701e396e520f41&t=1585299086"></image>
+			保存图片
+		</button>
+        <text wx:else>图片已保存到你的相册</text>
+    </view>
+</view>
+<view bindtap="closeZhe" class="zhe" wx:if="{{jifen}}">
+    <view class="cont">
+        <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/bangzhu.png?sign=77a251e9ef10bd022fc822aa76f8556d&t=1590806547"></image>
+        <view class="text1">阅读积分 +{{detail.scyd}}</view>
+    </view>
+</view>

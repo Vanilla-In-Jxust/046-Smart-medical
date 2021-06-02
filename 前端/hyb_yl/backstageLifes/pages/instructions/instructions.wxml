@@ -1,0 +1,45 @@
+<view class="part mb20">
+    <view class="title df jsb color333 fs28 p20">
+        <view class="df">
+            <image class="icon" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/s_1.png?sign=dac9d9aeecf1d620efa266ed2c398009&t=1547029711"></image>近七天统计</view>
+    </view>
+    <canvas canvasId="lineCanvas" class="canvas" disableScroll="true" style=""></canvas>
+</view>
+<view class="part mb20">
+    <view class="title df jsb color333 fs28 p20">
+        <view class="df">
+            <image class="icon" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/s_2.png?sign=bb679e3fd2ecf44a00b51b778f750972&t=1547029728"></image>历史统计</view>
+        <view class="df color999">
+        年份选择
+        <view class="df choose_box">
+                <view class="pick">
+                    <picker bindchange="bindYear" fields="year" mode="date" start="{{year}}" value="{{index}}">
+                        <view class="picker">
+                            <input disabled class="input color333" end="{{year}}" placeholder="分类" value="{{year}}"></input>
+                        </view>
+                    </picker>
+                </view>
+                <view class="sanjiao df">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/right.png?sign=2c0bfe67f10bf25432aa414d80269534&t=1547029756"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <canvas canvasId="lineCanvas2" class="canvas" disableScroll="true" style=""></canvas>
+</view>
+<view class="part mb20">
+    <view class="title df jsb color333 fs28 p20">
+        <view class="df">
+            <image class="icon" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/s_3.png?sign=7655df83995511389acce2a94ffeb905&t=1547029741"></image>今日收益</view>
+    </view>
+    <view class="data">
+        <view class="df fs28 jsb">
+            <view class="kuan">年订单量</view>
+            <view class="kuan">年成交金额（元）</view>
+        </view>
+        <view class="df fs28 jsb">
+            <view class="kuan">{{num}}</view>
+            <view class="kuan">{{money}}</view>
+        </view>
+    </view>
+</view>

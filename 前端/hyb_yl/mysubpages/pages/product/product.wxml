@@ -1,0 +1,321 @@
+<import src="../../../../utils/wxParse.wxml"></import>
+<view>
+    <view class="bigbox">
+        <view class="swipterbox">
+            <swiper circular autoplay="{{true}}" class="swiper" duration="400" indicatorActiveColor="#3b4ca9" indicatorColor="#ccc" indicatorDots="true" interval="2500">
+                <swiper-item class="swiper-item" wx:for="{{proList.item.spic}}" wx:key="index">
+                    <image src="{{item}}"></image>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="pricebox">
+            <view class="pricefont">
+                <view style="padding-top:16rpx;">￥</view>
+                <view>
+                    <view class="{{proList.item.guige.length===0?'show':'hide'}} smoney">{{proList.item.smoney}}</view>
+                    <view class="{{proList.item.guige.length!=0?'show':'hide'}} smoney">{{smallmoney}}~{{bigmoney}}</view>
+                </view>
+            </view>
+        </view>
+        <view>
+            <view class="oval">
+                <text class="pro">自营</text>
+                <text class="drugname">{{proList.item.sname}}</text>
+            </view>
+            <view class="oval drugeval">{{proList.item.sdescribe}}</view>
+        </view>
+    </view>
+    <block wx:if="{{proList.item.yhqy==1}}"></block>
+    <view class="oval instru">
+        <view class="choose">
+            <view class="intru_left">已选</view>
+            <view bindtap="popchoose" class="intru_right" wx:if="{{proList.item.guige.length!=0}}">
+                <view class="prebox">
+                    <view class="preferential">
+                        <view class="pre_text">{{drugName}}</view>
+                    </view>
+                    <view class="pre_right">
+                        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/more.png?sign=c7738454a93e96b69df9d850f45104b1&t=1576653697"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="intru_right" wx:else>
+                <view class="prebox">
+                    <view class="preferential">
+                        <view class="pre_text">{{drugName}}</view>
+                    </view>
+                    <view class="pre_right">
+                        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/more.png?sign=c7738454a93e96b69df9d850f45104b1&t=1576653697"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="choose">
+            <view class="intru_left">送至</view>
+            <view bindtap="wxaddress" class="intru_right" data-g_baoyou="{{g_baoyou}}" data-yf_id="{{yf_id}}" disabled="buttonClicked">
+                <view class="prebox">
+                    <view class="preferential">
+                        <view class="pre_text">{{addresslist.userAddress}}</view>
+                    </view>
+                    <view class="pre_right">
+                        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/more.png?sign=c7738454a93e96b69df9d850f45104b1&t=1576653697"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="appraise">
+        <view bindtap="eval" class="appraise-up">
+            <view class="appr-l">
+                <text>评价</text>
+                <text>好评&nbsp;99%</text>
+            </view>
+            <view class="appr-r">
+                <text>共 {{appraise.length}} 条</text>
+                <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/arrow.png?sign=d8bec434e9a3266690d636079c8a4bb5&t=1576567271" style="width:20rpx;height:20rpx;margin-left:10rpx"></image>
+            </view>
+        </view>
+        <view class="appraise-down" wx:if="{{appraise.length>0}}">
+            <view bindtap="evaldetail" class="sign" data-pl_id="{{item.pl_id}}" wx:for="{{appraise}}" wx:key="index">
+                <view class="sign_top">
+                    <view>
+                        <image class="head" mode="aspectFit" src="{{item.u_thumb}}"></image>
+                        <text>{{item.u_name}}</text>
+                        <view class="star">
+                            <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/myImg/eval.png?sign=950845296419cf08855f22460e7ef827&t=1576739639" wx:for="{{item.dengj}}" wx:key="dengj"></image>
+                        </view>
+                    </view>
+                    <text>{{item.pl_time}}</text>
+                </view>
+                <view class="sign_text">
+                    <text>{{item.pl_text.text}} </text>
+                </view>
+                <view class="medio {{item.medio_img.length!=0?'show':'hide'}}">
+                    <scroll-view scrollX style="white-space:nowrap">
+                        <view class="img" style="display:inline-block" wx:for="{{item.pl_text.pic}}" wx:for-index="imgIndex" wx:for-item="img" wx:key="imgIndex">
+                            <image catchtap="imgbtn" data-index="{{index}}" data-item="{{img}}" src="{{img}}"></image>
+                        </view>
+                    </scroll-view>
+                </view>
+            </view>
+            <view class="lookmore">
+                <view bindtap="eval">
+                    <text>查看全部评价</text>
+                </view>
+            </view>
+        </view>
+        <view wx:else>
+            <view class="noshopeval">
+                <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yimeiimages/nodata.png?sign=cae11249546b772c437fbcdcf3d9272d&t=1573022787"></image>
+                <view class="fs24 cbd" style="padding-bottom:20rpx">暂时还没有商品评价</view>
+            </view>
+        </view>
+    </view>
+    <view class="dataTab">
+        <view class="datTop">
+            <view bindtap="tabdian" data-index="0">
+                <text class="{{tabkey==0?'tab_active':''}}">商品介绍</text>
+            </view>
+            <view bindtap="tabdian" data-index="2">
+                <text class="{{tabkey==2?'tab_active':''}}">售后保障</text>
+            </view>
+        </view>
+        <view class="datdown">
+            <view class="datd_one" wx:if="{{tabkey==0}}">
+                <view class="shopintr">
+                    <view class="shopImg">
+                        <template is="wxParse" data="{{wxParseData:scontent.nodes}}"></template>
+                    </view>
+                </view>
+            </view>
+            <view class="datd_two" wx:if="{{tabkey==1}}">
+                <view class="specbox">
+                    <view class="spec">
+                        <view class="spec_list" wx:for="{{proList.item.g_content}}" wx:key="index">
+                            <view class="spec_left">{{item.t_msg}}</view>
+                            <view class="spec_right">{{item.t_msg1}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="datd_three" wx:if="{{tabkey==2}}">
+                <view class="aftersale">
+                    <view class="saleTop">
+                        <view class="saleLine"></view>
+                        <view class="afterTitle">温馨提示</view>
+                        <view class="saleLine"></view>
+                    </view>
+                    <view>本网站仅对网站上入驻药房（以下简称：药房）提供的药品信息进行展示，药品的交易由药房与用户线下完成，处方药类药品的售后服务由药房自行提供，以下为药房提供的药品售后政策、流程：</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="footbox">
+        <view class="foot">
+            <view class="foot-left">
+                <view class="smallbtn">
+                    <button class="kfbtn" openType="contact" plain="true">
+                        <image class="serImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/chat.png?sign=6516830eac0445b38899d92b13072bce&t=1577070892"></image>
+                        <view class="relation">联系客服</view>
+                    </button>
+                </view>
+                <view bindtap="askdoctor" class="smallbtn">
+                    <button class="kfbtn">
+                        <image class="serImg" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/%E5%8C%BB%E7%94%9F.png?sign=4bdc72e0916b30f988302f1b1c66c091&t=1577071067"></image>
+                        <text class="relation">问医生</text>
+                    </button>
+                </view>
+                <view bindtap="drugbtn" class="smallbtn" wx:if="{{ifcfy==0}}">
+                    <button class="kfbtn">
+                        <image class="serImg" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/list.png?sign=08a020d934bb9d0c7ae506f317d5dc42&t=1592215824"></image>
+                        <text class="relation">药品清单</text>
+                    </button>
+                    <view class="numbox" wx:if="{{amount>0}}">{{amount}}</view>
+                </view>
+                <view bindtap="shopcar" class="smallbtn" wx:if="{{ifcfy==1}}">
+                    <button class="kfbtn">
+                        <image class="serImg" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/shopcar.png?sign=5a3b61df84b72cc5f8304f495047271a&t=1577070872"></image>
+                        <text class="relation">购物车</text>
+                    </button>
+                    <view class="numbox" wx:if="{{amountShop>0}}">{{amountShop}}</view>
+                </view>
+            </view>
+            <view class="foot-right">
+                <view bindtap="addcar" class="addcss nowbg" data-drugname="{{drugName}}" data-sname="{{proList.item.sname}}" wx:if="{{ifcfy==1}}">加入购物车</view>
+                <view bindtap="addDruglist" class="addcss nowbg" data-drugname="{{drugName}}" data-sname="{{proList.item.sname}}" wx:if="{{ifcfy==0}}">加入药品清单</view>
+                <block wx:if="{{ifcfy==0}}">
+                    <view bindtap="popchoose" class="addcss nowbg" wx:if="{{proList.item.guige.length!=0}}">立即预约</view>
+                    <view bindtap="shopNow" class="addcss nowbg" style="background:{{bg_color}};" wx:else>立即预约</view>
+                </block>
+                <block wx:else>
+                    <view bindtap="popchoose" class="addcss nowbg" style="background:{{bg_color}};" wx:if="{{proList.item.guige.length!=0}}">立即购买</view>
+                    <view bindtap="shopNow" class="addcss nowbg" style="background:{{bg_color}};" wx:else>立即购买</view>
+                </block>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="height:120rpx;"></view>
+<view bindtap="closepara" catchtouchmove="move" class="discounts" hidden="{{parameter}}">
+    <view class="discbox">
+        <view class="disc">
+            <view class="dischead">
+                <view class="discLeft">商品参数</view>
+                <view class="discright">
+                    <image bindtap="closepara" class="closeImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/del_img.png?sign=8f3d0265be9217e80c061ce8a2cf1505&t=1576652589"></image>
+                </view>
+            </view>
+            <scroll-view scrollY="true" style="height:600rpx;">
+                <view class="paraList" wx:for="{{instructions}}" wx:key="index">
+                    <view class="para_left">{{item.title}}</view>
+                    <view class="para_right">{{item.name}}</view>
+                </view>
+            </scroll-view>
+            <view catchtap="closepara" class="quest">确定</view>
+        </view>
+    </view>
+</view>
+<view bindtap="closedisc" catchtouchmove="ture" class="discounts" hidden="{{sale}}">
+    <view class="discbox">
+        <view class="disc">
+            <view class="dischead">
+                <view class="discLeft">优惠</view>
+                <view class="discright">
+                    <image bindtap="closedisc" class="close-Img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/del_img.png?sign=8f3d0265be9217e80c061ce8a2cf1505&t=1576652589"></image>
+                </view>
+            </view>
+            <scroll-view scrollY="true" style="height:680rpx;">
+                <view class="salebox">
+                    <view class="saleTitle">可领取优惠券</view>
+                    <view class="salecont" wx:if="{{item.statu==0}}" wx:for="{{cash}}" wx:key="index">
+                        <view class="saleLeft">
+                            <view class="suvfont">
+                                <text class="pri">￥</text>
+                                <text class="price">{{item.subtract}}</text>
+                            </view>
+                            <view class="full">满{{item.full}}元可用</view>
+                        </view>
+                        <view class="saleRight">
+                            <view class="saleeval">
+                                <text class="limit">限品类东劵</text>
+                                <text>{{item.intro}}</text>
+                            </view>
+                            <view class="salebottom">
+                                <view class="saletime">{{item.startTime}}-{{item.over}}</view>
+                                <view catchtap="btnget" class="{{coupon?'received':'btnget'}}" data-index="{{index}}">{{item.statu==0?'点击领取':''}}</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="salebox">
+                    <view class="saleTitle">已领取优惠券</view>
+                    <view class="salecont" wx:if="{{item.statu==1}}" wx:for="{{cash}}" wx:key="index">
+                        <view class="saleLeft">
+                            <view class="suvfont">
+                                <text class="pri">￥</text>
+                                <text class="price">{{item.subtract}}</text>
+                            </view>
+                            <view class="full">满{{item.full}}元可用</view>
+                        </view>
+                        <view class="saleRight">
+                            <view class="saleeval">
+                                <text class="limit">限品类东劵</text>
+                                <text>{{item.intro}}</text>
+                            </view>
+                            <view class="salebottom">
+                                <view class="saletime">{{item.startTime}}-{{item.over}}</view>
+                                <view class="received">已领取</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>
+<view catchtap="closeprod" catchtouchmove="ture" class="choseprod" hidden="{{choseprod}}"></view>
+<view catchtouchmove="ture" class="chose_cont" hidden="{{choseprod}}">
+    <view class="chose_box">
+        <view class="closeImg">
+            <view bindtap="chose_clo">
+                <image class="chose_clo" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/del_img.png?sign=8f3d0265be9217e80c061ce8a2cf1505&t=1576652589" style="width:30rpx;height:30rpx; margin: 0 auto;"></image>
+            </view>
+        </view>
+        <view class="chose_one">
+            <view catchtap="preview" class="chose_img" data-img="{{img}}">
+                <image mode="aspectFill" src="{{img}}"></image>
+            </view>
+            <view class="chose_text">
+                <text>￥<text style="font-size:40rpx">{{price}}</text>
+                </text>
+                <text>重量：{{gg_ke}} &nbsp;&nbsp;&nbsp;编号：{{gg_bh}}</text>
+            </view>
+        </view>
+        <scroll-view scrollY="true" style="height:500rpx;">
+            <view class="chose_two">
+                <text class="rule">规格</text>
+                <view class="guige">
+                    <view catchtap="choserul" class="{{chosekey==index?'active':''}}" data-gg_name="{{item.gg_name}}" data-index="{{index}}" data-item="{{item}}" wx:for="{{proList.item.guige}}" wx:key="index">{{item.gg_name}} </view>
+                </view>
+            </view>
+            <view class="chose_three">
+                <view class="height_80 font_si14 font_co999 center public_white pad_24 flex">
+                    <text class="num_text">数量</text>
+                    <view class="center stepper">
+                        <image catchtap="bindMinus" class="font_size24 step_left color_f7" mode="aspectFit" src="{{num<=1?'https://lg-o8nytxik-1257013711.cos.ap-shanghai.myqcloud.com/jian01.png':'https://lg-o8nytxik-1257013711.cos.ap-shanghai.myqcloud.com/jian02.png'}}"></image>
+                        <input bindblur="getnum" bindinput="num" class="font_co333" type="number" value="{{num}}"></input>
+                        <image catchtap="bindPlus" class="font_size20 step_right color_F0" mode="aspectFit" src="https://lg-o8nytxik-1257013711.cos.ap-shanghai.myqcloud.com/jia.png"></image>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="purchase">
+            <view class="cart_in center" style="padding:0rpx 15rpx; justify-content:space-between">
+                <button catchtap="addcar" class="cart_left" data-drugname="{{drugName}}" data-sname="{{proList.item.sname}}" style="width:46%" wx:if="{{ifcfy==1}}">加入购物车</button>
+                <button catchtap="addDruglist" class="cart_left" data-drugname="{{drugName}}" data-sname="{{proList.item.sname}}" style="width:46%;" wx:if="{{ifcfy==0}}">加入药品清单</button>
+                <button catchtap="shopNow" class="public_bgc cart_right" data-smoney="{{proList.item.smoney}}" style="width:46%" wx:if="{{ifcfy==0}}">立即预约</button>
+                <button catchtap="shopNow" class="public_bgc cart_right" data-smoney="{{proList.item.smoney}}" style="width:46%" wx:if="{{ifcfy==1}}">立即购买</button>
+            </view>
+        </view>
+    </view>
+</view>

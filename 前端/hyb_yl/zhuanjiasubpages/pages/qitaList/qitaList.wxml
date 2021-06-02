@@ -1,0 +1,38 @@
+<view bindscrolltolower="scrolltolower" class="more_scorll" scrollY="true" scrollTop="{{scrollTop}}" style="width:100%" wx:if="{{curHdIndex==1&&!oneBoo?true:false}}">
+    <view class="cont">
+        <view catchtap="navto" class="item" data-url="/hyb_yl/userLife/pages/baogaoxq/baogaoxq?a_id={{item.a_id}}" wx:for="{{communityListOne}}">
+            <view class="item_top">
+                <view class="top_left">
+                    <image class="photo" mode="aspectFill" src="{{u_thumb}}"></image>
+                    <view>
+                        <view class="name">{{names}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="item_title"> {{item.contents}}</view>
+            <view class="imgBox">
+                <image catchtap="big_img" class="item_img" data-img="{{items}}" data-imglist="{{item.sharepic}}" mode="aspectFill" src="{{items}}" wx:for="{{item.sharepic}}" wx:for-item="items"></image>
+            </view>
+            <view class="item_bottom">
+                <view>{{item.times}} 阅读{{item.dianzan}}</view>
+                <view class="df">
+                    <view catchtap="toLike" class="center comment_view_left" data-a_id="{{item.a_id}}" data-index="{{index}}" data-status="{{item.dianj}}">
+                        <image class="review_img praise_img" lazyLoad="true" src="{{item.dianzan!=1?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/dzhan1.png?sign=544dc9242213c29ea2e7db7065a386b9&t=1547194577':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Dzhan.png?sign=860145be33b20af6ef3adff216283f8e&t=1577530820'}}"></image>
+                        <text>赞{{item.dianj}}</text>
+                    </view>
+                    <view catchtap="navto" class="center com_view" data-url="/hyb_yl/userLife/pages/baogaoxq/baogaoxq?a_id={{item.a_id}}" hoverClass="className">
+                        <image class="review_img" lazyLoad="true" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/zixun.png?sign=9d1aadeee6229adc3e063e8ed7cbaa93&t=1591083042"></image>
+                        <text>{{item.pinglunnum}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBooOne}}">没有更多了~</view>
+    <view style="height:120rpx;"></view>
+</view>
+<view class="font_si16 font_co333 record_none" wx:if="{{oneBoo&&curHdIndex==1}}">暂无最新动态~</view>
+<view bindtap="addCommunity" class="state_img" style="background:{{bgc}}" wx:if="{{open==1}}">+</view>

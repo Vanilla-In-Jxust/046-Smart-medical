@@ -1,0 +1,16 @@
+<scroll-view bindscrolltolower="lower" scrollY="true" style="max-height:{{height}}px">
+    <view class="wraptab">
+        <view bindtap="tab" class=" list {{tabArr.curHdIndex=='2'?'active':''}}" data-id="2" id="2">全部</view>
+        <view bindtap="tab" class=" list {{tabArr.curHdIndex=='0'?'active':''}}" data-id="1" id="0">收入</view>
+        <view bindtap="tab" class=" list {{tabArr.curHdIndex=='1'?'active':''}}" data-id="1" id="1">支出</view>
+    </view>
+    <view class="tablist" wx:for="{{arr}}" wx:key="{{ index }}">
+        <view class="tablist_text">{{item.flowDesc}}   <view class="tablist_text2 {{item.money<0?'tablist_text2a':''}}">{{item.money<0?'':'+'}}{{item.money/100}}</view>
+        </view>
+        <view class="tablist_text1">{{item.createTime}} <view class="tablist_text3"></view>
+        </view>
+        <view bindtap="particulars" class="relative" data-id="{{item.id}}" wx:if="{{item.orderType==2?true:false}}">详情</view>
+    </view>
+    <view style=" width: 100%;line-height: 100rpx;text-align: center;color: #333;font-size: 32rpx;" wx:if="{{moreFlag}}">已到底部</view>
+</scroll-view>
+<view style="height: 500rpx; line-height: 500rpx; font-size: 32rpx; color: #666; text-align: center;" wx:if="{{onFlag}}">暂无此项记录</view>

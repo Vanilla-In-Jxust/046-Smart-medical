@@ -1,0 +1,132 @@
+<view class="oval">
+    <view class="searchbox">
+        <view class="searchView">
+            <icon class="searchbtn" color="#999999" size="15" type="search"></icon>
+            <input bindinput="getSearch" placeholder="请输入您要搜索的内容" type="text" value="{{checkword}}"></input>
+        </view>
+    </view>
+</view>
+<view class="searchtypes">
+    <view bindtap="typesbtn" class="searchtypesitem" data-dex="{{index}}" wx:for="{{searchtype}}" wx:key="k">
+        <image src="{{item.picimg}}"></image>
+        <view>{{item.names}}</view>
+    </view>
+</view>
+<view class="all" wx:if="{{findArr.length>0}}">
+    <view class="searchHistory">
+        <view class="history_title">
+            <view class="searchFont">热门搜索</view>
+            <view class="clearFont"></view>
+        </view>
+        <view class="historybox">
+            <view bindtap="searchHistory" class="historyList" data-checkword="{{item.keywords}}" wx:for="{{findArr}}" wx:key="*this">
+                <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/huo.png?sign=8363c1b0301699a1de4d55ea243a8a77&t=1584685530" wx:if="{{index==0}}"></image>
+                <text>{{item.keywords}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="all" wx:if="{{searchArr.length!=0}}">
+    <view class="searchHistory">
+        <view class="history_title">
+            <view class="searchFont">历史搜索</view>
+            <image class="clearFont" src="../../../images/del_01.png"></image>
+        </view>
+        <view class="historybox" wx:if="{{searchArr.length!=0}}">
+            <view bindtap="searchHistory" class="historyList" data-checkword="{{item.content}}" data-index="{{index}}" wx:for="{{searchArr}}" wx:key="*this">{{item.content}}</view>
+        </view>
+    </view>
+</view>
+<view class="searchresult" wx:if="{{checkword!=''}}">
+    <view bindtap="listitembtn" class="searchresultitems" data-checkword="{{item.name}}" wx:for="{{searchlisttip}}" wx:key="f">{{item.name}}</view>
+</view>
+<view class="searchresult" wx:if="{{resultif}}">
+    <view class="searchall-tab">
+        <view bindtap="searchtabs" class="[\"searchtab-item\",{{searchindex==index?'tabact':''}}" data-index="{{index}}" wx:for="{{searchtab}}">{{item}}</view>
+    </view>
+    <scroll-view bindscroll="scroll" bindscrolltolower="loadMoreList" class="g-doc" scrollTop="{{scrollTop}}" scrollY="true">
+        <swiper bindchange="swipertab" class="search-content" current="{{sindex}}">
+            <swiper-item class="searchitem">
+                <view class="consul-con-item" wx:if="{{zixunlist.length!=0}}">
+                    <view class="consul-con-title">科普文章</view>
+                    <view class="serve">
+                        <block wx:if="{{zixunlist.length!=0}}">
+                            <view class="serve-bottom" wx:if="{{index<3}}" wx:for="{{zixunlist}}" wx:key="key">
+                                <view bindtap="btdetail" class="bsbb" data-id="{{item.id}}" data-p_id="{{item.p_id}}" data-zid="{{item.zid}}">
+                                    <view class="dfcc">
+                                        <view class="leftBox">
+                                            <view class="list-title2 p0 text-overs">{{item.title}}</view>
+                                            <view class="list-tiem">
+                                                <text class="c">{{item.dianj}}点赞</text>
+                                                <text>{{item.ydcs}}阅读</text>
+                                            </view>
+                                        </view>
+                                        <view>
+                                            <image mode="aspectFill" src="{{item.thumb}}" style="width:220rpx;height:140rpx;"></image>
+                                        </view>
+                                    </view>
+                                </view>
+                            </view>
+                        </block>
+                        <view class="pf wu" wx:if="{{zixunlist.length==0}}">暂无数据</view>
+                    </view>
+                    <view bindtap="lookzixun" class="moretext" wx:if="{{zixunlist.length>0}}">点击查看更多文章 ></view>
+                </view>
+                <view class="consul-con-item" wx:if="{{answerlist.length>0}}">
+                    <view class="consul-con-title">公开问题</view>
+                    <view bindtap="hotdetail" class="hottopic" wx:if="{{index<3}}" wx:for="{{answerlist}}">
+                        <view class="hottopictit">{{item.title}}</view>
+                        <view class="doctorinfo">
+                            <image src="{{item.zhuanjia_thumb}}"></image>
+                            <view class="doctorinfoname">{{item.z_name}}</view>
+                            <view class="doctorinfoname">{{item.zhuanjia_zhicheng}}</view>
+                            <view class="doctorinfonhelp">已帮助{{item.helpnum}}人</view>
+                        </view>
+                    </view>
+                    <view bindtap="lookask" class="moretext" wx:if="{{answerlist.length>0}}">点击查看更多提问 ></view>
+                </view>
+            </swiper-item>
+            <swiper-item class="searchitem">
+                <view bindtap="doctoritem" class="yishneginfo" data-zid="{{item.zid}}" wx:for="{{zhuanjialist}}" wx:key="d">
+                    <view class="info-img">
+                        <image src="{{item.zhuanjia_thumb}}"></image>
+                    </view>
+                    <view class="userinfo-body">
+                        <view class="doctor-info">
+                            <text class="doctor-name">{{item.z_name}}</text>
+                            <text class="doctor-section">{{item.zhuanjia_zhicheng}}</text>
+                        </view>
+                        <view class="doctor-hospital">
+                            <text class="doctor-section-info">{{item.zhuanjia_keshi}}</text>
+                            <text class="doctor-hosptial-name">{{item.zhuanjia_jigou}}</text>
+                        </view>
+                        <view class="doctor-tags">擅长：{{item.authority}}</view>
+                        <view class="doctor-answer-star">
+                            <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/start.png?sign=3ab26ae6acd400d178daae014084e739&t=1591585512"></image>
+                            <view class="doctor-star">{{item.pingfen}}</view>
+                            <view class="answer-count">月回答{{item.xn_answer}}</view>
+                            <view class="prescription-count"> 月处方{{item.xn_chufang}} </view>
+                            <view class="reply-time-str">{{item.xytime}}分钟响应</view>
+                        </view>
+                        <view class="ask-doctor" wx:if="{{item.kaitongfuwu.length>0}}">
+                            <view class="price-values-wrapper">
+                                <view class="price-values">
+                                    <view class="price-value" wx:for="{{item.kaitongfuwu}}" wx:for-item="pluginfuwu">{{pluginfuwu.titlme}} ￥{{pluginfuwu.ptmoney}}</view>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </swiper-item>
+            <swiper-item class="searchitem">
+                <view bindtap="listitembtns" class="searchresultitem" data-hid="{{item.hid}}" wx:for="{{hospitalist}}" wx:key="f">
+                    <view class="listitem">
+                        <view>{{item.agentname}}</view>
+                        <view>{{item.address}}-{{item.xxaddress}}</view>
+                    </view>
+                    <view class="listitem-grade">{{item.grade_name}}</view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </scroll-view>
+</view>

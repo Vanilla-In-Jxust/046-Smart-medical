@@ -1,0 +1,38 @@
+.service-set {
+    width: 654rpx;
+    padding: 0 24rpx;
+    margin: 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.service-set-tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30rpx 0;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.service-set-tit image {
+    width: 24rpx;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    padding: 30rpx 0;
+    border-top: 1rpx solid #EAEAEA;
+}
+
+.ser-tit {
+    width: 260rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.place {
+    font-size: 26rpx;
+    color: #999;
+}

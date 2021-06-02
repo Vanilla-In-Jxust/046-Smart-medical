@@ -1,0 +1,28 @@
+<scroll-view bindscrolltolower="lower1" scrollY="true" style="height:{{height}}px">
+    <view class="list" wx:for="{{arr}}" wx:key="{{ index }}">
+        <view class="list1">
+            <view class="list_headline">
+                <view bindtap="particulars" class="list_headline_text" data-id="{{item.collectRow}}">{{item.title?item.title:''}}</view>
+                <view bindtap="particulars" class="name_time" data-id="{{item.collectRow}}">{{item.collectAuthor}} {{item.releaseDayTime}} {{item.collectModule?item.collectModule:''}}</view>
+                <view class="like_box">
+                    <view bindtap="click" class="like" data-id="{{item.collectRow}}">
+                        <image class="list_img" src="/assets/images/collect.png"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="list_headline_boximg">
+                <view class="headline_view list_headline_boximg1 ">
+                    <image bindtap="particulars" class="list_headline_boximg1" data-id="{{item.collectRow}}" src="{{item.coverImg}}"></image>
+                    <view bindtap="particulars" class="list_headline_boximg1 headline_view_absolute" data-id="{{item.collectRow}}" wx:if="{{item.collectType==2}}">
+                        <image class="headline_view_absolute_img" src="/assets/images/vd.png"></image>
+                    </view>
+                </view>
+                <view bindtap="share" class="share" data-index="{{index}}">
+                    <image class="share_masturbation" src="/assets/images/masturbation.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="wx_c" wx:if="{{wzshow}}">暂无收藏</view>
+    <view class="font_co999 font_si14 more_text public_white" wx:if="{{noFlag}}">已到底部</view>
+</scroll-view>

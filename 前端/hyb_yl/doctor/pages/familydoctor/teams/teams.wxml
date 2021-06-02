@@ -1,0 +1,73 @@
+<view>
+    <view class="headerbox">
+        <view class="head">
+            <view class="portraut">
+                <view bindtap="{{names?'':'adduser'}}" class="userImg">
+                    <image src="{{names?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/bingr.png?sign=ff77c4a613760048a3bfd45d3ce56ece&t=1571655109':'/hyb_yl/images/add.png'}}"></image>
+                </view>
+                <view class="hospitalName">{{names?names:'选择'}}</view>
+            </view>
+            <view class="portraut sign">签约</view>
+            <view class="portraut">
+                <view class="userImg">
+                    <image src="{{detail.tderweima}}"></image>
+                </view>
+                <view class="hospitalName">{{detail.teamname}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="line"></view>
+    <view>
+        <view class="feature">团队介绍</view>
+        <view class="server">{{detail.teamtext}}</view>
+    </view>
+    <view>
+        <view class="feature">团队成员</view>
+        <view class="server">
+            <view class="memberbox">
+                <view class="mem" wx:for="{{detail.doc}}" wx:key="item">
+                    <view class="member">
+                        <image src="{{item.z_thumbs}}"></image>
+                    </view>
+                    <view class="name">{{item.z_name}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view>
+        <view class="feature">服务内容</view>
+        <view bindtap="serverdetail" class="list" data-ff_id="{{item.ff_id}}" data-title="{{item.fw_name}}" wx:for="{{crowd}}" wx:key="*this">
+            <view class="packname">{{item.fw_name}}</view>
+            <view class="list_right">
+                <text class="money">￥{{item.fw_money}}/年</text>
+                <view class="arrowImg">
+                    <image src="/images/arrowright.png"></image>
+                </view>
+            </view>
+        </view>
+        <view class="line"></view>
+    </view>
+    <view wx:if="{{!q_id}}">
+        <view class="feature">签约须知</view>
+        <view class="aware">
+            <view>1.申请签约时需签约医生进行审核处理您的签约申请</view>
+            <view>2.签约成功签约医生可查看您以及家庭成员的健康档案信息，为您及家庭成员指定健康计划</view>
+        </view>
+    </view>
+    <view wx:if="{{q_id}}">
+        <view class="feature">我的服务</view>
+        <view class="aware" wx:for="{{fuwbao}}" wx:key="key">
+            <view class="packName">{{item.fw_name}}</view>
+            <view class="serbox">
+                <text class="serverPrice">服务费用:</text>{{item.fw_money}}</view>
+            <view class="serbox">
+                <text class="serverPrice">有 效 期:</text>{{item.fw_startime}}至{{item.overtime}}</view>
+        </view>
+    </view>
+    <view class="hei"></view>
+    <view class="foot">
+        <view class="signfont">
+            <navigator hoverClass="navigator-hover" style="background-color:{{bgc}}" url="/hyb_yl/doctor/pages/familydoctor/perfect/perfect?j_id={{j_id}}&t_id={{t_id}}&key={{key}}&name={{name}}&sid={{sid}}&names={{names}}&teamname={{teamname}}&zid={{zid}}">申请签约</navigator>
+        </view>
+    </view>
+</view>

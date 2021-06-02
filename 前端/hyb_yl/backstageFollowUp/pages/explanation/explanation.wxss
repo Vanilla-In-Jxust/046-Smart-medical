@@ -1,0 +1,285 @@
+page {
+    background: #f5f5f7;
+}
+
+.title_view {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: #f5f5f7;
+}
+
+.classify_view {
+    height: 96rpx;
+    background-color: #fff;
+    margin-bottom: 20rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.classify_text {
+    line-height: 96rpx;
+    border-bottom: 4rpx solid #fff;
+    position: relative;
+}
+
+.classify_text_red {
+    width: 30rpx;
+    height: 30rpx;
+    background: red;
+    position: absolute;
+    top: 10rpx;
+    right: -30rpx;
+    border-radius: 30rpx;
+    line-height: 30rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 20rpx;
+}
+
+.nav {
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    z-index: 10000;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.navClick {
+    height: 98rpx;
+    line-height: 98rpx;
+    text-align: center;
+    color: #333;
+    font-size: 30rpx;
+    border-bottom: 2rpx #fff solid;
+    float: left;
+}
+
+.add_citying {
+    color: #3b4ca9;
+    border-bottom: 4rpx #3b4ca9 solid;
+}
+
+.margin_top {
+    height: 118rpx;
+}
+
+.margin_more {
+    height: 216rpx;
+}
+
+.information {
+    width: 100%;
+    padding: 30rpx 0 30rpx 0;
+    background: #fff;
+    border-bottom: 1rpx #f0f0f0 solid;
+    display: flex;
+}
+
+.informationImgBox {
+    width: 140rpx;
+    float: left;
+    position: relative;
+}
+
+.informationImg {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+    float: left;
+    margin-left: 30rpx;
+}
+
+.informationText {
+    flex: 1;
+}
+
+.informationTextName {
+    width: 100%;
+    height: 40rpx;
+    float: left;
+}
+
+.informationTextName1 {
+    float: left;
+    line-height: 40rpx;
+    font-size: 30rpx;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    max-width: 230rpx;
+}
+
+.informationTextName2 {
+    float: left;
+    line-height: 40rpx;
+    font-size: 30rpx;
+    color: #999;
+    margin-left: 20rpx;
+}
+
+.informationTextNameImg {
+    width: 40rpx;
+    height: 40rpx;
+    float: left;
+    margin-left: 30rpx;
+}
+
+.informationText1 {
+    width: 100%;
+    font-size: 26rpx;
+    float: left;
+    margin-top: 10px;
+    color: #666;
+}
+
+.informationText2 {
+    width: 100%;
+    font-size: 22rpx;
+    float: left;
+    margin-top: 10px;
+    color: #999;
+}
+
+.informationRight {
+    float: right;
+}
+
+.informationRightText {
+    font-size: 30rpx;
+    padding: 40rpx 30rpx 0 20rpx;
+}
+
+.garden {
+    padding: 5rpx 10rpx;
+    border-radius: 50%;
+    position: absolute;
+    top: -5rpx;
+    right: 20rpx;
+    font-size: 20rpx;
+    color: #fff;
+    background-color: #FF2E51;
+}
+
+.exp_scroll {
+    height: 100vh;
+}
+
+.loading_view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.loading {
+    display: block;
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 30rpx;
+}
+
+.more_text {
+    height: 100rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.view_no {
+    font-size: 32rpx;
+    color: #333;
+    line-height: 500rpx;
+    text-align: center;
+}
+
+.team_scroll {
+    max-height: 90vh;
+    background-color: #fff;
+}
+
+.list_view {
+    display: flex;
+    align-items: center;
+    padding: 30rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+}
+
+.list_img {
+    border-radius: 50%;
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 20rpx;
+    display: block;
+}
+
+.list_name {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.list_team {
+    display: flex;
+}
+
+.news_view {
+    width: 48rpx;
+    height: 48rpx;
+    font-size: 28rpx;
+    background-color: #f42c4d;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 48rpx;
+    text-align: center;
+    margin-left: 30rpx;
+}
+
+.team_name {
+    margin-bottom: 15rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.number_text {
+    display: inline-block;
+    margin-left: 20rpx;
+}
+
+.team_right {
+    margin-left: 54rpx;
+}
+
+.distance {
+    display: flex;
+    align-items: center;
+    padding-right: 20rpx;
+    box-sizing: border-box;
+}
+
+.distance image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.distance text {
+    font-size: 24rpx;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+}

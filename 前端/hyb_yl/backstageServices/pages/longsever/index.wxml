@@ -1,0 +1,33 @@
+<view class="headbox" style="background-image:url({{detail.pluginimgs}})"></view>
+<view class="commonbox bottomborder">
+    <view class="commTitlebox">
+        <view class="title_left">全部评价</view>
+        <view catchtap="urlpage1" class="lookeval">查看评价</view>
+    </view>
+    <view class="evalCont">已有{{detail.count}}用户通过{{detail.titles}}看诊北上广专家，{{detail.pingjia}}人评价了服务。</view>
+</view>
+<view class="commonbox">
+    <view class="commTitlebox">
+        <view class="title_left">挂号流程</view>
+    </view>
+    <view class="liuchengbox">
+        <view class="stepliucheng">
+            <rich-text nodes="{{detail.serh_liuc}}"></rich-text>
+        </view>
+        <view class="xieyishuoming">
+            <view>协议说明：</view>
+            <view>
+                <rich-text nodes="{{detail.serh_xiey}}"></rich-text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="radios">
+    <radio catchtap="radioChange" checked="{{argeen}}" color="#0087E0">
+        <text>订阅并同意</text>
+    </radio>
+    <text style="color:#0087E0;">《{{detail.titles}}协议》</text>
+</view>
+<view class="btn">
+    <view catchtap="nextpage" class="now">去挂号</view>
+</view>

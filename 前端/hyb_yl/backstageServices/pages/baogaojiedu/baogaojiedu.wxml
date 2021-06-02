@@ -1,0 +1,19 @@
+<view class="containers">
+    <view class="groupitem">
+        <view class="groupitem-tit">签约流程</view>
+        <view class="steps">
+            <view class="stepspay">
+                <rich-text nodes="{{detail.serh_liuc}}"></rich-text>
+            </view>
+            <view class="xieyihint">
+                <view>协议说明：</view>
+                <rich-text nodes="{{detail.serh_xiey}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="mereport" class="btnitem">已有线上报告，选择报告下单
+		</view>
+    <view bindtap="nonereport" class="btnitem">无线上报告，直接解读报告
+		</view>
+</view>
+<view class="posfix"></view>

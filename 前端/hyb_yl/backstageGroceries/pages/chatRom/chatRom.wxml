@@ -1,0 +1,56 @@
+<import src="../../../..//utils/wxParse.wxml"></import>
+<view class="auto">
+    <view class="title1">{{title}}</view>
+    <view class="title2">{{releaseDayTime}} {{nmType}}</view>
+    <view class="for" wx:if="{{eduType==1}}">
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+    </view>
+    <view class="for" wx:if="{{eduType==2}}">
+        <view class="explain text_view">{{contentFormat}}</view>
+        <video autoplay controls binderror="videoError" id="myVideo" src="{{content}}"></video>
+    </view>
+</view>
+<view class="foot">
+    <view class="like">
+        <image class="list_img" src="/assets/images/yanjing.png"></image>
+        <view class="list_img_text">{{pageView}}</view>
+    </view>
+    <view class="like">
+        <image class="list_img" src="/assets/images/wzzan.png"></image>
+        <view class="list_img_text">{{praiseNum}}</view>
+    </view>
+</view>
+<view class="like-box">
+    <view bindtap="{{click}}" class="like-boxtext" style="border: solid 2rpx {{color}}; color:{{text}}">{{like}}</view>
+</view>
+<view class="footer">
+    <view class="footertext">作者</view>
+    <view class="footer1">
+        <view class="footer_name">
+            <image class="footer_name_img" src="{{imgUrl}}"></image>
+        </view>
+        <view class="footer_nameText">
+            <view class="footer_nameText1">
+                <text class="wx-text">{{collectAuthor}}</text>
+                <text class="wx-text1">{{doctorTitle}}</text>
+            </view>
+            <view class="footer_nameText2">
+                <text class="wx-text2">{{nmHospital}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="footerBottom">
+        <view class="footerBottomfor">{{articleNum}}
+        <text>篇宣教</text>
+        </view>
+        <view class="footerBottomfor">{{viewSumAll}}
+        <text>阅读</text>
+        </view>
+        <view class="footerBottomfor">{{praiseSumAll}}
+        <text>点赞</text>
+        </view>
+        <view class="footerBottomfor">{{shareSumAll}}
+        <text>转发</text>
+        </view>
+    </view>
+</view>

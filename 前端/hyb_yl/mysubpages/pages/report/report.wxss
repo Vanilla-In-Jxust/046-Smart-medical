@@ -1,0 +1,197 @@
+page {
+    position: relative;
+    height: 100%;
+    background-color: #f2f2f2;
+}
+
+view,text {
+    box-sizing: border-box;
+}
+
+.tabbox {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    border-bottom: 1rpx solid #eee;
+}
+
+.tabbox view {
+    width: 33.33%;
+    text-align: center;
+    font-size: 30rpx;
+    color: #333;
+    line-height: 90rpx;
+}
+
+.tabbox view text {
+    position: relative;
+    padding-right: 30rpx;
+}
+
+.tabbox view text.opentrue::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 10rpx;
+    border-color: transparent transparent #2876E6 transparent;
+    border-style: solid;
+    position: absolute;
+    top: 15%;
+    right: 0;
+}
+
+.tabbox view text.openfalse::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-width: 10rpx;
+    border-color: #2876E6 transparent transparent transparent;
+    border-style: solid;
+    position: absolute;
+    top: 40%;
+    right: 0;
+}
+
+.poplist {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+}
+
+.poplistempty {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+}
+
+.poplistfff {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fff;
+    padding: 25rpx;
+    padding-top: 95rpx;
+}
+
+.poplistfffitem {
+    width: 100%;
+    line-height: 90rpx;
+    font-size: 28rpx;
+    color: #333;
+    border-top: 1rpx solid #EEEEEE;
+}
+
+.poplistfff view:first-child {
+    border-top: none;
+}
+
+.sickbox {
+    width: 100%;
+    padding: 25rpx;
+    margin-top: 95rpx;
+}
+
+.sickitem {
+    background: #fff;
+    border-radius: 10rpx;
+    margin-bottom: 26rpx;
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.sickitem-left {
+    width: 32%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20rpx;
+}
+
+.sickitem-left image {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.sickiteminfo {
+    width: 55%;
+}
+
+.sickiteminfo view:first-child {
+    font-size: 30rpx;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sickiteminfo view:last-child {
+    font-size: 26rpx;
+    color: #A7A7A7;
+    margin-top: 8rpx;
+}
+
+.sickitem-center {
+    width: 65%;
+    padding: 0 20rpx;
+    border-left: 1rpx solid #F8F8F8;
+    margin: 20rpx 0;
+}
+
+.sickitem-center view {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.sickitem-center view:first-child {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.sickitem-center view:nth-child(2) {
+    font-size: 24rpx;
+    color: #8C8C8C;
+    margin: 8rpx 0;
+}
+
+.sickitem-center view:last-child {
+    font-size: 22rpx;
+    color: #8C8C8C;
+}
+
+.sickbtn {
+    width: 66rpx;
+    font-size: 26rpx;
+    color: #fff;
+    text-align: center;
+    padding: 10rpx;
+}
+
+view.btn1 {
+    background: #2876E6;
+}
+
+view.btn2 {
+    background: #E67428;
+}
+
+view.btn3 {
+    background: #8E6EF9;
+}
+
+.tabbox view.tabactive,.poplistfff view.itemactive {
+    color: #0087E0;
+}

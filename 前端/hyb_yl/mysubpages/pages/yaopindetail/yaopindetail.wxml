@@ -1,0 +1,20 @@
+<view class="drupbox">
+    <view class="drupname">
+        <view>{{detail.sname}}</view>
+        <view wx:if="{{detail.ifcfy=='1'}}">处方药</view>
+        <view wx:if="{{detail.ifcfy=='0'}}">非处方药</view>
+    </view>
+    <view class="dosage">{{detail.company}}</view>
+    <view class="drupnametitle">药品名称</view>
+    <view class="drupnametexts">
+        <view>商品名：{{detail.sname}}</view>
+        <view>通用名：{{detail.pp_title}}</view>
+    </view>
+    <view class="drupnametitle">功能主治</view>
+    <view class="drupnametexts">
+        <view>
+            <rich-text nodes="{{constent}}"></rich-text>
+        </view>
+    </view>
+</view>
+<view bindtap="opendrug" class="drupbtn">去开药</view>

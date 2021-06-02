@@ -1,0 +1,161 @@
+page {
+    background: #ffffff;
+}
+
+.details {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1rpx solid #f6f6f6;
+    align-items: center;
+}
+
+.detailsAvatar {
+    width: 140rpx;
+    height: 160rpx;
+    text-align: center;
+}
+
+.Avatar {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100rpx;
+    margin: 30rpx auto;
+    vertical-align: middle;
+}
+
+.information {
+    width: 67%;
+    padding-top: 20rpx;
+    box-sizing: border-box;
+}
+
+.gender {
+    width: 40rpx;
+    height: 40rpx;
+    vertical-align: middle;
+    margin-left: 20rpx;
+}
+
+.age {
+    color: #999;
+    font-size: 26rpx;
+    line-height: 50rpx;
+    text-align: right;
+    padding-left: 20rpx;
+    box-sizing: border-box;
+}
+
+.time {
+    width: 490rpx;
+    padding: 20rpx;
+    box-sizing: border-box;
+}
+
+.specificTime {
+    font-size: 26rpx;
+    line-height: 50rpx;
+    color: #999;
+}
+
+.specificTimes {
+    font-size: 26rpx;
+    line-height: 50rpx;
+    color: #999;
+    padding-left: 38rpx;
+    box-sizing: border-box;
+}
+
+.specificTitle {
+    font-size: 30rpx;
+    color: #999;
+}
+
+.option {
+    width: 100%;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 222;
+}
+
+.optionName {
+    flex: 1;
+    line-height: 80rpx;
+    font-size: 30rpx;
+    text-align: center;
+    border-bottom: 1rpx solid #fff;
+}
+
+.selected {
+    color: #3b4ca9;
+    border-bottom: 1rpx solid #3b4ca9;
+}
+
+.flex {
+    display: flex;
+}
+
+.types {
+    padding: 0 10rpx;
+    color: #fff;
+    background: #3b4ca9;
+    border-radius: 10rpx;
+}
+
+.name {
+    font-size: 30rpx;
+}
+
+.label {
+    width: 80rpx;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    background: #3b4ca9;
+    border-radius: 10rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.labels {
+    box-sizing: border-box;
+}
+
+.padding {
+    height: 80rpx;
+    width: 100%;
+}
+
+.phoneNumber {
+    color: #999;
+    font-size: 26rpx;
+    line-height: 50rpx;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+.distance {
+    display: flex;
+    align-items: center;
+    padding-right: 20rpx;
+    box-sizing: border-box;
+}
+
+.distance image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.distance text {
+    font-size: 24rpx;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+}
+
+.phoneNumberSize {
+    font-size: 28rpx;
+    color: #000;
+    padding-right: 20rpx;
+    box-sizing: border-box;
+}

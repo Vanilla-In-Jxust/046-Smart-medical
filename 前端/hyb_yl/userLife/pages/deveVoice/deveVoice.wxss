@@ -1,0 +1,159 @@
+page {
+    width: 100%;
+    height: 100%;
+    background-image: url('https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/voiceBg.png?sign=4d26619f8a3a0616a7a1b470428d9b5f&t=1580904863');
+}
+
+.oval {
+    padding: 0rpx 30rpx;
+    display: flex;
+    flex-direction: column;
+}
+
+.doctorImg {
+    width: 350rpx;
+    height: 350rpx;
+    border-radius: 50%;
+    background: #ccc;
+    text-align: center;
+    margin: 150rpx auto 100rpx;
+    animation: rotate 10s linear infinite;
+}
+
+.hj_title {
+    font-size: 36rpx;
+    color: white;
+    font-weight: bold;
+    margin-top: 50rpx;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.doctorIntr {
+    font-size: 24rpx;
+    color: #FFFFFF;
+    opacity: 0.8;
+    margin-top: 20rpx;
+}
+
+.time {
+    font-size: 24rpx;
+    color: #FFFFFF;
+    opacity: 0.8;
+    margin-top: 20rpx;
+}
+
+.sliderBox {
+    width: 100%;
+    height: 100rpx;
+    background: red;
+    margin-top: 40rpx;
+}
+
+.slider {
+    width: 650rpx;
+}
+
+.playbox {
+    display: flex;
+    margin-top: 65rpx;
+}
+
+.enjoy {
+    width: 45rpx;
+    height: 45rpx;
+}
+
+.centerBox {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.commImg {
+    width: 75rpx;
+    height: 65rpx;
+}
+
+.audio-play {
+    width: 60rpx;
+    height: 60rpx;
+    margin: 0rpx 40rpx;
+}
+
+.liebiao {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+button {
+    margin: 0px;
+    background: transparent;
+    border: none!important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.bigMask {
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+    position: fixed;
+    z-index: 10;
+    left: 0rpx;
+    top: 0rpx;
+}
+
+.maskbox {
+    width: 100%;
+    height: 900rpx;
+    background: #1f2138;
+    position: fixed;
+    left: 0rpx;
+    bottom: 0rpx;
+    z-index: 11;
+}
+
+.audioList {
+    padding: 0rpx 40rpx;
+}
+
+.audioItem {
+    padding: 35rpx 0rpx;
+    border-bottom: 1rpx solid #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 30rpx;
+}
+
+.audioItem_active {
+    color: red;
+}
+
+.audioText {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.closeImg {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.guan {
+    color: white;
+    text-align: center;
+    line-height: 70rpx;
+}

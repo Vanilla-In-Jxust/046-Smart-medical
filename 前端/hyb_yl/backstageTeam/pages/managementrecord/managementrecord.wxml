@@ -1,0 +1,103 @@
+<view class="header1">
+    <view class="header">
+        <view class="header_con flex_between">
+            <view class="left">
+        共计{{items.length}}条
+      </view>
+            <view class="right flex_end">
+                <view bindtap="management" class="flex_center" wx:if="{{!management_good}}">
+          管理
+        </view>
+                <view bindtap="finish_management" class="flex_center" wx:if="{{management_good}}">
+          完成
+        </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="onlinechoose">
+    <view bindtap="select" class="hotel_list flex_center" data-id="{{index}}" data-yisid="{{i.yisid}}" wx:for="{{items}}" wx:for-item="i" wx:key="items">
+        <navigator hoverClass="navigator-hover" url="/hyb_yl/backstageLife/pages/particulars/particulars?h_id={{i.hid}}&h_leixing={{i.h_leixing}}" wx:if="{{i.types==1}}">
+            <view class="list_cons flex_start">
+                <view class="lefts" wx:if="{{management_good}}">
+                    <view class="icon_none" wx:if="{{!i.checked}}"></view>
+                    <icon color="{{bgc}}" size="30" type="success" wx:if="{{i.checked}}"></icon>
+                </view>
+                <image src="{{i.gzzimgurlback}}"></image>
+                <view class="right">
+                    <view class="name">
+              {{i.ystext}}
+            </view>
+                    <view class="list1 flex_between">
+                        <view class="left">
+                            <view class="condition2">
+                    时间： {{i.ystime}}
+                  </view>
+                        </view>
+                    </view>
+                    <view class="list1 flex_between">
+                        <view class="left">
+                            <view class="condition2">
+                  {{i.nksname}}
+                </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+        <navigator hoverClass="navigator-hover" url="/hyb_yl/backstageServices/pages/DepartmentalYishuo/DepartmentalYishuo?types=0&yisid={{i.yisid}}" wx:else>
+            <view class="list_cons flex_start">
+                <view class="lefts" wx:if="{{management_good}}">
+                    <view class="icon_none" wx:if="{{!i.checked}}"></view>
+                    <icon color="{{bgc}}" size="30" type="success" wx:if="{{i.checked}}"></icon>
+                </view>
+                <image src="{{i.gzzimgurlback}}"></image>
+                <view class="right">
+                    <view class="name">
+              {{i.ystext}}
+            </view>
+                    <view class="list1 flex_between">
+                        <view class="left">
+                            <view class="condition2">
+                    时间： {{i.ystime}}
+                  </view>
+                        </view>
+                    </view>
+                    <view class="list1 flex_between">
+                        <view class="left">
+                            <view class="condition2">
+                  {{i.nksname}}
+                </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </navigator>
+    </view>
+</view>
+<view class="bottom flex_between" wx:if="{{management_good}}">
+    <view class="left flex_start">
+        <view bindtap="select_none" class="flex_start" wx:if="{{select_all}}">
+            <icon color="{{bgc}}" size="30" type="success"></icon>
+            <view>
+          取消全选
+        </view>
+        </view>
+        <view bindtap="select_all" class="flex_start" wx:if="{{!select_all}}">
+            <view class="select_none"></view>
+            <view>
+          全选
+        </view>
+        </view>
+    </view>
+    <view class="right flex_end">
+        <view style="text-align:right">
+            <view class="all">
+        共选中{{middlearr.length}}条
+      </view>
+        </view>
+        <view bindtap="deleteitem" class="sure" style="background-color:{{bgc}}">
+      删除
+    </view>
+    </view>
+</view>

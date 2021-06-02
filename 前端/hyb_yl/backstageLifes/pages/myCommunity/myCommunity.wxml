@@ -1,0 +1,39 @@
+<scroll-view bindscrolltolower="lower" scrollY="true" style="height:{{height}}px">
+    <view class="box" wx:for="{{fxlist}}" wx:key="{{ index }}">
+        <view bindtap="advisory1" data-fx_id="{{item.fx_id}}" data-index="{{index}}">
+            <view class="W_nameImg">
+                <view class="img_box">
+                    <image class="img_box_Imag" mode="aspectFill" src="{{item.z_thumbs?item.z_thumbs:'/assets/images/head.png'}}"></image>
+                </view>
+                <view class="W_nameText">
+                    <view class="W_nameText1">{{item.z_name}}</view>
+                    <view class="W_nameText2">{{item.dateTime}}</view>
+                </view>
+            </view>
+            <view class="box_text">
+                <view class="box_text1">
+          {{item.sharetext?item.sharetext:''}}
+          <view class="font_co3b font_si16 condition_content_com_position" wx:if="{{item.sharetext&&item.sharetext.length>130}}">
+                        <text class="test_text font_co333">...</text>全文</view>
+                </view>
+            </view>
+        </view>
+        <view class="box_png">
+            <view bindtap="previewImg1" class="box_pnga" data-text="{{index}}">
+                <image class="box_pngb" data-id="{{index}}" mode="aspectFill" src="{{item}}" wx:for="{{item.sharepic}}" wx:key="{{ i }}"></image>
+            </view>
+        </view>
+        <view class="W_di">
+            <view class="W_di_text1">
+                <image bindtap="dzhan1" class="W_di_text1_img" data-id="{{item.status}}" data-index="{{index}}" data-tid="{{item.tid}}" src="{{item.status!=1?'/assets/images/dzhan1.png':'/assets/images/Dzhan.png'}}"></image>
+        {{item.tpraiseCount}}
+        <view class="dws" wx:if="{{show}}"></view>
+            </view>
+            <view bindtap="advisoryW" class="W_di_text2" data-index="{{index}}" data-tid="{{item.tid}}" data-tsid="{{item.tsid}}">
+                <image class="W_di_text1_img" src="/assets/images/pinling.png"></image>
+        {{item.treplyCount}}
+      </view>
+        </view>
+    </view>
+    <view class="font_co999 font_si14 more_text" style="width: 100%;" wx:if="{{noFlag}}">已到底部</view>
+</scroll-view>

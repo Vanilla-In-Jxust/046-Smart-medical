@@ -1,0 +1,19 @@
+<view class="commo">
+    <view bindtap="shopdetail" class="commolist" data-sid="{{item.sid}}" data-sname="{{item.sname}}" data-sthumb="{{item.sthumb}}" wx:for="{{shop}}" wx:key="*this">
+        <view class="comm_left">
+            <view class="medicImg">
+                <image src="{{item.sthumb}}"></image>
+            </view>
+        </view>
+        <view class="comm_right">
+            <view class="medicname">{{item.sname}}</view>
+            <view class="medicPrice">
+        ￥{{numberUtil.numberFormat(item.smoney)}}
+      </view>
+            <view>
+                <text class="mediclabel">平台</text>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="numberUtil" src="filter.wxs" />

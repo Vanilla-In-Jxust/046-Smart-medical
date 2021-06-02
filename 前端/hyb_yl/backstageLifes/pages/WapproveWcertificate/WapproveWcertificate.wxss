@@ -1,0 +1,50 @@
+page {
+    background: #f0f0f0;
+}
+
+.text {
+    width: 100%;
+    height: 120rpx;
+    font-size: 40rpx;
+    color: #333;
+    text-align: center;
+    line-height: 120rpx;
+}
+
+.W_Img_Box {
+    width: 300rpx;
+    height: 300rpx;
+    margin: auto;
+    line-height: 300rpx;
+    text-align: center;
+    font-size: 60rpx;
+    color: #666;
+    position: relative;
+}
+
+.W_Img {
+    width: 100%;
+    height: 300rpx;
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+}
+
+.text1 {
+    width: 100%;
+    font-size: 30rpx;
+    text-align: center;
+    color: #999;
+    margin-bottom: 20rpx;
+}
+
+.foot {
+    width: 90%;
+    height: 100rpx;
+    line-height: 100rpx;
+    color: #fff;
+    margin: 40rpx auto;
+    border-radius: 100rpx;
+    text-align: center;
+    background: linear-gradient(to right,#6699ff,#3b4ac9);
+}

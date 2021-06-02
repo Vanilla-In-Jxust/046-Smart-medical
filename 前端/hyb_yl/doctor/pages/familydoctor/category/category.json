@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "人群分类",
+    "usingComponents": {
+        "packlist": "/component/packlist/packlist"
+    }
+}

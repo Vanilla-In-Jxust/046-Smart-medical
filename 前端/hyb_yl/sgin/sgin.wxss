@@ -1,0 +1,56 @@
+.headView {
+    margin: 90rpx 50rpx 90rpx 50rpx;
+}
+
+.headImage {
+    display: flex;
+    width: 120rpx;
+    height: 120rpx;
+    margin: 0 auto;
+}
+
+.titleText {
+    margin-top: 50rpx;
+    margin-bottom: 20rpx;
+    font-size: 28rpx;
+    color: #020e0f;
+    text-align: center;
+}
+
+.contentText {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 28rpx;
+    color: #666;
+    text-align: center;
+}
+
+.authBtn {
+    width: 40%;
+    margin: 0;
+    height: 82rpx;
+    font-size: 30rpx;
+    line-height: 82rpx;
+}
+
+.btn_box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 140rpx;
+    width: 100%;
+}
+
+.jujue {
+    width: 48%;
+    border-radius: 50rpx;
+    background: #f8f8f8;
+    color: #fff;
+}
+
+.heng {
+    background: #999;
+    height: 2rpx;
+    width: 100%;
+    margin: 30rpx 0;
+}

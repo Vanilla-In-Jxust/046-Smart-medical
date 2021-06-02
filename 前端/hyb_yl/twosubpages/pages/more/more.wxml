@@ -1,0 +1,16 @@
+<view class="prediagnosis_search">
+    <view class="prediagnosis_search_bg">
+        <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/search_ff.png?sign=52e66d96ec80103d916e6b607b95c7cc&t=1590717965" style="width:36rpx;"></image>
+        <input bindconfirm="searchs" bindinput="change_keyword" placeholder="请输入关键字搜索症状" placeholderClass="ce"></input>
+    </view>
+</view>
+<view class="parts">
+    <scroll-view scrollY class="title">
+        <view bindtap="huoqu" class="{{current==index?'bdl':'pl30'}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{keshi_arr}}" wx:key="key">{{item.name}}</view>
+    </scroll-view>
+    <scroll-view scrollY class="scroll_all">
+        <view class="bsbb pl30 pr30 h80 bgcf df aic" wx:for="{{list}}" wx:key="unique">
+            <text bindtap="detailClick" class="ml15 pl15 fs32 c6" data-id="{{item.id}}" data-title="{{item.title}}">{{item.title}}</text>
+        </view>
+    </scroll-view>
+</view>

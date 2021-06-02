@@ -1,0 +1,90 @@
+page {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.drupbox {
+    padding: 25rpx;
+}
+
+.drupname {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drupname view:first-child {
+    font-size: 36rpx;
+    color: #333;
+}
+
+.drupname view:last-child {
+    color: #4CA786;
+    padding: 3rpx 8rpx;
+    border-radius: 50rpx;
+    border: 1rpx solid #F3F4F4;
+    font-size: 28rpx;
+}
+
+.dosage {
+    color: #757575;
+    font-size: 30rpx;
+    margin-top: 10rpx;
+}
+
+.adaptation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 80rpx;
+}
+
+.adaptationitem {
+    width: 48%;
+    border-radius: 10rpx;
+    background: #F7F7F7;
+    text-align: center;
+    padding: 40rpx 0;
+}
+
+.adaptationitem image {
+    width: 55rpx;
+    height: 55rpx;
+    border-radius: 50%;
+}
+
+.adaptationitem view {
+    font-size: 30rpx;
+    color: #414141;
+    margin-top: 8rpx;
+}
+
+.drupnametitle {
+    margin: 40rpx 0 20rpx;
+    color: #000;
+    font-size: 36rpx;
+}
+
+.drupnametexts view {
+    color: #707070;
+    font-size: 30rpx;
+    line-height: 52rpx;
+}
+
+.drupbtn {
+    width: 100%;
+    text-align: center;
+    line-height: 90rpx;
+    font-size: 32rpx;
+    color: #fff;
+    background: #59C496;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+}

@@ -1,0 +1,525 @@
+.bg {
+    height: 320rpx;
+    padding: 28rpx 25rpx 50rpx 25rpx;
+    background: #0187E0;
+    color: #fff;
+}
+
+.expert-bg {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.expert-icon {
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 26rpx;
+    border-radius: 50%;
+    border: 2rpx solid #fff;
+}
+
+.expert-ri {
+    width: 550rpx;
+}
+
+.expert-one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.expert-tit {
+    display: flex;
+    align-items: flex-end;
+    font-size: 30rpx;
+}
+
+.expert-tit text {
+    font-size: 22rpx;
+}
+
+.expert-ewm {
+    width: 32rpx;
+    height: 32rpx;
+}
+
+.expert-doc {
+    margin-top: 20rpx;
+    font-size: 26rpx;
+}
+
+.expert-tip {
+    line-height: 38rpx;
+    margin-top: 17rpx;
+    margin-bottom: 32rpx;
+    font-size: 24rpx;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.team-scs {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20rpx 0;
+}
+
+.team-sc-tit {
+    width: 100rpx;
+    font-size: 26rpx;
+    margin-top: 8rpx;
+}
+
+.team-sc-item view {
+    font-size: 26rpx;
+    color: #0187E0;
+    padding: 8rpx 18rpx;
+    border-radius: 25rpx;
+    background: #fff;
+    margin: 0 25rpx 20rpx 0;
+}
+
+.team-infor {
+    display: flex;
+    justify-content: space-around;
+    width: 702rpx;
+    margin: 0 24rpx;
+    margin-top: -38rpx;
+    margin-bottom: 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.team-items {
+    padding: 20rpx 0;
+    text-align: center;
+    font-size: 24rpx;
+    color: #333;
+}
+
+.price {
+    margin-bottom: 8rpx;
+    font-size: 30rpx;
+    color: #E00000;
+}
+
+.team-work {
+    display: flex;
+    justify-content: space-between;
+    width: 654rpx;
+    margin: 0 24rpx;
+    margin-bottom: 24rpx;
+    padding: 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.team-word-le {
+    display: flex;
+    align-items: center;
+    font-size: 30rpx;
+    color: #0087E0;
+}
+
+.team-word-le view {
+    width: 400rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.team-next {
+    width: 42rpx;
+    height: 42rpx;
+}
+
+.team-tab {
+    width: 100%;
+    height: 98rpx;
+    display: flex;
+    justify-content: space-around;
+    background: #fff;
+    z-index: 991;
+}
+
+.team-item {
+    position: relative;
+    width: 50%;
+    height: 98rpx;
+    text-align: center;
+    line-height: 98rpx;
+}
+
+.team-item-act {
+    color: #0088DE;
+}
+
+.team-item-act::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 25rpx;
+    height: 6rpx;
+    background: #0088DE;
+    border-radius: 8rpx;
+}
+
+.team-list {
+    position: relative;
+    margin-top: 24rpx;
+    padding: 0 24rpx;
+}
+
+.team-item-list {
+    position: relative;
+    width: 658rpx;
+    padding: 0 22rpx;
+    margin-bottom: 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.team-top {
+    display: flex;
+    justify-content: flex-start;
+    padding: 24rpx 0;
+    border-bottom: 1rpx solid #eaeaea;
+}
+
+.team-top .pho {
+    width: 90rpx;
+    height: 90rpx;
+    border-radius: 50%;
+    margin-right: 25rpx;
+    border: 2rpx solid #0088DE;
+}
+
+.team-tit {
+    display: flex;
+    align-items: flex-end;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.team-address {
+    font-size: 22rpx;
+    color: #666;
+    margin-left: 14rpx;
+}
+
+.team-label {
+    margin-left: 14rpx;
+    font-size: 22rpx;
+    color: #fff;
+    padding: 0 8rpx;
+    background: #0088DE;
+    border-radius: 4rpx;
+}
+
+.team-zc {
+    margin-top: 18rpx;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.team-sc {
+    margin-top: 18rpx;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.team-xx {
+    display: flex;
+    align-items: center;
+    margin-top: 18rpx;
+}
+
+.team-start {
+    display: flex;
+    align-items: center;
+    margin-right: 20rpx;
+    font-size: 26rpx;
+    color: #FAA600;
+}
+
+.team-start image {
+    width: 42rpx;
+    height: 42rpx;
+}
+
+.team-xx-t {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.team-ms {
+    font-size: 26rpx;
+    color: #FAA600;
+    margin-top: 16rpx;
+}
+
+.team-states {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24rpx 0;
+}
+
+.team-label-ss {
+    display: flex;
+    font-size: 28rpx;
+    color: #0087E0;
+}
+
+.team-label-ss view {
+    margin-right: 20rpx;
+}
+
+.team-btn {
+    padding: 10rpx 32rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background: #0087E0;
+    border-radius: 27rpx;
+}
+
+.my-create {
+    width: 500rpx;
+    height: 88rpx;
+    margin: 50rpx 100rpx;
+    background: #0087E0;
+    font-size: 32rpx;
+    color: #fff;
+    border-radius: 30rpx;
+    text-align: center;
+    line-height: 88rpx;
+}
+
+.yq {
+    position: absolute;
+    top: 24rpx;
+    right: 24rpx;
+    padding: 10rpx 30rpx;
+    background: #0088DE;
+    border-radius: 27rpx;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.canvas {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 9999;
+}
+
+.opera {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 9999;
+    transform: translate3d(0,100%,0);
+    transition: all .3s cubic-bezier(.25,.5,.5,.9);
+}
+
+.share-mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 9998;
+}
+
+.patient-item {
+    position: relative;
+    width: 654rpx;
+    padding: 0 24rpx;
+    margin-bottom: 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.patient-in {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 24rpx;
+}
+
+.patient-in image {
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 24rpx;
+    border-radius: 50%;
+    border: 2rpx solid #0087E0;
+}
+
+.patient-ri {
+    width: 510rpx;
+}
+
+.patient-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.patient-name view {
+    margin-left: 16rpx;
+    font-size: 22rpx;
+}
+
+.patient-time {
+    margin-bottom: 20rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.patient-state {
+    margin-bottom: 24rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.patient-s {
+    width: 490rpx;
+    font-size: 24rpx;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.patient-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16rpx 0;
+    border-top: 1rpx solid #EAEAEA;
+}
+
+.patient-text {
+    display: flex;
+}
+
+.patient-text view {
+    margin-right: 18rpx;
+    font-size: 28rpx;
+    color: #0087E0;
+}
+
+.patient-btton {
+    width: 147rpx;
+    height: 54rpx;
+    line-height: 54rpx;
+    border-radius: 30rpx;
+    background: #0087E0;
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center;
+}
+
+.patient-inb {
+    line-height: 34rpx;
+    font-size: 24rpx;
+    color: #333;
+}
+
+.patient-pad {
+    padding-bottom: 24rpx;
+}
+
+.patient-state-nk {
+    position: absolute;
+    top: -10rpx;
+    right: 24rpx;
+}
+
+.patient-state-nk image {
+    width: 122rpx;
+    height: 45rpx;
+}
+
+.patient-state-nk view {
+    position: absolute;
+    top: 0;
+    width: 122rpx;
+    font-size: 26rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 45rpx;
+    z-index: 9;
+}
+
+.service-list {
+    width: 654rpx;
+    padding: 0 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+    margin: 24rpx;
+}
+
+.service-item {
+    display: flex;
+    padding: 26rpx 0;
+}
+
+.service-item image {
+    width: 88rpx;
+    height: 88rpx;
+    margin-right: 32rpx;
+}
+
+.service-ri {
+    width: 530rpx;
+}
+
+.service-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-tit {
+    font-size: 36rpx;
+    color: #333;
+}
+
+.price {
+    font-size: 28rpx;
+    color: #FF5959;
+    margin-top: 12rpx;
+}
+
+.service-tip {
+    line-height: 34rpx;
+    margin-top: 25rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.service-time {
+    font-size: 22rpx;
+    color: #0087E0;
+    margin-top: 24rpx;
+}
+
+.open {
+    padding: 10rpx 28rpx;
+    border: 1rpx solid #0087E0;
+    border-radius: 26rpx;
+    font-size: 24rpx;
+    color: #0087E0;
+}

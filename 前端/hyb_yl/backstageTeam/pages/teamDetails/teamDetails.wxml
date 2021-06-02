@@ -1,0 +1,65 @@
+<view class="bg">
+    <view class="expert-bg">
+        <image class="expert-icon" src="{{info.thumb}}"></image>
+        <view class="expert-ri">
+            <view class="expert-one">
+                <view class="expert-tit">负责人：{{info.fuze['z_name']}} <text>（{{info.keshi}}{{info.fuze.zhicheng}}）</text>
+                </view>
+                <image bindtap="ishaibao" class="expert-ewm" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/ewm.png?sign=05bf5a614d66d894057a037f5d698606&t=1591609915"></image>
+            </view>
+            <view class="expert-doc">{{info.jigou}}</view>
+        </view>
+    </view>
+    <view class="team-sc" wx:if="{{info.label.length>0}}">
+        <view class="team-sc-tit">擅长：</view>
+        <view class="team-sc-item">
+            <view>
+                <block wx:for="{{info.label}}">{{item}}</block>
+            </view>
+        </view>
+    </view>
+    <view class="expert-tip">  简介：{{info.content}}</view>
+</view>
+<view class="user-infor">
+    <image src="{{info.advertisement}}"></image>
+    <view class="user-ri">
+        <view class="user-tit">
+            <view class="user-label">团队长</view>
+            <view class="user-name">{{info.fuze.z_name}} <view>({{info.fuze['keshi']}}{{info.fuze['zhicheng']}})</view>
+            </view>
+        </view>
+        <view class="user-doc">{{info.fuze['jigou']}}</view>
+    </view>
+</view>
+<view class="team-list">
+    <view bindtap="fuwu" class="team-list-item">
+        <image class="team-bg" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/team-bg.png?sign=2dbf6527475e822b20bfb45f5e1ada65&t=1591581238"></image>
+        <view class="team-t">
+            <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/team1.png?sign=f7cd63a09f91ebed34293eb7c7d5fafa&t=1591581300"></image>
+            <view>团队服务包</view>
+        </view>
+    </view>
+    <view bindtap="teamPerson" class="team-list-item">
+        <image class="team-bg" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/team-bg.png?sign=2dbf6527475e822b20bfb45f5e1ada65&t=1591581238"></image>
+        <view class="team-t">
+            <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/team2.png?sign=8a5c2581f5f2d19bea3bbd5de16dded6&t=1591581289"></image>
+            <view>团队成员</view>
+        </view>
+    </view>
+    <view bindtap="nodes" class="team-list-item">
+        <image class="team-bg" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/team-bg.png?sign=2dbf6527475e822b20bfb45f5e1ada65&t=1591581238"></image>
+        <view class="team-t">
+            <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/team3.png?sign=cee783f34cdddb6aff7c49639a291182&t=1591581281"></image>
+            <view>团队公告</view>
+        </view>
+    </view>
+    <view bindtap="qianyue" class="team-list-item">
+        <image class="team-bg" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/team-bg.png?sign=2dbf6527475e822b20bfb45f5e1ada65&t=1591581238"></image>
+        <view class="team-t">
+            <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/team4.png?sign=5e9877032f92aecc65aac327309e8e79&t=1591581268"></image>
+            <view>签约患者</view>
+        </view>
+    </view>
+</view>
+<view bindtap="closeshare" class="share-mask" wx:if="{{isopera}}"></view>
+<canvas bindlongpress="operation" canvasId="canvass" class="canvas" style="width:{{windowWidth*0.8}}px;height:{{windowWidth*0.8*1.79}}px" wx:if="{{isopera}}"></canvas>

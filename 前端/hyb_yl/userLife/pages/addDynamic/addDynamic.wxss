@@ -1,0 +1,98 @@
+.next_btn {
+    margin: 0;
+}
+
+.issue_view {
+    justify-content: center;
+}
+
+.description {
+    padding: 30rpx;
+    line-height: 40rpx;
+}
+
+.description_tex {
+    width: 100%;
+}
+
+.img_top_line {
+    margin-left: 30rpx;
+    height: 30rpx;
+    border-top: 1rpx solid #f0f0f0;
+}
+
+.picture {
+    padding-bottom: 10rpx;
+}
+
+.next_btn {
+    margin: 40rpx auto;
+}
+
+.agreement {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    height: 100rpx;
+    padding-left: 30rpx;
+}
+
+.agreement_right {
+    padding-left: 6rpx;
+}
+
+checkbox .wx-checkbox-input {
+    border-radius: 50%;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked {
+    border: none;
+    background-image: linear-gradient(to right,#6699ff,#3b4ca9);
+}
+
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
+    border-radius: 50%;
+    width: 40rpx;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #fff;
+    background: transparent;
+    transform: translate(-50%,-50%) scale(1);
+}
+
+.choose_text {
+    width: 500rpx;
+    display: flex;
+    align-items: center;
+}
+
+.choose_text view {
+    padding-bottom: 34rpx;
+}
+
+.next_btn {
+    background: #0087E0;
+}
+
+.so-see {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 700rpx;
+    padding: 60rpx 25rpx;
+}
+
+.so-see-le {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.so-see-tip {
+    margin-top: 12rpx;
+    font-size: 24rpx;
+    color: #999;
+}

@@ -1,0 +1,29 @@
+<view class="coupon-tab">
+    <view bindtap="coupontabs" class="coupon-item  {{couindex==index?'coupon-item-act':''}}" data-dex="{{index}}" wx:for="{{coupontab}}">{{item}}</view>
+</view>
+<view class="coupon-dh" wx:if="{{couindex==0}}">
+    <input bindinput="couinp" placeholder="请输入兑换码" placeholderStyle="color:#ccc;font-size:24rpx"></input>
+    <view bindtap="exchange" class="coupon-dh-btn {{avai?'coupon-dh-btn-act':''}}">兑换</view>
+</view>
+<view style="height:180rpx;" wx:if="{{couindex==0}}"></view>
+<view style="height:88rpx;" wx:else></view>
+<view class="coupon-con" wx:for="{{list}}">
+    <view class="coupon-con-item">
+        <view class="cou-top cou-fhs">
+            <view class="cou-t-tit">{{item.coupon_name}}</view>
+            <view class="cou-t-lib">
+                <view class="cou-lib-l">
+                    <view>抵扣{{item.deductible_amount}}元</view>
+                    <view style="color:#999;" wx:if="{{item.shiyongfuwu.length>0}}">适用服务： <view class="tab" wx:if="{{index<=3}}" wx:for="{{item.shiyongfuwu}}" wx:for-item="fuwu">{{fuwu.titlme}}</view>
+                    </view>
+                    <view style="color:#999;font-size:26rpx;">所属机构：山西医院</view>
+                </view>
+                <view class="cou-price">
+                    <view>￥</view> {{item.deductible_amount}}</view>
+            </view>
+        </view>
+        <view class="cou-bo-time">有效期：{{item.start_time}} ~ {{item.end_time}}</view>
+    </view>
+</view>
+<view class="fs24 c9 df aic jcc h120" wx:if="{{list.length>0}}">没有更多了</view>
+<view class="fs24 c9 df aic jcc h120" wx:else>暂无数据</view>

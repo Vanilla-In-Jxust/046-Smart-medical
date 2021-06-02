@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#fafafa",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "选医生",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false,
+    "usingComponents": {}
+}

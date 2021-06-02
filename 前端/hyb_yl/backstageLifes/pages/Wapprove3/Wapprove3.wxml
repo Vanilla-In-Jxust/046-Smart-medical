@@ -1,0 +1,4 @@
+<view class="box">
+    <textarea bindinput="input" class="input" maxlength="-1" placeholder="请填写" placeholderStyle="color:#ccc" value="{{z_content}}"></textarea>
+</view>
+<view bindtap="foot" class="foot">确定</view>

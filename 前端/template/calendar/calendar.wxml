@@ -1,0 +1,30 @@
+<template name="calendar">
+    <view class="flex box box-tb box-align-center" wx:if="{{showCalendar}}">
+        <view class="calendar box box-tb">
+            <view class="top-handle box box-lr box-align-center box-pack-center">
+                <view catchtap="handleCalendar" class="prev box box-rl" data-handle="prev">
+                    <view class="prev-handle box box-lr box-align-center box-pack-center {{curMonth<=thisMonth?'pre-diasbled':''}}">
+                        <image src="/images/calendar/calendar_ic_arrow_gray_up_dis2x.png" wx:if="{{curYear<=thisYear&&curMonth<=thisMonth}}"></image>
+                        <image src="/images/calendar/calendar_ic_arrow_gray_up_nor2x.png" wx:else></image>
+                    </view>
+                </view>
+                <view catchtap="chooseYearAndMonth" class="date-area box box-lr box-align-center box-pack-center">          {{curYear||'--'}} 年 {{curMonth||'--'}} 月        </view>
+                <view catchtap="handleCalendar" class="next box box-lr" data-handle="next">
+                    <view class="next-handle box box-lr box-align-center box-pack-center {{curMonth>=thisMonth+2?'next-diasbled':''}}">
+                        <image src="/images/calendar/calendar_ic_arrow_gray_down_dis2x.png" wx:if="{{curMonth>=thisMonth+2}}"></image>
+                        <image src="/images/calendar/calendar_ic_arrow_gray_down_nor2x.png" wx:elif="{{curMonth<thisMonth+2}}"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="weeks box box-lr box-pack-center box-align-center">
+                <view class="flex week fs22" data-idx="{{index}}" wx:for="{{weeksCh}}" wx:key="{{index}}">{{item}}        </view>
+            </view>
+            <view class="days box box-lr box-wrap">
+                <view class="grid white-color box box-align-center box-pack-center" data-idx="{{index}}" wx:if="{{hasEmptyGrid}}" wx:for="{{empytGrids}}" wx:key="{{index}}"></view>
+                <view catchtap="tapDayItem" class="grid white-color box box-align-center box-pack-center" data-from="{{item.from||''}}" data-idx="{{index}}" wx:for="{{days}}" wx:key="{{index}}">
+                    <view class="day {{item.day==today&&thisYear==curYear&&thisMonth==curMonth?'currentDay':''}} {{item.day==selectDay&&curYear==selectYear&&curMonth==selectMonth?'border-radius orange-bg':''}} {{item.disabled?'day-disabled':''}} box box-align-center box-pack-center">            {{item.day}}          </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</template>

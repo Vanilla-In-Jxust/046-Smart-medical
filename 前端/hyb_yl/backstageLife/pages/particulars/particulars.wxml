@@ -1,0 +1,43 @@
+<import src="../../../../utils/wxParse.wxml"></import>
+<view class="auto">
+    <view class="title1">{{detail.h_title}}</view>
+    <view class="title2">{{detail.sfbtime}} {{detail.z_name}}</view>
+    <view class="for">
+        <rich-text bindtap="taptxt" nodes="{{nodes}}"></rich-text>
+    </view>
+    <view class="for">
+        <view class="explain text_view"></view>
+        <video autoplay controls binderror="videoError" id="myVideo" src="{{h_video}}" wx:if="{{h_video}}"></video>
+    </view>
+    <view class="foot">
+        <view class="like">
+            <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yanjing.png?sign=5547c741172df776c7070bb936ccdc92&t=1572515551"></image>
+            <view class="list_img_text">{{yuedu}}</view>
+        </view>
+        <view class="like">
+            <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzzan.png?sign=0093e4addfdce9203f0a8db0645b6261&t=1572515564"></image>
+            <view class="list_img_text">{{dianzan}}</view>
+        </view>
+    </view>
+</view>
+<view bindtap="share" class="share">
+    <image class="share_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/masturbation1.png?sign=10ac0621efcc80bf71dd414e8a19024c&t=1572515505"></image>
+    <view class="sharetext">转发</view>
+</view>
+<view class="footerss">
+    <view class="footertext">作者</view>
+    <view class="footer1">
+        <view class="footer_name">
+            <image class="footer_name_img" src="{{detail.advertisement}}"></image>
+        </view>
+        <view class="footer_nameText">
+            <view class="footer_nameText1">
+                <text class="wx-text">{{detail.z_name}}</text>
+                <text class="wx-text1"></text>
+            </view>
+            <view class="footer_nameText2">
+                <text class="wx-text2">{{detail.z_content}}</text>
+            </view>
+        </view>
+    </view>
+</view>

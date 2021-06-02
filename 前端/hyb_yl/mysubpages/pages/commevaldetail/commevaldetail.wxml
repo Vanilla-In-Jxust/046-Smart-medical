@@ -1,0 +1,48 @@
+<view>
+    <view class="fixation">
+        <view class="fixationbox">
+            <view class="medicine">
+                <view class="medic_left">
+                    <image mode="scaleToFill" src="{{info.sthumb}}"></image>
+                </view>
+                <view class="medic_right">
+                    <view class="medicintro"> {{info.sname}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <scroll-view scrollY="true">
+        <view class="oval">
+            <view class="headbox">
+                <view class="headleft">
+                    <view class="headImg">
+                        <image mode="scaleToFill" src="{{info.u_thumb}}"></image>
+                    </view>
+                </view>
+                <view class="headname">{{info.u_name}}</view>
+            </view>
+            <view class="evalTime">
+                <view class="eval_left">
+                    <view class="imgbox">
+                        <view class="startImg" wx:for="{{info.dengj}}" wx:key="key">
+                            <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/myImg/eval.png?sign=950845296419cf08855f22460e7ef827&t=1576739639"></image>
+                        </view>
+                    </view>
+                </view>
+                <view class="timefont">{{info.pl_time}}</view>
+            </view>
+            <view class="drugcont">
+                <text class="shou">{{contShow}}</text>
+                <view catchtap="upload" class="zhan" hidden="{{info.pl_text.text.length<=maxLength}}">{{isshow?'展开':'收起'}}</view>
+            </view>
+            <view class="bigImg" wx:if="{{info.pl_text.pic!=0}}">
+                <view class="imglist" wx:for="{{info.pl_text.pic}}" wx:for-item="itemName" wx:key="*this">
+                    <image catchtap="imgbtn" data-item="{{itemName}}" mode="widthFix" src="{{itemName}}"></image>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view bindtap="goTop" class="goTop" hidden="{{!floorstatus}}">
+    <image class="topImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/myImg/arrow_top.png?sign=59e0340f5e765adc8b598f7f3c3be5f7&t=1576739477"></image>
+</view>

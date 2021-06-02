@@ -1,0 +1,58 @@
+<form catchsubmit="formSubmit">
+    <view class="tx-data">
+        <view class="data-item">
+            <view class="title">LOGO：</view>
+            <image bindtap="chooseimg" class="pho-icon" src="{{detail.logo}}" wx:if="{{detail.logo}}"></image>
+            <image bindtap="chooseimg" class="pho-icon" src="../../../images/camera.png" wx:else></image>
+        </view>
+        <view class="data-item">
+            <view class="title">机构名称：</view>
+            <input class="ri-wid" maxlength="12" name="comname" placeholder="请输入机构名称" placeholderClass="placeinp"></input>
+        </view>
+        <view class="data-item">
+            <view class="title">级别：</view>
+            <picker bindchange="bindPickerChange" range="{{array}}" value="{{index}}">
+                <view class="organ-item">
+                    <view class="label">{{array[index]}} </view>
+                </view>
+            </picker>
+        </view>
+        <view class="data-item">
+            <view class="title">类型：</view>
+            <picker bindchange="bindModesChange" range="{{modes}}" value="{{indexs}}">
+                <view class="organ-item">
+          {{modes[indexs]}} 
+          </view>
+            </picker>
+        </view>
+        <view class="data-item">
+            <view class="title">所在地：</view>
+            <view class="data-ri ri-wid">
+                <picker bindchange="bindRegionChange" customItem="{{customItem}}" mode="region" value="{{region}}">
+                    <view class="picker" wx:if="{{isindex==0}}">
+              {{cityData[0]}}-{{cityData[1]}}-{{cityData[2]}}
+            </view>
+                    <view class="placeinp" wx:else>请选择您的所在地</view>
+                </picker>
+                <image class="next" mode="widthFix" src="../../../images/arrow_03.png"></image>
+            </view>
+        </view>
+        <view class="data-item">
+            <view class="title">详细地址：</view>
+            <input class="ri-wid" name="address" placeholder="请输入您的地址" placeholderClass="placeinp"></input>
+        </view>
+        <view class="data-item">
+            <view class="title">负责人：</view>
+            <input class="ri-wid" name="names" placeholder="请输入负责人姓名" placeholderClass="placeinp"></input>
+        </view>
+        <view class="data-item">
+            <view class="title">联系电话：</view>
+            <input class="ri-wid" maxlength="11" name="tel" placeholder="请输入负责人电话" placeholderClass="placeinp" type="number"></input>
+        </view>
+        <view class="data-item">
+            <view class="title">入驻费用：</view>
+            <view class="tip ri-wid">￥50.00元</view>
+        </view>
+    </view>
+    <button class="submit-btn" formType="submit" type="primary">保存修改</button>
+</form>

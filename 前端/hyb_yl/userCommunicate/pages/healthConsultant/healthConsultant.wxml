@@ -1,0 +1,118 @@
+<navigator class="bgc_linear intro_head font_cofff font_si12" url="{{doctor.jobType==1?'/hyb_yl/userCommunicate/pages/myDoctorIntro/myDoctorIntro?doctorId='+doctorId+'&jobType='+doctor.jobType+'&lookOverBoo=2':'/hyb_yl/index/nurseInfro/nurseInfro?doctorId='+doctorId+'&jobType='+doctor.jobType+'&lookOverBoo=2'}}" wx:if="{{signType!=3}}">
+    <image class="dco_img" mode="aspectFill" src="{{doctor.userIcon}}"></image>
+    <view class="flex_column doc_view">
+        <view class="font_si18 doc_name">
+            <text>{{doctor.doctorName}}</text>
+        </view>
+        <view class="offices">
+            <text class="offices_text">{{doctor.nmDepartment}}</text>
+            <text>{{doctor.jobType==1?'医生':doctor.jobType==2?'护士':''}}</text>
+        </view>
+        <view>{{doctor.nmHospital}}</view>
+    </view>
+    <image class="more_img" src="/assets/shop_images/txmore.png"></image>
+</navigator>
+<navigator class="bgc_linear intro_head_heal font_cofff font_si12" url="/hyb_yl/userCommunicate/pages/myTeam/myTeam?lookOverBoo=2&jobType=3&doctorId={{doctor.teamId}}" wx:else>
+    <image class="dco_img" mode="aspectFill" src="{{doctor.teamHeaderUrl}}"></image>
+    <view class="flex_column doc_view">
+        <view class="font_si18 teamName">
+      {{doctor.teamName}}
+    </view>
+        <view class="offices">
+            <text class="teamName">[团队长：{{doctor.creater.doctorName}}]</text>
+        </view>
+    </view>
+    <image class="more_img_heal" src="/assets/shop_images/txmore.png"></image>
+</navigator>
+<block wx:if="{{serviceFlag&&cost.length>0}}">
+    <view class="change_mode font_si16 font_co333">选择咨询方式</view>
+    <view class="public_white center mode">
+        <view catchtap="choose_type" class="mode_type_img flex_column font_si14 font_co333 {{curHdIndex==index?'type_active':'border'}}" data-id="{{index}}" wx:for="{{cost}}" wx:key="{{ index }}">
+            <image class="active_img" src="/assets/shop_images/target.png" wx:if="{{curHdIndex==index?true:false}}"></image>
+            <image class="type_img" src="{{item.icon}}"></image>
+            <text class="type_text">{{item.nmInterroga}}</text>
+            <block wx:if="{{item.saleMoney!=0}}">
+                <text class="line_thorugh">原价：￥{{item.servicePrice/100}}</text>
+                <text class="{{curHdIndex==index?'font_co3b':''}}">现价：￥{{item.currentPrice/100}}</text>
+            </block>
+            <text class="{{curHdIndex==index?'font_co3b':''}}" wx:if="{{item.saleMoney==0}}">价格：￥{{item.currentPrice/100}}</text>
+        </view>
+    </view>
+    <view class="state font_co333 font_si14" wx:if="{{curHdIndex==0}}">
+        <view class="state_text" wx:for="{{cost[0].serviceDesc}}" wx:key="{{ index }}">
+      {{item}}
+    </view>
+    </view>
+    <view class="state font_co333 font_si14" wx:if="{{curHdIndex==1}}">
+        <view class="state_text" wx:for="{{cost[1].serviceDesc}}" wx:key="{{ index }}">
+      {{item}}
+    </view>
+    </view>
+    <view class="regulations" wx:if="{{curHdIndex==0}}">
+        <view class="rule">
+      1:支付成功后,24小时内顾问未回复，所支付金额将自动退回
+    </view>
+        <view class="rule">
+      2:从问诊开始直至24小时后，系统将自动结束本次问诊
+    </view>
+        <view class="rule">
+      3:患者和顾问可主动结束本次问诊
+    </view>
+        <view class="rule">
+      4:若病情危急请直接前往医院就诊
+    </view>
+        <view class="rule">
+      5:医生可能在门诊或手术中,如无法及时回复请谅解
+    </view>
+        <view class="rule">
+      6:最终解释权归本平台
+    </view>
+    </view>
+    <view class="regulations" wx:if="{{curHdIndex==1}}">
+        <view class="rule">
+      1:支付成功后,立即发起通话，未接通24小时后所支付金额将自动退回
+    </view>
+        <view class="rule">
+      2:从问诊开始直至24小时后，医生未回复，系统将自动结束本次问诊
+    </view>
+        <view class="rule">
+      3:患者和顾问可主动结束本次问诊
+    </view>
+        <view class="rule">
+      4:若病情危急请直接前往医院就诊
+    </view>
+        <view class="rule">
+      5:医生可能在门诊或手术中,如无法及时回复请谅解
+    </view>
+        <view class="rule">
+      6:最终解释权归本平台
+    </view>
+    </view>
+    <view bindtap="goConsult" class="posi_fiexd" data-id="{{cost[0].cdInterroga}}" data-index="0" wx:if="{{curHdIndex==0}}">
+        <view class="img_btn linear_btn">{{cost[0].nmInterroga}}({{relation.freeState==1?'￥'+cost[0].currentPrice/100:'本次免费'}})</view>
+    </view>
+    <view bindtap="goConsult" class="posi_fiexd" data-id="{{cost[1].cdInterroga}}" data-index="1" wx:if="{{curHdIndex==1}}">
+        <view class="img_btn linear_btn">{{cost[1].nmInterroga}}({{relation.freeState==1?'￥'+cost[1].currentPrice/100:'本次免费'}})</view>
+    </view>
+</block>
+<view class="no_service font_si18 font_co666" wx:if="{{!serviceFlag}}">暂未开通服务~</view>
+<view class="modal center" wx:if="{{modelBoo}}">
+    <view class="modal_view">
+        <view class="modal_title font_si18 font_co333">电话咨询</view>
+        <view class="checkbox_view center">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox font_co333 font_si14 center">
+                    <checkbox checked="{{authStateBoo}}" value="1"></checkbox>
+                </label>
+            </checkbox-group>
+            <view class="agreement_right font36">
+                <view>我已阅读并同意</view>
+                <view bindtap="goProtocol" class="font_co3b font36">《惠邦肾服务协议》</view>
+            </view>
+        </view>
+        <view class="modal_bottom center public_white font_si18 ">
+            <view bindtap="abolishBtn" class="modal_bottom_left font_co666">再想想</view>
+            <view bindtap="signedBtn" class="modal_bottom_right font_cofff public_bgc3b">确认咨询</view>
+        </view>
+    </view>
+</view>

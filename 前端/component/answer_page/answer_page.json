@@ -1,0 +1,6 @@
+{
+    "component": true,
+    "usingComponents": {
+        "my-answer-list": "/component/answer_list/answer_list"
+    }
+}

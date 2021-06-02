@@ -1,0 +1,90 @@
+<view>
+    <view>
+        <view class="personal">
+      个人信息
+    </view>
+        <view class="intr">
+            <view class="oval">
+                <view class="oval_left">
+                    <text decode="{{true}}">姓&emsp;&emsp;名</text>
+                </view>
+                <view class="oval_right">
+                    <input bindinput="username" disabled="disabled" placeholder="请输入用户的姓名" placeholderStyle="color:#f0f0f0" type="text" value="{{names}}"></input>
+                </view>
+            </view>
+            <view class="oval">
+                <view class="oval_left">身份证号</view>
+                <view class="oval_right">
+                    <input bindinput="idnumber" disabled="disabled" placeholder="请输入用户的省份证号" placeholderStyle="color:#f0f0f0" type="number" value="{{numcard}}"></input>
+                </view>
+            </view>
+            <view class="oval">
+                <view class="oval_left">联系方式</view>
+                <view class="oval_right">
+                    <input bindinput="phone" disabled="disabled" placeholder="请输入用户的手机号" placeholderStyle="color:#f0f0f0" type="number" value="{{tel}}"></input>
+                </view>
+            </view>
+            <view class="oval">
+                <view class="oval_left">现居住地</view>
+                <view class="oval_right">
+                    <picker bindchange="bindRegionChange" customItem="{{customItem}}" mode="region" value="{{region}}">
+                        <view class="picker">
+              {{region[0]}} {{region[1]}} {{region[2]}}
+            </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="oval">
+                <view class="oval_left">详细地址</view>
+                <view class="oval_right">
+                    <input bindinput="address" placeholder="请输入用户的详细地址" placeholderStyle="color:#f0f0f0" type="text" value="{{address}}"></input>
+                </view>
+            </view>
+            <view class="oval">
+                <view class="oval_left">是否为户主</view>
+                <view class="oval_right">
+                    <view class="housebox">
+                        <view class="sel">
+                            <view bindtap="choose" class="selectImg" data-id="1">
+                                <image src="{{selected==1?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/radio.png?sign=188737e9675ce29cb18c82893a70de9e&t=1571881082':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/radio_no.png?sign=5ed64a1d457f984b5189e346a97581d3&t=1571881058'}}" style="select"></image>
+                            </view>
+                            <view>是</view>
+                        </view>
+                        <view class="sel">
+                            <view bindtap="choose" class="selectImg" data-id="0">
+                                <image src="{{selected==0?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/radio.png?sign=188737e9675ce29cb18c82893a70de9e&t=1571881082':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/radio_no.png?sign=5ed64a1d457f984b5189e346a97581d3&t=1571881058'}}"></image>
+                            </view>
+                            <view>否</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="{{selected==1?'show':'hide'}}">
+                <view class="oval">
+                    <view class="oval_left">户主身份证号</view>
+                    <view class="oval_right">
+                        <input bindinput="household" placeholder="请输入户主身份证号" placeholderStyle="color:#f0f0f0" type="text" value="{{household}}"></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view>
+        <view class="personal">
+      人群
+    </view>
+        <view class="intr">
+            <view class="crowd">
+                <view bindtap="select" class="classify {{item.isshow?'select_yes':'selct_no'}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{crowd}}" wx:key="*this">
+          {{item.crowd_name}}
+        </view>
+            </view>
+        </view>
+    </view>
+    <view class="hei"></view>
+    <view class="foot">
+        <view bindtap="next" class="signfont" style="background-color:{{bgc}}">
+      下一步
+    </view>
+    </view>
+</view>

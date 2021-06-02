@@ -1,0 +1,14 @@
+<view class="err fs24" wx:if="{{errshow}}">{{errtext}}</view>
+<form bindsubmit="{{state==1?'wenzhenform':''}}">
+    <view class="yijianbox pad25 mar-t20">
+        <view class="ren-tit fs30" style="color:#9D9D9D;">您对本次咨询的总体评价是：</view>
+        <view class="pingxing">
+            <image bindtap="jianxing" data-dex="{{index}}" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/star.png?sign=4aed39e1501729f51f1fcc0f93b48a06&t=1572596700" wx:if="{{pingfen!=0}}" wx:for="{{pingfen}}" wx:key="yp"></image>
+            <image bindtap="jiaxing" data-dex="{{index}}" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/star1.png?sign=808ad26740043fed1cc1eb9a551beb6e&t=1572596756" wx:if="{{5-pingfen!=0}}" wx:for="{{5-pingfen}}" wx:key="wp"></image>
+            <text class="fs30" style="color:#9D9D9D">点击星星评分</text>
+        </view>
+        <textarea maxlength="100" name="bingqing" placeholder="请输入文字评价" placeholderStyle="color:#CFCFCF;"></textarea>
+    </view>
+    <button formType="submit" hoverClass="none" wx:if="{{subboor}}">提交评价</button>
+    <button class="errbtn" hoverClass="none" wx:else>提交评价</button>
+</form>

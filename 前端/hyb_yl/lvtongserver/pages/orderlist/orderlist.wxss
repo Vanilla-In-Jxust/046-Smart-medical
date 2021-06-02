@@ -1,0 +1,221 @@
+page {
+    background: #fff;
+    box-sizing: border-box;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.topTabSwiper {
+    width: 100%;
+    display: flex;
+    line-height: 90rpx;
+    border-bottom: 1px solid #ccc;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+}
+
+.tabBorer {
+    color: #378dd8;
+    position: relative;
+}
+
+.tabBorer::after {
+    content: "";
+    width: 40%;
+    border-bottom: 5rpx solid #4281f2;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.center1 {
+    width: 100%;
+    margin-top: 100rpx;
+}
+
+.center1 .order {
+    width: 100%;
+    background: #fff;
+    border-bottom: 25rpx solid #F6F6F6;
+    padding: 0 25rpx;
+}
+
+.center1 .order .header {
+    width: 100%;
+    display: flex;
+    font-size: 30rpx;
+}
+
+.center1 .order .header .time {
+    width: 70%;
+    padding-top: 20rpx;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    color: #131313;
+}
+
+.center1 .order .header .status {
+    width: 30%;
+    padding-top: 20rpx;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #E6762C;
+}
+
+.center1 .goods {
+    padding: 30rpx 0;
+    display: flex;
+    align-items: center;
+    border-bottom: 1rpx solid #EEEEEE;
+    justify-content: space-between;
+}
+
+.center1 .goods .good {
+    width: 200rpx;
+    height: 160rpx;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.center1 .goods .info {
+    width: 71%;
+    align-items: center;
+    font-size: 30rpx;
+    color: #4c4c4c;
+    padding-left: 20rpx;
+}
+
+.center1 .goods .info .info-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.center1 .goods .info .info-title>view:first-child {
+    font-size: 34rpx;
+    color: #333333;
+    width: 75%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.center1 .goods .info .info-title>view:first-child>text {
+    font-size: 30rpx;
+    color: #565656;
+}
+
+.center1 .goods .info .info-title>view:last-child>view:first-child {
+    color: #DE2222;
+    font-size: 34rpx;
+    width: 25%;
+    text-align: right;
+}
+
+.center1 .goods .info .info-title>view:last-child>view:first-child>text:first-child {
+    font-size: 24rpx;
+}
+
+.center1 .goods .info .info-title>view:last-child>view:last-child {
+    font-size: 26rpx;
+    color: #C0C0C0;
+    text-align: right;
+}
+
+.center1 .goods .info .info-subtit {
+    font-size: 28rpx;
+    color: #5D5D5D;
+    margin-top: -20rpx;
+}
+
+.center1 .goods .info .info-time {
+    font-size: 28rpx;
+    color: #777777;
+    margin-top: 10rpx;
+}
+
+.center1 .operate {
+    width: 100%;
+    background: #fff;
+    padding: 20rpx 0;
+}
+
+.center1 .operate .son {
+    width: 160rpx;
+    padding: 10rpx 0;
+    font-size: 22rpx;
+    border: 1rpx solid #eeeeee;
+    border-radius: 50rpx;
+    margin-left: 14rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center1 .operate .again {
+    color: #fff;
+    background: #0087E0;
+}
+
+.center1 .operate .deltbn {
+    color: #F9F9F9;
+    background: #CACACA;
+}
+
+.youhuiview {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28rpx;
+    color: #5C5C5C;
+}
+
+.fotbot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10rpx;
+}
+
+.xiangmu {
+    font-size: 28rpx;
+    color: #5C5C5C;
+}
+
+.xiangmu text {
+    color: #DE2222;
+}
+
+.fotbotright {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.none {
+    width: 100%;
+    height: 600rpx;
+    line-height: 600rpx;
+    box-sizing: border-box;
+    padding: 0 18rpx;
+    text-align: center;
+    margin-top: 50rpx;
+}
+
+.none image {
+    width: 200rpx;
+    height: 200rpx;
+}

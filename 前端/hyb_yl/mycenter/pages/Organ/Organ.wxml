@@ -1,0 +1,60 @@
+<view class="organ-top">
+    <image class="logo" src="{{detail.logo}}"></image>
+    <view class="organ-ris">
+        <view class="organ-t">
+            <view>机构名称：{{detail.agentname}}</view>
+            <view class="label">{{detail.level_name}}</view>
+        </view>
+        <view class="organ-tip">机构类型：{{detail.name}}</view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">经营功能</view>
+    <view class="doc-service">
+        <view bindtap="zsservice" class="doc-ser-item" data-index="{{index}}" data-url="{{item.url}}" wx:for="{{order3}}">
+            <image src="{{item.icon}}"></image>
+            <view>{{item.title}}</view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">经营数据</view>
+    <view class="doc-data">
+        <view class="doc-data-item">
+            <view>0</view>
+            <view class="doc-data-tip">专家数</view>
+        </view>
+        <view class="doc-data-item">
+            <view>0</view>
+            <view class="doc-data-tip">患者数</view>
+        </view>
+        <view class="doc-data-item">
+            <view>0</view>
+            <view class="doc-data-tip">文献数</view>
+        </view>
+        <view class="doc-data-item">
+            <view>0</view>
+            <view class="doc-data-tip">科室数</view>
+        </view>
+        <view class="doc-data-item">
+            <view>0</view>
+            <view class="doc-data-tip">收益数</view>
+        </view>
+        <view class="doc-data-item">
+            <view>0</view>
+            <view class="doc-data-tip">访客数</view>
+        </view>
+    </view>
+</view>
+<view class="organ-mask" wx:if="{{ispopup}}"></view>
+<view class="organ-pupop" wx:if="{{ispopup}}">
+    <image class="organ-bg" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/organ-rk.png?sign=7c3228e8009b528ab33c12b0959f05d6&t=1592043278"></image>
+    <view class="organ-text">
+        <view class="organ-title">
+            <view>若想填写详细数据，请去这个网址</view>
+            <view class="link">http://s.w7.cc/developer/index/179850</view>
+        </view>
+        <view bindtap="closebind" class="organ-btn">我知道了！前往查看</view>
+        <image bindtap="closebind" class="close-p" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/organ-close.png?sign=28211bd70d90519993bee855f3c517c7&t=1592043257"></image>
+    </view>
+</view>

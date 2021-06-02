@@ -1,0 +1,77 @@
+<view class="infobox">
+    <view class="infobj">
+        <image class="bjimg" src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/tjbj.png?sign=ac9835c46814a269b71973311546817a&t=1594718976"></image>
+        <image bindtap="scanCode" class="saoyisao" src="../../../images/saoma.png"></image>
+        <view class="infomes">
+            <view class="names">{{detail.names}}</view>
+            <view class="mextext">{{detail.sex}}</view>
+            <view class="mextext">手机号码：{{detail.tel}}</view>
+            <view class="mextext">身份证号：{{detail.numcard}}</view>
+        </view>
+    </view>
+    <view bindtap="showjainyicont" class="jianyibox {{jianyiState?'jianyishow':''}}">
+        <image src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/tsjyiocn.png?sign=775aecb300b124dd643c0cfbb667805f&t=1594719058"></image>
+        <view class="jianyimes">
+            <view>综述建议</view>
+            <view>综述报告给出综合性的建议和医嘱</view>
+        </view>
+    </view>
+    <view class="jianyicont" wx:if="{{jianyiState}}">
+        <view class="jianyitext">{{result.text}}</view>
+        <view class="imgbox">
+            <image bindtap="big_img" data-imglist="{{result.upload_picture_list}}" data-url="{{itemsarr}}" mode="widthFix" src="{{itemsarr}}" wx:for="{{result.upload_picture_list}}" wx:for-item="itemsarr"></image>
+        </view>
+    </view>
+</view>
+<view class="resultbox infobox">
+    <view class="retulttit">体检结果</view>
+    <view class="retuleitem" wx:for="{{content}}" wx:key="o">
+        <view bindtap="itemshow" class="rlitemtit {{item.open?'rlitshow':''}}" data-dex="{{index}}" data-type="1">{{item.title}}</view>
+        <view class="rlitemmes" wx:if="{{item.open}}">
+            <view>{{item.destic}}</view>
+            <block wx:if="{{item.shuju<=item.min||item.shuju>=item.max}}">
+                <view class="true" wx:if="{{item.shuju}}">{{item.shuju}}({{item.text}})</view>
+            </block>
+            <block wx:else>
+                <view class="false" wx:if="{{item.shuju}}">{{item.shuju}}({{item.text2}})</view>
+            </block>
+        </view>
+    </view>
+</view>
+<view class="resultbox infobox" wx:if="{{addproject.length>0}}">
+    <view class="retulttit">体检结果</view>
+    <view class="retuleitem" wx:for="{{addproject}}" wx:key="o">
+        <view bindtap="itemshow" class="rlitemtit {{item.open?'rlitshow':''}}" data-dex="{{index}}" data-type="2">{{item.title}}</view>
+        <view class="rlitemmes" wx:if="{{item.open}}">
+            <view>{{item.destic}}</view>
+            <block wx:if="{{item.shuju<=item.min||item.shuju>=item.max}}">
+                <view class="true" wx:if="{{item.shuju}}">{{item.shuju}}({{item.text}})</view>
+            </block>
+            <block wx:else>
+                <view class="false" wx:if="{{item.shuju}}">{{item.shuju}}({{item.text2}})</view>
+            </block>
+        </view>
+    </view>
+</view>
+<view class="jiedubox" wx:if="{{detail.ifjd=='0'&&ifzj=='0'}}">
+    <view bindtap="tijianbtn" class="tijianbtn" data-id="{{detail.id}}">去解读报告</view>
+</view>
+<view class="jiedubox" wx:if="{{detail.ifjd=='0'&&ifzj=='1'}}">
+    <view bindtap="jiedu" class="tijianbtn" data-id="{{detail.id}}">为患者解读</view>
+</view>
+<view class="resultbox" wx:if="{{detail.ifjd=='1'}}">
+    <view class="retulttit">专家解读</view>
+    <view class="profescontainer">
+        <view class="profesitem">
+            <view class="profesitem-headimg">
+                <image src="{{doc.advertisement}}"></image>
+            </view>
+            <view class="profesitem-mess">
+                <view class="proname">{{doc.z_name}}</view>
+                <view class="prosite">{{doc.agentname}} {{doc.name}}</view>
+                <view class="promess">{{doc.username}}</view>
+                <view class="prosite" wx:if="{{detail.ifjd=='1'}}">解读时间:{{detail.jdtime}} {{detail.professional}}人看过</view>
+            </view>
+        </view>
+    </view>
+</view>

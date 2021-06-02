@@ -1,0 +1,80 @@
+<view class="search_patient">
+    <view class="search_view">
+        <image class="serach_img" src="/assets/images/wzseet.png"></image>
+        <input bindinput="search" class="input" placeholder="患者名" placeholderClass="font_co999 font_si14"></input>
+    </view>
+</view>
+<view style="height: 134rpx;"></view>
+<block wx:if="{{!searchFlag}}">
+    <view class="patient_cotent">
+        <view class="patient_list" wx:for="{{patientList}}" wx:key="key">
+            <view class="patient_list_group">
+                <view class="patient_list_group_change">
+                    <image catchtap="All" class="change_img" data-groupid="{{item.groupId}}" data-index="{{index}}" data-targettype="1" src="{{item.groupCheck?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/check01.png?sign=8a6e340fd27de90b1618025c100d1452&t=1577444438':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/check02.png?sign=0395a5a02d95be20b693b76ad48e916d&t=1577443611'}}"></image>
+                </view>
+                <view bindtap="groupUnfold" class="patient_list_group_name_view" data-index="{{index}}">
+                    <view class="patient_list_group_name font_si18 font_co333 mg_left">{{item.fenzname}}（{{item.user.length?item.user.length:0}}）</view>
+                </view>
+            </view>
+            <view>
+                <view class="patient_list_person" wx:for="{{item.user}}" wx:for-index="itemIndex" wx:for-item="itemName" wx:key="index">
+                    <view class="patient_list_group_change">
+                        <image catchtap="checkPatient" class="change_img" data-groupindex="{{itemName.fenzuid}}" data-index="{{index}}" data-itemIndex="{{itemIndex}}" data-targettype="2" data-userid="{{item.id}}" src="{{itemName.patientCheck?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/check01.png?sign=8a6e340fd27de90b1618025c100d1452&t=1577444438':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/check02.png?sign=0395a5a02d95be20b693b76ad48e916d&t=1577443611'}}"></image>
+                    </view>
+                    <view class="patient_list_group_name_view">
+                        <image class="patient_list_group_name_left" src=""></image>
+                        <image class="patient_head_img" mode="aspectFill" src="{{itemName.u_thumb?itemName.u_thumb:'/assets/images/head.png'}}"></image>
+                        <view class="patient_list_group_name font_si18">
+                            <view>{{itemName.myname?itemName.myname:itemName.u_name}}</view>
+                            <view class="font_si14 remarkName font_co666" wx:if="{{item.beizhu==null?false:true}}">备注：{{itemName.beizhu}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{weifenzu!=null&&weifenzu.length>0}}">
+        <view class="patient_list_person" wx:for="{{weifenzu}}" wx:key="index">
+            <view class="patient_list_group_change">
+                <image catchtap="checkPatient" class="change_img" data-index="{{index}}" data-targettype="3" data-userid="{{item.userId}}" src="{{item.patientCheck?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/check01.png?sign=8a6e340fd27de90b1618025c100d1452&t=1577444438':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/check02.png?sign=0395a5a02d95be20b693b76ad48e916d&t=1577443611'}}"></image>
+            </view>
+            <view class="patient_list_group_name_view">
+                <image class="patient_list_group_name_left" src=""></image>
+                <image class="patient_head_img" mode="aspectFill" src="{{item.u_thumb?item.u_thumb:'/assets/images/head.png'}}"></image>
+                <view class="patient_list_group_name font_si18 font_co333">
+                    <view>{{item.myname?item.myname:item.u_name}} </view>
+                    <view class="font_si14 remarkName font_co666" wx:if="{{item.beizhu==null?false:true}}">备注：{{item.beizhu}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</block>
+<view wx:if="{{searchFlag}}">
+    <view class="patient_list_person" wx:for="{{searchPersonList}}" wx:key="index">
+        <view class="patient_list_group_change">
+            <image bindtap="checkPatient" class="change_img" data-index="{{index}}" data-targettype="4" data-userid="{{item.userId}}" src="{{item.patientCheck?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/check01.png?sign=8a6e340fd27de90b1618025c100d1452&t=1577444438':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/check02.png?sign=0395a5a02d95be20b693b76ad48e916d&t=1577443611'}}"></image>
+        </view>
+        <view class="patient_list_group_name_view">
+            <image class="patient_list_group_name_left" src=""></image>
+            <image class="patient_head_img" mode="aspectFill" src="{{item.userIcon?item.userIcon:'/assets/images/head.png'}}"></image>
+            <view class="patient_list_group_name font_si18 font_co333">
+                <view>{{item.name}}</view>
+                <view class="font_si14 remarkName font_co666" wx:if="{{item.remarkName==null?false:true}}">备注：{{item.remarkName}}</view>
+            </view>
+        </view>
+    </view>
+    <view style="height: 500rpx; line-height: 500rpx; text-align: center; font-size: 32rpx; color: #666;" wx:if="{{searchOnPatent}}">未找到相关搜索，请重新查找</view>
+</view>
+<view style="height: 500rpx; line-height: 500rpx; text-align: center; font-size: 32rpx; color: #666;" wx:if="{{onPatientFlag}}">暂无患者</view>
+<block wx:if="{{sourceType!=1}}">
+    <view style="height: 140rpx;"></view>
+    <view class="next_btn_view">
+        <view bindtap="nextBtn" class="next_btn font_si16 font_cofff">下一步 </view>
+    </view>
+</block>
+<block wx:if="{{sourceType==1}}">
+    <view style="height: 140rpx;"></view>
+    <view class="next_btn_view">
+        <view bindtap="saveBtn" class="next_btn font_si16 font_cofff">确定</view>
+    </view>
+</block>

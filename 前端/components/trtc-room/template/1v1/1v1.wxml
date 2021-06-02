@@ -1,0 +1,41 @@
+<template name="1v1">
+    <view class="template-1v1">
+        <view class="view-container player-container {{item.isVisible?'':'none'}}" wx:if="{{item.src&&(item.hasVideo||item.hasAudio)}}" wx:for="{{streamList}}" wx:key="streamID">
+            <live-player autoPauseIfNavigate="{{item.autoPauseIfNavigate}}" autoPauseIfOpenNative="{{item.autoPauseIfOpenNative}}" autoplay="{{item.autoplay}}" backgroundMute="{{item.enableBackgroundMute}}" bindaudiovolumenotify="_playerAudioVolumeNotify" bindfullscreenchange="_playerFullscreenChange" bindnetstatus="_playerNetStatus" bindstatechange="_playerStateChange" class="player" data-streamid="{{item.streamID}}" data-streamtype="{{item.streamType}}" data-userid="{{item.userID}}" debug="{{debug}}" enableRecvMessage="{{item.enableRecvMessage}}" id="{{item.streamID}}" maxCache="{{item.maxCache}}" minCache="{{item.minCache}}" mode="RTC" muteAudio="{{item.muteAudio}}" muteVideo="{{item.muteVideo}}" objectFit="{{item.objectFit}}" orientation="{{item.orientation}}" soundMode="{{item.soundMode}}" src="{{item.src}}"></live-player>
+        </view>
+        <view class="view-container pusher-container {{pusher.isVisible?'':'none'}} {{streamList.length===0?'fullscreen':''}}">
+            <live-pusher aspect="{{pusher.videoAspect}}" audioQuality="{{pusher.audioQuality}}" audioReverbType="{{pusher.audioReverbType}}" audioVolumeType="{{pusher.audioVolumeType}}" autoFocus="{{pusher.enableAutoFocus}}" autopush="{{pusher.autopush}}" backgroundMute="{{pusher.enableBackgroundMute}}" beauty="{{pusher.beautyLevel}}" bindaudiovolumenotify="_pusherAudioVolumeNotify" bindbgmcomplete="_pusherBGMCompleteHandler" bindbgmprogress="_pusherBGMProgressHandler" bindbgmstart="_pusherBGMStartHandler" binderror="_pusherErrorHandler" bindnetstatus="_pusherNetStatusHandler" bindstatechange="_pusherStateChangeHandler" class="pusher" debug="{{debug}}" devicePosition="{{pusher.frontCamera}}" enableAgc="{{pusher.enableAgc}}" enableAns="{{pusher.enableAns}}" enableCamera="{{pusher.enableCamera}}" enableEarMonitor="{{pusher.enableEarMonitor}}" enableMic="{{pusher.enableMic}}" localMirror="{{pusher.localMirror}}" maxBitrate="{{pusher.maxBitrate}}" minBitrate="{{pusher.minBitrate}}" mode="{{pusher.mode}}" muted="{{!pusher.enableMic}}" orientation="{{pusher.videoOrientation}}" remoteMirror="{{pusher.enableRemoteMirror}}" url="{{pusher.url}}" videoHeight="{{pusher.videoHeight}}" videoWidth="{{pusher.videoWidth}}" waitingImage="{{pusher.waitingImage}}" whiteness="{{pusher.whitenessLevel}}" zoom="{{pusher.enableZoom}}"></live-pusher>
+            <view class="loading" wx:if="{{streamList.length===0}}">
+                <view class="loading-img">
+                    <image class="rotate-img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/loading.png?sign=829d3122df809742035c06d20bca659b&t=1590746013"></image>
+                </view>
+                <view class="loading-text">等待接听中...</view>
+            </view>
+        </view>
+        <view class="handle-btns">
+            <view bindtap="_toggleAudio" class="btn-normal">
+                <image class="btn-image" src="{{pusher.enableMic?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/audio-true.png?sign=030d67a7bf8d41715008bfca1f1e402d&t=1590746032':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/audio-false.png?sign=b1310a0fce412f8dea93fcc4dc18fb3e&t=1590746047'}} "></image>
+            </view>
+            <view bindtap="switchCamera" class="btn-normal">
+                <image class="btn-image" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/switch.png?sign=f7c50a4b398b5c1054a44805741d17d2&t=1590746225"></image>
+            </view>
+            <view bindtap="_toggleVideo" class="btn-normal">
+                <image class="btn-image" src="{{pusher.enableCamera?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/camera-true.png?sign=bb6e3c1ec3c2a9523ddf9ffeece30311&t=1590746074':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/camera-false.png?sign=b0e65b58df9552af33fdb4cbbff80a28&t=1590746096'}} "></image>
+            </view>
+            <view bindtap="_toggleSoundMode" class="btn-normal">
+                <image class="btn-image" src="{{streamList[0].soundMode==='ear'?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/phone.png?sign=c0b9e4c055d804c27fbe5b94a60e1830&t=1590746110':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/speaker-true.png?sign=53eaf7d43eac7b9b78ef759644237852&t=1590746127'}} "></image>
+            </view>
+        </view>
+        <view class="bottom-btns">
+            <view bindtap="_setPuserProperty" class="btn-normal" data-key="beautyLevel" data-value="9|0" data-value-type="number">
+                <image class="btn-image" src="{{pusher.beautyLevel==9?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/beauty-true.png?sign=045fe3a82d7660eb70b060810772d176&t=1590746139':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/beauty-false.png?sign=fecd5e2ac254bbfbe014dd05f3557d70&t=1590746154'}} "></image>
+            </view>
+            <view bindtap="_hangUp" class="btn-hangup">
+                <image class="btn-image" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/hangup.png?sign=9f5f610caf4cf039f10b59490907f9b0&t=1590746166"></image>
+            </view>
+            <view bindtap="_toggleIMPanel" class="btn-normal">
+                <image class="btn-image" src="{{enableIM?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/im.png?sign=5e0e5c6952a76e2fd4290838b4f9da98&t=1590746189':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E8%A7%86%E9%A2%91%E8%81%8A%E5%A4%A9%E5%9B%BE%E7%89%87/im-disable.png?sign=c0d0495bc6ee9e86b217657a244bffb1&t=1590746208'}}"></image>
+            </view>
+        </view>
+    </view>
+</template>

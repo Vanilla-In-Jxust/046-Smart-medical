@@ -1,0 +1,40 @@
+<view class="viebox">
+    <image class="vipbg" src="{{setting_goumai_thumb}}"></image>
+    <view class="membership-header">
+        <view bindtap="buyrecord" class="vip-bug">购买记录 ></view>
+        <view class="membership-header-title"> {{setting_title}}</view>
+        <view class="membership-header-title"> {{setting_content}}</view>
+        <view class="header">
+            <scroll-view scrollX class="scroll_w" scrollLeft="{{scrollLeft}}">
+                <view bindtap="topNavChange" class="membership-cards membership-card-unchecked membership-card-unchecked-normal  {{currentTab==index?'on':''}}" data-current="{{index}}" wx:for="{{huiyuanlist}}" wx:key="{{this}}">
+                    <view class="membership-card-title">{{item.title}}</view>
+                    <view class="membership-card-price-container">
+                        <view class="membership-card-price">
+                            <view class="symbol">￥</view>
+                            <view class="number">{{item.price}}</view>
+                        </view>
+                        <view class="membership-card-discount">￥{{item.oldprice}}</view>
+                    </view>
+                    <view class="membership-card-bottom">
+                        <view class="membership-card-days">服务期限 {{item.times}}天</view>
+                        <image class="membership-card-icon-gold" src="{{item.quanyi_thumb}}"></image>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+    </view>
+</view>
+<view class="content">
+    <rich-text nodes="{{nodes}}"></rich-text>
+</view>
+<view class="footbtn">
+    <view bindtap="givevip" class="footbtnitem">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/liwu.png?sign=15a3f3d85e445e6f89fd2508eb2a3970&t=1584495816"></image>
+        <text>赠送亲友</text>
+    </view>
+    <view bindtap="openvip" class="footbtnitem">
+        <text>V</text>
+        <text wx:if="{{userbuystatus==0}}">开通会员</text>
+        <text wx:else>立即续费</text>
+    </view>
+</view>

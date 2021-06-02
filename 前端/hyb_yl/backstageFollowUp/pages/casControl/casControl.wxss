@@ -1,0 +1,473 @@
+.cancel_view {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+}
+
+.cancel_in {
+    background-color: #fff;
+    width: 650rpx;
+    border-radius: 8rpx;
+    min-height: 104rpx;
+}
+
+.cancel_in_title {
+    border-bottom: 1rpx solid #f0f0f0;
+    height: 104rpx;
+    line-height: 104rpx;
+    text-align: center;
+}
+
+.cancel_content {
+    padding: 30rpx 30rpx 30rpx 0rpx;
+}
+
+.cancel_content_in {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.cancel_content_in_top {
+    padding-left: 30rpx;
+    height: 50rpx;
+    line-height: 50rpx;
+    text-align: bottom;
+    margin-top: 10rpx;
+}
+
+.cancel_text {
+    padding: 0 28rpx;
+    height: 80rpx;
+    background-color: #f6f6f6;
+    border-radius: 4rpx;
+    line-height: 80rpx;
+    text-align: center;
+    margin: 30rpx 0 0 30rpx;
+}
+
+.cancel_bottom {
+    height: 120rpx;
+    border-top: 1rpx solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30rpx;
+}
+
+.cancel_bottom_left {
+    width: 200rpx;
+    height: 80rpx;
+    background-color: #f0f0f0;
+    border-radius: 4rpx;
+    font-size: 32rpx;
+    color: #999;
+    line-height: 80rpx;
+    text-align: center;
+}
+
+.cancel_bottom_right {
+    width: 370rpx;
+    height: 80rpx;
+    background-image: linear-gradient(to right,#6699ff,#3b4ca9);
+    border-radius: 4rpx;
+    line-height: 80rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.cancel_active {
+    background-color: #e5e9ff;
+    color: #3b4ca9;
+}
+
+.WZwrap-top {
+    width: 100%;
+    height: 104rpx;
+    background: #f2f3f7;
+}
+
+.WZwrap-left {
+    width: 50%;
+    height: 104rpx;
+    float: left;
+    position: relative;
+}
+
+.WZwrap-position {
+    width: 2rpx;
+    height: 30rpx;
+    position: absolute;
+    top: 36rpx;
+    right: 0rpx;
+    background: #e0e0e0;
+}
+
+.WZwrap-leftBox {
+    width: 310rpx;
+    height: 104rpx;
+    margin: auto;
+}
+
+.WZwrap-leftBox1 {
+    width: 100%;
+    height: 22rpx;
+    float: left;
+}
+
+.WZwrap-leftBox2 {
+    width: 100%;
+    height: 60rpx;
+    color: #333;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 60rpx;
+    border-radius: 10rpx;
+    background: #fff;
+    float: left;
+}
+
+.WZwrap-leftBox1a {
+    width: 5rpx;
+    height: 22rpx;
+    background: #ccc;
+    float: left;
+    margin-left: 50rpx;
+}
+
+.WZwrap-leftBox1b {
+    width: 5rpx;
+    height: 22rpx;
+    background: #ccc;
+    float: right;
+    margin-right: 50rpx;
+}
+
+.WZwrap-right {
+    width: 50%;
+    height: 104rpx;
+    float: left;
+}
+
+.WZwrap-rightSeet {
+    width: 310rpx;
+    height: 60rpx;
+    background: #fff;
+    border-radius: 60rpx;
+    margin: auto;
+    margin-top: 22rpx;
+}
+
+.WZwrap-Seetimg {
+    width: 28rpx;
+    height: 28rpx;
+    float: left;
+    margin-left: 20rpx;
+    margin-top: 17rpx;
+}
+
+.WZwrap-rightSeet>text {
+    font-size: 28rpx;
+    color: #ccc;
+    float: left;
+    line-height: 60rpx;
+    text-indent: 20rpx;
+}
+
+.WZwrap-headline {
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+    line-height: 100rpx;
+    text-indent: 30rpx;
+    color: #333;
+    font-size: 36rpx;
+}
+
+.WZwrap-headlineNew {
+    width: 130rpx;
+    height: 100rpx;
+    float: right;
+    font-size: 28rpx;
+    line-height: 100rpx;
+    margin-right: 30rpx;
+}
+
+.WZwrap-headlineNew>text {
+    font-size: 40rpx;
+    line-height: 100rpx;
+    color: #909299;
+}
+
+.WZwrap-forbox {
+    width: 702rpx;
+    margin: auto;
+    overflow: hidden;
+    padding-bottom: 20rpx;
+}
+
+.WZwrap-for {
+    width: 342rpx;
+    height: 160rpx;
+    float: left;
+    margin-left: 6rpx;
+    border-radius: 4rpx;
+    margin-bottom: 6rpx;
+}
+
+.WZwrap-forname {
+    width: 100%;
+    height: 48rpx;
+    color: #fff;
+    font-size: 32rpx;
+    line-break: 48rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+    float: left;
+    text-indent: 30rpx;
+    margin-top: 30rpx;
+}
+
+.WZwrap-forname1 {
+    width: 100%;
+    height: 60rpx;
+    float: left;
+    margin-top: 10rpx;
+    position: relative;
+}
+
+.WZwrap-forname1text {
+    color: #fff;
+    text-indent: 30rpx;
+    font-size: 24rpx;
+    float: left;
+    line-height: 60rpx;
+}
+
+.WZwrap-forname1textbox {
+    width: 56rpx;
+    height: 56rpx;
+    background-color: rgba(255,255,255,0.2);
+    float: right;
+    color: #fff;
+    text-align: center;
+    line-height: 60rpx;
+    border-radius: 60rpx;
+    font-size: 32rpx;
+    margin-right: 30rpx;
+}
+
+.WZwrap-forname1show {
+    width: 148rpx;
+    height: 48rpx;
+    background-color: rgba(0,0,0,0.1);
+    border-radius: 24rpx;
+    line-height: 48rpx;
+    text-align: center;
+    color: #fff;
+    font-size: 24rpx;
+    position: absolute;
+    left: 30rpx;
+    top: 0rpx;
+}
+
+.WZ-ungroupedfor {
+    width: 100%;
+    height: 120rpx;
+    float: left;
+}
+
+.WZ-ungroupedforimg {
+    width: 140rpx;
+    height: 120rpx;
+    float: left;
+}
+
+.WZ-ungroupedforimg1 {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+    float: left;
+    margin-left: 30rpx;
+    margin-top: 20rpx;
+}
+
+.WZ-ungroupedfortext {
+    width: 520rpx;
+    height: 120rpx;
+    float: left;
+    border-bottom: 1rpx #e0e0e0 solid;
+    position: relative;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.remarkName {
+    width: 100%;
+    font-size: 36rpx;
+    color: #333;
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remarkName1 {
+    width: 100%;
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 10rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    overflow: hidden;
+}
+
+.WZ-ungroupedfortext-img {
+    float: left;
+    width: 60rpx;
+    height: 120rpx;
+    z-index: 999;
+    border-bottom: 1rpx #e0e0e0 solid;
+}
+
+.WZ-ungroupedfortext-img1 {
+    width: 40rpx;
+    height: 40rpx;
+    float: left;
+    margin-top: 40rpx;
+}
+
+.wz-NewBox {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    z-index: 100;
+}
+
+.wz-NewBox1 {
+    width: 600rpx;
+    height: 400rpx;
+    margin: 400rpx auto;
+    background-color: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.wz-NewBoxheadline {
+    width: 100%;
+    height: 99rpx;
+    text-align: center;
+    line-height: 99rpx;
+    color: #333;
+    font-size: 30rpx;
+    background: #f7f7f7;
+}
+
+.wz-NewBoxseetBox {
+    width: 100%;
+    height: 200rpx;
+    background: #fff;
+    float: left;
+}
+
+.wz-NewBoxseet {
+    width: 520rpx;
+    height: 100rpx;
+    margin: 50rpx auto;
+    background: #fafafa;
+    text-align: center;
+}
+
+.wz-Newfoot {
+    width: 100%;
+    height: 130rpx;
+    background: #f7f7f7;
+    float: left;
+}
+
+.wz-Newfootcancel {
+    width: 230rpx;
+    height: 80rpx;
+    float: left;
+    background-color: #ebebeb;
+    border-radius: 40rpx;
+    line-height: 80rpx;
+    text-align: center;
+    margin-top: 10rpx;
+    margin-left: 40rpx;
+    color: #333;
+    font-size: 32rpx;
+}
+
+.wz-Newfootcancel1 {
+    width: 230rpx;
+    height: 80rpx;
+    float: left;
+    background-image: linear-gradient(0deg,#7587e6 0%,#3b4ca9 100%);
+    border-radius: 40rpx;
+    line-height: 80rpx;
+    text-align: center;
+    margin-top: 10rpx;
+    margin-left: 40rpx;
+    color: #fff;
+    font-size: 32rpx;
+}
+
+.out_btn {
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    background-image: linear-gradient(to right,#7587e6 0%,#3b4ca9 100%);
+    box-shadow: 0px 8rpx 12rpx 0px rgba(0,0,0,0.2);
+    position: fixed;
+    bottom: 50rpx;
+    right: 30rpx;
+    z-index: 200;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.out_image {
+    width: 38rpx;
+    height: 38rpx;
+}
+
+.out_text {
+    font-size: 20rpx;
+}
+
+.distance {
+    display: flex;
+    align-items: center;
+    padding-right: 20rpx;
+    box-sizing: border-box;
+}
+
+.distance image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.distance text {
+    font-size: 24rpx;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+}

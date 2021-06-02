@@ -1,0 +1,37 @@
+<view class="tab">
+    <view bindtap="chooseTab" class="son {{current==index?'active':''}}" data-i="{{index}}" wx:for="{{tab}}" wx:key="index">{{item.name}}</view>
+</view>
+<view wx:if="{{unscramble.length!=0}}">
+    <view class="sickbox">
+        <block wx:for="{{unscramble}}" wx:key="ss">
+            <view class="doctmes">
+                <view class="doctmes-left">
+                    <image src="{{item.doc.advertisement}}"></image>
+                    <text>{{item.doc.z_name}}</text>
+                </view>
+                <view class="doctmes-right">{{item.ifpay==0?'待支付':item.ifpay==1?'待解读':item.ifpay==2?'咨询中':item.ifpay==3?'已完成':''}}</view>
+            </view>
+            <view bindtap="reportDetailClick" class="sickitem" data-advertisement="{{item.advertisement}}" data-bl_id="{{item.bl_id}}" data-dex="{{index}}" data-docopenid="{{item.docopenid}}" data-docroom="{{item.docroom}}" data-id="{{item.id}}" data-ifgb="{{item.ifgb}}" data-ifpay="{{item.ifpay}}" data-j_id="{{item.j_id}}" data-money="{{item.money}}" data-myroom="{{item.myroom}}" data-orders="{{item.back_orser}}" data-overtime="{{item.overtime}}" data-u_name="{{item.u_name}}" data-u_thumb="{{item.u_thumb}}" data-z_name="{{item.z_name}}" data-zid="{{item.zid}}">
+                <view class="sickitem-left">
+                    <image src="{{item.userinfo.u_thumb}}"></image>
+                    <view class="sickiteminfo">
+                        <view>{{item.names}}</view>
+                        <view>{{item.sex}} {{item.age}}岁</view>
+                    </view>
+                </view>
+                <view class="sickitem-center">
+                    <view>{{item.time}}</view>
+                    <view>{{item.doc.agentname}}</view>
+                    <view>订单编号：{{item.orders}}</view>
+                </view>
+                <view class="sickbtn {{item.states==0?'btn1':item.states==1?'btn2':'btn3'}}">报告解读</view>
+            </view>
+        </block>
+    </view>
+</view>
+<view wx:else>
+    <view class="nonelist">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+        <view class="fs28">暂时还没有订单哦</view>
+    </view>
+</view>

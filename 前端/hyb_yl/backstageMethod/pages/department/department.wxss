@@ -1,0 +1,73 @@
+page {
+    background: #ffffff;
+}
+
+.W_seek_box {
+    width: 100%;
+    height: 118rpx;
+    background: #fff;
+}
+
+.W_seek_input {
+    width: 550rpx;
+    height: 80rpx;
+    background: #f5f5f7;
+    border-radius: 10rpx;
+    float: left;
+    margin-left: 30rpx;
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    position: relative;
+}
+
+.W_seek_input1 {
+    width: 440rpx;
+    height: 80rpx;
+    background: #f5f5f7;
+    border-radius: 10rpx;
+    float: left;
+    margin-left: 80rpx;
+    font-size: 32rpx;
+}
+
+.W_seek_input_img {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 20rpx;
+    left: 30rpx;
+}
+
+.seet {
+    width: 140rpx;
+    height: 80rpx;
+    background: linear-gradient(to right,#69f,#3b4ac9);
+    float: left;
+    font-size: 32rpx;
+    line-height: 80rpx;
+    text-align: center;
+    color: #fff;
+    margin-left: 1rpx;
+    margin-top: 20rpx;
+    border-radius: 8rpx;
+}
+
+.list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.specific {
+    text-align: center;
+}
+
+.imgSize {
+    width: 120rpx;
+    height: 120rpx;
+}
+
+.fontSize {
+    font-size: 30rpx;
+    line-height: 50rpx;
+    padding-bottom: 20rpx;
+}

@@ -1,0 +1,13 @@
+<view class="severpack">
+    <view catchtap="packdetail" class="serverlist" data-id="{{item.id}}" wx:for="{{list}}" wx:key="*this">
+        <view class="packbox">
+            <view class="packImg">
+                <image src="{{item.thumb}}"></image>
+            </view>
+            <view class="packinfo">
+                <view class="packname">{{item.crowd_name}}</view>
+                <view class="lookdetail"> 查看详情></view>
+            </view>
+        </view>
+    </view>
+</view>

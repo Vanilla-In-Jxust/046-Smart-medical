@@ -1,0 +1,61 @@
+<block wx:if="{{detailMsg}}">
+    <view class="intro_content">{{h_text}}</view>
+    <view class="top_view">
+        <video autoplay controls bindended="bindended" bindplay="bindplay" bindtimeupdate="bindtimeupdate" enableProgressGesture="{{false}}" id="myVideo" initialTime="{{detailMsg.mettingPush.speed}}" poster="{{detailMsg.deptMarketingResources.coverImg}}" src="{{h_video}}" wx:if="{{detailMsg.deptMarketingResources.contentType==1}}"></video>
+    </view>
+    <view>
+        <view class="intro_title">
+            <view bindtap="tapFun" class="title_list {{targetIndex==1?'font_co3b':''}}" data-index="1" data-yisid="{{yisid}}">简介
+        <view class="active_line" wx:if="{{targetIndex==1}}"></view>
+            </view>
+            <view bindtap="tapFun" class="title_list {{targetIndex==2?'font_co3b':''}}" data-index="2" data-yisid="{{yisid}}">评论 
+        <view class="active_line" wx:if="{{targetIndex==2}}"></view>
+            </view>
+        </view>
+        <view wx:if="{{targetIndex==1}}">
+            <view class="Push_people">
+                <view class="people_in">
+                    <image class="people_icon" src="{{zhuanjiainfo.z_thumbs}}"></image>
+                    <view class="people_msg">
+                        <view class="people_name">
+                            <text>{{zhuanjiainfo.z_name}}</text>
+                        </view>
+                        <view class="people_time">{{zhuanjiainfo.ystime}}</view>
+                    </view>
+                </view>
+                <view class="comment_content">{{zhuanjiainfo.z_content}}</view>
+            </view>
+        </view>
+        <block wx:if="{{targetIndex==2}}">
+            <scroll-view scrollY bindscrolltolower="getMore">
+                <view class="Push_people" wx:for="{{list}}" wx:key="{{index}}">
+                    <view class="people_in">
+                        <image class="people_icon" src="{{item.touxiang?item.touxiang:'../../../assets/images/head.png'}}"></image>
+                        <view class="people_msg">
+                            <view class="people_name">
+                                <text>{{item.name}}</text>
+                            </view>
+                            <view class="people_time">{{item.createTime}}</view>
+                        </view>
+                    </view>
+                    <view class="comment_content">{{item.pingtext}}</view>
+                </view>
+                <view class="loading_view" hidden="{{loadingBoo}}">
+                    <image class="loading" src="../../../assets/images/loading.gif"></image>
+                    <text class="font_co999 font_si14">加载中...</text>
+                </view>
+                <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">没有更多了~</view>
+                <view style="height: 108rpx;"></view>
+            </scroll-view>
+            <view class="font_co999 font_si14 more_text" style="height: 200rpx;" wx:if="{{noFlag}}">暂无数据</view>
+            <view class="click fixed_bottom" id="textarea_bottom">
+                <view class="public_white center edit_text from">
+                    <textarea autoHeight="{{heightFlag}}" bindinput="getText" bindlinechange="bindlinechange" class="edit_input font_si14 font_co333" cursorSpacing="20" disabled="{{disableFlag}}" fixed="true" maxlength="500" name="textarea" placeholder="说点什么" showConfirmBar="" style="height: {{height}}rpx;" type="" value="{{text}}" wx:if="{{!recordFlag}}"></textarea>
+                    <view bindtap="sendBtn" class="sendBtn font_cofff font_si12 {{imgBoo?'bgeb':''}}" data-id="{{detailMsg.mettingPush.id}}" wx:if="{{!recordFlag}}">
+                        <image class="send_img" src="../../../images/send_img.png"></image>
+                    </view>
+                </view>
+            </view>
+        </block>
+    </view>
+</block>

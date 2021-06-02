@@ -1,0 +1,79 @@
+<view class="consul-box">
+    <view bindtap="searchbtn" class="consul-search">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/search.png?sign=912d8b44b3ec21ad0751e4df80d1db0c&t=1590657425"></image>
+        <text>输入诊所、医生、症状</text>
+    </view>
+    <view class="tab-depar">
+        <scroll-view scrollX class="s-depar" lowerThreshold="50%" upperThreshold="50%" wx:if="{{!deparshow}}">
+            <view bindtap="departab" class="depar-item {{tabindex==0?'depar-item-act':''}}" data-dex="0">全部</view>
+            <view bindtap="{{tabindex==index+1?'':'departab'}}" class="depar-item {{tabindex==index+1?'depar-item-act':''}} " data-dex="{{index+1}}" data-pid="{{item.id}}" data-tabpic="{{item.id}}" wx:for="{{consulList}}" wx:key="index">{{item.name}}</view>
+        </scroll-view>
+        <view class="selectdepar" wx:else>选择分类</view>
+        <view class="depar-more">
+            <view class="depar-yy"></view>
+            <image bindtap="deparlist" class="depar-more-icon" mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/item_08.png?sign=af8891ec68a46c9598059884fcdc4bd8&t=1590804077"></image>
+        </view>
+    </view>
+</view>
+<view class="bar"></view>
+<view class="zhe" wx:if="{{deparshow}}"></view>
+<view class="selectlistbox {{deparshow?'listshow':''}}">
+    <view class="selectlist-c">
+        <view bindtap="departabs" class="select-list-item {{tabindex==0?'select-list-item-act':''}}" data-dex="0">全部</view>
+        <view bindtap="departabs" class="select-list-item {{tabindex==index+1?'select-list-item-act':''}}" data-dex="{{index+1}}" data-tabpic="{{item.id}}" wx:for="{{consulList}}">{{item.name}}</view>
+    </view>
+</view>
+<scroll-view bindscrolltolower="scrolltolower" class="more_scorll" scrollY="true" scrollTop="{{scrollTop}}" style="width:100%" wx:if="{{curHdIndex==1&&!oneBoo?true:false}}">
+    <view class="cont">
+        <view catchtap="navto" class="item" data-url="/hyb_yl/userLife/pages/dynamicDetails/dynamicDetails?a_id={{item.a_id}}" wx:for="{{communityListOne}}">
+            <view class="item_top">
+                <view class="top_left">
+                    <image class="photo" mode="aspectFill" src="{{item.fabuzhe_thumb}}"></image>
+                    <view>
+                        <view class="name">{{item.fabuzhe_name}}</view>
+                        <view class="position">{{item.keshi}} · {{item.zhuanjia_info}}</view>
+                    </view>
+                </view>
+                <view class="tabel">{{item.state=='1'?'医生':'用户'}}</view>
+            </view>
+            <view class="item_title">	{{item.contents}}</view>
+            <view class="imgBox">
+                <image class="item_img" mode="aspectFill" src="{{items}}" wx:for="{{item.sharepic}}" wx:for-item="items"></image>
+            </view>
+            <view class="item_bottom">
+                <view>{{item.times}} 阅读{{item.dianzan}}</view>
+                <view class="df">
+                    <view catchtap="toLike" class="center comment_view_left" data-a_id="{{item.a_id}}" data-index="{{index}}" data-status="{{item.dianj}}">
+                        <image class="review_img praise_img" lazyLoad="true" src="{{item.dianzan!=1?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/dzhan1.png?sign=544dc9242213c29ea2e7db7065a386b9&t=1547194577':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Dzhan.png?sign=860145be33b20af6ef3adff216283f8e&t=1577530820'}}"></image>
+                        <text>赞{{item.dianj}}</text>
+                    </view>
+                    <navigator class="center com_view" hoverClass="className" url="/hyb_yl/userLife/pages/dynamicDetails/dynamicDetails?a_id={{item.a_id}}&comFlagText=1">
+                        <image class="review_img" lazyLoad="true" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/zixun.png?sign=9d1aadeee6229adc3e063e8ed7cbaa93&t=1591083042"></image>
+                        <text>{{item.pinglunnum}}</text>
+                    </navigator>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBooOne}}">没有更多了~</view>
+    <view style="height:120rpx;"></view>
+</scroll-view>
+<view class="tips1">
+    <view style="display: flex;flex-direction: row;align-items: center;align-self: center;justify-content: center;" wx:if="{{ismore}}">
+        <icon size="20" type="waiting"></icon>
+        <text>加载中...</text>
+    </view>
+    <view wx:else>
+        <text>没有更多内容了</text>
+    </view>
+</view>
+<view class="font_si16 font_co333 record_none" wx:if="{{oneBoo&&curHdIndex==1}}">暂无最新动态~</view>
+<view class="font_si16 font_co333 record_none" wx:if="{{twoBoo&&curHdIndex==2}}">暂无热门动态~</view>
+<view bindtap="addCommunity" class="state_img" style="background:{{bgc}}" wx:if="{{sharesetting.is_status=='1'}}">+</view>
+<view class="close_view font_si16 font_co666" wx:if="{{operation.isRelease=='true'}}">功能改进中...</view>
+<ovalLogin wx:if="{{!bigMask}}"></ovalLogin>
+<import src="../../../template/template.wxml"></import>
+<template is="tabBar" data="{{footer:footer}}"></template>

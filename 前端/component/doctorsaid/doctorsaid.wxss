@@ -1,0 +1,67 @@
+.docSpeack_box {
+    background: white;
+    padding: 0rpx 24rpx;
+}
+
+.speackList {
+    padding: 40rpx 0rpx;
+    border-bottom: 1rpx solid #eaeaea;
+}
+
+.speackList:last-child {
+    border-bottom: none;
+}
+
+.quseTitle {
+    font-size: 32rpx;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 25rpx;
+}
+
+.quesCont {
+    color: #666;
+    font-size: 24rpx;
+    margin-bottom: 20rpx;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    align-content: center;
+    white-space: pre-line;
+}
+
+.doctorbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+.doctor_left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.doctorHead {
+    width: 50rpx;
+    height: 50rpx;
+    background: #00b7ee;
+    border-radius: 50%;
+}
+
+.doctorName {
+    font-size: 26rpx;
+    color: #333;
+    font-weight: bold;
+    padding-left: 15rpx;
+    line-height: 50rpx;
+    padding-right: 20rpx;
+}
+
+.docorType {
+    font-size: 24rpx;
+    color: #999;
+    line-height: 50rpx;
+}

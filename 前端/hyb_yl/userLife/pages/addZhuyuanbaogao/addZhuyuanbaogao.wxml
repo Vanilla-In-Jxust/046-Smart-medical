@@ -1,0 +1,24 @@
+<view class="description public_white font_si16 font_co333">
+    <textarea bindinput="bindinput" class="description_tex" maxlength="-1" placeholder="在这里写下您的内容..." placeholderClass="font_si16 font_coccc" showConfirmBar="" style=" height: {{height}}rpx;"></textarea>
+</view>
+<view class="public_white">
+    <view class="img_top_line"></view>
+</view>
+<view class="picture">
+    <view class="upload_view" wx:for="{{imgUrlList}}" wx:key="{{ index }}">
+        <image catchtap="previewImage" class="uploadImage" data-imgindex="{{index}}" mode="aspectFill" src="{{item}}"></image>
+        <view class="public_white icon_view">
+            <icon catchtap="delImage" class="img_icon" color="red" data-index="{{index}}" size="18" type="clear"></icon>
+        </view>
+    </view>
+    <view class="df1">
+        <view bindtap="chooseImage" class="add_img" hidden="{{chooseImageBoo}}" wx:if="{{addFlag}}">
+            <image class="img_in" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/add.png?sign=b28073716b235994d37c4480ae655408&t=1590804167"></image>
+        </view>
+        <view style="color:#999;" wx:if="{{imgUrlList.length==0}}">为保护隐私，住院报告仅医生可见</view>
+    </view>
+</view>
+<view class="height_98"></view>
+<view class="fixed_bottom height_98 issue_view center">
+    <view bindtap="addDynamic" class="linear_btn next_btn">确定发布</view>
+</view>

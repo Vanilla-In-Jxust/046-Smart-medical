@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="0.6,0.7,0.8,1.0">
+	<application setting="true">
+		<name><![CDATA[医疗]]></name>
+		<identifie><![CDATA[hyb_yl]]></identifie>
+		<version><![CDATA[7.1.1]]></version>
+		<type><![CDATA[business]]></type>
+		<ability><![CDATA[医疗]]></ability>
+		<description><![CDATA[医疗]]></description>
+		<author><![CDATA[医疗]]></author>
+		<url><![CDATA[http://www.we7.cc/]]></url>
+	</application>
+	<platform>
+		<subscribes>
+		</subscribes>
+		<handles>
+			<message type="text" />
+			<message type="image" />
+			<message type="voice" />
+			<message type="video" />
+			<message type="shortvideo" />
+			<message type="location" />
+			<message type="link" />
+			<message type="subscribe" />
+			<message type="qr" />
+			<message type="trace" />
+			<message type="click" />
+			<message type="merchant_order" />
+			<message type="user_get_card" />
+			<message type="user_del_card" />
+			<message type="user_consume_card" />
+		</handles>
+		<rule embed="true" />
+		<card embed="false" />
+		<supports>
+			<item type="wxapp" />
+		</supports>
+	</platform>
+	<bindings>
+		<page>
+			<entry title="首页" do="/hyb_yl/pages/index/index" state="" direct="false"/>
+		</page>
+	    <menu>
+	      <entry title="独立入口" do="index" state="" direct="false" />
+	    </menu>
+	</bindings>
+	<permissions>
+	</permissions>
+  <install><![CDATA[install.php]]></install>
+  <uninstall><![CDATA[uninstall.php]]></uninstall>
+  <upgrade><![CDATA[upgrade.php]]></upgrade>
+</manifest>

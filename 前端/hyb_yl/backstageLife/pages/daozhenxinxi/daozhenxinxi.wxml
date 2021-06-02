@@ -1,0 +1,32 @@
+<view class="importance">重要：急重症不适合网上咨询，请立即前往当地医院就诊</view>
+<view class="containers">
+    <view class="textareabox">
+        <textarea bindinput="symptomvalue" placeholder="请用10~500字详细描述您的症状、疾病和身体状况，否则可能无法获得医生的详细解答。请勿透露您的真实姓名或联系方式" placeholderStyle="color:#D1D1D1;" value="{{symptom}}"></textarea>
+    </view>
+    <view class="attachment-contain">
+        <view class="upload_title">上传相关图片（检查报告、患处照片、药品等）</view>
+        <view class="upload-list">
+            <view class="imglist" wx:for="{{upload_picture_list}}" wx:key="{{index}}">
+                <image bindtap="deleteimg" data-index="{{index}}" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Schu.png?sign=d27c9797be112e6c00069e9cea3db59a&t=1571479530"></image>
+                <image mode="aspectFill" src="{{item}}"></image>
+            </view>
+            <view class="upload-list-item" wx:if="{{upload_picture_list.length!=9}}">
+                <view bindtap="uploadimg" class="upload-list-add">
+                    <image class="upload-list-add-image" mode="widthFix" src="../../../images/add.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="ensure">
+    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/renzheng.png?sign=99d87d2d65c67c848a10aaf43bafb66e&t=1583825248"></image>
+    <text>春雨医生会保证您的隐私安全</text>
+</view>
+<view class="btnbox">
+    <view bindtap="radioChange" class="radios">
+        <radio checked="{{argeen}}" color="#0087E0">
+            <text>同意获取微信订阅消息</text>
+        </radio>
+    </view>
+    <view bindtap="gosign" class="sign">提交问题</view>
+</view>

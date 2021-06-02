@@ -1,0 +1,453 @@
+{
+  "pages": [
+    "hyb_yl/tabBar/index/index",
+    "hyb_yl/tabBar/advisory/advisory",
+    "hyb_yl/tabBar/community/community",
+    "hyb_yl/tabBar/my/my",
+    "hyb_yl/tabBar/jibingyufang/jibingyufang",
+    "hyb_yl/tabBar/shop/shop",
+    "hyb_yl/tabBar/fastnavigate/fastnavigate",
+    "hyb_yl/webrtc-room/room/room",
+    "hyb_yl/sgin/sgin"
+  ],
+  
+      "subPackages": [
+        {
+            "root": "hyb_yl/mysubpages/",
+            "pages": [
+    "pages/dianzibingli/dianzibingli",
+    "pages/tijainbaogaoList/tijainbaogaoList",
+    "pages/wenz_detail/wenz_detail",
+    "pages/my_hzprescription/my_hzprescription",
+    "pages/tel/tel",
+    "pages/pingjia/pingjia",
+    "pages/gerenxinxi/gerenxinxi",
+    "pages/my_dingdan1/my_dingdan1",
+    "pages/zhuan_huan/zhuan_huan",
+    "pages/report/report",
+    "pages/report_detail/report_detail",
+    "pages/suggestion/suggestion",
+    "pages/drugs_recommend/drugs_recommend",
+    "pages/myTidings/myTidings",
+    "pages/backstageIndex/backstageIndex",
+    "pages/wodeyuyue/wodeyuyue",
+    "pages/docorder/docorder",
+    "pages/wodezixun/wodezixun",
+    "pages/shopType/shopType",
+    "pages/product/product",
+    "pages/comment/comment",
+    "pages/shopList/shopList",
+    "pages/shopdetail/shopdetail",
+    "pages/recipe/index",
+    "pages/allevalation/allevalation",
+    "pages/commevaldetail/commevaldetail",
+    "pages/search/search",
+    "pages/unscramble/unscramble",
+    "pages/physicalOrder/physicalOrder",
+    "pages/druglist/druglist",
+    "pages/phyDetail/phyDetail",
+    "pages/diagReport/diagReport",
+    "pages/bgeqcord/bgeqcord",
+    "pages/searchyisheng/searchyisheng",
+    "pages/searchyiyuan/searchyiyuan",
+    "pages/searchyaopin/searchyaopin",
+    "pages/yaopindetail/yaopindetail",
+    "pages/openservice/openservice",
+    "pages/serviceList/serviceList",
+    "pages/serviceset/serviceset",
+    "pages/capitacenter/capitacenter",
+    "pages/capitadetail/capitadetail",
+    "pages/patientgroup/patientgroup",
+    "pages/patientman/patientman"
+            ]
+        },
+		        {
+            "root": "hyb_yl/czhuanjiasubpages/",
+            "pages": [
+     "pages/zhuanjiazhuye/zhuanjiazhuye",
+    "pages/meeting/meeting",
+    "pages/chatroom/chatroom",
+    "pages/telserev/index",
+    "pages/fastsever/index",
+    "pages/questions/index",
+    "pages/questend/index",
+    "pages/questends/index",
+    "pages/healreport/index",
+    "pages/tijiandetail/index",
+    "pages/perdoc/index",
+    "pages/perdoclist/index",
+    "pages/perdocinfo/index",
+    "pages/longsever/index",
+    "pages/longsevers/index",
+    "pages/appraise/index",
+    "pages/information/information",
+    "pages/chufangmes/chufangmes",
+    "pages/alladept/alladept",
+    "pages/estimate/estimate"
+            ]
+        },
+				        {
+            "root": "hyb_yl/twosubpages/",
+            "pages": [
+    "pages/tt_detail/tt_detail",
+    "pages/history/history",
+    "pages/check/check",
+    "pages/my_ti/my_ti",
+    "pages/xuzhi/xuzhi",
+    "pages/usermx/usermx",
+    "pages/patient2/patient2",
+    "pages/publicProblems/publicProblems",
+    "pages/publicProblemsInfor/publicProblemsInfor",
+    "pages/yuzhen/yuzhen",
+    "pages/itemdetail/itemdetail",
+    "pages/details/details",
+    "pages/more/more",
+    "pages/info/info",
+    "pages/itemdetails/itemdetails"
+            ]
+        },
+						        {
+            "root": "hyb_yl/zhuanjiasubpages/",
+            "pages": [
+ "pages/jichudangan/jichudangan",
+    "pages/danganList/danganList",
+    "pages/huanzhexinxi/huanzhexinxi",
+    "pages/zhuanjiahuida/zhuanjiahuida",
+    "pages/huanzhezhifu/huanzhezhifu",
+    "pages/huanzhezhifus/huanzhezhifus",
+    "pages/answer_detail/answer_detail",
+    "pages/webview/webview",
+    "pages/answer_list/answer_list",
+    "pages/zhuanjiatiwen/zhuanjiatiwen",
+    "pages/zhuanjiatiwens/zhuanjiatiwens",
+    "pages/backstageAdvisory/backstageAdvisory",
+    "pages/backstageDsaid/backstageDsaid",
+    "pages/teamcenters/teamcenters",
+    "pages/backstageMy/backstageMy",
+    "pages/set_jurisdiction/set_jurisdiction",
+    "pages/zhuanjialiebiao/zhuanjialiebiao",
+    "pages/zhuanjiaziliao/zhuanjiaziliao",
+    "pages/hexiao/hexiao",
+    "pages/cover/cover",
+    "pages/choosePerson/choosePerson",
+    "pages/zhifuend/zhifuend",
+    "pages/orderedtime/orderedtime",
+    "pages/qitaList/qitaList",
+    "pages/edit/edit"
+            ]
+        },
+								        {
+            "root": "hyb_yl/userLife/",
+            "pages": [
+ 
+    "pages/hospitalList/hospitalList",
+    "pages/dynamicDetails/dynamicDetails",
+    "pages/baogaoxq/baogaoxq",
+    "pages/addZhuyuanbaogao/addZhuyuanbaogao",
+    "pages/addTab/addTab",
+    "pages/doctor/doctor",
+    "pages/index/index",
+    "pages/addDynamic/addDynamic",
+    "pages/dynamic/dynamic",
+    "pages/wodehuida/wodehuida",
+    "pages/wodezixun/wodezixun",
+    "pages/zhuan_da/zhuan_da",
+    "pages/doc_answer_detail/doc_answer_detail",
+    "pages/doc_answer/doc_answer",
+    "pages/tijian/tijian",
+    "pages/tijian/hot-sale/hot-sale",
+    "pages/tijian/physical/appoint/appoint",
+    "pages/tijian/tjxq/tjxq",
+    "pages/tijian/yyxq/yyxq",
+    "pages/tijian/tcxq/tcxq",
+    "pages/tijian/yybianji/yybianji",
+    "pages/tijian/tjxuzhi/tjxuzhi",
+    "pages/tijian/yyjilu/yyjilu",
+    "pages/tijian/choose-city/choose-city",
+    "pages/tijian/querenxq/querenxq",
+    "pages/specialtyContent/specialtyContent",
+    "pages/lianmlist/lianmlist",
+    "pages/faxian/faxian",
+    "pages/zixunanlixq/zixunanlixq",
+    "pages/wentijine/wentijine",
+    "pages/my_prescription/my_prescription",
+    "pages/tijian/detail/detail",
+    "pages/doctrospeack/doctrospeack",
+    "pages/switchCity/switchCity",
+    "pages/deveArticle/deveArticle",
+    "pages/deveVideo/deveVideo",
+    "pages/deveVoice/deveVoice",
+    "pages/zixunList/zixunList"
+            ]
+        },
+										        {
+            "root": "hyb_yl/backstageFollowUp/",
+            "pages": [
+
+    "pages/explanation/explanation",
+    "pages/explanationReply/explanationReply",
+    "pages/common/common",
+    "pages/explanationComplete/explanationComplete",
+    "pages/consultingTeam/consultingTeam",
+    "pages/groupChat/groupChat",
+    "pages/groupChatOver/groupChatOver",
+    "pages/casControl/casControl",
+    "pages/casControlNav/casControlNav",
+    "pages/casControlSeet/casControlSeet",
+    "pages/casControlmovement/casControlmovement",
+    "pages/healthRecord/healthRecord",
+    "pages/examine/examine",
+    "pages/examinePointing/examinePointing",
+    "pages/examinedateListImg/examinedateListImg",
+    "pages/pharmacy/pharmacy",
+    "pages/pharmacyAddresult/pharmacyAddresult",
+    "pages/pharmacyseet/pharmacyseet",
+    "pages/personalDetails/personalDetails",
+    "pages/ChangePatient/ChangePatient"
+            ]
+        },
+												        {
+            "root": "hyb_yl/backstageGroceries/",
+            "pages": [
+
+    "pages/information1/information1",
+    "pages/information2/information2",
+    "pages/chatRom/chatRom",
+    "pages/meetingPush/meetingPush",
+    "pages/doctorIntro/doctorIntro",
+    "pages/choosePerson/choosePerson",
+    "pages/patient_detail2/patient_detail2"
+            ]
+        },
+														        {
+            "root": "hyb_yl/backstageLife/",
+            "pages": [
+   "pages/advisory1/advisory1",
+    "pages/docfenxinfo/docfenxinfo",
+    "pages/particulars/particulars",
+    "pages/publishSaid/publishSaid",
+    "pages/publishFenx/publishFenx",
+    "pages/chooseSaid/chooseSaid",
+    "pages/commonalityseet/commonalityseet",
+    "pages/mycollect/mycollect",
+    "pages/myseet/myseet",
+    "pages/Dsaidnew/Dsaidnew",
+    "pages/shipinwenzhen/shipinwenzhen",
+    "pages/daozhen/daozhen",
+    "pages/daozhenyisheng/daozhenyisheng",
+    "pages/daozhenxinxi/daozhenxinxi",
+    "pages/daozhenpay/daozhenpay"
+            ]
+        },
+																        {
+            "root": "hyb_yl/backstageLifes/",
+            "pages": [
+    "pages/dialysis/dialysis",
+    "pages/integral/integral",
+    "pages/integrationRule/integrationRule",
+    "pages/mn/mn",
+    "pages/my_ti/my_ti",
+    "pages/detail/detail",
+    "pages/myCommunity/myCommunity",
+    "pages/WapprovePrice1/WapprovePrice1",
+    "pages/instructions/instructions",
+    "pages/Wapprove/Wapprove",
+    "pages/Wapprove1/Wapprove1",
+    "pages/Wapprove2/Wapprove2",
+    "pages/Wapprove3/Wapprove3",
+    "pages/WapproveSz/WapproveSz",
+    "pages/WapproveJ/WapproveJ",
+    "pages/WapproveWhospital/WapproveWhospital",
+    "pages/WapproveWhospitaloffice/WapproveWhospitaloffice",
+    "pages/WapproveWcertificate/WapproveWcertificate"
+            ]
+        },
+																		        {
+            "root": "hyb_yl/backstageMethod/",
+            "pages": [
+    "pages/patient/patient",
+    "pages/doctor/doctor",
+    "pages/department/department",
+    "pages/departmentIntroduce/departmentIntroduce",
+    "pages/hospital/hospital"
+            ]
+        },
+																				        {
+            "root": "hyb_yl/backstageOther/",
+            "pages": [
+  "pages/myRenZheng/myRenZheng",
+    "pages/editcatchphrase/editcatchphrase",
+    "pages/teamDetails1/teamDetails1",
+    "pages/teamDetails2/teamDetails2",
+    "pages/teamDetails5/teamDetails5",
+    "pages/intro/intro"
+            ]
+        },
+																						        {
+            "root": "hyb_yl/backstageServicess/",
+            "pages": [
+ "pages/searchSaid/searchSaid",
+    "pages/commonality/commonality",
+    "pages/management/management",
+    "pages/management1/management1",
+    "pages/management2/management2",
+    "pages/management2list/management2list",
+    "pages/bank/bank",
+    "pages/newbank/newbank",
+    "pages/newbank1/newbank1",
+    "pages/particulars/particulars",
+    "pages/casControlname/casControlname",
+    "pages/casControlname1/casControlname1",
+    "pages/protocol/protocol"
+
+            ]
+        },
+																	
+																										        {
+            "root": "hyb_yl/backstageServices/",
+            "pages": [
+
+    "pages/DepartmentalYishuo/DepartmentalYishuo",
+    "pages/yearcard/yearcard",
+    "pages/yearcardpay/yearcardpay",
+    "pages/yearcardlist/yearcardlist",
+    "pages/chufangjianyi/chufangjianyi",
+    "pages/kaiyao/kaiyao",
+    "pages/seldrup/seldrup",
+    "pages/vip/vip",
+    "pages/tijiandetail/tijiandetail",
+    "pages/baogaojiedu/baogaojiedu",
+    "pages/noreport/noreport",
+    "pages/vippay/vippay",
+    "pages/givevip/givevip",
+    "pages/shoushukuaiyue/shoushukuaiyue",
+    "pages/yuanchengkaifang/yuanchengkaifang",
+    "pages/yishengkaifang/yishengkaifang",
+    "pages/xuanzeyaopin/xuanzeyaopin",
+    "pages/yizhu/yizhu",
+    "pages/vipbuyrecord/vipbuyrecord"
+            ]
+        },
+																												        {
+            "root": "hyb_yl/backstageTeam/",
+            "pages": [
+ "pages/teamList/teamList",
+    "pages/createTeam/createTeam",
+    "pages/teamDetails/teamDetails",
+    "pages/teamDetails4/teamDetails4",
+    "pages/teamDetails3/teamDetails3",
+    "pages/list/list",
+    "pages/doctorIntro/doctorIntro",
+    "pages/addPerson/addPerson",
+    "pages/notice/notice",
+    "pages/noticeDetailContent/noticeDetailContent",
+    "pages/announce/announce",
+    "pages/WithdrawalRules/WithdrawalRules",
+    "pages/managementrecord/managementrecord",
+    "pages/teamListJoin/teamListJoin",
+    "pages/teamIntro/teamIntro",
+    "pages/serviceset/serviceset",
+    "pages/openservice/openservice"
+            ]
+        },
+		
+																														        {
+            "root": "hyb_yl/userCommunicate/",
+            "pages": [
+    "pages/changeDoctor/changeDoctor",
+    "pages/changeDoctors/changeDoctors",
+    "pages/intro/intro",
+    "pages/load/load",
+    "pages/order/order",
+    "pages/sure_Details/sure_Details",
+    "pages/addComment/addComment",
+    "pages/groupChat/groupChat",
+    "pages/myTeam/myTeam",
+    "pages/teamPerson/teamPerson",
+    "pages/teamMember/teamMember",
+    "pages/healthConsultant/healthConsultant",
+    "pages/myDoctorIntro/myDoctorIntro",
+    "pages/replied/replied",
+    "pages/nurseInfro/nurseInfro",
+    "pages/recordSigning/recordSigning",
+    "pages/preindex/agreeinfo/index",
+    "pages/preindex/index/index",
+    "pages/preindex/pre/index",
+    "pages/preindex/sickinfo/index"
+            ]
+        },
+		
+																														        {
+            "root": "hyb_yl/doctor/",
+            "pages": [
+ 
+    "pages/familydoctor/mydoctor/mydoctor",
+    "pages/familydoctor/servercenter/servercenter",
+    "pages/familydoctor/hospital/hospital",
+    "pages/familydoctor/teams/teams",
+    "pages/familydoctor/perfect/perfect",
+    "pages/familydoctor/signing/signing",
+    "pages/familydoctor/servicepackage/servicepackage",
+    "pages/familydoctor/signature/signature",
+    "pages/familydoctor/team/team",
+    "pages/familydoctor/sign/sign",
+    "pages/familydoctor/category/category",
+    "pages/familydoctor/serverpack/serverpack",
+    "pages/familydoctor/addpack/addpack",
+    "pages/familydoctor/classify/classify",
+    "pages/familydoctor/packdetail/packdetail"
+            ]
+        },
+				
+																														        {
+            "root": "hyb_yl/mycenter/",
+            "pages": [
+    "pages/regiOrder/regiOrder",
+    "pages/regiOrderinfor/regiOrderinfor",
+    "pages/followDoc/followDoc",
+    "pages/currOrder/currOrder",
+    "pages/myMedical/myMedical",
+    "pages/myCoupon/myCoupon",
+    "pages/organApply/organApply",
+    "pages/Organ/Organ",
+    "pages/expertAdmin/expertAdmin",
+    "pages/editProfile/editProfile"
+            ]
+        },
+
+
+																														        {
+            "root": "hyb_yl/lvtongserver/",
+            "pages": [
+    "pages/orderlist/orderlist",
+    "pages/orderdetail/orderdetail",
+    "pages/wodezixun/wodezixun",
+    "pages/index/index",
+    "pages/zhuanjiahuida/zhuanjiahuida",
+    "pages/capitacenter/capitacenter",
+    "pages/capitadetail/capitadetail",
+    "pages/docorder/docorder",
+    "pages/pingjia/pingjia"
+            ]
+        },
+																																        {
+            "root": "hyb_yl/yaoshi/",
+            "pages": [
+    "pages/index/index",
+    "pages/docorder/docorder",
+    "pages/chufangjianyi/chufangjianyi",
+    "pages/my_ti/my_ti",
+    "pages/usermx/usermx"
+            ]
+        }
+		
+		
+    ],
+
+  "permission": {
+    "scope.userLocation": {
+      "desc": "为了更好的服务您，请授权允许"
+    }
+  },	
+  "sitemapLocation": "sitemap.json"
+}

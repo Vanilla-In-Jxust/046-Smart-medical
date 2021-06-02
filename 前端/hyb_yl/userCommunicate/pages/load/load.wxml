@@ -1,0 +1,35 @@
+<view class="info">
+    <view class="top">
+        <view class="drupmes-img">
+            <image src="https://img1.dxycdn.com/2019/0125/653/3325176099507743447-22.png"></image>
+        </view>
+        <view class="drupmesbox">
+            <view class="son" wx:if="{{orderstatus=='0'}}">待发货</view>
+            <view class="son" wx:if="{{orderstatus=='1'}}">物流配送中</view>
+            <view class="son" wx:if="{{orderstatus=='2'}}">用户确认收货</view>
+            <view class="subtit">{{gsname}}</view>
+            <view class="subtit">{{type==1?num:'暂无运单信息'}}</view>
+        </view>
+    </view>
+    <view class="tips">
+        <view class="image">
+            <image src="https://7465-text-b8aafb-1258438742.tcb.qcloud.la/img/gantanhao.png?sign=04901d7aa53d144f47bf65f4d7ce3d05&t=1550225732"></image>
+        </view>
+        <view class="tishi">受天气影响,您的订单可能延迟配送,我们会全力为您服务,请您耐心等待</view>
+    </view>
+</view>
+<view class="load">
+    <view class="logisit" wx:for="{{list}}" wx:key="key">
+        <view class="list">
+            <image class="list_img_tab1" src="https://7465-text-b8aafb-1258438742.tcb.qcloud.la/img/签收.png?sign=9bdd2a7ad2c88b97382f156227c20ff1&t=1550307304" wx:if="{{item.id==0&&list.length>1}}"></image>
+            <image class="list_img" src="https://7465-text-b8aafb-1258438742.tcb.qcloud.la/img/no.png?sign=59f3aa8dbabb7a6ff971a3131e31f1be&t=1550307479" wx:if="{{item.id==0&&list.length==1}}"></image>
+            <image class="list_imgs" src="https://7465-text-b8aafb-1258438742.tcb.qcloud.la/img/no.png?sign=59f3aa8dbabb7a6ff971a3131e31f1be&t=1550307479" wx:if="{{item.id>0&&item.id<list.length-1}}"></image>
+            <image class="list_img" src="https://7465-text-b8aafb-1258438742.tcb.qcloud.la/img/start.png?sign=cdf5a24b03d7a1ee9fec96d30f782be2&t=1550307644" wx:if="{{item.id==list.length-1}}"></image>
+            <view class="list_name_page">
+                <view class="list_name">{{item.context}}</view>
+            </view>
+            <view class="list_dates_page">{{item.time}}</view>
+        </view>
+        <view class="writes"></view>
+    </view>
+</view>

@@ -1,0 +1,89 @@
+<view class="position fixed_top" wx:if="{{reports}}">
+    <scroll-view scrollLeft class="nav" scrollIntoView="{{into_id}}" scrollWithAnimation="true" scrollX="true">
+        <view bindtap="tabFun" class="nav_text {{curHdIndex==dicCode[index]?'nav_texta':''}}" data-id="{{dicCode[index]}}" data-name="{{item}}" id="all{{dicCode[index]}}" wx:for="{{dicContent}}" wx:key="{{ index }}">{{item}}
+      <view class="active_view" wx:if="{{curHdIndex==dicCode[index]}}"></view>
+        </view>
+    </scroll-view>
+    <navigator class="pointing" url="/hyb_yl/backstageFollowUp/pages/examinePointing/examinePointing?cdEmItem={{curHdIndex}}&nmEmItem={{name}}&teamId={{teamId}}" wx:if="{{reports.length>0}}">
+        <image class="pointing_img" src="/assets/images/logo.gif"></image>
+        <view class="pointing_text">{{name}}重要指示变化图</view>
+        <image class="pointing_img1_top" src="/assets/images/more.png"></image>
+    </navigator>
+    <text class="none_text" wx:if="{{noneFlag}}">暂无检验记录~</text>
+</view>
+<view style="height: 292rpx;"></view>
+<scroll-view bindscrolltolower="more" class="mg_bottom" scrollY="true">
+    <view wx:for="{{reports}}" wx:key="{{ index }}">
+        <view bindtap="getDetail" class="list_top" data-detailindex="{{index}}" wx:if="{{!item.detailFlag}}">
+            <text class="font_si18 font_co333">{{item.dateEm}}</text>
+            <image class="down_img" src="/assets/images/down.png"></image>
+        </view>
+        <view class="list {{index!=0?'listmg_top':''}}" wx:else>
+            <view class="list_title">
+                <view class="font_si14 font_co333">
+                    <text class="title_left">{{item.dateArr[2]}}</text>
+                    <text>/{{item.dateArr[1]}}月</text>
+                </view>
+                <view class="tap_img_view">
+                    <view bindtap="getData" class="tap_view {{item.currentIndex==1?'tap_view_active':''}}" data-detailindex="{{index}}" data-index="1">
+            表格
+          </view>
+                    <view bindtap="getData" class="tap_view {{item.currentIndex==2?'tap_view_active':''}}" data-detailindex="{{index}}" data-index="2">
+            照片
+          </view>
+                </view>
+            </view>
+            <view>
+                <view class="content_top font_si12 font_coccc" wx:if="{{item.currentIndex==1}}">
+                    <view>检测项目</view>
+                    <view class="top_left">检测值</view>
+                    <view class="top_right">参考值</view>
+                </view>
+                <view class="content_content">
+                    <view wx:if="{{item.currentIndex==1}}">
+                        <view class="content_list" wx:if="{{index>3?item.moreTextFlag:true}}" wx:for="{{item.reportLabs}}" wx:key="{{index}}">
+                            <view class="font_si14 font_co333">{{item.nmIndexLis}}</view>
+                            <view class="content_left">
+                                <view class="font_co333 font_si16 content_left_left">
+                                    <text class="direction color_red" wx:if="{{item.nmResult=='偏高'&&item.valueLis}}">↑</text>
+                                    <text class="direction font_co3b" wx:if="{{item.nmResult=='偏低'&&item.valueLis}}">↓</text>
+                                    <text class="" wx:if="{{item.valType!='text'}}">{{item.valueLis?item.valueLis:'未填写'}}</text>
+                                    <text class="" wx:else>{{item.casArray[item.valueLis]?item.casArray[item.valueLis]:'未填写'}}</text>
+                                </view>
+                                <view class="font_si12 font_coccc content_left_right">{{item.descRrs}}</view>
+                            </view>
+                            <view wx:if="{{item.flagChart!=1}}">
+                                <image class="content_img" src="{{item.flagChart==1?'/assets/images/logo.gif':''}}"></image>
+                            </view>
+                            <navigator hoverClass="hoverClass" url="/hyb_yl/backstageFollowUp/pages/examinedateListImg/examinedateListImg?cdIndexLis={{item.cdIndexLis}}&cdName={{item.nmIndexLis}}" wx:else>
+                                <image class="content_img" src="{{item.flagChart==1?'/assets/images/logo.gif':''}}"></image>
+                            </navigator>
+                        </view>
+                    </view>
+                    <view bindtap="previewImage" class="list_img_view {{item.images.length==1?'list_img_one':''}}" data-detailindex="{{index}}" wx:if="{{item.currentIndex==2}}">
+                        <image class="list_img {{index%2!=0?'img_left':''}}" data-imageUrl="{{item.imageUrl}}" src="{{item.imageUrl}}" wx:if="{{index>1?item.moreImgFlag:true}}" wx:for="{{item.images}}" wx:key="{{index}}"></image>
+                        <view class="font_si12 font_co666 no_img_view" wx:if="{{item.images.length<=0}}">暂无图片记录</view>
+                    </view>
+                    <block wx:if="{{item.currentIndex==1}}">
+                        <view bindtap="unfold" class="list_bottom" data-detailindex="{{index}}" wx:if="{{item.reportLabs.length>4}}">
+                            <text class="font_si12 font_co666 list_bottom_left">{{item.unfoldFlagOne}}</text>
+                            <image class="list_bottom_img" src="{{item.unfoldUrklOne}}"></image>
+                        </view>
+                        <view style="height: 40rpx;" wx:else></view>
+                    </block>
+                    <block wx:if="{{item.currentIndex==2}}">
+                        <view bindtap="unfoldTwo" class="list_bottom" data-detailindex="{{index}}" wx:if="{{item.images.length>2}}">
+                            <text class="font_si12 font_co666 list_bottom_left">{{item.unfoldFlagTwo}}</text>
+                            <image class="list_bottom_img" src="{{item.unfoldUrklTwo}}"></image>
+                        </view>
+                        <view style="height: 40rpx;" wx:else></view>
+                    </block>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">没有更多了~</view>
+</scroll-view>

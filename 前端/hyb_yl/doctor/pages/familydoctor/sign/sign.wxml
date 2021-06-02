@@ -1,0 +1,17 @@
+<view>
+    <view class="oval">
+        <view bindtap="takePictures" class="photoframe {{attendSuccessImg?'hide':'show'}}">
+            <view class="cameraImg">
+                <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/camera.png?sign=8ab274019670f1acccf45f890815b720&t=1571881386"></image>
+            </view>
+            <view>点击拍照</view>
+            <view>可拍正面、合同照</view>
+        </view>
+        <view class="photobox {{attendSuccessImg?'show':'hide'}}">
+            <view bindtap="takePictures" class="photoImg">
+                <image src="{{attendSuccessImg}}"></image>
+            </view>
+        </view>
+    </view>
+    <view bindtap="affirm" class="sign" style="background-color:{{bgc}}">确认签约</view>
+</view>

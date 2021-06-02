@@ -1,0 +1,94 @@
+view {
+    box-sizing: border-box;
+}
+
+.nk-box {
+    padding: 30rpx;
+    border-radius: 30rpx;
+    overflow: hidden;
+}
+
+.kthz {
+    height: 90rpx;
+    border-radius: 10rpx;
+    width: 690rpx;
+    background-color: #fff;
+    padding: 20rpx 23rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: 4;
+    font-size: 28rpx;
+    align-items: center;
+    border-bottom: 1rpx solid #EAEAEA;
+}
+
+page {
+    background: #f7f7f7;
+}
+
+.main {
+    width: 100%;
+    background: #fff;
+    padding: 0 20rpx 0rpx 20rpx;
+    margin-bottom: 200rpx;
+}
+
+.main .son {
+    width: 100%;
+    padding: 20rpx 0;
+    font-size: 20rpx;
+    border-bottom: 1rpx solid #EAEAEA;
+    display: flex;
+    align-items: center;
+}
+
+.main .son:last-child {
+    border-bottom: none;
+}
+
+.main .son .left {
+    width: 40%;
+    font-size: 28rpx;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.main .son .right {
+    width: 47%;
+}
+
+.main .son .right .year {
+    width: 110rpx;
+    padding: rpx 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28rpx;
+    background: #0087E0;
+    color: #fff;
+}
+
+.main .son .right input {
+    width: 100%;
+    color: #000000;
+    font-size: 28rpx;
+}
+
+.btn {
+    width: 100%;
+    padding: 0 20rpx;
+}
+
+.btn button {
+    width: 100%;
+    background: #0087E0;
+    color: #fff;
+}
+
+.danwei {
+    color: #c7c7c7;
+    font-size: 28rpx;
+    margin-left: 30rpx;
+}

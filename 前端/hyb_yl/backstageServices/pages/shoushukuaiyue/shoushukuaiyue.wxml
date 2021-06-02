@@ -1,0 +1,53 @@
+<view class="headimg">
+    <swiper autoplay circular duration="1000" interval="3000">
+        <swiper-item>
+            <image src="{{detail.pluginimgs}}"></image>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="containers">
+    <view class="groupitem">
+        <view class="groupitem-tit">预约本人手术</view>
+        <view class="anpaibox steps">
+            <view class="anpaiitem">
+                <text>√</text>
+                <text>视频面对面问诊</text>
+            </view>
+            <view class="anpaiitem">
+                <text>√</text>
+                <text>制定手术方案</text>
+            </view>
+            <view class="anpaiitem">
+                <text>√</text>
+                <text>安排手术</text>
+            </view>
+        </view>
+    </view>
+    <view class="groupitem">
+        <view class="groupitem-tit">服务流程</view>
+        <view class="steps">
+            <view class="stepspay">
+                <rich-text nodes="{{detail.serh_liuc}}"></rich-text>
+            </view>
+            <view class="xieyihint">
+                <view>协议说明：</view>
+                <rich-text nodes="{{detail.serh_xiey}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="radioChange" class="radios">
+        <radio checked="{{argeen}}" color="#0087E0">
+            <text style="color:#0087E0;">服务条款说明</text>
+        </radio>
+    </view>
+</view>
+<view bindtap="gosign" class="sign">去预约</view>
+<view catchtap="closezhe" class="zhe" wx:if="{{xieyi}}">
+    <view catchtap="function(){}" class="cont">
+        <view catchtap="function(){}" class="title">问诊协议</view>
+        <view catchtap="function(){}" class="rule_box">
+            <rich-text nodes="{{detail.tui_money}}"></rich-text>
+        </view>
+        <view catchtap="closezhe" class="rule_btn">我知道了</view>
+    </view>
+</view>

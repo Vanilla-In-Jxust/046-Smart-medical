@@ -1,0 +1,121 @@
+.problem {
+    padding: 37rpx;
+    background: #fff;
+}
+
+.pro-tit {
+    margin-bottom: 25rpx;
+    font-size: 36rpx;
+    color: #333;
+}
+
+.pro-con {
+    line-height: 45rpx;
+}
+
+.user-infor {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 23rpx;
+    padding: 37rpx;
+    background: #fff;
+}
+
+.user-infor image {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 10rpx;
+    margin-right: 24rpx;
+}
+
+.user-infor-r {
+    width: 570rpx;
+}
+
+.user-in-rt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-rt-l {
+    display: flex;
+    font-size: 32rpx;
+}
+
+.user-rt-l view {
+    margin-left: 20rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.user-pri {
+    font-size: 30rpx;
+    color: #D53439;
+}
+
+.user-tip {
+    margin-top: 8rpx;
+    font-size: 28rpx;
+    color: #666;
+}
+
+.order-num {
+    display: flex;
+    justify-content: flex-start;
+    padding: 26rpx 37rpx;
+    margin-top: 24rpx;
+    background: #fff;
+    font-size: 30rpx;
+}
+
+.order-ri {
+    margin-left: 24rpx;
+    color: rgb(141,141,141);
+}
+
+.order-list {
+    margin-top: 23rpx;
+    padding: 15rpx 37rpx;
+    background: #fff;
+}
+
+.order-li-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20rpx 0;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.bar {
+    height: 98rpx;
+}
+
+.order-btn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 98rpx;
+    background: #fff;
+}
+
+.btn1 {
+    width: 38%;
+    font-size: 32rpx;
+    color: #0087E0;
+    text-align: center;
+    line-height: 98rpx;
+}
+
+.btn2 {
+    width: 62%;
+    font-size: 32rpx;
+    text-align: center;
+    line-height: 98rpx;
+    color: #fff;
+    background: #0087E0;
+}

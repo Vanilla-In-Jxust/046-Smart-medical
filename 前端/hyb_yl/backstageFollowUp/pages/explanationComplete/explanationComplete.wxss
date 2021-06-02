@@ -1,0 +1,5 @@
+@import "../explanationReply/explanationReply.wxss";
+
+.quest_time {
+    padding-bottom: 0;
+}

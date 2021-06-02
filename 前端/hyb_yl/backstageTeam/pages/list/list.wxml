@@ -1,0 +1,43 @@
+<view class="top_view">
+    <view class="seet_box">
+        <view class="seet">
+            <image class="search_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/search_6.png?sign=f84d0e87ded5056d05d5c43f6141e844&t=1571453613"></image>
+            <input bindinput="input" class="input" placeholder="按医护名搜索" placeholderStyle="color:#999;"></input>
+        </view>
+        <view class="search_line"></view>
+        <view bindtap="wzclicknavTwo" class="add_view" data-arr="{{arr}}">
+            <image class="search_addimg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/search_addimg.png?sign=89865b02f5b16f7a6bcf604448182911&t=1571453651"></image>
+        </view>
+    </view>
+    <view class="tap_view font_si16 font_co333" wx:if="{{show}}">
+        <view bindtap="tap" class="tap_content {{currentIndex==1?'font_co3b':''}}" data-current="1">团队成员
+      <view class="tap_line" wx:if="{{currentIndex==1}}"></view>
+        </view>
+        <view bindtap="tap" class="tap_content {{currentIndex==2?'font_co3b':''}}" data-current="2">邀请记录
+      <view class="tap_line" wx:if="{{currentIndex==2}}"></view>
+        </view>
+    </view>
+</view>
+<view style="height: {{show?184:88}}rpx;"></view>
+<view class="for">
+    <view bindtap="clicknav" class="groups_name" data-type="{{item.yao_type}}" data-yao_id="{{item.yao_id}}" data-zid="{{item.zid}}" wx:for="{{zhuanjia}}" wx:key="{{ index }}">
+        <view class="sculpture">
+            <image class="img" src="{{item.z_thumbs}}"></image>
+        </view>
+        <view class="occupation_name">{{item.z_name}}</view>
+        <view class="groups_logo">{{item.textname}}</view>
+    </view>
+</view>
+<block wx:if="{{currentIndex==1}}">
+    <view class="for" wx:if="{{show}}">
+        <view bindtap="clicknav" class="groups_name" data-type="{{item.yao_type}}" data-yao_id="{{item.yao_id}}" data-zid="{{item.zid}}" wx:for="{{managers}}" wx:key="{{ index }}">
+            <view class="sculpture">
+                <image class="img" src="{{item.userIcon}}"></image>
+            </view>
+            <view class="occupation" style="{{managerspostArrColor[index]}};">{{managerspostArr1[index]}}</view>
+            <view class="occupation_name">{{item.doctorName}}</view>
+            <view class="groups_logo">{{managerspostArr[index]}}</view>
+        </view>
+    </view>
+    <view style="height: 500rpx; line-height: 500rpx; text-align: center; font-size: 32rpx; color: #666;" wx:if="{{zhuanjia.length==0}}">暂无记录</view>
+</block>

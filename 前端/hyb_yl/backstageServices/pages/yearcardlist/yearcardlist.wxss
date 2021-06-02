@@ -1,0 +1,169 @@
+page {
+    background: #fff;
+    padding: 25rpx;
+    box-sizing: border-box;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.topTabSwiper {
+    width: 100%;
+    display: flex;
+    border-bottom: 1rpx solid #ccc;
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.topTabSwiper text {
+    display: inline-block;
+    line-height: 90rpx;
+}
+
+.tab {
+    flex: 1;
+    text-align: center;
+}
+
+.topTabSwiper:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.tabBorer text {
+    border-bottom: 5rpx solid #4281f2;
+    color: #378dd8;
+}
+
+.successbox {
+    margin-top: 100rpx;
+}
+
+.vipcard {
+    padding: 0 30rpx;
+    background: #fff;
+}
+
+.carditem {
+    border-radius: 12rpx;
+    overflow: hidden;
+    box-shadow: 0 3rpx 6rpx 0 rgba(0,0,0,0.12);
+    margin-top: 25rpx;
+}
+
+.vip-card {
+    position: relative;
+    height: 260rpx;
+    overflow: hidden;
+}
+
+.vipcard-card {
+    padding: 20rpx 0 60rpx;
+}
+
+.vip-card-image {
+    width: 100%;
+    height: 360rpx;
+}
+
+.vip-card-body {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 260rpx;
+}
+
+.vip-card-tit {
+    font-size: 26rpx;
+    color: #fff;
+}
+
+.vip-card-body .name {
+    position: absolute;
+    left: 40rpx;
+    top: 40rpx;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.05);
+    font-size: 38rpx;
+    line-height: 42rpx;
+}
+
+.vip-card-body .name .card-tag {
+    margin-left: 15rpx;
+}
+
+.vip-card-body .section {
+    position: absolute;
+    left: 40rpx;
+    top: 94rpx;
+    font-size: 26rpx;
+    line-height: 30rpx;
+    color: #fff;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.05);
+    font-weight: 300;
+}
+
+.vip-card-body .section .job {
+    margin-left: 26rpx;
+}
+
+.vip-card-body .price {
+    position: absolute;
+    left: 40rpx;
+    top: 164rpx;
+    color: #fff;
+    font-size: 26rpx;
+}
+
+.vip-card-body .price .now {
+    position: relative;
+    display: inline-block;
+}
+
+.price-now-text {
+    font-size: 50rpx;
+    font-weight: 600;
+    line-height: 54rpx;
+    margin-right: 4rpx;
+}
+
+.price-now-text {
+    font-size: 26rpx;
+    opacity: 0.8;
+    text-decoration: line-through;
+    line-height: 40rpx;
+    margin-right: 4rpx;
+}
+
+.vip-card-body-image {
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    top: 30rpx;
+    right: 40rpx;
+}
+
+.cardtime {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 25rpx;
+    justify-content: space-between;
+}
+
+.cardtime-left {
+    font-size: 22rpx;
+    color: #B5B5B5;
+}
+
+.cardtime-right {
+    font-size: 32rpx;
+    color: #68C3A0;
+}

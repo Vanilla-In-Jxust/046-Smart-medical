@@ -1,0 +1,50 @@
+<view class="tab">
+    <view bindtap="tabClick" class="tab1 {{curHdIndex=='1'?'tab2':''}}" data-id="1">在用</view>
+    <view bindtap="tabClick" class="tab1 {{curHdIndex=='2'?'tab2':''}}" data-id="2">已停用</view>
+</view>
+<view class="tab1_a" wx:if="{{judge}}">
+    <view class="list" wx:for="{{obj}}" wx:key="{{ index }}">
+        <view class="img">
+            <image class="img_img" src="{{item.nmOrdItemImg}}"></image>
+        </view>
+        <view class="text">
+            <view class="text1">{{item.nmOrdItem}}</view>
+            <view class="text2"> {{item.nmFreq}}  一次{{item.numSingle}}{{item.numSingleUnit}}</view>
+            <view class="text3">开始时间：{{item.beginTime}}</view>
+        </view>
+    </view>
+    <view class="forlist">
+    效果列表
+    <image bindtap="seet" class="list_img" src="/assets/images/list.png"></image>
+    </view>
+    <view class="box-x">
+        <scroll-view bindscrolltolower="lower" scrollY="true" style="max-height:{{height}}px">
+            <view bindtap="navClick" class="for_list" data-id="{{item.id}}" wx:for="{{objx}}" wx:key="{{ index }}">
+                <view class="for_list_auto">
+                    <view class="for_list_auto_box">
+                        <image class="for_list_auto_box_img" src="{{arr[index]}}"></image>
+                        <text class="for_list_auto_box_text">{{item.nmTag}}</text>
+                        <text class="for_list_auto_box_text1">{{item.effectTimeString}}</text>
+                    </view>
+                    <view class="for_list_text">
+          {{item.content}}
+         </view>
+                    <image class="for_list_text_img" src="/assets/images/more.png"></image>
+                </view>
+            </view>
+            <view class="font_co999 font_si14 more_text public_white" wx:if="{{noFlag}}">已到底部</view>
+        </scroll-view>
+    </view>
+</view>
+<view class="tab1_b" wx:if="{{judges}}">
+    <view class="list" wx:for="{{objs}}" wx:key="{{ index }}">
+        <view class="img">
+            <image class="img_img" src="{{item.nmOrdItemImg}}"></image>
+        </view>
+        <view class="text">
+            <view class="text1">{{item.nmOrdItem}}</view>
+            <view class="text2"> {{item.nmFreq}} 一次 {{item.numSingle}} {{item.numSingleUnit}}</view>
+            <view class="text3_a">用药时间1：{{item.beginTime}}</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,2 @@
+<view class="box"></view>
+<view bindtap="click" class="li" data-fenzuid="{{item.fenzuid}}" wx:for="{{arr}}" wx:key="{{ index }}">{{item.fenzname}}</view>

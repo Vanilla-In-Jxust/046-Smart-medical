@@ -1,0 +1,7 @@
+view {
+    box-sizing: border-box;
+}
+
+page>view {
+    padding: 24rpx;
+}

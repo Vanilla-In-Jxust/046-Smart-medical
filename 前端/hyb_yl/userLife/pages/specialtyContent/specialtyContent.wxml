@@ -1,0 +1,52 @@
+<view class="pagesbox">
+    <view class="hospitalname">{{info.agentname}}</view>
+    <view class="hospitalgrade">
+        <text>√</text>
+        <text>{{info.grade_name}}</text>
+    </view>
+    <view class="hospitalmes {{xianzhi?'xianzhi':''}}">{{info.lntroduction}}</view>
+    <view bindtap="morebtns" class="moremes" wx:if="{{xianzhi}}">更多医院介绍信息 ></view>
+    <view bindtap="openoaction" class="hospitalsite weizhis" data-address="{{info.address}}-{{info.xxaddress}}" data-latitude="{{info.latitude}}" data-longitude="{{info.longitude}}">
+        <view>{{info.address}}-{{info.xxaddress}}</view>
+        <view>查看地图 ></view>
+    </view>
+    <view bindtap="tellsbtn" class="hospitalsite" data-tel="{{info.hospitaltel}}">
+        <view>联系电话（总机）</view>
+        <view>{{info.hospitaltel}}></view>
+    </view>
+    <view class="doctorlist">支持在线咨询医生</view>
+    <view class="searchresult">
+        <view bindtap="docinfo" class="yishneginfo" data-id="{{item.zid}}" wx:for="{{info.doctorlist}}" wx:key="d">
+            <view class="info-img">
+                <image src="{{item.zhuanjia_thumb}}"></image>
+            </view>
+            <view class="userinfo-body">
+                <view class="doctor-info">
+                    <text class="doctor-name">{{item.z_name}}</text>
+                    <text class="doctor-section">{{item.zhuanjia_zhicheng}}</text>
+                </view>
+                <view class="doctor-hospital">
+                    <text class="doctor-section-info">{{item.zhuanjia_keshi}}</text>
+                    <text class="doctor-hosptial-name">{{item.zhuanjia_jigou}}</text>
+                </view>
+                <view class="doctor-tags">
+          擅长：{{item.authority}}
+        </view>
+                <view class="doctor-answer-star">
+                    <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/start.png?sign=3ab26ae6acd400d178daae014084e739&t=1591585512"></image>
+                    <view class="doctor-star">{{item.pingfen}}</view>
+                    <view class="answer-count">月回答{{item.xn_answer}}</view>
+                    <view class="prescription-count"> 月处方{{item.xn_chufang}} </view>
+                    <view class="reply-time-str">{{item.xytime}}分钟响应</view>
+                </view>
+                <view class="ask-doctor" wx:if="{{item.kaitongfuwu.length>0}}">
+                    <view class="price-values-wrapper">
+                        <view class="price-values">
+                            <view class="price-value" wx:if="{{index<2}}" wx:for="{{item.kaitongfuwu}}" wx:for-item="pluginfuwu">{{pluginfuwu.titlme}} ￥{{pluginfuwu.ptmoney}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

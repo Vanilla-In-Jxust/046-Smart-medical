@@ -1,0 +1,120 @@
+<view class="lemma">
+    <view class="lemma-label" style="background-image: url(https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/buguize.png?sign=b98c49db05239871cffb1fd4ec212947&t=1585204955)"> {{info.styles}}</view>
+    <view class="lemma-title">{{title}}</view>
+    <view class="lemma-author" wx:if="{{info.openid!=''}}">
+        <view class="tags">
+            <text>词条作者</text>
+        </view>
+        <image class="lemma-author-avatar" src="{{info.u_thumb}}"></image>
+        <view class="lemma-author-info">{{info.u_name}}</view>
+    </view>
+    <view class="lemma-author" wx:if="{{info.zid!='0'}}">
+        <view class="tags">
+            <text>审核专家</text>
+        </view>
+        <image class="lemma-author-avatar" src="{{info.advertisement}}"></image>
+        <view class="lemma-author-info">{{info.z_name}}</view>
+        <view class="lemma-author-info">{{info.keshi}}</view>
+        <view class="lemma-author-info">{{info.zhicheng}}</view>
+        <image class="lemma-author-arrow" src="../../../images/arrow_03.png"></image>
+    </view>
+    <view class="lemma-time">
+        <text class="lemma-time-item">发布时间 {{info.created}}</text>
+        <text class="lemma-time-item">最近编辑 {{info.created}}</text>
+    </view>
+    <view bindtap="handleDiseaseNavigate" class="lemma-desc">
+        <rich-text nodes="{{content}}"></rich-text>
+    </view>
+    <view class="more">
+        <view bindtap="Tapitem" class="more-button" data-ids="a1" data-name="简介">查看详情</view>
+    </view>
+</view>
+<view class="detail-module">
+    <view bindtap="Tapitem" class="detail-module-item" data-ids="{{item.ids}}" data-name="{{item.texts}}" wx:for="{{btns}}" wx:key="p">
+        <image class="detail-module-icon" src="{{item.imgs}}"></image>
+        <view class="detail-module-title">{{item.texts}}</view>
+    </view>
+</view>
+<view class="tabs {{fixeds?'fixed':'fi'}}">
+    <view class="tabitem" wx:for="{{tabs}}" wx:key="s">
+        <view bindtap="tabclick" class="{{tabcurrent==index?'selected-tab':''}}" data-dex="{{index}}">{{item}}</view>
+    </view>
+</view>
+<view class="searchresult" wx:if="{{tabcurrent==0}}">
+    <view bindtap="navigator" class="yishneginfo" data-u_id="{{item.u_id}}" data-zid="{{item.zid}}" wx:for="{{doctor}}" wx:key="d">
+        <view class="info-img">
+            <image src="{{item.advertisement}}"></image>
+        </view>
+        <view class="userinfo-body">
+            <view class="doctor-info">
+                <text class="doctor-name">{{item.z_name}}</text>
+                <text class="doctor-section">{{item.zhicheng}}</text>
+            </view>
+            <view class="doctor-hospital">
+                <text class="doctor-section-info">{{item.keshi_twos}}</text>
+                <text class="doctor-hosptial-name">{{item.jigou}}</text>
+            </view>
+            <view class="doctor-tags">
+				擅长：{{item.authority}}
+			</view>
+            <view class="doctor-answer-star">
+                <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/start.png?sign=37b00643ecee9787a6b56a045f953edc&t=1592878856"></image>
+                <view class="doctor-star">{{item.score=='0'?'5':item.score}}</view>
+                <view class="answer-count">月回答{{item.xn_reoly}}</view>
+                <view class="prescription-count"> 月处方{{item.xn_cf}} </view>
+                <view class="reply-time-str">{{item.xytime}}分钟响应</view>
+            </view>
+            <view class="doctor-list_dis"></view>
+            <view class="ask-doctor">
+                <view class="price-values-wrapper">
+                    <view class="price-values">
+                        <view class="price-value" wx:if="{{index<2}}" wx:for="{{item.plugin.info}}" wx:for-item="items">
+                            <text>{{items.titlme}}￥{{items.ptmoney}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="evaluate" wx:if="{{tabcurrent==1}}">
+    <view class="evaluateitem" wx:for="{{answer}}">
+        <view class="question-tit">
+            <image class="userhead" src="{{item.u_thumb}}"></image>
+            <view>{{item.u_name}}</view>
+        </view>
+        <text class="public-question-content">{{item.content}}</text>
+        <view class="public-question-count">{{item.created}}</view>
+    </view>
+</view>
+<view wx:if="{{tabcurrent==2}}">
+    <view bindtap="handleNavigateDetail" class="article-item-contain" data-id="{{item.id}}" data-p_id="{{item.p_id}}" data-zid="{{item.zid}}" wx:for="{{zixun}}">
+        <view class="article-info">
+            <view class="article-header"> {{item.title}} </view>
+            <view class="article-body">
+                <rich-text nodes="{{item.content}}"></rich-text>
+            </view>
+        </view>
+        <image class="article-image" mode="aspectFill" src="{{item.thumb}}"></image>
+    </view>
+</view>
+<view class="posfix">
+    <view bindtap="navicate">
+        <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/index_hover.png?sign=aca92de1d718d91eecaf7083ee3c671c&t=1590657257"></image>
+        <text>首页</text>
+    </view>
+    <view catchtap="hasmask">
+        <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/share.png?sign=dcec55393ac23c52d0698d843f48b428&t=1590657300"></image>
+        <text>分享</text>
+    </view>
+</view>
+<view bindtap="mask_key" class="mask" hidden="{{maskey}}">
+    <view class="mask_sign">
+        <image mode="widthFix" src="{{img}}"></image>
+        <button bindtap="maskbtn" wx:if="{{maskbtn_key}}">
+            <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/assets/images/down.svg?sign=3e7a78c847ff902665701e396e520f41&t=1585299086"></image>
+			保存图片
+		</button>
+        <text wx:else>图片已保存到你的相册</text>
+    </view>
+</view>

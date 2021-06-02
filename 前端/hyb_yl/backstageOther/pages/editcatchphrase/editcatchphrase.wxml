@@ -1,0 +1,6 @@
+<view>
+    <textarea bindinput="getText" class="text_input font_si18 font_co333" placeholder="在此编写常用语" placeholderClass="placeholder" value="{{text}}"></textarea>
+</view>
+<view bindtap="save" class="save_view">
+    <view class="save_btn linear_btn">保存</view>
+</view>

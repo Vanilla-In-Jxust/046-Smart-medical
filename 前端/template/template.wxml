@@ -1,0 +1,10 @@
+<template name="tabBar">
+    <view class="footer">
+        <view class="footer-list" style="width:{{100/footer.footerlist.length}}%" wx:for="{{footer.footerlist}}" wx:key="ft">
+            <navigator hoverClass="none" openType="redirectTo" url="{{item.link}}?index={{index}}">
+                <image data-index="{{index}}" src="{{footer.footerTab==index?item.selected_img:item.default_img}}"></image>
+                <text style="color:{{footer.footerTab==index?item.color:''}}">{{item.diy_name}}</text>
+            </navigator>
+        </view>
+    </view>
+</template>

@@ -1,0 +1,87 @@
+<view class="seet_top">
+    <view class="xxx"></view>
+    <view class="wz_tablist">
+        <view bindtap="tapFun1" class="wz_tablist1 {{tablistIndex==0?'active1':''}}" data-current="0">线上科室
+
+    </view>
+        <view bindtap="tapFun1" class="wz_tablist1 {{tablistIndex==1?'active1':''}}" data-current="1">自由团体
+
+    </view>
+    </view>
+    <view class="seet_box">
+        <image class="seet_boxImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/ss.png?sign=8535ccf54ba65778a3846add6cf3ed5a&t=1571471613"></image>
+        <input bindinput="changeInput" class="seetInput" placeholder="输入团队名称/医生名称查找" placeholderStyle="color:#999;"></input>
+        <image bindtap="searchSomeOne" class="seet_boxImage" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/search_team.png?sign=31988de76ded9f82ac32f63117a31c53&t=1571471628"></image>
+    </view>
+</view>
+<scroll-view bindscrolltolower="getMore" class="scroll-view public_white" scrollY="true">
+    <view wx:for="{{doctors}}" wx:key="{{ index }}">
+        <navigator class="public_white navigator_view" url="/hyb_yl/backstageTeam/pages/teamIntro/teamIntro?t_id={{item.t_id}}&teampic={{item.teampic}}&zid={{item.zid}}&teamname={{item.teamname}}&teamtext={{item.teamtext}}&z_thumbs={{item.z_thumbs}}&z_name={{item.z_name}}">
+            <view class="doctor_view">
+                <view class="doctor_view_right">
+                    <image class="doctor_img" mode="aspectFill" src="{{item.teampic}}"></image>
+                    <view class="font_si14 font_co999 name_view">
+                        <view class="nmHospital">
+                            <view class="img_right">
+                                <text class="font_co333 name_text font_si16">{{item.teamname}}</text>
+                            </view>
+                            <text class="font_si12 font_co666  be_good">
+                                <text class="job">团队长：{{item.z_name?item.z_name:''}}</text>
+                            </text>
+                        </view>
+                    </view>
+                </view>
+                <view class="font_si16 font_co666 be_good_cotent">
+                    <text class="font_co333">团队简介：</text>{{item.teamtext}}</view>
+            </view>
+            <view class="font_si14 font_co999 sign_number">
+                <view>
+                    <text>医护</text>
+                    <text class="people_number font_co333">{{item.docnum.docnum}}</text>
+                </view>
+                <view class="people_line"></view>
+                <view>
+                    <text>患者</text>
+                    <text class="people_number font_co333">{{item.team.patientCount}}</text>
+                </view>
+            </view>
+        </navigator>
+        <view class="public_white navigator_view" wx:if="{{item.team.activeFlag==0}}">
+            <view class="mg_top10" wx:if="{{index!=0}}"></view>
+            <view class="doctor_view">
+                <view class="doctor_view_right">
+                    <image class="doctor_img" mode="aspectFill" src="{{item.team.teamHeaderUrl}}"></image>
+                    <view class="font_si14 font_co999 name_view">
+                        <view class="nmHospital">
+                            <view class="img_right">
+                                <text class="font_co333 name_text font_si16">{{item.team.teamName}}</text>
+                                <view class="shop_view font_cofa6 font_si12" wx:if="{{item.team.activeFlag==0}}">停业中</view>
+                            </view>
+                            <text class="font_si12 font_co666  be_good">
+                                <text class="job">团队长：{{item.team.createrName}}</text>
+                            </text>
+                        </view>
+                    </view>
+                </view>
+                <view class="font_si16 font_co666 be_good_cotent">
+                    <text class="font_co333">团队简介：</text>{{item.team.teamDesc}}</view>
+            </view>
+            <view class="font_si14 font_co999 sign_number">
+                <view>
+                    <text>签约人数</text>
+                    <text class="people_number font_co333">{{item.doctor.patientCount}}</text>
+                </view>
+                <view class="people_line"></view>
+                <view>
+                    <text>服务次数</text>
+                    <text class="people_number font_co333">{{item.doctor.askNum}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="noData font_si18 font_co333" wx:if="{{noDataBoo}}">未找到相关信息，请重新查找~</view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">没有更多了~</view>
+</scroll-view>

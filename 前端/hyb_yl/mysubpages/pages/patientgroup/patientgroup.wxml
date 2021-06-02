@@ -1,0 +1,77 @@
+<view bindtap="search" class="patient-top">
+    <view class="patient-search">
+        <image src="../../../images/search.png"></image>
+        <view>搜索患者姓名</view>
+    </view>
+</view>
+<view class="patient-list">
+    <view class="patient-item">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/hz2.png?sign=9c68fa09f3523f280854e0f6c5a1e6a0&t=1591240849"></image>
+        <view>新患者</view>
+    </view>
+    <view class="patient-item">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/hz2.png?sign=a26f958364594ba0c4d82e8a5265dbc5&t=1591240879"></image>
+        <view>添加分组</view>
+    </view>
+    <view class="patient-item">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/hz3.png?sign=9285e25c0e044e29bbcce5c7f116dc43&t=1591240907"></image>
+        <view>患者分组</view>
+    </view>
+</view>
+<view class="patient-open">
+    <view bindtap="toggleopen1" class="patient-tit">
+        <view class="patient-t-le">
+            <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/jiaobiao.png?sign=f55f25f2e09bd15259cf27ae95fb5a85&t=1591240941"></image>
+            <view>签约患者</view>
+        </view>
+        <view class="patient-num">(20)</view>
+    </view>
+    <view class="patient-user {{islist1?'patient-user-act':''}}">
+        <view class="patient-user-item" wx:for="{{qylist1}}">
+            <view class="patient-user-le">
+                <image src="../../../images/toxiang.png"></image>
+                <view class="patient-name">欧阳娜娜  <view>女  26岁</view>
+                </view>
+            </view>
+            <view class="patient-label">标签</view>
+        </view>
+    </view>
+</view>
+<view class="patient-open">
+    <view bindtap="toggleopen2" class="patient-tit">
+        <view class="patient-t-le">
+            <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/jiaobiao.png?sign=f55f25f2e09bd15259cf27ae95fb5a85&t=1591240941"></image>
+            <view>普通患者</view>
+        </view>
+        <view class="patient-num">(20)</view>
+    </view>
+    <view class="patient-user {{islist2?'patient-user-act':''}}">
+        <view class="patient-user-item" wx:for="{{qylist2}}">
+            <view class="patient-user-le">
+                <image src="../../../images/toxiang.png"></image>
+                <view class="patient-name">欧阳娜娜  <view>女  26岁</view>
+                </view>
+            </view>
+            <view class="patient-label">标签</view>
+        </view>
+    </view>
+</view>
+<view class="patient-open">
+    <view bindtap="toggleopen3" class="patient-tit">
+        <view class="patient-t-le">
+            <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/jiaobiao.png?sign=f55f25f2e09bd15259cf27ae95fb5a85&t=1591240941"></image>
+            <view>年卡患者</view>
+        </view>
+        <view class="patient-num">(20)</view>
+    </view>
+    <view class="patient-user {{islist3?'patient-user-act':''}}">
+        <view class="patient-user-item" wx:for="{{qylist3}}">
+            <view class="patient-user-le">
+                <image src="../../../images/toxiang.png"></image>
+                <view class="patient-name">欧阳娜娜  <view>女  26岁</view>
+                </view>
+            </view>
+            <view class="patient-label">标签</view>
+        </view>
+    </view>
+</view>

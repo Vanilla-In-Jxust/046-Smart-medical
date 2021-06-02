@@ -1,0 +1,53 @@
+<view class="wz-wrap">
+    <scroll-view scrollLeft scrollX class="wz-wraptop" scrollIntoView="{{into_id}}" scrollWithAnimation="true" style="height: 80rpx;white-space: nowrap;">
+        <view bindtap="clockColor" class="wz-list {{num==index?'wz-listcolor':''}}" data-id="{{item.hj_id}}" data-num="{{index}}" data-ueid="all{{index}}" id="all{{index}}" wx:for="{{Wpost}}" wx:key="{{ index }}"> {{item.hj_name}}</view>
+    </scroll-view>
+    <view bindtap="clickshow" class="wz-shan">
+        <image class="wz-shanImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wxsj.png?sign=c1627f0bc12114a88bd54246b8ada0b6&t=1592016624"></image>
+    </view>
+    <view class="wz-shan1" wx:if="{{show}}">
+        <view class="wz-shan1Top">
+      全部类目
+      <view bindtap="clickhide" class="wz-shan1Topimgbox">
+                <image class="wz-shanImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wxsj1.png?sign=e2a699f00b13fd3965da274c982526aa&t=1592016634"></image>
+            </view>
+        </view>
+        <view bindtap="clockColor" class="wz-list1  {{num==index?'wz-listcolor':''}}" data-id="{{item.hj_id}}" data-num="{{index}}" data-ueid="all{{index}}" wx:for="{{Wpost}}" wx:key="key"> {{item.hj_name}}</view>
+    </view>
+</view>
+<scroll-view bindscrolltolower="lower1" scrollY="true" style="max-height:{{height}}px">
+    <view class="list" wx:for="{{hjlist}}" wx:key="key">
+        <view class="list1">
+            <view bindtap="particulars" class="list_headline" data-id="{{item.eduId}}" data-index="{{index}}">
+                <view class="list_headline_text">{{item.h_title?item.h_title:''}}</view>
+                <view class="name_time">{{item.h_admin}} {{item.created}} {{item.nmType?item.nmType:''}}</view>
+                <view class="like_box">
+                    <view class="like">
+                        <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yanjing.png?sign=eae96dc2536153f55562bf0074c8f9fc&t=1592016575"></image>
+                        <view class="list_img_text">{{item.h_read}}</view>
+                    </view>
+                    <view class="like">
+                        <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzzan.png?sign=f61513aa531c5f95e1a84ae67bcfff06&t=1592016595"></image>
+                        <view class="list_img_text">{{item.h_dianzan}}</view>
+                    </view>
+                    <view class="like">
+                        <image class="list_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzzuan.png?sign=be44c3ecb8b48edd9d82cffbbe977228&t=1592016605"></image>
+                        <view class="list_img_text">{{item.h_zhuanfa}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="list_headline_boximg">
+                <view class="headline_view list_headline_boximg1">
+                    <image bindtap="particulars" class="list_headline_boximg1" data-id="{{item.eduId}}" data-index="{{index}}" src="{{item.h_pic}}"></image>
+                    <view bindtap="particulars" class="list_headline_boximg1 headline_view_absolute" data-id="{{item.eduId}}" data-index="{{index}}" wx:if="{{item.eduType==2}}">
+                        <image class="headline_view_absolute_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/vd.png?sign=4dfb973a6b59f7681cdba338d4d39fc0&t=1592016680"></image>
+                    </view>
+                </view>
+                <view bindtap="share" class="share" data-index="{{index}}">
+                    <image class="share_masturbation" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/masturbation.png?sign=3fa97ace55e4ce5cc6f2f427b582cba9&t=1592016659"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="font_co999 font_si14 more_text public_white" wx:if="{{noFlag}}">已到底部</view>
+</scroll-view>

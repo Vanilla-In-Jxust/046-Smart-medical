@@ -1,0 +1,37 @@
+<view class="vipcard">
+    <view class="vipcard-card">
+        <view class="vip-card">
+            <image class="vip-card-image" src="https://img1.dxycdn.com/2019/0125/653/3325176099507743447-22.png"></image>
+            <view bindtap="handleClickCard" class="vip-card-body">
+                <view class="name">
+                    <text>{{zj_year.z_name}}</text>
+                    <text class="card-tag">医生年卡</text>
+                </view>
+                <view class="section">
+                    <text>{{zj_year.keshi}}</text>
+                    <text class="job">{{zj_year.job_name}}</text>
+                </view>
+                <view class="price">
+                    <view class="now">
+                        <text class="price-now-text">{{zj_year.old_price}}</text>元</view>
+                    <view class="origin">
+                        <text class="price-origin-text">{{zj_year.new_price}}</text>元</view>
+                </view>
+                <image class="vip-card-body-image" src="{{zj_year.advertisement}}"></image>
+            </view>
+            <view class="vip-card-footer">
+                <view class="footer-info footer-info-buycard">
+                    <view>服务期限 {{zj_year.times}}年</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="vippay-tips-txt">医生的回答只作为健康咨询类建议，不作为诊断和治疗依据，咨询建议不能代替医生面诊</view>
+    <view class="vippay-action">
+        <view class="vippay-action-price">
+            <text class="all">合计：</text>
+            <text class="number">￥{{zj_year.new_price}}</text>
+        </view>
+        <view catchtap="createVipOrder" class="vippay-action-pay button">立即支付</view>
+    </view>
+</view>

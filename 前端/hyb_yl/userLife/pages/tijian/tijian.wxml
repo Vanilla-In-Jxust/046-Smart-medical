@@ -1,0 +1,42 @@
+<view class="index">
+    <gift></gift>
+    <swiper autoplay="{{autoplay}}" circular="{{circular}}" class="index__swiper" indicatorActiveColor="#EA5504" indicatorColor="#FFFFFF" indicatorDots="{{indicatorDots}}" interval="{{interval}}">
+        <swiper-item wx:for="{{tj_thumb}}" wx:key="params">
+            <image bindtap="goToAdsPage" data-ads-page-url="{{item.link}}" src="{{item}}"></image>
+        </swiper-item>
+    </swiper>
+    <view class="index__content white">
+        <view class="index__content__sec">
+            <view bindtap="goHotSale" class="tabbox" data-id="{{item.id}}" data-index="1" wx:for="{{catefenlei}}" wx:key="key">
+                <image class="index__content__sec__img" src="{{item.thumb}}"></image>
+                <view>{{item.title}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="index__package">
+        <view class="box_left_right white index__package__title">
+            <view class="index__package__title__left blackColor">套餐推荐</view>
+            <view bindtap="goHotSale" class="index__package__title__right grayColor" data-id="" data-index="0">查看全部
+				<image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/ic_arrow_gray_right2x.png?sign=95aea39227ee7d584fe6dfb526272dbe&t=1568770727"></image>
+            </view>
+        </view>
+        <view wx:for="{{packageList}}" wx:key="params">
+            <view bindtap="goDetail" class="package_item_box white" data-tid="{{item.id}}">
+                <image class="package_img" mode="aspectFill" src="{{item.thumb}}"></image>
+                <view class="package_right">
+                    <view class="title">{{item.title}}</view>
+                    <view class="describle">{{item.content}}</view>
+                    <view class="label_box">
+                        <view class="label" wx:for="{{item.crowd}}" wx:for-item="items">{{items.title}}</view>
+                    </view>
+                    <view class="number">
+                        <text class="price" wx:if="{{item.price}}">￥<text class="big">{{item.price}}</text>
+                        </text>
+                        <text class="people">{{item.haveBuyNumber}}已约</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="rule">暂无更多数据~</view>
+</view>

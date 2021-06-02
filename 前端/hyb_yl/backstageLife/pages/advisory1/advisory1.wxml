@@ -1,0 +1,9 @@
+<import src="../../../../utils/wxParse.wxml"></import>
+<view class="auto">
+    <view class="title1">{{title}}</view>
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"></template>
+</view>
+<button class="IDclick" openType="share">
+    <view class="font_co999 font_si14 share_view">分享</view>
+    <image class="" src="{{loading}}"></image>
+</button>

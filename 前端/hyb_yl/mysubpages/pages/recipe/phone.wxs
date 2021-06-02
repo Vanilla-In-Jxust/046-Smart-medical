@@ -1,0 +1,10 @@
+var toHide = (function(array) {
+    var mphone = array.substring(0, 3) + '****' + array.substring(7);
+    return (mphone)
+});
+var hidecard = (function(indentity) {
+    var card = indentity.substring(0, 3) + "*********" + indentity.substring(14);
+    return (card)
+});
+module.exports.toHide = toHide;
+module.exports.hidecard = hidecard;

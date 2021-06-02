@@ -1,0 +1,34 @@
+<view>
+    <view class="list">
+        <view bindtouchend="end" bindtouchmove="move" bindtouchstart="start" catchtap="look_detail" class="item df" data-avatar="{{item.is_img}}" data-docid="{{item.docid}}" data-docimg="{{item.touxiang}}" data-f_name="{{item.t_name}}" data-fid="{{item.f_id}}" data-id="{{index}}" data-if_over="{{item.if_over}}" data-m_id="{{item.m_id}}" data-t_name="{{item.f_name}}" data-tid="{{item.t_id}}" wx:for="{{list}}" wx:key="list">
+            <view class="img">
+                <image src="{{item.u_thumb}}"></image>
+                <view class="tips" wx:if="{{item.unread>0}}">{{item.unread}}</view>
+            </view>
+            <view class="cont">
+                <view style="width:100%;">
+                    <view class="df" style="justify-content: space-between;">
+                        <view class="name" style="color:#020202">{{item.t_name}}</view>
+                        <view class="zi" wx:if="{{item.if_over==1}}">已关闭</view>
+                        <view class="zi2" wx:else>咨询中..</view>
+                    </view>
+                    <view class="time" style="color:#9A9A9A">{{item.add_time}} | {{item.nksname}} </view>
+                </view>
+                <view class="last_chat">{{item.t_msg}}</view>
+            </view>
+            <view catchtap="del" class="del fs28" data-fid="{{item.f_id}}" data-id="{{index}}" data-m_id="{{item.m_id}}" data-tid="{{item.t_id}}" wx:if="{{current==index}}">删除</view>
+        </view>
+    </view>
+    <view class="fanhui" style="box-sizing: border-box;z-index: 999;position: absolute;background:{{bgc}};">
+        <navigator hoverClass="none" openType="redirect" url="/hyb_yl/tabBar/index/index">
+            <image src="/hyb_yl/images/index.png"></image>
+        </navigator>
+    </view>
+    <view class="empty" wx:if="{{list.length==0||list==null}}">
+        <view>
+            <image src="/hyb_yl/images/empty.png"></image>
+        </view>
+        <view>抱歉！还没有内容</view>
+    </view>
+</view>
+<import src="../../../../template/template.wxml"></import>

@@ -1,0 +1,129 @@
+<view class="page" style="overflow: {{showOrgList?'hidden':''}}" wx:for="{{detail.imgpath}}">
+    <view class="white package-detail-head">
+        <image class="banner" role="img" src="{{item}}"></image>
+        <view class="intro">
+            <view class="title">{{detail.atitle}}
+			</view>
+            <view class="item-num">共 {{detail.t_msg.length}}项检查项</view>
+        </view>
+        <view class="tag">
+            <view class="tag-item">
+                <image class="tag-item-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/detail_ic_tui2x.png?sign=c3f03b538b6f098fabd0b9b5a4333456&t=1568778034"></image>
+                <text class="tag-item-text">随时退</text>
+            </view>
+            <view class="tag-item">
+                <image class="tag-item-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/detail_ic_gai2x.png?sign=ca9ce604d26513505a03a6253baeb7f0&t=1568778054"></image>
+                <text class="tag-item-text">随时改</text>
+            </view>
+            <view class="tag-item">
+                <image class="tag-item-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/detail_ic_guanfang2x.png?sign=016e3f00b86ff851d234920acef52465&t=1568778044"></image>
+                <text class="tag-item-text">官方直营</text>
+            </view>
+            <view class="tag-item">
+                <image class="tag-item-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/detail_ic_zhuanye2x.png?sign=0670d357b243f947416915250ee572ae&t=1568778022"></image>
+                <text class="tag-item-text">专业品质</text>
+            </view>
+        </view>
+    </view>
+    <view class="intro-nav" id="intro-nav">
+        <view class="head white {{introNavObj.fixed?'fixed':''}}">
+            <view bindtap="goScrollPosition" class="head-item {{introNavObj.active=='0'?'active':''}}" data-index="0">
+                <image class="head-item-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/detail_ic_location2x.png?sign=3e1810fe1a314b4dd5503d26b86f7ecb&t=1568778870"></image>
+                <text class="head-item-text">套餐简介</text>
+            </view>
+            <view bindtap="goScrollPosition" class="head-item {{introNavObj.active=='1'?'active':''}}" data-index="1">
+                <image class="head-item-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/detail_ic_location2x.png?sign=3e1810fe1a314b4dd5503d26b86f7ecb&t=1568778870"></image>
+                <text class="head-item-text">适用分院</text>
+            </view>
+            <view bindtap="goScrollPosition" class="head-item {{introNavObj.active=='2'?'active':''}}" data-index="2">
+                <image class="head-item-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/detail_ic_location2x.png?sign=3e1810fe1a314b4dd5503d26b86f7ecb&t=1568778870"></image>
+                <text class="head-item-text">包含项目</text>
+            </view>
+        </view>
+    </view>
+    <view id="intro0">
+        <view class="tag-info border-bottom white">
+            <view class="tag-info-title">使用人群</view>
+            <view class="info">
+                <view class="info-item" wx:for="{{detail.crowd}}">
+                    <image class="info-item-img" role="img" src="{{item.icon?item.icon:'https://ikapp-image.health.ikang.com/1712141123235260'}}"></image>
+                    <view class="info-item-title">{{item.title}}</view>
+                    <view class="info-item-desc"></view>
+                </view>
+            </view>
+        </view>
+        <view class="tag-info margin-bottom white">
+            <view class="tag-info-title">套餐特点</view>
+            <view class="info">
+                <view class="info-item">
+                    <view class="info-item-title">{{detail.content}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="dentistryDetail" hoverClass="none"></view>
+    <view>
+        <view bindtap="showOrgList" class="org white" data-card-number="undefined" data-combo-code="NONEF907836" data-combo-id="907836" id="intro1">
+            <text>查看可约分院和机构</text>
+            <image class="arrow_gray_right" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/rightarrow%402x.png?sign=46ed39102f47d0f9884be3d9bdf609d7&t=1568779023"></image>
+        </view>
+        <view catchtap="close" class="zhe" wx:if="{{showOrgList}}">
+            <view class="org_list {{showOrgList?'transtion_open_class':'transtion_close_class'}} white">
+                <view class="org_list_title">
+                    <text>可用城市</text>
+                    <image catchtap="closeList" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/ic_popover_close2x.png?sign=812f59c44c70bd80b393ecb29cd30dee&t=1569208186"></image>
+                </view>
+                <view class="org_list_left">
+                    <view catchtap="selectCity" class="org_list_left_single {{index==selectCityIndex?'select':''}}" data-id="{{item.city.parentid}}" data-index="{{index}}" wx:for="{{bm}}" wx:key="cityCode">
+						{{item.city.name}}
+					</view>
+                </view>
+                <view class="org_list_right">
+                    <view class="org_list_right_single" wx:for="{{nesARR}}" wx:for-item="orgItem" wx:key="key">
+                        <view class="circle"></view>
+                        <view class="org_name">{{orgItem.agentname}}</view>
+                        <view class="org_addr">{{orgItem.xxaddress}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view id="intro2">
+        <view class="attention margin-bottom">
+            <view class="attention-title">
+                <text class="attention-title-text">包含项目</text>
+            </view>
+            <view class="check-item pl_40">
+                <view bindtap="showTip" class="check-item-box" data-item-name="{{info.title}}" wx:for="{{detail.t_msg}}" wx:for-item="info" wx:key="key">
+                    <view class="dept">
+                        <view class="dept-type-name">{{info.title}}</view>
+                        <view class="c9 fs26 text_over">{{info.content}}</view>
+                    </view>
+                    <view class="dept-tip">
+                        <image class="dept-tip-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/ic_inform_gray2x.png?sign=7ba5b0fc8aed8146b335c08d39192030&t=1592898175"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="attention margin-bottom2">
+            <view class="attention-title">
+                <text class="attention-title-text">注意事项</text>
+            </view>
+            <view style="padding:0 20rpx">
+                <rich-text bindtap="tap" nodes="{{detail.notes}}" style="color:#999"></rich-text>
+            </view>
+        </view>
+    </view>
+    <view class="bottom">
+        <view class="bottom-box">
+            <view class="bottom-text">
+                <view>
+                    <text class="bottom-text-unit">￥</text>
+                    <text class="bottom-text-big">{{detail.price}}</text>
+                    <text>起</text>
+                </view>
+            </view>
+            <view bindtap="goNext" class="bottom-btn" data-count="{{detail.t_msg.length}}" data-money="{{detail.price}}" data-nesARR="{{nesARR}}" data-project="{{detail.t_msg}}" data-title="{{detail.atitle}}">立即预约</view>
+        </view>
+    </view>
+</view>

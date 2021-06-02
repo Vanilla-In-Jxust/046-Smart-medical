@@ -1,0 +1,314 @@
+page {
+    background-color: #f2f3f7;
+}
+
+.said_title {
+    background-color: #fff;
+    height: 120rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30rpx;
+    margin-bottom: 20rpx;
+}
+
+.patients_number {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+}
+
+.patient_more_img {
+    height: 55rpx;
+    width: 55rpx;
+    display: block;
+    margin-left: 20rpx;
+}
+
+.said_content {
+    background-color: #fff;
+    padding: 40rpx 0 50rpx;
+}
+
+.said_content_tap {
+    margin: 0 auto;
+    height: 60rpx;
+    width: 690rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.said_content_tap_text {
+    flex: 1;
+    text-align: center;
+    line-height: 60rpx;
+    background-color: #f5f5f5;
+    color: #ccc;
+    box-sizing: border-box;
+    border: 1rpx solid #f5f5f5;
+}
+
+.said_content_tap_active {
+    background-color: #fff;
+    border: 1rpx solid #f5f5f5;
+    box-sizing: border-box;
+    color: #333;
+}
+
+.said_textarea {
+    padding: 0 0 0 30rpx;
+    border-bottom: 1rpx solid #f0f0f0;
+    margin-bottom: 40rpx;
+}
+
+.textarea {
+    width: 690rpx;
+    margin: 0 auto;
+    padding: 40rpx 30rpx 30rpx 0;
+    color: #333;
+}
+
+.said_type {
+    background-color: #f7f7f7;
+    padding: 0 0 30rpx 20rpx;
+    width: 690rpx;
+    box-sizing: border-box;
+    margin: 40rpx auto 0;
+}
+
+.said_type_img {
+    height: 150rpx;
+    width: 150rpx;
+    margin-top: 30rpx;
+    margin-left: 10rpx;
+    vertical-align: bottom;
+}
+
+.said_type_add_img {
+    background-color: #efefef;
+    display: inline-block;
+    line-height: 150rpx;
+    text-align: center;
+    font-size: 70rpx;
+    color: #ccc;
+}
+
+.said_type_article {
+    height: 210rpx;
+    width: 690rpx;
+    margin: 40rpx auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f7f7f7;
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+
+.said_type_article_left {
+    flex: 1;
+}
+
+.said_type_article_left_top {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    height: 82rpx;
+}
+
+.said_type_article_img_view {
+    margin-left: 50rpx;
+    position: relative;
+}
+
+.said_type_article_imgview_absolute {
+    background-color: rgba(0,0,0,0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vd_img {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.said_type_article_img {
+    width: 200rpx;
+    height: 150rpx;
+    border-radius: 16rpx;
+    vertical-align: bottom;
+}
+
+.said_type_article_left_bottom {
+    margin-top: 22rpx;
+}
+
+.said_type_article_left_bottom_time {
+    display: inline-block;
+    margin: 0 20rpx;
+}
+
+.save {
+    width: 690rpx;
+    height: 80rpx;
+    background-image: linear-gradient(to right,#7587e6 0%,#3b4ca9 100%);
+    border-radius: 40rpx;
+    color: #fff;
+    font-size: 32rpx;
+    line-height: 80rpx;
+    text-align: center;
+    margin: 60rpx auto 130rpx;
+}
+
+.said_type_img_view {
+    display: inline-block;
+    position: relative;
+}
+
+.icon_view {
+    position: absolute;
+    right: -4rpx;
+    top: 12rpx;
+    z-index: 1000;
+    height: 38rpx;
+    width: 38rpx;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voice_view {
+    height: 320rpx;
+    padding-right: 30rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.voice_image {
+    width: 200rpx;
+    height: 200rpx;
+    margin: 0 auto;
+}
+
+.time_view {
+    margin-left: 20rpx;
+}
+
+.scale_animation {
+    animation: scale 0.5s ease-in both alternate infinite;
+}
+
+@-webkit-keyframes scale {
+    from {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes scale {
+    from {
+        transform: scale(1.1);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.sound_view {
+    width: 270rpx;
+    height: 100rpx;
+    background-color: #f0f0f0;
+    border-radius: 10rpx;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.sound_view_left {
+    position: absolute;
+    left: -10rpx;
+    top: 30rpx;
+    height: 40rpx;
+    width: 40rpx;
+    transform: rotate(45deg);
+    background-color: #f0f0f0;
+    border-radius: 4rpx;
+}
+
+.sound_view_view {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    justify-content: flex-end;
+}
+
+.again_btn {
+    width: 120rpx;
+    height: 80rpx;
+    background-color: #f5f5f5;
+    line-height: 80rpx;
+    text-align: center;
+    border-radius: 40rpx;
+    color: #666;
+    margin-left: 100rpx;
+    margin-right: 40rpx;
+}
+
+.sound_img {
+    width: 50rpx;
+    height: 50rpx;
+    position: relative;
+    margin-left: 20rpx;
+}
+
+.sound_animation {
+    animation: sound 0.5s ease-in both alternate infinite;
+}
+
+.sound_img_view {
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+@-webkit-keyframes sound {
+    from {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes sound {
+    from {
+        transform: scale(0.5);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}

@@ -1,0 +1,65 @@
+<import src="./template/1v1/1v1.wxml"></import>
+<view class="trtc-room-container {{isFullscreenDevice?'fullscreen-device-fix':''}}">
+    <template is="1v1" data="{{pusher:pusher,streamList:streamList,debug:debug,enableIM:enableIM}}" wx:if="{{template==='1v1'}}"></template>
+    <template is="grid" data="{{pusher:pusher,streamList:streamList,visibleStreamList:visibleStreamList,debug:debug,enableIM:enableIM,panelName:panelName,gridPagePlaceholderStreamList:gridPagePlaceholderStreamList,gridPageCount:gridPageCount,gridCurrentPage:gridCurrentPage,gridPlayerPerPage:gridPlayerPerPage,isShowMoreMenu:isShowMoreMenu,MICVolume:MICVolume,BGMVolume:BGMVolume,BGMProgress:BGMProgress,beautyStyle:beautyStyle,beautyStyleArray:beautyStyleArray,filterIndex:filterIndex,filterArray:filterArray,audioReverbTypeArray:audioReverbTypeArray}}" wx:if="{{template==='grid'}}"></template>
+    <template is="custom" data="{{pusher:pusher,streamList:streamList,debug:debug}}" wx:if="{{template==='custom'}}"></template>
+    <view class="im-panel" wx:if="{{enableIM&&showIMPanel}}">
+        <view class="message-panel-body">
+            <scroll-view class="message-scroll-container" scrollIntoView="message{{messageList.length-1}}" scrollWithAnimation="{{true}}" scrollY="true">
+                <view class="message-list">
+                    <view class="message-item" id="message{{index}}" wx:for="{{messageList}}" wx:key="index">
+                        <span class="user-name {{item.name==config.userID?'mine':''}}">{{item.name}}</span>
+                        <span class="message-content">{{item.message}}</span>
+                    </view>
+                    <view id="message-bottom"></view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="message-panel-bottom">
+            <view class="message-input-container">
+                <input bindconfirm="_sendIMMessage" bindinput="_inputIMMessage" class="message-input" confirmType="send" maxlength="200" placeholder="请输入消息" placeholderStyle="color:#ffffff;opacity: 0.55;" type="text" value="{{messageContent}}"></input>
+            </view>
+            <view class="message-send-btn">
+                <button bindtap="_sendIMMessage" class="btn" hoverClass="btn-hover">发送</button>
+            </view>
+        </view>
+        <view bindtap="_toggleIMPanel" class="close-btn">X</view>
+    </view>
+    <view class="debug-info-btn {{debugMode&&!debugPanel?'':'none'}}">
+        <button bindtap="_debugTogglePanel" class="debug-btn" hoverClass="button-hover">Debug</button>
+    </view>
+    <view class="debug-info {{debugMode&&debugPanel?'':'none'}}">
+        <view bindtap="_debugTogglePanel" class="close-btn">X</view>
+        <view>appVersion: {{appVersion}}</view>
+        <view>libVersion: {{libVersion}}</view>
+        <view>template: {{template}}</view>
+        <view>debug: <button bindtap="_debugToggleVideoDebug" class="{{debug?'':'false'}} debug-btn" hoverClass="button-hover">{{debug}}</button>
+        </view>
+        <view>userID: {{pusher.userID}}</view>
+        <view>roomID: {{pusher.roomID}}</view>
+        <view>camera: <button bindtap="_toggleVideo" class="{{pusher.enableCamera?'':'false'}} debug-btn" hoverClass="button-hover">{{pusher.enableCamera}}</button>
+        </view>
+        <view>mic: <button bindtap="_toggleAudio" class="{{pusher.enableMic?'':'false'}} debug-btn" hoverClass="button-hover">{{pusher.enableMic}}</button>
+        </view>
+        <view>switch camera: <button bindtap="switchCamera" class="debug-btn" hoverClass="button-hover">{{cameraPosition||pusher.frontCamera}}</button>
+        </view>
+        <view>Room:
+      <button bindtap="_debugEnterRoom" class="debug-btn" hoverClass="button-hover">Enter</button>
+            <button bindtap="_debugExitRoom" class="debug-btn" hoverClass="button-hover">Exit</button>
+            <button bindtap="_debugGoBack" class="debug-btn" hoverClass="button-hover">Go back</button>
+        </view>
+        <view>IM: <button bindtap="_debugSendRandomMessage" class="debug-btn" hoverClass="button-hover">send</button>
+        </view>
+        <view>user count: {{userList.length}}</view>
+        <view wx:for="{{userList}}" wx:key="userID">{{item.userID}}|
+      mainV:<span class="text {{item.hasMainVideo?'true':'false'}}">{{item.hasMainVideo||false}}</span>|
+      mainA:<span class="text {{item.hasMainAudio?'true':'false'}}">{{item.hasMainAudio||false}}</span>|
+      auxV:<span class="text {{item.hasAuxVideo?'true':'false'}}">{{item.hasAuxVideo||false}}</span>
+        </view>
+        <view>stream count: {{streamList.length}}</view>
+        <view wx:for="{{streamList}}" wx:key="streamID">{{item.userID}}|{{item.streamType}}|
+      SubV:<button bindtap="_debugToggleRemoteVideo" class="{{!item.muteVideo?'':'false'}} debug-btn" data-stream-type="{{item.streamType}}" data-user-i-d="{{item.userID}}" hoverClass="button-hover">{{!item.muteVideo}}</button>|
+      SubA:<button bindtap="_debugToggleRemoteAudio" class="{{!item.muteAudio?'':'false'}} debug-btn" data-stream-type="{{item.streamType}}" data-user-i-d="{{item.userID}}" hoverClass="button-hover">{{!item.muteAudio}}</button>
+        </view>
+    </view>
+</view>

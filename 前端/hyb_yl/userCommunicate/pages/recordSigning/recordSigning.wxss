@@ -1,0 +1,224 @@
+page {
+    background: #F5F5F5;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.searchresult {
+    background: #fff;
+}
+
+.searchresult>view:first-child {
+    margin: 0;
+    padding: 25rpx 0;
+}
+
+.yishneginfo {
+    padding: 0 25rpx;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    color: #666;
+    font-size: 28rpx;
+    background-color: #fff;
+    margin-top: 50rpx;
+    border-bottom: 1rpx solid #ECECEC;
+}
+
+.info-img {
+    width: 112rpx;
+    height: 112rpx;
+}
+
+.userinfo-body {
+    flex: 1;
+    min-width: 0;
+    margin-left: 30rpx;
+    line-height: 1.6;
+}
+
+.doctor-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    line-height: 38rpx;
+}
+
+.userinfo-body .doctor-info .doctor-name {
+    overflow: hidden;
+    color: #333;
+    font-weight: 500;
+    font-size: 34rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.userinfo-body .doctor-info .doctor-section {
+    margin: 0 12rpx;
+    overflow: hidden;
+    color: #333;
+    font-size: 28rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.userinfo-body .doctor-info .doctor-types {
+    background: #0087E0;
+    padding: 4rpx 6rpx;
+    font-size: 26rpx;
+    color: #fff;
+    border-radius: 6rpx;
+}
+
+.userinfo-body .doctor-hospital {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 12rpx;
+    overflow: hidden;
+    color: #333;
+    font-size: 28rpx;
+    line-height: 32rpx;
+}
+
+.doctor-hospital .doctor-section-info {
+    flex-shrink: 0;
+}
+
+.doctor-hospital .doctor-hosptial-name {
+    flex-grow: 1;
+    margin-left: 12rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.userinfo-body .doctor-tags {
+    margin-top: 28rpx;
+    color: #4d4d4d;
+    font-weight: 300;
+    font-size: 26rpx;
+    line-height: 39rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.userinfo-body .doctor-answer-star {
+    display: flex;
+    align-items: center;
+    margin: 12rpx 0 0;
+    font-weight: 300;
+}
+
+.userinfo-body .doctor-answer-star image {
+    margin-right: 2px;
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.userinfo-body .doctor-answer-star .doctor-star {
+    height: 28rpx;
+    color: #faa700;
+    font-weight: 600;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.userinfo-body .doctor-answer-star .answer-count {
+    margin-left: 20rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.prescription-count,.reply-time-str {
+    margin-left: 12rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.prescription-count,.reply-time-str {
+    margin-left: 12rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.userinfo-body .doctor-list_dis {
+    margin-top: 20rpx;
+}
+
+.userinfo-body .doctor-list_dis_tags {
+    display: inline-block;
+    margin-right: 16rpx;
+    padding: 4rpx;
+    color: #fa0;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    background: #fffaf0;
+    border-radius: 4rpx;
+}
+
+.ask-doctor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40rpx;
+}
+
+.price-values-wrapper {
+    transform: translate(0);
+}
+
+.price-discount,.price-values {
+    display: flex;
+    align-items: center;
+}
+
+.price-value {
+    display: flex;
+    align-items: center;
+    height: 32rpx;
+    color: #666;
+    font-weight: 500;
+    font-size: 26rpx;
+    line-height: 32rpx;
+}
+
+.price-value-last {
+    position: relative;
+    margin-left: 20rpx;
+    padding-left: 20rpx;
+}
+
+.doctor-list-btns {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 30rpx;
+    padding: 30rpx 0;
+}
+
+.doctor-list-btns view {
+    background: #F5F5F5;
+    border: 1rpx solid #EAEAEA;
+    border-radius: 50rpx;
+    margin-left: 20rpx;
+    padding: 5rpx 20rpx;
+    color: #9D9D9D;
+}
+
+.doctor-list-btns view:last-child {
+    color: #108DE1;
+}

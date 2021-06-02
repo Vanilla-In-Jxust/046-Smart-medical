@@ -1,0 +1,13 @@
+<view class="box">
+    <view class="input dffe">
+        <text>手机号码</text>
+        <input autoFocus bindinput="inputPhoneNum" maxlength="11" placeholder="请输入手机号码" type="number"></input>
+        <text bindtap="sendMsg" class="sendMsg" style="background-color:{{bgc}}" wx:if="{{send}}">发送</text>
+        <text bindtap="sendMsg" class="sendMsg" style="background-color:{{bgc}}" wx:if="{{alreadySend}}">{{second+'s'}}</text>
+    </view>
+    <view class="yanzheng">
+        <text>短信验证</text>
+        <input bindinput="addCode" name="myphone" placeholder="短信验证码" type="number" value=""></input>
+    </view>
+    <button bindtap="onSubmit" class="submit" hoverClass="none" style="background-color:{{bgc}}">保　存</button>
+</view>

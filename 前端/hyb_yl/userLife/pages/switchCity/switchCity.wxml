@@ -1,0 +1,35 @@
+<scroll-view scrollIntoView="{{toView}}" scrollY="true" style="position:relative;height:1334rpx;">
+    <view class="current-city">
+        <view class="bg-color">
+            <text>当前城市</text>
+        </view>
+        <view class="city-con clearfix">
+            <text class="city-border hover" data-a_id="{{currentCity=='定位中...'?' ':currentCity}}">{{currentCity}}</text>
+        </view>
+    </view>
+    <view class="hot-city">
+        <view class="bg-color">
+            <text>热门城市</text>
+        </view>
+        <view class="city-con clearfix">
+            <text bindtap="confirmClick" class="city-border hoverre" data-a_id="全国">全国</text>
+            <text bindtap="confirmClick" class="city-border hoverre" data-a_id="{{item.name}}" wx:for="{{info}}" wx:key="index">{{item.name}}</text>
+        </view>
+    </view>
+    <view class="city-letter">
+        <view class="bg-color">
+            <text>定位</text>
+        </view>
+        <view class="city-con clearfix" style="padding-bottom:0;padding-top:0;">
+            <text bindtap="anchorClick" class="city-letter-con" data-a_id="{{item}}" wx:for="{{letterArr}}" wx:key="letter">{{item}}</text>
+        </view>
+    </view>
+    <view class="letter-city" id="{{item.initial}}" wx:for="{{city1}}" wx:key="city">
+        <view class="bg-color zimu">
+            <text>{{item.initial}}</text>
+        </view>
+        <view class="city-con clearfix">
+            <text bindtap="confirmClick" class="city-border addclase" data-a_id="{{item.city}}" wx:for="{{item.cityInfo}}" wx:key="city1">{{item.city}}</text>
+        </view>
+    </view>
+</scroll-view>

@@ -1,0 +1,5 @@
+<view>
+    <view class="oval">
+        <text>{{nodes}}</text>
+    </view>
+</view>

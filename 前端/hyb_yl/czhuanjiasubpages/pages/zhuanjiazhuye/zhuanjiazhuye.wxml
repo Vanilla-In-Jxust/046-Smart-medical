@@ -1,0 +1,162 @@
+<page-loading wx:if="{{isLoading}}"></page-loading>
+<video class="video_active" id="video" src="{{docinfo.video}}" wx:if="{{video}}"></video>
+<view bindtouchstart="mytouchstart" class="box">
+    <view class="temadnames">
+        <view class="teaminfotitle">
+            <view class="teamname">{{docinfo.z_name}}</view>
+            <view bindtap="yearcard" class="profile-vip" data-id="{{docinfo.yearcard.id}}" wx:if="{{docinfo.yearcad}}">
+                <image class="profile-vip-icon" role="img" src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/3351878911914226168-22.png?sign=6fbf1d501fec135ed8b9905802a3af67&t=1594467020"></image>
+				开通年卡
+				<image class="profile-vip-arrow" role="img" src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/3352097899411675726-22.png?sign=97b2c86612b9e02a323dda52a4588644&t=1594467009"></image>
+            </view>
+        </view>
+        <image bindtap="big_img" data-url="{{docinfo.advertisement}}" src="{{docinfo.advertisement}}"></image>
+    </view>
+    <view class="temadzhicheng">
+        <view class="temadzhicheng-left">
+            <view>{{docinfo.ctname}} 主治医师</view>
+            <view>
+                <text>{{docinfo.level_name}}</text>{{docinfo.agentname}}</view>
+        </view>
+        <view bindtap="collect" class="temadzhicheng-right">{{collect?'已关注':'关注'}}</view>
+    </view>
+    <view bindtap="showText" class="shanchangtext {{show_text?'show_active':''}}">{{docinfo.z_content}}</view>
+    <view class="positive">
+        <view>
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/xing.png?sign=02539469a420ba8327631429248856e8&t=1591177538"></image>
+            <text>5.0</text>
+        </view>
+        <view>
+            <text>{{docinfo.xytime}}</text>
+            <text>响应</text>
+        </view>
+        <view>
+            <text>{{docinfo.xn_reoly}}</text>
+            <text>月回答</text>
+        </view>
+        <view>
+            <text>{{docinfo.xn_cf}}</text>
+            <text>月处方</text>
+        </view>
+    </view>
+    <view class="labellist">
+        <text wx:for="{{docinfo.jingxuan}}" wx:key="key">{{item}}</text>
+    </view>
+    <view class="commonbox">
+        <view class="commTitlebox">
+            <view class="title_left">全部服务</view>
+        </view>
+        <view class="serverbox">
+            <view catchtap="{{state=='0'||ifqianyue=='2'||ifqianyue=='1'?'two_even':'qianyue'}}" class="serverList" data-hospital="{{hospital?hospital:show_title}}" data-hymoney="{{item.hymoney}}" data-ifqianyue="{{ifqianyue}}" data-index="{{index}}" data-kewo="{{item.server_kew}}" data-name="{{item.name}}" data-open="{{item.open}}" data-ptmoney="{{item.ptmoney}}" wx:for="{{menu}}" wx:key="index">
+                <image class="'serverImg'" src="{{item.info.icon}}"></image>
+                <view class="serverName">{{item.titlme}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="commonbox">
+        <view class="commTitlebox">
+            <view class="title_left">主治擅长</view>
+        </view>
+        <view class="question-tabs">
+            <view bindtap="questionclick" class="question-tabs-item {{index==questiontabs?'active':''}}" data-biaoqian="{{item.bq}}" data-dex="{{index}}" wx:for="{{authority}}" wx:key="q">{{item.bq}}({{item.cout}})</view>
+        </view>
+    </view>
+    <view class="evaluate">
+        <view bindtap="answer_detail" class="evaluateitem" data-id="{{item.id}}" data-state="{{item.state}}" data-title="{{item.title}}" data-typs="{{item.typs}}" wx:for="{{listqs}}" wx:key="key">
+            <view class="question-tit">
+                <image class="userhead" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/header_01.png?sign=f9f8c8a1a95aac19e1d32cd26aa3381f&t=1591177626"></image>
+                <view>{{item.names}}</view>
+            </view>
+            <text class="public-question-content">{{item.content.text}}</text>
+            <view class="public-question-count">{{item.time}}</view>
+        </view>
+    </view>
+    <view class="more">
+        <navigator class="more-nav" hoverClass="none" url="/hyb_yl/czhuanjiasubpages/pages/alladept/alladept?zid={{docinfo.zid}}"> 更多问题 </navigator>
+    </view>
+    <view class="servebox">患者评价</view>
+    <view class="evaluate">
+        <view class="evaluateitem" wx:for="{{listpj}}" wx:key="key">
+            <view class="question-tit">
+                <image class="userhead" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/header_01.png?sign=f9f8c8a1a95aac19e1d32cd26aa3381f&t=1591177626"></image>
+                <view>{{item.names}}</view>
+                <image class="pingxing" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/xing.png?sign=02539469a420ba8327631429248856e8&t=1591177538" wx:for="{{item.starsnum}}" wx:key="x"></image>
+            </view>
+            <text class="public-question-content">{{item.content}}</text>
+            <view class="public-question-count">{{item.createTime}}</view>
+        </view>
+    </view>
+    <view class="more">
+        <navigator class="more-nav" hoverClass="none" url="/hyb_yl/czhuanjiasubpages/pages/estimate/estimate?zid={{docinfo.zid}}" wx:if="{{listpj.length>5}}"> 更多评价 </navigator>
+    </view>
+    <view class="fixedfoot">
+        <view class="posfix">
+            <view bindtap="navicate">
+                <image mode="aspectFit" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/index_hover.png?sign=6ed09f25585105cba920ba84242e4b28&t=1590735059"></image>
+                <text>首页</text>
+            </view>
+            <button bindtap="shareChose" hoverClass="none" role="button">
+                <image mode="aspectFit" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/share.png?sign=a86268d1b3a1d9c2d6a50ea3e497b718&t=1590735083"></image>
+                <text>分享</text>
+            </button>
+        </view>
+        <view catchtap="two_even" class="clickbtn" style="background:{{bgc}}" wx:if="{{state=='0'||ifqianyue=='2'}}">向医生问诊</view>
+        <block wx:elif="{{ifqianyue=='1'&&state=='1'}}">
+            <view bindtap="qianyue" class="clickbtn" data-ifqianyue="{{ifqianyue}}" wx:if="{{state=='1'}}">{{text}}</view>
+            <view catchtap="two_even" class="clickbtn" wx:if="{{state=='0'}}">向医生问诊</view>
+        </block>
+        <view bindtap="qianyue" class="clickbtn" data-ifqianyue="{{ifqianyue}}" style="background:{{bgc}}" wx:elif="{{(ifqianyue=='0'||ifqianyue=='3'||ifqianyue=='4'||ifqianyue=='5')&&state=='1'}}">{{text}}</view>
+    </view>
+</view>
+<view class="allservebox" wx:if="{{allserve}}">
+    <view bindtap="closeallserve" class="empty"></view>
+    <view class="allservecontainer">
+        <view bindtap="closeallserve" class="closebtn"> × </view>
+        <view class="typestitle">选择问诊方式</view>
+        <view class="blockbox">
+            <view bindtap="askdoctor" class="allserveitem" data-hyzhuiw="{{item.hyzhuiw}}" data-key_words="{{item.key_words}}" data-money="{{item.ptmoney}}" data-name="{{item.titlme}}" data-num="0" data-ptzhuiw="{{item.ptzhuiw}}" data-time_leng="{{item.time_leng}}" data-url="{{item.url}}&zid={{zid}}" wx:for="{{menu}}" wx:key="key">
+                <image src="{{item.info.icon}}"></image>
+                <view class="allserveright">
+                    <view class="allservetit">{{item.titlme}}</view>
+                    <view class="allserveprice">
+                        <text class="monery1">￥{{item.ptmoney}}</text>
+                    </view>
+                    <view class="allservetype">{{item.info.ftitle}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<ovalLogin wx:if="{{!bigMask}}"></ovalLogin>
+<view class="modal center" wx:if="{{modelBoo}}">
+    <view class="modal_view">
+        <view class="modal_title font_si18 font_co333">签约确认</view>
+        <view class="checkbox_view center">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox font_co333 font_si14 center">
+                    <checkbox checked="{{authStateBoo}}" value="1"></checkbox>授权医生查看个人档案
+				</label>
+            </checkbox-group>
+        </view>
+        <view class="modal_content  ">
+            <view class="font_co333 hint font_si14">提示：推荐授权查看个人档案，便于医生了解病情,签约后才可使用专家服务</view>
+        </view>
+        <view class="modal_bottom center public_white font_si18 ">
+            <view bindtap="abolishBtn" class="modal_bottom_left font_co666">再想想</view>
+            <view bindtap="signedBtn" class="modal_bottom_right font_cofff public_bgc3b" data-id="{{xiangqing.zid}}" data-ifqianyue="{{ifqianyue}}" data-j_id="{{j_id}}" style="background-color:{{bgc}};">确认申请</view>
+        </view>
+    </view>
+</view>
+<view catchtap="closeShare" class="zhe" wx:if="{{shareState}}">
+    <view catchtap="function(){}" class="shareBox">
+        <button ariaDisabled="false" class="share_item" hoverClass="none" openType="share" role="button">
+            <image mode="widthFix" role="img" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/fenxianggeihaoyou.png?sign=f86f2ad366223d1662c57893d89e5699&t=1594088865" style="width:80rpx"></image>
+            <view class="title">分享给好友</view>
+        </button>
+        <button ariaDisabled="false" bindtap="sharefri" class="share_item" hoverClass="none" role="button">
+            <image mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/YLTC_fenxiangdaopengyouquan.png?sign=e41ed9ab6f978177cda5f0886ef3c24b&t=1594088896" style="width:80rpx"></image>
+            <view class="title">分享到朋友圈</view>
+        </button>
+        <view class="jiao"></view>
+    </view>
+</view>

@@ -1,0 +1,47 @@
+<view class="patient-top" style="background:{{bgc}}">
+    <view class="patient-search">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzseet.png?sign=049710cbe6553e684a7a28a1271049e1&t=1572487623"></image>
+        <input bindconfirm="searchs" bindinput="changes" placeholder="搜索负责人或者医院或者团队名称" placeholderStyle="font-size:22rpx;color:#999" value="{{keyword}}"></input>
+    </view>
+</view>
+<view class="team-tab">
+    <view bindtap="teamtab" class="team-item {{type==index?'team-item-act':''}} " data-dex="{{index}}" wx:for="{{teamitem}}">{{item}}</view>
+</view>
+<view class="team-list">
+    <view bindtap="teamindex" class="team-item-list" data-id="{{item.id}}" data-zid="{{item.zid}}" wx:for="{{list}}">
+        <view class="team-top">
+            <image class="pho" src="{{item.thumb}}"></image>
+            <view class="team-ri">
+                <view class="team-tit">
+                    <view>{{item.title}}</view>
+                    <view class="team-address">{{item.address}}</view>
+                    <view class="team-label" wx:if="{{item.cid!=''||item.cid!='0'}}">{{item['c_name']}}</view>
+                </view>
+                <view class="team-zc">最高医务职称：{{item.zhicheng}}</view>
+                <view class="team-sc">团队擅长：<block wx:for="{{item.label}}" wx:for-item="items" wx:key="items">{{items}}</block>
+                </view>
+                <view class="team-xx">
+                    <view class="team-start">
+                        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/xing.png?sign=02539469a420ba8327631429248856e8&t=1591177538"></image>
+                        <view>5.0</view>
+                    </view>
+                    <view class="team-xx-t">团队问答：{{item.xn_answer}} | {{item.times}}分钟响应</view>
+                </view>
+                <view class="team-ms">团队成员{{item.num}}名</view>
+            </view>
+        </view>
+        <view class="team-states">
+            <view class="team-label-ss">
+                <view wx:for="{{item.plugin['info']}}" wx:for-item="items" wx:key="items">
+                    <block wx:if="{{items.stateback=='1'}}">{{items.titlme}}</block>
+                </view>
+            </view>
+            <view bindtap="agree" class="team-btn" data-id="{{item.id}}" data-status="1" wx:if="{{type=='1'&&add_status=='0'}}">加入</view>
+            <view bindtap="agree" class="team-btn" data-id="{{item.id}}" data-status="2" wx:if="{{type=='1'&&add_status=='0'}}">拒绝</view>
+        </view>
+    </view>
+    <view bindtap="createteam" class="my-create" style="background:{{bgc}}">我要创建团队</view>
+</view>
+<view style="height:134rpx;"></view>
+<import src="../../../../template/backstageTemplate.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

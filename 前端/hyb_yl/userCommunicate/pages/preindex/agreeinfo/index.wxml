@@ -1,0 +1,3 @@
+<view>
+    <rich-text bindtap="tap" nodes="{{tiaokuan}}"></rich-text>
+</view>

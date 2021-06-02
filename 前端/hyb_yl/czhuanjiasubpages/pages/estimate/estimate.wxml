@@ -1,0 +1,9 @@
+<view class="evaluateitem" wx:for="{{list}}">
+    <view class="question-tit">
+        <image class="userhead" src="{{item.u_thumb}}"></image>
+        <view>{{item.u_name}}</view>
+        <image class="pingxing" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/xing.png?sign=2a70a280b9a3845fa02acd6e56681359&t=1593500669" wx:for="{{item.starsnum}}" wx:key="x"></image>
+    </view>
+    <text class="public-question-content">{{item.content}}</text>
+    <view class="public-question-count">{{item.created}}</view>
+</view>

@@ -1,0 +1,86 @@
+<view class="headimg">
+    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/homedoctorbj.png?sign=015a48facec80420a54890a81ed0a73a&t=1584674182"></image>
+</view>
+<view class="containers">
+    <view class="groupitem">
+        <view class="groupitem-tit">什么是家庭医生制</view>
+        <view class="groupitem-text">家庭医生制是指通过家庭医生制是通过签约方式，局别家庭医生条件的全科医生与签约居民建立起一种长期，稳定的服务关系，一遍对签约居民的健康进行全过程维护的服务制度</view>
+    </view>
+    <view class="groupitem">
+        <view class="groupitem-tit">服务内容</view>
+        <view class="servesbox">
+            <view class="server_list">
+                <view class="serverImg">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/servicea.png?sign=84ccf69409a15d977d20c4375634ec69&t=1571827481"></image>
+                </view>
+                <view class="shortTitle">
+                    <view>在线咨询家庭医生</view>
+                    <view>免费图文咨询，电话咨询</view>
+                </view>
+            </view>
+            <view class="server_list">
+                <view class="serverImg">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/report.png?sign=2d379a039e565ce6050245211ba086ff&t=1571827330"></image>
+                </view>
+                <view class="shortTitle">
+                    <view>报告解读</view>
+                    <view>体检报告全方位解读</view>
+                </view>
+            </view>
+            <view class="server_list">
+                <view class="serverImg">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/make.png?sign=11bb7985efa752354d9038bb3fcef09b&t=1571827358"></image>
+                </view>
+                <view class="shortTitle">
+                    <view>预约就诊</view>
+                    <view>在线预约，省事省力省心</view>
+                </view>
+            </view>
+            <view class="server_list">
+                <view class="serverImg">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/abnormal.png?sign=b3404d3ec34762959040fb54df0e79ae&t=1571827407"></image>
+                </view>
+                <view class="shortTitle">
+                    <view>异常提醒</view>
+                    <view>数据异常，医生第一事件知晓</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="groupitem">
+        <view class="groupitem-tit">签约流程</view>
+        <view class="steps">
+            <view class="stepspay">
+                <view>
+                    <text>1</text>
+                    <text>患者提交患情资料并支付</text>
+                </view>
+                <view>
+                    <text>2</text>
+                    <text>患者提交患情资料并支付</text>
+                </view>
+                <view>
+                    <text>3</text>
+                    <text>患者提交患情资料并支付</text>
+                </view>
+                <view>
+                    <text>4</text>
+                    <text>预约费用（不含手续费）<text style="color:#E92B2B;">20.25元</text>
+                    </text>
+                </view>
+            </view>
+            <view class="xieyihint">
+                <view>协议说明：本协议是您与在线之间关于使用服务订立的</view>
+                <view>依照相关规定，报告仅作为线下就诊的凭证</view>
+                <view>在点击确定之前应认真阅读本协议</view>
+            </view>
+        </view>
+    </view>
+    <view class="radios">
+        <radio bindchange="radioChange" checked="{{argeen}}" color="#0087E0">
+            <text>订阅并同意<text style="color:#0087E0;">《签约协议》</text>
+            </text>
+        </radio>
+    </view>
+</view>
+<view bindtap="gosign" class="sign">去签约</view>

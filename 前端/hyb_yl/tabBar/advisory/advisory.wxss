@@ -1,0 +1,154 @@
+page {
+    background: #fff;
+}
+
+.pag {
+    width: 100%;
+}
+
+.box {
+    width: 700rpx;
+    height: 180rpx;
+    border-bottom: 1rpx #f0f0f0 solid;
+    margin: auto;
+    margin-top: 30rpx;
+}
+
+.box-left {
+    width: 480rpx;
+    height: 180rpx;
+    float: left;
+}
+
+.text {
+    width: 470rpx;
+    height: 80rpx;
+    font-size: 32rpx;
+    float: left;
+    line-height: 40rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+}
+
+.deta {
+    float: left;
+    font-size: 22rpx;
+    color: #c2c2c2;
+    margin-top: 20rpx;
+}
+
+.top_view {
+    font-size: 20rpx;
+    display: inline-block;
+    width: 50rpx;
+    height: 28rpx;
+    color: #06AC85;
+    border: 1rpx solid #06AC85;
+    border-radius: 4rpx;
+    text-align: center;
+    line-height: 28rpx;
+    margin-right: 15rpx;
+}
+
+.box-img {
+    width: 200rpx;
+    height: 150rpx;
+    background: #ccc;
+    float: right;
+    border-radius: 10rpx;
+    overflow: hidden;
+}
+
+.box-img>image {
+    width: 200rpx;
+    height: 150rpx;
+}
+
+.navSearch {
+    padding: 20rpx;
+    font-size: 28rpx;
+}
+
+.search_img {
+    height: 28rpx;
+    width: 28rpx;
+    display: block;
+    margin: 0 20rpx;
+}
+
+.search {
+    height: 50rpx;
+    border-radius: 50rpx;
+    display: flex;
+    align-items: center;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.classification {
+    display: inline-block;
+    font-size: 30rpx;
+    line-height: 30rpx;
+    padding-bottom: 15rpx;
+    margin: 10rpx 20rpx;
+    box-sizing: border-box;
+    color: #fff;
+}
+
+.selection {
+    border-bottom: 4rpx solid #fff;
+}
+
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 10rpx;
+    box-sizing: border-box;
+    background: #fff;
+    border-top: 1rpx solid #c5c5c5;
+}
+
+.footer view {
+    display: inline-block;
+    width: 100%;
+}
+
+.footer view image {
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.footer view text {
+    display: block;
+    width: 100%;
+    font-size: 25rpx;
+    color: #afafaf;
+    text-align: center;
+    margin-top: 5rpx;
+}
+
+button.weixin {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    padding: 0;
+    position: fixed;
+    bottom: 230rpx;
+    right: 20rpx;
+    z-index: 1000;
+    background: #fff;
+}
+
+button.weixin image {
+    width: 100%;
+    height: 100%;
+}
+
+button[plain] {
+    border: none;
+}

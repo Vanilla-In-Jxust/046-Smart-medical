@@ -1,0 +1,28 @@
+<view class="title">
+    <textarea bindinput="getTitleText" bindlinechange="titleChange" class="title_input font_si18 font_co333" maxlength="40" placeholder="标题（必填），4-40字" placeholderClass="placeholder" showConfirmBar="" style="height: {{titleHeight}}rpx" value="{{TitleText}}"></textarea>
+</view>
+<view class="content">
+    <textarea bindinput="getContetnText" bindlinechange="contentChange" class="content_input font_si18 font_co333" maxlength="500" placeholder="正文（必填），15-500字" placeholderClass="placeholder" showConfirmBar="" style="height: {{contentHeight}}rpx" value="{{contentText}}"></textarea>
+</view>
+<view class="announce_img">
+    <view class="pic_view" wx:for="{{imgList}}" wx:key="{{index}}">
+        <image bindtap="previewImage" class="add_img" data-url="{{item}}" mode="aspectFill" src="{{item}}"></image>
+        <view class="public_white icon_view">
+            <icon catchtap="delImage" class="img_icon" color="red" data-index="{{index}}" data-url="{{item}}" size="18" type="clear"></icon>
+        </view>
+    </view>
+    <view bindtap="chooseImage" class="ann_add_view" hidden="{{addFlag}}">
+        <image class="ann_add_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/add_tm.png?sign=2f216e67e0daafb7c12abeb5531775b7&t=1571470344g"></image>
+    </view>
+</view>
+<view class="font_co333 font_si14 top_view">
+    <text>设为置顶显示</text>
+    <switch bindchange="switchChange" checked="{{state==1?true:false}}"></switch>
+</view>
+<view style="height: 104rpx;"></view>
+<view bindtap="{{releaseFlag?'release':''}}" class="foot_view" wx:if="{{bianji!=1}}">
+    <view class="foot_btn font_si18 font_cofff linear_btn">立即发布</view>
+</view>
+<view bindtap="{{releaseFlag?'save':''}}" class="foot_view" wx:if="{{bianji==1}}">
+    <view class="foot_btn font_si18 font_cofff linear_btn">保存</view>
+</view>

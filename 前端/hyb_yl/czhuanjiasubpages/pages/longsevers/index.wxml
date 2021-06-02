@@ -1,0 +1,145 @@
+<view class="all">
+    <view class="topinfo">
+        <text>提示：急诊患者不适合远程门诊，请立即前往当地医院急诊</text>
+    </view>
+    <form bindsubmit="submit">
+        <view class="oval">
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>患者姓名</text>
+                        <text class="bi">(必填)</text>
+                    </view>
+                    <view bindtap="selhuanzhe" class="choosePatient">
+                        <text>{{names?names:'请选择患者'}}</text>
+                        <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/arrow.png?sign=e5412c22957133a96a5679f4fa14705c&t=1576662170"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>联系方式</text>
+                        <text class="bi">(必填)</text>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <input name="tel" placeholder="输入联系号码" type="number" value="{{tel}}"></input>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>所患疾病</text>
+                        <text class="bi">(必填)</text>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <input name="sickname" placeholder="输入疾病名称"></input>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>所在城市</text>
+                        <text class="bi">(必填)</text>
+                    </view>
+                </view>
+                <view class="registbox">
+                    <picker bindchange="changeRegin" mode="region" value="{{region}}">
+                        <view class="tui-picker-detail">
+                            <input disabled="true" name="city" placeholder="所在城市" value="{{region[0]}} - {{region[1]}} - {{region[2]}}"></input>
+                        </view>
+                    </picker>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>希望解决什么问题?</text>
+                    </view>
+                </view>
+                <view class="">
+                    <checkbox-group bindchange="checkboxChange" catchtap="choseque" name="hopesove">
+                        <view class="questionBox">
+                            <label class="qustionList {{item.checked==true?'active':''}}" wx:for="{{items}}" wx:key="*this">
+                                <checkbox checked="{{item.checked}}" value="{{item.name}},{{item.id}}"></checkbox>
+                                <text class="text">{{item.value}}</text>
+                            </label>
+                        </view>
+                    </checkbox-group>
+                </view>
+            </view>
+            <view class="registList">
+                <view class="sickname">
+                    <view class="sickLeft">
+                        <text>患者是否住院治疗?</text>
+                        <text class="bi">(必填)</text>
+                    </view>
+                </view>
+                <view>
+                    <radio-group bindchange="radioChange" name="ishospit">
+                        <view class="questionBox">
+                            <label catchtap="choseradio" class="qustionList {{item.checked==true?'active':''}}" data-index="{{index}}" value="{{item.name}}" wx:for="{{citems}}" wx:key="name">
+                                <radio checked="{{item.radiocheck}}" value="{{item.value}}"></radio>
+                                <text class="text">{{item.value}}</text>
+                            </label>
+                        </view>
+                    </radio-group>
+                </view>
+            </view>
+            <view wx:if="{{one_key}}">
+                <view class="registList">
+                    <view class="sickname">
+                        <view class="sickLeft">
+                            <text>所住医院信息</text>
+                            <text class="bi">(必填)</text>
+                        </view>
+                    </view>
+                    <view class="registbox">
+                        <input name="hospitname" placeholder="所住医院和科室名称"></input>
+                    </view>
+                </view>
+                <view class="registList">
+                    <view class="sickname">
+                        <text class="sickLeft">
+                            <text>所患疾病</text>
+                            <text class="bi">(必填)</text>
+                        </text>
+                    </view>
+                    <view class="registbox">
+                        <input name="docname" placeholder="主治医生姓名和联系方式"></input>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="posfix">
+            <view class="posfix_l">
+        视频门诊费
+        <text style="color:#e79d44;">{{newmoney}}元</text>
+            </view>
+            <view class="posfix_r" style="background-color:{{bgc}}">
+                <button catchtap="alipay" formType="submit">
+                    <text>去支付</text>
+                </button>
+            </view>
+        </view>
+    </form>
+</view>
+<view class="mask" wx:if="{{mask_key}}">
+    <view class="mask_sign">
+        <view class="mask_up">
+            <text>温馨提示</text>
+            <text>远程门诊服务需要本地医生协助，我们为您协调和安排</text>
+        </view>
+        <view class="mask_down">
+            <view catchtap="nextpage" data-index="0">
+        不要本地医生，去选择其他服务
+      </view>
+            <view catchtap="nextpage" class="bgblue" data-index="1">
+        同意安排本地医生，去支付
+      </view>
+        </view>
+        <image catch:tap="close" mode="aspectFit" src="/assets/images/del_img.png"></image>
+    </view>
+</view>

@@ -1,0 +1,11 @@
+<view class="box">
+    <view class="list">
+        <view bindtap="goback" class="item" data-nametitle="{{item.name}}" data-url="{{item.url}}" wx:for="{{yonghuList}}">
+            <view class="df">
+                <image mode="widthFix" src="{{item.img}}" style="width:100rpx;margin-right:24rpx;"></image>
+                <view>{{item.name}}</view>
+            </view>
+            <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/arrow.png?sign=d8bec434e9a3266690d636079c8a4bb5&t=1576567271" style="width:14rpx"></image>
+        </view>
+    </view>
+</view>

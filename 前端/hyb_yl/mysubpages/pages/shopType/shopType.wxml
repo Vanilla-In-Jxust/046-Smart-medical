@@ -1,0 +1,69 @@
+<view class="headerbox">
+    <view class="search_view">
+        <view class="search">
+            <icon class="searchbtn" color="#999999" size="18" type="search"></icon>
+            <input bindinput="serchShop" placeholder="输入商品名称搜索" placeholderClass="placeholder" type="text"></input>
+        </view>
+        <view bindtap="sou" class="sou">搜索</view>
+    </view>
+    <view class="filter">
+        <view class="up">
+            <view bindtap="filtes" class="{{index==0?'red':''}}" data-index="0">
+        {{filtant[arry]}}
+        <image class="{{hide?'':'active'}}" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/down01.png?sign=a55fd74cafd44a5b0d49225d41088fb9&t=1577341464"></image>
+            </view>
+            <view bindtap="filtes" class="{{index==1?'red':''}}" data-index="1">
+        销量
+      </view>
+        </view>
+        <view class="down" hidden="{{hide}}">
+            <view bindtap="choseitem" data-index="{{index}}" wx:for="{{filtant}}" wx:key="index">
+          {{item}}
+        </view>
+        </view>
+        <view catchtouchmove="ture" hidden="{{hide}}" style="width:100%;height:calc(100vh - 89rpx);background:rgba(0,0,0,0.3);position:absolute;top:0px;left:0px;z-index:100"></view>
+    </view>
+    <view style="width:100%;height:70rpx"></view>
+    <scroll-view scrollY bindscrolltolower="getMore" class="get_more">
+        <navigator class="food_list" url="/hyb_yl/mysubpages/pages/product/product?sid={{item.sid}}" wx:if="{{serchName==''}}" wx:for="{{proList}}" wx:key="index">
+            <view class="food_list_left">
+                <image class="food_list_img" src="{{item.sthumb}}"></image>
+            </view>
+            <view class="food_list_right">
+                <view class="food_list_right_title  font_co333">
+                    <view class="text-overflow">{{item.sname}}</view>
+                </view>
+                <view class="food_list_right_bottom">
+                    <text class="hot_price font_si12">￥<text class="font_si16" style="font-weight:bold;font-size:40rpx">{{item.smoney}}</text>
+                    </text>
+                    <text class="font_si12 font_co999">已售{{item.spxl}}笔</text>
+                </view>
+            </view>
+        </navigator>
+        <navigator class="food_list" url="/hyb_yl/mysubpages/pages/product/product?sid={{item.sid}}" wx:if="{{serchName!=''}}" wx:for="{{serchList}}" wx:key="index">
+            <view class="food_list_left">
+                <image class="food_list_img" src="{{item.sthumb}}"></image>
+            </view>
+            <view class="food_list_right">
+                <view class="food_list_right_title  font_co333">
+                    <view class="text-overflow">{{item.sname}}</view>
+                </view>
+                <view class="food_list_right_bottom">
+                    <text class="hot_price font_si12">￥<text class="font_si16" style="font-weight:bold;font-size:40rpx">{{item.smoney}}</text>
+                    </text>
+                    <text class="font_si12 font_co999">已售{{item.spxl}}笔</text>
+                </view>
+            </view>
+        </navigator>
+        <view class="no_product font_si16 font_co666" wx:if="{{noFlag}}">暂无商品</view>
+        <view class="loading_view" hidden="{{loadingBoo}}">
+            <image class="loading" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/loading.gif?sign=6e67a4a6c8dbf442b70a8c5994b30ac1&t=1577341390"></image>
+            <text class="font_co999 font_si14">加载中...</text>
+        </view>
+        <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">没有更多了~</view>
+    </scroll-view>
+</view>
+<view class="bigbox">
+    <classify num="{{type}}" shop="{{shop}}"></classify>
+</view>
+<view class="footbox"></view>

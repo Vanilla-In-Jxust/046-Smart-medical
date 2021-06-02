@@ -1,0 +1,107 @@
+<view class="fixed_top" id="mjltest">
+    <navigator class="head_view font_si16 font_co999" url="/hyb_yl/backstageTeam/pages/teamDetails/teamDetails?teamId={{contactList.teamBaseInfoVo.teamId}}&managerRole={{contactList.teamBaseInfoVo.myTeamRole}}&groupFlag=1">
+        <view class="left_view">
+            <text class="font_co3b" wx:if="{{contactList.teamBaseInfoVo.myTeamRole}}">{{contactList.teamBaseInfoVo.myTeamRole==1?'我创建的':'我加入的'}}</text>
+            <image class="left_img" src="/assets/images/3b.png"></image>
+        </view>
+        <view class="name_view">{{contactList.teamBaseInfoVo.teamName}}</view>
+        <view>
+            <image class="right_image" src="/assets/images/xq.png"></image>
+        </view>
+    </navigator>
+    <view class="message">
+        <view class="messageImgBox">
+            <image class="messageImg" mode="aspectFill" src="{{contactList.patientSimpleVo.userIcon?contactList.patientSimpleVo.userIcon:'/assets/images/head.png'}}"></image>
+        </view>
+        <view class="messageTextBox">
+            <view class="messageText1">{{contactList.patientSimpleVo.name}}</view>
+            <view class="messageText2">
+                <image class="messageText2Img" src="{{item.patientSimpleVo.nmGender?'/assets/images/nva.png':'/assets/images/nana.png'}}"></image>
+            </view>
+            <view class="messageText3" wx:if="{{contactList.patientSimpleVo.age}}">{{contactList.patientSimpleVo.age}}岁</view>
+        </view>
+        <view class="messageRught">
+            <image bindtap="lookPaint" class="messageRughtImg {{show?'':'messageRughtImg_margin'}}" src="/assets/images/setting.png"></image>
+            <view bindtap="Clickshow1" class="messageText2Img1" wx:if="{{show}}">
+        问题查看
+      </view>
+        </view>
+    </view>
+    <view class="ImageText" wx:if="{{hide}}">
+        <view class="ImageText">
+            <scroll-view scrollY class="font_si16 font_co333 public_white quest_view">
+        {{contactList.dpMedOrderVo.msgTxt}}
+      </scroll-view>
+            <view class="scroll_box">
+                <scroll-view scrollX class="quest_img_view public_white" wx:if="{{contactList.dpMedOrderVo.msgPicSmall.length>0}}">
+                    <image catchtap="previewImage" class="quest_img" data-imgindex="{{index}}" mode="aspectFill" src="{{item}}" wx:for="{{contactList.dpMedOrderVo.msgPicSmall}}" wx:key="{{ index }}"></image>
+                </scroll-view>
+            </view>
+            <view class="prompt">
+                <text>服务时间：{{contactList.dpMedOrderVo.sessionDateBegin}}</text>
+                <view class="left_view">
+                    <text bindtap="closeBtn" class="over_replide">结束咨询</text>
+                    <view bindtap="Clickshow" class="up_view">
+                        <view class="font_si14 font_co3b">收起</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view style="height: {{text_height}}px;" wx:if="{{!serviceFlag}}"></view>
+<view style="height: 224rpx;" wx:if="{{serviceFlag}}"></view>
+<scroll-view scrollY bindscrolltoupper="scrolltoupper" class="font_si12 font_co999 quest_time" scrollTop="{{scrollTop}}" style="height: {{scroll_height}}px; padding-bottom: {{!serviceFlag?text_padding+'px':174+'rpx'}};">
+    <view class="dialog_box" wx:if="{{oppositeList.length>0}}">
+        <view wx:for="{{oppositeList}}" wx:key="{{ index }}">
+            <view class="opposite" wx:if="{{item.from!=0}}">
+                <text class="font_si12 font_co3b opposite_time" style="color: #3b4ca9;" wx:if="{{item.parting==1}}">以下是最新消息</text>
+                <text class="font_si12 font_co999 opposite_time">{{item.ctime}}</text>
+                <view class="opposite_in">
+                    <view class="opposite_img_view">
+                        <image class="opposite_img" mode="aspectFill" src="{{item.headerUrl?item.headerUrl:'/assets/images/head.png'}}"></image>
+                    </view>
+                    <text bindtap="toPlay" class="video_text_left font_si14 public_white font_co333" data-index="{{index}}" data-src="{{item.msg}}" wx:if="{{item.msgType=='GROUP_VIDEO'}}">{{item.playFlag?'播放中...':item.duration+'"'}}<text class="opposite_text"></text>
+                    </text>
+                    <text class="opposite_content_text font_si14 public_white font_co333" wx:if="{{item.msgType=='GROUP_TEXT'}}">{{item.msg}}<text class="opposite_text"></text>
+                    </text>
+                    <image catchtap="bigImage" class="own_img_img" data-bigimg="{{item.bigImg}}" mode="widthFix" src="{{item.msg}}" style="width: 220rpx;" wx:if="{{item.msgType=='GROUP_IMAGE'}}"></image>
+                </view>
+            </view>
+            <view class="opposite_own" wx:else>
+                <text class="font_si12 font_co999 opposite_time">{{item.ctime}}</text>
+                <view class="opposite_in opposite_in_own">
+                    <text bindlongtap="backout" class="own_content_text font_si14 public_bgc3b font_cofff" data-backmsg="{{item.seqId}}" data-index="{{index}}" wx:if="{{item.msgType=='GROUP_TEXT'}}">{{item.msg}}<text class="opposite_own_text public_bgc3b"></text>
+                    </text>
+                    <image bindlongpress="backout" catchtap="bigImage" class="own_img" data-backmsg="{{item.seqId}}" data-bigimg="{{item.bigImg}}" data-index="{{index}}" mode="widthFix" src="{{item.msg}}" style="width: 220rpx;" wx:if="{{item.msgType=='GROUP_IMAGE'}}"></image>
+                    <text bindlongtap="backout" bindtap="toPlay" class="video_text public_bgc3b font_cofff font_si14" data-backmsg="{{item.seqId}}" data-index="{{index}}" data-src="{{item.msg}}" wx:if="{{item.msgType=='GROUP_VIDEO'}}">{{item.playFlag?'播放中...':item.duration+'"'}}<text class="opposite_own_text public_bgc3b"></text>
+                    </text>
+                    <image class="opposite_img" mode="aspectFill" src="{{contactList.doctorIcon}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</scroll-view>
+<view class="fixed_bottom  click" id="textarea_bottom">
+    <form bindsubmit="{{imgBoo?'':'sendMsg'}}" catchtap="{{disableFlag?'toast':''}}" class="public_white center edit_text form">
+        <view catchtouchend="shopRecord" catchtouchstart="{{disableFlag?'toast':'getRecord'}}" class="text_record" wx:if="{{recordFlag}}">{{record_text}}</view>
+        <textarea adjustPosition="true" autoHeight="{{heightFlag}}" bindinput="getText" bindlinechange="bindlinechange" class="edit_input font_si16 font_co333" cursorSpacing="20" disabled="{{disableFlag}}" fixed="true" maxlength="500" name="textarea" placeholder="" showConfirmBar="" style="height: {{height}}rpx;" type="" value="{{textMsg}}" wx:if="{{!recordFlag}}"></textarea>
+        <button class="sendBtn font_cofff font_si12 {{imgBoo?'bgeb':'public_bgc3b'}}" formType="submit" wx:if="{{!recordFlag}}">
+            <image class="send_img" src="/assets/images/send.png"></image>
+        </button>
+    </form>
+    <view class="edit_text_bottom">
+        <view bindtap="goText">
+            <image class="edit_bottom_img" src="{{recordFlag?'/assets/images/text01.png':'/assets/images/text02.png'}}"></image>
+        </view>
+        <view bindtap="toRecord">
+            <image class="edit_bottom_img" src="{{recordFlag?'/assets/images/yuy02.png':'/assets/images/yuy01.png'}}"></image>
+        </view>
+        <view bindtap="{{disableFlag?'toast':'sendChooseImg'}}">
+            <image class="edit_bottom_img" src="/assets/images/LL.png"></image>
+        </view>
+        <navigator hoverClass="hoverClass" url="{{disableFlag?'':'/hyb_yl/backstageFollowUp/pages/common/common'}}">
+            <image class="edit_bottom_img" src="/assets/images/common.png"></image>
+        </navigator>
+    </view>
+</view>

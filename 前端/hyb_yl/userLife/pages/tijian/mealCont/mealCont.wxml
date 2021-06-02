@@ -1,0 +1,30 @@
+<view class="headbox">
+    <view class="hospitalbox">
+        <view class="hospImg">
+            <image src="{{detail.athumb}}"></image>
+        </view>
+        <view class="hosp_right">
+            <view class="mealName">{{detail.atitle}}</view>
+            <view class="">
+                <text class="typelabel">{{detail.content}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="contbox">共{{detail.t_msg.length}}项检查的项目</view>
+    <view class="containbox">包含项目</view>
+    <view class="mealcontBox">
+        <view class="pack" wx:for="{{detail.t_msg}}">
+            <view class="general">{{item.title}}</view>
+            <view class="mealcont">
+                <view class="mealLeft">
+                    <view class="general_cont">{{item.content}}</view>
+                </view>
+                <view class="mealRight">
+                    <view bindtap="pop" class="promptImg" data-t_msg2="{{item.content}}">
+                        <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/ic_inform_gray2x.svg?sign=031b0b7f24dd7cd7092263a40a9092d8&t=1574839917"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

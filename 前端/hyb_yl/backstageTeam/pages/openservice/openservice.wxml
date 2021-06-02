@@ -1,0 +1,17 @@
+<view class="service-list">
+    <view bindtap="opening" class="service-item" data-id="{{item.id}}" data-state="{{index}}" data-title="{{item.ftitle}}" wx:for="{{server}}">
+        <image src="{{item.icon}}"></image>
+        <view class="service-ri">
+            <view class="service-top">
+                <view class="service-tit">
+                    <view>{{item.ftitle}}</view>
+                    <view class="price">￥{{item.money}}</view>
+                </view>
+                <switch catchtap="twchanges" checked="{{item.stateback==1?'checked':''}}" color="#0087E0" data-gq="{{item.gq}}" data-id="{{item.id}}" data-index="{{index}}" data-money="{{item.money}}" data-stateback="{{item.stateback}}"></switch>
+            </view>
+            <view class="service-tip">{{item.server_content}}</view>
+            <view class="service-time" wx:if="{{item.stateback==1}}">还剩{{item.endtime}}
+			</view>
+        </view>
+    </view>
+</view>

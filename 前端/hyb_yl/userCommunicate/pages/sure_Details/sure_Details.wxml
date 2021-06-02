@@ -1,0 +1,101 @@
+<view class="counttime">一般14点前下单，当日发出。如部分药品需要调货，则最迟不超过48小时发货。湖北地区暂停发货。物流时效受疫情影响，可能延迟3-7天</view>
+<view>
+    <view class="public_bgc3b details_top" wx:if="{{info.orderStatus=='-1'}}">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wujian.png?sign=e8d09383c7818b1aabff8c6529ecea1f&t=1583979955"></image>
+        <text class="detail_left">已取消</text>
+    </view>
+    <view class="public_bgc3b details_top" wx:if="{{info.orderStatus=='-2'}}">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wujian.png?sign=e8d09383c7818b1aabff8c6529ecea1f&t=1583979955"></image>
+        <text class="detail_left">待支付</text>
+    </view>
+    <view class="public_bgc3b details_top" wx:if="{{info.orderStatus=='0'}}">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wujian.png?sign=e8d09383c7818b1aabff8c6529ecea1f&t=1583979955"></image>
+        <text class="detail_left">待发货</text>
+    </view>
+    <view class="public_bgc3b details_top" wx:if="{{info.orderStatus=='1'}}">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wujian.png?sign=e8d09383c7818b1aabff8c6529ecea1f&t=1583979955"></image>
+        <text class="detail_left">配送中</text>
+    </view>
+    <view class="public_ccc details_top" wx:if="{{info.isAppraise=='0'&&info.orderStatus=='2'}}">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wujian.png?sign=e8d09383c7818b1aabff8c6529ecea1f&t=1583979955"></image>
+        <text class="detail_left">已完成待评价</text>
+    </view>
+    <view class="public_ccc details_top" wx:if="{{info.orderStatus=='-3'}}">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wujian.png?sign=e8d09383c7818b1aabff8c6529ecea1f&t=1583979955"></image>
+        <text class="detail_left">已拒收</text>
+    </view>
+    <view bindtap="address" class="site"> 地址
+		<view class="site-a">
+            <view class="site-in">
+                <text class="receiverName font_co333">{{addresslist.userName}}</text>
+                <text class="font_co333">{{addresslist.userPhone}}</text>
+            </view>
+            <view class="site-b">{{addresslist.userAddress}}</view>
+        </view>
+    </view>
+    <view class="mg_top10"></view>
+    <navigator class="products" hoverClass="hover" url="/hyb_yl/shopsub/pages/product/product?itemId={{item.itemId}}" wx:for="{{info.cartlist}}" wx:key="key">
+        <view bindtap="orderinfo" class="drupmes" data-id="{{info.id}}" data-sid="{{item.sid}}">
+            <view class="drupmes-img">
+                <image src="{{item.sthumb}}"></image>
+            </view>
+            <view class="drupmesbox">
+                <view class="drupmes-mess">
+                    <view>{{item.sname}}</view>
+                    <view>x{{item.num}}</view>
+                </view>
+                <view class="drupmes-site">{{item.zyf.title}}</view>
+                <view class="drupmes-site">{{item.use}}</view>
+                <view class="drupmes-price">￥{{item.smoney}}</view>
+            </view>
+        </view>
+    </navigator>
+    <view class="totalsbox">
+        <view class="total">
+            <text class="font_si14">商品总额</text>
+            <text class="font_si14">￥{{info.totalMoney}}</text>
+        </view>
+    </view>
+    <view class="mg_top10"></view>
+    <view class="line_item">
+        <view class="line_view">
+            <text class="font_si14 font_co999 line_left" style="font-size:30rpx;">支付方式:</text>
+            <text class="font_si14 font_co999" style="font-size:30rpx;">微信支付</text>
+        </view>
+        <view class="line_view">
+            <text class="font_si14 font_co999 line_left">订单号:</text>
+            <text class="font_si14 font_co999 line_right" selectable="true">{{info.orderNo}}</text>
+            <text bindtap="copy" class="copy" data-orders="{{info.orderNo}}">复制</text>
+        </view>
+        <view class="line_view">
+            <text class="font_si14 font_co999 line_left">创建时间:</text>
+            <text class="font_si14 font_co999">{{info.createTime}}</text>
+        </view>
+        <view class="line_view" wx:if="{{info.orderStatus=='2'||info.orderStatus=='1'||info.orderStatus=='0'}}">
+            <text class="font_si14 font_co999 line_left">付款时间:</text>
+            <text class="font_si14 font_co999">{{info.paytime}}</text>
+        </view>
+    </view>
+    <block wx:if="{{xufang==0}}">
+        <view class="foor-a"></view>
+        <view class="foor" wx:if="{{info.orderStatus=='0'||info.orderStatus=='1'}}">
+            <view bindtap="changeStatus" class="foot-tj">确认收货</view>
+        </view>
+        <view class="foor" wx:if="{{info.orderStatus=='-2'}}">
+            <view bindtap="changeStatuspay" class="foot-tj" data-id="{{id}}" data-money="{{info.totalMoney}}" data-orders="{{info.orderNo}}">立即支付</view>
+        </view>
+        <view class="foor" wx:if="{{info.orderStatus=='0'||info.orderStatus=='1'}}">
+            <view bindtap="chakwliu" class="foot-tj wuliu" data-id="{{item.id}}" data-orderStatus="{{item.orderStatus}}" data-orderss="{{item.orderNo}}" data-orderunique="{{item.orderunique}}">查看物流</view>
+        </view>
+        <view class="foor" wx:if="{{info.isAppraise=='0'&&info.orderStatus=='2'}}">
+            <navigator class="foot-tj" hoverClass="hover-class" url="/hyb_yl/userCommunicate/pages/addComment/addComment?sid={{info.sid}}">去评价</navigator>
+        </view>
+    </block>
+    <view bindtap="changeStatuspay" class="foot-tj" data-id="{{id}}" data-money="{{info.totalMoney}}" data-orders="{{info.orderNo}}" wx:if="{{xufang==1}}">立即支付</view>
+</view>
+<view class="popboxempty" wx:if="{{popshow}}"></view>
+<view class="popbox" wx:if="{{txt=='yes'}}">
+    <view class="ptiontit">请允许接收订阅消息</view>
+    <view class="ptiontextt">为了及时的告知医生已回复你的问题，请勾选【所有】消息类型并允许</view>
+    <view bindtap="ptiontitbtn" class="ptiontitbtn">我知道了</view>
+</view>

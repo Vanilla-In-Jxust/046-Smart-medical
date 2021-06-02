@@ -1,0 +1,24 @@
+<view class="all">
+    <view class="title">
+        <text>请选择你希望得到的帮助</text>
+    </view>
+    <checkbox-group bindchange="checkboxChange">
+        <label catchtap="changeitem" class="checkbox" data-index="{{index}}" wx:for="{{items}}" wx:key="{{index}}">
+            <checkbox checked="{{item.checked}}" value="{{item.name}}"></checkbox>{{item.value}}
+          </label>
+        <view class="other" wx:if="{{textkey}}">
+            <textarea bindinput="getext" placeholder="请填写其他您期望医生给予的专业帮助"></textarea>
+        </view>
+    </checkbox-group>
+    <view class="footers">
+        <checkbox-group bindchange="checkboxChanges">
+            <label catchtap="changeitems" class="checkbox" wx:for="{{citems}}" wx:key="{{index}}">
+                <checkbox checked="{{item.checked}}" value="{{item.name}}"></checkbox>{{item.value}}
+            </label>
+            <view>
+              由于医院规定，私人医生服务不能提供门诊，住院，手术等方面的任何特殊照顾
+            </view>
+        </checkbox-group>
+    </view>
+    <button catchtap="nextpage" class="next">下一步</button>
+</view>

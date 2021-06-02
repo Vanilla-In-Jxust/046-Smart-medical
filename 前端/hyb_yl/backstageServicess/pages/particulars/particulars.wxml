@@ -1,0 +1,23 @@
+<view class="wrap">提现金额
+    <text>{{arr.applyTotal/100?arr.applyTotal/100:0}}</text>
+</view>
+<view class="wrap1">
+    <view class="wrap1-text">类型
+      <text>{{text1}}</text>
+    </view>
+    <view class="wrap1-text">发起时间
+      <text>{{arr.applyTime}}</text>
+    </view>
+    <view class="wrap1-text">交易单号
+      <text>{{arr.orderId}}</text>
+    </view>
+    <view class="wrap1-text">税费
+      <text>{{arr.taxation/100?arr.taxation/100:0}}</text>
+    </view>
+    <view class="wrap1-text">实际到账
+      <text>{{arr.realityTotal/100?arr.realityTotal/100:0}}</text>
+    </view>
+    <view class="wrap1-text">状态
+      <text style="color: #3b4ca9;">{{text}}</text>
+    </view>
+</view>

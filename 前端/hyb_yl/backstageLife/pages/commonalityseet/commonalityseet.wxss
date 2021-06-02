@@ -1,0 +1,146 @@
+page {
+    background: #f2f3f7;
+}
+
+.com_seetBox {
+    width: 100%;
+    height: 114rpx;
+    background-color: #ffffff;
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+}
+
+.com_seetBox1 {
+    width: 690rpx;
+    height: 60rpx;
+    background-color: #f5f5f5;
+    border-radius: 30rpx;
+    float: left;
+    margin-top: 26rpx;
+    margin-left: 30rpx;
+}
+
+.com_seetimg {
+    width: 40rpx;
+    height: 40rpx;
+    float: left;
+    margin-top: 10rpx;
+    margin-left: 26rpx;
+}
+
+.com_input {
+    width: 590rpx;
+    height: 60rpx;
+    float: left;
+    margin-left: 20rpx;
+    font-size: 28rpx;
+}
+
+.list {
+    width: 100%;
+    height: 268rpx;
+    background: #fff;
+}
+
+.list1 {
+    width: 720rpx;
+    height: 266rpx;
+    float: right;
+    border-bottom: 1rpx solid #e0e0e0;
+}
+
+.list_headline {
+    width: 440rpx;
+    height: 266rpx;
+    float: left;
+}
+
+.list_headline_text {
+    width: 100%;
+    height: 100rpx;
+    font-size: 36rpx;
+    color: #333;
+    line-height: 48rpx;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    float: left;
+    margin-top: 30rpx;
+}
+
+.name_time {
+    width: 100%;
+    float: left;
+    margin-top: 10rpx;
+    color: #999;
+    font-size: 24rpx;
+}
+
+.like_box {
+    width: 100%;
+    height: 70rpx;
+    float: left;
+    margin-top: 18rpx;
+}
+
+.like {
+    width: 100rpx;
+    height: 70rpx;
+    float: left;
+    margin-right: 20rpx;
+}
+
+.list_img {
+    width: 28rpx;
+    height: 24rpx;
+    float: left;
+    margin-top: 23rpx;
+}
+
+.list_img_text {
+    float: left;
+    line-height: 70rpx;
+    font-size: 24rpx;
+    color: #999;
+    text-indent: 10rpx;
+}
+
+.list_headline_boximg {
+    width: 260rpx;
+    height: 266rpx;
+    float: right;
+}
+
+.list_headline_boximg1 {
+    width: 200rpx;
+    height: 156rpx;
+    border-radius: 16rpx;
+    float: left;
+}
+
+.share {
+    width: 160rpx;
+    height: 48rpx;
+    background-color: #ffffff;
+    border-radius: 24rpx;
+    border: solid 1rpx #3b4ca9;
+    float: right;
+    margin-top: 16rpx;
+    margin-right: 30rpx;
+}
+
+.share_masturbation {
+    width: 28rpx;
+    height: 26rpx;
+    float: left;
+    margin-top: 10rpx;
+    margin-left: 66rpx;
+}
+
+.wx_c {
+    width: 100%;
+    text-align: center;
+    line-height: 500rpx;
+}

@@ -1,0 +1,82 @@
+<view class="doc-order-tab">
+    <view bindtap="doctab" class="doc-tab-item {{docindex==index?'doc-tab-item-act':''}}" data-dex="{{index}}" wx:for="{{tabitem}}">{{item}}</view>
+</view>
+<view style="height:100rpx;"></view>
+<view class="patient-box" wx:if="{{docindex==0}}">
+    <view class="patient-item" wx:for="{{list}}">
+        <view class="patient-in">
+            <view class="text_img">
+                <view>患</view>
+                <view>者</view>
+                <view>信</view>
+                <view>息</view>
+            </view>
+            <view class="patient-ri">
+                <view class="patient-name">{{item.names}}
+					<view>{{item.sex}} {{item.age}}岁</view>
+                </view>
+                <view class="patient-state">患者标签：{{item.u_biaoqian}}</view>
+                <view class="patient-text patient-state">
+          病历信息：<view>{{item.bingli}}</view>
+                </view>
+                <view class="patient-btn">
+                    <view bindtap="tongguo" class="patient-btton" data-change="{{item.change}}" data-id="{{item.id}}" data-openid="{{item.openid}}" wx:if="{{item.ifqianyue=='1'}}">通过签约</view>
+                    <view bindtap="jujue" class="patient-btton" data-change="{{item.change}}" data-id="{{item.id}}" data-openid="{{item.openid}}" wx:if="{{item.ifqianyue=='1'}}">拒绝签约</view>
+                    <view class="patient-btton" data-change="{{item.change}}" data-id="{{item.id}}" data-openid="{{item.openid}}" wx:if="{{item.ifqianyue=='5'}}">已拒绝</view>
+                    <view bindtap="jiechu" class="patient-btton" data-change="{{item.change}}" data-id="{{item.id}}" data-openid="{{item.openid}}" wx:if="{{item.ifqianyue=='2'}}">解除签约</view>
+                    <view class="patient-btton" data-change="{{item.change}}" data-id="{{item.id}}" data-openid="{{item.openid}}" wx:if="{{item.ifqianyue=='3'}}">已解除</view>
+                    <view bindtap="see" class="patient-btton" data-change="{{item.change}}" data-id="{{item.id}}" data-names="{{item.names}}" data-openid="{{item.openid}}">档案</view>
+                </view>
+            </view>
+        </view>
+        <view class="patient-state-nk" wx:if="{{item.type=='2'}}">
+            <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/state-k.png?sign=cd10add8c601b68ec7dfd6939ab44e9b&t=1591608556"></image>
+            <view>年卡</view>
+        </view>
+    </view>
+</view>
+<view class="patient-box" wx:if="{{docindex==1}}">
+    <view class="patient-item" wx:for="{{list}}">
+        <view class="patient-in patient-pad">
+            <view class="text_img">
+                <view>患</view>
+                <view>者</view>
+                <view>信</view>
+                <view>息</view>
+            </view>
+            <view class="patient-ri">
+                <view class="patient-name">{{item.names}}
+					<view>{{item.sex}} {{item.age}}岁</view>
+                </view>
+                <view class="patient-inb">病历信息：{{item.bingli}}</view>
+                <view class="patient-btn">
+                    <view class="patient-s">患者标签：{{item.u_label}}</view>
+                </view>
+                <view bindtap="see" class="patient-btton" data-change="{{item.change}}" data-id="{{item.id}}" data-openid="{{item.openid}}">档案</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="patient-box" wx:if="{{docindex==2}}">
+    <view class="patient-item" wx:for="{{list}}">
+        <view class="patient-in">
+            <view class="text_img">
+                <view>患</view>
+                <view>者</view>
+                <view>信</view>
+                <view>息</view>
+            </view>
+            <view class="patient-ri">
+                <view class="patient-name">{{item.names}}
+					<view>{{item.sex}} {{item.age}}岁</view>
+                </view>
+                <view class="patient-inb">病历信息：{{item.bingli}}</view>
+                <view class="patient-inb">患者标签：{{item.u_label}}</view>
+                <view class="patient-s">到期时间：{{item.end_time}}</view>
+                <view class="patient-btn">
+                    <view bindtap="see" class="patient-btton" data-change="{{item.change}}" data-id="{{item.id}}" data-openid="{{item.openid}}" style="float:right">档案</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "商城",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "ovalLogin": "/component/ovalLogin/ovalLogin"
+    }
+}

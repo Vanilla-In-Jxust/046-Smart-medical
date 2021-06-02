@@ -1,0 +1,4 @@
+<view class="box">
+    <input bindinput="input" class="input" placeholder="修改备注" placeholderStyle="color:#ccc" value="{{beizhu}}"></input>
+</view>
+<view bindtap="onClock" class="foot">确定</view>

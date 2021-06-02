@@ -1,0 +1,45 @@
+<view class="content_view">
+    <view class="content_team_img">
+        <view class="content_left">
+            <image bindtap="navCode" class="team_ma_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Team.png?sign=c993a4f4fed696de31ae19b904d9fabe&t=1571451119"></image>
+            <image class="set_img" src=""></image>
+        </view>
+        <view class="team_img_view">
+            <image bindtap="previewImage" class="team_image" data-url="{{teampic}}" mode="aspectFill" src="{{teampic}}"></image>
+        </view>
+        <view class="doyen">
+            <image bindtap="goTointro" class="doyen_img" data-id="{{zid}}" mode="aspectFill" src="{{z_thumbs}}"></image>
+            <text class="font_si12 font_co333">团队长</text>
+        </view>
+    </view>
+    <view class="font_si18 font_cofff content_teamName" style="color: #333;">{{teamname}}</view>
+    <view class="font_si14 font_co333 content_team_intro {{teamDescFlag?'content_team_intro_active':''}}" id="mjltest">简介:{{teamtext}}
+    <view catchtap="tapFlag" class="down_image_view" wx:if="{{downFlag}}">
+            <image class="down_image" src="/assets/images/up01.png"></image>
+        </view>
+        <block wx:if="{{teamDescFlag}}">
+            <view catchtap="tapFlag" class="down_image_view">
+                <image class="down_image" src="/assets/images/down01.png"></image>
+            </view>
+            <view class="test font_co333">
+                <text class="test_text">...</text>
+            </view>
+        </block>
+    </view>
+    <view class="content_sort">
+        <view bindtap="serve" class="content_list content_list_notice" style="background-image: linear-gradient(0deg, #ff9a64 0%, #ff9575 100%);	box-shadow: 0px 8rpx 4rpx 0px rgba(255, 150, 114, 0.2);">
+            <view class="content_list_notice_top">
+                <view class="font_cofff {{detailList.serviceItems.length>0?'':'font_si14 serve_view'}}">{{detailList.serviceItems.length>0?detailList.serviceItems.length:'未开启'}}</view>
+                <image class="notice_img  {{detailList.serviceItems.length>0?'':'serve_img'}}" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/service_items.png?sign=bac36963ab46407d7183990f4a67a797&t=1572419566"></image>
+            </view>
+            <view class="font_si16 font_cofff">服务项目</view>
+        </view>
+        <view bindtap="list" class="content_list content_list_notice" style="background-image: linear-gradient(0deg, #ff9bb5 0%, #fa7dbf 100%);	box-shadow: 0px 8rpx 4rpx 0px rgba(250, 129, 190, 0.2);">
+            <view class="content_list_notice_top">
+                <text class="content_list_text">{{detailList.doctorCount}}</text>
+            </view>
+            <view class="font_si16 font_cofff">签约医护</view>
+        </view>
+    </view>
+</view>
+<view bindtap="join" class="join">{{name}}</view>

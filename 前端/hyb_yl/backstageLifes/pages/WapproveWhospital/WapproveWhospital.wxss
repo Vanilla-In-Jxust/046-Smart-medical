@@ -1,0 +1,184 @@
+page {
+    background: #f0f0f0;
+    padding-bottom: 220rpx;
+}
+
+.head {
+    background: #f0f0f0;
+    width: 100%;
+    z-index: 1;
+}
+
+.section {
+    display: flex;
+    height: 104rpx;
+    align-items: center;
+    padding-left: 30rpx;
+    padding-right: 24rpx;
+}
+
+.placeholder-style {
+    font-size: 32rpx;
+    color: #ccc;
+    width: 100%;
+    z-index: 0;
+}
+
+input {
+    font-size: 32rpx;
+    color: #999;
+    z-index: 0;
+    flex: 1;
+}
+
+.btn {
+    color: #fff;
+    margin: 250rpx 30rpx 30rpx 30rpx;
+}
+
+.hos {
+    margin-right: 102rpx;
+}
+
+.changeCity {
+    margin-right: 40rpx;
+}
+
+.hospital {
+    background-color: #fff;
+    height: 100%;
+    margin-top: 220rpx;
+    z-index: 0;
+}
+
+.hospitalName {
+    font-size: 32rpx;
+    color: #333;
+    margin-left: 240rpx;
+    line-height: 40rpx;
+    padding: 25rpx 0;
+}
+
+.scrollView {
+    height: 100vh;
+}
+
+.line {
+    height: 1rpx;
+    background-color: #f0f0f0;
+}
+
+.rgb {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.selector-area {
+    height: 100%;
+    width: 600rpx;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100000;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(600rpx);
+}
+
+.area-selector {
+    display: flex;
+    flex: 1;
+}
+
+.handle-bar {
+    height: 88rpx;
+    display: flex;
+    align-items: center;
+}
+
+.handle-bar image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-left: 24rpx;
+}
+
+.handle-bar .hd_box {
+    flex: 1;
+    text-align: center;
+}
+
+.selector {
+    width: 300rpx;
+    height: 92.5vh;
+}
+
+.picker {
+    width: 300rpx;
+    height: 88rpx;
+    font-size: 28rpx;
+    color: #333;
+    text-align: center;
+    line-height: 88rpx;
+}
+
+.province {
+    background: #fff;
+}
+
+.city {
+    background: #f7f7f7;
+}
+
+.province-active {
+    background-color: #f7f7f7;
+    color: #3b4ca9;
+}
+
+.city-active {
+    background-color: #f0f0f0;
+    color: #3b4ca9;
+}
+
+.mg_top10 {
+    width: 100%;
+    height: 20rpx;
+}
+
+.public_bgc3b {
+    background: linear-gradient(to right,#6699ff,#3b4ac9);
+}
+
+.yiyuanList {
+    max-height: 600rpx;
+    overflow: hidden;
+    overflow-y: auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20rpx;
+}
+
+.yiyuanList>view {
+    background: rgb(214,214,214);
+    font-size: 30rpx;
+    color: #999;
+    margin-bottom: 20rpx;
+    margin-right: 20rpx;
+    text-align: center;
+    padding: 10rpx 20rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 20rpx;
+}
+
+.yiyuan {
+    color: #999;
+    font-size: 32rpx;
+}

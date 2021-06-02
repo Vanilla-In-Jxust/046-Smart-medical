@@ -1,0 +1,104 @@
+view {
+    box-sizing: border-box;
+}
+
+page {
+    box-sizing: border-box;
+    padding: 30rpx 30rpx 0;
+    background: #fff;
+}
+
+.tip {
+    font-size: 34rpx;
+    font-weight: 600;
+    letter-spacing: 2rpx;
+}
+
+.tips {
+    font-size: 24rpx;
+    color: #c4c4c4;
+    padding: 14rpx 0ex;
+}
+
+.main {
+    width: 100%;
+    padding: 30rpx 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.item {
+    padding: 24rpx 0;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20rpx;
+    background: #FAFAFA;
+    border-radius: 10rpx;
+}
+
+.item1 {
+    padding: 24rpx 0;
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20rpx;
+    color: #9c9c9c;
+}
+
+.main .active {
+    color: #098BE1;
+    background: #D8F0FF;
+}
+
+.item image {
+    width: 40rpx;
+    height: 40rpx;
+    display: block;
+    margin-bottom: 20rpx;
+}
+
+.item text {
+    font-size: 26rpx;
+    color: #9c9c9c;
+}
+
+.name {
+    font-size: 32rpx;
+    margin-bottom: 20rpx;
+}
+
+.info {
+    font-size: 26rpx;
+}
+
+.btn {
+    width: 90%;
+    position: fixed;
+    bottom: 80rpx;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn navigator {
+    width: 90%;
+}
+
+.next {
+    width: 100%;
+    background: #6eaaa2;
+    font-size: 26rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90rpx;
+    color: #fff;
+    border-radius: 50rpx;
+}

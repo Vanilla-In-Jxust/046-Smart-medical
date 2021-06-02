@@ -1,0 +1,65 @@
+<view class="editor">
+    <view class="tips">
+        <view class="tips-left">
+            <image class="tips-left-image" role="img" src="{{xiangqing.advertisement}}"></image>
+        </view>
+        <view class="tips-right">
+            <view class="profile">
+                <text class="name">{{xiangqing.z_name}}</text>
+                <view class="tags">
+                    <view class="tag">可开处方</view>
+                    <view class="tag">专业审核优秀</view>
+                </view>
+            </view>
+            <view class="hint">
+                <view>请详细描述你的病情，有助于我更准确的分析，同时保证你的隐私安全！</view>
+            </view>
+        </view>
+    </view>
+    <view class="zixunbox fs26">
+        <text bindtap="selzixun" class="jinyong {{item.state?'onon':''}}" data-dex="{{index}}" data-txt="{{item.text.bq}}" wx:for="{{authority}}" wx:key="zx">{{item.text.bq}}</text>
+    </view>
+    <view class="textarea">
+        <textarea bindconfirm="handleConfirm" bindinput="handleContentInput" class="textarea-normal textarea-common" cursor="-1" focus="1" maxlength="500" placeholder="请详细描述你的病情" placeholderClass="textarea-placeholder" selectionEnd="-1" selectionStart="-1"></textarea>
+    </view>
+    <view class="attachment-contain">
+        <view class="upload-list">
+            <view class="imglist" wx:for="{{upload_picture_list}}" wx:key="{{index}}">
+                <image bindtap="deleteimg" data-index="{{index}}" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Schu.png?sign=d27c9797be112e6c00069e9cea3db59a&t=1571479530"></image>
+                <image mode="aspectFill" src="{{item}}"></image>
+            </view>
+            <view class="upload-list-item" wx:if="{{upload_picture_list.length!=9}}">
+                <view bindtap="uploadimg" class="upload-list-add">
+                    <image class="upload-list-add-image" mode="widthFix" role="img" src="https://img1.dxycdn.com/2019/1101/756/3377141806470101131-22.png" style="height: 24px;"></image>
+                    <view class="upload-list-add-text">图片</view>
+                </view>
+            </view>
+            <view class="upload-list-desc" wx:if="{{upload_picture_list.length==0}}">
+                <text>上传的内容仅对医生可见</text>
+            </view>
+        </view>
+    </view>
+    <view class="textarea-bottom-block">
+        <view bindtap="handlePrescriptionSuggestChange" class="user-options" wx:if="{{inquiry!=8}}">
+            <radio-group role="radiogroup">
+                <label ariaChecked="false" ariaDisabled="false" role="radio">
+                    <radio checked="{{agree}}" class="radio-prescription-suggestion" color="#0088DE"></radio>
+                    <text class="prescription-suggestion-tip">免费申请处方，获得用药建议</text>
+                </label>
+            </radio-group>
+        </view>
+        <view bindtap="handlePrescriptionSuggestChange" class="user-options" wx:if="{{inquiry==8}}">
+            <radio-group role="radiogroup">
+                <label ariaChecked="false" ariaDisabled="false" role="radio">
+                    <radio checked="{{agree}}" class="radio-prescription-suggestion" color="#0088DE"></radio>
+                    <text class="prescription-suggestion-tip" style="color:#0088DE">同意订阅术前接诊提醒</text>
+                </label>
+            </radio-group>
+        </view>
+    </view>
+    <view class="bottom-button">
+        <form bindsubmit="handleClickNext">
+            <button ariaDisabled="false" class="common-button" formType="submit" role="button">下一步</button>
+        </form>
+    </view>
+</view>

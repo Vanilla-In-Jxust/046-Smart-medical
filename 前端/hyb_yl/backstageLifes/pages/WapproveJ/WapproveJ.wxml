@@ -1,0 +1,5 @@
+<view class="xxx"></view>
+<view class="click">
+    <view bindtap="clickNum" class=" nav {{item.flag?'add_citying':''}}" data-id="{{casKey[index]}}" data-index="{{index}}" wx:for="{{casArrayx}}" wx:key="{{ index }}">{{item.name}}</view>
+</view>
+<view bindtap="foor" class="foor">确定</view>

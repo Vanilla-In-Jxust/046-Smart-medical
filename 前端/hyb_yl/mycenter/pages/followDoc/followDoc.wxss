@@ -1,0 +1,298 @@
+page {
+    font-family: "Microsoft YaHei";
+    background: #fff;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.searchresult {
+    width: 100vw;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.yishneginfo {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 37rpx;
+    border-bottom: 1rpx solid #F3F3F3;
+    color: #666;
+    font-size: 28rpx;
+    background-color: #fff;
+}
+
+.info-img {
+    width: 112rpx;
+    height: 112rpx;
+    text-align: center;
+}
+
+.info-img image {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 15rpx;
+    border-radius: 10rpx;
+}
+
+.info-img view {
+    display: inline;
+    padding: 0 5rpx;
+    border-radius: 4rpx;
+    color: rgb(134,134,134);
+    background: #EBEBEB;
+}
+
+.userinfo-body {
+    flex: 1;
+    min-width: 0;
+    margin-left: 30rpx;
+    line-height: 1.6;
+}
+
+.doctor-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    line-height: 38rpx;
+}
+
+.userinfo-body .doctor-info .doctor-name {
+    overflow: hidden;
+    color: #333;
+    font-weight: 500;
+    font-size: 34rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.userinfo-body .doctor-info .doctor-section {
+    margin: 0 12rpx;
+    overflow: hidden;
+    color: #333;
+    font-size: 28rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.userinfo-body .doctor-info .doctor-samecity {
+    height: 26rpx;
+    margin-left: 12rpx;
+    padding: 4rpx;
+    overflow: hidden;
+    color: #666;
+    font-size: 24rpx;
+    line-height: 26rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #ebebeb;
+    border-radius: 4rpx;
+}
+
+.userinfo-body .doctor-info .doctor-samecity-team {
+    height: 26rpx;
+    margin-left: 12rpx;
+    padding: 4rpx;
+    overflow: hidden;
+    color: #fff;
+    font-size: 24rpx;
+    line-height: 26rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #0087E0;
+    border-radius: 4rpx;
+}
+
+.userinfo-body .doctor-hospital {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 12rpx;
+    overflow: hidden;
+    color: #333;
+    font-size: 28rpx;
+    line-height: 32rpx;
+}
+
+.doctor-hospital .doctor-section-info {
+    flex-shrink: 0;
+}
+
+.doctor-hospital .doctor-hosptial-name {
+    flex-grow: 1;
+    margin-left: 12rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.userinfo-body .doctor-tags {
+    margin-top: 28rpx;
+    color: #4d4d4d;
+    font-weight: 300;
+    font-size: 26rpx;
+    line-height: 39rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.userinfo-body .doctor-answer-star {
+    display: flex;
+    align-items: center;
+    margin: 12rpx 0 0;
+    font-weight: 300;
+}
+
+.userinfo-body .doctor-answer-star image {
+    margin-right: 2px;
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.userinfo-body .doctor-answer-star .doctor-star {
+    height: 28rpx;
+    color: #faa700;
+    font-weight: 600;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.userinfo-body .doctor-answer-star .answer-count {
+    margin-left: 20rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.prescription-count,.reply-time-str {
+    margin-left: 12rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.prescription-count,.reply-time-str {
+    margin-left: 12rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.userinfo-body .doctor-list_dis {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20rpx;
+}
+
+.userinfo-body .doctor-list_dis_tags {
+    display: inline-block;
+    margin-right: 16rpx;
+    padding: 4rpx;
+    color: #fa0;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    background: #fffaf0;
+    border-radius: 4rpx;
+}
+
+.ask-doctor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40rpx;
+}
+
+.price-values-wrapper {
+    transform: translate(0);
+}
+
+.price-discount,.price-values {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.price-value {
+    display: flex;
+    align-items: center;
+    height: 32rpx;
+    color: #999;
+    font-weight: 500;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    margin-right: 20rpx;
+    margin-bottom: 20rpx;
+}
+
+.price-value-last {
+    position: relative;
+    margin-left: 20rpx;
+    padding-left: 20rpx;
+}
+
+.price-value-last {
+    position: relative;
+    margin-left: 20rpx;
+    padding-left: 20rpx;
+}
+
+.ask-doctor-hot {
+    text-align: center;
+    line-height: 26px;
+    background-color: #F5F5F5;
+    border-radius: 50rpx;
+    border: 0.5px solid #E8E8E8;
+    font-size: 26rpx;
+    color: #0087E0;
+    margin: 0;
+    padding: 0 20rpx;
+}
+
+.ask-doctor {
+    color: #fff;
+    text-align: center!important;
+}
+
+.searchresultsss {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 25rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    padding-top: 96rpx;
+}
+
+.searchresultitem {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 92rpx;
+    border-bottom: 1rpx solid #EBEBEB;
+}
+
+view.fixed {
+    position: fixed;
+    top: 90rpx;
+    left: 0;
+}
+
+.btn_box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20rpx;
+    width: 100%;
+}

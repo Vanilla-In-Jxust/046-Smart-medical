@@ -1,0 +1,57 @@
+<view class="oval">
+    <view class="searchbox">
+        <view class="searchView">
+            <icon class="searchbtn" color="#999999" size="15" type="search"></icon>
+            <input bindinput="getSearch" placeholder="请输入您要搜索的医生名称" type="text" value="{{checkword}}"></input>
+        </view>
+    </view>
+</view>
+<view class="all" wx:if="{{findArr.length>0}}">
+    <view class="searchHistory">
+        <view class="history_title">
+            <view class="searchFont">热门搜索</view>
+            <view class="clearFont"></view>
+        </view>
+        <view class="historybox">
+            <view bindtap="searchHistory" class="historyList" data-checkword="{{item.keywords}}" wx:for="{{findArr}}" wx:key="*this">
+                <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/huo.png?sign=8363c1b0301699a1de4d55ea243a8a77&t=1584685530" wx:if="{{index==0}}"></image>
+                <text>{{item.keywords}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="searchresult" wx:if="{{checkword!=''}}">
+    <view bindtap="listitembtn" class="searchresultitems" data-checkword="{{item.z_name}}" wx:for="{{searchlisttip}}" wx:key="f">{{item.z_name}}</view>
+</view>
+<view class="searchresult" wx:if="{{zhuanjialist.length>0}}">
+    <view bindtap="doctoritem" class="yishneginfo" data-zid="{{item.zid}}" wx:for="{{zhuanjialist}}" wx:key="d">
+        <view class="info-img">
+            <image src="{{item.advertisement}}"></image>
+        </view>
+        <view class="userinfo-body">
+            <view class="doctor-info">
+                <text class="doctor-name">{{item.z_name}}</text>
+                <text class="doctor-section">{{item.zhuanjia_zhicheng}}</text>
+            </view>
+            <view class="doctor-hospital">
+                <text class="doctor-section-info">{{item.zhuanjia_keshi}}</text>
+                <text class="doctor-hosptial-name">{{item.zhuanjia_jigou}}</text>
+            </view>
+            <view class="doctor-tags">擅长：{{item.authority}}</view>
+            <view class="doctor-answer-star">
+                <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/start.png?sign=3ab26ae6acd400d178daae014084e739&t=1591585512"></image>
+                <view class="doctor-star">{{item.pingfen}}</view>
+                <view class="answer-count">月回答{{item.xn_answer}}</view>
+                <view class="prescription-count"> 月处方{{item.xn_chufang}} </view>
+                <view class="reply-time-str">{{item.xytime}}分钟响应</view>
+            </view>
+            <view class="ask-doctor" wx:if="{{item.kaitongfuwu.length>0}}">
+                <view class="price-values-wrapper">
+                    <view class="price-values">
+                        <view class="price-value" wx:if="{{index<2}}" wx:for="{{item.kaitongfuwu}}" wx:for-item="pluginfuwu">{{pluginfuwu.titlme}} ￥{{pluginfuwu.ptmoney}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,61 @@
+page {
+    background: #fff;
+    font-family: "Microsoft YaHei";
+    padding: 0 30rpx;
+    box-sizing: border-box;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.evaluateitem {
+    padding: 25rpx 0;
+    border-bottom: 1rpx solid #F3F3F3;
+}
+
+.question-tit {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-weight: 500;
+    font-size: 34rpx;
+    line-height: 38rpx;
+}
+
+.question-tit image.userhead {
+    height: 40rpx;
+    width: 40rpx;
+    border-radius: 50%;
+}
+
+.question-tit view {
+    margin-left: 12rpx;
+}
+
+.question-tit image.pingxing {
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 10rpx;
+}
+
+.public-question-content {
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-top: 24rpx;
+    color: #4d4d4d;
+    font-weight: 300;
+    font-size: 32rpx;
+    line-height: 48rpx;
+}
+
+.public-question-count {
+    margin-top: 24rpx;
+    color: #999;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}

@@ -1,0 +1,54 @@
+<view class="box">
+    <view class="bg_box">
+        <image mode="widthFix" src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/34c07b8c1c6806102506bd8a36703c6.png?sign=332c87e9ef2a61311037d66e7c799efa&t=1594983050" style="width:100%"></image>
+        <view class="bg_cont">
+            <view class="dfc">
+                <view class="fs40">{{myinfo.sex}}</view>
+                <view class="fs30">性别</view>
+                <view class="heng"></view>
+                <view class="fs40" wx:if="{{myinfo.age==''||myinfo.age=='0'}}">未填</view>
+                <view class="fs40" wx:else>{{myinfo.age}}</view>
+                <view class="fs30">年龄</view>
+            </view>
+            <image mode="widthFix" src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/f57060b71852ff15ebeb6e6d4524617.png?sign=96ee327a6fdc3b26d33d9ec5c3021d9e&t=1594983036" style="width:158rpx;"></image>
+            <view class="dfc">
+                <view class="fs40" wx:if="{{myinfo.shengao==''||myinfo.shengao=='0'}}">未填</view>
+                <view class="fs40" wx:else>{{myinfo.shengao}}</view>
+                <view class="fs30">身高（cm）</view>
+                <view class="heng"></view>
+                <view class="fs40" wx:if="{{myinfo.tizhong==''||myinfo.tizhong=='0'}}">未填</view>
+                <view class="fs40" wx:else>{{myinfo.tizhong}}</view>
+                <view class="fs30">体重（kg）</view>
+            </view>
+        </view>
+    </view>
+    <view class="bingshi">
+        <view class="title">病史</view>
+        <view class="pd24">
+            <view class="bingshiitem">
+                <view class="fs28 c9">高血压病史</view>
+                <view class="fs28 c3">{{myinfo.feritin_index=='1'||myinfo.feritin_index==1?'有':'无'}}</view>
+            </view>
+            <view class="bingshiitem">
+                <view class="fs28 c9">糖尿病病史</view>
+                <view class="fs28 c3">{{myinfo.diabetes_index=='1'||myinfo.diabetes_index==1?'有':'无'}}</view>
+            </view>
+            <view class="bingshiitem">
+                <view class="fs28 c9">肝功能</view>
+                <view class="fs28 c3">{{myinfo.gan_index=='0'?'正常':'不正常'}}</view>
+            </view>
+            <view class="bingshiitem">
+                <view class="fs28 c9">肾功能</view>
+                <view class="fs28 c3">{{myinfo.shen_index=='0'?'正常':'不正常'}}</view>
+            </view>
+            <view class="bingshiitem">
+                <view class="fs28 c9">药物过敏史</view>
+                <view class="fs28 c3">{{myinfo.allergy_index=='1'||myinfo.allergy_index==1?'有':'无'}}</view>
+            </view>
+            <view class="bingshiitem">
+                <view class="fs28 c9">备孕情况</view>
+                <view class="fs28 c3">{{myinfo.be_index=='0'?'非备孕':'备孕'}}</view>
+            </view>
+        </view>
+    </view>
+</view>

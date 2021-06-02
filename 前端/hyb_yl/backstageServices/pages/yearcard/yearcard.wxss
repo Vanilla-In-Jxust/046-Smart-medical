@@ -1,0 +1,257 @@
+page {
+    background: #fff;
+    box-sizing: border-box;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.vipcard {
+    padding: 0 30rpx;
+    background: #fff;
+}
+
+.vip-card {
+    position: relative;
+    height: 360rpx;
+    box-shadow: 0 3rpx 6rpx 0 rgba(0,0,0,0.12);
+    border-radius: 12rpx;
+}
+
+.vipcard-card {
+    padding: 20rpx 0 60rpx;
+}
+
+.vip-card-image {
+    width: 100%;
+    height: 360rpx;
+}
+
+.vip-card-body {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 260rpx;
+}
+
+.vip-card-body .name {
+    position: absolute;
+    left: 40rpx;
+    top: 40rpx;
+    font-weight: 500;
+    color: #fff;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.05);
+    font-size: 38rpx;
+    line-height: 42rpx;
+}
+
+.vip-card-body .name .card-tag {
+    margin-left: 15rpx;
+}
+
+.vip-card-body .section {
+    position: absolute;
+    left: 40rpx;
+    top: 94rpx;
+    font-size: 26rpx;
+    line-height: 30rpx;
+    color: #fff;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.05);
+    font-weight: 300;
+}
+
+.vip-card-body .section .job {
+    margin-left: 26rpx;
+}
+
+.vip-card-body .price {
+    position: absolute;
+    left: 40rpx;
+    top: 164rpx;
+    color: #fff;
+    font-size: 26rpx;
+}
+
+.vip-card-body .price .now {
+    position: relative;
+    display: inline-block;
+}
+
+.price-now-text {
+    font-size: 50rpx;
+    font-weight: 600;
+    line-height: 54rpx;
+    margin-right: 4rpx;
+}
+
+.price-now-text {
+    font-size: 26rpx;
+    opacity: 0.8;
+    text-decoration: line-through;
+    line-height: 40rpx;
+    margin-right: 4rpx;
+}
+
+.vip-card-body .price .origin {
+    color: #fff;
+    font-weight: 100;
+    font-size: 20rpx;
+    line-height: 24rpx;
+    position: relative;
+    display: inline-block;
+    margin-left: 8rpx;
+}
+
+.vip-card-body-image {
+    position: absolute;
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 50%;
+    top: 30rpx;
+    right: 40rpx;
+}
+
+.vip-card-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100rpx;
+    border-radius: 0 0 12rpx 12rpx;
+}
+
+.vipcard-rights {
+    padding-bottom: 320rpx;
+}
+
+.footer-info {
+    position: absolute;
+    left: 40rpx;
+    top: 42rpx;
+    font-size: 22rpx;
+    line-height: 30rpx;
+    color: #999;
+}
+
+.footer-info-buycard {
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 80rpx);
+    color: #ebebeb;
+    text-shadow: 0 2rpx 4rpx rgba(0,0,0,0.05);
+}
+
+.footer-info-buycard-stock-text {
+    font-weight: 500;
+    color: #fff;
+}
+
+.vipcard-rights-title {
+    display: flex;
+    margin-bottom: 20rpx;
+}
+
+.vipcard-rights-title-icon {
+    width: 8rpx;
+    height: 28rpx;
+    background: #999;
+    border-radius: 2px;
+}
+
+.vipcard-rights-title-text {
+    padding-left: 16rpx;
+    color: #999;
+    font-weight: 500;
+    font-size: 28rpx;
+    line-height: 28rpx;
+}
+
+.vipcard-rights-item {
+    display: flex;
+    margin-top: 60rpx;
+}
+
+.vipcard-rights-item-first {
+    margin-top: 50rpx;
+}
+
+.vipcard-rights-item-icon {
+    padding-right: 32rpx;
+}
+
+.vipcard-rights-item-icon image {
+    display: block;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.vipcard-rights-item-desc {
+    flex: 1;
+}
+
+.vipcard-rights-item-desc .title {
+    color: #4b5666;
+    font-weight: 500;
+    font-size: 32rpx;
+}
+
+.vipcard-rights-item-desc .content {
+    color: #707a8c;
+    font-size: 24rpx;
+}
+
+.vipcard-action {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20rpx 20rpx 0;
+    background: #fff;
+}
+
+.common-button {
+    width: auto;
+    height: 94rpx;
+    line-height: 94rpx;
+    margin: 0 4%;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #00c792;
+    color: #fff;
+    border: 1rpx solid #00c792;
+}
+
+.vipcard-action-button {
+    height: 84rpx;
+    margin: 0;
+    font-size: 30rpx;
+    line-height: 84rpx;
+    background-color: #5EB1BF;
+    border-radius: 4rpx;
+}
+
+button::after {
+    border: none;
+}
+
+.vipcard-action-tips {
+    margin-top: 32rpx;
+    padding-bottom: 28rpx;
+    text-align: center;
+}
+
+.vipcard-action-tips .text {
+    height: 30rpx;
+    color: #b3b3b3;
+    font-size: 26rpx;
+    line-height: 1.15;
+}
+
+.vipcard-action-tips .link {
+    height: 30rpx;
+    margin-top: 16rpx;
+    color: #00c792;
+    font-size: 26rpx;
+    line-height: 1.15;
+}

@@ -1,0 +1,101 @@
+<view class="all {{all_key?'all_active':''}}">
+    <view class="one">
+        <view class="title">
+            <view></view>
+            <text>{{title[0]}}</text>
+        </view>
+        <view class="addinfo">
+            <checkbox-group bindchange="checkboxChange">
+                <label class="checkbox" wx:for="{{items}}" wx:key="{{index}}">
+                    <view class="label_l">
+                        <checkbox checked="{{item.checked}}" value="{{item.name}}"></checkbox>
+                        <text>{{item.value}}</text>
+                    </view>
+                    <view catchtap="deldata" class="label_r" data-index="{{index}}">
+                        <image mode="aspectFit" src="/hyb_yl/images/del_01.png"></image>
+                        <text>删除</text>
+                    </view>
+                </label>
+            </checkbox-group>
+            <view catchtap="showpop" class="addtext">
+        +添加新疾病
+      </view>
+        </view>
+    </view>
+    <view class="two">
+        <view class="title">
+            <view></view>
+            <text>{{title[1]}}</text>
+        </view>
+        <view class="two_content">
+            <radio-group bindchange="radioChange" class="radio-group">
+                <radio catchtap="changeradio" checked="{{item.checked}}" class="radio" data-index="{{index}}" value="{{item.value}}" wx:for="{{raditem1}}" wx:key="name">
+                    <text>{{item.value}}</text>
+                </radio>
+            </radio-group>
+        </view>
+    </view>
+    <view class="two">
+        <view class="title">
+            <view></view>
+            <text>{{title[2]}}</text>
+        </view>
+        <view class="two_content">
+            <radio-group bindchange="radioChange2" class="radio-group">
+                <radio catchtap="changeradio2" class="radio" data-index="{{index}}" value="{{item.value}}" wx:for="{{raditem2}}" wx:key="name">
+                    <text>{{item.value}}</text>
+                </radio>
+                <view class="two_input" wx:if="{{two_input_key}}">
+                    <input bindinput="hospital" placeholder="请输入医院名称"></input>
+                    <input bindinput="department" placeholder="请输入科室名称"></input>
+                </view>
+            </radio-group>
+        </view>
+    </view>
+    <view class="two">
+        <view class="title">
+            <view></view>
+            <text>{{title[3]}}</text>
+        </view>
+        <view class="two_content">
+            <radio-group bindchange="radioChange3" class="radio-group">
+                <radio catchtap="changeradio3" checked="{{item.checked}}" class="radio" data-index="{{index}}" value="{{item.name}}" wx:for="{{raditem3}}" wx:key="name">
+                    <text>{{item.value}}</text>
+                </radio>
+            </radio-group>
+        </view>
+    </view>
+    <view class="two">
+        <view class="title">
+            <view></view>
+            <text>{{title[4]}}</text>
+        </view>
+        <view class="textarea">
+            <textarea bindinput="inputtext" placeholder="请填写详细的疾病描述，比如诱因，病情发展经过，当前用药等"></textarea>
+        </view>
+    </view>
+    <view class="two">
+        <view class="title">
+            <view></view>
+            <text>{{title[5]}}</text>
+        </view>
+        <view class="two_img">
+            <view class="imgs" wx:for="{{img_arr}}" wx:key="{{index}}">
+                <image class="img_sin" mode="aspectFit" src="{{item}}"></image>
+                <image catchtap="delimg" class="close" data-index="{{index}}" mode="aspectFit" src="/hyb_yl/images/close.png"></image>
+            </view>
+            <image catchtap="addimg" class="addlogo" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/tianjiatu.jpg?sign=69e012faccb5061e4fd0dfac56ba2a24&t=1571479509"></image>
+        </view>
+    </view>
+    <button catchtap="nextpage" class="btn">提交申请 </button>
+    <view class="mask" hidden="{{mask_key}}">
+        <view class="mask_sign">
+            <text>添加疾病名称</text>
+            <textarea bindinput="getext" fixed="true" placeholder="例：糖尿病，白癜风或头痛" value="{{textarea}}"></textarea>
+            <view class="mask_btn">
+                <button catchtap="addinfo" data-index="0">取消</button>
+                <button catchtap="addinfo" data-index="1">保存</button>
+            </view>
+        </view>
+    </view>
+</view>

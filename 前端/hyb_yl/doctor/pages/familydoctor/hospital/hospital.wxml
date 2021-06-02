@@ -1,0 +1,84 @@
+<view class="oval">
+    <view class="searchbox">
+        <view class="searchView">
+            <icon class="searchbtn" color="#999999" size="15" type="search"></icon>
+            <input bindconfirm="searchs" bindinput="getSearch" placeholder="请输入您要搜索的团队" type="text" value="{{keyword}}"></input>
+        </view>
+    </view>
+</view>
+<view class="tabbox {{needFix?'fixed':''}}">
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="0">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">{{paixuText?paixuText:'综合排序'}}</text>
+    </view>
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="1">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">{{shequText?shequText:'社区'}}</text>
+    </view>
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="2">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">{{keshiText?keshiText:'科室'}}</text>
+    </view>
+</view>
+<view class="poplist" wx:if="{{popshow}}">
+    <view bindtap="hidepop" class="poplistempty"></view>
+    <view class="poplistfff" wx:if="{{tabdex==0}}">
+        <view bindtap="itemchecked1" class="poplistfffitem {{item.checked?'itemactive':''}}" data-dex="{{index}}" wx:for="{{paixuList}}">
+				{{item.items}}
+			</view>
+    </view>
+    <view class="poplistfff" wx:if="{{tabdex==1}}">
+        <view bindtap="itemchecked2" class="poplistfffitem {{item.checked?'itemactive':''}}" data-dex="{{index}}" wx:for="{{shequList}}">
+				{{item.items}}
+			</view>
+    </view>
+    <view class="poplistfff" wx:if="{{tabdex==2}}">
+        <view bindtap="itemchecked3" class="poplistfffitem {{item.checked?'itemactive':''}}" data-dex="{{index}}" data-id="{{item.id}}" wx:for="{{keshiList}}">
+				{{item.ctname}}
+			</view>
+    </view>
+</view>
+<view class="shequbox {{openmore?'listmores':''}}">
+    <view bindtap="shequclick" class="{{shequdex==index?'activesshequ':''}}" data-dex="{{index}}" data-id="{{item.id}}" wx:for="{{shequ_arr}}" wx:key="s">{{item.title}}</view>
+</view>
+<view class="opens {{openmore?'openmores':''}}">
+    <text bindtap="openmore">{{openmore?'收起':'展开'}}</text>
+</view>
+<view class="searchresult">
+    <view bindtap="doctoritem" class="yishneginfo" data-id="{{item.id}}" data-title="{{item.title}}" wx:for="{{list}}">
+        <view class="info-img">
+            <image src="{{item.thumb}}"></image>
+        </view>
+        <view class="userinfo-body">
+            <view class="doctor-info">
+                <text class="doctor-name">{{item.title}}</text>
+                <text class="doctor-section">{{item.address}}</text>
+                <text class="doctor-samecity-team" wx:if="{{item.cid!=''}}">社区团队</text>
+            </view>
+            <view class="doctor-hospital">
+                <text class="doctor-section-info">{{item.keshis?item.keshis:''}}</text>
+            </view>
+            <view class="doctor-tags">
+				擅长：<block wx:for="{{item.label}}" wx:for-item="items" wx:key="{{items}}">{{items}}</block>
+            </view>
+            <view class="doctor-answer-star">
+                <image src="../../../../images/xing.png"></image>
+                <view class="doctor-star">5.0</view>
+                <view class="answer-count">月回答{{item.xn_answer}}</view>
+                <view class="prescription-count"> 月处方{{item.xn_chufang}} </view>
+                <view class="reply-time-str">{{item.times}}分钟响应</view>
+            </view>
+            <view class="doctor-list_dis"></view>
+            <view class="ask-doctor">
+                <view class="price-values-wrapper">
+                    <view class="price-values">
+                        <view class="price-value">
+                            <text>最低签约费用￥{{item.min}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view catchtap="handleAskDoctor" class="ask-doctor-hot" data-id="{{item.id}}" data-title="{{item.title}}">去签约</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="searchresultsss" wx:if="{{searchCont!=''}}">
+    <view class="searchresultitem" wx:for="{{searchlist}}" wx:key="f">{{item}}</view>
+</view>

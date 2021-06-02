@@ -1,0 +1,50 @@
+<view class="img">
+    <image class="img_a" src="{{imageArr[0].image}}"></image>
+</view>
+<view class="name">
+    <view class="name_img">
+        <image class="name_imga" src="{{images?images:'/assets/images/head.png'}}"></image>
+    </view>
+    <view class="text">{{obj.name?obj.name:'未填写'}}</view>
+    <view class="text1">
+        <image class="text1_img" src="{{img}}"></image>
+    |
+    <text class="{{obj.age?'font_co333':'font_co999'}}">{{obj.age?obj.age:'未填写'}}岁</text> |
+    <text class="{{obj.height?'font_co333':'font_co999'}}">{{obj.height?obj.height:'未填写'}}cm</text> |
+    <text class="{{obj.weight?'font_co333':'font_co999'}}">{{obj.weight?obj.weight:'未填写'}} kg</text>
+    </view>
+</view>
+<view class="h1">个人情况</view>
+<view class="h1_text personal">
+    <view class="personal_view font_co333" wx:if="{{obj.nmBloodType}}">{{obj.nmBloodType}}</view>
+    <view class="personal_view font_co333" wx:if="{{obj.nmEducation}}">{{obj.nmEducation}}</view>
+    <view class="personal_view font_co333" wx:if="{{obj.nmJobType}}">{{obj.nmJobType}}</view>
+    <view class="personal_view font_co333" wx:if="{{obj.nmMaritalStatus}}">{{obj.nmMaritalStatus}}</view>
+    <view class="personal_view font_co333" wx:if="{{obj.childrenNum}}">{{obj.childrenNum}}子女</view>
+    <view class="personal_view font_co333 nmMedicare" wx:if="{{obj.nmMedicare}}">{{obj.nmMedicare}}</view>
+    <view class="personal_view font_co999" wx:if="{{obj.nmBloodType==null&&obj.nmEducation==null&&obj.nmJobType==null&&obj.nmMaritalStatus==null&&obj.childrenNum==null&&obj.nmMedicare==null}}">未填写</view>
+</view>
+<view class="h1">感染情况</view>
+<view class="h1_text">
+    <view class="h1_for_text {{obj.infectFiled?'font_co333':'font_co999'}}" wx:if="{{obj.infectStatus!=1}}">{{obj.infectFiled?obj.infectFiled:'未填写'}}</view>
+    <view class="h1_for_text font_co333" wx:if="{{obj.infectStatus==1}}">无</view>
+</view>
+<view class="h1">肾病诊断</view>
+<view class="h1_text">
+    <view class="h1_for_text {{obj.nephrosis?'font_co333':'font_co999'}}">{{obj.nephrosis?obj.nephrosis:'未填写'}}</view>
+</view>
+<view class="h1">血透情况</view>
+<view class="h1_text">
+    <view class="h1_for_text {{obj.hemodialysisStatus!=null?'font_co333':'font_co999'}}">{{hemodialysisStatusshowtext}}</view>
+    <view class="h1_for_text1" wx:if="{{hemodialysisStatusshow&&obj.hemodialysisStatus==0}}">首次血透日期：{{obj.hemodialysisDay}}</view>
+</view>
+<view class="h1">腹透情况</view>
+<view class="h1_text">
+    <view class="h1_for_text {{obj.bellyDialysisStatus!=null?'font_co333':'font_co999'}}">{{bellyDialysisStatustext}}</view>
+    <view class="h1_for_text1" wx:if="{{bellyDialysisStatusshow&&obj.bellyDialysisStatus==0}}">首次腹透日期：{{obj.bellyDialysisDay}}</view>
+</view>
+<view class="h1">肾脏移植情况</view>
+<view class="h1_text">
+    <view class="h1_for_text {{obj.renalTransplantStatus!=null?'font_co333':'font_co999'}}">{{bellyDialysisDaytext}}</view>
+    <view class="h1_for_text1" wx:if="{{bellyDialysisDayshow&&obj.renalTransplantStatus==0}}">移植手术日期：{{obj.renalTransplantDay}}</view>
+</view>

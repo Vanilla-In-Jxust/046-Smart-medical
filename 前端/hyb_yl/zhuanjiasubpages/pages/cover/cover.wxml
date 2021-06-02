@@ -1,0 +1,84 @@
+<form bindsubmit="submit">
+    <view class="nk-box">
+        <view class="bsbb kthz">
+            <view class="left">开启会员卡功能 ：</view>
+            <switch bindchange="kt" checked="{{info.typs==1?'checked':''}}" color="#0087E0"></switch>
+        </view>
+        <view class="main">
+            <view class="son">
+                <view class="left">实际咨询金额(元) : </view>
+                <view class="right">
+                    <input name="new_price" placeholder="请输入提问实际咨询金额" placeholderStyle="color:#c7c7c7" type="digit" value="{{info.new_price}}"></input>
+                </view>
+            </view>
+            <view class="son">
+                <view class="left">咨询原价(元) : </view>
+                <view class="right">
+                    <input name="old_price" placeholder="请输入咨询原价" placeholderStyle="color:#c7c7c7" type="digit" value="{{info.old_price}}"></input>
+                </view>
+            </view>
+            <view class="son">
+                <view class="left">库存(件) : </view>
+                <view class="right">
+                    <input name="num" placeholder="请输入会员卡库存" placeholderStyle="color:#c7c7c7" type="digit" value="{{info.num}}"></input>
+                </view>
+            </view>
+            <view class="son">
+                <view class="left">服务期限 : </view>
+                <view class="right">
+                    <view class="year">一年</view>
+                    <input hidden name="times" placeholder="请输入" placeholderStyle="color:#c7c7c7" type="digit" value="1"></input>
+                </view>
+            </view>
+            <view class="bsbb kthz">
+                <view class="left">是否开启免费问诊 ：</view>
+                <switch bindchange="mianfei" checked="{{info.is_mianfei==1?'checked':''}}" color="#0087E0"></switch>
+            </view>
+            <view class="son">
+                <view class="left">免费提问(次) : </view>
+                <view class="right">
+                    <input name="wz_num" placeholder="请输入提问次数" placeholderStyle="color:#c7c7c7" type="digit" value="{{info.wz_num}}"></input>
+                </view>
+            </view>
+            <view class="bsbb kthz">
+                <view class="left">是否开启问诊折扣 ：</view>
+                <switch bindchange="wzzk" checked="{{info.is_wzzk==1?'checked':''}}" color="#0087E0"></switch>
+            </view>
+            <view class="son">
+                <view class="left">问诊折扣(折) : </view>
+                <view class="right">
+                    <input name="wz_zhekou" placeholder="请输入问诊折扣" placeholderStyle="color:#c7c7c7" type="digit" value="{{info.wz_zhekou}}"></input>
+                </view>
+            </view>
+            <view class="bsbb kthz">
+                <view class="left">是否开启免费会话 ：</view>
+                <switch bindchange="is_hh" checked="{{info.is_hh==1?'checked':''}}" color="#0087E0"></switch>
+            </view>
+            <view class="son">
+                <view class="left">免费会话次数(次) : </view>
+                <view class="right">
+                    <input name="hh_num" placeholder="请输入会话次数" placeholderStyle="color:#c7c7c7" type="digit" value="{{info.hh_num}}"></input>
+                </view>
+            </view>
+            <view class="bsbb kthz">
+                <view class="left">是否开启免费解读 ：</view>
+                <switch bindchange="is_jd" checked="{{info.is_jd==1?'checked':''}}" color="#0087E0"></switch>
+            </view>
+            <view class="son">
+                <view class="left">免费解读次数(次) : </view>
+                <view class="right">
+                    <input name="jd_num" placeholder="请输入解读次数" placeholderStyle="color:#c7c7c7" type="digit" value="{{info.jd_num}}"></input>
+                </view>
+            </view>
+            <view class="son">
+                <view class="left">使用限制 : </view>
+                <view class="right">
+                    <input name="notes" placeholder="请输入使用限制" placeholderStyle="color:#c7c7c7" type="digit" value="{{info.notes}}"></input>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="btn">
+        <button formType="submit" hoverClass="none">确认</button>
+    </view>
+</form>

@@ -1,0 +1,175 @@
+page {
+    background: #FAFAFA;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.counttime {
+    padding: 25rpx;
+    font-size: 28rpx;
+    color: #847F7C;
+    background: #FEF8E8;
+}
+
+.zhenduan {
+    width: 100%;
+    padding: 0 25rpx;
+    background: #fff;
+}
+
+.zhenduanitem {
+    padding: 25rpx 0;
+    border-bottom: 1rpx solid #F9F9F9;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.zhenduanitem-left {
+    font-size: 34rpx;
+    color: #333;
+    font-weight: 700;
+}
+
+.zhenduanitem-right {
+    font-size: 32rpx;
+    color: #A7A7A7;
+    padding-right: 30rpx;
+    position: relative;
+}
+
+.zhenduanitem-right::after {
+    content: "";
+    width: 15rpx;
+    height: 15rpx;
+    border-top: 1rpx solid #CFCFCF;
+    border-right: 1rpx solid #CFCFCF;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%) rotate(45deg);
+}
+
+.zhenduan .zhenduanitem:last-child {
+    border-bottom: none;
+}
+
+.zhenduan .zhenduanitem:last-child .zhenduanitem-left {
+    color: #747474;
+    font-weight: normal;
+}
+
+.zhenduandetail {
+    width: 100%;
+    padding: 25rpx;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30rpx;
+    color: #AFAFAF;
+    border-top: 1rpx solid #F2F2F2;
+}
+
+.drupmes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 25rpx 0;
+}
+
+.drupmes-img {
+    width: 150rpx;
+    height: 150rpx;
+    border: 1rpx solid #FAFAFA;
+    text-align: center;
+}
+
+.drupmes-img image {
+    object-fit: contain;
+}
+
+.drupmesbox {
+    width: 75%;
+}
+
+.drupmes-mess {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drupmes-mess view:first-child {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.drupmes-mess view:last-child {
+    font-size: 30rpx;
+    color: #454545;
+}
+
+.drupmes-site {
+    font-size: 26rpx;
+    color: #A1A1A1;
+}
+
+.drupmes-price {
+    font-size: 34rpx;
+    color: #E83535;
+}
+
+.usageview {
+    padding-bottom: 25rpx;
+    font-size: 28rpx;
+    color: #A1A1A1;
+}
+
+.copyrightbox {
+    margin-top: 80rpx;
+}
+
+.copyriglogos {
+    width: 120rpx;
+    height: 30rpx;
+    margin: 0 auto 15rpx;
+}
+
+.copyrig {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.copyrig view {
+    display: inline-flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #B6B6B6;
+    margin-right: 5rpx;
+}
+
+.copyrig view:last-child {
+    margin-right: 0;
+}
+
+.copyrig view image {
+    width: 45rpx;
+    height: 45rpx;
+    margin-right: 5rpx;
+}
+
+.btns {
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 80rpx;
+    background: #0087E0;
+    border-radius: 50rpx;
+    line-height: 92rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+}

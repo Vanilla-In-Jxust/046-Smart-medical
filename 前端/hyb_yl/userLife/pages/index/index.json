@@ -1,0 +1,9 @@
+{
+    "navigationBarBackgroundColor": "#fafafa",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "快速问诊",
+    "backgroundColor": "#eeeeee",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false,
+    "usingComponents": {}
+}

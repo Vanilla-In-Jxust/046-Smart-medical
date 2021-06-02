@@ -1,0 +1,15 @@
+<view class="wrap">
+    <view class="wrap_top">
+        <view class="wrap_text">
+            <view class="wrap_name">{{z_name}}</view>
+            <view class="wrap_name1">{{z_zhiwu}}</view>
+            <view class="wrap_name2">{{z_yiyuan}}</view>
+            <view class="wrap_name1">{{name.nmDepartment}}</view>
+        </view>
+        <image class="png" src="{{z_thumbs}}"></image>
+    </view>
+    <view class="box">
+        <image catchtap="previewImage" class="can_img" id="weweima" src="{{weweima}}"></image>
+        <view class="box_text">让患者微信扫一扫，签约您</view>
+    </view>
+</view>

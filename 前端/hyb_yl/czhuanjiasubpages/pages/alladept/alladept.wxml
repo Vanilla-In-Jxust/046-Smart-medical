@@ -1,0 +1,13 @@
+<view class="question-tabs">
+    <view bindtap="questionclick" class="question-tabs-item {{index==questiontabs?'active':''}}" data-biaoqian="{{item.bq}}" data-dex="{{index}}" wx:for="{{authority}}" wx:key="q">{{item.bq}}({{item.cout}})</view>
+</view>
+<view class="evaluate">
+    <view bindtap="answer_detail" class="evaluateitem" data-id="{{item.id}}" data-state="{{item.state}}" data-title="{{item.title}}" data-typs="{{item.typs}}" wx:for="{{listqs}}" wx:key="key">
+        <view class="question-tit">
+            <image class="userhead" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/header_01.png?sign=f9f8c8a1a95aac19e1d32cd26aa3381f&t=1591177626"></image>
+            <view>{{item.names}}</view>
+        </view>
+        <text class="public-question-content">{{item.content.text}}</text>
+        <view class="public-question-count">{{item.time}}</view>
+    </view>
+</view>

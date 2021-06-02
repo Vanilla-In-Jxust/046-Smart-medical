@@ -1,0 +1,58 @@
+<view class="problems-box">
+    <view class="tab-depar">
+        <scroll-view scrollX class="s-depar" lowerThreshold="50%" upperThreshold="50%" wx:if="{{!deparshow}}">
+            <view bindtap="departab" class="depar-item {{tabindex==0?'depar-item-act':''}}" data-dex="0">全部</view>
+            <view bindtap="departab" class="depar-item {{tabindex==index+1?'depar-item-act':''}} " data-dex="{{index+1}}" data-pid="{{item.id}}" wx:for="{{depar}}" wx:key="index">{{item.name}}</view>
+        </scroll-view>
+        <view class="selectdepar" wx:else>选择科室</view>
+        <view class="depar-more">
+            <view class="depar-yy"></view>
+            <image bindtap="deparlist" class="depar-more-icon" mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/item_08.png?sign=af8891ec68a46c9598059884fcdc4bd8&t=1590804077"></image>
+        </view>
+    </view>
+</view>
+<view class="selectlistbox {{deparshow?'listshow':''}}">
+    <view class="selectlist-c">
+        <view bindtap="departabs" class="select-list-item {{tabindex==0?'select-list-item-act':''}}" data-dex="0">全部</view>
+        <view bindtap="departabs" class="select-list-item {{tabindex==index+1?'select-list-item-act':''}}" data-dex="{{index+1}}" wx:for="{{depar}}">{{item.name}}</view>
+    </view>
+</view>
+<view class="bar"></view>
+<view class="pro-list-tab" wx:if="{{tabindex!=0&&depar[tabindex-1].childlist.length>0}}">
+    <view class="pro-list-box {{isshow==0?'pro-list-box-show':''}}">
+        <view bindtap="tabChose" class="pro-list-tindex {{tabchoseStyle==index?'select-list-item-act':''}}" data-index="{{index}}" data-tabcid="{{item.id}}" wx:for="{{depar[tabindex-1].childlist}}" wx:key="index">{{item.name}}</view>
+    </view>
+    <view bindtap="opend" class="pro-more">
+        <view>{{showt}}</view>
+        <image mode="widthFix" src="../../../images/down-h.png"></image>
+    </view>
+</view>
+<view>
+    <view class="pad_30 public_white " wx:for="{{communityListOne}}" wx:key="index">
+        <navigator hoverClass="className" url="/hyb_yl/userLife/pages/dynamicDetails/dynamicDetails?a_id={{item.a_id}}">
+            <view class="condition_head center">
+                <image class="condition_head_img" mode="aspectFill" src="{{item.fabuzhe_thumb?item.fabuzhe_thumb:'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/head.png?sign=3e35e4de610e3bc450a56edcddeb0770&t=1576575250'}}"></image>
+                <view class="flex_column">
+                    <text class="font_si14 font_co333 condition_head_name">{{item.fabuzhe_name?item.fabuzhe_name:'匿名'}}</text>
+                    <text class="font_si12 font_co999" wx:if="{{item.user_identity=='1'}}">{{item.zhuanjia_info}}</text>
+                </view>
+            </view>
+            <view class="condition_content condition_content_com font_si16 font_co333">{{item.contents}}
+        </view>
+        </navigator>
+        <view class="center condition_img_view" data-a_id="{{item.a_id}}" wx:if="{{item.sharepic}}">
+            <image bindtap="previewImage" class="condition_img {{index%3==0?'':'condition_img_right'}}" data-data="{{item.sharepic}}" data-index="{{index}}" data-url="{{value}}" lazyLoad="true" mode="aspectFill" src="{{value}}" wx:for="{{item.sharepic}}" wx:for-item="value" wx:key="index"></image>
+        </view>
+        <view class="center comment_view font_si12 font_co999" style="padding-bottom:15rpx">
+            <view bindtap="toLike" class="center comment_view_left" data-a_id="{{item.a_id}}" data-index="{{index}}" data-status="{{item.dianj}}">
+                <image class="review_img praise_img" lazyLoad="true" src="{{item.dianzan!=1?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/dzhan1.png?sign=544dc9242213c29ea2e7db7065a386b9&t=1547194577':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Dzhan.png?sign=860145be33b20af6ef3adff216283f8e&t=1577530820'}}"></image>
+                <text>{{item.dianj}}</text>
+            </view>
+            <navigator class="center com_view" hoverClass="className" url="/hyb_yl/userLife/pages/dynamicDetails/dynamicDetails?a_id={{item.a_id}}&comFlagText=1">
+                <image class="review_img" lazyLoad="true" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/zixun.png?sign=9d1aadeee6229adc3e063e8ed7cbaa93&t=1591083042"></image>
+                <text>{{item.pinglunnum}}</text>
+            </navigator>
+        </view>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBooOne}}">没有更多了~</view>
+</view>

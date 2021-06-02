@@ -1,0 +1,104 @@
+page {
+    background: white;
+}
+
+.hospitalbox {
+    padding: 60rpx;
+    display: flex;
+}
+
+.hospImg {
+    width: 110rpx;
+    height: 80rpx;
+    border: 1rpx solid orange;
+    border-radius: 10rpx;
+    margin-right: 40rpx;
+}
+
+.hosp_right {
+    flex: 1;
+}
+
+.mealName {
+    font-size: 30rpx;
+    color: #000;
+    font-weight: bold;
+    margin-bottom: 5rpx;
+}
+
+.typelabel {
+    display: inline-block;
+    font-size: 25rpx;
+    padding: 0rpx 3rpx;
+    border: 1rpx solid #fd965b;
+    border-radius: 5rpx;
+    color: #fd965b;
+}
+
+.contbox {
+    line-height: 70rpx;
+    font-size: 30rpx;
+    background: #fef8ed;
+    color: #fd965b;
+    text-align: center;
+    font-weight: bold;
+}
+
+.containbox {
+    color: #333;
+    padding-left: 30rpx;
+    font-size: 30rpx;
+    line-height: 60rpx;
+}
+
+.departbox {
+    padding-left: 30rpx;
+    padding-right: 30rpx;
+}
+
+.depart {
+    width: 100%;
+    color: #959595;
+    font-size: 24rpx;
+    background: #f5f5f5;
+    text-align: center;
+    line-height: 48rpx;
+}
+
+.mealcontBox {
+    padding-left: 30rpx;
+}
+
+.pack {
+    padding-top: 34rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid #dcdcdc;
+}
+
+.mealcont {
+    display: flex;
+}
+
+.mealLeft {
+    flex: 1;
+}
+
+.general {
+    font-size: 28rpx;
+    line-height: 46rpx;
+}
+
+.general_cont {
+    color: #adadad;
+    font-size: 26rpx;
+    padding-top: 10rpx;
+}
+
+.mealRight {
+    width: 130rpx;
+}
+
+.promptImg {
+    width: 30rpx;
+    margin: 0rpx auto;
+}

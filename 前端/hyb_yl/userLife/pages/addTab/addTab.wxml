@@ -1,0 +1,13 @@
+<view class="box">
+    <view class="DistList">
+        <view bindtap="leftTab" class="{{current==index?'active':''}}" data-id="{{item.id}}" data-index="{{index}}" wx:for="{{consulList}}">{{item.name}}</view>
+    </view>
+    <swiper bindchange="swiper" current="{{current}}" vertical="true">
+        <swiper-item wx:for="{{consulList}}">
+            <scroll-view scrollY class="scroll">
+                <view class="title">{{item.name}}</view>
+                <view bindtap="choseTab" class="tab" data-id="{{tab.id}}" data-pid="{{tab.paretid}}" data-text="{{tab.name}}" wx:for="{{item.childlist}}" wx:for-item="tab">{{tab.name}}</view>
+            </scroll-view>
+        </swiper-item>
+    </swiper>
+</view>

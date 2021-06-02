@@ -1,0 +1,48 @@
+<scroll-view scrollY bindscrolltolower="getMore" class="notice_content" style="max-height: 100vh;">
+    <navigator class="head_view font_si16 font_co999" url="/hyb_yl/backstageTeam/pages/noticeDetailContent/noticeDetailContent?g_id={{zhiding[0].g_id}}" wx:if="{{zhiding[0].menttypes==1}}">
+        <view class="setTop">[置顶]</view>
+        <view class="name_view">团队须知</view>
+        <view class="font_si12">
+            <text class="notice_name_text">{{zhiding[0].title}}</text>
+            <text>{{noticeList[0].updateTime}}</text>
+        </view>
+        <view></view>
+    </navigator>
+    <block wx:if="{{fuze}}">
+        <navigator class="head_view font_si16 font_co999" url="/hyb_yl/backstageTeam/pages/announce/announce?t_id={{id}}&menttypes=1" wx:if="{{zhiding[0].menttypes==0||zhiding.length<=0}}">
+            <view class="setTop">[置顶]</view>
+            <view class="name_view">团队须知</view>
+            <view>
+                <text class="notice_name_text">对团员们说点什么吧</text>
+            </view>
+            <view></view>
+        </navigator>
+    </block>
+    <view class="notice_details" wx:for="{{noticeList1}}" wx:key="{{index}}">
+        <navigator hoverClass="hoverClass" url="/hyb_yl/backstageTeam/pages/noticeDetailContent/noticeDetailContent?g_id={{item.g_id}}">
+            <view class="notice_title">
+                <view class="font_si18 font_co333">{{item.title}}</view>
+                <view class="font_co999 font_si12 notice_name">
+                    <view>
+                        <text>{{item.updateTime}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="notice_text font_si16 font_333">{{item.teamtext}}</view>
+        </navigator>
+        <view bindtap="previewImage" class="novice_img_view" data-index="{{index}}" wx:if="{{item.thumbarr}}">
+            <image class="novice_img {{(index+1)%3!=0?'margin_right':''}}" data-url="{{item}}" mode="aspectFill" src="{{item}}" wx:for="{{item.thumbarr}}" wx:key="{{index}}"></image>
+        </view>
+    </view>
+    <view class="no_view font_si16 font_co999" wx:if="{{noFlag}}">暂无公告</view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">没有更多了~</view>
+</scroll-view>
+<block wx:if="{{fuze}}">
+    <view style="height: 124rpx;"></view>
+    <navigator class="foot_view" hoverClass="hoverClass" url="/hyb_yl/backstageTeam/pages/announce/announce?t_id={{id}}">
+        <view class="foot_btn font_si18 font_cofff linear_btn">发新公告</view>
+    </navigator>
+</block>

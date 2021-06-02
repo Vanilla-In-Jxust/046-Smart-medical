@@ -1,0 +1,128 @@
+page {
+    font-family: "Microsoft YaHei";
+    background: #F1F1F1;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.importance {
+    padding: 25rpx;
+    background: #FBEFD5;
+    font-size: 28rpx;
+    color: #ECBD3D;
+}
+
+.containers {
+    background: #fff;
+    padding: 30rpx;
+}
+
+.textareabox {
+    padding: 25rpx 0;
+    padding-bottom: 0;
+}
+
+.attachment-contain {
+    margin-top: 25rpx;
+    padding-top: 25rpx;
+}
+
+.upload_title {
+    font-size: 30rpx;
+    color: #7D7D7D;
+    padding-bottom: 35rpx;
+}
+
+.upload-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.upload-list-item {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 153rpx;
+    height: 153rpx;
+    margin-right: 24rpx;
+}
+
+.upload-list-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 8rpx;
+}
+
+.upload-list-add-image {
+    display: block;
+    width: 153rpx;
+    height: 153rpx;
+}
+
+.imglist {
+    box-sizing: border-box;
+    width: 153rpx;
+    height: 153rpx;
+    margin-right: 24rpx;
+    position: relative;
+}
+
+.imglist>image:nth-of-type(1) {
+    width: 35rpx;
+    height: 35rpx;
+    position: absolute;
+    top: -15rpx;
+    right: -15rpx;
+}
+
+.ensure {
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FCFCFC;
+    padding: 20rpx;
+    font-size: 26rpx;
+    color: #D7D7D7;
+}
+
+.ensure image {
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 15rpx;
+}
+
+.btnbox {
+    padding: 0 25rpx;
+}
+
+.radios {
+    font-size: 32rpx;
+    color: #7F7F7F;
+    text-align: left;
+    margin: 50rpx 0;
+}
+
+.radios radio {
+    transform: scale(0.8);
+    margin-left: -25rpx;
+}
+
+.sign {
+    height: 100rpx;
+    font-size: 34rpx;
+    color: white;
+    line-height: 100rpx;
+    text-align: center;
+    margin: 0 auto;
+    background: #0087E0;
+    border-radius: 10rpx;
+}

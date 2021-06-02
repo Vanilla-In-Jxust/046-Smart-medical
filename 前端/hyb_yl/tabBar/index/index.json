@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": true,
+    "usingComponents": {
+        "doctorsaid": "/component/doctorsaid/doctorsaid",
+        "ovalLogin": "/component/ovalLogin/ovalLogin"
+    }
+}

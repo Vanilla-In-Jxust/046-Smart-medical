@@ -1,0 +1,53 @@
+<view class="all">
+    <view class="sign">
+        <view class="one">
+            <view class="one_l">
+                <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/head.png?sign=4a9b8cb538a43e836a705e5daf8c1f96&t=1576654341"></image>
+                <view class="one_l_cont">
+                    <text>李*</text>
+                    <view class="star">
+                        <text wx:for="{{5}}" wx:key="*this">★</text>
+                    </view>
+                </view>
+            </view>
+            <view class="one_r">
+                <text>2019-09-19 11:12:46</text>
+            </view>
+        </view>
+        <view class="two">
+            <text>充分解释</text>
+            <text>病情了解的很清楚</text>
+            <text>给了明确诊疗意见</text>
+        </view>
+        <view class="three">
+            <text>医生很好，很耐心</text>
+        </view>
+    </view>
+    <view class="sign">
+        <view class="one">
+            <view class="one_l">
+                <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/head.png?sign=4a9b8cb538a43e836a705e5daf8c1f96&t=1576654341"></image>
+                <view class="one_l_cont">
+                    <text>易*</text>
+                    <view class="star">
+                        <text wx:for="{{5}}">★</text>
+                    </view>
+                </view>
+            </view>
+            <view class="one_r">
+                <text>2019-09-19 11:12:46</text>
+            </view>
+        </view>
+        <view class="two">
+            <text>充分解释</text>
+            <text>病情了解的很清楚</text>
+            <text>给了明确诊疗意见</text>
+            <text>非常有耐心</text>
+            <text>为患者着想</text>
+            <text>消除了我的困惑</text>
+        </view>
+        <view class="three">
+            <text>医生远程指导用药以后明显好转了</text>
+        </view>
+    </view>
+</view>

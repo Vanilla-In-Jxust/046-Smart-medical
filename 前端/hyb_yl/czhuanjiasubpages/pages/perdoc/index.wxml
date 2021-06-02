@@ -1,0 +1,103 @@
+<view class="all">
+    <view class="one">
+        <view class="one_text">
+      欢迎使用私人医生服务
+    </view>
+        <view class="one_info">
+            <view class="one_info_up">
+                <view class="one_info_img">
+                    <image mode="aspectFit" src="{{docinfo.z_thumbs}}"></image>
+                </view>
+                <view class="one_info_text">
+                    <text>{{docinfo.z_name}}医生团队</text>
+                    <view class="one_text_down">
+                        <view>
+                            <text>领衔医生:</text>
+                            <image mode="aspectFit" src="/assets/images/gold.jpg"></image>
+                            <text>{{docinfo.z_name}}</text>
+                        </view>
+                        <view>
+                            <text>{{docinfo.hospital?docinfo.hospital:show_title}}</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="one_info_down">
+                <text>会员数：&nbsp;&nbsp;<text style="color:#ff8c32">新上线，期待您使用</text>
+                </text>
+            </view>
+        </view>
+    </view>
+    <view class="one_tab">
+        <text>选择服务期</text>
+        <view class="tab_sin">
+            <view catchtap="choseTab" class="{{tabindex==0?'tab_sin_activ':''}}" data-index="0">
+        {{docinfo.newmoney}}/1个月
+        <view class="design" wx:if="{{tabindex==0}}">
+                    <text>√</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="two">
+        <view class="two_title">
+            <image mode="aspectFit" src="/assets/images/diamond.png"></image>
+            <text>服务权益</text>
+        </view>
+        <view class="two_hint">
+      以下服务权益，由医生本人自主设置。
+    </view>
+        <view class="two_list">
+            <view class="two_single" wx:for="{{two_list}}" wx:key="{{index}}">
+                <view class="single_one">
+                    <view class="dian"></view>
+                    <text>{{item.title}}</text>
+                </view>
+                <text class="single_text" wx:for="{{item.content}}" wx:for-item="citem" wx:key="{{index}}">{{citem}}</text>
+            </view>
+        </view>
+    </view>
+    <view class="three">
+        <view class="two_title">
+            <image mode="aspectFit" src="/assets/images/diamond.png"></image>
+            <text>服务权益</text>
+        </view>
+        <view class="three_content">
+            <view class="prograp">
+                <view class="pro">
+                    <view class="pro_ball">
+            1
+          </view>
+                    <text>选择患者</text>
+                </view>
+                <view class="pro">
+                    <view class="pro_ball">
+            2
+          </view>
+                    <text>支付</text>
+                </view>
+                <view class="pro">
+                    <view class="pro_ball">
+            3
+          </view>
+                    <text>医生接单</text>
+                </view>
+                <view class="pro">
+                    <view class="pro_ball">
+            4
+          </view>
+                    <text>使用服务</text>
+                </view>
+                <view class="heng"></view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="posfix">
+    <view class="pos_l">
+   {{docinfo.newmoney}}/1个月
+  </view>
+    <view bindtap="nextpage" class="pos_r">
+    申请私人医生
+  </view>
+</view>

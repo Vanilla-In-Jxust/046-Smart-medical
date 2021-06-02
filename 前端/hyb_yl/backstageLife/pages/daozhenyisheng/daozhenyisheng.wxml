@@ -1,0 +1,80 @@
+<view class="oval">
+    <view class="searchbox">
+        <view class="searchView">
+            <icon class="searchbtn" color="#999999" size="15" type="search"></icon>
+            <input bindinput="getSearch" placeholder="请输入您要搜索的医生" type="text" value="{{searchCont}}"></input>
+        </view>
+    </view>
+</view>
+<view class="tabbox fixed">
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="{{index}}" wx:for="{{tablist}}" wx:key="pp">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">{{item.types}}</text>
+    </view>
+</view>
+<view class="poplist" wx:if="{{popshow}}">
+    <view bindtap="hidepop" class="poplistempty"></view>
+    <view class="poplistfff">
+        <block wx:if="{{tabdex!=1}}">
+            <view bindtap="itemchecked" class="poplistfffitem {{item.checked?'itemactive':''}}" data-dex="{{index}}" wx:for="{{tablist[tabdex].list}}">
+        {{item.items}}
+      </view>
+        </block>
+        <view class="shanxuanbox" wx:if="{{tabdex==1}}">
+            <view class="shanxuanboxtop">
+                <view class="shanxuanbox-item" wx:for="{{tablist[tabdex].list}}" wx:for-index="typesindex" wx:for-item="shanxuanlist" wx:key="s1">
+                    <view class="shanxuanbox-item-title">{{shanxuanlist.items}}</view>
+                    <view class="shanxuanbox-item-arrs">
+                        <view bindtap="typesclick" class="{{shanxuanitem.checked?'shaixuanactive':''}}" data-dex="{{index}}" data-index="{{typesindex}}" wx:for="{{shanxuanlist.section}}" wx:for-item="shanxuanitem" wx:key="s2">{{shanxuanitem.items}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="shanxuanboxbot">
+                <view bindtap="resultclick">重置</view>
+                <view bindtap="submitclick">完成</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="searchresult">
+    <view bindtap="navigator" class="yishneginfo" wx:for="{{5}}" wx:key="d">
+        <view class="info-img">
+            <image src="../../../images/yisheng.png"></image>
+        </view>
+        <view class="userinfo-body">
+            <view class="doctor-info">
+                <text class="doctor-name">孙婧茹</text>
+                <text class="doctor-section">医师</text>
+                <text class="doctor-samecity-team">年卡</text>
+            </view>
+            <view class="doctor-hospital">
+                <text class="doctor-section-info">皮肤性病科</text>
+                <text class="doctor-hosptial-name">北京大学第一医院</text>
+            </view>
+            <view class="doctor-tags">
+        擅长：回复的顺丰神鼎飞丹砂防守打法复活甲收到货副驾驶的回复你
+      </view>
+            <view class="doctor-answer-star">
+                <image src="../../../images/xing.png"></image>
+                <view class="doctor-star">5.0</view>
+                <view class="answer-count">月回答132</view>
+                <view class="prescription-count"> 月处方36 </view>
+                <view class="reply-time-str">26分钟响应</view>
+            </view>
+            <view class="doctor-list_dis">
+                <view class="doctor-list_dis_tags">过敏类精选医生</view>
+                <view class="doctor-list_dis_tags">业内专家</view>
+                <view class="doctor-list_dis_tags">专业审核优秀</view>
+            </view>
+            <view class="ask-doctor">
+                <view class="price-values-wrapper">
+                    <view class="price-values">
+                        <view class="price-value">
+                            <text>图文￥49</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="ask-doctor-hot">选择她</view>
+            </view>
+        </view>
+    </view>
+</view>

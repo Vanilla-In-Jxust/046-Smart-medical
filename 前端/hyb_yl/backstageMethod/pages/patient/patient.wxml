@@ -1,0 +1,22 @@
+<view class="W_seek_box">
+    <view class="W_seek_input">
+        <input bindinput="input" class="W_seek_input1" placeholder="搜索名字全称" placeholderStyle="color:#ccc" value=""></input>
+        <image class="W_seek_input_img" src="/assets/images/ss.png"></image>
+    </view>
+    <view bindtap="grabble" class="seet">搜索</view>
+</view>
+<view>
+    <view bindtap="agree" class="W_li" data-index="{{index}}" wx:for="{{hzinfo}}" wx:key="{{index}}">
+        <view class="W_li_img_box" data-u_id="{{item.u_id}}">
+            <image class="W_li_img" src="{{item.u_thumb?item.u_thumb:'/assets/images/head.png'}}"></image>
+        </view>
+        <view class="W_li_text" data-u_id="{{item.u_id}}">
+            <view class="W_li_text_name">
+                <text class="W_li_text_namea">{{item.myname?item.myname:item.u_name}} </text>
+                <image class="W_li_text_namea_img" src="{{item.mysex=='女'?'/assets/images/nva.png':'/assets/images/nana.png'}}"></image>
+                <text class="W_li_text_nameDate">{{item.myage?item.myage:''}} {{item.myage?'岁':''}}</text>
+            </view>
+            <view class="remarkName" wx:if="{{item.beizhu==null?false:true}}">备注: {{item.beizhu}}</view>
+        </view>
+    </view>
+</view>

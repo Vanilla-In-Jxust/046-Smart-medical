@@ -1,0 +1,207 @@
+<view class="all">
+    <view class="progress">
+        <view class="pro_up" style="left:calc({{progress}}% - 60rpx)">
+            <text>已填写{{progress}}%</text>
+            <view class="pro_dir"></view>
+        </view>
+        <view class="pro_down">
+            <view class="pro_sin" style="width:{{progress}}%"></view>
+        </view>
+    </view>
+    <view class="title" wx:if="{{index==pagenum-1}}" wx:for="{{pro_grap}}" wx:key="{{index}}">
+        <view class="question">
+            <text>{{item.question}}</text>
+            <text>{{item.questi}}</text>
+        </view>
+        <view class="anser">
+            <view catchtap="dianbtn" class="navigator" data-cindex="{{cindex}}" data-index="{{index}}" data-text="{{citem}}" hoverClass="none" wx:for="{{item.ansers}}" wx:for-index="cindex" wx:for-item="citem" wx:key="key">
+                <view class="{{ans_index==cindex?'ans_activ':''}}">
+              {{citem}}
+            </view>
+            </view>
+        </view>
+    </view>
+    <view class="fivedown" wx:if="{{pagenum==2}}">
+        <view class="fd_title">
+            <view class="fd_page__bd">
+                <view class="section section_gap">
+                    <checkbox-group bindchange="od_checkboxChange">
+                        <label class="fd_checkbox" wx:for="{{pro_grap[1].one_items}}">
+                            <view class="label_l">
+                                <checkbox catchtap="od_changeradio" checked="{{item.checked}}" data-index="{{index}}" value="{{item.name}}"></checkbox> {{item.value}}
+              </view>
+                            <view catchtap="od_deldata" class="fd_label_r" data-index="{{index}}">
+                                <image mode="aspectFit" src="/hyb_yl/images/del_01.png"></image>
+                                <text>删除</text>
+                            </view>
+                        </label>
+                    </checkbox-group>
+                    <view catchtap="od_showpop" class="fd_addsick">
+            + 添加病史信息
+          </view>
+                </view>
+            </view>
+        </view>
+        <view class="fd_mask" hidden="{{one_mask_key}}">
+            <view class="fd_mask_sin">
+                <text>请填写重大过往病史</text>
+                <textarea bindinput="od_getext" value="{{one_textarea}}"></textarea>
+                <view class="fd_mask_btn">
+                    <button catchtap="od_enter" data-index="0">取消</button>
+                    <button catchtap="od_enter" data-index="1">确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="addinfo" hidden="{{addinfo_key}}">
+        <view class="add_text">
+      最近就诊过的医院及科室
+    </view>
+        <view wx:if="{{addinfos_key}}">
+            <view class="add_input">
+                <input bindinput="input1" placeholder="请填入医院名称" placeholderClass="place" type="text"></input>
+                <input bindinput="input2" placeholder="请填入科室名称" placeholderClass="place" type="text"></input>
+            </view>
+            <view class="add_btn">
+                <button catchtap="enter" data-index="1">保存</button>
+                <button catchtap="enter" data-index="0">取消</button>
+            </view>
+        </view>
+        <view wx:else>
+            <view class="checkgrop">
+                <checkbox-group bindchange="checkboxChange">
+                    <label wx:for="{{pro_grap[2].one_items}}" wx:key="{{index}}">
+                        <view catchtap="changeradio" class="label_l" data-index="{{index}}">
+                            <checkbox checked="{{item.checked}}" value="{{item.name}}"></checkbox>
+                            <text>{{item.value1}}&nbsp;{{item.value2}}</text>
+                        </view>
+                        <view catchtap="deldata" class="label_r" data-index="{{index}}">
+                            <image src="/assets/images/wast.png"></image>
+                            <text>删除</text>
+                        </view>
+                    </label>
+                </checkbox-group>
+                <view catchtap="addevent" class="caddinfo">
+          +添加医院科室信息
+        </view>
+            </view>
+        </view>
+    </view>
+    <view class="threedown" hidden="{{threedown_key}}">
+        <view class="thrd_text">
+            <text>患处照片&检查资料</text>
+            <text>您上传的图片仅你和医生可见</text>
+        </view>
+        <view class="thrd_down">
+            <view class="addimg">
+                <view class="img-item" wx:for="{{pro_grap[3].img}}" wx:key="index">
+                    <image data-index="{{index}}" mode="aspectFill" name="imgs" src="{{item}}"></image>
+                    <image catchtap="downimg" class="delicon" data-index="{{index}}" mode="aspectFit" src="/hyb_yl/images/close.png"></image>
+                </view>
+                <image bindtap="uploadimg" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/tianjiatu.jpg?sign=69e012faccb5061e4fd0dfac56ba2a24&t=1571479509"></image>
+            </view>
+        </view>
+    </view>
+    <view class="fourdown" hidden="{{fourdown_key}}">
+        <view class="four_text">
+            <text>请填写患者<text style="color:#ff9439">当前使用</text>的药物</text>
+        </view>
+        <view class="four_area">
+            <text>请详细描述服用药物的名称，服用方法，计量等信息。</text>
+            <textarea></textarea>
+        </view>
+        <view class="four_text" style="margin-top:30rpx">
+            <text>拍照上传处方/药盒照片</text>
+        </view>
+        <view class="addimg">
+            <view class="img-item" wx:for="{{pro_grap[4].img}}" wx:key="index">
+                <image data-index="{{index}}" mode="aspectFill" name="imgs" src="{{item}}"></image>
+                <image catchtap="downimg2" class="delicon" data-index="{{index}}" mode="aspectFit" src="/hyb_yl/images/close.png"></image>
+            </view>
+            <image bindtap="uploadimg2" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/tianjiatu.jpg?sign=69e012faccb5061e4fd0dfac56ba2a24&t=1571479509"></image>
+        </view>
+    </view>
+    <view class="fivedown" hidden="{{fivedown_key}}">
+        <view class="fd_title">
+            <view class="fd_question">
+        请确认之前的重大患病记录和治疗情况
+        <text>如有变化，请补全</text>
+            </view>
+            <view class="fd_page__bd">
+                <view class="section section_gap">
+                    <checkbox-group bindchange="fd_checkboxChange">
+                        <label class="fd_checkbox" wx:for="{{pro_grap[5].one_items}}" wx:key="key">
+                            <view class="label_l">
+                                <checkbox catchtap="fd_changeradio" checked="{{item.checked}}" data-index="{{index}}" value="{{item.name}}"></checkbox> {{item.value}}
+              </view>
+                            <view catchtap="fd_deldata" class="fd_label_r" data-index="{{index}}">
+                                <image mode="aspectFit" src="/assets/images/wast.png"></image>
+                                <text>删除</text>
+                            </view>
+                        </label>
+                    </checkbox-group>
+                    <view catchtap="fd_showpop" class="fd_addsick">
+            + 添加病史信息
+          </view>
+                </view>
+            </view>
+        </view>
+        <view class="fd_mask" hidden="{{five_mask_key}}">
+            <view class="fd_mask_sin">
+                <text>请填写重大过往病史</text>
+                <textarea bindinput="fd_getext" value="{{five_textarea}}"></textarea>
+                <view class="fd_mask_btn">
+                    <button catchtap="fd_enter" data-index="0">取消</button>
+                    <button catchtap="fd_enter" data-index="1">确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="fivedown" hidden="{{sixdown_key}}">
+        <view class="fd_title">
+            <view class="fd_question">
+        请添加之前的过敏情况
+        <text>如有变化，请补全</text>
+            </view>
+            <view class="fd_page__bd">
+                <view class="section section_gap">
+                    <checkbox-group bindchange="six_checkboxChange">
+                        <label class="fd_checkbox" wx:for="{{pro_grap[6].one_items}}">
+                            <view class="label_l">
+                                <checkbox catchtap="six_changeradio" checked="{{item.checked}}" data-index="{{index}}" value="{{item.name}}"></checkbox> {{item.value}}
+              </view>
+                            <view catchtap="six_deldata" class="fd_label_r" data-index="{{index}}">
+                                <image mode="aspectFit" src="/assets/images/wast.png"></image>
+                                <text>删除</text>
+                            </view>
+                        </label>
+                    </checkbox-group>
+                    <view catchtap="six_showpop" class="fd_addsick">
+            + 添加过敏信息
+          </view>
+                </view>
+            </view>
+        </view>
+        <view class="fd_mask" hidden="{{six_mask_key}}">
+            <view class="fd_mask_sin">
+                <text>请填写过敏情况</text>
+                <textarea bindinput="six_getext" value="{{six_textarea}}"></textarea>
+                <view class="fd_mask_btn">
+                    <button catchtap="six_enter" data-index="0">取消</button>
+                    <button catchtap="six_enter" data-index="1">确定</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="sevendown" wx:if="{{pagenum==8}}">
+        <textarea bindinput="doc_advi"></textarea>
+    </view>
+    <view class="btn">
+        <button catchtap="btn_prev" hidden="{{pagenum==1}}">
+      上一题
+    </button>
+        <button catchtap="btn_next">
+      下一题
+    </button>
+    </view>
+</view>

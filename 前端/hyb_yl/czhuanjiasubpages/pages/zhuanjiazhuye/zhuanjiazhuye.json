@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "my-answer-page": "/component/answer_page/answer_page",
+        "ovalLogin": "/component/ovalLogin/ovalLogin",
+        "page-loading": "/component/loading/index"
+    }
+}

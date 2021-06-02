@@ -1,0 +1,101 @@
+<view class="vipcard">
+    <view class="vipcard-card">
+        <view class="vip-card">
+            <image class="vip-card-image" src="https://img1.dxycdn.com/2019/0125/653/3325176099507743447-22.png"></image>
+            <view bindtap="handleClickCard" class="vip-card-body">
+                <view class="name">
+                    <text>{{zj_year.z_name}}</text>
+                    <text class="card-tag">医生年卡</text>
+                </view>
+                <view class="section">
+                    <text>{{zj_year.keshi}}</text>
+                    <text class="job">{{zj_year.job_name}}</text>
+                </view>
+                <view class="price">
+                    <view class="now">
+                        <text class="price-now-text">{{zj_year.old_price}}</text>元</view>
+                    <view class="origin">
+                        <text class="price-origin-text">{{zj_year.new_price}}</text>元</view>
+                </view>
+                <image class="vip-card-body-image" src="{{zj_year.advertisement}}"></image>
+            </view>
+            <view class="vip-card-footer">
+                <view class="footer-info footer-info-buycard">
+                    <view>服务期限 {{zj_year.times}}年</view>
+                    <view class="footer-info-buycard-stock">
+                        <text class="footer-info-buycard-stock-text">库存 {{zj_year.num}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="vipcard-rights">
+        <view class="vipcard-rights-title">
+            <view class="vipcard-rights-title-icon"></view>
+            <text class="vipcard-rights-title-text">服务权益</text>
+        </view>
+        <view class="vipcard-rights-item vipcard-rights-item-first" wx:if="{{zj_year.is_mianfei=='1'}}">
+            <view class="vipcard-rights-item-icon">
+                <image src="https://img1.dxycdn.com/2018/0821/578/3296056867633495865-22.png"></image>
+            </view>
+            <view class="vipcard-rights-item-desc">
+                <view class="title">免费问诊</view>
+                <view class="content">购买{{zj_year.times}}年内可免费向该医生提问{{zj_year.wz_num}}次</view>
+            </view>
+        </view>
+        <view class="vipcard-rights-item" wx:if="{{zj_year.is_wzzk=='1'}}">
+            <view class="vipcard-rights-item-icon">
+                <image src="https://img1.dxycdn.com/2018/0821/040/3296058411673984546-22.png"></image>
+            </view>
+            <view class="vipcard-rights-item-desc">
+                <view class="title">问诊{{zj_year.wz_zhekou}}折</view>
+                <view class="content">问诊超过{{zj_year.wz_num}}次，服务期间内向该医生提问通通{{zj_year.wz_zhekou}}折</view>
+            </view>
+        </view>
+        <view class="vipcard-rights-item vipcard-rights-item-first" wx:if="{{zj_year.is_hh=='1'}}">
+            <view class="vipcard-rights-item-icon">
+                <image src="https://img1.dxycdn.com/2018/0821/578/3296056867633495865-22.png"></image>
+            </view>
+            <view class="vipcard-rights-item-desc">
+                <view class="title">免费会话</view>
+                <view class="content">购买{{zj_year.times}}年内可免费向该医生提问{{zj_year.hh_num}}次</view>
+            </view>
+        </view>
+        <view class="vipcard-rights-item vipcard-rights-item-first" wx:if="{{zj_year.is_jd=='1'}}">
+            <view class="vipcard-rights-item-icon">
+                <image src="https://img1.dxycdn.com/2018/0821/578/3296056867633495865-22.png"></image>
+            </view>
+            <view class="vipcard-rights-item-desc">
+                <view class="title">免费解读</view>
+                <view class="content">购买{{zj_year.times}}年内可免费向该医生解读{{zj_year.jd_num}}次</view>
+            </view>
+        </view>
+        <view class="vipcard-rights-item">
+            <view class="vipcard-rights-item-icon">
+                <image src="https://img1.dxycdn.com/2018/0821/746/3296058544817971387-22.png"></image>
+            </view>
+            <view class="vipcard-rights-item-desc">
+                <view class="title">优先服务</view>
+                <view class="content">购买年卡后，向该医生提问享有回复优先权</view>
+            </view>
+        </view>
+    </view>
+    <view class="vipcard-action">
+        <view>
+            <button bindtap="handleBuy" class="vipcard-action-button common-button">立即购买</button>
+        </view>
+        <view class="vipcard-action-tips">
+            <view class="text">该服务仅支持图文问诊</view>
+            <view bindtap="handleNavToService" class="link">服务协议</view>
+        </view>
+    </view>
+</view>
+<view catchtap="closezhe" class="zhe" wx:if="{{xieyi}}">
+    <view catchtap="function(){}" class="cont">
+        <view catchtap="function(){}" class="title">年卡协议</view>
+        <view catchtap="function(){}" class="rule_box">
+            <rich-text nodes="{{zj_year.content}}"></rich-text>
+        </view>
+        <view catchtap="closezhe" class="rule_btn">我知道了</view>
+    </view>
+</view>

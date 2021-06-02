@@ -1,0 +1,48 @@
+<view class="tab_box">
+    <view bindtap="chose_fenlei" class="">
+        <view class="tab">
+            <text class="tab_text">{{fenleiText}}</text>
+            <image class="tab_img {{feileiIndex?'img_active':''}}" mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/down01.png?sign=a55fd74cafd44a5b0d49225d41088fb9&t=1577341464"></image>
+        </view>
+        <view class="heng"></view>
+    </view>
+    <view bindtap="stor_btn" class="{{tabIndex==1?'active':''}}" data-index="1">
+        <view class="tab">距离优先</view>
+        <view class="heng"></view>
+    </view>
+    <view bindtap="stor_btn" class="{{tabIndex==2?'active':''}}" data-index="2">
+        <view class="tab">好评优先</view>
+        <view class="heng"></view>
+    </view>
+    <view bindtap="stor_btn" class="{{tabIndex==3?'active':''}}" data-index="3">
+        <view class="tab">推荐排序</view>
+        <view class="heng"></view>
+    </view>
+</view>
+<view class="featurebox">
+    <view class="yiyuanBox">
+        <view bindtap="goback" class="cont_item" data-hid="{{item.hid}}" data-name="{{item.agentname}}" wx:for="{{list}}">
+            <image class="item_img" mode="aspectFill" src="{{item.logo}}"></image>
+            <view class="item_right">
+                <view class="df1">
+                    <view class="item_name">
+                        <view class="city">{{item.agentname}}</view>
+                    </view>
+                    <view>评分 <text class="num">{{item.score}}</text>
+                    </view>
+                </view>
+                <view class="df1 c9">
+                    <view class="city">{{item.content}}</view>
+                    <view>{{item.juli}}m</view>
+                </view>
+                <view class="rule">
+					就诊：{{item.wenzhen}} | 预约：{{item.yuyue}}
+				</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="zhe" wx:if="{{feileiIndex}}"></view>
+<view class="fenlei" wx:if="{{feileiIndex}}">
+    <view bindtap="chose_item" class="fenlei_item {{groupid==item.id?'fenlei_active':''}}" data-id="{{item.id}}" data-index="0" data-name="{{item.name}}" wx:for="{{type_arr}}">{{item.name}}</view>
+</view>

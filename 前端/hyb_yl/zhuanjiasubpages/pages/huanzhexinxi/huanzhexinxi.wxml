@@ -1,0 +1,15 @@
+<view class="tip">请选择患者信息</view>
+<view class="tips">以便医生给出更准确的治疗，信息仅医生可见</view>
+<view class="main">
+    <view bindtap="{{type?'detalmsg':'choosepeo'}}" class="item1 {{i==index?'active':''}}" data-ind="{{index}}" data-j_id="{{item.j_id}}" data-names="{{item.names}}" data-numcard="{{item.numcard}}" data-openid="{{item.openid}}" data-region="{{item.region}}" data-sex="{{item.sex}}" data-sick_index="{{item.sick_index}}" data-tel="{{item.tel}}" wx:for="{{archivesArr}}" wx:key="index">
+        <view class="name">{{item.names}}</view>
+        <view class="info">{{item.sex=='男'?'男':'女'}} | {{item.age}} 岁 | {{item.tizhong}}kg</view>
+    </view>
+    <view bindtap="addPeo" class="item" data-sick_index="1" wx:if="{{doc==''}}">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/tianjiatu.jpg?sign=69e012faccb5061e4fd0dfac56ba2a24&t=1571479509"></image>
+        <text>添加患者</text>
+    </view>
+</view>
+<view class="btn" wx:if="{{gren!=='1'}}">
+    <view bindtap="next" class="next" data-j_id="{{j_id}}" data-state="{{state}}" data-zid="{{zid}}" style="background-color:{{bgc}}">{{state==1?'确 定':'下一步'}}</view>
+</view>

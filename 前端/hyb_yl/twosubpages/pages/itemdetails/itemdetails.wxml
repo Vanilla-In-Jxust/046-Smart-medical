@@ -1,0 +1,20 @@
+<view class="module" wx:if="{{type!='1'}}" wx:for="{{list}}" wx:key="{{index}}">
+    <view class="module-title">
+        <view class="module-title-icon"></view>
+        <view> {{item.first}} </view>
+        <view class="module-title-icon"></view>
+    </view>
+    <view class="module-text"></view>
+    <view class="lists" wx:for="{{item.child}}" wx:for-item="items" wx:key="items">
+        <view bindtap="listitem" class="module-entry module-custom-item" data-id="{{items.id}}" data-title="{{items.title}}">
+            <view class="entry">{{items.title}}</view>
+        </view>
+    </view>
+</view>
+<view bindtap="listitems" class="module" data-id="{{item.id}}" data-title="{{item.title}}" wx:if="{{type=='1'}}" wx:for="{{info}}" wx:key="{{index}}">
+    <view class="lists">
+        <view class="module-entry module-custom-item" data-id="{{item.id}}" data-title="{{item.title}}">
+            <view class="entry">{{item.ctname}}</view>
+        </view>
+    </view>
+</view>

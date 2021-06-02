@@ -1,0 +1,31 @@
+<view class="top">请绑定注册账户本人银行卡</view>
+<view class="for">
+    <view class="for-right">
+        <view class="name">持卡人</view>
+        <input bindinput="input1" class="viewname" value="{{wzname}}"></input>
+    </view>
+</view>
+<view class="for">
+    <view class="for-right">
+        <view class="name">卡号</view>
+        <input bindblur="focus" bindinput="input2" class="input" placeholder="请输入卡号" style="  width: 500rpx;" type="number"></input>
+    </view>
+</view>
+<view bindtap="navclick" class="for">
+    <view class="for-right">
+        <image class="for-right-img" src="{{arr.bankLogo?arr.bankLogo:'/assets/images/wap_img.png'}}" wx:if="{{show}}"></image>
+        <view class="name" style="  width: 400rpx;">{{arr.bankName?arr.bankName:'银行'}}</view>
+        <view class="xz">
+            <image class="xa-img" src="/assets/images/Wtui.png"></image>
+        </view>
+        <view class="xz-right" wx:if="{{!show}}">请选择银行</view>
+    </view>
+</view>
+<view class="for">
+    <view class="for-right">
+        <view class="name">手机验证</view>
+        <input bindinput="input3" class="input" placeholder="输入手机验证码" type="number"></input>
+        <view bindtap="{{clicktime}}" class="gain">{{time}}</view>
+    </view>
+</view>
+<view bindtap="{{clickname}}" class="{{name}}">确认添加</view>

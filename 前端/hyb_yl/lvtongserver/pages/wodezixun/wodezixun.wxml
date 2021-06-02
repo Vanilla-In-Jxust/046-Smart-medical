@@ -1,0 +1,52 @@
+<view class="topTabSwiper">
+    <view bindtap="checkCurrent" class="tab {{currentData==index?'tabBorer':''}}" data-current="{{index}}" wx:for="{{tablist}}" wx:key="t">
+			{{item}}
+		</view>
+</view>
+<view>
+    <view class="successbox" wx:if="{{list.length!==0}}">
+        <view wx:for="{{list}}" wx:key="tz">
+            <view bindtap="lookdetail" class="goods" data-dex="{{index}}" data-did="{{item.did}}" data-docopenid="{{item.doc.openid}}" data-id="{{item.id}}" data-ifpay="{{item.ifpay}}" data-j_id="{{item.j_id}}" data-key_words="{{item.key_words}}" data-money="{{item.money}}" data-orders="{{item.back_orser}}" data-thumb="{{item.thumb}}" data-title="{{item.doc.title}}" data-u_name="{{item.user.u_name}}" data-u_thumb="{{item.user.u_thumb}}" data-zid="{{item.z_id}}">
+                <view class="expertbox">
+                    <view class="experitem " style="">
+                        <image class="docimg" src="{{item.thumb}}"></image>
+                        <view class="inquiry">{{item.doc['title']}}</view>
+                        <view class="inquiry">{{item.doc.keshi}}</view>
+                    </view>
+                    <view class="experitem" style="">
+                        <view catchtap="cancel" class="consult" data-id="{{item.id}}" wx:if="{{item.ifpay==0||item.ifpay==1}}">取消订单</view>
+                        <view catchtap="gopay" class="consult" data-back_orser="{{item.back_orser}}" data-id="{{item.id}}" data-key_words="{{item.key_words}}" data-money="{{item.money}}" wx:if="{{item.ifpay==0}}">去支付</view>
+                        <view catchtap="refund" class="consult" data-id="{{item.id}}" wx:if="{{item.ifpay==1}}">申请退款</view>
+                        <view catchtap="deleteitem" class="consult" data-id="{{item.id}}" wx:if="{{item.ifpay==0||item.ifpay==4||item.ifpay==6||item.ifpay==8}}">删除订单</view>
+                        <view class="status" wx:if="{{item.ifpay==0}}">待支付</view>
+                        <view class="status" wx:if="{{item.ifpay==1&&(item.did!=''&&item.did!='0'||item.z_id!=''&&item.z_id!='0')}}">待接诊</view>
+                        <view class="status" wx:if="{{item.ifpay==1&&(item.did==''||item.did=='0')&&(item.z_id==''||item.z_id=='0')}}">待派单</view>
+                        <view class="status" wx:if="{{item.ifpay==2}}">咨询中</view>
+                        <view catchtap="pingjia" class="status" data-did="{{item.did}}" data-docopenid="{{item.doc.openid}}" data-id="{{item.id}}" data-j_id="{{item.j_id}}" data-keywords="{{item.key_words}}" data-orders="{{item.orders}}" data-title="{{item.doc.title}}" data-zid="{{item.z_id}}" wx:if="{{item.ifpay==3}}">去评价</view>
+                        <view class="status" wx:if="{{item.ifpay==4}}">已评价</view>
+                        <view class="status" wx:if="{{item.ifpay==5}}">申请中</view>
+                        <view class="status" wx:if="{{item.ifpay==6}}">已退款</view>
+                        <view class="status" wx:if="{{item.ifpay==8}}">已取消</view>
+                    </view>
+                </view>
+                <view class="dfbox">
+                    <view class="patientList">
+                        <view class="list">
+                            <view class="list_left">病情描述:</view>
+                            <view class="list_right">{{item.content.text}}</view>
+                        </view>
+                        <view class="list">
+                            <view class="list_left">订单号:</view>
+                            <view class="list_right">{{item.orders}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="time">{{item.created}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="nonelist" style="padding-top:120rpx;" wx:else>
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+        <view class="fs28">暂未咨询记录</view>
+    </view>
+</view>

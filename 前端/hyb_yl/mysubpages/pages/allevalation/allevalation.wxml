@@ -1,0 +1,47 @@
+<view>
+    <view wx:if="{{appraise.length!=0}}">
+        <view bindtap="evaldetail" class="oval" data-pl_id="{{item.pl_id}}" wx:for="{{appraise}}" wx:key="index">
+            <view>
+                <view class="headbox">
+                    <view class="headleft">
+                        <view class="headImg">
+                            <image src="{{item.u_thumb}}"></image>
+                        </view>
+                    </view>
+                    <view class="headname">{{item.u_name}}</view>
+                    <view>
+                        <text class="evaluation">评价官</text>
+                    </view>
+                </view>
+                <view class="bigbox">
+                    <view class="evalTime">
+                        <view class="imgbox">
+                            <image class="startImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/myImg/eval.png?sign=950845296419cf08855f22460e7ef827&t=1576739639" wx:for="{{item.dengj}}" wx:key="index"></image>
+                        </view>
+                        <view class="timefont">{{item.pl_time}}</view>
+                    </view>
+                    <view class="evalcont">
+                        <view class="">{{item.pl_text.textshow}}
+              </view>
+                        <view class="uploadbox">
+                            <text catchtap="click" class="upload" data-index="{{index}}" hidden="{{item.pl_text.text.length<=maxLength}}">{{item.pl_text.isshow?'展开':'收起'}}</text>
+                        </view>
+                    </view>
+                    <view class="evalimgbox">
+                        <view catchtap="imgbtn" class="imgcss" data-index="{{index}}" data-item="{{img}}" style="display:inline-block" wx:for="{{item.pl_text.pic}}" wx:for-index="imgIndex" wx:for-item="img" wx:key="imgIndex">
+                            <image src="{{img}}"></image>
+                        </view>
+                    </view>
+                    <view class="buygoods">肠炎宁片0.42g*12s</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="noshopeval">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yimeiimages/nodata.png?sign=cae11249546b772c437fbcdcf3d9272d&t=1573022787"></image>
+            <view class="fs24 cbd">暂时还没有商品评价</view>
+        </view>
+    </view>
+    <view class="foot"></view>
+</view>

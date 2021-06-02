@@ -1,0 +1,666 @@
+page {
+    background: #fff;
+    padding: 25rpx;
+    box-sizing: border-box;
+    padding-bottom: 150rpx;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.lemma {
+    position: relative;
+}
+
+.lemma-label {
+    position: absolute;
+    top: -40rpx;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 500;
+    font-size: 26rpx;
+    line-height: 30rpx;
+    text-align: center;
+    width: 72rpx;
+    height: 100rpx;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 0;
+}
+
+.lemma-title {
+    margin-bottom: 32rpx;
+    color: #333;
+    font-weight: 600;
+    font-size: 60rpx;
+    line-height: 90rpx;
+}
+
+.lemma-author {
+    margin-bottom: 20rpx;
+    display: flex;
+    align-items: center;
+    color: gray;
+    font-size: 24rpx;
+    line-height: 32rpx;
+}
+
+.tags {
+    color: #b38c3e;
+    background-color: #fffaf0;
+    margin-bottom: 12rpx;
+    padding: 4rpx;
+    font-weight: 400;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    white-space: nowrap;
+    border-radius: 4rpx;
+}
+
+.lemma-author-avatar {
+    width: 32rpx;
+    height: 32rpx;
+    margin-left: 28rpx;
+    border: 1rpx solid #ebebeb;
+    border-radius: 4rpx;
+}
+
+.lemma-author-info {
+    margin-left: 8rpx;
+}
+
+.lemma-author-arrow {
+    width: 14rpx;
+    height: 20rpx;
+    margin-left: 4rpx;
+}
+
+.lemma-time {
+    color: #b3b3b3;
+    font-size: 20rpx;
+    line-height: 24rpx;
+}
+
+.lemma-time-item {
+    margin-right: 30rpx;
+}
+
+.lemma-desc {
+    max-height: 126rpx;
+    margin-top: 40rpx;
+    color: #333;
+    font-weight: 300;
+    font-size: 28rpx;
+    line-height: 42rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.more {
+    padding: 40rpx 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.more-button {
+    box-sizing: border-box;
+    padding: 12rpx 24rpx;
+    color: #00c792;
+    font-weight: 500;
+    font-size: 26rpx;
+    line-height: 30rpx;
+    background-color: #f5f5f5;
+    border: 1rpx solid #ebebeb;
+    border-radius: 27rpx;
+    display: inline-block;
+}
+
+.detail-module {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 60rpx;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+}
+
+.detail-module-item {
+    padding: 20rpx 0;
+    font-size: 0;
+    text-align: center;
+    width: 25%;
+}
+
+.detail-module-icon {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.detail-module-title {
+    margin-top: 12rpx;
+    color: #333;
+    font-size: 26rpx;
+    line-height: 30rpx;
+    text-align: center;
+}
+
+.tabs {
+    width: 100%;
+    height: 92rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-bottom: 1rpx solid #eee;
+}
+
+.tabitem {
+    width: 33.3%;
+    margin: 0;
+    text-align: center;
+    height: 92rpx;
+    line-height: 92rpx;
+    font-size: 30rpx;
+    color: #999999;
+    box-sizing: border-box;
+}
+
+.tabitem view.selected-tab {
+    position: relative;
+    display: inline-block;
+    color: #00c792;
+}
+
+.tabitem view.selected-tab:after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 4rpx;
+    background-color: #00c792;
+    transform-origin: 0 100%;
+    content: "";
+}
+
+.searchresult {
+    background: #fff;
+    box-sizing: border-box;
+}
+
+.yishneginfo {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    color: #666;
+    font-size: 28rpx;
+    background-color: #fff;
+    margin-top: 50rpx;
+}
+
+.info-img {
+    width: 112rpx;
+    height: 112rpx;
+}
+
+.userinfo-body {
+    flex: 1;
+    min-width: 0;
+    margin-left: 30rpx;
+    line-height: 1.6;
+}
+
+.doctor-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    line-height: 38rpx;
+}
+
+.userinfo-body .doctor-info .doctor-name {
+    overflow: hidden;
+    color: #333;
+    font-weight: 500;
+    font-size: 34rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.userinfo-body .doctor-info .doctor-section {
+    margin: 0 12rpx;
+    overflow: hidden;
+    color: #333;
+    font-size: 28rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.userinfo-body .doctor-info .doctor-samecity {
+    height: 26rpx;
+    margin-left: 12rpx;
+    padding: 4rpx;
+    overflow: hidden;
+    color: #666;
+    font-size: 24rpx;
+    line-height: 26rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #ebebeb;
+    border-radius: 4rpx;
+}
+
+.userinfo-body .doctor-info .doctor-samecity-team {
+    height: 26rpx;
+    margin-left: 12rpx;
+    padding: 4rpx;
+    overflow: hidden;
+    color: #fff;
+    font-size: 24rpx;
+    line-height: 26rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background-color: #0087E0;
+    border-radius: 4rpx;
+}
+
+.userinfo-body .doctor-hospital {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 12rpx;
+    overflow: hidden;
+    color: #333;
+    font-size: 28rpx;
+    line-height: 32rpx;
+}
+
+.doctor-hospital .doctor-section-info {
+    flex-shrink: 0;
+}
+
+.doctor-hospital .doctor-hosptial-name {
+    flex-grow: 1;
+    margin-left: 12rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.userinfo-body .doctor-tags {
+    margin-top: 28rpx;
+    color: #4d4d4d;
+    font-weight: 300;
+    font-size: 26rpx;
+    line-height: 39rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.userinfo-body .doctor-answer-star {
+    display: flex;
+    align-items: center;
+    margin: 12rpx 0 0;
+    font-weight: 300;
+}
+
+.userinfo-body .doctor-answer-star image {
+    margin-right: 2px;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.userinfo-body .doctor-answer-star .doctor-star {
+    height: 28rpx;
+    color: #faa700;
+    font-weight: 600;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.userinfo-body .doctor-answer-star .answer-count {
+    margin-left: 20rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.prescription-count,.reply-time-str {
+    margin-left: 12rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.prescription-count,.reply-time-str {
+    margin-left: 12rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.userinfo-body .doctor-list_dis {
+    margin-top: 20rpx;
+}
+
+.userinfo-body .doctor-list_dis_tags {
+    display: inline-block;
+    margin-right: 16rpx;
+    padding: 4rpx;
+    color: #fa0;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    background: #fffaf0;
+    border-radius: 4rpx;
+}
+
+.ask-doctor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40rpx;
+}
+
+.price-values-wrapper {
+    transform: translate(0);
+}
+
+.price-discount,.price-values {
+    display: flex;
+    align-items: center;
+}
+
+.price-value {
+    display: flex;
+    align-items: center;
+    height: 32rpx;
+    color: #666;
+    font-weight: 500;
+    font-size: 26rpx;
+    line-height: 32rpx;
+    margin-right: 30rpx;
+}
+
+.price-value-last {
+    position: relative;
+    margin-left: 20rpx;
+    padding-left: 20rpx;
+}
+
+.ask-doctor-hot {
+    width: 130rpx;
+    text-align: center;
+    line-height: 26px;
+    background-color: #F5F5F5;
+    border-radius: 50rpx;
+    border: 0.5px solid #E8E8E8;
+    font-size: 26rpx;
+    color: #0087E0;
+}
+
+.searchresultsss {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 25rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    padding-top: 96rpx;
+}
+
+.searchresultitem {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 92rpx;
+    border-bottom: 1rpx solid #EBEBEB;
+}
+
+view.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+view.fi {
+    position: static;
+}
+
+.evaluateitem {
+    padding: 40rpx 32rpx;
+    border-bottom: 1rpx solid #F3F3F3;
+}
+
+.question-tit {
+    display: flex;
+    align-items: center;
+    color: #333;
+    font-weight: 500;
+    font-size: 34rpx;
+    line-height: 38rpx;
+}
+
+.question-tit image.userhead {
+    height: 40rpx;
+    width: 40rpx;
+    border-radius: 50%;
+}
+
+.question-tit view {
+    margin-left: 12rpx;
+}
+
+.question-tit image.pingxing {
+    width: 30rpx;
+    height: 30rpx;
+    margin-left: 10rpx;
+}
+
+.public-question-content {
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    margin-top: 24rpx;
+    color: #4d4d4d;
+    font-weight: 300;
+    font-size: 32rpx;
+    line-height: 48rpx;
+}
+
+.public-question-count {
+    margin-top: 24rpx;
+    color: #999;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.article-item-contain {
+    width: 100%;
+    padding: 30rpx;
+    background-color: #fff;
+    display: flex;
+}
+
+.article-header {
+    font-weight: 500;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    color: #333;
+    font-size: 34rpx;
+    line-height: 48rpx;
+}
+
+.article-body {
+    margin-top: 20rpx;
+    color: #4d4d4d;
+    font-size: 26rpx;
+    line-height: 36rpx;
+    -webkit-line-clamp: 1;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+}
+
+.article-image {
+    flex-shrink: 0;
+    width: 168rpx;
+    height: 168rpx;
+    margin-left: 30rpx;
+    overflow: hidden;
+    border-radius: 8rpx;
+}
+
+.posfix {
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: white;
+}
+
+.posfix view {
+    width: 100rpx;
+    height: 100rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.posfix view image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.posfix view text {
+    font-size: 24rpx;
+    color: #333;
+}
+
+.posfix button {
+    margin: 0px;
+    background: transparent;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.posfix button image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.posfix button text {
+    font-size: 24rpx;
+    color: #333;
+}
+
+.mask {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    left: 0px;
+    top: 0px;
+    background: rgba(0,0,0,0.5);
+}
+
+.mask .mask_sign {
+    width: 90%;
+    height: 1050rpx;
+    position: absolute;
+    left: 50%;
+    margin-top: 150rpx;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.mask .mask_sign>image {
+    width: 100%;
+    margin-top: 30rpx;
+}
+
+.mask .mask_sign button {
+    width: 350rpx;
+    height: 90rpx;
+    background: #02cb97;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0px 70rpx;
+    margin-top: 30rpx;
+}
+
+.mask .mask_sign button image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.mask .mask_sign>text {
+    color: white;
+    text-align: center;
+    font-size: 30rpx;
+    margin-top: 50rpx;
+}
+
+.zhe {
+    position: fixed;
+    bottom: 200rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 300rpx;
+    height: 88rpx;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    border-radius: 10rpx;
+}
+
+.cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx;
+}
+
+.cont image {
+    width: 50rpx;
+    margin-right: 30rpx;
+}
+
+.text1 {
+    font-size: 26rpx;
+    color: #fff;
+    white-space: nowrap;
+}

@@ -1,0 +1,70 @@
+page {
+    background: #fff;
+    padding-top: 25rpx;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+image {
+    width: 100%;
+    height: 100%;
+}
+
+.operation-list {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 148rpx;
+    overflow: hidden;
+}
+
+.operation-item {
+    flex: 50%;
+    width: 50%;
+}
+
+.section-list {
+    margin-top: 20rpx;
+    padding-bottom: 100rpx;
+    background: #fff;
+}
+
+.section-item {
+    padding: 0 32rpx;
+}
+
+.containers {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 25rpx;
+}
+
+.containers .item {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: calc((100% - 48rpx) / 3);
+    margin: 0 24rpx 24rpx 0;
+    padding: 36rpx 0;
+    background: #fafafa;
+    border-radius: 8rpx;
+}
+
+.containers .item:nth-child(3n) {
+    margin-right: 0;
+}
+
+.containers .item .image {
+    display: block;
+    width: 80rpx;
+    height: 80rpx;
+    margin-bottom: 12rpx;
+}
+
+.containers .item .text {
+    color: #333;
+    font-weight: 500;
+    font-size: 28rpx;
+}

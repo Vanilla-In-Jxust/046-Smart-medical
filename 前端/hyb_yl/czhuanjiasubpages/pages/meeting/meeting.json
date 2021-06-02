@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "agora-pusher": "../../../../component/agora-pusher/agora-pusher",
+        "agora-player": "../../../../component/agora-player/agora-player"
+    }
+}

@@ -1,0 +1,89 @@
+view {
+    box-sizing: border-box;
+}
+
+page {
+    box-sizing: border-box;
+    background: #fff;
+}
+
+.datesbox {
+    padding-bottom: 80rpx;
+}
+
+.orderedtit {
+    text-align: center;
+    font-size: 22rpx;
+    color: #A3A3A3;
+    padding: 10rpx;
+}
+
+.orderedmouth {
+    text-align: center;
+    font-size: 36rpx;
+    color: #333333;
+    position: relative;
+    padding: 25rpx;
+}
+
+.orderedmouth::after {
+    content: "";
+    width: 35%;
+    border-top: 1rpx solid #F7F7F7;
+    position: absolute;
+    top: 50%;
+    right: 25rpx;
+}
+
+.orderedmouth::before {
+    content: "";
+    width: 35%;
+    border-top: 1rpx solid #F7F7F7;
+    position: absolute;
+    top: 50%;
+    left: 25rpx;
+}
+
+.dateslist {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.dateslistitem {
+    font-size: 30rpx;
+    color: #797979;
+}
+
+.dateslistitem view {
+    width: 65rpx;
+    text-align: center;
+    line-height: 65rpx;
+    border-radius: 10rpx;
+}
+
+.dateslistitem view.active {
+    color: #fff;
+    background: #0087E0;
+}
+
+.pm {
+    line-height: 80rpx;
+    background: #EDEDED;
+    padding: 0 25rpx;
+    font-size: 22rpx;
+    color: #AEAEAE;
+}
+
+.timebox {
+    padding: 0 25rpx;
+}
+
+.timebox view {
+    text-align: center;
+    line-height: 100rpx;
+    color: #666666;
+    font-size: 28rpx;
+    border-bottom: 1rpx solid #FBFBFB;
+}

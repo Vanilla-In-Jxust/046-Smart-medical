@@ -1,0 +1,85 @@
+<view class="wrap" style="height:{{Height}}px;">
+    <image class="wrap_img" src="{{genderImg}}"></image>
+    <view class="box">
+        <view class="name">{{Arr.name!=null?Arr.name:'未填写'}}</view>
+        <view class="name_text">{{Arr.age?Arr.age:'未填写'}}岁 | {{Arr.nmBloodType?Arr.nmBloodType:'未填写'}} | {{Arr.height?Arr.height:'未填写'}}cm | {{Arr.weight?Arr.weight:'未填写'}}kg</view>
+        <view class="left">
+            <view class="top">
+                <view class="top_text">
+                    <view class="top_text1">肾病诊断</view>
+                    <view class="top_text2">{{Arr.nephrosis?Arr.nephrosis:'未填写'}}</view>
+                </view>
+                <view class="top_text">
+                    <view class="top_text1">CKD分期</view>
+                    <view class="top_text2">{{Arr.ckdSubsection?Arr.ckdSubsection:'未填写'}}</view>
+                </view>
+                <view class="top_text" wx:if="{{Arr.hemodialysisStatus==0}}">
+                    <view class="top_text1">首付血透日期</view>
+                    <view class="top_text2">{{Arr.hemodialysisDay?Arr.hemodialysisDay:'未填写'}}</view>
+                </view>
+                <view class="top_text" wx:if="{{Arr.bellyDialysisStatus==0}}">
+                    <view class="top_text1">首付腹透日期</view>
+                    <view class="top_text2">{{Arr.bellyDialysisDay?Arr.bellyDialysisDay:'未填写'}}</view>
+                </view>
+            </view>
+            <view class="bottom">
+                <view class="bottom_text">饮食： <text> {{arr.nmDietSitu?arr.nmDietSitu:'未填写'}}</text>
+                </view>
+                <view class="bottom_text">睡眠： <text> {{arr.nmSleepSitu?arr.nmSleepSitu:'未填写'}}</text>
+                </view>
+                <view class="bottom_text">尿量： <text> {{arr.nmMicturitionSitu?arr.nmMicturitionSitu:'未填写'}}ml/24h</text>
+                </view>
+                <view class="bottom_text">夜尿： <text> {{arr.nocturiaNum?arr.nocturiaNum:'未填写'}}次</text>
+                </view>
+            </view>
+        </view>
+        <view class="right">
+            <view class="right_text" wx:if="{{flagBleed}}">出血情况病史 + </view>
+            <view class="right_text" wx:if="{{flagCardiovascular}}">心血管病史 + </view>
+            <view class="right_text" wx:if="{{flagHighBlood}}">高血压病史 + </view>
+            <view class="right_text" wx:if="{{flagHepatitis}}">肝炎病史 + </view>
+            <view class="right_text" wx:if="{{flagCerebrovascular}}">脑血管病史 + </view>
+            <view class="right_text" wx:if="{{flagFamily}}">家族病史 + </view>
+            <view class="right_text" wx:if="{{flagDiabetes}}">糖尿病史 + </view>
+            <view class="right_text" wx:if="{{flagMenstrual}}">月经史 + </view>
+            <view class="right_text" wx:if="{{flagAnaphylaxis}}">过敏病史 + </view>
+            <view class="right_text" wx:if="{{flagOther}}">其他病史 + </view>
+        </view>
+    </view>
+    <view class="nav" wx:if="{{show}}">
+        <view class="nav1">
+            <navigator url="/hyb_yl/backstageFollowUp/pages/examine/examine?teamId={{teamId}}">
+                <view class="nav1_img1">
+                    <image class="nav1_img1_png" src="/assets/images/jianyana.png"></image>
+                    <view class="nav1_img1_text">检验记录</view>
+                </view>
+            </navigator>
+            <navigator url="/hyb_yl/backstageFollowUp/pages/pharmacy/pharmacy?teamId={{teamId}}">
+                <view class="nav1_img2">
+                    <image class="nav1_img1_png" src="/assets/images/yongyao.png"></image>
+                    <view class="nav1_img1_text">用药记录</view>
+                </view>
+            </navigator>
+            <navigator url="/hyb_yl/backstageFollowUp/pages/Signs/Signs?teamId={{teamId}}">
+                <view class="nav1_img3">
+                    <image class="nav1_img1_png" src="/assets/images/tizeng.png"></image>
+                    <view class="nav1_img1_text">体征记录</view>
+                </view>
+            </navigator>
+            <view bindtap="personalDetails" class="nav1_img5">
+                <image class="nav1_img1_png" src="/assets/images/geren.png"></image>
+                <view class="nav1_img1_text">个人信息</view>
+            </view>
+            <view bindtap="basic" class="nav1_img6">
+                <image class="nav1_img1_png" src="/assets/images/jiben.png"></image>
+                <view class="nav1_img1_text">基本状况</view>
+            </view>
+            <view class="nav2">
+                <view class="nav3">
+                    <image bindtap="show" class="nav3_img" src="/assets/images/xx.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <image bindtap="jia" class="jia" src="/assets/images/jiaa.png" wx:if="{{show1&&!powerFlag}}"></image>
+</view>

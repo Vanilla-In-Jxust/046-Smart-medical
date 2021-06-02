@@ -1,0 +1,48 @@
+<view class="expert-bg" style="background:{{bg_color}}">
+    <view style="display:flex;align-items: center">
+        <image class="expert-icon" src="{{thumb}}"></image>
+        <view class="expert-ri">
+            <view class="expert-one">
+                <view class="expert-tit">{{yaoshi.name}} <text style="color:{{bg_color}}">{{yaoshi.keshi}}</text>
+                </view>
+            </view>
+            <view class="expert-doc">{{yaoshi.hospital}}</view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">订单中心</view>
+    <view class="doc-vienna-list">
+        <view bindtap="yishen" class="doc-vienna-item">
+            <image src="{{item.thumb}}"></image>
+            <view class="doc-vienna-ri">
+                <view class="doc-vi-t">已审订单
+					<view>{{yaoshi.order}}</view>
+                </view>
+                <view class="doc-vi-tip"> 已审订单 </view>
+            </view>
+        </view>
+        <view bindtap="shenhe" class="doc-vienna-item">
+            <image src="{{item.thumb}}"></image>
+            <view class="doc-vienna-ri">
+                <view class="doc-vi-t">待审订单
+					<view>{{yaoshi.shenhe}}</view>
+                </view>
+                <view class="doc-vi-tip"> 待审订单 </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">财务数据</view>
+    <view class="doc-data">
+        <view bindtap="tixian" class="doc-data-item">
+            <view>{{yaoshi.fee}}</view>
+            <view class="doc-data-tip">总收益</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{yaoshi.tixian}}</view>
+            <view class="doc-data-tip">总支出</view>
+        </view>
+    </view>
+</view>

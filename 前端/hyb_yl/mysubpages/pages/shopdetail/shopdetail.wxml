@@ -1,0 +1,333 @@
+<view>
+    <view bindtap="address" class="{{addbox?'show':'hide'}} headbox {{statu==1?'show':'hide'}}">
+        <view class="noaddress" style="background:{{bgc}}">+添加收货地址</view>
+    </view>
+    <view class="{{addbox?'hide':'show'}}">
+        <view bindtap="address" class="one">
+            <view class="one_cen">
+                <view>
+                    <view class="one_cen_address">{{addresslist.userAddress}}</view>
+                    <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%8C%BB%E7%96%97%E6%96%B0%E7%89%88%E5%95%86%E5%9F%8Eicon/wxsj.png?sign=34f823e6a904ba36c7e44ef5f94e8d3c&t=1573282122"></image>
+                </view>
+            </view>
+            <view class="one_down">
+                <text>{{addresslist.userName}}</text>
+                <text>{{addresslist.userPhone}}</text>
+            </view>
+        </view>
+    </view>
+</view>
+<navigator hoverClass="none" url="/hyb_yl/backstageServices/pages/kaiyao/kaiyao?ifshop=1&inquiry=4" wx:if="{{ifcfy==0}}">
+    <view class="recinfo">
+        <view class="recifo_left">
+            <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%8C%BB%E7%96%97%E6%96%B0%E7%89%88%E5%95%86%E5%9F%8Eicon/recinfo.png?sign=b4a52c7c6c221a841a027301d948a189&t=1573282087"></image>
+        </view>
+        <view class="recifo_center {{medicbox?'show':'hide'}}">
+            <view class="fill">请填写处方信息</view>
+            <view class="online">线上问诊开方或上传处方单</view>
+        </view>
+        <view class="recifo_center {{medicbox?'hide':'show'}}">
+            <view class="fill">已提交问诊信息</view>
+        </view>
+        <view class="recifo_right">
+            <view class="arrowImg">
+                <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%8C%BB%E7%96%97%E6%96%B0%E7%89%88%E5%95%86%E5%9F%8Eicon/wxsj.png?sign=34f823e6a904ba36c7e44ef5f94e8d3c&t=1573282122"></image>
+            </view>
+        </view>
+    </view>
+</navigator>
+<view class="three">
+    <view class="three_top">
+        <text>自营</text>
+    </view>
+    <view class="three_center">
+        <view class="thc_up" wx:if="{{commodity.length==1}}" wx:for="{{commodity}}" wx:key="index">
+            <view>
+                <image mode="aspectFit" src="{{item.sthumb}}"></image>
+            </view>
+            <view>
+                <view class="cthc_up">
+                    <text>{{item.sname}}</text>
+                    <text>规格：{{item.gg_name}}</text>
+                </view>
+                <view class="cthc_down">
+                    <view>
+                        <text>￥<text style="font-size:36rpx">{{item.smoney}}</text>
+                        </text>
+                        <view class="addbox">
+                            <view bindtap="suv" data-index="{{index}}">-</view>
+                            <view class="shu">
+                                <input bindblur="getnum" bindinput="num" data-index="{{index}}" type="number" value="{{item.num}}"></input>
+                            </view>
+                            <view bindtap="add" data-index="{{index}}">+</view>
+                        </view>
+                    </view>
+                    <text>注：若需退货请联系平台客服</text>
+                </view>
+            </view>
+        </view>
+        <view class="cleargood" wx:if="{{commodity.length>1}}">
+            <view class="bannerbox">
+                <scroll-view class="banner-view" scrollX="true">
+                    <view class="bannerImg" wx:for="{{commodity}}" wx:key="*this">
+                        <image src="{{item.sthumb}}"></image>
+                    </view>
+                </scroll-view>
+            </view>
+            <view class="totalFont">共{{commodity.length}}件</view>
+            <view class="moreRight">
+                <image bindtap="druglist" class="moreImg" mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%8C%BB%E7%96%97%E6%96%B0%E7%89%88%E5%95%86%E5%9F%8Eicon/mores.png?sign=83055ffb87dc8de6ef723b7df970b15b&t=1573280939"></image>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="total">
+    <view>
+        <text>商品金额</text>
+        <text>￥{{countmoney}}</text>
+    </view>
+</view>
+<view style="height:210rpx;"></view>
+<view class="btnpos">
+    <view class="addr" hidden="{{addrkey}}">
+        <text>{{addresslist.userAddress}}</text>
+    </view>
+    <view class="btm">
+        <text>￥<text style="font-size:56rpx;">{{summoney}}</text>
+        </text>
+        <button bindtap="submit" data-countmoney="{{countmoney}}" data-feight="{{feight}}" data-num="{{num}}" data-summoney="{{summoney}}" data-u_id="1" style="background:{{bgc}}">提交订单</button>
+    </view>
+</view>
+<view catchtouchmove="move" class="maskbox" hidden="{{maskbox}}">
+    <view class="pattern">
+        <view class="pattern_head">
+            <view class="paytitle">支付及配送</view>
+            <view class="payright">
+                <view bindtap="close" class="closeImg">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%8C%BB%E7%96%97%E6%96%B0%E7%89%88%E5%95%86%E5%9F%8Eicon/close.png?sign=490e735daee3cd6d269344c135a72437&t=1573282056"></image>
+                </view>
+            </view>
+        </view>
+        <view bindtap="question" class="quesbox">确定</view>
+    </view>
+</view>
+<view catchtouchmove="move" class="maskbox" hidden="{{invoice}}">
+    <view class="pattern">
+        <view class="pattern_head">
+            <view class="paytitle">发票</view>
+            <view class="payright">
+                <text class="notice">发票须知</text>
+                <view bindtap="closeInvoice" class="closeImg">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%8C%BB%E7%96%97%E6%96%B0%E7%89%88%E5%95%86%E5%9F%8Eicon/close.png?sign=490e735daee3cd6d269344c135a72437&t=1573282056"></image>
+                </view>
+            </view>
+        </view>
+        <view class="scollbox">
+            <scroll-view scrollY style="height:750rpx;">
+                <view class="drugbox">
+                    <view class="payment">发票类型</view>
+                    <view class="method">
+                        <view class="paylabel paylabel_active">{{electron}}</view>
+                    </view>
+                </view>
+                <view class="drugbox">
+                    <view class="payment">发票抬头</view>
+                    <view class="method">
+                        <view bindtap="chooseInvoice" class="paylabel {{invoiceIndex==index?'paylabel_active':''}}" data-index="{{index}}" wx:for="{{invoiceTitle}}" wx:key="*this">
+							{{item}}
+						</view>
+                    </view>
+                    <view class="{{invoiceIndex==0?'show':'hide'}}"></view>
+                    <view class="{{invoiceIndex==1?'show':'hide'}}">
+                        <view>
+                            <view class="unitbox">
+                                <view class="unitName">单位名称</view>
+                                <view class="unitRight">
+                                    <input bindinput="unitName" placeholder="请添加单位名称" placeholderStyle="color:#999" type="text" value="{{unitName}}"></input>
+                                </view>
+                            </view>
+                            <view class="unitbox">
+                                <view class="unitName">纳税人识别号</view>
+                                <view class="unitRight">
+                                    <input bindinput="ratepayer" placeholder="购买方纳税人识别号" placeholderStyle="color:#999" type="text" value="{{ratepayer}}"></input>
+                                </view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="drugbox">
+                    <view class="payment">收票人信息</view>
+                    <view>
+                        <view class="unitbox">
+                            <view class="unitName">收票人手机*</view>
+                            <view class="unitRight">
+                                <text>136****8967</text>
+                            </view>
+                        </view>
+                        <view class="unitbox">
+                            <view class="unitName">收票人邮箱</view>
+                            <view class="unitRight">
+                                <input placeholder="用来接受电子发票邮箱，可选" placeholderStyle="color:#999" type="text"></input>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+                <view class="drugbox">
+                    <view class="payment">发票内容</view>
+                    <view class="method">
+                        <view bindtap="selectCont" class="paylabel {{partIndex==index?'paylabel_active':''}}" data-index="{{index}}" wx:for="{{invoiceCont}}" wx:key="*this">
+							{{item}}
+						</view>
+                    </view>
+                    <view class="smallhint">发票内容将显示详细商品名称与价格信息</view>
+                </view>
+            </scroll-view>
+        </view>
+        <view bindtap="questionBill" class="quesbox">确定</view>
+    </view>
+</view>
+<view bindtap="closecou" catchtouchmove="move" class="maskbox" hidden="{{coupon}}"></view>
+<view class="pattern" hidden="{{coupon}}">
+    <view class="pattern_head">
+        <view class="paytitle">优惠券</view>
+        <view class="payright">
+            <text catchtap="instructions" class="notice">使用说明</text>
+            <view catchtap="closecou" class="closeImg">
+                <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%8C%BB%E7%96%97%E6%96%B0%E7%89%88%E5%95%86%E5%9F%8Eicon/close.png?sign=490e735daee3cd6d269344c135a72437&t=1573282056"></image>
+            </view>
+        </view>
+    </view>
+    <view class="couponbox">
+        <view bindtap="selectCoupon" data-index="{{index}}" wx:for="{{couponTitle}}" wx:key="*this">
+            <view class="{{couponIndex==index?'coun_active':''}}">{{item.title}}</view>
+            <view class="{{couponIndex==index?'counline':''}}"></view>
+        </view>
+    </view>
+    <view class="scollbox">
+        <scroll-view scrollY style="height:700rpx;">
+            <view class="{{couponIndex==0?'show':'hide'}} nocoupon">
+                <view wx:if="{{arr.length==0}}">
+                    <view class="noImg">
+                        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yimeiimages/nodata.png?sign=cae11249546b772c437fbcdcf3d9272d&t=1573022787"></image>
+                    </view>
+                    <view class="nofont">您暂无可以使用的优惠券</view>
+                </view>
+                <view class="bigsale" wx:if="{{already.length!=0}}">
+                    <view class="salecont" wx:for="{{arr}}" wx:key="*this">
+                        <view class="saleLeft">
+                            <view class="suvfont">
+                                <text class="pri">￥</text>
+                                <text class="price">{{item.subtract}}</text>
+                            </view>
+                            <view class="full">满{{item.full}}元可用</view>
+                        </view>
+                        <view class="saleRight">
+                            <view class="saleeval">
+                                <text class="limit">限品类东劵</text>
+                                <text>{{item.intro}}</text>
+                            </view>
+                            <view class="salebottom">
+                                <view class="saletime">{{item.startTime}}-{{item.over}}</view>
+                                <view class="received">已领取</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="{{couponIndex==1?'show':'hide'}} nocoupon">
+                <view wx:if="{{already.length==0}}">
+                    <view class="noImg">
+                        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yimeiimages/nodata.png?sign=cae11249546b772c437fbcdcf3d9272d&t=1573022787"></image>
+                    </view>
+                    <view class="nofont">您暂无可以使用的优惠券</view>
+                </view>
+                <view class="bigsale" wx:if="{{already.length!=0}}">
+                    <view class="salecont" wx:if="{{item.usable==0}}" wx:for="{{already}}" wx:key="*this">
+                        <view class="saleLeft">
+                            <view class="suvfont">
+                                <text class="pri">￥</text>
+                                <text class="price">{{item.subtract}}</text>
+                            </view>
+                            <view class="full">满{{item.full}}元可用</view>
+                        </view>
+                        <view class="saleRight">
+                            <view class="saleeval">
+                                <text class="limit">限品类东劵</text>
+                                <text>{{item.intro}}</text>
+                            </view>
+                            <view class="salebottom">
+                                <view class="saletime">{{item.startTime}}-{{item.over}}</view>
+                                <view class="received">已领取</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view bindtap="questionCoupon" class="quesbox">确定</view>
+</view>
+<view catchtouchmove="move" class="employbox" hidden="{{instru}}">
+    <view class="employ">
+        <view class="employTitle">优惠券使用规则</view>
+        <view class="employ_center">
+            <scroll-view scrollY class="scroll-view">
+                <view class="scroll-item">
+                    <view class="cont">
+                        <view class="smalltitle">一、定义</view>
+                        <view>
+                            <view class="contlist">1、你的卡放得开首付款第三季度是开发商可大家啊发快捷刷卡机福克斯</view>
+                            <view class="contlist">1、你的卡放得开首付款第三季度是开发商可进度款健身房卡时间啊看风景时</view>
+                            <view class="contlist">1、你的卡放得开首付款第三季度是开发商可看的撒开饭啦时空裂缝开始啦开发了盛大</view>
+                            <view class="contlist">1、你的卡放得开首付款第三季度是开发商可打开房间的撒发卡萨发了的</view>
+                            <view class="contlist">1、你的卡放得开首付款第三季度是开发商可d艰苦奋斗就撒法律的卡拉风骚</view>
+                        </view>
+                    </view>
+                    <view class="cont">
+                        <view class="smalltitle">一、定义</view>
+                        <view>
+                            <view class="contlist">1、你的卡放得开首付款第三季度是开发商可大家啊发快捷刷卡机福克斯</view>
+                            <view class="contlist">1、你的卡放得开首付款第三季度是开发商可进度款健身房卡时间啊看风景时</view>
+                            <view class="contlist">1、你的卡放得开首付款第三季度是开发商可看的撒开饭啦时空裂缝开始啦开发了盛大</view>
+                            <view class="contlist">1、你的卡放得开首付款第三季度是开发商可打开房间的撒发卡萨发了的</view>
+                            <view class="contlist">1、你的卡放得开首付款第三季度是开发商可d艰苦奋斗就撒法律的卡拉风骚</view>
+                        </view>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="employ_foot">
+            <view bindtap="know" class="knowfont">我知道</view>
+        </view>
+    </view>
+</view>
+<view bindtap="closedrug" catchtouchmove="touchmove" class="maskbox" hidden="{{druglist}}"></view>
+<view class="pattern" hidden="{{druglist}}">
+    <view class="pattern_head">
+        <view class="paytitle">药品清单</view>
+        <view class="payright">
+            <text class="notice">共{{commodity.length}}件</text>
+            <view bindtap="closedrug" class="closeImg">
+                <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E5%8C%BB%E7%96%97%E6%96%B0%E7%89%88%E5%95%86%E5%9F%8Eicon/close.png?sign=490e735daee3cd6d269344c135a72437&t=1573282056"></image>
+            </view>
+        </view>
+    </view>
+    <view class="scollbox">
+        <scroll-view scrollY style="height:750rpx;">
+            <view class="druglist_box" wx:for="{{commodity}}" wx:key="*this">
+                <view class="com_Img">
+                    <image src="{{item.sthumb}}"></image>
+                </view>
+                <view class="com_right">
+                    <view class="com_name">{{item.sname}}</view>
+                    <view class="com_down">
+                        <view class="com_price">￥
+							<text style="font-size:30rpx;">{{item.smoney}}</text>
+                        </view>
+                        <view class="grammage">{{item.gg_ke}}x{{item.num}}</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

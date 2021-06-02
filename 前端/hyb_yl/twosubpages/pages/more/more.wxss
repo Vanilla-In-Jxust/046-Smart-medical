@@ -1,0 +1,170 @@
+page {
+    background-color: #efefef;
+}
+
+.prediagnosis_search {
+    border-top: 2rpx solid #d8d8d8;
+    box-sizing: border-box;
+    padding: 20rpx 24rpx;
+    background: #fff;
+}
+
+.prediagnosis_search_bg {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 10rpx 15rpx;
+    border-radius: 50rpx;
+    border: 1rpx solid #ECECEC;
+}
+
+.prediagnosis_search_bg input {
+    display: inline-block;
+    width: 96%;
+    font-size: 28rpx;
+    color: #cecece;
+    margin-left: 15rpx;
+}
+
+.ce {
+    color: #cecece;
+}
+
+.parts {
+    display: flex;
+    background-color: #fff;
+    font-size: 32rpx;
+}
+
+.title {
+    height: calc(100vh - 100rpx);
+    overflow: hidden;
+    width: 34%;
+    background-color: #f7f7f7;
+}
+
+my-sku-page {
+}
+
+.bdl {
+    height: 80rpx;
+    line-height: 80rpx;
+    border-left: 6rpx solid #0bac98;
+    padding-left: 30rpx;
+    color: #0bac98;
+    background-color: #fff;
+}
+
+.pl30 {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 30rpx;
+}
+
+.scroll_all {
+    height: calc(100vh - 100rpx);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.bsbb {
+    box-sizing: border-box;
+}
+
+.h {
+    height: 100%;
+}
+
+.h80 {
+    height: 80rpx;
+}
+
+.w69 {
+    width: 69%;
+}
+
+.h200 {
+    height: 200rpx;
+}
+
+.ml15 {
+    margin-left: 15rpx;
+}
+
+.mt20 {
+    margin-top: 20rpx;
+}
+
+.mb20 {
+    margin-bottom: 20rpx;
+}
+
+.pl15 {
+    padding-left: 15rpx;
+}
+
+.pt30 {
+    padding-top: 30rpx;
+}
+
+.pb15 {
+    padding-bottom: 15rpx;
+}
+
+.pl30 {
+    overflow: hidden;
+    padding-left: 30rpx;
+}
+
+.pr30 {
+    padding-right: 30rpx;
+}
+
+.bgcf {
+    background-color: #fff;
+}
+
+.df {
+    display: flex;
+}
+
+.fdc {
+    flex-direction: column;
+}
+
+.jcsb {
+    justify-content: space-between;
+}
+
+.aic {
+    align-items: center;
+}
+
+.fs32 {
+    font-size: 32rpx;
+}
+
+.fs24 {
+    font-size: 24rpx;
+}
+
+.fs20 {
+    font-size: 20rpx;
+}
+
+.c6 {
+    color: #4c4c4c;
+}
+
+.ml15 {
+    margin-left: 15rpx;
+}
+
+.c9 {
+    color: #6c6c6c;
+}
+
+.mb20:nth-last-child(1) {
+    margin-bottom: 0;
+}

@@ -1,0 +1,80 @@
+page {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background: #f5f5f5;
+}
+
+.all {
+    padding: 0 24rpx;
+}
+
+.sign {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-radius: 10rpx;
+    margin-top: 20rpx;
+    padding: 24rpx;
+}
+
+.sign .one {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sign .one .one_l {
+    display: flex;
+    align-items: center;
+}
+
+.sign .one .one_l image {
+    width: 70rpx;
+    height: 70rpx;
+}
+
+.sign .one .one_l .one_l_cont {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20rpx;
+}
+
+.sign .one .one_l .one_l_cont text {
+    font-size: 28rpx;
+}
+
+.sign .one .one_l .one_l_cont .star>text {
+    color: #fc9435;
+    margin: 0px 3rpx;
+    font-size: 32rpx;
+}
+
+.sign .one .one_r text {
+    color: #666;
+    font-size: 24rpx;
+}
+
+.sign .two {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10rpx 0px;
+}
+
+.sign .two text {
+    color: #666;
+    font-size: 22rpx;
+    border: solid 1px #9f9f9f;
+    border-radius: 10rpx;
+    padding: 4rpx 10rpx;
+    margin: 10rpx;
+}
+
+.sign .three text {
+    color: #333;
+    font-size: 26rpx;
+}

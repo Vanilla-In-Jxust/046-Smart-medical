@@ -1,0 +1,41 @@
+<form bindsubmit="hospitalSave" style="z-index: -1;">
+    <view class="head">
+        <view class="mg_top10"></view>
+        <view bindtap="choosearea" class="section public_white">
+            <text class="font_si16 font_co333 changeCity">选择所在城市</text>
+            <input disabled placeholder="请选择" placeholderClass="placeholder-style" value="{{area?area:''}}"></input>
+        </view>
+        <view class="section public_white">
+            <text class="font_si16 font_co333 hos">医院名称</text>
+            <input disabled data-id="{{hid}}" name="hospital" placeholder="请正确输入医院名称" placeholderClass="placeholder-style" value="{{hospital?hospital:''}}"></input>
+        </view>
+        <view class="yiyuanList" wx:if="{{hospitalList.length!==0}}">
+            <view bindtap="choseYiyuan" data-id="{{item.hid}}" data-name="{{item.agentname}}" wx:for="{{hospitalList}}">{{item.agentname}}</view>
+        </view>
+    </view>
+    <button class="btn public_bgc3b" formType="submit" hidden="{{!hospitalBoo}}" id="{{id}}">确定</button>
+</form>
+<view class="hospital" hidden="{{hospitalBoo}}">
+    <view class="hospitalName" hidden="{{none}}">没有找到相关医院，请重新输入</view>
+    <scroll-view class="scrollView" scrollY="true">
+        <view wx:for="{{hospitalList}}" wx:key="{{ index }}">
+            <view class="line"></view>
+            <view bindtap="choseHospital" class="hospitalName" data-current="{{index}}" data-hospitalCode="{{item.code}}">{{item.agentname}}</view>
+        </view>
+    </scroll-view>
+</view>
+<view class="rgb" hidden="{{addressBoo}}"></view>
+<view animation="{{animationData}}" class="selector-area">
+    <view class="handle-bar">
+        <image bindtap="closesearea" src="/assets/images/ld.png"></image>
+        <view class="hd_box font_si16 font_co333">请选择地址</view>
+    </view>
+    <view class="area-selector">
+        <scroll-view class="selector province" scrollY="true">
+            <view bindtap="tapProvince" class="picker {{provinceIndex==index?'province-active':''}}" data-index="{{index}}" data-province="{{item.name}}" id="{{item.parentid}}" wx:for="{{provinceList}}" wx:key="{{item.parentid}}">{{item.name}}</view>
+        </scroll-view>
+        <scroll-view class="selector city" scrollY="true">
+            <view bindtap="tapCity" class="picker {{cityIndex==indexs?'city-active':''}}" data-city="{{items.name}}" data-index="{{indexs}}" id="{{items.parentid}}" wx:for="{{provinceList[provinceListIndex].erji}}" wx:for-item="items" wx:key="{{ items.parentid }}">{{items.name}}</view>
+        </scroll-view>
+    </view>
+</view>

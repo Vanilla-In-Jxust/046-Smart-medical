@@ -1,0 +1,35 @@
+<scroll-view bindscrolltolower="lower" scrollY="true" style="max-height:{{height}}px;padding-bottom: 100rpx;box-sizing: border-box;">
+    <view class="pag" wx:for="{{Arr}}" wx:key="{{index}}">
+        <view bindtap="nav" class="box" data-id="{{item.id}}">
+            <view class="box-left">
+                <view class="text font_co333">{{item.title}}</view>
+                <view class="deta">
+                    <text class="top_view" wx:if="{{item.status==1}}">置顶</text>
+                    <text>{{item.time}}</text>
+                </view>
+            </view>
+            <view class="box-img">
+                <image src="{{item.thumb}}"></image>
+            </view>
+        </view>
+    </view>
+    <view class="font_co999 font_si14 more_text" wx:if="{{noFlag}}">已到底部</view>
+</scroll-view>
+<view class="footer df">
+    <view bindtap="toast">
+        <image src="/hyb_yl/images/tab01.png"></image>
+        <text>首页</text>
+    </view>
+    <view bindtap="toast4">
+        <image src="/hyb_yl/images/tab2.png"></image>
+        <text style="color:{{bgc}};">资讯</text>
+    </view>
+    <view bindtap="toast1">
+        <image src="/hyb_yl/images/tab03.png"></image>
+        <text>分享</text>
+    </view>
+    <view bindtap="toast3">
+        <image src="/hyb_yl/images/tab05.png"></image>
+        <text>我的</text>
+    </view>
+</view>

@@ -1,0 +1,34 @@
+<view class="WZ-ungroupedfor" wx:for="{{groups}}" wx:key="{{ index }}">
+    <view bindtap="shu" class="WZ-ungroupedforimg" data-patientId="{{item.userId}}">
+        <image class="WZ-ungroupedforimg1" src="{{item.userIcon?item.userIcon:'/assets/images/head.png'}}"></image>
+    </view>
+    <view bindtap="shu" class="WZ-ungroupedfortext" data-patientId="{{item.userId}}">
+        <view class="remarkName">
+            <view>{{item.name}}</view>
+            <view class="distance">
+                <image src="/assets/images/dingwei2.png"></image>
+                <text>{{item.doctor.distance>0?item.doctor.distance+'千米':'获取距离失败'}}</text>
+            </view>
+        </view>
+        <view class="remarkName1" wx:if="{{item.remarkName==null?false:true}}">备注: {{item.remarkName}}</view>
+    </view>
+    <view bindtap="Wmovement" class="WZ-ungroupedfortext-img" data-name="{{item.remarkName}}" data-patientId="{{item.userId}}">
+        <image class="WZ-ungroupedfortext-img1" src="/assets/images/wzdian.png"></image>
+    </view>
+</view>
+<view class="xx" style="width: 100%;text-align: center;color: #999;line-height: 200rpx;" wx:if="{{grouping}}">暂无患者</view>
+<view class="cancel_view" wx:if="{{Wshow}}">
+    <view class="cancel_in">
+        <view class="font_si18 font_co333 cancel_in_title">解约确认</view>
+        <view class="cancel_content">
+            <view class="font_si14 font_co333 cancel_content_in_top">解约原因</view>
+            <view class="cancel_content_in font_">
+                <view bindtap="menuClick" class="cancel_text {{_num==index?'cancel_active':''}}" data-num="{{index}}" data-text="{{item}}" data-uuid="{{textID[index]}}" wx:for="{{text}}" wx:key="{{ index }}">{{item}}</view>
+            </view>
+        </view>
+        <view class="cancel_bottom">
+            <view bindtap="call" class="cancel_bottom_left">我再想想</view>
+            <view bindtap="wzconfirm" class="cancel_bottom_right">解约</view>
+        </view>
+    </view>
+</view>

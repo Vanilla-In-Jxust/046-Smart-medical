@@ -1,0 +1,54 @@
+<view wx:if="{{carlist.length!=0}}">
+    <view class="top" style="background:{{bgc}}">
+        <view bindtap="editor" class="editor">{{editorshow?'编辑':'完成'}}</view>
+    </view>
+    <view class="shopContent">
+        <view class="firmbox">
+            <view class="shopList" wx:for="{{carlist}}" wx:key="index">
+                <image bindtap="shopradio" class="select" data-index="{{index}}" src="{{item.check?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/pitch.png?sign=57d9ad030232b7ca646096b80011deea&t=1593344287':'../../../images/unselected.png'}}"></image>
+                <image class="shopImage" src="{{item.sthumb}}"></image>
+                <view class="productDetails">
+                    <view class="text-over2 fs26 c3 fwb">{{item.sname}}</view>
+                    <view style="width:100%">
+                        <view class="fs24 c3 m5 text-deal">规格:{{item.gg_name}}</view>
+                    </view>
+                    <view class="df jcsb">
+                        <view class="df aic" style="color:red">
+                            <view class="pl5 fs18" style="align-items:flex-end;">￥</view>
+                            <text class="fs26">{{item.smoney}}</text>
+                        </view>
+                        <view class="df numbox aic">
+                            <view bindtap="even" class="tac" data-index="{{index}}" style="flex:1">-</view>
+                            <view class="fs24 aic inputbox" style="flex:1; border-left:1rpx solid #f5f5f5;border-right:1rpx solid #f5f5f5;">
+                                <input bindblur="blurnum" bindinput="getNum" data-index="{{index}}" type="number" value="{{item.num}}"></input>
+                            </view>
+                            <view bindtap="add" class="tac" data-index="{{index}}" style="flex:1">+</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view style="height:120rpx;"></view>
+    <view class="footbox">
+        <view class="pl20 pr20 df aic h">
+            <image bindtap="selectALL" class="select" src="{{allCheck?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/pitch.png?sign=57d9ad030232b7ca646096b80011deea&t=1593344287':'../../../images/unselected.png'}}"></image>
+            <view class="fs24">全选</view>
+            <view class="df fdc jcsb pl20" style="flex:1">
+                <view class="fs28 c3 fwb">合计:<text class="">{{total}}</text>
+                </view>
+            </view>
+            <view>
+                <view bindtap="goshop" class="account {{editorshow?'show':'hide'}}" style="background-color:{{bgc}}">立即预约</view>
+                <view bindtap="del" class="del {{editorshow?'hide':'show'}}">删除</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="algin" wx:else>
+    <view class="counse_no">
+        <image class="face" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+        <text class="font_si16 font_co999">您还没有选购商品</text>
+    </view>
+    <view bindtap="xuangou" class="font_si16 code public_bgc3b">去选购</view>
+</view>

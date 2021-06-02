@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": true,
+    "navigationBarTitleText": "专家列表",
+    "usingComponents": {
+        "page-loading": "/component/loading/index"
+    }
+}

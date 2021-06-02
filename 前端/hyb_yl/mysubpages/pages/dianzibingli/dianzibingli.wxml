@@ -1,0 +1,21 @@
+<view></view>
+<view class="doc-list-box" wx:if="{{!list.length==0}}">
+    <view bindtap="getchar" class="doc-list-item" data-back_orser="{{item.back_orser}}" data-id="{{item.c_id?item.c_id:item.id}}" data-ifpay="{{item.ispay?item.ispay:item.ifpay}}" data-j_id="{{key_words=='yuanchengkaifang'?item.userid:item.j_id}}" data-key_words="{{item.keywords}}" data-openid="{{item.openid}}" data-overtime="{{item.overtime}}" data-typedate="{{item.content.typedate}}" data-zid="{{item.zid}}" wx:for="{{list}}" wx:key="key">
+        <view class="doc-list-time">
+            <view>时间：{{item.time}} </view>
+            <view class="doc-state">
+                <view class="doc-cc">{{item.overtime}}</view>
+            </view>
+        </view>
+        <view class="doc-infor">
+            <view class="doc-in-ri">
+                <view class="doc-ri-name">{{item.names}}
+					<view>{{item.sex}} {{item.age}}岁</view>
+                </view>
+                <view class="doc-des">病情描述：{{item.content.text}}</view>
+                <view class="doc-des">订单号:{{item.orders}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="doc-no" wx:else>暂无数据显示</view>

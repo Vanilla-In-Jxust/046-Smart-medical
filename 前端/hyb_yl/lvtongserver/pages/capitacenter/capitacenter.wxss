@@ -1,0 +1,140 @@
+.capita-top {
+    width: 100%;
+    height: 295rpx;
+    background: #0088DE;
+}
+
+.capita-pri {
+    padding-left: 30rpx;
+    padding-top: 50rpx;
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.price {
+    margin-top: 25rpx;
+    font-size: 36rpx;
+}
+
+.capita-show {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50rpx;
+}
+
+.capita-show-item {
+    width: 50%;
+    text-align: center;
+    font-size: 24rpx;
+    color: #fff;
+}
+
+.capita-show-item:first-child {
+    border-right: 1rpx solid #fff;
+}
+
+.capita-tip {
+    margin-top: 8rpx;
+}
+
+.capita-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 662rpx;
+    margin: 24rpx;
+    padding: 0 20rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.capita-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30rpx 0;
+    width: 50%;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.capita-item image {
+    width: 60rpx;
+    height: 60rpx;
+    margin-right: 26rpx;
+}
+
+.capita-sz {
+    width: 702rpx;
+    margin: 0 24rpx;
+    border-radius: 30rpx;
+    background: #fff;
+}
+
+.capita-tit {
+    position: relative;
+    padding: 30rpx 0;
+    text-indent: 26rpx;
+    font-size: 32rpx;
+}
+
+.capita-tit::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    width: 8rpx;
+    height: 30rpx;
+    background: #0087E0;
+    border-radius: 8rpx;
+}
+
+.capita-sz-list {
+    padding: 0 24rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sz-item {
+    font-size: 22rpx;
+    color: #999;
+}
+
+.sz-n {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.le {
+    text-align: right;
+}
+
+.capita-tt {
+    display: flex;
+    justify-content: space-between;
+    padding: 60rpx 25rpx 40rpx 25rpx;
+    overflow: hidden;
+}
+
+.cap-le {
+    width: 50%;
+    height: 18rpx;
+    background: #5DC952;
+    border-radius: 20rpx 0 0 20rpx;
+}
+
+.cap-ri {
+    width: 50%;
+    height: 18rpx;
+    background: #FF7A33;
+    border-radius: 0 20rpx 20rpx 0;
+}
+
+.canvas {
+    width: 100%;
+    height: 500rpx;
+    background: #fff;
+}

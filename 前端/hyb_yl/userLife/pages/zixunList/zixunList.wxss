@@ -1,0 +1,39 @@
+page {
+    padding: 0!important;
+}
+
+.scroll {
+    width: 100%;
+    padding: 0 20rpx;
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+    border-bottom: 2rpx solid #eaeaea;
+    box-shadow: 0 0 10rpx rgba(145,145,145,0.4);
+}
+
+.box {
+    padding-top: 100rpx;
+}
+
+.tab_box {
+    width: 100%;
+    overflow: hidden;
+    overflow-x: auto;
+    display: flex;
+}
+
+.tab {
+    margin: 0 20rpx;
+    white-space: nowrap;
+    padding: 20rpx 0;
+    font-size: 32rpx;
+}
+
+.active {
+    color: #0088de;
+}
+
+@import "../../../tabBar/jibingyufang/jibingyufang.wxss";

@@ -1,0 +1,7 @@
+<view class="tab">
+    <view bindtap="chooseTab" class="son {{current==index?'active':''}}" data-i="{{index}}" wx:for="{{tab}}" wx:key="index">{{item.name}}</view>
+</view>
+<view class="bsbb mb50" wx:if="{{fuorder.length!=0}}"></view>
+<view class="none" wx:else>
+    <image mode="widthFix" src="/hyb_yl/images/none.png"></image>
+</view>

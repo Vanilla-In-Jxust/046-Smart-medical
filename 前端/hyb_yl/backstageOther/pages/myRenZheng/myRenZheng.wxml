@@ -1,0 +1,160 @@
+<view class="W_name">
+    <view class="W_imgName1">真实姓名</view>
+    <view class="W_InputBox">
+        <input bindinput="z_name" class="W_InputBox_view  ss" placeholder="请填写姓名" value="{{z_name?z_name:''}}"></input>
+        <image class="W_Img2" src="/assets/images/Wsj.png"></image>
+    </view>
+</view>
+<view class="W_name">
+    <view class="W_imgName1">性别</view>
+    <view class="W_InputBox">
+        <picker bindchange="bindPickerChange" class="W_InputBox_view ss" range="{{array}}" value="{{index}}">
+            <view>
+				{{z_sex==1?'男':'女'}}
+			</view>
+        </picker>
+        <image class="W_Img2" src="/assets/images/Wsj.png"></image>
+    </view>
+</view>
+<button bindgetphonenumber="getPhoneNumber" class="W_name" openType="getPhoneNumber">
+    <input hidden="true" type="z_telephone" value="{{z_telephone}}"></input>
+    <view class="W_imgName1">手机号</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{z_telephone?z_telephone:'请验证手机号'}}</view>
+        <image class="W_Img2" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Wtui.png?sign=6a97867f1aed247db6717097120b71c4&t=1591427047"></image>
+    </view>
+</button>
+<view class="W_name1">
+    <view class="W_imgName1">所属分组</view>
+    <view class="W_InputBox">
+        <picker bindchange="chosefenlei" class="W_InputBox_view ss" range="{{fenleiList}}" rangeKey="name" value="{{fenleiList[fenleiIndex]}}">{{fqname?fqname:'请选择医院所属分组'}}</picker>
+        <image class="W_Img2" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Wtui.png?sign=6a97867f1aed247db6717097120b71c4&t=1591427047"></image>
+    </view>
+</view>
+<view bindtap="Whospital" class="W_name1" data-fqname="{{fqname}}">
+    <view class="W_imgName1">所在医院</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{agentname?agentname:'请选择'}}</view>
+        <image class="W_Img2" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Wtui.png?sign=6a97867f1aed247db6717097120b71c4&t=1591427047"></image>
+    </view>
+</view>
+<view bindtap="WadministrativeOffice" class="W_name" data-hid="{{hid}}">
+    <view class="W_imgName1">所在科室</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{name?name:'请选择'}}</view>
+        <image class="W_Img2" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Wtui.png?sign=6a97867f1aed247db6717097120b71c4&t=1591427047"></image>
+    </view>
+</view>
+<view bindtap="mapViewTap" class="W_name">
+    <view class="W_imgName1">所在位置</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{address?address:'请选择'}}</view>
+        <image class="W_Img2" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Wtui.png?sign=6a97867f1aed247db6717097120b71c4&t=1591427047"></image>
+    </view>
+</view>
+<view class="W_name1">
+    <view class="W_imgName1">职称</view>
+    <view class="W_InputBox">
+        <picker bindchange="bindPickerChange3" class="W_InputBox_view ss" range="{{title}}" rangeKey="job_name" value="{{index2}}">
+            <view>
+				{{z_zhicheng?title[index2].job_name:'请选择'}}
+			</view>
+        </picker>
+        <image class="W_Img2" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Wtui.png?sign=6a97867f1aed247db6717097120b71c4&t=1591427047"></image>
+    </view>
+</view>
+<view class="W_name" style="height:220rpx">
+    <view class="W_imgName1">擅长疾病</view>
+    <view class="W_InputBox">
+        <textarea bindinput="input" class="input" maxlength="-1" placeholder="请用英文状态下','逗号结尾。例如：接骨,骨科，'" placeholderStyle="color:#ccc;font-size:26rpx;" style="padding-top:90rpx;" value="{{authority}}"></textarea>
+    </view>
+</view>
+<navigator url="/hyb_yl/backstageLifes/pages/Wapprove3/Wapprove3?zid={{zid}}&z_content={{z_content}}">
+    <view class="W_name3">
+        <view class="W_imgName1">个人简介</view>
+        <view class="W_InputBox">
+            <image class="W_Img2" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Wtui.png?sign=6a97867f1aed247db6717097120b71c4&t=1591427047"></image>
+        </view>
+    </view>
+    <input hidden="true" type="z_content" value="{{z_content}}"></input>
+    <view class="section">
+        <view class="textarea">{{z_content?z_content:'请填写'}}</view>
+    </view>
+</navigator>
+<view class="uploadimg">
+    <view class="uploadimg-tit">
+        <text>证件照片</text>
+    </view>
+    <view class="uploadimg-gorup" style="align-items: flex-start;padding-bottom:0;">
+        <view class="uploadimg-gorup-tit">证件照片</view>
+        <view class="uploadimg-gorup-imgs">
+            <view class="uploadimg-gorup-imgs-list">
+                <view>
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/images/newimg/zjzimg1.png?sign=bcebfa08cca441bf6c23dc8bbd0c711e&t=1546423709"></image>
+                    <text>第一页示例</text>
+                </view>
+                <view>
+                    <image bindtap="uploadimgs" data-mnames="zgzimgurl1" src="{{zgzimgurl1==''||zgzimgurl1==imgurl?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/images/newimg/zjzimg0.png?sign=297b49d0f934c1a0936f8a415a3eda92&t=1546423637':zgzimgurl1}}"></image>
+                    <text>第一页</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="uploadimg">
+    <view class="uploadimg-tit">
+        <text>身份证</text>
+    </view>
+    <view class="uploadimg-gorup">
+        <view class="uploadimg-gorup-tit">证件编号</view>
+        <input bindinput="sfzbianhao" class="uploadimg-gorup-input" placeholder="请输入证件编号" value="{{sfzbianhao?sfzbianhao:''}}"></input>
+    </view>
+    <view class="uploadimg-gorup" style="align-items: flex-start;padding-bottom:0;">
+        <view class="uploadimg-gorup-tit">专家证件</view>
+        <view class="uploadimg-gorup-imgs">
+            <view class="uploadimg-gorup-imgs-list">
+                <view>
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/images/newimg/zjzimg4.png?sign=26d77ed534d24565d2660c97ebf6a285&t=1546423781"></image>
+                    <text>第一页示例</text>
+                </view>
+                <view>
+                    <image bindtap="uploadimgs" data-mnames="sfzimgurl1" src="{{sfzimgurl1==''||sfzimgurl1==imgurl?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/images/newimg/zjzimg0.png?sign=28e53b8d35ded01c398f48c8951e04bf&t=1546423807':sfzimgurl1}}"></image>
+                    <text>第一页</text>
+                </view>
+            </view>
+            <view class="uploadimg-gorup-imgs-list">
+                <view>
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/images/newimg/zjzimg5.png?sign=d0ada527feddc679b313ec6b5c53bff3&t=1546423874"></image>
+                    <text>第二页示例</text>
+                </view>
+                <view>
+                    <image bindtap="uploadimgs" data-mnames="sfzimgurl2" src="{{sfzimgurl2==''||sfzimgurl2==imgurl?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/images/newimg/zjzimg0.png?sign=28e53b8d35ded01c398f48c8951e04bf&t=1546423807':sfzimgurl2}}"></image>
+                    <text>第二页</text>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="uploadimg">
+    <view class="uploadimg-tit">
+        <text>专家工作照</text>
+    </view>
+    <view class="uploadimg-gorup" style="align-items: flex-start;padding-bottom:0;">
+        <view class="uploadimg-gorup-tit">专家工作照</view>
+        <view class="uploadimg-gorup-imgs">
+            <view class="uploadimg-gorup-imgs-list" style="align-items: flex-start;">
+                <view>
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/images/newimg/zjzimg6.png?sign=89cd0cbbe4eebbd428283f3a21ce580c&t=1546423924"></image>
+                    <text>示例</text>
+                </view>
+                <view>
+                    <image bindtap="uploadimgs" data-mnames="advertisement" src="{{advertisement==''||advertisement==imgurl?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/images/newimg/zjzimg0.png?sign=297b49d0f934c1a0936f8a415a3eda92&t=1546423637':advertisement}}"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view bindtap="WTT" class="present {{num==1?'cur':''}}" wx:if="{{!exa}}">提交认证</view>
+<view bindtap="WTT" class="present {{num==1?'cur':''}}" wx:if="{{exa==0}}">审核中</view>
+<view bindtap="WTT" class="present {{num==1?'cur':''}}" wx:if="{{exa==1}}">已认证</view>
+<view bindtap="WTT2" class="present {{num==1?'cur':''}}" wx:if="{{exa==2}}">已停用</view>

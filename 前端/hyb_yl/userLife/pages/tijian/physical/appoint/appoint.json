@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "体检预约",
+    "usingComponents": {
+        "calendar": "/component/calendar/calendar"
+    }
+}

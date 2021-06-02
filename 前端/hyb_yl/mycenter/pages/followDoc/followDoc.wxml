@@ -1,0 +1,47 @@
+<view class="searchresult">
+    <view bindtap="doctoritem" class="yishneginfo" data-z_name="{{item.z_name}}" data-zid="{{item.goods_id}}" wx:if="{{item.z_name}}" wx:for="{{list}}" wx:key="d">
+        <view class="info-img">
+            <image src="{{item.advertisement}}"></image>
+        </view>
+        <view class="userinfo-body">
+            <view class="doctor-info">
+                <text class="doctor-name">{{item.z_name}}</text>
+                <text class="doctor-section">{{item.zhicheng}}</text>
+            </view>
+            <view class="doctor-hospital">
+                <text class="doctor-section-info">{{item.keshi}}</text>
+                <text class="doctor-hosptial-name">{{item.hospital}}</text>
+            </view>
+            <view class="doctor-tags">
+				擅长：{{item.authority}}
+			</view>
+            <view class="doctor-answer-star">
+                <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/xing.png?sign=02539469a420ba8327631429248856e8&t=1591177538"></image>
+                <view class="doctor-star">{{item.score==0?'5':item.score}}</view>
+                <view class="answer-count">月回答{{item.xn_reoly}}</view>
+                <view class="prescription-count"> 月处方{{item.xn_cf}} </view>
+                <view class="reply-time-str">{{item.xytime}}分钟响应</view>
+            </view>
+            <view class="ask-doctor">
+                <view class="price-values-wrapper">
+                    <view class="price-values" wx:if="{{item.server.length!=='0'}}">
+                        <view class="price-value" wx:if="{{index<2}}" wx:for="{{item.server}}" wx:for-item="itemName">
+                            <text>{{itemName.titlme}}￥{{itemName.ptmoney}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="btn_box">
+                    <view catchtap="doctoritem" class="ask-doctor-hot" data-zid="{{item.goods_id}}" wx:if="{{typs=='siren_doc'||typs=='gz_doc'}}">问医生</view>
+                    <view catchtap="quxiao" class="ask-doctor-hot" data-zid="{{item.goods_id}}" wx:if="{{item.ifqianyue=='1'&&typs=='siren_doc'}}">签约中</view>
+                    <view catchtap="jieyue" class="ask-doctor-hot" data-zid="{{item.goods_id}}" wx:if="{{item.ifqianyue=='2'&&typs=='siren_doc'}}">解约</view>
+                    <view catchtap="qianyue" class="ask-doctor-hot" data-zid="{{item.goods_id}}" wx:if="{{(item.ifqianyue=='5'||item.ifqianyue=='4'||item.ifqianyue=='3')&&typs=='siren_doc'}}">重新签约</view>
+                    <view catchtap="authorize" class="ask-doctor-hot" data-change="1" data-id="{{item.id}}" data-zid="{{item.goods_id}}" wx:if="{{item.change=='0'}}">开启档案授权</view>
+                    <view catchtap="authorize" class="ask-doctor-hot" data-change="0" data-id="{{item.id}}" data-zid="{{item.goods_id}}" wx:if="{{item.change=='1'}}">关闭档案授权</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="searchresultsss" wx:if="{{searchCont!=''}}">
+    <view class="searchresultitem" wx:for="{{searchlist}}" wx:key="f">{{item}}</view>
+</view>

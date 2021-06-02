@@ -1,0 +1,110 @@
+page {
+    background: #f2f3f7;
+}
+
+.top {
+    width: 100%;
+    height: 78rpx;
+    line-height: 78rpx;
+    text-indent: 30rpx;
+    color: #666;
+    font-size: 28rpx;
+}
+
+.for {
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+}
+
+.for-right {
+    width: 720rpx;
+    height: 98rpx;
+    border-bottom: #e0e0e0 1rpx solid;
+    float: right;
+}
+
+.name {
+    width: 160rpx;
+    height: 98rpx;
+    float: left;
+    line-height: 98rpx;
+    color: #333;
+    font-size: 32rpx;
+}
+
+.input {
+    width: 350rpx;
+    height: 98rpx;
+    float: left;
+    font-size: 32rpx;
+}
+
+.viewname {
+    width: 350rpx;
+    height: 98rpx;
+    float: left;
+    font-size: 32rpx;
+    line-height: 98rpx;
+    color: #333;
+}
+
+.gain {
+    color: #3b4ca9;
+    line-height: 100rpx;
+    font-size: 32rpx;
+    float: left;
+}
+
+.foot {
+    width: 690rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+    background-image: linear-gradient(0deg,#7587e6 0%,#3b4ca9 100%);
+    text-align: center;
+    line-height: 80rpx;
+    color: #fff;
+    font-size: 32rpx;
+    margin-left: 30rpx;
+    margin-top: 30rpx;
+}
+
+.foot1 {
+    width: 690rpx;
+    height: 80rpx;
+    border-radius: 80rpx;
+    background: #e6e7eb;
+    text-align: center;
+    line-height: 80rpx;
+    color: #ccc;
+    font-size: 32rpx;
+    margin-left: 30rpx;
+    margin-top: 30rpx;
+}
+
+.xz {
+    height: 98rpx;
+    float: right;
+    margin-right: 30rpx;
+}
+
+.xa-img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 30rpx;
+}
+
+.xz-right {
+    line-height: 98rpx;
+    color: #ccc;
+    font-size: 32rpx;
+    float: right;
+}
+
+.for-right-img {
+    float: left;
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 30rpx;
+    margin-right: 30rpx;
+}

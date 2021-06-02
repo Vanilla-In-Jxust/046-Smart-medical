@@ -1,0 +1,47 @@
+<view>
+    <view class="oval">
+        <view class="headbox" style=" background-image: url({{detail.pluginimgs}});background:{{bgc}}">
+            <view class="bigTitle">{{detail.titles}}</view>
+            <view class="smallTitlte">
+                <view class="smallfont">
+                    <text>{{detail.serh_ftitle}}</text>
+                </view>
+            </view>
+            <view catchtap="nextpage" class="now">立即咨询</view>
+        </view>
+        <view class="commonbox">
+            <view class="commTitlebox">
+                <view class="title_left">全部评价</view>
+                <view catchtap="urlpage1" class="lookeval">查看评价</view>
+            </view>
+            <view class="evalCont">已有{{detail.count}}用户通过{{detail.titles}}看诊专家，{{detail.pingjia?detail.pingjia:'0'}}人评价了服务。</view>
+        </view>
+        <view class="commonbox">
+            <view class="commTitlebox">
+                <view class="title_left">出诊方式</view>
+            </view>
+            <view class="evalCont">
+                <rich-text class="czlist" nodes="{{detail.serh_liuc}}"></rich-text>
+            </view>
+        </view>
+        <view class="commonbox">
+            <view class="commTitlebox">
+                <view class="title_left">保障服务</view>
+            </view>
+            <view class="evalCont">
+                <rich-text nodes="{{detail.serh_content}}"></rich-text>
+                <view class="czlist">服务不满意可申请退款，退款流程按退款规则执行</view>
+                <view bindtap="xieyibtn" class="lookeval">《{{detail.titles}}退款规则》</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view catchtap="closezhe" class="zhe" wx:if="{{xieyi}}">
+    <view catchtap="function(){}" class="cont">
+        <view catchtap="function(){}" class="title">问诊协议</view>
+        <view catchtap="function(){}" class="rule_box">
+            <rich-text nodes="{{detail.tui_money}}"></rich-text>
+        </view>
+        <view catchtap="closezhe" class="rule_btn">我知道了</view>
+    </view>
+</view>

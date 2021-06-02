@@ -1,0 +1,267 @@
+page {
+    position: relative;
+    min-height: 100vh;
+    box-sizing: border-box;
+    padding-bottom: 180rpx;
+    background: white;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.all_one {
+    width: 100%;
+}
+
+.one {
+    width: 100%;
+    height: auto;
+    background: white;
+}
+
+.sign {
+    width: 100%;
+    padding: 30rpx 24rpx;
+    border-bottom: solid 1px rgb(209,209,209);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 28rpx;
+    position: relative;
+}
+
+.one .sign .sign_l {
+    color: #999;
+}
+
+.one .sign .sign_r {
+    color: #333;
+}
+
+.two {
+    margin-top: 30rpx;
+    background: white;
+}
+
+.two .signs_l {
+    color: #333;
+}
+
+.two .signs_r {
+    color: #ed9a56;
+}
+
+.three {
+    font-size: 26rpx;
+    color: #4fb3fe;
+    margin-left: 24rpx;
+    display: flex;
+    align-items: center;
+    margin-top: 30rpx;
+}
+
+.arrowc {
+    width: 14rpx;
+    height: 14rpx;
+    border-top: solid 1px #4fb3fe;
+    border-right: solid 1px #4fb3fe;
+    transform: rotate(45deg);
+}
+
+.ident {
+    width: 100%;
+}
+
+.ident text {
+    float: right;
+    display: block;
+    margin-right: 24rpx;
+    margin-top: 20rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.arrow {
+    width: 20rpx;
+    height: 20rpx;
+    border-top: solid 1px #999;
+    border-right: solid 1px #999;
+    transform: rotate(45deg) translateY(-50%);
+    position: absolute;
+    top: 50%;
+    right: 35rpx;
+}
+
+.state .posfix {
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background: white;
+    display: flex;
+}
+
+.state .posfix view {
+    display: flex;
+    align-items: center;
+}
+
+.state .posfix .posf_l {
+    width: 70%;
+    height: 100%;
+}
+
+.state .posfix .posf_l text:nth-of-type(1) {
+    margin: 0px 20rpx;
+}
+
+.state .posfix .posf_l text:nth-of-type(2) {
+    color: #ed9a56;
+}
+
+.state .posfix .posf_r {
+    width: 30%;
+    height: 100%;
+    justify-content: space-around;
+    background: #4fb3fe;
+}
+
+.state .posfix .posf_r text {
+    color: white;
+}
+
+.all_two {
+    width: 100%;
+}
+
+.posf_r button {
+    border: none;
+    color: #FFFFFF;
+}
+
+.all_two .at_top {
+    width: 100%;
+    background: white;
+    padding: 30rpx;
+    font-size: 32rpx;
+    font-weight: bold;
+    line-height: 50rpx;
+}
+
+.all_two .at_content {
+    width: 94%;
+    height: auto;
+    margin: auto;
+    background: white;
+    margin-top: 20rpx;
+    padding: 30rpx 24rpx;
+    border-radius: 10rpx;
+}
+
+.all_two .at_content .at_cont_sign {
+    width: 100%;
+    font-size: 30rpx;
+    padding: 10rpx 0px;
+    border-bottom: solid 1px rgb(223,221,221);
+}
+
+.all_two .at_content .at_cont_sign text {
+    display: block;
+    line-height: 50rpx;
+}
+
+.all_two .at_content .at_cont_sign .title {
+    color: #666;
+}
+
+.all_two .at_content .at_cont_sign .anser {
+    color: #333;
+}
+
+.all_two .at_content .at_cont_sign image {
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.at_btn {
+    width: 100%;
+    height: 120rpx;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    border: solid 1px rgb(223,222,222);
+}
+
+.at_btn button {
+    width: 45%;
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 36rpx;
+}
+
+.at_btn button:nth-of-type(1) {
+    color: white;
+    background: white;
+}
+
+.at_btn button:nth-of-type(2) {
+    color: white;
+    background: #47a1ef;
+}
+
+.all_three {
+    width: 100%;
+}
+
+.ctitle {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 36rpx;
+}
+
+.all_three .athr_cont {
+    width: 100%;
+    height: auto;
+}
+
+.all_three .athr_cont .athr_sign {
+    width: 100%;
+    padding: 24rpx;
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid 1px rgb(223,221,221);
+}
+
+.all_three .athr_cont .athr_sign .athr_s_quest {
+    font-size: 34rpx;
+    color: #333;
+}
+
+.all_three .athr_cont .athr_sign .athr_s_anser {
+    font-size: 30rpx;
+    color: #666;
+    padding-top: 10rpx;
+}
+
+.blockimg {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.blockimg image {
+    width: 120rpx;
+    height: 120rpx;
+    margin: 20rpx;
+}

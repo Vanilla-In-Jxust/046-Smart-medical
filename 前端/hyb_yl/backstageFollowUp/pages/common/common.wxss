@@ -1,0 +1,115 @@
+page {
+    background-color: #f2f3f7;
+}
+
+.common_head {
+    background-color: #3b4ca9;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.common_text {
+    text-align: center;
+    line-height: 96rpx;
+    color: rgba(255,255,255,0.4);
+}
+
+.active {
+    border-bottom: 3rpx solid #fff;
+    color: #fff;
+}
+
+.scroll_view {
+    max-height: 100%;
+    padding: 30rpx;
+    box-sizing: border-box;
+    line-height: 40rpx;
+}
+
+.self_view {
+    background-color: #fff;
+    border-radius: 8rpx;
+    padding: 38rpx 30rpx 38rpx 50rpx;
+    position: relative;
+    margin-bottom: 10rpx;
+}
+
+.img_view {
+    display: inline-block;
+    height: 46rpx;
+    padding: 0 10rpx 0 10rpx;
+}
+
+.edit_img {
+    width: 30rpx;
+    height: 36rpx;
+    transform: translateY(6rpx);
+    margin-left: 20rpx;
+}
+
+.del_view {
+    position: absolute;
+    top: -5rpx;
+    right: 0rpx;
+    padding: 5rpx 15rpx 10rpx 15rpx;
+}
+
+.del_img {
+    width: 20rpx;
+    height: 20rpx;
+}
+
+.new_view {
+    height: 104rpx;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.new_text {
+    line-height: 80rpx;
+    text-align: center;
+    width: 690rpx;
+    border-radius: 8rpx;
+}
+
+.up_view,.down_view {
+    width: 50rpx;
+    height: 50rpx;
+    position: absolute;
+    left: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.up_view {
+    top: 0;
+    padding-top: 10rpx;
+}
+
+.down_view {
+    bottom: 0;
+    padding-top: 8rpx;
+}
+
+.up_img,.down_img {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.down_img {
+    transform: translateY(8rpx);
+}
+
+.bottom_x {
+    width: 100%;
+    height: 200rpx;
+    float: left;
+}

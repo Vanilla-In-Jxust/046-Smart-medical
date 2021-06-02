@@ -1,0 +1,51 @@
+<view class="tab">
+    <view bindtap="{{current==index?'':'chooseTab'}}" class="son {{current==index?'active':''}}" data-i="{{index}}" wx:for="{{tab}}" wx:key="index">{{item.name}}</view>
+</view>
+<view wx:if="{{unscramble.length!=0}}">
+    <view class="center1" wx:for="{{unscramble}}" wx:key="key">
+        <view class="order">
+            <view class="header">
+                <view class="time">订单编号：{{item.ordernums}}</view>
+                <view class="status">{{item.code}}</view>
+            </view>
+            <view bindtap="lookdetail" class="goods" data-id="{{item.aid}}" data-item="{{item}}" data-overtime="{{item.overtime}}" data-sid="{{item.sid}}">
+                <view class="good">
+                    <image src="{{item.thumb}}"></image>
+                </view>
+                <view class="info">
+                    <view class="info-title">
+                        <view>{{item.title}}</view>
+                        <view>
+                            <text>￥</text>
+                            <text>{{item.money}}</text>
+                        </view>
+                    </view>
+                    <view class="info-subtit">机构：{{item.jigou.agentname}}</view>
+                    <view class="info-subtit">姓名：{{item.jiaren.names}}</view>
+                    <view class="info-time"> 预约：{{item.yy_time}}</view>
+                </view>
+            </view>
+            <view class="operate">
+                <view class="gongji">共{{item.content.length}}两项检查 合计：<text>￥{{item.money}}</text>
+                </view>
+                <view class="df">
+                    <block wx:if="{{item.ifpay=='0'}}">
+                        <view catchtap="delete" class="son again deltbn" data-id="{{item.aid}}" data-index="{{index}}">删除订单</view>
+                        <view catchtap="zhifu" class="son again" data-id="{{item.aid}}" data-money="{{item.money}}" data-order="{{item.ordernums}}">去支付</view>
+                    </block>
+                    <block wx:if="{{item.ifpay=='1'}}">
+                        <view catchtap="{{item.ifgb=='1'?'':quxiao}}" class="son again deltbn" data-id="{{item.aid}}" data-index="{{index}}" wx:if="{{item.ifover=='0'}}">{{item.ifgb=='1'?'订单已取消':'取消订单'}}</view>
+                        <view catchtap="tixing" class="son again" data-id="{{item.aid}}">{{item.ifover=='0'?'查看体检项':'已生成报告'}}</view>
+                    </block>
+                    <view catchtap="lookdetail" class="son again" data-id="{{item.aid}}" data-overtime="{{item.overtime}}" wx:if="{{item.ifpay=='2'}}">接诊中</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:else>
+    <view class="nonelist">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+        <view class="fs28">暂时还没有订单哦</view>
+    </view>
+</view>

@@ -1,0 +1,65 @@
+<view class="nav">
+    <view bindtap="clickNum" class="navClick {{_num==0?'add_citying':''}}" data-num="0">未完成</view>
+    <view bindtap="clickNum" class="navClick {{_num==1?'add_citying':''}}" data-num="1">已完成</view>
+</view>
+<view class="margin_top"></view>
+<scroll-view scrollY bindscrolltolower="getMore" class="exp_scroll" wx:if="{{_num==0&&!explanBooOne}}">
+    <navigator class="information" url="/hyb_yl/backstageFollowUp/pages/groupChat/groupChat?sessionId={{item.orderId}}&doctorId={{item.doctorId}}&userId={{item.patientSimpleVo.userId}}&signType={{item.medType}}&teamMyUserId={{item.teamMyUserId}}" wx:for="{{resultListOne}}" wx:key="{{ index }}">
+        <view class="informationImgBox">
+            <image class="informationImg" mode="aspectFill" src="{{item.patientSimpleVo.userIcon?item.patientSimpleVo.userIcon:'/assets/images/head.png'}}"></image>
+        </view>
+        <view class="informationText">
+            <view class="informationTextName">
+                <view class="informationTextName1">{{item.patientSimpleVo.name}}</view>
+                <image class="informationTextNameImg" src="{{item.patientSimpleVo.nmGender=='女'?'/assets/images/nva.png':'/assets/images/nana.png'}}"></image>
+                <view class="informationTextName2" wx:if="{{item.patientSimpleVo.age}}">{{item.patientSimpleVo.age}}岁</view>
+            </view>
+            <view class="informationText1">{{item.msgTxt}}</view>
+            <view class="informationText2">服务时间： {{item.sessionDateBegin}}</view>
+        </view>
+        <view class="informationRight">
+            <view class="distance">
+                <image src="/assets/images/dingwei2.png"></image>
+                <text>{{item.doctor.distance>0?item.doctor.distance+'千米':'获取距离失败'}}</text>
+            </view>
+            <view class="informationRightText" style="  color: #3b4ca9;" wx:if="{{item.status==0&&item.nonReadCount==0}}">未完成</view>
+            <view class="informationRightText" style="  color: #3b4ca9;" wx:if="{{item.status==0&&item.nonReadCount!=0}}">{{item.nonReadCount}}条新消息</view>
+            <view class="informationRightText" style="color: #999;" wx:if="{{item.status==1}}">已完成</view>
+        </view>
+    </navigator>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text>加载中...</text>
+    </view>
+    <view class="more_text" hidden="{{moreBooOne}}">没有更多了~</view>
+</scroll-view>
+<scroll-view scrollY bindscrolltolower="getMore" class="exp_scroll" wx:if="{{_num==1&&!explanBooTwo}}">
+    <navigator class="information" url="/hyb_yl/backstageFollowUp/pages/groupChatOver/groupChatOver?sessionId={{item.orderId}}&doctorId={{item.doctorId}}&userId={{item.patientSimpleVo.userId}}&signType={{item.medType}}&teamMyUserId={{item.teamMyUserId}}" wx:for="{{resultListTwo}}" wx:key="{{ index }}">
+        <view class="informationImgBox">
+            <image class="informationImg" mode="aspectFill" src="{{item.patientSimpleVo.userIcon?item.patientSimpleVo.userIcon:'/assets/images/head.png'}}"></image>
+        </view>
+        <view class="informationText">
+            <view class="informationTextName">
+                <view class="informationTextName1">{{item.patientSimpleVo.name}}</view>
+                <image class="informationTextNameImg" src="{{item.patientSimpleVo.nmGender=='女'?'/assets/images/nva.png':'/assets/images/nana.png'}}"></image>
+                <view class="informationTextName2" wx:if="{{item.patientSimpleVo.age}}">{{item.patientSimpleVo.age}}岁</view>
+            </view>
+            <view class="informationText1">{{item.msgTxt}}</view>
+            <view class="informationText2">服务时间： {{item.sessionDateBegin}}</view>
+        </view>
+        <view class="informationRight">
+            <view class="distance">
+                <image src="/assets/images/dingwei2.png"></image>
+                <text>{{item.doctor.distance>0?item.doctor.distance+'千米':'获取距离失败'}}</text>
+            </view>
+            <view class="informationRightText" style="color: #3b4ca9;" wx:if="{{item.status==0&&item.nonReadCount==0}}">未完成</view>
+            <view class="informationRightText" style="color: #3b4ca9;" wx:if="{{item.status==1&&item.nonReadCount!=0}}">{{item.nonReadCount}}条新消息</view>
+            <view class="informationRightText" style="color: #999;" wx:if="{{item.status==1&&item.nonReadCount==0}}">已完成</view>
+        </view>
+    </navigator>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text>加载中...</text>
+    </view>
+    <view class="more_text" hidden="{{moreBooTwo}}">没有更多了~</view>
+</scroll-view>
+<view class="view_no" wx:if="{{_num==0&&explanBooOne}}">暂无此项记录~</view>
+<view class="view_no" wx:if="{{_num==1&&explanBooTwo}}">暂无此项记录~</view>

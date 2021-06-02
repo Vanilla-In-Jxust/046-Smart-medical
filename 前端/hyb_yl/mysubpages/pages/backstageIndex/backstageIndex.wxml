@@ -1,0 +1,173 @@
+<view class="expert-bg" style="background:{{bg_color}}">
+    <view style="display:flex;align-items: center">
+        <image class="expert-icon" src="{{advertisement}}"></image>
+        <view class="expert-ri">
+            <view class="expert-one">
+                <view class="expert-tit">{{docinfo.z_name}} <text style="color:{{bg_color}}">{{docinfo.groupid}}</text>
+                </view>
+                <image bindtap="ishaibao" class="expert-ewm" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/ewm.png?sign=f00fa72bce01129a8f6473189127c9ed&t=1591238029"></image>
+            </view>
+            <view class="expert-doc">{{docinfo.agentname}}</view>
+        </view>
+    </view>
+    <view class="shanchang">
+        <view style="white-space: nowrap;font-size:26rpx">擅长:</view>
+        <view class="label_box">
+            <view class="label" style="color:{{bg_color}}" wx:for="{{docinfo.authority}}" wx:for-item="tabel">{{tabel}}</view>
+        </view>
+    </view>
+    <view class="expert-tip"> 简介：{{docinfo.z_content}} </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">患者问诊</view>
+    <view class="doc-vienna-list">
+        <view bindtap="hzwenzhen" class="doc-vienna-item" data-id="{{item.id}}" data-key_words="{{item.key_words}}" data-titlme="{{item.titlme}}" data-z_telephone="{{item.z_telephone}}" wx:if="{{item.type==1&&item.stateback!==0}}" wx:for="{{data_list}}" wx:key="key">
+            <image src="{{item.icon}}"></image>
+            <view class="doc-vienna-ri">
+                <view class="doc-vi-t">{{item.titlme}}
+					<view></view>
+                </view>
+                <view class="doc-vi-tip"> {{item.ftitle}} </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">患者服务</view>
+    <view class="doc-service">
+        <view bindtap="goBack" class="doc-ser-item" data-id="{{item.id}}" data-key_words="{{item.key_words}}" data-titlme="{{item.titlme}}" wx:if="{{item.type==0&&item.stateback!==0}}" wx:for="{{data_list}}" wx:key="key">
+            <image src="{{item.icon}}"></image>
+            <view>{{item.titlme}}</view>
+        </view>
+        <view bindtap="goBacks" class="doc-ser-item" data-id="{{docinfo.id}}" data-keyword="{{docinfo.baogao.keyword}}" data-title="{{docinfo.baogao.title}}" wx:if="{{docinfo.is_urgent==1}}">
+            <image src="{{docinfo.baogao.thumb}}"></image>
+            <view>{{docinfo.baogao.title}}</view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna" wx:if="{{docinfo.is_urgent==1}}">
+    <view class="doc-tit">绿通服务</view>
+    <view class="doc-service">
+        <view bindtap="qiandan" class="doc-ser-item" data-id="{{docinfo.id}}" data-keyword="{{docinfo.baogao.keyword}}" data-title="{{docinfo.baogao.title}}">
+            <image src="{{docinfo.baogao.thumb}}"></image>
+            <view>抢单大厅</view>
+        </view>
+        <view bindtap="goBacks" class="doc-ser-item" data-id="{{docinfo.id}}" data-keyword="{{docinfo.baogao.keyword}}" data-title="{{docinfo.baogao.title}}">
+            <image src="{{docinfo.baogao.thumb}}"></image>
+            <view>{{docinfo.baogao.title}}</view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">患者管理</view>
+    <view class="doc-service">
+        <view bindtap="patientman" class="doc-ser-item" data-dex="1" data-zid="{{zid}}">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/guanli1.png?sign=120cb4412aa5f31d26da92ebce67c512&t=1591152458"></image>
+            <view>签约患者</view>
+            <view class="mark">{{docinfo.qianyue_user}}</view>
+        </view>
+        <view bindtap="patientman" class="doc-ser-item" data-dex="2" data-zid="{{zid}}">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/guanli2.png?sign=c658b5e3bfb8d33f41ebb62295031360&t=1591152467"></image>
+            <view>普通患者</view>
+            <view class="mark">{{docinfo.pt_user}}</view>
+        </view>
+        <view bindtap="patientman" class="doc-ser-item" data-dex="3" data-zid="{{zid}}">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/guanli3.png?sign=38fa099837b1c985ee8f225a75ef5abc&t=1591152447"></image>
+            <view>年卡患者</view>
+            <view class="mark">{{docinfo.year_user}}</view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">访客数据</view>
+    <view class="doc-data">
+        <view class="doc-data-item">
+            <view>{{docinfo.today_visit}}</view>
+            <view class="doc-data-tip">今日访客</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.today_wenzhen}}</view>
+            <view class="doc-data-tip">今日问诊</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.today_guahao}}</view>
+            <view class="doc-data-tip">今日挂号</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.today_qianyue}}</view>
+            <view class="doc-data-tip">今日签约</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.yes_visit}}</view>
+            <view class="doc-data-tip">昨日访客</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.yes_wenzhen}}</view>
+            <view class="doc-data-tip">昨日问诊</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.yes_guahao}}</view>
+            <view class="doc-data-tip">昨日挂号</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.yes_qianyue}}</view>
+            <view class="doc-data-tip">昨日签约</view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">经营数据</view>
+    <view class="doc-data">
+        <view class="doc-data-item">
+            <view>{{docinfo.wz_money}}</view>
+            <view class="doc-data-tip">问诊收益</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.year_money}}</view>
+            <view class="doc-data-tip">年卡收益</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.guahao_money}}</view>
+            <view class="doc-data-tip">挂号收益</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.jiedu_money}}</view>
+            <view class="doc-data-tip">解读收益</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.shoushu_money}}</view>
+            <view class="doc-data-tip">手术收益</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.qianyue_money}}</view>
+            <view class="doc-data-tip">签约收益</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.kaiyao_money}}</view>
+            <view class="doc-data-tip">开药收益</view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">财务数据</view>
+    <view class="doc-data">
+        <view class="doc-data-item">
+            <view>{{docinfo.shouyi}}</view>
+            <view class="doc-data-tip">总收益</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.pay?docinfo.pay:0}}</view>
+            <view class="doc-data-tip">总支出</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.jiesuan}}</view>
+            <view class="doc-data-tip">未结算订单</view>
+        </view>
+    </view>
+</view>
+<view bindlongpress="saveImage" catchtap="closeshare" class="share-mask" data-url="{{weweima}}" wx:if="{{isopera}}">
+    <image class="erweima" mode="widthFix" src="{{weweima}}"></image>
+</view>
+<view style="height:134rpx;"></view>
+<import src="../../../../template/backstageTemplate.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

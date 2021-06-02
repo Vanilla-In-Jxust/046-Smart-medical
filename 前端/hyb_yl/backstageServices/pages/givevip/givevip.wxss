@@ -1,0 +1,112 @@
+page {
+    background: #fff;
+    box-sizing: border-box;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.membership-gift-container {
+    padding: 0 32rpx;
+    height: 318rpx;
+    padding-top: 40rpx;
+    overflow: hidden;
+    background-color: #fff6e5;
+}
+
+.membership-gift {
+    position: relative;
+    box-sizing: border-box;
+    height: 323rpx;
+    padding: 40rpx 28rpx;
+    background-size: cover;
+    border-radius: 19rpx;
+    box-shadow: 0 12rpx 24rpx 0 rgba(179,140,62,.2);
+}
+
+.membership-gift-header {
+    display: flex;
+    align-items: center;
+}
+
+.membership-gift-header-icon {
+    display: block;
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.membership-gift-header-title {
+    flex: 1;
+    height: 44rpx;
+    margin-left: 12rpx;
+    color: #fff;
+    font-weight: 500;
+    font-size: 40rpx;
+    line-height: 44rpx;
+    letter-spacing: 2rpx;
+}
+
+.membership-gift-desc {
+    height: 28rpx;
+    margin-top: 16rpx;
+    color: #fff;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    letter-spacing: 1rpx;
+    opacity: .8;
+}
+
+.gift-send-write {
+    background-image: url(https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/3376943286639222225-22.png?sign=a32732e938da1fbcd39e2e873d2db41b&t=1584501555),url(https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/3378229139718129056-22.png?sign=3ce53640afe12009c7f817671a273012&t=1584501573);
+    background-repeat: no-repeat;
+    background-position: bottom 0rpx right 32rpx,50%;
+    background-size: 40rpx 40rpx,cover;
+    position: relative;
+}
+
+.gift-send-title {
+    padding: 40rpx 32rpx;
+    color: #666;
+    font-size: 34rpx;
+    line-height: 38rpx;
+}
+
+.dxd-textarea {
+    padding: 40rpx 32rpx 0 32rpx;
+    background: #fff;
+}
+
+.dxd-textarea__textarea {
+    width: 646rpx;
+    height: 150rpx;
+    padding: 20rpx;
+    border-radius: 15rpx;
+    border: 1rpx solid #e6e6e6;
+    color: #4d4d4d;
+    caret-color: #0088DE;
+}
+
+.single-image {
+    display: block;
+    width: 100%;
+}
+
+.givebtn {
+    padding: 25rpx;
+}
+
+.givebtn button {
+    color: #fff;
+    font-size: 32rpx;
+    background: #0088DE;
+    width: 100%;
+    text-align: center;
+    height: 90rpx;
+    border-radius: 50rpx;
+    margin-top: 100rpx;
+}
+
+.givebtn button::after {
+    border: none;
+}

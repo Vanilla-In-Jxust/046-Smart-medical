@@ -1,0 +1,169 @@
+page {
+    background: #f5f5f7;
+}
+
+.box {
+    width: 100%;
+    float: left;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.W_nameImg {
+    width: 100%;
+    height: 134rpx;
+}
+
+.img_box {
+    width: 137rpx;
+    height: 134rpx;
+    float: left;
+}
+
+.img_box_Imag {
+    width: 85rpx;
+    height: 85rpx;
+    border-radius: 85rpx;
+    float: left;
+    margin-top: 25rpx;
+    margin-left: 30rpx;
+}
+
+.W_nameText {
+    height: 134rpx;
+    float: left;
+}
+
+.W_nameText1 {
+    color: #333;
+    font-size: 30rpx;
+    margin-top: 30rpx;
+}
+
+.W_nameText2 {
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.box_text {
+    width: 100%;
+    float: left;
+}
+
+.box_text1 {
+    width: 90%;
+    float: left;
+    margin-left: 30rpx;
+    line-height: 55rpx;
+    font-size: 30rpx;
+    color: #333;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 5;
+    overflow: hidden;
+    position: relative;
+}
+
+.box_png {
+    width: 100%;
+    float: left;
+}
+
+.box_pnga {
+    width: 92%;
+    float: left;
+    margin-left: 30rpx;
+    overflow: hidden;
+}
+
+.box_pngb {
+    width: 220rpx;
+    height: 220rpx;
+    float: left;
+    margin-right: 10rpx;
+}
+
+.pingjia {
+    width: 100%;
+    float: left;
+    margin-top: 30rpx;
+}
+
+.pingjia_auto {
+    width: 90%;
+    margin: auto;
+    background: #f0f0f0;
+    line-height: 42rpx;
+    color: #999;
+    font-size: 30rpx;
+}
+
+.pingjia_auto1 {
+    color: #333;
+    font-size: 30rpx;
+    float: left;
+}
+
+.W_di {
+    width: 30%;
+    height: 88rpx;
+    float: right;
+}
+
+.W_di_text {
+    height: 88rpx;
+    font-size: 30rpx;
+    float: left;
+    line-height: 88rpx;
+    color: #999;
+    margin-left: 26rpx;
+}
+
+.W_di_text1 {
+    height: 88rpx;
+    float: left;
+    line-height: 88rpx;
+    font-size: 24rpx;
+    color: #999;
+    position: relative;
+}
+
+.dws {
+    width: 500rpx;
+    height: 100rpx;
+    position: absolute;
+    top: 0rpx;
+    left: 0rpx;
+}
+
+.W_di_text1_img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 30rpx;
+    float: left;
+    margin-right: 10rpx;
+}
+
+.W_di_text2 {
+    height: 88rpx;
+    float: left;
+    margin-left: 20rpx;
+    line-height: 88rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.test_text {
+    opacity: 0.7;
+}
+
+.condition_content_com_position {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 40rpx;
+    line-height: 40rpx;
+    background: linear-gradient(to right,rgba(255,255,255,0),white 50%,white);
+    padding-left: 90rpx;
+}

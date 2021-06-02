@@ -1,0 +1,182 @@
+<page-loading wx:if="{{isLoading}}"></page-loading>
+<view class="oval" wx:if="{{pinyin!='yuanchengguahao'}}">
+    <view class="searchbox">
+        <view class="searchView">
+            <icon class="searchbtn" color="#999999" size="15" type="search"></icon>
+            <input bindinput="getSearch" placeholder="请输入您要搜索的医生" type="text" value="{{searchCont}}"></input>
+        </view>
+    </view>
+</view>
+<view class="tabbox fixed" wx:if="{{pinyin!='yuanchengguahao'}}">
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="0">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">{{zongheText?zongheText:'综合排序'}}</text>
+    </view>
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="3">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">{{tablist1[0]}}</text>
+    </view>
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="1">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">{{typeText?typeText:'类型'}}</text>
+    </view>
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="2">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">筛选</text>
+    </view>
+</view>
+<view class="poplist" wx:if="{{popshow}}">
+    <view bindtap="hidepop" class="poplistempty"></view>
+    <view class="poplistfff">
+        <block wx:if="{{tabdex==0}}">
+            <view bindtap="itemchecked" class="poplistfffitem {{item.checked?'itemactive':''}}" data-dex="{{index}}" data-text="{{item.items}}" wx:for="{{zongheList}}">
+				{{item.items}}
+			</view>
+        </block>
+        <block wx:if="{{tabdex==1}}">
+            <view bindtap="itemchecked1" class="poplistfffitem {{item.checked?'itemactive':''}}" data-dex="{{index}}" data-server_key="{{item.server_key}}" data-text="{{item.titles}}" wx:for="{{ktypes}}">
+				{{item.titles}}
+			</view>
+        </block>
+        <view class="shanxuanbox" wx:if="{{tabdex==2}}">
+            <view class="shanxuanboxtop">
+                <view class="shanxuanbox-item">
+                    <view class="shanxuanbox-item-title">医生职称</view>
+                    <view class="shanxuanbox-item-arrs">
+                        <view bindtap="typesclick1" class="{{shanxuanitem.checked?'shaixuanactive':''}}" data-dex="{{index}}" data-index="{{index}}" wx:for="{{section2}}" wx:for-item="shanxuanitem" wx:key="s2">{{shanxuanitem.job_name}}</view>
+                    </view>
+                </view>
+            </view>
+            <view class="shanxuanboxbot">
+                <view bindtap="resultclick">重置</view>
+                <view bindtap="submitclick">完成</view>
+            </view>
+        </view>
+        <view class="poplistfff citysbox" wx:if="{{tabdex==3}}">
+            <view class="citysleft">
+                <view bindtap="provinceitem" class="{{provincesdex==index?'selected':''}}" data-dex="{{index}}" wx:for="{{provinces}}" wx:key="p">{{item}}</view>
+            </view>
+            <view class="citysleftright">
+                <view bindtap="cityitem" class="{{citysdex==index?'selected':''}}" data-dex="{{index}}" data-name="{{item}}" wx:for="{{citys}}" wx:key="c">{{item}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="shequbox {{openmore?'listmores':''}}" wx:if="{{pinyin!='yuanchengguahao'&&shequlist.length>1}}">
+    <view bindtap="shequclick" class="{{shequdex==index?'activesshequ':''}}" data-biaoqian="{{item}}" data-dex="{{index}}" wx:for="{{shequlist}}" wx:key="s">{{item}}</view>
+</view>
+<view class="opens {{openmore?'openmores':''}}" wx:if="{{pinyin!='yuanchengguahao'&&shequlist.length>1}}">
+    <text bindtap="openmore">{{openmore?'收起':'展开'}}</text>
+</view>
+<view class="weekboxs" wx:if="{{pinyin=='yuanchengguahao'}}">
+    <scroll-view scrollX class="scroll-view">
+        <view bindtap="weekitem" class="weekitem {{weekdex==index?'weekactive':''}}" data-date="{{item.date}}" data-dex="{{index}}" data-week="{{item.week}}" data-weeks="{{item.weeks}}" wx:for="{{seven}}" wx:key="w">
+            <view>{{item.week}}</view>
+            <view>{{item.date}}</view>
+        </view>
+    </scroll-view>
+</view>
+<view class="searchresult" style="{{(long=='undefined'||long=='shoushu')&&shequlist.length>1?'':'margin-top:190rpx'}}">
+    <view bindtap="navigator" class="yishneginfo" data-money="{{item.money}}" data-server="{{pinyin}}" data-zid="{{item.zid}}" wx:for="{{list}}" wx:key="d">
+        <view class="info-img">
+            <image src="{{item.advertisement}}"></image>
+        </view>
+        <view class="userinfo-body">
+            <view class="doctor-info">
+                <text class="doctor-name">{{item.z_name}}</text>
+                <text class="doctor-section">{{item.job?item.job:''}}</text>
+                <text class="doctor-samecity-team" wx:if="{{item.yearcad}}">年卡</text>
+                <text class="doctor-samecity-team" wx:if="{{item.yearcad}}">{{item.leve?item.leve:''}}</text>
+            </view>
+            <view class="doctor-hospital">
+                <text class="doctor-section-info">{{item.keshi}}</text>
+                <text class="doctor-hosptial-name">{{item.hospital}}</text>
+            </view>
+            <view class="doctor-tags">
+				擅长：{{item.authority}}
+			</view>
+            <view class="doctor-answer-star">
+                <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/xing.png?sign=2d7380cd43847995a856339cef85f9d4&t=1590737215"></image>
+                <view class="doctor-star">{{item.score==0?'5':item.score}}</view>
+                <view class="answer-count">月回答{{item.xn_reoly}}</view>
+                <view class="prescription-count"> 月处方{{item.xn_cf}} </view>
+                <view class="reply-time-str">{{item.xytime}}响应</view>
+            </view>
+            <view class="doctor-list_dis">
+                <view class="doctor-list_dis_tags" wx:for="{{item.jingxuan}}" wx:for-item="items" wx:key="key">{{items}}</view>
+            </view>
+            <view class="ask-doctor">
+                <view class="price-values-wrapper">
+                    <view class="price-values" wx:if="{{!item.server}}">
+                        <view class="price-value">
+                            <text>{{tit}}￥{{item.money}}元起</text>
+                        </view>
+                    </view>
+                    <view class="price-values" wx:if="{{item.server.length!=='0'}}">
+                        <view class="price-value" wx:if="{{index<2}}" wx:for="{{item.server}}" wx:for-item="itemName">
+                            <text>{{itemName.titlme}}￥{{itemName.ptmoney}}</text>
+                        </view>
+                    </view>
+                    <view class="price-values" style="margin-left: 20rpx;" wx:else>
+                        <view class="price-value">
+                            <text>费用：￥{{item.money}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view class="ask-doctor-hot">{{tit}}</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="searchresultsss" wx:if="{{searchCont!=''}}">
+    <view class="searchresult" style="{{(long=='undefined'||long=='shoushu')&&shequlist.length>1?'':'margin-top:190rpx'}}">
+        <view bindtap="navigator" class="yishneginfo" data-money="{{item.money}}" data-server="{{pinyin}}" data-zid="{{item.zid}}" wx:for="{{searchArr}}" wx:key="d">
+            <view class="info-img">
+                <image src="{{item.advertisement}}"></image>
+            </view>
+            <view class="userinfo-body">
+                <view class="doctor-info">
+                    <text class="doctor-name">{{item.z_name}}</text>
+                    <text class="doctor-section">{{item.job?item.job:''}}</text>
+                    <text class="doctor-samecity-team" wx:if="{{item.yearcad}}">年卡</text>
+                    <text class="doctor-samecity-team" wx:if="{{item.yearcad}}">{{item.leve?item.leve:''}}</text>
+                </view>
+                <view class="doctor-hospital">
+                    <text class="doctor-section-info">{{item.keshi}}</text>
+                    <text class="doctor-hosptial-name">{{item.hospital}}</text>
+                </view>
+                <view class="doctor-tags">
+					擅长：{{item.authority}}
+				</view>
+                <view class="doctor-answer-star">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/xing.png?sign=2d7380cd43847995a856339cef85f9d4&t=1590737215"></image>
+                    <view class="doctor-star">{{item.score==0?'5':item.score}}</view>
+                    <view class="answer-count">月回答{{item.xn_reoly}}</view>
+                    <view class="prescription-count"> 月处方{{item.xn_cf}} </view>
+                    <view class="reply-time-str">{{item.xytime}}响应</view>
+                </view>
+                <view class="doctor-list_dis">
+                    <view class="doctor-list_dis_tags">过敏类精选医生</view>
+                    <view class="doctor-list_dis_tags">业内专家</view>
+                    <view class="doctor-list_dis_tags">专业审核优秀</view>
+                </view>
+                <view class="ask-doctor">
+                    <view class="price-values-wrapper">
+                        <view class="price-values" wx:if="{{!item.server}}">
+                            <view class="price-value">
+                                <text>{{tit}}￥{{item.money}}元起</text>
+                            </view>
+                        </view>
+                        <view class="price-values" wx:if="{{item.server.length!=='0'}}">
+                            <view class="price-value" wx:if="{{index<2}}" wx:for="{{item.server}}" wx:for-item="itemName">
+                                <text>{{itemName.titlme}}￥{{itemName.ptmoney}}</text>
+                            </view>
+                        </view>
+                        <view class="price-values" style="margin-left: 20rpx;" wx:else>
+                            <view class="price-value">
+                                <text>费用：￥{{item.money}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view class="ask-doctor-hot">{{tit}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

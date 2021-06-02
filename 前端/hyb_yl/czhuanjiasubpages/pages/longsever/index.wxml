@@ -1,0 +1,42 @@
+<view class="headbox" style="background-image:url({{detail.pluginimgs}})"></view>
+<view class="commonbox bottomborder">
+    <view class="commTitlebox">
+        <view class="title_left">全部评价</view>
+        <view catchtap="urlpage1" class="lookeval">查看评价</view>
+    </view>
+    <view class="evalCont">已有{{detail.count}}用户通过{{detail.titles}}看诊专家，{{detail.pingjia}}人评价了服务。</view>
+</view>
+<view class="commonbox">
+    <view class="commTitlebox">
+        <view class="title_left">{{name}}流程</view>
+    </view>
+    <view class="liuchengbox">
+        <view class="stepliucheng">
+            <rich-text nodes="{{detail.serh_liuc}}"></rich-text>
+        </view>
+        <view class="xieyishuoming">
+            <view>协议说明：</view>
+            <view>
+                <rich-text nodes="{{detail.serh_xiey}}"></rich-text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="radios">
+    <radio catchtap="radioChange" checked="{{argeen}}" color="#0087E0">
+        <text>订阅并同意</text>
+    </radio>
+    <text style="color:#0087E0;">《{{detail.titles}}协议》</text>
+</view>
+<view class="btn">
+    <view catchtap="nextpage" class="now" style="background:{{backgroundColor}}">去{{name}}</view>
+</view>
+<view catchtap="closezhe" class="zhe" wx:if="{{xieyi}}">
+    <view catchtap="function(){}" class="cont">
+        <view catchtap="function(){}" class="title">{{name}}协议</view>
+        <view catchtap="function(){}" class="rule_box">
+            <rich-text nodes="{{detail.tui_money}}"></rich-text>
+        </view>
+        <view catchtap="closezhe" class="rule_btn">我知道了</view>
+    </view>
+</view>

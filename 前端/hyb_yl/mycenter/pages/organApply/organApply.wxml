@@ -1,0 +1,105 @@
+<view class="banner">
+    <image mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/organ-banner.png?sign=1702d2de040606f5baa6799b61c25076&t=1592043406"></image>
+</view>
+<view class="step">
+    <view class="step-item">
+        <image mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/apply1-act.png?sign=94fd47436eaccf8bf2ea74e9fc3dcbd7&t=1592043703"></image>
+        <view class="step-name">填写资料</view>
+    </view>
+    <image class="step-d" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/apply1-act.png?sign=156f2e9ca8bfaf7e5344026a4a24c369&t=1592043427" wx:if="{{step<=0}}"></image>
+    <image class="step-d" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/apply-d.png?sign=89767b41f5a59a94cbb0eed788482106&t=1592043506" wx:else></image>
+    <view class="step-item">
+        <image mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/apply2-act.png?sign=09725778511e9d5d8896fac3003d7a9c&t=1592043438" wx:if="{{step==3||step==2}}"></image>
+        <image mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/apply2.png?sign=1ef3448b74f441d2669310464e0bd7dd&t=1592043452" wx:else></image>
+        <view class="step-name">审核资料</view>
+    </view>
+    <image class="step-d" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/apply-dd.png?sign=766b96ed0c7990d4dbfbc6881fa7e28c&t=1592043486" wx:if="{{step<=1}}"></image>
+    <image class="step-d" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/apply-d.png?sign=89767b41f5a59a94cbb0eed788482106&t=1592043506" wx:else></image>
+    <view class="step-item">
+        <image mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/apply3-act.png?sign=641a3d94780a70fda7dbd23caaa0b41d&t=1592043525" wx:if="{{step==3}}"></image>
+        <image mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/apply3.png?sign=e02b36a95ddf3eb73390251b5c295c79&t=1592043539" wx:else></image>
+        <view class="step-name">审核通过</view>
+    </view>
+</view>
+<form catchsubmit="formSubmit" wx:if="{{step==1}}">
+    <view class="tx-data">
+        <view class="data-item">
+            <view class="title">LOGO：</view>
+            <image bindtap="chooseimg" class="pho-icon" src="{{upload_picture_list?upload_picture_list:detail.logo}}" wx:if="{{upload_picture_list||detail.logo}}"></image>
+            <image bindtap="chooseimg" class="pho-icon" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/camera.png?sign=2993bc415408bfe5750964df67d46a50&t=1592043553" wx:else></image>
+        </view>
+        <view class="data-item">
+            <view class="title">机构名称：</view>
+            <input class="ri-wid" maxlength="12" name="agentname" placeholder="请输入机构名称" placeholderClass="placeinp" value="{{detail.agentname}}"></input>
+        </view>
+        <view class="data-item">
+            <view class="title">级别：</view>
+            <picker bindchange="bindPickerChange" range="{{list}}" rangeKey="{{'level_name'}}" value="{{index}}">
+                <view class="organ-item">
+                    <view class="label">{{level_name?level_name:'请选择级别'}} </view>
+                </view>
+            </picker>
+        </view>
+        <view class="data-item">
+            <view class="title">类型：</view>
+            <picker bindchange="bindModesChange" range="{{orlist}}" rangeKey="{{'name'}}" value="{{indexs}}">
+                <view class="organ-item">
+						{{name?name:'请选择机构类型'}}
+					</view>
+            </picker>
+        </view>
+        <view class="data-item">
+            <view class="title">所在地：</view>
+            <view bindtap="bindRegionChange" class="data-ri ri-wid">
+                <view class="picker">
+						{{address?address:'请选择您的所在地'}}
+					</view>
+                <image class="next" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/arrow_03.png?sign=4fa949bf087cea81cc509d81b5c1f2c2&t=1592043586"></image>
+            </view>
+        </view>
+        <view class="data-item">
+            <view class="title">详细地址：</view>
+            <input class="ri-wid" name="xxaddress" placeholder="请输入您的地址" placeholderClass="placeinp" value="{{xxaddress}}"></input>
+        </view>
+        <view class="data-item">
+            <view class="title">负责人：</view>
+            <input class="ri-wid" name="realname" placeholder="请输入负责人姓名" placeholderClass="placeinp" value="{{detail.realname}}"></input>
+        </view>
+        <view class="data-item">
+            <view class="title">联系电话：</view>
+            <input class="ri-wid" name="hospitaltel" placeholder="请输入负责人电话" placeholderClass="placeinp" type="number" value="{{detail.hospitaltel}}"></input>
+        </view>
+    </view>
+    <input hidden="true" name="provinceid" value="{{provinceid}}"></input>
+    <input hidden="true" name="city" value="{{city}}"></input>
+    <input hidden="true" name="district" value="{{district}}"></input>
+    <input hidden="true" name="district" value="{{district}}"></input>
+    <input hidden="true" name="district" value="{{district}}"></input>
+    <input hidden="true" name="district" value="{{district}}"></input>
+    <input hidden="true" name="district" value="{{district}}"></input>
+    <button class="submit-btn" formType="submit" type="primary" wx:if="{{state=='-1'}}">提交申请</button>
+    <button class="submit-btn" formType="submit" type="primary" wx:if="{{state=='0'}}">审核中</button>
+    <button class="submit-btn" formType="submit" type="primary" wx:if="{{state=='1'}}">已入驻</button>
+    <button class="submit-btn" formType="submit" type="primary" wx:if="{{state=='2'}}">已停止使用</button>
+    <button class="submit-btn" formType="submit" type="primary" wx:if="{{state=='3'}}">已到期请续费</button>
+    <button class="submit-btn" formType="submit" type="primary" wx:if="{{state=='5'}}">已拒绝请重新申请</button>
+</form>
+<view class="sh-ing" wx:if="{{step==2||state=='0'}}">
+    <image class="qs-icon" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/qs1.png?sign=bd907c32a069dc5c282c1fcbb28fd651&t=1592043619"></image>
+    <view class="qs-tit">审核中</view>
+    <view class="qs-ting">资料正在审核中，请耐心等待哦~</view>
+</view>
+<block wx:if="{{step==3||state=='1'}}">
+    <view class="sh-ing" wx:if="{{issuss}}">
+        <image class="qs-icon" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/qs2.png?sign=416a7497ba51ffd568e79b0ff075150b&t=1592043630"></image>
+        <view class="qs-tit">审核通过</view>
+        <view class="qs-ting">恭喜您，审核通过 <view bindtap="gotkhome">进入主页</view>
+        </view>
+    </view>
+    <view class="sh-ing" wx:if="{{state=='5'}}">
+        <image class="qs-icon" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/qs3.png?sign=e621543b842199a94cd050ef1d81e133&t=1592043642"></image>
+        <view class="qs-tit">审核失败</view>
+        <view class="qs-ting">抱歉！您的资料审核失败，请<view bindtap="gotkagin">重新提交资料</view>
+        </view>
+    </view>
+</block>

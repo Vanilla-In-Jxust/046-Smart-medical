@@ -1,0 +1,26 @@
+<view wx:for="{{inquiry}}" wx:key="tz">
+    <view bindtap="zixunxq" class="nosuccess" data-bl_id="{{item.bl_id}}" data-docopenid="{{item.docopenid}}" data-docroom="{{item.docroom}}" data-ifover="{{item.ifover}}" data-j_id="{{item.j_id}}" data-myroom="{{item.myroom}}" data-orders="{{item.orders}}" data-u_name="{{item.u_name}}" data-u_thumb="{{item.u_thumb}}" data-z_name="{{item.z_name}}" data-z_thumbs="{{item.z_thumbs}}" data-zid="{{item.zid}}">
+        <view class="expertbox">
+            <view class="inquiry">专家问诊</view>
+            <view class="price">￥{{item.money}}</view>
+            <view class="consult" wx:if="{{item.ifover==0}}">咨询中</view>
+            <view class="consult" wx:if="{{item.ifover==2}}">已完成</view>
+            <view catchtap="pingjia" class="consult" data-docopenid="{{item.docopenid}}" data-j_id="{{item.j_id}}" data-keywords="{{item.keywords}}" data-m_id="{{item.m_id}}" data-orders="{{item.orders}}" data-yuyin="{{item.yuyin}}" data-zid="{{item.zid}}" wx:if="{{item.ifover==1}}">去评价</view>
+        </view>
+        <view class="patientList">
+            <view class="list">
+                <view class="list_left">患者姓名:</view>
+                <view class="list_right">{{item.names}}</view>
+            </view>
+            <view class="list">
+                <view class="list_left">问诊医生:</view>
+                <view class="list_right">{{item.z_name}}</view>
+            </view>
+            <view class="list">
+                <view class="list_left">病情描述:</view>
+                <view class="list_right">{{item.msg}}</view>
+            </view>
+        </view>
+        <view class="time">{{item.time}}</view>
+    </view>
+</view>

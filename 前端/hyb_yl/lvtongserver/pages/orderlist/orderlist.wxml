@@ -1,0 +1,49 @@
+<view class="topTabSwiper">
+    <view bindtap="checkCurrent" class="tab {{currentData==index?'tabBorer':''}}" data-current="{{index}}" wx:for="{{tablist}}" wx:key="t">
+			{{item}}
+		</view>
+</view>
+<view class="center1" wx:if="{{list.length>0}}">
+    <view class="order" wx:for="{{list}}" wx:key="d">
+        <view class="header">
+            <view class="time">订单编号：{{item.back_orser}}</view>
+            <view class="status">{{item.status}}</view>
+        </view>
+        <view bindtap="lookdetail" class="goods" data-dex="{{index}}" data-did="{{item.did}}" data-docopenid="{{item.doc.openid}}" data-id="{{item.id}}" data-ifpay="{{item.ifpay}}" data-j_id="{{item.j_id}}" data-key_words="{{item.key_words}}" data-money="{{item.money}}" data-orders="{{item.back_orser}}" data-thumb="{{item.thumb}}" data-title="{{item.doc.z_name}}" data-u_name="{{item.user.u_name}}" data-u_thumb="{{item.user.u_thumb}}" data-zid="{{item.z_id}}">
+            <view class="good">
+                <image src="{{item.thumb}}"></image>
+            </view>
+            <view class="info">
+                <view class="info-title">
+                    <view>{{item.doc['title']}} <text>{{item.doc.job_name}}</text>
+                    </view>
+                    <view>
+                        <view>
+                            <text>￥</text>
+                            <text>{{item.money}}</text>
+                        </view>
+                        <view>总费用</view>
+                    </view>
+                </view>
+                <view class="info-subtit">{{item.doc.agentname}} {{item.keshi}}</view>
+                <view class="info-time">下单时间：{{item.created}}</view>
+            </view>
+        </view>
+        <view class="operate">
+            <view class="fotbot">
+                <view class="xiangmu">共{{item.count}}个项目 <text>￥{{item.money}}</text>
+                </view>
+                <view class="fotbotright">
+                    <view bindtap="cancel" class="son again deltbn" data-id="{{item.id}}" wx:if="{{item.ifpay=='0'}}">取消订单</view>
+                    <view bindtap="gopay" class="son again" data-back_orser="{{item.back_orser}}" data-did="{{item.did}}" data-id="{{item.id}}" data-j_id="{{item.j_id}}" data-money="{{item.money}}" data-z_id="{{item.z_id}}" wx:if="{{item.ifpay==0&&item.money!=='0.00'}}">去支付</view>
+                    <view bindtap="refund" class="son again" data-id="{{item.id}}" data-money="{{item.money}}" wx:if="{{item.ifpay==1&&item.money!=='0.00'}}">去退款</view>
+                    <view catchtap="pingjia" class="son again" data-did="{{item.did}}" data-docopenid="{{item.doc.openid}}" data-id="{{item.id}}" data-j_id="{{item.j_id}}" data-keywords="{{item.key_words}}" data-orders="{{item.orders}}" data-zid="{{item.z_id}}" wx:if="{{item.ifpay=='3'}}">去评价</view>
+                    <view bindtap="deleteitem" class="son again" data-back_orser="{{item.back_orser}}" data-dex="{{index}}" data-id="{{item.id}}" wx:if="{{item.ifpay==0||item.ifpay==4||item.ifpay==6||item.ifpay==7||item.ifpay==8}}">删除订单</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="none" wx:else>
+    <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png" style="margin-bottom: 20rpx;width: 510rpx;height: 230rpx;"></image>
+</view>

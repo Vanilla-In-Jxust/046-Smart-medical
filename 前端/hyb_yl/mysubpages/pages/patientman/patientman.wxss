@@ -1,0 +1,186 @@
+.doc-order-tab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 98rpx;
+    background: #fff;
+    z-index: 999;
+}
+
+.doc-tab-item {
+    position: relative;
+    height: 98rpx;
+    width: 20%;
+    line-height: 98rpx;
+    text-align: center;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.doc-tab-item-act {
+    color: #0087E0;
+}
+
+.doc-tab-item-act::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 24rpx;
+    height: 7rpx;
+    background: #0087E0;
+    border-radius: 4rpx;
+}
+
+.patient-box {
+    padding: 24rpx;
+}
+
+.patient-item {
+    position: relative;
+    width: 654rpx;
+    padding: 20rpx 24rpx;
+    margin-bottom: 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.patient-in {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 24rpx;
+}
+
+.patient-in image {
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 24rpx;
+    border-radius: 50%;
+    border: 2rpx solid #0087E0;
+}
+
+.patient-ri {
+    width: 475rpx;
+}
+
+.patient-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20rpx;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.patient-name view {
+    margin-left: 16rpx;
+    font-size: 22rpx;
+}
+
+.patient-time {
+    margin-bottom: 20rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.patient-state {
+    margin-bottom: 24rpx;
+    font-size: 24rpx;
+    color: #666;
+}
+
+.patient-s {
+    width: 490rpx;
+    font-size: 24rpx;
+    color: #666;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.patient-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.patient-text {
+    display: flex;
+}
+
+.patient-text view {
+    margin-right: 18rpx;
+    font-size: 28rpx;
+    color: #0087E0;
+}
+
+.patient-btton {
+    float: right;
+    height: 54rpx;
+    line-height: 54rpx;
+    border-radius: 30rpx;
+    background: #0087E0;
+    font-size: 28rpx;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    padding: 0 20rpx;
+    margin-top: 24rpx;
+}
+
+.patient-inb {
+    line-height: 34rpx;
+    font-size: 24rpx;
+    color: #333;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-bottom: 10rpx;
+}
+
+.patient-pad {
+    padding-bottom: 24rpx;
+}
+
+.patient-state-nk {
+    position: absolute;
+    top: -10rpx;
+    right: 24rpx;
+}
+
+.patient-state-nk image {
+    width: 122rpx;
+    height: 45rpx;
+}
+
+.patient-state-nk view {
+    position: absolute;
+    top: 0;
+    width: 122rpx;
+    font-size: 26rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 45rpx;
+    z-index: 9;
+}
+
+.text_img {
+    width: 160rpx;
+    height: 100%;
+    background: #f8f8f8;
+    color: #999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20rpx 0;
+    margin-right: 24rpx;
+}

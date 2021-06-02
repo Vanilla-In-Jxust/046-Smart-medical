@@ -1,0 +1,17 @@
+<view class="content agora-bg flex-center-column" id="main">
+    <view class="video-container n{{totalUser}}" id="video-container">
+        <block wx:for="{{media}}" wx:key="key">
+            <agora-pusher beauty="{{beauty}}" bindpushfailed="onPusherFailed" debug="{{debug}}" height="{{item.height}}" id="rtc-pusher" muted="{{muted}}" url="{{item.url}}" width="{{item.width}}" x="{{item.left}}" y="{{item.top}}" wx:if="{{item.type===0&&!item.holding}}"></agora-pusher>
+            <agora-player debug="{{debug}}" height="{{item.height}}" id="rtc-player-{{item.uid}}" uid="{{item.uid}}" url="{{item.url}}" width="{{item.width}}" x="{{item.left}}" y="{{item.top}}" wx:if="{{item.type===1&&!item.holding}}"></agora-player>
+        </block>
+    </view>
+    <view class="footer flex-center-column">
+        <view class="toolbar">
+            <button bindtap="onMute" class="mic {{muted?'muted':''}} btn" plain="true"></button>
+            <button bindtap="onSwitchCamera" class="camera btn" hoverClass="hover" plain="true"></button>
+            <button bindtap="onLeave" class="hangup btn" hoverClass="hover" plain="true"></button>
+            <button bindtap="onMakeup" class="makeup btn" plain="true"></button>
+            <button bindtap="onSubmitLog" class="log btn" hoverClass="hover" plain="true"></button>
+        </view>
+    </view>
+</view>

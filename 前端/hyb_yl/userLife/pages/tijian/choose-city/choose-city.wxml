@@ -1,0 +1,18 @@
+<view class="city">
+    <scroll-view class="city_scroll" scrollIntoView="{{scrollToSpell}}" scrollY="{{true}}">
+        <view class="city_search bg-white">
+            <input bindinput="bindinput" class="city_search_input" placeholder="搜索城市" value="{{searchText}}"></input>
+        </view>
+        <view class="{{searchText?'hide':''}}">
+            <view wx:for="{{cities}}">
+                <view class="bg-white">
+                    <view bindtap="chooseCity" class="city_item" data-cityname="{{item.name}}" data-id="{{item.parentid}}" style="border-bottom: 1px solid #e3e3e3;">{{item.name}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="bg-white">
+            <view bindtap="chooseCity" class="city_item  {{searchText?'':'hide'}}" data-item="{{item}}" wx:if="{{searchCityList.length}}" wx:for="{{searchCityList}}" wx:key="{{item.cityCode||item.areaid}}">{{item.cityName||item.areaname}}</view>
+            <view class="city_item {{searchText?'':'hide'}}" wx:if="{{!searchCityList.length}}">无</view>
+        </view>
+    </scroll-view>
+</view>

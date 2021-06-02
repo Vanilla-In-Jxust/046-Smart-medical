@@ -1,0 +1,436 @@
+page {
+    width: 100%;
+    position: relative;
+    box-sizing: border-box;
+    background: white;
+    padding-bottom: 100rpx;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.hint {
+    width: 100%;
+    height: 60rpx;
+    background: #fff9e7;
+    padding: 0rpx 24rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hint>view:nth-of-type(1) {
+    font-size: 24rpx;
+    color: #706e5f;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+}
+
+.hint>view:nth-of-type(1) .mistake {
+    width: 40rpx;
+    height: 40rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 30rpx;
+}
+
+.hint view:nth-of-type(1) text {
+    line-height: 50rpx;
+}
+
+.hint view:nth-of-type(2) {
+    width: 16rpx;
+    height: 16rpx;
+    border-top: solid 1px #706e5f;
+    border-right: solid 1px #706e5f;
+    transform: rotate(45deg);
+}
+
+.all {
+    width: 100%;
+}
+
+.all .top {
+    display: flex;
+    flex-direction: column;
+    padding: 0px 24rpx;
+    margin: 30rpx 0px;
+}
+
+.all .top .top_up {
+    font-size: 24rpx;
+    width: 450rpx;
+    background: #ebebeb;
+    color: #999;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.all .top .top_up .gt {
+    border-top: solid 1px #999;
+    border-right: solid 1px #999;
+    transform: rotate(45deg);
+    width: 14rpx;
+    height: 14rpx;
+}
+
+.all .top .top_c {
+    font-size: 50rpx;
+    line-height: 75rpx;
+    margin: 15rpx 0px;
+}
+
+.all .top .top_down {
+    display: flex;
+    align-items: center;
+}
+
+.all .top .top_down image {
+    width: 60rpx;
+    height: 60rpx;
+}
+
+.all .top .top_down>view {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15rpx;
+    color: #666;
+    font-size: 24rpx;
+}
+
+.all .sign_top {
+    width: 100%;
+    height: auto;
+    padding: 0px 24rpx;
+    margin-top: 80rpx;
+}
+
+.all .sign_top image {
+    width: 100%;
+    margin-bottom: 40rpx;
+}
+
+.text {
+    color: #333;
+    font-size: 32rpx;
+    line-height: 60rpx;
+}
+
+.all .sign {
+    width: 100%;
+    padding: 0px 24rpx;
+    margin-top: 70rpx;
+}
+
+.all .sign .title {
+    margin: 40rpx 0px;
+    font-size: 40rpx;
+}
+
+.all .sign image {
+    width: 100%;
+}
+
+.all .copyright {
+    padding: 20rpx 24rpx;
+    height: 150rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-bottom: solid 1px #efefef;
+}
+
+.all .copyright text {
+    font-size: 32rpx;
+    color: #999;
+}
+
+.all .helpshare {
+    padding: 0px 24rpx;
+    width: 100%;
+    height: 120rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 100rpx 0px;
+}
+
+.all .helpshare .hs_l {
+    display: flex;
+    align-items: center;
+    border: solid 1px #efefef;
+    background: #faf5fb;
+    border-radius: 50rpx;
+    padding: 20rpx 110rpx;
+}
+
+.hs_l_activ {
+    background: #0dc68d!important;
+}
+
+.hs_l_activ>text {
+    color: white!important;
+}
+
+.all .helpshare .hs_l image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 8rpx;
+}
+
+.all .helpshare .hs_l text {
+    color: #0dc68d;
+    font-size: 36rpx;
+}
+
+.all .helpshare .hs_r {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 200rpx;
+}
+
+.all .helpshare .hs_r view {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+    background: #faf5fb;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.all .helpshare .hs_r view:nth-of-type(1) image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.all .helpshare .hs_r view:nth-of-type(2) image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.sciens {
+    width: 100%;
+    padding: 0px 24rpx;
+    margin-bottom: 100rpx;
+}
+
+.sciens .scan_title {
+    width: 100%;
+    height: 100rpx;
+    display: flex;
+    align-items: center;
+    font-size: 40rpx;
+}
+
+.sciens .scan_sign {
+    width: 100%;
+    padding: 40rpx 0px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: solid 1px #efefef;
+}
+
+.sciens .scan_sign>view {
+    width: 78%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.sciens .scan_sign view text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -webkit-line-clamp: 2;
+}
+
+.sciens .scan_sign view text:nth-of-type(1) {
+    font-size: 36rpx;
+    color: #333;
+}
+
+.sciens .scan_sign view text:nth-of-type(2) {
+    font-size: 28rpx;
+    color: #999;
+}
+
+.sciens .scan_sign image {
+    width: 140rpx;
+    height: 140rpx;
+    margin-left: 10rpx;
+    border-radius: 10rpx;
+}
+
+.more {
+    background: #f8f6fb;
+    width: 260rpx;
+    height: 60rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: auto;
+    border-radius: 50rpx;
+    margin-top: 50rpx;
+    margin-bottom: 100rpx;
+    color: #0cefbc;
+    font-size: 28rpx;
+    border: solid 1px #f1f1f1;
+}
+
+.posfix {
+    width: 100%;
+    height: 100rpx;
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: white;
+}
+
+.posfix view {
+    width: 100rpx;
+    height: 100rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.posfix view image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.posfix view text {
+    font-size: 24rpx;
+    color: #333;
+}
+
+.posfix button {
+    margin: 0px;
+    background: transparent;
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.posfix button image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.posfix button text {
+    font-size: 24rpx;
+    color: #333;
+}
+
+.mask {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    left: 0px;
+    top: 0px;
+    background: rgba(0,0,0,0.5);
+}
+
+.mask .mask_sign {
+    width: 90%;
+    height: 1050rpx;
+    position: absolute;
+    left: 50%;
+    margin-top: 150rpx;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+}
+
+.mask .mask_sign>image {
+    width: 100%;
+    margin-top: 30rpx;
+}
+
+.mask .mask_sign button {
+    width: 350rpx;
+    height: 90rpx;
+    background: #02cb97;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0px 70rpx;
+    margin-top: 30rpx;
+}
+
+.mask .mask_sign button image {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.mask .mask_sign>text {
+    color: white;
+    text-align: center;
+    font-size: 30rpx;
+    margin-top: 50rpx;
+}
+
+.zhe {
+    position: fixed;
+    bottom: 200rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 300rpx;
+    height: 88rpx;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    border-radius: 10rpx;
+}
+
+.cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx;
+}
+
+.cont image {
+    width: 50rpx;
+    margin-right: 30rpx;
+}
+
+.text1 {
+    font-size: 26rpx;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.news-detail {
+    padding: 40rpx 0 80rpx;
+}
+
+.news-content {
+    padding: 0 32rpx;
+}
+
+.custom-wxParse {
+    overflow: auto;
+    color: #333;
+    font-weight: 300;
+    font-size: 36rpx;
+    line-height: 64rpx;
+    word-break: break-all;
+}

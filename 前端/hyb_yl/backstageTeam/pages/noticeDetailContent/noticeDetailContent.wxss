@@ -1,0 +1,82 @@
+page {
+    background: #f5f5f7;
+}
+
+.notice_details {
+    background-color: #fff;
+    padding: 30rpx;
+    margin-top: 20rpx;
+}
+
+.notice_title {
+}
+
+.title_text {
+    font-size: 48rpx;
+}
+
+.notice_name {
+    display: flex;
+    align-items: center;
+    margin-top: 15rpx;
+    margin-bottom: 15rpx;
+}
+
+.notice_name_text {
+    display: inline-block;
+    margin-right: 15rpx;
+}
+
+.notice_text {
+    margin: 30rpx 0 40rpx 0;
+}
+
+.novice_img {
+    height: 204rpx;
+    width: 204rpx;
+    border-radius: 8rpx;
+}
+
+.margin_right {
+    margin-right: 8rpx;
+}
+
+.foot_view {
+    width: 100%;
+    height: 104rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.foot_btn {
+    width: 330rpx;
+    height: 80rpx;
+    text-align: center;
+    line-height: 80rpx;
+}
+
+.del_btn {
+    color: #ff3333;
+    border: 1rpx solid #ccc;
+    border-radius: 40rpx;
+    margin-right: 30rpx;
+    background-color: #fff;
+}
+
+.no_view {
+    height: 500rpx;
+    line-height: 500rpx;
+    text-align: center;
+}
+
+.hoverClass {
+    background-color: #fff;
+}
+
+.setTop {
+    font-size: 32rpx;
+    color: #3b4ca9;
+    float: left;
+    margin-right: 20rpx;
+}

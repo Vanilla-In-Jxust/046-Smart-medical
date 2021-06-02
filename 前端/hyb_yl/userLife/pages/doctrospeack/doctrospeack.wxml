@@ -1,0 +1,48 @@
+<view class="tab">
+    <view class="son " wx:for="{{tab}}" wx:key="index">
+        <view bindtap="chooseTab" class="{{current==index?'active':''}}" data-i="{{index}}" style="line-height:88rpx;">{{item.name}}</view>
+    </view>
+</view>
+<view>
+    <view hidden="{{current!=0}}">
+        <view class="docSpeack_box" wx:if="{{doctorspeack.length!=0}}">
+            <doctorsaid arr="{{doctorspeack}}" bind:speackdetail="speackdetail"></doctorsaid>
+        </view>
+        <view wx:else>
+            <view class="bigbox">
+                <view class="nonelist" style="padding-top:120rpx;">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+                    <view class="fs28">暂时还没有医生说哦!</view>
+                </view>
+                <view></view>
+            </view>
+        </view>
+    </view>
+    <view hidden="{{current!=1}}">
+        <view class="develop">
+            <view class="devalBox" wx:for="{{devalArr}}" wx:key="index">
+                <view class="devalist">
+                    <view class="deval_left">
+                        <image class="userImg" src="{{item.z_thumbs}}"></image>
+                    </view>
+                    <view class="deval_right">
+                        <view class="deval_name">{{item.z_name}}</view>
+                        <view class="deval_hospital">
+                            <text>{{item.z_zhiwu}}</text>
+                            <text>{{item.z_zhicheng}}</text>
+                        </view>
+                        <view class="hjcont">{{item.z_content}}</view>
+                    </view>
+                </view>
+                <view class="deval_contbox">
+                    <view bindtap="selecthj" class="deval_cont" data-h_id="{{item.h_id}}" data-h_leixing="{{item.h_leixing}}" data-index="{{index}}">
+                        <view class="devalIMG">
+                            <image src="{{item.h_pic}}"></image>
+                        </view>
+                        <view class="devalTitle">{{item.ystext}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

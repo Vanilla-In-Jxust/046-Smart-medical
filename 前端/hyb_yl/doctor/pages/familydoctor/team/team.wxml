@@ -1,0 +1,49 @@
+<view>
+    <view class="oval">
+        <view class="teamcont">
+            <view class="teamlist">
+                <view class="teamlist_left"></view>
+                <view class="teamlist_right">
+                    <view>
+                        <text class="name">郝国红</text>
+                        <text class="doctortype">家庭医生</text>
+                    </view>
+                    <view>家庭医生</view>
+                </view>
+            </view>
+            <view class="teamlist">
+                <view class="teamlist_left"></view>
+                <view class="teamlist_right">
+                    <view>
+                        <text class="name">王晓娜</text>
+                        <text class="doctortype">家庭医生</text>
+                    </view>
+                    <view>家庭医生</view>
+                </view>
+            </view>
+            <view class="teamlist">
+                <view class="teamlist_left"></view>
+                <view class="teamlist_right">
+                    <view>
+                        <text class="name">张淼</text>
+                        <text class="doctortype">防护医生</text>
+                    </view>
+                    <view>防护医生</view>
+                </view>
+            </view>
+            <view class="teamlist">
+                <view class="teamlist_left"></view>
+                <view class="teamlist_right">
+                    <view>
+                        <text class="name">于志茹</text>
+                        <text class="doctortype">社区护士</text>
+                    </view>
+                    <view>社区护士</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="sign">
+        <navigator hoverClass="navigator-hover" url="/pages/familydoctor/servicepackage/servicepackage">立即签约</navigator>
+    </view>
+</view>

@@ -1,0 +1,33 @@
+<view class="oval">
+    <view class="searchbox">
+        <view class="searchView">
+            <icon class="searchbtn" color="#999999" size="15" type="search"></icon>
+            <input bindconfirm="search" bindinput="getSearch" placeholder="请输入医院名称" type="text" value="{{searchCont}}"></input>
+        </view>
+    </view>
+</view>
+<image class="yuyueimg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yiyuan.png?sign=8f42fb10c0d0311e1a03f18c3a415372&t=1584236915"></image>
+<view class="tabbox {{needFix?'fixed':''}}">
+    <view bindtap="tabbtn" class="tabboxtop {{tabdex===index?'tabactive':''}}" data-dex="{{index}}" wx:for="{{tablist}}" wx:key="pp">
+        <text class="{{tabdex===index?'opentrue':'openfalse'}}">{{item}}</text>
+    </view>
+</view>
+<view catchtouchmove="preventTouchMove" class="poplist" wx:if="{{popshow}}">
+    <view bindtap="hidepop" class="poplistempty"></view>
+    <view class="poplistfff" wx:if="{{tabdex===1}}">
+        <view bindtap="itemchecked" class="poplistfffitem {{order==item.id?'itemactive':''}}" data-dex="{{index}}" data-id="{{item.id}}" wx:for="{{level_arr}}">
+      {{item.level_name}}
+    </view>
+    </view>
+    <view class="poplistfff citysbox" wx:else>
+        <view class="citysleft">
+            <view bindtap="provinceitem" class="{{provincesdex==index?'selected':''}}" data-dex="{{index}}" wx:for="{{provinces}}" wx:key="p">{{item}}</view>
+        </view>
+        <view class="citysleftright">
+            <view bindtap="cityitem" class="{{citysdex==index?'selected':''}}" data-dex="{{index}}" data-name="{{item}}" wx:for="{{citys}}" wx:key="c">{{item}}</view>
+        </view>
+    </view>
+</view>
+<view class="hospitallist">
+    <view bindtap="hzanl" class="hospitallistitem" data-hid="{{item.hid}}" wx:for="{{hospitallm}}" wx:key="s">{{item.agentname}}</view>
+</view>

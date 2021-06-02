@@ -1,0 +1,118 @@
+<block wx:if="{{ifzj==0||inquiry==4}}">
+    <view class="counttime">一般14点前下单，当日发出。如部分药品需要调货，则最迟不超过48小时发货。湖北地区暂停发货。物流时效受疫情影响，可能延迟3-7天</view>
+    <view class="copyrightbox">
+        <image class="copyriglogos" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/anxingou.png?sign=6a9a677114a5de4e1a696eb825a8da1f&t=1583827086"></image>
+        <view class="copyrightitem" wx:for="{{copyright}}" wx:key="c">
+            <image src="{{item.imgs}}"></image>
+            <text>{{item.text}}</text>
+        </view>
+    </view>
+</block>
+<view class="zhenduan" wx:if="{{ifzj==0||inquiry==4}}">
+    <view bindtap="address" class="zhenduanitem" wx:if="{{!ifaddress}}">
+        <view class="zhenduanitem-left addressview">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/dingwei.png?sign=a04740cf4b056c37cec2e7e058f963f0&t=1583833931"></image>
+            <text>添加收货地址</text>
+        </view>
+        <view class="zhenduanitem-right"></view>
+    </view>
+    <view bindtap="address" class="getaddress" wx:else>
+        <view class="getaddress-left">
+            <view class="getaddress-left-top">
+                <view>收货人：</view>
+                <view>
+                    <text>{{addressmes.name}}</text>
+                    <text>{{addressmes.tell}}</text>
+                </view>
+            </view>
+            <view class="getaddress-left-top">
+                <view>收货地址：</view>
+                <view>
+                    <text>{{addressmes.site}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="zhenduanitem-right"></view>
+    </view>
+</view>
+<view class="step-number" wx:if="{{role==1}}">
+    <view class="step-container {{index==stepnum?'highlight':''}}" wx:for="{{steps}}" wx:key="s">
+        <view class="number">{{index+1}}</view>
+        <view class="content arrow">{{item}}</view>
+    </view>
+</view>
+<view class="zhenduan" style="margin-top: 25rpx;">
+    <view class="zhenduanitem">
+        <view class="zhenduanitem-left">病情描述</view>
+        <view class="huanzhexinxi">{{text}}</view>
+    </view>
+    <view class="zhenduanitem" wx:if="{{inquiry!=='4'}}">
+        <view class="zhenduanitem-left">诊断</view>
+        <view class="huanzhexinxi">{{zhenduan?zhenduan:'暂无'}}</view>
+    </view>
+    <view class="zhenduanitem">
+        <view class="zhenduanitem-left">患者信息</view>
+        <view class="huanzhexinxi">{{userdeta.names}} {{userdeta.sex}} {{userdeta.age}}岁</view>
+    </view>
+</view>
+<view class="orderbox">
+    <view class="ordertime" wx:if="{{ifzj==0||inquiry==4}}">
+        <view class="ordertime-left">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/homes.png?sign=f39930e3d0ea516a2425b7dc27148a6a&t=1583835264"></image>
+            <text>配送 14:00前下单当日发货</text>
+        </view>
+        <button class="servicebtn" openType="contact">
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/kefu.png?sign=9dab327a42de1f1c642744e1ad8c1de4&t=1583835484"></image>
+            <text>联系客服</text>
+        </button>
+    </view>
+    <view class="seldruptxt">选择的药品</view>
+    <view class="drupmes" wx:for="{{cartlist}}" wx:key="d">
+        <view class="drupmes-img">
+            <image src="{{item.sthumb}}"></image>
+            <view>{{item.sname}}</view>
+        </view>
+        <view class="drupmesbox">
+            <view class="drupmes-mess">
+					{{item.sname}}
+					<image bindtap="deletedrup" data-dex="{{index}}" data-id="{{item.sid}}" src="../../../images/del_01.png"></image>
+            </view>
+            <view class="drupmes-site">{{item.use}}</view>
+            <view class="drupmes-price">
+                <view class="detail">￥{{item.smoney}}</view>
+                <view class="btnsaas">
+                    <view catchtap="handleNumberClick" class="aasbtn" data-dex="{{index}}" data-id="{{item.sid}}" data-type="reduce">-</view>
+                    <text class="aasnum">{{item.num}}</text>
+                    <view catchtap="handleNumberClick" class="aasbtn" data-dex="{{index}}" data-id="{{item.sid}}" data-type="add">+</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view wx:if="{{cartlist.length==0}}">
+        <view bindtap="tainjiayaopin" class="">
+            <image mode="widthFix" src="/hyb_yl/images/add.png" style="width:200rpx;margin:0 auto;display:block;"></image>
+            <view class="rule">请添加药品</view>
+        </view>
+    </view>
+</view>
+<view class="zhenduan" wx:if="{{ifzj==0||inquiry==4}}">
+    <view class="zhenduanitem">
+        <view class="zhenduanitem-left flewrap">
+            <text class="zhenduanitem-left-text">医生开具处方并审核通过后，药品发货</text>
+        </view>
+    </view>
+    <view class="zhenduanitem" wx:if="{{pay=='no'}}">
+        <view class="zhenduanitem-left">问诊费</view>
+        <view class="zhenduanitem-right zhenduanitem-right-price">￥5（已减免￥5）</view>
+    </view>
+</view>
+<view class="footpay">
+    <view class="payandtotal">
+        <view>
+            <text>合计:</text>
+            <text>￥{{totals}}</text>
+        </view>
+        <view bindtap="paybtn" data-totals="{{totals}}" wx:if="{{role==1}}">发送处方</view>
+        <view bindtap="payordercf" data-totals="{{totals}}" wx:if="{{role==0}}">支付处方</view>
+    </view>
+</view>

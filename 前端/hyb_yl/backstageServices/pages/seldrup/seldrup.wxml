@@ -1,0 +1,145 @@
+<view class="step-number">
+    <view class="step-container {{index==stepnum?'highlight':''}}" wx:for="{{steps}}" wx:key="s">
+        <view class="number">{{index+1}}</view>
+        <view class="content arrow">{{item}}</view>
+    </view>
+</view>
+<view class="containerbox flexd">
+    <view class="searchbox">
+        <image src="https://img1.dxycdn.com/2019/0618/951/3351883874748937075-22.png"></image>
+        <input placeholder="搜索疾病、症状、药品名" type="text"></input>
+    </view>
+</view>
+<view class="containerbox" style="padding-top: 210rpx;padding-bottom: 136rpx;">
+    <view catchtap="drupdetail" class="drupitem" wx:for="{{druplist}}" wx:key="d">
+        <view class="header">
+            <image src="{{item.sthumb}}"></image>
+            <view class="drug-category" wx:if="{{item.chufang}}"> 处方药 </view>
+        </view>
+        <view class="drug-item-body">
+            <view class="drupname">{{item.sname}}</view>
+            <view class="packing">{{item.guiges}}</view>
+            <view class="manufacturer">{{item.sdescribe}}</view>
+            <view class="price">
+                <view class="detail">￥{{item.smoney}}</view>
+                <view catchtap="handleOnlyAddClick" class="count-add" data-dex="{{index}}" data-sid="{{item.sid}}" wx:if="{{item.num==0}}">选择该药</view>
+                <view class="show-all-contain" wx:else>
+                    <image catchtap="handleNumberClick" class="price-image" data-dex="{{index}}" data-sid="{{item.sid}}" data-type="reduce" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/jians.png?sign=9a582b6bf85f2396b619289b79a9b353&t=1584089287"></image>
+                    <text class="show-all-contain-text">{{item.num}}</text>
+                    <image catchtap="handleNumberClick" class="price-image" data-dex="{{index}}" data-sid="{{item.sid}}" data-type="add" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/jias.png?sign=8af684f47af2031e909c97b6f32ebed4&t=1584089264"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="bottom-container ">
+    <view class="image-contain {{sum==0?'':'image-contain-selected'}}">
+        <image bindtap="{{sum==0?'':'handleShowSelectDrugs'}}" src="https://img1.dxycdn.com/2019/0621/756/3352414041216931391-22.png "></image>
+        <view class="tips" hidden="{{sum==0}}">{{sum}}</view>
+    </view>
+    <view class="select-number ">
+        <view>已选{{kinds}}种药品</view>
+    </view>
+    <view bindtap="handleNextStep" class="next" wx:if="{{sum!=0}}">下一步</view>
+    <view class="next gray" wx:else>下一步</view>
+</view>
+<view class="drupdetails" wx:if="{{detailspop}}">
+    <view class="empty"></view>
+    <view class="detailsbox {{detailspop?'popactived':''}}">
+        <view class="popup-hd">
+            <view bindtap="handleCloseTap" class="popup-close">×</view>
+        </view>
+        <view class="popup-bd">
+            <view class="drupitem">
+                <view class="header">
+                    <image src="https://img1.dxycdn.com/2020/0220/372/3397760327403141179-22.jpg"></image>
+                    <view class="drug-category" wx:if="{{item.chufang}}"> 处方药 </view>
+                </view>
+                <view class="drug-item-body">
+                    <view class="drupname">{{item.names}}纷乐 硫酸羟氯喹片</view>
+                    <view class="packing">{{item.guiges}}0.1g*14片/盒</view>
+                    <view class="price">
+                        <view class="detail">￥{{item.price}}dddd</view>
+                    </view>
+                </view>
+            </view>
+            <view class="copyrightbox">
+                <view class="copyrightitem">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/renzheng.png?sign=99d87d2d65c67c848a10aaf43bafb66e&t=1583825248"></image>
+                    <text>药监认证</text>
+                </view>
+                <view class="copyrightitem">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/people.png?sign=717fc4019448bfc2a03ac538022f7ed8&t=1583825298"></image>
+                    <text>药师审核</text>
+                </view>
+                <view class="copyrightitem">
+                    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/yinsi.png?sign=f45888dbb9b06874e8d079f99d6018f5&t=1583825342"></image>
+                    <text>隐私包装</text>
+                </view>
+            </view>
+            <view class="inventory-contain">
+                <view class="inventory-item">
+                    <view class="title">批准文号</view>
+                    <view class="field">国药准字H19990263 </view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">品牌名称</view>
+                    <view class="field">纷乐 </view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">成份</view>
+                    <view class="field">本品主要成份为硫酸羟氯喹。</view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">性状</view>
+                    <view class="field">本品为薄膜衣片，除去包衣后显白色或类白色。</view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">适应症</view>
+                    <view class="field">本品用于对潜在严重副作用小的药物应答不满意的以下疾病： - 类风湿关节炎 - 青少年慢性关节炎 - 盘状红斑狼疮和系统性红斑狼疮 - 以及有阳光引发或加剧的皮肤病变 </view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">用法用量</view>
+                    <view class="field">口服 成年人（包括老年人） 首次剂量为每日0.4 g，分次服用。当疗效不再进一步改善时，剂量可减至0.2 g维持。维持时，若治疗反应有所减弱，维持剂量应增加至每日0.4 g。应使用最小有效剂量维持，不应超过6.5 mg/kg/日（自理想体重而实际体重算得）或0.4g/日，甚至更小量。 每次服药应同时进餐或饮用牛奶。 羟氯喹具有累积作用，</view>
+                </view>
+                <view class="inventory-item">
+                    <view class="title">不良反应</view>
+                    <view class="field">据国外文献报道： 以下不良反应并非在每一种4-氨基喹啉化合物长期使用时都出现，但有报道在一种或多种药物中发生，因此在使用该类药物时均应重视。不同化合物的不良反应的类型和发生频率均不同。中枢神经系统影响：易怒、神经质、情绪改变、噩梦、精神病、头痛、头昏、眩晕、耳鸣、眼球震颤、感音性耳聋、惊厥、共济失调。以上不良反应虽然罕见，但国外文献均有报道。神经 ... </view>
+                </view>
+            </view>
+            <view class="prescription-contain"> 确认添加即视为承诺本人使用过该药品，并无不良反应 </view>
+        </view>
+    </view>
+</view>
+<view class="drupdetails" wx:if="{{cartpop}}">
+    <view class="empty"></view>
+    <view class="detailsbox {{cartpop?'popactived':''}}">
+        <view class="popup-hd">
+      药品清单
+      <view bindtap="handleClosecart" class="popup-close">×</view>
+        </view>
+        <view class="drug-select-contain">
+            <view class="drupitem" wx:for="{{cartlist}}" wx:key="d">
+                <view class="header">
+                    <image src="https://img1.dxycdn.com/2020/0220/372/3397760327403141179-22.jpg"></image>
+                    <view class="drug-category" wx:if="{{item.chufang}}"> 处方药 </view>
+                </view>
+                <view class="drug-item-body">
+                    <view class="drupname">
+            {{item.sname}}
+            <image bindtap="deletedrup" data-dex="{{index}}" data-sid="{{item.id}}" src="../../../images/del_01.png"></image>
+                    </view>
+                    <view class="manufacturer">{{item.sdescribe}}</view>
+                    <view class="price">
+                        <view class="detail">￥{{item.smoney}}</view>
+                        <view class="show-all-contain">
+                            <image catchtap="handleNumberClick" class="price-image" data-dex="{{index}}" data-sid="{{item.id}}" data-type="reduce" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/jians.png?sign=9a582b6bf85f2396b619289b79a9b353&t=1584089287"></image>
+                            <text class="show-all-contain-text">{{item.num}}</text>
+                            <image catchtap="handleNumberClick" class="price-image" data-dex="{{index}}" data-sid="{{item.id}}" data-type="add" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/jias.png?sign=8af684f47af2031e909c97b6f32ebed4&t=1584089264"></image>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

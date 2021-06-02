@@ -1,0 +1,80 @@
+.tx-data {
+    width: 650rpx;
+    padding: 0 25rpx;
+    margin: 25rpx;
+    border-radius: 30rpx;
+    background: #fff;
+}
+
+.data-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 88rpx;
+    border-bottom: 1rpx solid #EAEAEA;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.pho-icon {
+    width: 70rpx;
+    height: 70rpx;
+    border-radius: 50%;
+}
+
+.title {
+    width: 200rpx;
+}
+
+.ri-wid {
+    width: 430rpx;
+    text-align: left;
+}
+
+.data-ri {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.data-ri image {
+    width: 14rpx;
+}
+
+.placeinp {
+    font-size: 26rpx;
+    color: rgb(160,160,160);
+}
+
+.tip {
+    font-size: 26rpx;
+    color: #E00000;
+}
+
+.picker {
+    font-size: 28rpx;
+}
+
+.submit-btn {
+    width: 700rpx;
+    height: 88rpx;
+    margin: 50rpx 25rpx;
+    background: #0087E0!important;
+    border-radius: 30rpx;
+    border: none!important;
+}
+
+.organ-item {
+    width: 430rpx;
+    text-align: left;
+}
+
+.label {
+    display: inline-block;
+    font-size: 24rpx;
+    background: #0087E0;
+    border-radius: 5rpx;
+    padding: 4rpx 12rpx;
+    color: #fff;
+}

@@ -1,0 +1,92 @@
+<block wx:if="{{detailList}}">
+    <scroll-view bindscroll="bindscroll" bindscrolltolower="moreState" class="more_scorll" scrollTop="{{scrollTop}}" scrollY="true">
+        <view class="pad_30 public_white margin_top">
+            <view class="condition_head center">
+                <image class="condition_head_img" mode="aspectFill" src="{{avatarUrl?avatarUrl:'/assets/images/head.png'}}"></image>
+                <view class="flex_column user_name">
+                    <text class="font_si14 font_co333 condition_head_name">{{names}}</text>
+                </view>
+                <image bindtap="remove" class="gif" src="/hyb_yl/images/del_01.png" wx:if="{{detailList.openid==useropenid}}"></image>
+            </view>
+            <view class="condition_content  font_co333">{{detailList.contents}}</view>
+            <view class="center condition_img_view" wx:if="{{detailList.sharepic}}">
+                <image bindtap="previewImg" class="condition_img {{index%3==0?'':'condition_img_right'}}" data-index="{{index}}" data-src="{{item}}" mode="aspectFill" src="{{item}}" wx:for="{{detailList.sharepic}}" wx:key="index"></image>
+            </view>
+            <view class="dyname-box">
+                <view class="dyname-time">{{detailList.times}}</view>
+                <view class="center comment_view height_88 font_si12 font_co999">
+                    <view bindtap="{{currindex==1?'':'toLike'}}" class="center comment_view_left">
+                        <image class="review_img praise_img" src="{{dianzan!=1?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/dzhan1.png?sign=544dc9242213c29ea2e7db7065a386b9&t=1547194577':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Dzhan.png?sign=e93964bb7f659120d925ccacfa1a3bed&t=1577667833'}}"></image>
+                        <text>{{detailList.dianj}}</text>
+                    </view>
+                    <view bindtap="goComment" class="center com_view">
+                        <image class="review_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/zixun.png?sign=9d1aadeee6229adc3e063e8ed7cbaa93&t=1591083042"></image>
+                        <text>{{listPatientBbsReplyVO.length}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="no_comm font_si16 font_co666" wx:if="{{listPatientBbsReplyVO.length==0}}">暂无评论哦</view>
+        <view class="critic_view pad_24 public_white" wx:if="{{listPatientBbsReplyVO}}" wx:for="{{listPatientBbsReplyVO}}" wx:key="index">
+            <image class="condition_head_img" mode="aspectFill" src="{{item.userIcon?item.userIcon:''}}"></image>
+            <view class="flex_column critic_content font_si14 font_co333">
+                <view class="critic_content_title center">
+                    <view class="condition_head_name">{{item.name?item.name:'匿名'}}</view>
+                    <view class="condition_head_name-t" wx:if="{{item.user_identity=='1'}}">{{item.keshi}}{{item.zhuanjia_zhiwu}}</view>
+                </view>
+                <view>
+                    <view>
+                        <view catchtap="{{item.useropenid==useropenid?'':'reviewComments'}}" class="critic_content_content" data-index="{{index}}" data-pl_id="{{item.pl_id}}">{{item.rcontent}}
+							<text class="font-l revert">{{item.useropenid==useropenid?'':'回复'}}</text>
+                            <text catchtap="removepl" class="font_co3b revert" data-index="{{index}}" data-pl_id="{{item.pl_id}}">{{item.useropenid==useropenid?'删除':''}}</text>
+                        </view>
+                    </view>
+                </view>
+                <view catchtap="criticImage" class="center comImg_view" data-ruid="{{item.rid}}">
+                    <image class="comImg" data-imgindex="{{index}}" mode="aspectFill" src="{{item}}" wx:for="{{item.estimatePicSmallUrl}}" wx:key="index"></image>
+                </view>
+                <view catchtap="changeList" class="comment_back" data-index="{{index}}" data-ruid="{{item.rid}}" wx:if="{{item.listPatientBbsReplyReplyVO&&item.listPatientBbsReplyReplyVO.length>0}}">
+                    <view wx:for="{{item.listPatientBbsReplyReplyVO}}" wx:for-item="use" wx:key="index">
+                        <view bindtap="{{item.useropenid==useropenid?'removeBtn':'reply'}}" class="comment_back_list" data-commentid="{{use.rid}}" data-id="{{use.id}}" data-index="{{index}}" data-name="{{use.fromUidName}}" data-toid="{{use.fromUid}}" wx:if="{{use.replyType=='comment'&&(index<5||use.hideFlag)}}">
+                            <text class="font_co3b">{{use.fromUidName}}：</text>
+                            <text>{{use.content}}</text>
+                        </view>
+                        <view bindlongpress="{{use.useropenid==useropenid?'removeBtn':''}}" class="comment_back_list" wx:if="{{use.replyType=='reply'&&(index<5||use.hideFlag)}}">
+                            <text class="font_co3b">{{use.fromUidName}}</text>
+                            <text class="reply">回复{{item.name}}：</text>
+                            <text>{{use.content}}</text>
+                        </view>
+                    </view>
+                    <view catchtap="lookMore" class="lookMore font_co999 font_si14" data-index="{{index}}" wx:if="{{!item.allFlag&&item.listPatientBbsReplyReplyVO.length>5}}">查看全部</view>
+                </view>
+            </view>
+        </view>
+        <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">没有更多了~</view>
+    </scroll-view>
+    <view class="public_white fixed_bottom flex_column" wx:if="{{comFlag}}">
+        <view class="picture_view">
+            <scroll-view scrollX class="scroll_img">
+                <view class="upload_view" wx:for="{{imgUrlList}}" wx:key="index">
+                    <image class="picture_add" data-imgindex="{{index}}" mode="aspectFill" src="{{item}}"></image>
+                    <view class="public_white icon_view">
+                        <icon catchtap="delImage" class="img_icon" color="red" data-index="{{index}}" size="18" type="clear"></icon>
+                    </view>
+                </view>
+            </scroll-view>
+        </view>
+        <view class="dynamicComments center">
+            <image class="input_img" mode="aspectFill" src="{{avatarUrl?avatarUrl:'/assets/images/head.png'}}"></image>
+            <textarea bindinput="getText" bindlinechange="linechange" class="input_text font_si16 font_co333" cursorSpacing="10" fixed="true" maxlength="-1" placeholder="说说你想说的..." placeholderClass="font_si16 font_coccc placeholder" showConfirmBar="" style=" height: {{height}}rpx;"></textarea>
+            <view bindtap="sendBtn" class="send_btn font_si14 font_cofff public_bgc3b" data-adminopenid="{{detailList.openid}}" style="background-color:{{bgc}}">发送</view>
+        </view>
+    </view>
+    <image bindtap="toTop" class="top_img" src="/assets/images/Top.png" wx:if="{{topFlag}}"></image>
+</block>
+<view class="public_white fixed_bottom flex_column" wx:if="{{reviewCommentsFlag}}">
+    <view class="dynamicComments center">
+        <image class="input_img" mode="aspectFill" src="{{avatarUrl?avatarUrl:'/assets/images/head.png'}}"></image>
+        <textarea bindinput="getText" bindlinechange="linechange" class="input_text font_si16 font_co333" cursorSpacing="10" fixed="true" maxlength="-1" placeholder="说说你想说的..." placeholderClass="font_si16 font_coccc placeholder" showConfirmBar="" style=" height: {{height}}rpx;"></textarea>
+        <view bindtap="sendBtn" class="send_btn font_si14 font_cofff public_bgc3b" data-adminopenid="{{detailList.openid}}">发送</view>
+    </view>
+</view>
+<view bindtap="mask" class="mask" wx:if="{{reviewCommentsFlag||replyFlag}}"></view>

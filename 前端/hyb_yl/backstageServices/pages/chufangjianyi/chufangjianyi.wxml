@@ -1,0 +1,41 @@
+<view class="zhenduan">
+    <view class="zhenduanitem">
+        <view class="zhenduanitem-left">诊断</view>
+        <view bindtap="loogchufang" class="zhenduanitem-right" data-cfimg="{{cfimg}}">查看原始处方</view>
+    </view>
+    <view class="zhenduanitem">
+        <view class="zhenduanitem-left">{{conets.text1}}     {{conets.text2}}</view>
+    </view>
+</view>
+<view class="zhenduan" style="margin-top: 25rpx;">
+    <view class="zhenduanitem">
+        <view class="zhenduanitem-left">用药建议</view>
+    </view>
+    <block wx:for="{{goodlist}}" wx:key="key">
+        <view class="drupmes">
+            <view class="drupmes-img">
+                <image src="{{item.sthumb}}"></image>
+            </view>
+            <view class="drupmesbox">
+                <view class="drupmes-mess">
+                    <view>{{item.sname}}</view>
+                    <view>x{{item.num}}</view>
+                </view>
+                <view class="drupmes-price">￥{{item.smoney}}</view>
+            </view>
+        </view>
+        <view class="usageview">用法用量：{{item.use}}</view>
+    </block>
+</view>
+<view class="copyrightbox">
+    <view class="copyriglogos">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/anxingou.png?sign=6a9a677114a5de4e1a696eb825a8da1f&t=1583827086"></image>
+    </view>
+    <view class="copyrig">
+        <view wx:for="{{copyright}}" wx:key="c">
+            <image src="{{item.imgs}}"></image>
+            <text>{{item.text}}</text>
+        </view>
+    </view>
+</view>
+<view bindtap="atpay" class="btns" style="background:{{bgc}}">申请续方</view>

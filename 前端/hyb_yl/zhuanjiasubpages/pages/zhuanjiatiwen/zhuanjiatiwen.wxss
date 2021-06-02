@@ -1,0 +1,255 @@
+page {
+    background: #fff;
+}
+
+.editor {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    height: auto;
+    padding: 0 32rpx;
+    background-color: #fff;
+}
+
+.editor,.editor .tips {
+    display: flex;
+    width: 100%;
+}
+
+.editor .tips {
+    margin-top: 30rpx;
+    padding-bottom: 20rpx;
+    border-bottom: 1rpx solid #ebebeb;
+}
+
+.editor .tips-left {
+    margin-right: 30rpx;
+}
+
+.editor .tips-left-image {
+    width: 112rpx;
+    height: 112rpx;
+    border: 1rpx solid #ebebeb;
+    border-radius: 8rpx;
+}
+
+.editor .tips-right {
+    flex: 1;
+}
+
+.editor .tips-right .profile {
+    display: flex;
+    align-items: center;
+}
+
+.editor .tips-right .profile .name {
+    flex-shrink: 0;
+    color: #333;
+    font-weight: 500;
+    font-size: 34rpx;
+    line-height: 38rpx;
+}
+
+.editor .tips-right .profile .tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 36rpx;
+    margin-left: 20rpx;
+    overflow-y: hidden;
+}
+
+.editor .tips-right .profile .tags .tag {
+    padding: 4rpx;
+    color: #fa0;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    background-color: #fffaf0;
+}
+
+.editor .tips-right .hint {
+    position: relative;
+    margin: 16rpx 0;
+    padding: 20rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 28rpx;
+    line-height: 42rpx;
+    background: #fafafa;
+    border-radius: 8rpx;
+}
+
+.editor .tips-right .hint:before {
+    position: absolute;
+    top: 20rpx;
+    left: -8rpx;
+    display: inline-block;
+    width: 18rpx;
+    height: 18rpx;
+    background: #fafafa;
+    border-radius: 3rpx;
+    transform: rotate(45deg);
+    content: " ";
+}
+
+.editor .textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 300rpx;
+    padding: 20rpx 0 40rpx;
+    font-size: 32rpx;
+}
+
+.editor .textarea-common {
+    font-size: 34rpx;
+    line-height: 51rpx;
+}
+
+.editor .textarea-normal {
+    width: 100%;
+    height: 306rpx;
+    color: #333;
+    font-weight: 100;
+}
+
+.editor .attachment-contain {
+    width: 100%;
+    padding: 40rpx 0;
+}
+
+.upload-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    background: #fff;
+}
+
+.upload-list-item {
+    flex-shrink: 0;
+    box-sizing: border-box;
+    width: 153rpx;
+    height: 153rpx;
+    margin-right: 24rpx;
+}
+
+.upload-list-add {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    border-radius: 8rpx;
+}
+
+.upload-list-add-image {
+    display: block;
+    width: 48rpx;
+}
+
+.upload-list-add-text {
+    margin-top: 12rpx;
+    color: #999;
+    font-size: 22rpx;
+    line-height: 26rpx;
+}
+
+.upload-list-desc {
+    flex: 1;
+    margin-left: 16rpx;
+    color: #999;
+    font-weight: 300;
+    font-size: 26rpx;
+    line-height: 28rpx;
+}
+
+.textarea-bottom-block {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 32rpx 0;
+}
+
+.radio-prescription-suggestion {
+    width: 40rpx;
+    transform: scale(.7);
+}
+
+.prescription-suggestion-tip {
+    height: 32rpx;
+    padding-left: 16rpx;
+    color: #333;
+    font-size: 28rpx;
+    line-height: 1;
+}
+
+.bottom-button {
+    width: 100%;
+    padding: 40rpx 0 80rpx;
+}
+
+.common-button {
+    width: auto;
+    height: 94rpx;
+    line-height: 94rpx;
+    text-align: center;
+    background-color: #0087E0;
+    color: #fff;
+    border: 1rpx solid #0087E0;
+    margin: 0;
+    border-radius: 47rpx;
+}
+
+.imglist {
+    box-sizing: border-box;
+    width: 153rpx;
+    height: 153rpx;
+    margin-right: 24rpx;
+    position: relative;
+}
+
+.imglist image {
+    width: 100%;
+    height: 100%;
+}
+
+.imglist>image:nth-of-type(1) {
+    width: 35rpx;
+    height: 35rpx;
+    position: absolute;
+    top: -15rpx;
+    right: -15rpx;
+}
+
+.zixunbox {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.zixunbox text {
+    padding: 8rpx 20rpx;
+    border-radius: 50rpx;
+    border: 1rpx solid #E9EAEA;
+    color: #B8B8B8;
+    margin-right: 25rpx;
+    margin-top: 25rpx;
+}
+
+.zixunbox text.jinyong {
+    color: #999;
+    border: 1rpx solid #999;
+}
+
+.zixunbox text.onon {
+    color: #47D1BA;
+    border: 1rpx solid #47D1BA;
+    background: rgba(71,209,186,0.1);
+}

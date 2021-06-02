@@ -1,0 +1,126 @@
+<view style="margin-bottom:100rpx;">
+    <view class="ovalAll headbg" style="background: linear-gradient(to bottom,{{bgc}},#896EF7);">
+        <image class="clockImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/chat_msg/clock.png?sign=2df862b2e111d158ec2b7b799fa59783&t=1580866603"></image>
+        <view wx:if="{{detail.ifpay==0}}">
+            <view class="fs34 fwb">待支付</view>
+            <view class="fs26 pt5">关闭时间：{{dumiao}}</view>
+        </view>
+        <view wx:if="{{detail.ifpay==1}}">
+            <view class="fs34 fwb">支付完成</view>
+            <view class="fs26 pt5">体检时间：{{detail.yy_time}}</view>
+        </view>
+        <view wx:if="{{detail.ifpay==2}}">
+            <view class="fs34 fwb">接诊中</view>
+        </view>
+    </view>
+    <view class="ovalAll setMeal">
+        <view class="setMealBox">
+            <view class="mealCont">
+                <view class="mealCont_title">
+                    <image class="mealImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/chat_msg/hospital.png?sign=f223f6a1c7550d7b1b4886075191bb5d&t=1580866635"></image>
+					套餐体检项目
+				</view>
+                <view bindtap="{{detail.ifpay==1?'tyxqBtn':''}} " class="tcBox detaillistss" data-name="{{item.title}}" wx:for="{{content}}" wx:key="detailName">
+                    <view bindtap="{{detail.ifpay==1?'openbtn':'show'}}" class="tijianxiangboor {{item.open?'opentrue':'openfalse'}}" data-dex="{{index}}" data-id="{{item.id}}" data-ifcz="{{item.ifcz}}" data-title="{{item.title}}" data-type="1">
+                        <text class="overText">套餐体检项目{{index+1}}：{{item.title}} </text>
+                        <text>参数：<text style="color:red;">{{item.shuju?item.shuju:'未检'}}</text>
+                        </text>
+                    </view>
+                    <view class=" tijianxiangeqimg" data-index="{{index}}" wx:if="{{item.open}}">
+                        <image bindtap="big_img" data-src="{{item.erweima}}" src="{{item.erweima}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="ovalAll setMeal">
+        <view class="setMealBox">
+            <view class="mealCont">
+                <view class="mealCont_title">
+                    <image class="mealImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/chat_msg/hospital.png?sign=f223f6a1c7550d7b1b4886075191bb5d&t=1580866635"></image>
+					通用加包项目
+				</view>
+                <view bindtap="{{detail.ifpay==1?'tyxqBtn':''}}" class="tcBox detaillistss" data-name="{{item.title}}" wx:for="{{addproject}}" wx:key="detailName">
+                    <view bindtap="{{detail.ifpay==1?'openbtn':'show'}}" class="tijianxiangboor {{typeIndex==index&&type==2?'opentrue':'openfalse'}}" data-dex="{{index}}" data-id="{{item.id}}" data-ifcz="{{item.ifcz}}" data-title="{{item.title}}" data-type="2">
+                        <text class="overText">体检项目{{index+1}}：{{item.title}}</text>
+                        <text>参数：<text style="color:red;">{{item.shuju?item.shuju:'未检'}}</text>
+                        </text>
+                    </view>
+                    <view class="tijianxiangeqimg" wx:if="{{item.open}}">
+                        <image src="{{item.erweima}}"></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="ovalAll orderBox mapsgrop">
+        <view class="orderList_left">体检机构：{{detail.jigou.agentname}}</view>
+        <view class="orderList_left orderListmaps">
+            <view>地址：{{detail.jigou.agentname}}</view>
+            <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/maps.png?sign=0ed990b19e7b4db6a0cedf64cb05a308&t=1584676079"></image>
+        </view>
+    </view>
+    <view class="ovalAll orderBox">
+        <view class="orderTop">
+            <view class="orderList">
+                <view class="orderList_left">下单时间:</view>
+                <view class="orderList_right">
+                    <text>{{detail.time}}</text>
+                </view>
+            </view>
+            <view class="orderList" wx:if="{{detail.ifpay!=='0'}}">
+                <view class="orderList_left">支付时间:</view>
+                <view class="orderList_right">
+                    <text>{{detail.paytime}}</text>
+                </view>
+            </view>
+            <view class="orderList">
+                <view class="orderList_left">体检时间:</view>
+                <view class="orderList_right">
+                    <text>{{detail.yy_time}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="ovalAll orderBox ordernums">
+        <view>订单编号</view>
+        <view>{{detail.ordernums}}</view>
+    </view>
+    <view class="ovalAll orderBox ordernums">
+        <view class="tellsview">
+            <view>{{detail.names}}</view>
+            <view>{{detail.tel}}</view>
+        </view>
+        <view class="tellhint">(提示：用于机构联系您及时体检)</view>
+    </view>
+    <view class="ovalAll orderBox ordernums">
+        <view class="tijiantitle">体检须知</view>
+        <view class="tijiantext">
+            <rich-text nodes="{{detail.notes}}"></rich-text>
+        </view>
+    </view>
+    <view class="ovalAll orderBox ordernums">
+        <view>支付方式</view>
+        <view class="paytypes">微信支付</view>
+    </view>
+</view>
+<view class="footbox" wx:if="{{detail.ifpay==0}}">
+    <view class="totals">支付 <text>￥{{detail.money}}</text>
+    </view>
+    <view bindtap="paybtn" class="fuk" data-id="{{detail.aid}}" data-money="{{detail.money}}" data-orders="{{detail.ordernums}}">去支付</view>
+</view>
+<view class="footbox2" wx:else>
+    <block wx:if="{{!adminopenid}}">
+        <view bindtap="create" class="fuk2" data-id="{{detail.aid}}" data-money="{{detail.money}}" data-orders="{{detail.ordernums}}" style="background:{{bgc}}" wx:if="{{detail.ifover=='0'}}">生成体检报告</view>
+        <view class="fuk2" data-id="{{detail.aid}}" data-money="{{detail.money}}" data-orders="{{detail.ordernums}}" style="background:{{bgc}}" wx:if="{{detail.ifover=='1'}}">已生成体检报告</view>
+    </block>
+</view>
+<view class="zhe" wx:if="{{tyType}}">
+    <view class="content">
+        <view class="contBox">
+            <view class="name">{{title}}</view>
+            <input bindinput="plase" class="input" placeholder="请输入" type="text"></input>
+        </view>
+        <view bindtap="closeZhe" class="btn" data-tjid="{{tjid}}" style="background:{{bgc}}">确定</view>
+    </view>
+</view>

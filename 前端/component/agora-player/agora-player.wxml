@@ -1,0 +1,9 @@
+<view class="play-container" style="left:{{x}}px; top:{{y}}px; width: {{width}}px; height: {{height}}px; ">
+    <live-player bindstatechange="playerStateChange" class="player" debug="{{debug}}" id="player-{{uid}}" mode="RTC" objectFit="fillCrop" orientation="{{orientation}}" src="{{url}}" style="height:{{height}}px; position: absolute; width: 100%; top: 0; left: 0;" wx:if="{{url!==''}}"></live-player>
+    <cover-view class="sud flex-center-column" style="position: absolute; width: 100%; height:{{height}}px;justify-content:center" wx:if="{{status!=='ok'}}">
+        <cover-image src="../../images/{{status}}.png" style="width: 128px;height:103px"></cover-image>
+    </cover-view>
+    <cover-view class="" style="position: absolute;top:10px;left:10px;font-size: 28rpx; right: 10px">
+    {{name}}({{uid}})
+  </cover-view>
+</view>

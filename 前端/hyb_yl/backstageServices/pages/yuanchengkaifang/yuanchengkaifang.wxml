@@ -1,0 +1,31 @@
+<view class="containers">
+    <view class="groupitem">
+        <view class="groupitem-tit">开药流程</view>
+        <view class="steps">
+            <view class="stepspay">
+                <rich-text nodes="{{detail.serh_liuc}}"></rich-text>
+            </view>
+            <view class="xieyihint">
+                <rich-text nodes="{{detail.serh_xiey}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <view bindtap="mereport" class="myorder">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/jiedu.png?sign=49ab0f2bdc09660a2621a5221eba605c&t=1584351754"></image>
+        <text>我的处方</text>
+    </view>
+    <view bindtap="havereport" class="btnitem" style="background:{{bgc}}">已有处方，选择下单
+    </view>
+    <view bindtap="nonereport" class="btnitem" style="background:{{bgc}}">没有处方，问医生开药
+    </view>
+</view>
+<view class="posfix">
+    <view bindtap="navicate">
+        <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/index_hover.png?sign=aba15fc2da5c00e0727762198e2a6b7e&t=1590670823"></image>
+        <text>首页</text>
+    </view>
+    <button hoverClass="none" openType="share">
+        <image mode="aspectFit" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/share.png?sign=5a8a7a388b508a0c06258b5ee67b0ec9&t=1590670864" style="width:25px;height:25px"></image>
+        <text>分享</text>
+    </button>
+</view>

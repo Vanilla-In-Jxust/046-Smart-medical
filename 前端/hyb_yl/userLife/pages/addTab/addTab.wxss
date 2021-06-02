@@ -1,0 +1,63 @@
+page {
+    width: 100%;
+    height: 100%;
+}
+
+.box {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.DistList {
+    width: 30%;
+    background: #fff;
+    height: 100%;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+    box-shadow: 10rpx 0 10rpx rgba(157,157,157,0.3);
+    z-index: 9;
+}
+
+.DistList view {
+    width: 100%;
+    text-align: center;
+    padding: 10rpx 0;
+    margin: 10rpx 0;
+    font-size: 30rpx;
+    white-space: nowrap;
+}
+
+swiper {
+    width: 70%;
+    height: 100%;
+    background: #fff;
+}
+
+.scroll {
+    padding: 30rpx;
+    box-sizing: border-box;
+    background: #fff;
+    height: 100%;
+}
+
+.active {
+    background: rgb(75,153,255);
+    border-radius: 50rpx;
+    color: #fff;
+}
+
+.title {
+    font-size: 36rpx;
+    font-weight: bold;
+    padding: 20rpx 0;
+}
+
+.tab {
+    font-size: 30rpx;
+    padding: 20rpx 0;
+    border-bottom: 2rpx solid #eaeaea;
+}

@@ -1,0 +1,5 @@
+<scroll-view scrollY bindscrolltolower="getMore" class="scrollView">
+    <view class="rule_list" wx:for="{{list}}" wx:key="{{index}}">
+        <text class="rule_list_title">{{item}}</text>
+    </view>
+</scroll-view>

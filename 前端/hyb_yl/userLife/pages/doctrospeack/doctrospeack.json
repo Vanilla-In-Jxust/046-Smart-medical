@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "医生说",
+    "usingComponents": {
+        "doctorsaid": "/component/doctorsaid/doctorsaid"
+    }
+}

@@ -1,0 +1,20 @@
+<view class="datesbox">
+    <view class="orderedtit">仅可预约未来七天 医生会在预约时间联系你</view>
+    <view class="orderedmouth">{{month}}</view>
+    <view class="dateslist">
+        <view class="dateslistitem" wx:for="{{list_wedate}}" wx:key="dw">
+            <view>{{item.week}}</view>
+            <view bindtap="getdate" class="{{item.active?'active':''}}" data-day="{{item.time}}" data-i="{{index}}" data-week="{{item.week2}}">{{item.time}}</view>
+        </view>
+    </view>
+</view>
+<view class="seltimes" wx:for="{{time}}" wx:key="ke">
+    <view class="pm">{{index}}</view>
+    <view class="timebox">
+        <view wx:for="{{item}}" wx:for-item="items" wx:key="t">
+            <view bindtap="seltime" data-key_words="{{server}}" data-nums="{{items.nums}}" data-time="{{llt.startTime}}-{{llt.endTime}}" data-week="{{llt.week}}" data-yynum="{{llt.yynum}}" wx:for="{{items.time}}" wx:for-item="llt">
+				{{llt.startTime}}-{{llt.endTime}}
+			</view>
+        </view>
+    </view>
+</view>

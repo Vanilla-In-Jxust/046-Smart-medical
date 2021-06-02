@@ -1,0 +1,166 @@
+<view class="nav">
+    <view bindtap="choice" class="project {{choices==1?'projectIn':''}}" id="1">简介</view>
+    <view bindtap="choice" class="project {{choices==2?'projectIn':''}}" id="2">成员</view>
+    <view bindtap="choice" class="project {{choices==3?'projectIn':''}}" id="3">医说</view>
+    <view bindtap="choice" class="project {{choices==4?'projectIn':''}}" id="4">服务</view>
+</view>
+<view style="height: 81rpx;"></view>
+<view wx:if="{{choices==1}}">
+    <view class="briefIntroduction">
+        <view style="width: 100rpx;">简介</view>
+        <view style="flex:1;">{{teaminfo.teamtext}}</view>
+    </view>
+</view>
+<view wx:if="{{choices==2}}">
+    <navigator url="/hyb_yl/userCommunicate/pages/intro/intro" wx:for="{{arr}}" wx:key="index">
+        <view bindtap="choice" class="personal">
+            <image class="imgSize" src="{{item.img}}"></image>
+            <view class="title">
+                <view class="titleName">{{item.name}}</view>
+                <view>
+                    <text class="titleTitle">{{item.title}}</text>
+                    <text class="titleTitle fontLife">{{item.department}}</text>
+                </view>
+                <view class="titleTitle">服务人数
+          <text class="titleNumber">{{item.number}}</text>
+                </view>
+            </view>
+            <view style="text-align: right;">
+                <view class="distance">
+                    <image src="/assets/images/dingwei2.png"></image>
+                    <text>{{item.doctor.distance>0?item.doctor.distance+'千米':'获取距离失败'}}</text>
+                </view>
+                <view class="titleTitle">评分:{{item.evaluate}}</view>
+            </view>
+        </view>
+        <view class="good titleTitle">擅长：{{item.good}}</view>
+    </navigator>
+</view>
+<view wx:if="{{choices==3}}">
+    <view class="said_list" wx:for="{{saidList}}" wx:key="{{index}}">
+        <image class="said_image" src="{{item.nameUrl?item.nameUrl:'/assets/shop_images/head.png'}}"></image>
+        <view class="said_content">
+            <view bindtap="gotoSelected" class="content_title" data-saidid="{{item.saidId}}">
+                <view class="content_title_title">
+                    <view class="font_si18 font_co333 wzname">{{item.name}}</view>
+                    <view class="font_si14 font_co999 wzdatTime">{{item.datTime}}</view>
+                </view>
+            </view>
+            <view class="content_content font_si16 font_co333" wx:if="{{item.monentIdea&&item.contentType==1}}">{{item.monentIdea}}</view>
+            <view class="sound" wx:if="{{item.contentType==2}}">
+                <view catchtap="toPlay" class="sound_view" data-index="{{index}}" data-src="{{item.monentIdea}}">
+                    <view class="sound_view_left"></view>
+                    <image class="sound_img {{item.playFlag?'sound_animation':''}}" src="/assets/images/sound.png"></image>
+                </view>
+                <view class="time_view font_co999 font_si14">{{item.duration}}"</view>
+            </view>
+            <view bindtap="previewImage" class="content_img_list" data-index="{{index}}" wx:if="{{item.contentImg!=null&&item.contentImg.length>0}}">
+                <image class="content_img" data-url="{{item}}" mode="aspectFill" src="{{item}}" wx:for="{{item.contentImg}}" wx:key="{{index}}"></image>
+            </view>
+            <view bindtap="record" class="content_said" data-id="{{item.content}}" wx:if="{{item.title}}">
+                <view class="content_said_img content_said_img_view">
+                    <image class="content_said_img" mode="aspectFill" src="{{item.coverImg}}"></image>
+                    <view class="content_said_img headline_view_absolute" wx:if="{{item.eduType==2}}">
+                        <image class="content_said_img_view_img" src="/assets/images/vd.png"></image>
+                    </view>
+                </view>
+                <view class="font_si14 font_co333 content_said_content">{{item.title}}</view>
+            </view>
+        </view>
+    </view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">已到底部</view>
+    <view style="height: 400rpx; line-height: 400rpx; text-align: center; font-size: 32rpx; color: #666;" wx:if="{{noSaid}}">暂无数据</view>
+</view>
+<view wx:if="{{choices==4}}">
+    <view class="generalServices">
+        <view class="generalService padding">
+            <view bindtap="special" class="generalServicelist" data-id="{{item.id}}" data-index="{{index}}" data-state="{{item.state}}" wx:for="{{servicePackage}}" wx:key="{{index}}">
+                <view class="generalServiceCard">
+                    <image class="generalServiceCardImg" src="/assets/images/xiong1.png"></image>
+                    <view class="generalServiceCardTitiml">{{item.title}}</view>
+                </view>
+                <view class="generalServiceYes">
+                    <view class="generalServiceFontYes">{{item.state!=0?'立即预约':'改天再约'}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="goInquiry" class="service font_si14 font_co333" data-index="{{index}}" wx:for="{{service}}" wx:key="index">
+        <view class="service_view_img" wx:if="{{item.cdInterroga=='290101'}}">
+            <image class="service_img" src="/assets/images/pho.png"></image>
+            <text>图文咨询</text>
+        </view>
+        <view class="service_view_img" wx:if="{{item.cdInterroga=='290102'}}">
+            <image class="service_img" src="/assets/shop_images/phone.png"></image>
+            <text>电话咨询</text>
+        </view>
+        <view>
+            <text class="font_cofa6 now_pric">￥{{item.currentPrice/100?item.currentPrice/100:'0'}}/次</text>
+            <text class="font_co999 former" wx:if="{{item.saleMoney!=0}}">￥{{item.servicePrice/100?item.servicePrice/100:'0'}}/次</text>
+        </view>
+    </view>
+</view>
+<view style="height:104rpx;"></view>
+<block wx:if="{{myDcoBoo}}">
+    <view class="foot_view" wx:if="{{relation.signState!=1&&lookOverBoo!=3}}">
+        <view bindtap="selectBtn" class="linear_btn change_btn" hidden="{{backBoo}}" wx:if="{{relation.signState!=0&&relation.signState!=1}}">签约</view>
+    </view>
+    <view class="foot_view_view" wx:if="{{relation.signState==0||backBoo}}">
+        <view bindtap="cancelBtn" class="remove_btn font_cofff font_si16" data-signid="{{relation.signId}}">取消申请</view>
+        <view class="linear_btn question_btn">申请中...</view>
+    </view>
+    <view class="modal center" wx:if="{{modelBoo}}">
+        <view class="modal_view">
+            <view class="modal_title font_si18 font_co333">签约确认</view>
+            <view class="checkbox_view center">
+                <checkbox-group bindchange="checkboxChange">
+                    <label class="checkbox font_co333 font_si14 center">
+                        <checkbox checked="{{authStateBoo}}" value="1"></checkbox>授权医生查看个人档案
+          </label>
+                </checkbox-group>
+            </view>
+            <view class="modal_content  ">
+                <view class="font_co333 hint font_si14">提示：推荐授权查看个人档案，便于团队了解病情</view>
+            </view>
+            <view class="modal_bottom center public_white font_si18 ">
+                <view bindtap="abolishBtn" class="modal_bottom_left font_co666">再想想</view>
+                <view bindtap="signedBtn" class="modal_bottom_right font_cofff public_bgc3b">确认申请</view>
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:if="{{relation.signState==1&&!myDcoBoo}}">
+    <view class="foot_view_view" wx:if="{{lookOverBoo!=3}}">
+        <view bindtap="relieveBtn" class="remove_btn font_cofff font_si16 {{lookOverBoo==1?'':'none_look'}}" data-signid="{{relation.signId}}">解约</view>
+        <view bindtap="goInquiry" class="linear_btn question_btn" wx:if="{{lookOverBoo==1}}">去问诊</view>
+    </view>
+</block>
+<view class="mask_view" wx:if="{{yetFlag}}">
+    <view class="toast_view font_co333">
+        <view class="font_si18 mask_title">提示</view>
+        <view class="mask_content font_si14">
+            <view>{{yetMsg}}</view>
+        </view>
+        <view class="mask_bottom_two font_si18">
+            <view bindtap="yetBtn" class="bottom_text font_cofff">我知道了</view>
+        </view>
+    </view>
+</view>
+<view class="cancel_view" wx:if="{{ReasonFlag}}">
+    <view class="cancel_in">
+        <view class="font_si18 font_co333 cancel_in_title">解约确认</view>
+        <view class="cancel_content">
+            <view class="font_si14 font_co333 cancel_content_in_top">解约原因</view>
+            <view class="cancel_content_in font_">
+                <view bindtap="chooseReason" class="cancel_text {{reasonIndex==index?'cancel_active':''}}" data-disreason="{{index}}" data-text="{{item}}" wx:for="{{reasonList}}" wx:key="{{index}}">{{item}}</view>
+            </view>
+        </view>
+        <view class="cancel_bottom">
+            <view bindtap="offBtn" class="cancel_bottom_left">我再想想</view>
+            <view bindtap="confirmBtn" class="cancel_bottom_right">解约</view>
+        </view>
+    </view>
+</view>

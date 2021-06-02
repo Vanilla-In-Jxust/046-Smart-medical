@@ -1,0 +1,123 @@
+.pro {
+    padding: 0 28rpx 0 24rpx;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+.pro_img {
+    width: 80rpx;
+    height: 80rpx;
+    margin: 20rpx 20rpx 20rpx 0;
+}
+
+.pro_name {
+    flex: 1;
+    font-size: 28rpx;
+    line-height: 32rpx;
+    color: #333;
+    font-weight: normal;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.comm_content {
+    padding: 28rpx 28rpx 28rpx 24rpx;
+    background-color: #fff;
+}
+
+.content {
+    font-size: 32rpx;
+    line-height: 32px;
+    letter-spacing: 0px;
+    color: #ccc;
+}
+
+.comm_text {
+    width: 100%;
+}
+
+.add_img {
+    width: 160rpx;
+    height: 160rpx;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 20rpx 20rpx 22rpx;
+}
+
+.img_in {
+    width: 50rpx;
+    height: 50rpx;
+    display: block;
+}
+
+.line {
+    margin-left: 24rpx;
+    height: 1rpx;
+    background-color: #f0f0f0;
+}
+
+.picture {
+    background-color: #fff;
+    padding-bottom: 20rpx;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.upload_view {
+    margin: 0 0 20rpx 22rpx;
+    width: 160rpx;
+    height: 160rpx;
+    position: relative;
+}
+
+.uploadImage {
+    display: block;
+    width: 160rpx;
+    height: 160rpx;
+    overflow: visible;
+}
+
+.img_icon {
+    position: absolute;
+    right: -10rpx;
+    top: -10rpx;
+    z-index: 1000;
+}
+
+.comm_start {
+    padding: 0 28rpx 0 24rpx;
+    background-color: #fff;
+    height: 120rpx;
+    display: flex;
+    align-items: center;
+}
+
+.start_text {
+    margin-right: 60rpx;
+}
+
+.start {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 30rpx;
+    position: relative;
+}
+
+.star_view {
+    width: 60rpx;
+    height: 60rpx;
+    position: absolute;
+    top: -10rpx;
+    right: -10rpx;
+}
+
+.btn {
+    width: 690rpx;
+    margin: 40rpx auto;
+    color: #fff;
+    background-color: #3b4ca9;
+}

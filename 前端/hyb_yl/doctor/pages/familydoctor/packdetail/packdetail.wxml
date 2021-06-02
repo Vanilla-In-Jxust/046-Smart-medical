@@ -1,0 +1,33 @@
+<view>
+    <view class="head">
+        <view class="headImg">
+            <image src="{{detail.fw_pic}}"></image>
+        </view>
+    </view>
+    <view class="packbox">
+        <view class="packcenter">
+            <view class="packtitle">{{detail.fw_name}}</view>
+            <view class="packeval">
+                <text>{{nodes}}</text>
+            </view>
+            <view class="dredgebox">
+                <view class="pricebox">
+                    <view class="can">参考价格:<text class="packprice">￥0.01</text>
+                    </view>
+                    <view class="inputbox">
+                        <input bindinput="price" placeholder="请输入实际价格" type="number" value="{{price}}"></input>
+                    </view>
+                </view>
+            </view>
+            <view class="dredgebox">
+                <view class="dre">
+                    <view class="dre_left">是否开通服务包</view>
+                    <view class="dre_right">
+                        <switch bindchange="whether" checked="{{select}}" colo="#5CC9AC" data-id="{{id}}"></switch>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="foot"></view>
+</view>

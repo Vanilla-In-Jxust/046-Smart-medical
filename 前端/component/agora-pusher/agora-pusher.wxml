@@ -1,0 +1,6 @@
+<view class="pusher-container" id="rtcpusher" style="top: {{y}}px; left: {{x}}px; width: {{width}}px; height: {{height}}px; position: absolute;">
+    <live-pusher aspect="{{aspect}}" autopush="true" backgroundMute="true" beauty="{{beauty}}" bindnetstatus="recorderNetChange" bindstatechange="recorderStateChange" class="camera" debug="{{debug}}" maxBitrate="500" minBitrate="200" mode="RTC" muted="{{muted}}" style="height:{{height}}px; position: absolute; width: 100%; " url="{{url}}" waitingImage="https://webdemo.agora.io/away.png" wx:if="{{url!==''}}"></live-pusher>
+    <cover-view class="sud flex-center-column" style="position: absolute; width: 100%; height: 100%;justify-content:center" wx:if="{{status!=='ok'}}">
+        <cover-image src="../../images/{{status}}.png" style="width: 128px;height:103px"></cover-image>
+    </cover-view>
+</view>

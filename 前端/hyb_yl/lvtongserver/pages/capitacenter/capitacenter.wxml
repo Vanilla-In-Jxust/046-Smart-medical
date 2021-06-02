@@ -1,0 +1,17 @@
+<view class="capita-top">
+    <view class="capita-pri">
+        <view>我的总金额</view>
+        <view class="price">￥{{list.count}}</view>
+        <view bindtap="tixian" wx:if="{{list.count>0}}">提现</view>
+    </view>
+</view>
+<view class="capita-list">
+    <view bindtap="capitainfor" class="capita-item" data-dex="{{index}}" data-did="{{list.did}}" data-keywords="{{item.keyword}}" wx:for="{{list.type}}">
+        <image src="{{item.thumb}}"></image>
+        <view>{{item.title}}</view>
+    </view>
+</view>
+<view class="capita-sz">
+    <view class="capita-tit">七日收入</view>
+    <canvas canvasId="lineCanvas" class="canvas" disableScroll="true" style=""></canvas>
+</view>

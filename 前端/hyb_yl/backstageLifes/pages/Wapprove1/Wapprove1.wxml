@@ -1,0 +1,4 @@
+<view class="box">
+    <input bindinput="input" class="input" placeholder="请填写真实姓名(注册成功后不可修改)" placeholderStyle="color:#ccc" value="{{input}}"></input>
+</view>
+<view bindtap="foot" class="foot">确定</view>

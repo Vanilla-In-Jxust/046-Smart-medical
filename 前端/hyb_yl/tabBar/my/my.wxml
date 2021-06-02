@@ -1,0 +1,140 @@
+<view class="my-content">
+    <view class="my-infor">
+        <view class="my-infor-le">
+            <open-data class="usernames" style="width:100%;" type="userNickName"></open-data>
+            <view class="my-infor-xx">余额：￥{{info.money}}<view></view> 积分：{{info.score}}</view>
+        </view>
+        <view class="header-bgbox">
+            <open-data class="header-bg bdr df aic jcc" type="userAvatarUrl"></open-data>
+        </view>
+    </view>
+    <view class="my-user-list">
+        <view bindtap="iconlist" class="my-list-item" data-url="/hyb_yl/mycenter/pages/followDoc/followDoc?typs=gz_doc">
+            <view>{{info.doc_guanzhu}}</view>
+            <view class="my-list-tip">关注医生</view>
+        </view>
+        <view bindtap="iconlist" class="my-list-item" data-url="/hyb_yl/mycenter/pages/followDoc/followDoc?typs=gz_team">
+            <view>{{info.team_guanzhu}}</view>
+            <view class="my-list-tip">关注团队</view>
+        </view>
+        <view bindtap="iconlist" class="my-list-item" data-url="/hyb_yl/mycenter/pages/myCoupon/myCoupon">
+            <view>{{info.coupons}}</view>
+            <view class="my-list-tip">优惠券</view>
+        </view>
+        <view bindtap="iconlist" class="my-list-item" data-url="/hyb_yl/mycenter/pages/myMedical/myMedical">
+            <view>{{info.yishuo}}</view>
+            <view class="my-list-tip">我的医说</view>
+        </view>
+    </view>
+    <view class="bindtel">
+        <image class="bindtel-bg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/my-bg.png?sign=43db276ac951d897a7beccc524664114&t=1590657726"></image>
+        <view class="bindtel-con">
+            <view class="bindtel-cle">
+                <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/my-tel.png?sign=1b5a919ab5931b88edfc2fa509be6615&t=1590657763"></image>
+                <view>{{phone?phone:'绑定手机号 立即绑定读取微信'}}</view>
+            </view>
+            <button bindgetphonenumber="getPhoneNumber" class="bindtel-btn" openType="getPhoneNumber" plain="true" wx:if="{{phone}}">已绑定</button>
+            <button bindgetphonenumber="getPhoneNumber" class="bindtel-btn" openType="getPhoneNumber" wx:else>手机绑定</button>
+        </view>
+    </view>
+    <view class="my-in-list" wx:if="{{server.length>0}}" wx:for="{{server}}">
+        <view class="my-in-title">{{item.title}}</view>
+        <view class="my-in-cont">
+            <view bindtap="link" class="my-in-cont-item" data-title="{{item.title}}" data-url="{{item.url}}" wx:for="{{item.child}}" wx:key="key">
+                <image mode="widthFix" src="{{item.thumb}}"></image>
+                <view class="my-cont-tit">{{item.title}}</view>
+            </view>
+        </view>
+    </view>
+    <block wx:if="{{server.length==0}}">
+        <view class="my-in-list">
+            <view class="my-in-title">我的问诊</view>
+            <view class="my-in-cont">
+                <view bindtap="wodeWenzhen" class="my-in-cont-item" data-keywords="{{item.keywords}}" wx:for="{{mytabList1}}" wx:key="key">
+                    <image mode="widthFix" src="{{item.image}}"></image>
+                    <view class="my-cont-tit">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="my-in-list">
+            <view class="my-in-title">我的订单</view>
+            <view class="my-in-cont">
+                <view bindtap="iconlist" class="my-in-cont-item" data-url="{{item.url}}" wx:for="{{mytabList2}}" wx:key="key">
+                    <image mode="widthFix" src="{{item.image}}"></image>
+                    <view class="my-cont-tit">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="my-in-list">
+            <view class="my-in-title">绿通订单</view>
+            <view class="my-in-cont">
+                <view bindtap="iconlist" class="my-in-cont-item" data-url="{{item.url}}" wx:for="{{mytabList3}}" wx:key="key">
+                    <image mode="widthFix" src="{{item.image}}"></image>
+                    <view class="my-cont-tit">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="my-in-list">
+            <view class="my-in-title">我的服务</view>
+            <view class="my-in-cont">
+                <view bindtap="servelist" class="my-in-cont-item" data-tit="{{item.title}}" wx:for="{{myorder}}" wx:key="a">
+                    <image mode="widthFix" src="{{item.image}}"></image>
+                    <view class="my-cont-tit">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="my-in-list">
+            <view class="my-in-title">健康管理</view>
+            <view class="my-in-cont">
+                <view bindtap="servelist" class="my-in-cont-item" data-tit="{{item.title}}" data-type="{{item.type}}" wx:for="{{myadmin}}" wx:key="key">
+                    <image mode="widthFix" src="{{item.image}}"></image>
+                    <view class="my-cont-tit">{{item.title}}</view>
+                </view>
+            </view>
+        </view>
+        <view class="my-in-list">
+            <view class="my-in-title">专属服务</view>
+            <view class="my-in-cont">
+                <view bindtap="servelist" class="my-in-cont-item" data-tit="{{item.title}}" wx:if="{{item.title!='专属客服'}}" wx:for="{{myservice}}" wx:key="key">
+                    <image mode="widthFix" src="{{item.image}}"></image>
+                    <view class="my-cont-tit">{{item.title}}</view>
+                </view>
+                <button class="my-in-cont-item" openType="contact" wx:if="{{item.title=='专属客服'}}" wx:for="{{myservice}}" wx:key="key">
+                    <image mode="widthFix" src="{{item.image}}"></image>
+                    <view class="my-cont-tit">{{item.title}}</view>
+                </button>
+            </view>
+        </view>
+        <view class="my-in-list">
+            <view class="my-in-title">必备工具</view>
+            <view class="my-in-cont">
+                <view bindtap="servelist" class="my-in-cont-item" data-tit="专家入口">
+                    <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/mytab6-1.png?sign=18067a38b56654505912d2c6ab0d3c43&t=1590657179"></image>
+                    <view class="my-cont-tit">专家入口</view>
+                </view>
+                <view bindtap="servelist" class="my-in-cont-item" data-tit="导诊入口" wx:if="{{info.is_daozhen}}">
+                    <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/mytab6-2.png?sign=a1f9323c09f587b67d84ec93ceec001e&t=1590657192"></image>
+                    <view class="my-cont-tit">导诊入口</view>
+                </view>
+                <view bindtap="servelist" class="my-in-cont-item" data-tit="机构入口">
+                    <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/mytab6-2.png?sign=a1f9323c09f587b67d84ec93ceec001e&t=1590657192"></image>
+                    <view class="my-cont-tit">机构入口</view>
+                </view>
+                <view bindtap="servelist" class="my-in-cont-item" data-tit="推客入口">
+                    <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/mytab6-3.png?sign=a2b4ea848b8d2ad0396e68fa47647f55&t=1590657204"></image>
+                    <view class="my-cont-tit">推客入口</view>
+                </view>
+                <view bindtap="servelist" class="my-in-cont-item" data-tit="药师入口" wx:if="{{info.is_yaoshi}}">
+                    <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/mytab6-2.png?sign=a1f9323c09f587b67d84ec93ceec001e&t=1590657192"></image>
+                    <view class="my-cont-tit">药师入口</view>
+                </view>
+                <button class="my-in-cont-item" openType="openSetting">
+                    <image mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/mytab6-4.png?sign=c92a0f1aa8172e9796c02057824ab78c&t=1590657216"></image>
+                    <view class="my-cont-tit">设置</view>
+                </button>
+            </view>
+        </view>
+    </block>
+</view>
+<import src="../../../template/template.wxml"></import>
+<template is="tabBar" data="{{footer:footer}}"></template>

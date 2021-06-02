@@ -1,0 +1,58 @@
+page {
+    background: #f2f3f7;
+}
+
+.wrap {
+    width: 100%;
+    height: 160rpx;
+    float: left;
+    background: #fff;
+}
+
+.xx {
+    width: 100%;
+    height: 20rpx;
+    float: left;
+}
+
+.img-box {
+    width: 130rpx;
+    height: 160rpx;
+    float: left;
+}
+
+.img {
+    width: 60rpx;
+    height: 60rpx;
+    float: left;
+    margin-top: 50rpx;
+    margin-left: 35rpx;
+    border-radius: 60rpx;
+}
+
+.name {
+    float: left;
+    line-height: 160rpx;
+    color: #333;
+    font-size: 36rpx;
+}
+
+.right-img {
+    width: 40rpx;
+    height: 40rpx;
+    float: right;
+    margin-right: 30rpx;
+    margin-top: 60rpx;
+}
+
+.new {
+    width: 100%;
+    height: 88rpx;
+    float: left;
+    margin-top: 30rpx;
+    background: #fff;
+    color: #3b4ca9;
+    line-height: 88rpx;
+    text-align: center;
+    font-size: 40rpx;
+}

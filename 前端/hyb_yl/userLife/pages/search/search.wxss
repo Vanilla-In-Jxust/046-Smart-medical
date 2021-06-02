@@ -1,0 +1,677 @@
+page {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.oval {
+    padding: 0rpx 20rpx;
+    background: #FFFFFF;
+    position: relative;
+    z-index: 30;
+}
+
+.searchbox {
+    padding: 20rpx 0rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.searchView {
+    display: flex;
+    height: 60rpx;
+    border-radius: 40rpx;
+    justify-content: space-between;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    border: 1rpx solid #eaeaea;
+    font-size: 24rpx;
+    align-items: center;
+    flex: 1;
+}
+
+.searchView input {
+    height: 100%;
+    line-height: 60rpx;
+    flex: 1;
+    margin-left: 20rpx;
+}
+
+.sou {
+    font-size: 26rpx;
+    color: #222;
+    width: 60rpx;
+    margin-left: 20rpx;
+}
+
+.searchtypes {
+    padding: 50rpx;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.searchtypesitem {
+    text-align: center;
+}
+
+.searchtypesitem image {
+    width: 65rpx;
+    height: 65rpx;
+}
+
+.searchtypesitem view {
+    font-size: 30rpx;
+    color: #848484;
+    margin-top: 8rpx;
+}
+
+.all {
+    padding: 0rpx 20rpx;
+    background: #FFFFFF;
+    margin-bottom: 50rpx;
+}
+
+.searchHistory {
+    padding-top: 20rpx;
+}
+
+.history_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20rpx;
+}
+
+.searchFont {
+    font-size: 30rpx;
+    color: #222;
+    font-weight: bold;
+}
+
+.clearFont {
+    width: 50rpx;
+    height: 55rpx;
+}
+
+.historybox {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.historyList {
+    padding: 12rpx 25rpx;
+    border-radius: 10rpx;
+    background: #f7f7f7;
+    color: #222;
+    font-size: 24rpx;
+    margin: 0rpx 20rpx 20rpx 0rpx;
+    display: inline-flex;
+    align-items: center;
+}
+
+.historyList image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 8rpx;
+}
+
+.findbox {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0rpx 30rpx;
+}
+
+.findList {
+    width: 50%;
+    margin-bottom: 20rpx;
+    font-size: 26rpx;
+    color: #333;
+}
+
+.searchresult {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 25rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    padding-top: 96rpx;
+}
+
+.searchresultitems {
+    font-size: 28rpx;
+    color: #333;
+    line-height: 92rpx;
+    border-bottom: 1rpx solid #EBEBEB;
+}
+
+.searchresult {
+    width: 100vw;
+    height: 100vh;
+    background: #fff;
+    box-sizing: border-box;
+    padding: 0 25rpx;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    padding-top: 96rpx;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.searchall-tab {
+    position: fixed;
+    top: 100rpx;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+    border-bottom: 1rpx solid #F0F0F0;
+    z-index: 21;
+}
+
+.searchtab-item {
+    position: relative;
+    width: 25%;
+    height: 100rpx;
+    text-align: center;
+    line-height: 100rpx;
+    font-size: 28rpx;
+}
+
+.tabact::after {
+    content: '';
+    position: absolute;
+    bottom: 0rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 40rpx;
+    height: 4rpx;
+    background: #0088DE;
+    color: #0088DE;
+    border-radius: 6rpx;
+}
+
+.tabact {
+    color: #0088DE;
+}
+
+.search-content {
+    height: calc(100vh - 200rpx);
+    margin-top: 100rpx;
+    overflow-y: auto;
+}
+
+.consul-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255);
+    z-index: 998;
+}
+
+.consul-search {
+    width: 690rpx;
+    margin: 20rpx 30rpx;
+    padding: 18rpx 25rpx;
+    border: 1rpx solid #D2D2D2;
+    border-radius: 50rpx;
+    display: inline-flex;
+    align-items: center;
+    font-size: 30rpx;
+    color: #D2D2D2;
+}
+
+.consul-search image {
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 20rpx;
+}
+
+.bar {
+    width: 100%;
+    height: 110rpx;
+}
+
+.reward {
+    width: 690rpx;
+    margin: 0 30rpx;
+    padding: 30rpx 0;
+    background: #FAFAFA;
+    border-radius: 15rpx;
+}
+
+.reward-tit {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30rpx;
+    font-size: 28rpx;
+    color: #727272;
+}
+
+.reward-dl {
+    font-size: 26rpx;
+    color: #0088DE;
+}
+
+.reward-list {
+    position: relative;
+    margin-top: 20rpx;
+    width: 100%;
+}
+
+.reward-bar {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 630rpx;
+    margin: 0 30rpx;
+    height: 2rpx;
+    background: #EBEBEB;
+    z-index: 990;
+}
+
+.reward-day-box {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 40rpx;
+    z-index: 991;
+}
+
+.reward-day {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    border: 1rpx solid #EBEBEB;
+    font-size: 26rpx;
+    color: rgb(202,202,202);
+    background: #fff;
+    text-align: center;
+}
+
+.reward-day-act {
+    border-color: #FEBB49;
+    color: #FEBB49;
+}
+
+.consul-hbox {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 700rpx;
+    margin: 0 30rpx;
+    padding: 30rpx 0;
+}
+
+.consul-hbox-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 340rpx;
+    height: 160rpx;
+    margin-bottom: 25rpx;
+    background: #FAFAFA;
+    border-radius: 15rpx;
+}
+
+.consul-hbox-item image {
+    width: 90rpx;
+    height: 90rpx;
+    margin-right: 20rpx;
+}
+
+.consul-hb-tit {
+    font-size: 30rpx;
+    font-weight: 600;
+}
+
+.consul-hb-tip {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+    color: #aaa;
+}
+
+.consul-timg {
+    position: relative;
+    width: 690rpx;
+    margin: 20rpx 30rpx;
+    border-radius: 20rpx;
+    overflow: hidden;
+}
+
+.consul-timg image {
+    width: 690rpx;
+    height: 300rpx;
+}
+
+.consul-t-title {
+    position: absolute;
+    bottom: 0;
+    padding: 30rpx;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.consul-con-title {
+    padding: 30rpx 0;
+    font-size: 26rpx;
+    color: #666;
+}
+
+.dfcc {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hottopic {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 30rpx;
+    padding-bottom: 30rpx;
+    border-bottom: 1rpx solid #F4F4F4;
+}
+
+.hottopictit {
+    padding: 0;
+    font-size: 34rpx;
+    color: #333;
+    line-height: 50rpx;
+    word-wrap: break-word;
+}
+
+.doctorinfo {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 20rpx;
+}
+
+.doctorinfo image {
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 10rpx;
+    border: 1rpx solid #F1F1F1;
+    border-radius: 50%;
+}
+
+.doctorinfoname {
+    font-size: 24rpx;
+    color: #333;
+    margin-right: 35rpx;
+}
+
+.doctorinfonhelp {
+    font-size: 24rpx;
+    color: #A2A2A2;
+}
+
+.zhuanBox .hottopic:last-child {
+    padding-bottom: 20rpx;
+    border-bottom: none;
+}
+
+.serve-bottom {
+    padding: 0 0 25rpx 0;
+    margin-bottom: 25rpx;
+    border-bottom: 1rpx solid #F0F0F0;
+}
+
+.list-tiem {
+    margin-top: 25rpx;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.c {
+    color: #333;
+    margin-right: 20rpx;
+}
+
+.moretext {
+    margin-bottom: 22rpx;
+    font-size: 26rpx;
+    color: #0088DE;
+    text-align: center;
+}
+
+.searchitem {
+    overflow-y: auto;
+}
+
+.yishneginfo {
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    color: #666;
+    font-size: 28rpx;
+    background-color: #fff;
+    padding: 45rpx 0;
+    border-bottom: 1rpx solid #F1F1F1;
+}
+
+.info-img {
+    width: 112rpx;
+    height: 112rpx;
+}
+
+.userinfo-body {
+    flex: 1;
+    min-width: 0;
+    margin-left: 30rpx;
+    line-height: 1.6;
+}
+
+.doctor-info {
+    position: relative;
+    display: flex;
+    align-items: center;
+    line-height: 38rpx;
+}
+
+.userinfo-body .doctor-info .doctor-name {
+    overflow: hidden;
+    color: #333;
+    font-weight: 500;
+    font-size: 34rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.userinfo-body .doctor-info .doctor-section {
+    margin: 0 12rpx;
+    overflow: hidden;
+    color: #333;
+    font-size: 28rpx;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.userinfo-body .doctor-hospital {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 12rpx;
+    overflow: hidden;
+    color: #333;
+    font-size: 28rpx;
+    line-height: 32rpx;
+}
+
+.doctor-hospital .doctor-section-info {
+    flex-shrink: 0;
+}
+
+.doctor-hospital .doctor-hosptial-name {
+    flex-grow: 1;
+    margin-left: 12rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+}
+
+.userinfo-body .doctor-tags {
+    margin-top: 28rpx;
+    color: #4d4d4d;
+    font-weight: 300;
+    font-size: 26rpx;
+    line-height: 39rpx;
+    display: -webkit-box;
+    overflow: hidden;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+
+.userinfo-body .doctor-answer-star {
+    display: flex;
+    align-items: center;
+    margin: 12rpx 0 0;
+    font-weight: 300;
+}
+
+.userinfo-body .doctor-answer-star image {
+    margin-right: 2px;
+    width: 25rpx;
+    height: 25rpx;
+}
+
+.userinfo-body .doctor-answer-star .doctor-star {
+    height: 28rpx;
+    color: #faa700;
+    font-weight: 600;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.userinfo-body .doctor-answer-star .answer-count {
+    margin-left: 20rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.prescription-count,.reply-time-str {
+    margin-left: 12rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.prescription-count,.reply-time-str {
+    margin-left: 12rpx;
+    color: #666;
+    font-weight: 300;
+    font-size: 24rpx;
+    line-height: 28rpx;
+}
+
+.userinfo-body .doctor-list_dis {
+    margin-top: 20rpx;
+}
+
+.userinfo-body .doctor-list_dis_tags {
+    display: inline-block;
+    margin-right: 16rpx;
+    padding: 4rpx;
+    color: #fa0;
+    font-size: 24rpx;
+    line-height: 28rpx;
+    background: #fffaf0;
+    border-radius: 4rpx;
+}
+
+.ask-doctor {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 40rpx;
+}
+
+.price-values-wrapper {
+    transform: translate(0);
+}
+
+.price-discount,.price-values {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.price-value {
+    display: flex;
+    align-items: center;
+    height: 32rpx;
+    color: #666;
+    font-weight: 500;
+    font-size: 26rpx;
+    line-height: 32rpx;
+    margin-right: 50rpx;
+    margin-bottom: 30rpx;
+}
+
+.price-value-last {
+    position: relative;
+    margin-left: 20rpx;
+    padding-left: 20rpx;
+}
+
+.searchresultitem {
+    font-size: 28rpx;
+    color: #333;
+    padding: 20rpx 0;
+    border-bottom: 1rpx solid #EBEBEB;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.listitem {
+    width: 80%;
+}
+
+.listitem view:first-child {
+    font-size: 30rpx;
+    color: #333;
+}
+
+.listitem view:last-child {
+    font-size: 26rpx;
+    color: #969696;
+    margin-top: 8rpx;
+}
+
+.listitem-grade {
+    width: 40%;
+    text-align: center;
+    padding: 5rpx;
+    color: #A8A8A8;
+    font-size: 26rpx;
+    background: #ECECEC;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

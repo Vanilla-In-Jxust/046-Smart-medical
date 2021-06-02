@@ -1,0 +1,17 @@
+<view>
+    <view style="height: 10rpx;"></view>
+    <view class="canvas_box">
+        <view class="name_view">{{cdName}}-变化图</view>
+        <view class="unit">
+            <text class="font_co999">{{cdName}}（ {{msgData[0].nmQuantiUnit}} ）</text>
+        </view>
+    </view>
+    <view class="container">
+        <canvas bindtouchend="touchEndHandler" bindtouchmove="moveHandler" bindtouchstart="touchHandler" canvasId="abc" class="canvas" data-index="{{msgData[0].targetIndex}}" disableScroll="true"></canvas>
+    </view>
+    <view class="foot">
+        <text>正常范围</text>
+        <text class="limit_text">{{msgData[0].nmIndexLis}}：{{msgData[0].limitLow}}-{{msgData[0].limitHigh}}</text>
+        <text>{{msgData[0].nmQuantiUnit}}</text>
+    </view>
+</view>

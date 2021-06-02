@@ -1,0 +1,68 @@
+<view class="consul-box">
+    <view bindtap="searchbtn" class="consul-search">
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/search.png?sign=d55ece5e8c4a1da3c3ae45d9d3addb65&t=1590809340"></image>
+        <text>输入诊所、医生、症状</text>
+    </view>
+    <view class="tab-depar">
+        <scroll-view scrollX class="s-depar" lowerThreshold="50%" upperThreshold="50%" wx:if="{{!deparshow}}">
+            <view bindtap="{{tabindex==0?'':'departab'}}" class="depar-item {{tabindex==0?'depar-item-act':''}}" data-dex="0">全部</view>
+            <view bindtap="{{tabindex==index+1?'':'departab'}}" class="depar-item {{tabindex==index+1?'depar-item-act':''}} " data-dex="{{index+1}}" data-pid="{{item.id}}" data-zx_id="{{item.zx_id}}" wx:for="{{taocan}}" wx:key="index">{{item.zx_name}}</view>
+        </scroll-view>
+        <view class="selectdepar" wx:else>选择分类</view>
+        <view class="depar-more">
+            <view class="depar-yy"></view>
+            <image bindtap="deparlist" class="depar-more-icon" mode="widthFix" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/item_08.png?sign=af8891ec68a46c9598059884fcdc4bd8&t=1590804077"></image>
+        </view>
+    </view>
+</view>
+<view class="bar"></view>
+<view class="zhe" wx:if="{{deparshow}}"></view>
+<view class="selectlistbox {{deparshow?'listshow':''}}">
+    <view class="selectlist-c">
+        <view bindtap="departabs" class="select-list-item {{tabindex==0?'select-list-item-act':''}}" data-dex="0">全部</view>
+        <view bindtap="departabs" class="select-list-item {{tabindex==index+1?'select-list-item-act':''}}" data-dex="{{index+1}}" data-zx_id="{{item.zx_id}}" wx:for="{{taocan}}">{{item.zx_name}}</view>
+    </view>
+</view>
+<view class="consul-hbox">
+    <swiper autoplay="true" circular="true" class="swiper" indicatorActiveColor="{{bgc}}" indicatorDots="true" interval="4000" style="width:100%;">
+        <swiper-item wx:if="{{item.status==1}}" wx:for="{{zixun}}">
+            <view bindtap="btdetail" class="zhiding" data-id="{{item.id}}" data-p_id="{{item.p_id}}" data-zid="{{item.zid}}">
+                <image mode="aspectFill" src="{{item.thumb}}" style="width:100%;height:300rpx;"></image>
+                <view class="imgText">
+                    <view class="item_name">{{item.title}}</view>
+                    <view class="item_bottom">
+                        <view class="img_left">
+                            <image class="photo" mode="aspecFill" src="{{items.u_thumb}}" wx:if="{{index<3}}" wx:for="{{rew}}" wx:for-item="items"></image>
+                            <view class="mtl20">{{item.dianj}}人阅读</view>
+                        </view>
+                        <view>赞 {{item.dz}}</view>
+                    </view>
+                </view>
+            </view>
+        </swiper-item>
+    </swiper>
+</view>
+<view class="consul-con-b">
+    <view class="consul-con-item">
+        <view class="serve">
+            <view bindtap="btdetail" class="item_cont" data-id="{{item.id}}" data-p_id="{{item.p_id}}" data-zid="{{item.zid}}" wx:if="{{item.status=='0'}}" wx:for="{{zixun}}" wx:key="key">
+                <view class="cont_left">
+                    <view class="cont_name">
+                        <text class="cont_lebel" style="background:{{bgc}}">{{item.zx_name}}</text>{{item.title}}</view>
+                    <view class="cont_boottom">{{item.time}} 阅读{{item.dianj}} · 赞{{item.dz}}</view>
+                </view>
+                <image class="cont_img" mode="aspecFill" src="{{item.thumb}}"></image>
+            </view>
+            <view class="pf wu" wx:if="{{zixun==0}}">暂无数据</view>
+        </view>
+    </view>
+</view>
+<import src="../../../template/template.wxml"></import>
+<template is="tabBar" data="{{footer:footer}}"></template>
+<view class="zhe" wx:if="{{bangzhuStyle}}">
+    <view class="cont">
+        <view class="title">提示</view>
+        <view class="text">每阅读一篇文章可获得100积分</view>
+        <view bindtap="bangzhu" class="btn">确定</view>
+    </view>
+</view>

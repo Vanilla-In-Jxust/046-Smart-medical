@@ -1,0 +1,34 @@
+<view class="seet_box">
+    <view class="seet">
+        <input bindinput="input" class="input" placeholder="搜索" placeholderStyle="color:#999;"></input>
+    </view>
+</view>
+<view class="for" wx:if="{{show1}}">
+    <view bindtap="clicknav" class="groups_name" data-doctorId="{{item.doctorId}}" data-managerRole="{{item.managerRole}}" wx:for="{{managers1}}" wx:key="{{ index }}">
+        <view class="sculpture">
+            <image class="img" src="{{item.userIcon}}"></image>
+        </view>
+        <view class="occupation" style="{{managerspostArrColorSeet[index]}};">{{managerspostArr1Seet[index]}}</view>
+        <view class="occupation_name">{{item.doctorName}}</view>
+        <view class="groups_logo">{{managerspostArrSeet[index]}}</view>
+    </view>
+</view>
+<view class="for" wx:if="{{show}}">
+    <view bindtap="clicknav" class="groups_name" data-doctorId="{{item.doctorId}}" data-managerRole="{{item.managerRole}}" data-name="{{item.doctorName}}" wx:for="{{managers}}" wx:key="{{ index }}">
+        <view class="sculpture">
+            <image class="img" src="{{item.userIcon}}"></image>
+        </view>
+        <view class="occupation" style="{{managerspostArrColor[index]}};">{{managerspostArr1[index]}}</view>
+        <view class="occupation_name">{{item.doctorName}}</view>
+        <view class="groups_logo">{{managerspostArr[index]}}</view>
+    </view>
+</view>
+<view class="for" wx:if="{{show}}">
+    <view bindtap="clicknav" class="groups_name border_bottom" data-doctorId="{{item.doctorId}}" data-managerRole="3" data-name="{{item.doctorName}}" wx:for="{{commons}}" wx:key="{{ index }}">
+        <view class="sculpture">
+            <image class="img" src="{{item.userIcon}}"></image>
+        </view>
+        <view class="occupation" style="{{commonsArrArrColor[index]}}">{{commonsArr[index]}}</view>
+        <view class="occupation_name">{{item.doctorName}}</view>
+    </view>
+</view>

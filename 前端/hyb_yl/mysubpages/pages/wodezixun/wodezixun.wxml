@@ -1,0 +1,138 @@
+<view class="topTabSwiper" wx:if="{{types=='wenzhen'}}">
+    <view bindtap="checkCurrent" class="tab {{currentData==index?'tabBorer':''}}" data-current="{{index}}" wx:for="{{tablistwz}}" wx:key="t">
+			{{item}}
+		</view>
+</view>
+<view class="topTabSwiper" wx:if="{{types=='shoushu'}}">
+    <view bindtap="checkCurrent" class="tab {{currentData==index?'actives':''}}" data-current="{{index}}" wx:for="{{tablistss}}" wx:key="t">
+			{{item}}
+		</view>
+</view>
+<view wx:if="{{key_words=='tuwenwenzhen'}}">
+    <view class="successbox" wx:if="{{tuwenwz.length!==0}}">
+        <view wx:for="{{tuwenwz}}" wx:key="tz">
+            <view bindtap="zixunxq" class="nosuccess" data-advertisement="{{item.advertisement}}" data-bl_id="{{item.bl_id}}" data-dex="{{index}}" data-docopenid="{{item.docopenid}}" data-docroom="{{item.docroom}}" data-ifgb="{{item.ifgb}}" data-ifpay="{{item.ifpay}}" data-j_id="{{item.j_id}}" data-money="{{item.money}}" data-myroom="{{item.myroom}}" data-orders="{{item.back_orser}}" data-overtime="{{item.overtime}}" data-u_name="{{item.u_name}}" data-u_thumb="{{item.u_thumb}}" data-z_name="{{item.z_name}}" data-zid="{{item.zid}}">
+                <view class="expertbox">
+                    <image class="docimg" src="{{item.advertisement}}"></image>
+                    <view class="inquiry">{{item.z_name}}</view>
+                    <view class="inquiry">{{item.keshi.ctname}}</view>
+                    <view class="consult" wx:if="{{item.ifpay==0&&item.ifgb==0}}">待支付</view>
+                    <view class="consult" wx:if="{{item.ifpay==0&&item.ifgb==1}}">未支付订单已超时</view>
+                    <view class="consult" wx:if="{{item.ifpay==1&&item.ifgb==0}}">待接诊</view>
+                    <view class="consult" wx:if="{{item.ifpay==1&&item.ifgb==1}}">未接诊订单已超时</view>
+                    <view class="consult" wx:if="{{item.ifpay==2}}">咨询中</view>
+                    <view catchtap="pingjia" class="consult" data-docopenid="{{item.docopenid}}" data-j_id="{{item.j_id}}" data-keywords="{{item.keywords}}" data-m_id="{{item.m_id}}" data-orders="{{item.orders}}" data-yuyin="{{item.yuyin}}" data-zid="{{item.zid}}" wx:if="{{item.ifpay==3}}">去评价</view>
+                    <view class="consult" wx:if="{{item.ifpay==4}}">已评价</view>
+                    <view class="consult" wx:if="{{item.ifpay==5}}">申请中</view>
+                    <view class="consult" wx:if="{{item.ifpay==6}}">已退款</view>
+                    <view class="consult" wx:if="{{item.ifpay==8}}">已取消</view>
+                </view>
+                <view class="dfbox">
+                    <view class="patientList">
+                        <view class="list">
+                            <view class="list_left">病情描述:</view>
+                            <view class="list_right">{{item.content.text}}</view>
+                        </view>
+                        <view class="list">
+                            <view class="list_left">订单号:</view>
+                            <view class="list_right">{{item.orders}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="time">{{item.xdtime}} <text wx:if="{{item.cfstate==1}}">含处方</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="nonelist" style="padding-top:120rpx;" wx:else>
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+        <view class="fs28">暂未咨询记录</view>
+    </view>
+</view>
+<view wx:if="{{key_words=='dianhuajizhen'||key_words=='shipinwenzhen'||key_words=='shoushukuaiyue'}}">
+    <view class="successbox" wx:if="{{lilst.length!=0}}">
+        <view wx:for="{{lilst}}" wx:key="tz">
+            <view bindtap="zixunxq" class="nosuccess" data-advertisement="{{item.advertisement}}" data-bl_id="{{item.bl_id}}" data-dex="{{index}}" data-docopenid="{{item.docopenid}}" data-docroom="{{item.docroom}}" data-ifgb="{{item.ifgb}}" data-ifpay="{{item.ifpay}}" data-j_id="{{item.j_id}}" data-money="{{item.money}}" data-myroom="{{item.myroom}}" data-orders="{{item.back_orser}}" data-overtime="{{item.overtime}}" data-u_name="{{item.u_name}}" data-u_thumb="{{item.u_thumb}}" data-z_name="{{item.z_name}}" data-zid="{{item.zid}}">
+                <view class="expertbox">
+                    <image class="docimg" src="{{item.advertisement}}"></image>
+                    <view class="inquiry">{{item.z_name}}</view>
+                    <view class="inquiry">{{item.keshi.ctname}}</view>
+                    <view class="consult" wx:if="{{item.ifpay==0&&item.ifgb==0}}">待支付</view>
+                    <view class="consult" wx:if="{{item.ifpay==0&&item.ifgb==1}}">未接诊订单已超时</view>
+                    <view class="consult" wx:if="{{item.ifpay==1&&item.ifgb==0}}">待接诊</view>
+                    <view class="consult" wx:if="{{item.ifpay==1&&item.ifgb==1}}">已支付未接诊</view>
+                    <view class="consult" wx:if="{{item.ifpay==2}}">咨询中</view>
+                    <view catchtap="pingjia" class="consult" data-docopenid="{{item.docopenid}}" data-j_id="{{item.j_id}}" data-keywords="{{item.keywords}}" data-m_id="{{item.m_id}}" data-orders="{{item.orders}}" data-yuyin="{{item.yuyin}}" data-zid="{{item.zid}}" wx:if="{{item.ifpay==3}}">去评价</view>
+                    <view class="consult" wx:if="{{item.ifpay==4}}">已评价</view>
+                    <view class="consult" wx:if="{{item.ifpay==5}}">申请中</view>
+                    <view class="consult" wx:if="{{item.ifpay==6}}">已退款</view>
+                    <view class="consult" wx:if="{{item.ifpay==7}}">已关闭</view>
+                    <view class="consult" wx:if="{{item.ifpay==8}}">已取消</view>
+                </view>
+                <view class="dfbox">
+                    <view class="patientList">
+                        <view class="list">
+                            <view class="list_left">描述:</view>
+                            <view class="list_right">{{item.content.text}}</view>
+                        </view>
+                        <view class="list">
+                            <view class="list_left">订单号:</view>
+                            <view class="list_right">{{item.orders}}</view>
+                        </view>
+                    </view>
+                    <block wx:if="{{item.keywords=='dianhuajizhen'}}">
+                        <view catchtap="gettel" class="spbtn" data-ifpay="{{item.ifpay}}" wx:if="{{item.ifpay==2}}">去电话</view>
+                    </block>
+                    <block wx:if="{{item.keywords=='shipinwenzhen'}}">
+                        <view catchtap="joinRoom" class="spbtn" data-ifpay="{{item.ifpay}}" wx:if="{{item.ifpay==2}}">去视频</view>
+                    </block>
+                </view>
+                <view class="time">{{item.time}} </view>
+            </view>
+        </view>
+    </view>
+    <view class="nonelist" style="padding-top:120rpx;" wx:else>
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+        <view class="fs28">暂未咨询记录</view>
+    </view>
+</view>
+<view wx:if="{{key_words=='yuanchengkaifang'}}">
+    <view class="successbox" wx:if="{{lilst.length!=0}}">
+        <view wx:for="{{lilst}}" wx:key="tz">
+            <view bindtap="zixunxq" class="nosuccess" data-advertisement="{{item.advertisement}}" data-bl_id="{{item.bl_id}}" data-c_id="{{item.c_id}}" data-dex="{{index}}" data-docopenid="{{item.docopenid}}" data-docroom="{{item.docroom}}" data-ifgb="{{item.ifgb}}" data-ifpay="{{item.ispay}}" data-j_id="{{item.userid}}" data-money="{{item.money}}" data-myroom="{{item.myroom}}" data-orders="{{item.back_orser}}" data-overtime="{{item.overtime}}" data-u_name="{{item.u_name}}" data-u_thumb="{{item.u_thumb}}" data-z_name="{{item.z_name}}" data-zid="{{item.zid}}">
+                <view class="expertbox">
+                    <image class="docimg" src="{{item.advertisement}}"></image>
+                    <view class="inquiry">{{item.z_name}}</view>
+                    <view class="inquiry">{{item.keshi.ctname}}</view>
+                    <view class="consult" wx:if="{{item.ispay==0&&item.ifgb==0}}">待支付</view>
+                    <view class="consult" wx:if="{{item.ispay==0&&item.ifgb==1}}">未接诊订单已超时</view>
+                    <view class="consult" wx:if="{{item.ispay==1&&item.ifgb==0}}">待接诊</view>
+                    <view class="consult" wx:if="{{item.ispay==1&&item.ifgb==1}}">未接诊订单已超时</view>
+                    <view class="consult" wx:if="{{item.ispay==2}}">咨询中</view>
+                    <view catchtap="pingjia" class="consult" data-docopenid="{{item.docopenid}}" data-j_id="{{item.userid}}" data-keywords="{{item.keywords}}" data-m_id="{{item.m_id}}" data-orders="{{item.orders}}" data-yuyin="{{item.yuyin}}" data-zid="{{item.zid}}" wx:if="{{item.ispay==3}}">去评价</view>
+                    <view class="consult" wx:if="{{item.ispay==4}}">已评价</view>
+                    <view class="consult" wx:if="{{item.ispay==5}}">申请中</view>
+                    <view class="consult" wx:if="{{item.ispay==6}}">已退款</view>
+                    <view class="consult" wx:if="{{item.ispay==8}}">已取消</view>
+                </view>
+                <view class="dfbox">
+                    <view class="patientList">
+                        <view class="list">
+                            <view class="list_left">描述:</view>
+                            <view class="list_right">{{item.content.text}}</view>
+                        </view>
+                        <view class="list">
+                            <view class="list_left">订单号:</view>
+                            <view class="list_right">{{item.orders}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="time">{{item.time}} </view>
+            </view>
+        </view>
+    </view>
+    <view class="nonelist" style="padding-top:120rpx;" wx:else>
+        <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/nodata.png?sign=705a440d11d3215a89b242147c3fe256&t=1576576018"></image>
+        <view class="fs28">暂未咨询记录</view>
+    </view>
+</view>

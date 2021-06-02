@@ -1,0 +1,117 @@
+page {
+    background: #f5f5f7;
+}
+
+.wrap {
+    width: 100%;
+    height: 320rpx;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrap_box {
+    width: 690rpx;
+    height: 240rpx;
+    background-image: linear-gradient(0deg,#fae789 0%,#fff2b2 50%,#fae789 100%);
+    border-radius: 24rpx;
+    position: relative;
+}
+
+.text {
+    width: 100%;
+    height: 110rpx;
+    float: left;
+    margin-top: 80rpx;
+}
+
+.text1 {
+    width: 100%;
+    text-align: center;
+    font-size: 55rpx;
+}
+
+.text2 {
+    width: 100%;
+    font-size: 25rpx;
+    text-align: center;
+}
+
+.xxx {
+    width: 100%;
+    height: 20rpx;
+    float: left;
+}
+
+.list {
+    width: 100%;
+    height: 98rpx;
+    border-top: 1rpx #f0f0f0 solid;
+    line-height: 98rpx;
+    font-size: 30rpx;
+    color: #333;
+    background: #fff;
+    float: left;
+}
+
+.text_img {
+    width: 40rpx;
+    height: 40rpx;
+    float: right;
+    margin-right: 30rpx;
+    margin-top: 30rpx;
+}
+
+.imagess {
+    width: 40rpx;
+    height: 40rpx;
+    float: left;
+    margin-top: 30rpx;
+    margin-left: 30rpx;
+    margin-right: 20rpx;
+}
+
+.rules_view {
+    position: absolute;
+    right: 0rpx;
+    top: 0rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20rpx;
+}
+
+.rules_image {
+    width: 32rpx;
+    height: 32rpx;
+    margin-right: 10rpx;
+}
+
+.type {
+    width: 100%;
+    float: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #ffffff;
+}
+
+.detailed {
+    width: 49%;
+    font-size: 30rpx;
+    color: #333;
+    line-height: 90rpx;
+    text-align: center;
+    border-top: 1rpx solid #f0f0f0;
+}
+
+.borderRight {
+    border-right: 1rpx solid #f0f0f0;
+}
+
+.rmb {
+    font-size: 22rpx;
+    line-height: 90rpx;
+    color: red;
+}

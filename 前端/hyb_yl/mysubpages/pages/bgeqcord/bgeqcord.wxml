@@ -1,0 +1,8 @@
+<view class="successbox">
+    <image src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/baogaobj.png?sign=2c66b6f427a4b25314a3e07b7adb29d6&t=1584674582"></image>
+    <view>体检报告成功出炉</view>
+</view>
+<view class="eqcordimg">
+    <image src="../../../images/eqcordnew.png"></image>
+</view>
+<view bindtap="tijianbtn" class="tijianbtn">去预览</view>

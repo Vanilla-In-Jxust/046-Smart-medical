@@ -1,0 +1,138 @@
+.patient-top {
+    width: 100%;
+    height: 64rpx;
+    padding: 17rpx 0;
+    background: #0088DE;
+}
+
+.patient-search {
+    display: flex;
+    align-items: center;
+    width: 642rpx;
+    height: 64rpx;
+    padding: 0 30rpx;
+    margin: 0 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.patient-search image {
+    width: 38rpx;
+    height: 38rpx;
+    margin-right: 25rpx;
+}
+
+.patient-search view {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.patient-list {
+    display: flex;
+    justify-content: space-around;
+    width: 702rpx;
+    margin: 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.patient-item {
+    padding: 18rpx 0;
+    text-align: center;
+}
+
+.patient-item image {
+    width: 136rpx;
+    height: 136rpx;
+}
+
+.patient-item view {
+    font-size: 24rpx;
+    color: #333;
+}
+
+.patient-open {
+    width: 702rpx;
+    margin: 0 24rpx 24rpx 24rpx;
+    background: #fff;
+    border-radius: 30rpx;
+}
+
+.patient-tit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 98rpx;
+}
+
+.patient-t-le {
+    display: flex;
+    align-items: center;
+    font-size: 28rpx;
+    color: #333;
+}
+
+.patient-t-le image {
+    width: 11rpx;
+    margin-left: 25rpx;
+    margin-right: 24rpx;
+}
+
+.patient-num {
+    margin-right: 25rpx;
+    font-size: 28rpx;
+    color: #999;
+}
+
+.patient-user {
+    width: 654rpx;
+    height: 0;
+    overflow: hidden;
+    padding: 0 24rpx;
+    transition: all .3s;
+}
+
+.patient-user-act {
+    height: auto;
+    border-top: 1rpx dashed #e7e7e7;
+}
+
+.patient-user-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15rpx 0;
+}
+
+.patient-user-le {
+    display: flex;
+    align-items: center;
+}
+
+.patient-user-le image {
+    width: 60rpx;
+    height: 60rpx;
+    border-radius: 50%;
+}
+
+.patient-name {
+    display: flex;
+    align-items: flex-end;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.patient-name view {
+    margin-left: 15rpx;
+    font-size: 22rpx;
+    color: #333;
+}
+
+.patient-label {
+    padding: 7rpx 20rpx;
+    background: #0088DE;
+    border: 5rpx;
+    font-size: 22rpx;
+    color: #fff;
+    border-radius: 6rpx;
+}

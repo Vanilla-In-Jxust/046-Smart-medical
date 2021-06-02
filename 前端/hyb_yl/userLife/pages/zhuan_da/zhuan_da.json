@@ -1,0 +1,10 @@
+{
+    "navigationBarBackgroundColor": "#06AC85",
+    "navigationBarTextStyle": "white",
+    "navigationBarTitleText": "我的回答",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false,
+    "disableScroll": false,
+    "usingComponents": {}
+}

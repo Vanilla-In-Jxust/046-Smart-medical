@@ -1,0 +1,42 @@
+<view class="oval">
+    <image class="doctorImg" src="{{coverImgUrl}}"></image>
+    <view class="hj_title">{{voiceList.title}}</view>
+    <view class="doctorIntr">
+        <text style="margin-right:10rpx;">{{voiceList.z_zhiwu}}</text>
+        <text>{{voiceList.z_name}}</text>
+    </view>
+    <view class="time">2020-02-05</view>
+    <view style="margin-top:110rpx;">
+        <view class="silderbox">
+            <slider bindchange="seek" bindchanging="seeking" blockSize="12" class="slider" max="{{max}}" min="{{min}}" step="1" value="{{value}}"></slider>
+            <view class="df jcsb aic" style="color:white;font-size:24rpx;opacity:0.8;">
+                <view>{{now}}</view>
+                <view>{{long}}</view>
+            </view>
+        </view>
+        <view class="playbox">
+            <button plain hoverClass="none" openType="share">
+                <image class="enjoy" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/enjoy.png?sign=588316a01efd725ceb293a57f294f863&t=1580912811"></image>
+            </button>
+            <view class="centerBox">
+                <image bindtap="playPrev" class="commImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/prev.png?sign=380e3dc377bdea90d4d9bb2b425be4d7&t=1580908336"></image>
+                <image bindtap="play" class="audio-play" src="{{isplay?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/play.png?sign=e42cf2202f25e838ae37a94be3b46c55&t=1580914808':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/stop.png?sign=dbb017814257f21fe4c570de239d0515&t=1580913456'}}"></image>
+                <image bindtap="playNext" class="commImg" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/next.png?sign=28cccd7f23df32535d9367bf9ed85738&t=1580913838"></image>
+            </view>
+            <image bindtap="list" class="liebiao" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/doctorDetail/list.png?sign=f5cf84f816334054f2f6af462b33255d&t=1580913792"></image>
+        </view>
+    </view>
+</view>
+<view bindtap="closeList" class="bigMask" wx:if="{{maskShow}}"></view>
+<view class="maskbox" wx:if="{{maskShow}}">
+    <scroll-view scrollY style="height:800rpx;margin-top:30rpx;">
+        <view class="audioList">
+            <view bindtap="itemBtn" class="audioItem {{itemIndex==index?'audioItem_active':''}}" data-itemIndex="{{index}}" wx:for="{{list}}" wx:key="h_title">
+                <view class="audioText">
+        {{item.h_title}}
+        </view>
+            </view>
+        </view>
+    </scroll-view>
+    <view catchtap="closeList" class="guan">关闭</view>
+</view>

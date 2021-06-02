@@ -1,0 +1,333 @@
+page {
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    position: relative;
+    padding-bottom: 120rpx;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.one {
+    width: 100%;
+    height: 400rpx;
+    background: linear-gradient(180deg,#2996ff 80%,white 100%);
+}
+
+.one .one_text {
+    width: 100%;
+    padding: 20rpx;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 34rpx;
+    font-family: "圆体";
+}
+
+.one .one_info {
+    width: 90%;
+    height: 270rpx;
+    margin: auto;
+    margin-top: 20rpx;
+    border-radius: 16rpx;
+    background: white;
+    padding: 0px 32rpx;
+}
+
+.one .one_info .one_info_up {
+    width: 100%;
+    height: 190rpx;
+    display: flex;
+    padding: 25rpx 0px;
+}
+
+.one .one_info .one_info_up .one_info_img {
+    width: 20%;
+    display: flex;
+    align-items: align;
+    justify-content: space-around;
+}
+
+.one .one_info .one_info_up .one_info_img image {
+    width: 110rpx;
+    height: 110rpx;
+}
+
+.one .one_info .one_info_up .one_info_text {
+    width: 80%;
+    padding-left: 15rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.one .one_info .one_info_up .one_info_text>text {
+    font-size: 32rpx;
+}
+
+.one .one_info .one_info_up .one_info_text text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.one .one_info .one_info_up .one_info_text .one_text_down {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    font-size: 28rpx;
+}
+
+.one .one_info .one_info_up .one_info_text .one_text_down image {
+    width: 35rpx;
+    height: 35rpx;
+    margin: 0px 10rpx;
+}
+
+.one .one_info .one_info_down {
+    width: 100%;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 28rpx;
+    border-top: solid 2px #cfcede;
+}
+
+.one_tab {
+    width: 100%;
+    height: 200rpx;
+    padding: 10rpx 24rpx;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background: white;
+}
+
+.one_tab text {
+    font-size: 32rpx;
+    color: #333;
+}
+
+.one_tab .tab_sin {
+    width: 100%;
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 15rpx;
+}
+
+.one_tab .tab_sin>view {
+    border: solid 2px #1b81d6;
+    width: 320rpx;
+    height: 80rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 8rpx;
+    font-size: 28rpx;
+    position: relative;
+    overflow: hidden;
+}
+
+.one_tab .tab_sin>view .design {
+    width: 30rpx;
+    height: 80rpx;
+    background: #1b81d6;
+    position: absolute;
+    right: -2px;
+    bottom: -28rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    transform: rotate(45deg);
+    overflow: hidden;
+}
+
+.one_tab .tab_sin>view .design text {
+    color: #d9ecfb;
+    transform: rotate(-45deg);
+    font-size: 24rpx;
+}
+
+.tab_sin_activ {
+    color: #2080d6;
+    background: #d9ecfb;
+}
+
+.two {
+    width: 100%;
+    height: auto;
+    margin-top: 10rpx;
+    background: white;
+}
+
+.two_title {
+    width: 100%;
+    height: 90rpx;
+    display: flex;
+    align-items: center;
+    padding: 0px 24rpx;
+    border-bottom: solid 2px #e5e1d8;
+}
+
+.two_title image {
+    width: 30rpx;
+    height: 30rpx;
+    margin-right: 10rpx;
+}
+
+.two_title text {
+    color: #333;
+    font-size: 32rpx;
+}
+
+.two .two_hint {
+    background: #fefbd2;
+    font-size: 26rpx;
+    height: 80rpx;
+    padding: 0px 24rpx;
+    display: flex;
+    align-items: center;
+    color: #333;
+}
+
+.two .two_list {
+    width: 100%;
+    padding: 0px 24rpx;
+    padding-top: 24rpx;
+    height: auto;
+}
+
+.two .two_list .two_single {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.two .two_list .two_single .single_one {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10rpx;
+}
+
+.two .two_list .two_single .single_one text {
+    margin-left: 10rpx;
+    font-weight: bold;
+    font-size: 28rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dian {
+    width: 10rpx;
+    height: 10rpx;
+    background: #a2c0e2;
+    border-radius: 50%;
+}
+
+.two .two_list .two_single .single_text {
+    color: #999;
+    font-size: 24rpx;
+    margin-bottom: 15rpx;
+    text-indent: 20rpx;
+}
+
+.three {
+    margin-top: 10rpx;
+    width: 100%;
+    background: white;
+}
+
+.three .three_content {
+    width: 100%;
+    height: 170rpx;
+    padding: 0px 24rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.three .three_content .prograp {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.three .three_content .prograp .pro {
+    width: 140rpx;
+    height: 110rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.three .three_content .prograp .pro text {
+    white-space: nowrap;
+    color: #344c7a;
+    font-size: 32rpx;
+}
+
+.three .three_content .prograp .pro_ball {
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    background: #95c0f5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 24rpx;
+    color: white;
+    position: relative;
+    z-index: 100;
+}
+
+.three .three_content .prograp .heng {
+    position: absolute;
+    left: 50%;
+    top: 20rpx;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 5rpx;
+    background: #92c3fd;
+    z-index: 10;
+}
+
+.posfix {
+    width: 100%;
+    height: 100rpx;
+    background: white;
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    z-index: 999;
+}
+
+.posfix .pos_l {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    padding-left: 24rpx;
+    color: #de5571;
+}
+
+.posfix .pos_r {
+    width: 40%;
+    background: #47a1ef;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    color: white;
+}

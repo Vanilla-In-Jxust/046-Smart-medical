@@ -1,0 +1,97 @@
+<view bindtap="Wimg" class="W_portrait ">
+    <view class="W_imgName">个人照片/头像</view>
+    <view class="W_ImgBox">
+        <image class="W_Img" src="{{img}}"></image>
+        <view class="W_InputBox_view1" wx:if="{{show}}">请选择</view>
+        <image class="W_Img1" src="/assets/images/Wtui.png"></image>
+    </view>
+</view>
+<navigator url="/hyb_yl/backstageLifes/pages/Wapprove1/Wapprove1">
+    <view class="W_name">
+        <view class="W_imgName1">真实姓名</view>
+        <view class="W_InputBox">
+            <view class="W_InputBox_view">{{name?name:'请填写姓名'}}</view>
+            <image class="W_Img2" src="/assets/images/Wtui.png"></image>
+        </view>
+    </view>
+</navigator>
+<view bindtap="WGender" class="W_name">
+    <view class="W_imgName1">性别</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{WGendertext?WGendertext:'请选择'}}</view>
+        <image class="W_Img2" src="/assets/images/Wtui.png"></image>
+    </view>
+</view>
+<navigator url="/hyb_yl/backstageLifes/pages/Wapprove2/Wapprove2">
+    <view class="W_name">
+        <view class="W_imgName1">身份证号</view>
+        <view class="W_InputBox">
+            <view class="W_InputBox_view">{{identityCard?identityCard:'请填写身份证号'}}</view>
+            <image class="W_Img2" src="/assets/images/Wtui.png"></image>
+        </view>
+    </view>
+</navigator>
+<view bindtap="WZsz" class="W_name">
+    <view class="W_imgName1">手机号</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{phone?phone:'请验证手机号'}}</view>
+        <image class="W_Img2" src="/assets/images/Wtui.png"></image>
+    </view>
+</view>
+<view bindtap="Whospital" class="W_name1">
+    <view class="W_imgName1">所在医院</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{Whospital?Whospital:'请选择'}}</view>
+        <image class="W_Img2" src="/assets/images/Wtui.png"></image>
+    </view>
+</view>
+<view bindtap="WadministrativeOffice" class="W_name">
+    <view class="W_imgName1">所在科室</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{office?office:'请选择'}}</view>
+        <image class="W_Img2" src="/assets/images/Wtui.png"></image>
+    </view>
+</view>
+<view bindtap="Wclasses" class="W_name">
+    <view class="W_imgName1">类别</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{WclassesText?WclassesText:'请选择'}}</view>
+        <image class="W_Img2" src="/assets/images/Wtui.png"></image>
+    </view>
+</view>
+<view bindtap="Wpost" class="W_name1">
+    <view class="W_imgName1">职称</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{WpostText?WpostText:'请选择'}}</view>
+        <image class="W_Img2" src="/assets/images/Wtui.png"></image>
+    </view>
+</view>
+<view bindtap="bgGoodAt" class="W_name">
+    <view class="W_imgName1">擅长疾病</view>
+    <view class="W_InputBox">
+        <view class="W_InputBox_view">{{bgGoodAt?bgGoodAt:'请选择'}}</view>
+        <image class="W_Img2" src="/assets/images/Wtui.png"></image>
+    </view>
+</view>
+<navigator url="/hyb_yl/backstageLifes/pages/Wapprove3/Wapprove3">
+    <view class="W_name3">
+        <view class="W_imgName1">个人简介</view>
+        <view class="W_InputBox">
+            <image class="W_Img2" src="/assets/images/Wtui.png"></image>
+        </view>
+    </view>
+    <view class="section">
+        <view class="textarea">{{briefIntroduce?briefIntroduce:'请填写'}}</view>
+    </view>
+</navigator>
+<view bindtap="Wcertificate" class="W_name2">
+    <view class="W_imgName2">资质证书</view>
+    <view class="W_InputBox2">
+        <image class="W_InputBox_view2_img" src="{{IMG1}}"></image>
+        <image class="W_InputBox_view2_img" src="{{IMG2}}"></image>
+        <view class="W_InputBox_view2" wx:if="{{show1}}">{{Wcertificate}}</view>
+        <image class="W_Img22" src="/assets/images/Wtui.png"></image>
+    </view>
+</view>
+<view bindtap="WTT" class="present">提交申请</view>
+<view class="present1"></view>

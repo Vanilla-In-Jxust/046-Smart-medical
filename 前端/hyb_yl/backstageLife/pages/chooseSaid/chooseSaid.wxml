@@ -1,0 +1,100 @@
+<view class="top_view">
+    <navigator class="search_patient" url="/hyb_yl/backstageServicess/pages/searchSaid/searchSaid">
+        <view class="search_view">
+            <image class="serach_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wzseet.png?sign=05f2453db52c64c34923611c6c3f681e&t=1592017891"></image>
+            <input disabled bindinput="search" class="input" placeholder="关键词" placeholderClass="font_co999 font_si14"></input>
+        </view>
+    </navigator>
+    <view class="search_bottom"></view>
+    <view class="choosetype">
+        <view bindtap="choosetype" class="choosetype_item {{currenttype==1?'font_co3b':''}}" data-currenttype="1">个人患教
+      <view class="{{currenttype==1?'active_line':''}}"></view>
+        </view>
+        <view bindtap="choosetype" class="choosetype_item {{currenttype==3?'font_co3b':''}}" data-currenttype="3">公共患教
+      <view class="{{currenttype==3?'active_line':''}}"></view>
+        </view>
+    </view>
+    <view class="classify_view" wx:if="{{currenttype==1}}">
+        <view class="sort {{upFlag?'short_down':'short_up'}}">
+            <view class="sort_top">
+                <view class="font_si16 font_co666">全部分类</view>
+                <view bindtap="changeBtn" class="sort_top_view">
+                    <image class="up_img" src="{{upFlag?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wxsj.png?sign=075a354fc9790414bdb5727b1e038225&t=1592017908':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wxsj1.png?sign=177d77d2aa1edf3794110170058d9c72&t=1592017921'}}"></image>
+                </view>
+            </view>
+            <view class="sort_bottom">
+                <view bindtap="classifyType" class="classify_view_item font_si14 font_co333 {{publicIndex==-1?'font_co3b':''}}" data-id="target_id" data-index="-1">全部</view>
+                <view bindtap="classifyType" class="classify_view_item font_si14 font_co333 {{classifyIndex==index?'font_co3b':''}}" data-id="target_id{{index}}" data-index="{{index}}" wx:for="{{Wpost}}" wx:key="{{index}}">{{item.hj_name}}</view>
+            </view>
+        </view>
+        <scroll-view scrollLeft scrollX class="classify_scroll" scrollIntoView="{{into_target_id}}" scrollWithAnimation="true">
+            <view bindtap="classifyType" class="classify_view_item font_si14 font_co333 {{classifyIndex==-1?'font_co3b':''}}" data-index="-1" id="target_id">全部</view>
+            <view bindtap="classifyType" class="classify_view_item font_si14 font_co333 {{classifyIndex==index?'font_co3b':''}}" data-index="{{index}}" id="target_id{{index}}" wx:for="{{Wpost}}" wx:key="{{index}}">{{item.hj_name}}</view>
+        </scroll-view>
+        <view bindtap="changeBtn" class="up_view">
+            <image class="up_img" src="{{upFlag?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wxsj1.png?sign=74e475af8807da5029d04147e66f0271&t=1592017948':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wxsj1.png?sign=177d77d2aa1edf3794110170058d9c72&t=1592017921'}}"></image>
+        </view>
+    </view>
+    <view class="classify_view" wx:if="{{currenttype==3}}">
+        <view class="sort {{upFlag?'short_down':'short_up'}}">
+            <view class="sort_top">
+                <view class="font_si16 font_co666">全部分类</view>
+                <view bindtap="changeBtn" class="sort_top_view">
+                    <image class="up_img" src="{{upFlag?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wxsj1.png?sign=74e475af8807da5029d04147e66f0271&t=1592017948':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wxsj1.png?sign=177d77d2aa1edf3794110170058d9c72&t=1592017921'}}"></image>
+                </view>
+            </view>
+            <view class="sort_bottom">
+                <view bindtap="publicType" class="classify_view_item font_si14 font_co333 {{publicIndex==-1?'font_co3b':''}}" data-id="all" data-index="-1">全部</view>
+                <view bindtap="publicType" class="classify_view_item font_si14 font_co333 {{publicIndex==index?'font_co3b':''}}" data-id="all{{index}}" data-index="{{index}}" wx:for="{{Wpost}}" wx:key="{{index}}">{{item.hj_name}}</view>
+            </view>
+        </view>
+        <scroll-view scrollLeft scrollX class="classify_scroll" scrollIntoView="{{into_id}}" scrollWithAnimation="true">
+            <view bindtap="publicType" class="classify_view_item font_si14 font_co333 {{publicIndex==-1?'font_co3b':''}}" data-index="-1" id="all">全部</view>
+            <view bindtap="publicType" class="classify_view_item font_si14 font_co333 {{publicIndex==index?'font_co3b':''}}" data-index="{{index}}" id="all{{index}}" wx:for="{{Wpost}}" wx:key="{{index}}">{{item.hj_name}}</view>
+        </scroll-view>
+        <view bindtap="changeBtn" class="up_view">
+            <image class="up_img" src="{{upFlag?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wxsj1.png?sign=74e475af8807da5029d04147e66f0271&t=1592017948':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/wxsj1.png?sign=177d77d2aa1edf3794110170058d9c72&t=1592017921'}}"></image>
+        </view>
+    </view>
+</view>
+<view style="height: 304rpx;" wx:if="{{currenttype!=2}}"></view>
+<view style="height: 224rpx;" wx:if="{{currenttype==2}}"></view>
+<scroll-view scrollY bindscrolltolower="getMore" class="scroll_view">
+    <view bindtap="getSaid" class="classify_list" data-index="{{index}}" wx:if="{{currenttype!=2}}" wx:for="{{hjlist}}" wx:key="{{index}}">
+        <view class="classify_list_left">
+            <view class="font_co333 font_si18 text-overflow classify_list_left_top">{{item.h_title}}</view>
+            <view class="classify_list_left_bottom font_si12 font_co999">
+                <text>{{item.h_admin}}</text>
+                <text class="classify_list_time">{{item.sfbtime}}</text>
+            </view>
+        </view>
+        <view class="classify_list_img_view classify_list_img">
+            <image class="classify_list_img" src="{{item.h_pic}}"></image>
+            <view class="classify_list_img_view_absolute classify_list_img" wx:if="{{item.eduType==2}}">
+                <image class="vd_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/vd.png?sign=c0033889be3edf68b90613cbd6ba4769&t=1592017967"></image>
+            </view>
+        </view>
+    </view>
+    <view bindtap="getSaid" class="classify_list" data-index="{{index}}" wx:if="{{currenttype==2}}" wx:for="{{classifyList}}" wx:key="{{index}}">
+        <view class="classify_list_left">
+            <view class="font_co333 font_si18 text-overflow classify_list_left_top">{{item.title}}</view>
+            <view class="classify_list_left_bottom font_si12 font_co999">
+                <text>{{item.collectAuthor}}</text>
+                <text class="classify_list_time">{{item.collectDayTime}}</text>
+                <text>{{item.collectModule}}</text>
+            </view>
+        </view>
+        <view class="classify_list_img_view classify_list_img">
+            <image class="classify_list_img" src="{{item.coverImg}}"></image>
+            <view class="classify_list_img_view_absolute classify_list_img" wx:if="{{item.collectType==2}}">
+                <image class="vd_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/vd.png?sign=c0033889be3edf68b90613cbd6ba4769&t=1592017967"></image>
+            </view>
+        </view>
+    </view>
+    <view class="loading_view" hidden="{{loadingBoo}}">
+        <text class="font_co999 font_si14">加载中...</text>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBoo}}">没有更多了~</view>
+</scroll-view>
+<view style="height: 400rpx; line-height: 400rpx; text-align: center; color: #666; font-size: 32rpx;" wx:if="{{noClassifyFlag}}">暂无宣教</view>
+<view bindtap="changeBtn" class="mask_view" wx:if="{{upFlag}}"></view>

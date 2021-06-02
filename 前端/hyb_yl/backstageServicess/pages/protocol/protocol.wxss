@@ -1,0 +1,33 @@
+page {
+    background-color: #fff;
+}
+
+.top {
+    padding-top: 20px;
+    text-align: center;
+    font-size: 40rpx;
+    color: #333;
+}
+
+.rule_list {
+    margin-top: 50rpx;
+    padding: 0 40rpx;
+    box-sizing: border-box;
+}
+
+.rule_list_title {
+    font-size: 18px;
+    color: #333;
+    padding-bottom: 4rpx;
+}
+
+.rule_list_content {
+    font-size: 15px;
+    color: #555;
+    margin-top: 20rpx;
+    line-height: 44rpx;
+}
+
+.scrollView {
+    max-height: 99.9vh;
+}

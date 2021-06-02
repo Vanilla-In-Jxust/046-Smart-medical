@@ -1,0 +1,32 @@
+<view class="searchresult">
+    <view bindtap="doctoritem" class="yishneginfo" data-id="{{item.id}}" style="padding: 25rpx;" wx:for="{{list}}" wx:key="d">
+        <view class="info-img">
+            <image src="{{item.team.thumb}}"></image>
+        </view>
+        <view class="userinfo-body">
+            <view class="doctor-info">
+                <text class="doctor-name">{{item.team.title}}</text>
+                <text class="doctor-section">{{item.team.zhicheng}}</text>
+                <text class="doctor-types">{{item.team.c_name}}</text>
+            </view>
+            <view class="doctor-hospital">
+                <text class="doctor-section-info">{{item.team.keshi}}</text>
+                <text class="doctor-hosptial-name">{{item.team.jigou}}</text>
+            </view>
+            <view class="doctor-tags">
+        擅长：<block wx:for="{{item.team.label}}" wx:for-item="items" wx:key="{{items}}">{{items}}</block>
+            </view>
+            <view class="doctor-answer-star">
+                <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/start.png?sign=52d220e823e6a7244aea95c9381af7f9&t=1591684393"></image>
+                <view class="doctor-star">{{item.score}}</view>
+                <view class="answer-count">月回答{{item.team.xn_answer}}</view>
+                <view class="prescription-count"> 月处方{{item.team.xn_chufang}} </view>
+                <view class="reply-time-str">{{item.team.times}}分钟响应</view>
+            </view>
+            <view class="doctor-list-btns">
+                <view bindtap="teamdetail" data-tid="{{item.tid}}" data-title="{{item.team.title}}">查看团队</view>
+                <view bindtap="renewpay" data-oid="{{item.id}}" data-tid="{{item.tid}}">续签</view>
+            </view>
+        </view>
+    </view>
+</view>

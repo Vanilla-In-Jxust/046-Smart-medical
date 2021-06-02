@@ -1,0 +1,12 @@
+<view>
+    <view bindtap="speackdetail" class="speackList" data-index="{{index}}" data-yisid="{{item.yisid}}" wx:for="{{arr}}" wx:key="index">
+        <view class="quesCont">{{item.ystext}}</view>
+        <view class="doctorbox">
+            <view class="doctor_left">
+                <image class="doctorHead" src="{{item.z_thumbs}}"></image>
+                <text class="doctorName">{{item.z_name}}</text>
+                <text class="docorType">{{item.z_zhicheng}}{{item.z_zhiwu}}</text>
+            </view>
+        </view>
+    </view>
+</view>

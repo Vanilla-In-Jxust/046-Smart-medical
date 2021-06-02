@@ -1,0 +1,45 @@
+<view class="elsemess">
+    <view class="servepackage">
+        <image src="../../../images/touxiang.png"></image>
+        <view class="servepackageinfo">
+            <view class="info-top">
+                <view>
+                    <text>慧云</text>
+                    <text>主治医师</text>
+                </view>
+                <view>￥69</view>
+            </view>
+            <view class="info-bott">三甲主治以上医生接诊 泌尿外科</view>
+            <view class="tags">
+                <view class="tag">可开处方</view>
+                <view class="tag">专业审核优秀</view>
+            </view>
+        </view>
+    </view>
+    <view class="elsegroup youhui">
+        <view>优惠方式</view>
+        <view>问诊代金券-新人专享 8元</view>
+    </view>
+    <view class="elsegroup">
+        <view>回复时间</view>
+        <view>预计3小时内回复，超过24小时自动退款</view>
+    </view>
+    <view bindtap="radioChange" class="radios">
+        <radio checked="{{argeen}}" color="#0087E0">
+            <text>我确认遵守<text style="color:#0087E0;">《问诊协议》</text>
+            </text>
+        </radio>
+    </view>
+    <view class="footpay">
+        <view class="payandtotal">
+            <view>
+                <view>
+                    <text>合计:</text>
+                    <text>￥61.00</text>
+                </view>
+                <view class="jihui">(含2次问诊机会)</view>
+            </view>
+            <view bindtap="paybtn">立即支付</view>
+        </view>
+    </view>
+</view>

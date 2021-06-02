@@ -1,0 +1,16 @@
+<view class="all">
+    <text class="question">{{keywords=='dianhuawenzhen'||keywords=='yuanchengwenzhen'?'你能接受这个通话等待时长吗？':'你能接受这个等待时长吗？'}}</text>
+    <view class="title">
+        <view class="biao"></view>
+        <text wx:if="{{keywords=='dianhuawenzhen'||keywords=='yuanchengwenzhen'}}">80%患者在<text style="color:#ff7700">24小时内</text>和李秀清医生通上话</text>
+        <text wx:else>医生在<text style="color:#ff7700">2小时</text>之内回复您</text>
+    </view>
+    <view class="btn">
+        <button plain catchtap="naviter" data-index="0">
+      不接受
+    </button>
+        <button catchtap="naviter" data-index="1">
+      接受，提交问题
+    </button>
+    </view>
+</view>

@@ -1,0 +1,232 @@
+<view style="background:#F5F5F5;">
+    <view class="step-bar-box">
+        <view class="fixed">
+            <view class="bg-white">
+                <view class="step-bar">
+                    <view class="step-item-box">
+                        <view bindtap="stepTab" class="step-item step-item0" data-index="0">
+                            <image class="step-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/fenyuan-active.svg?sign=fdd62637391665440245bf372899f9bc&t=1574217435"></image>
+                            <text class="step-tip step-tip-high">选择分院</text>
+                        </view>
+                        <view bindtap="stepTab" class="step-item step-item2" wx:if="{{proIndex==1||proIndex==2}}">
+                            <image class="step-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/addon-active.svg?sign=52b41df72612630aa23b5847724bf124&t=1574825385"></image>
+                            <image class="icon_arrow_right" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/arrow-right-active.svg?sign=7fe9ecaa7c8fdbb624749a85d7984d78&t=1574825438"></image>
+                            <text class="step-tip" style="color:#FD9238">选择加项</text>
+                        </view>
+                        <view bindtap="stepTab" class="step-item step-item2" wx:else>
+                            <image class="step-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/addon.svg?sign=1584757d976d27b0c96474cd693dbfc4&t=1574217495"></image>
+                            <image class="icon_arrow_right" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/arrow-right.svg?sign=40a04f6fc607bfb62d78e93f246d4abe&t=1574217468"></image>
+                            <text class="step-tip">选择加项</text>
+                        </view>
+                        <view bindtap="stepTab" class="step-item step-item2" wx:if="{{proIndex==2}}">
+                            <image class="icon_arrow_right" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/arrow-right-active.svg?sign=7fe9ecaa7c8fdbb624749a85d7984d78&t=1574825438"></image>
+                            <image class="step-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/confirm-active.svg?sign=4add5754331e717e9cdfb8af6c8e71f4&t=1574826374"></image>
+                            <text class="step-tip" style="color:#FD9238">确认信息</text>
+                        </view>
+                        <view bindtap="stepTab" class="step-item step-item2" data-index="2" wx:else>
+                            <image class="icon_arrow_right" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/arrow-right.svg?sign=40a04f6fc607bfb62d78e93f246d4abe&t=1574217468"></image>
+                            <image class="step-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/confirm.svg?sign=e5d7b46f235c13cd3ed11f2f3a1f7d3a&t=1574217481"></image>
+                            <text class="step-tip">确认信息</text>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="bg-white" wx:if="{{proIndex==0}}">
+                <view bindtap="chooseCityTab" class="org bold">
+                    <text>{{cityname?cityname:bm[0].city.name}}</text>
+                    <image class="arrow_gray_right" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/ic_arrow_gray_right2x.png?sign=ad6ca86f9006e4594af16072288e09d4&t=1574217409"></image>
+                </view>
+                <view bindtap="goToCheckItemsDetail" class="org">
+                    <text>共{{count}}项检查项目</text>
+                    <text></text>
+                    <image class="arrow_gray_right" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/ic_arrow_gray_right2x.png?sign=ad6ca86f9006e4594af16072288e09d4&t=1574217409"></image>
+                </view>
+            </view>
+            <view class="bg-white" wx:if="{{proIndex==1}}">
+                <view class="org bold" style="font-size:28rpx;">
+                    <text>{{agentname}}</text>
+                </view>
+                <view bindtap="goToCheckItemsDetail" class="org">
+                    <text>共{{count}}项检查项目</text>
+                    <text></text>
+                    <image class="arrow_gray_right" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/ic_arrow_gray_right2x.png?sign=ad6ca86f9006e4594af16072288e09d4&t=1574217409"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view>
+        <view wx:if="{{proIndex==0}}">
+            <view class="schedule">
+                <view class="schedule-bar fixed">
+                    <view class="schedule-box">
+                        <view bindtap="calenderOpen" class="calender">
+                            <image class="calender-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/ic_calender2x.png?sign=87658e4e660298da5595f3435344c5c2&t=1574217378"></image>
+                            <view class="calender-text">全部日期</view>
+                        </view>
+                        <scroll-view class="schedule-scroll" scrollLeft="0" scrollX="true" wx:if="{{!typeindex}}">
+                            <view class="date-list">
+                                <block wx:for="{{list_wedate}}" wx:key="key">
+                                    <view class="line" style="left:{{item.num}}px" wx:if="{{item.active?'active':''}}"></view>
+                                    <view bindtap="changeDate" class="date-item {{item.active?'active':''}}" data-choose-date="{{item.time}}-{{item.date}}" data-cityid="{{cityid}}" data-index="{{index}}"> {{item.week}}{{item.date}} </view>
+                                </block>
+                            </view>
+                        </scroll-view>
+                        <scroll-view class="schedule-scroll" scrollLeft="0" scrollX="true" wx:if="{{typeindex}}">
+                            <view class="date-list">
+                                <view class="line" style="left:{{item.num}}px" wx:if="{{item.active?'active':''}}"></view>
+                                <view class="date-item active" data-choose-date="{{item.time}}-{{item.date}}" data-index="{{index}}"> {{week}}{{time}} </view>
+                                <view bindtap="changeDateweek" class="date-item" data-choose-date="{{item.time}}-{{item.date}}" data-index="{{index}}"> 最近一周</view>
+                            </view>
+                        </scroll-view>
+                    </view>
+                </view>
+            </view>
+            <view class="hos">
+                <view class="hos-item" wx:for="{{listcity}}" wx:key="key">
+                    <view class="hos-title-box">
+                        <view class="hos-name">{{item.agentname}}</view>
+                    </view>
+                    <view class="hos-address"> {{item.xxaddress}} </view>
+                    <view class="hos-foot-box">
+                        <view>
+                            <text class="hos-price">¥{{filters.fixed(money)}}</text>
+                            <text class="hos-degree hos-distance-degree">已约79%</text>
+                        </view>
+                        <view bindtap="goAddon" class="hos-btn" data-agentname="{{item.agentname}}" data-hid="{{item.hid}}"> 下一步 </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="add-package" wx:if="{{proIndex==1}}">
+            <view class="notice">
+                <view>
+                    <image role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/notice.png?sign=b70fbcf22b0d14878d30567073577c65&t=1574825479"></image>
+                    <text>您可根据自身需求，自愿选择加项。</text>
+                </view>
+            </view>
+            <view class="packages-name">
+                <text>通用加项包</text>
+            </view>
+            <view class="add-package-list">
+                <view class="content" wx:for="{{addPackageList}}" wx:key="addPackageId">
+                    <view class="package-title" wx:if="{{item.y_msg}}">
+                        <view class="package-name">{{item.y_msg}}</view>
+                    </view>
+                    <view class="package-content">
+                        <checkbox-group class="checkbox-group">
+                            <label bindtap="handleTapView" class="checkbox {{index==item.items.length-1?'last-checkbox':''}}" data-add-package-id="{{item.addPackageId}}" data-index="{{index}}" data-page-type="1">
+                                <view class="df">
+                                    <checkbox checked="{{item.checked}}" value="{{subItem.itemCode}}"></checkbox>
+                                    <text class="checkbox-text">{{item.title}}</text>
+                                    <view catchtap="showInfo" data-item-intro="{{subItem.itemIntro}}" data-item-name="{{subItem.itemName}}">
+                                        <image mode="scaleToFill" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/ic_inform_gray2x.svg?sign=6960e5fd3a3dc9d3ae7c8e4e3fe9399a&t=1574825684"></image>
+                                    </view>
+                                </view>
+                                <view class="price">￥{{item.price}}</view>
+                            </label>
+                        </checkbox-group>
+                    </view>
+                </view>
+            </view>
+            <view class="bottom tip1">
+                <view class="bottom-box">
+                    <view bindtap="goPre" class="bottom-btn">上一步</view>
+                    <view class="bottom-text">
+                        <view>
+                            <view class="price">
+                总计：
+                <text class="text-unit">{{filters.fixed(zmoney)}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="goNext" class="bottom-btn">下一步</view>
+                </view>
+            </view>
+        </view>
+        <view class="appoint" wx:if="{{proIndex==2}}">
+            <view style="background:#fff;">
+                <view bindtap="chooseContact" class="choose-contact">
+                    <image class="contact-icon" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E4%BD%93%E6%A3%80icon/order_ic_add.png?sign=43289ad22b5de5ebe13649091d1d4fa7&t=1574838090"></image>
+                    <text>选择体检人</text>
+                </view>
+                <view class="form-row name">
+                    <view class="form-row-label">体检人</view>
+                    <view class="form-row-content">
+                        <input class="input" data-key="name" disabled="true" name="name" placeholder="请输入体检人姓名" placeholderClass="placeholdeColor" value="{{names}}"> 请输入体检人姓名
+            </input>
+                    </view>
+                </view>
+                <view class="form-row sex">
+                    <view class="form-row-label">性别</view>
+                    <view class="form-row-content">
+                        <radio-group class="radio_box" data-key="sex" name="sex" role="radiogroup">
+                            <label ariaChecked="false" ariaDisabled="false" class="radio_box" data-sex="男" role="checkbox" style="margin-right:24rpx">
+                                <checkbox ariaChecked="false" ariaDisabled="false" checked="{{sex=='男'?'checked':''}}" disabled="true" role="checkbox" value="男"></checkbox>
+                男
+              </label>
+                            <label ariaChecked="false" ariaDisabled="false" class="radio_box" data-sex="女" role="checkbox">
+                                <checkbox ariaChecked="false" ariaDisabled="false" checked="{{sex=='女'?'checked':''}}" disabled="true" role="checkbox" value="女"></checkbox>
+                女
+              </label>
+                        </radio-group>
+                    </view>
+                </view>
+                <view class="form-row">
+                    <view class="form-row-label">手机号</view>
+                    <view class="form-row-content">
+                        <input class="input" data-key="mobile" disabled="true" maxlength="11" name="mobile" placeholder="请输入手机号" placeholderClass="placeholdeColor" type="number" value="{{tel}}"> 请输入手机号
+            </input>
+                    </view>
+                </view>
+                <view class="form-row">
+                    <view class="form-row-label">身份证</view>
+                    <view class="form-row-content">
+                        <input class="input" data-key="id_number" disabled="true" name="id_number" placeholder="请输入身份证号" placeholderClass="placeholdeColor" type="idcard" value="{{numcard}}"> 请输入身份证号
+            </input>
+                    </view>
+                </view>
+            </view>
+            <view class="addmess">
+                <view class="addressbox">{{agentname}}</view>
+                <view class="orderTime">
+                    <text>{{time_in}}</text>
+                </view>
+            </view>
+            <view class="addmess">
+                <view class="discounts" wx:for="{{arr}}" wx:key="*this">
+                    <view>{{item.itemName}}</view>
+                    <view class="price">￥
+            <text>{{filters.fixed(item.itemprice)}}</text>
+                    </view>
+                </view>
+                <view class="discounts" wx:for="{{addproject}}" wx:key="*this">
+                    <view>{{item.title}}</view>
+                    <view class="price">￥
+            <text>{{filters.fixed(item.price)}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="bottom tip1">
+                <view class="bottom-box">
+                    <view bindtap="goPre" class="bottom-btn">上一步</view>
+                    <view class="bottom-text">
+                        <view>
+                            <view class="price">
+                总计：
+                <text class="text-unit">{{filters.fixed(zmoney)}}</text>
+                            </view>
+                        </view>
+                    </view>
+                    <view bindtap="nowpay" class="bottom-btn" data-money="{{filters.fixed(zmoney)}}">立即支付</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:if="{{showCalendar}}">
+    <view catchtap="closeMask" class="maskbox"></view>
+    <view class="calendar-box" hidden="{{showCanlendar}}">
+        <calendar bind:select="select" id="calendar" showCalendar="{{showCalendar}}" wx:if="{{showCalendar}}"></calendar>
+    </view>
+</view>
+<wxs module="filters" src="../../../../../../utils/filter.wxs" />

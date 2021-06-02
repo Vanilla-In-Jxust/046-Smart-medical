@@ -1,0 +1,131 @@
+page {
+    background: #f2f3f7;
+}
+
+.intro_head_head {
+    overflow: hidden;
+    display: flex;
+    padding-top: 38rpx;
+    padding-bottom: 38rpx;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.doc_view {
+    flex: 1;
+}
+
+.more_img {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 25rpx;
+    margin-top: 36rpx;
+}
+
+.doc_name {
+    display: flex;
+    padding-right: 30rpx;
+}
+
+.dco_img {
+    height: 100rpx;
+    width: 100rpx;
+    border-radius: 50%;
+    margin-left: 36rpx;
+    margin-right: 30rpx;
+}
+
+.offices {
+    margin: 10rpx 0rpx 5rpx 0;
+}
+
+.offices_text {
+    margin-left: 20rpx;
+}
+
+.job_text {
+    margin-right: 10rpx;
+}
+
+.intro_content {
+    padding-left: 30rpx;
+}
+
+.details_head {
+    padding: 40rpx 0 30rpx;
+}
+
+.details_head_content {
+    padding-top: 20rpx;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+.center_view {
+    padding: 15rpx 20rpx;
+    border-radius: 4rpx;
+    background-color: #fafafa;
+    margin-right: 20rpx;
+    margin-top: 20rpx;
+}
+
+.details_head_bg {
+    border-top: 1rpx solid #f0f0f0;
+    padding-right: 30rpx;
+    padding-top: 26rpx;
+}
+
+.signingContract {
+    display: flex;
+    padding: 0 30rpx;
+    align-items: center;
+    height: 80rpx;
+}
+
+.signingContract view {
+    flex: 1;
+}
+
+.per_number {
+    margin-left: 20rpx;
+}
+
+.sitting_view {
+}
+
+.sitting_image {
+    height: 50rpx;
+    width: 50rpx;
+    margin: 0 30rpx 0 0;
+}
+
+.padding {
+    padding: 0 20rpx;
+    background: #ffffff;
+}
+
+.Yes {
+    background: #3b4ca9;
+    color: #ffffff;
+    border-radius: 92rpx;
+    border: none;
+    font-size: 30rpx;
+}
+
+.distance {
+    display: flex;
+    align-items: center;
+    padding-right: 20rpx;
+    box-sizing: border-box;
+}
+
+.distance image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.distance text {
+    font-size: 24rpx;
+    padding-left: 10rpx;
+    box-sizing: border-box;
+}

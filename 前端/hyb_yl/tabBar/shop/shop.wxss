@@ -1,0 +1,506 @@
+page {
+    padding-bottom: 110rpx;
+}
+
+page {
+    width: 100%;
+    background: #f5f5f5;
+}
+
+.oval {
+    padding: 0rpx 25rpx;
+}
+
+.searchbox {
+    padding: 20rpx 30rpx;
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.searchView {
+    display: flex;
+    background: rgba(255,255,255,0.3);
+    color: #fff;
+    height: 60rpx;
+    border-radius: 40rpx;
+    justify-content: space-between;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    align-items: center;
+}
+
+.searchView input {
+    height: 100%;
+    line-height: 60rpx;
+    width: 100%;
+    margin-left: 20rpx;
+}
+
+.place {
+    font-size: 26rpx;
+    color: #999;
+}
+
+.searchbtn {
+    font-size: 20rpx;
+    padding-top: 15rpx;
+}
+
+.mallSwiper {
+    width: 100%;
+    height: 375rpx;
+    background: #f5f5f5;
+    border-radius: 20rpx;
+}
+
+.swiperImg {
+    width: 100%;
+    height: 100%;
+}
+
+.commtypebox {
+    padding: 45rpx 0rpx;
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.commtype {
+    flex: 1rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 30rpx;
+}
+
+.food_type_img {
+    width: 98rpx;
+    height: 98rpx;
+    background: #f5f5f5;
+    border-radius: 50%;
+    margin-bottom: 10rpx;
+}
+
+.commText {
+    font-size: 24rpx;
+    color: #333;
+}
+
+.featureTilte {
+    display: flex;
+    justify-content: space-between;
+    margin: 30rpx 0rpx;
+}
+
+.titleLeft {
+    font-weight: bold;
+    font-size: 35rpx;
+    color: #333333;
+}
+
+.titleRight {
+    font-size: 24rpx;
+    color: #999;
+    display: flex;
+    line-height: 50rpx;
+    justify-content: center;
+}
+
+.arrowImg {
+    width: 12rpx;
+    height: 20rpx;
+    margin-top: 15rpx;
+    margin-left: 10rpx;
+}
+
+.shopbox {
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+}
+
+.shoplist {
+    width: 48.5%;
+    margin-bottom: 25rpx;
+    border-radius: 10rpx;
+    background: #fff;
+}
+
+.navigator-hover {
+    opacity: 1;
+}
+
+.shopImg {
+    height: 310rpx;
+    background: #ebebeb;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.shopImg image {
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 10rpx;
+    border-top-right-radius: 10rpx;
+}
+
+.shopIntr {
+    padding: 20rpx 25rpx 20rpx;
+}
+
+.shopName {
+    font-size: 30rpx;
+    color: #333;
+    font-weight: bold;
+    height: 90rpx;
+}
+
+.shopPirce {
+    display: flex;
+    flex-direction: row;
+    color: #fa2828;
+    justify-content: space-between;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+}
+
+.block {
+    margin: 0 auto;
+}
+
+.slider,.slider image,.slider swiper,navigator .silder swiper-item {
+    width: 100%;
+    height: 360rpx;
+}
+
+.slider image {
+    transform: scale(0);
+    transform-origin: center;
+    animation: scale 0.8s linear forwards;
+}
+
+swiper .wx-swiper-dot {
+    width: 10rpx;
+    display: inline-flex;
+    height: 10rpx;
+    justify-content: space-between;
+}
+
+.header {
+    background-color: #fff;
+    width: 100%;
+    height: 240rpx;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.header_view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+.header_img {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.header_text {
+    font-size: 24rpx;
+    color: #333;
+    margin-top: 18rpx;
+}
+
+.new_product {
+    text-align: center;
+    font-size: 36rpx;
+    justify-content: center;
+    align-items: center;
+    padding: 24rpx 0;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.product_line {
+    width: 20rpx;
+    height: 1rpx;
+    background-color: #999;
+}
+
+.new_product text {
+    margin: 0 20rpx;
+}
+
+.product {
+    padding: 0 30rpx 30rpx 30rpx;
+}
+
+.product_view {
+    margin-bottom: 30rpx;
+    box-shadow: 7rpx 10rpx 13rpx rgba(0,0,0,0.1);
+    border-radius: 24rpx;
+}
+
+.product_img {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 24rpx 24rpx 0 0;
+}
+
+.product_img image {
+    display: block;
+    width: 690rpx;
+    height: 360rpx;
+    border-radius: 24rpx 24rpx 0 0;
+    transform: scale(0);
+    transform-origin: center;
+    animation: scale 0.8s linear forwards;
+}
+
+@-webkit-keyframes scale {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes scale {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.product_message {
+    box-sizing: border-box;
+    padding: 24rpx 24rpx 30rpx 24rpx;
+    background-color: #fff;
+    border-radius: 0 0 24rpx 24rpx;
+}
+
+.product_message .pro_name {
+    line-height: 20px;
+    font-size: 32rpx;
+    color: #333;
+}
+
+.product_message .pro_describe {
+    font-size: 24rpx;
+    line-height: 22px;
+    color: #999;
+    height: 100rpx;
+    overflow: hidden;
+}
+
+.product_message .pro_in {
+    padding-top: 10rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product_message .pro_in .price {
+    font-weight: 600;
+    font-size: 28rpx;
+}
+
+.product_message .pro_in .sales {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.other-navigator-hover {
+    background-color: #fff;
+}
+
+.shop_car_img {
+    width: 96rpx;
+    height: 92rpx;
+    position: fixed;
+    bottom: 80rpx;
+    right: 0rpx;
+    z-index: 1000;
+}
+
+.no_product {
+    line-height: 500rpx;
+    text-align: center;
+}
+
+.search_view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120rpx;
+    background-image: linear-gradient(0deg,#7587e6 0%,#3b4ca9 100%);
+    z-index: 10000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.search {
+    width: 690rpx;
+    height: 64rpx;
+    background-color: rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-radius: 20px;
+}
+
+.search input {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    box-sizing: border-box;
+    padding-left: 70rpx;
+}
+
+.placeholder {
+    color: #999999;
+}
+
+.search_img {
+    height: 28rpx;
+    width: 28rpx;
+    display: block;
+    margin: 0 20rpx;
+}
+
+.food_type {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 36rpx 10rpx 32rpx 10rpx;
+    margin: 0px auto;
+    width: 94%;
+    margin-top: 15rpx;
+    margin-bottom: 20rpx;
+    background-color: #fff;
+    justify-content: space-around;
+    border-radius: 10rpx;
+}
+
+.food_type_img_top {
+    margin-top: 26rpx;
+}
+
+.hot_food {
+    height: 96rpx;
+    line-height: 96rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid #f0f0f0;
+    font-size: 32rpx;
+    color: #333;
+    position: relative;
+}
+
+.hot_food image {
+    width: 300rpx;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hot_food text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+}
+
+.hot_food_list_view {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hot_food_list {
+    background-color: #fff;
+    border-bottom: 1rpx solid #f0f0f0;
+    padding: 0 30rpx;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.hot_border_right {
+    border-right: 1rpx solid #f0f0f0;
+}
+
+.hot_food_img {
+    width: 314rpx;
+}
+
+.hot_food_img {
+    width: 314rpx;
+    height: 314rpx;
+    display: block;
+    margin: 0 auto;
+}
+
+.hot_food_name {
+    font-size: 26rpx;
+    line-height: 32rpx;
+    color: #333;
+}
+
+.hot_price {
+    color: #eb3d34;
+}
+
+.hot_bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 6rpx;
+    margin-bottom: 30rpx;
+}
+
+.new_car_view {
+    position: fixed;
+    bottom: 100rpx;
+    left: 0;
+    z-index: 10000;
+}
+
+.new_car {
+    height: 80rpx;
+    width: 80rpx;
+    margin: 0 0 30rpx 30rpx;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+
+.hover {
+    text-align: center;
+    font-size: 24rpx;
+    color: #333;
+    line-height: 50rpx;
+}
+
+.foot {
+    width: 100%;
+    height: 120rpx;
+}

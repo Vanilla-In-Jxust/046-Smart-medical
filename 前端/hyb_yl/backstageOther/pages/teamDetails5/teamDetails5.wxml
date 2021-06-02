@@ -1,0 +1,13 @@
+<view class="xx"></view>
+<scroll-view bindscrolltolower="lower" scrollY="true" style="height:{{height}}px">
+    <view class="for">
+        <view bindtap="clicknav" class="groups_name" data-doctorId="{{item.doctorId}}" data-managerRole="{{item.managerRole}}" wx:for="{{managers}}" wx:key="{{ index }}">
+            <view class="sculpture">
+                <image class="img" src="{{item.userIcon}}"></image>
+            </view>
+            <view class="occupation" style="{{managerspostArrColor[index]}};">{{managerspostArr1[index]}}</view>
+            <view class="occupation_name">{{item.doctorName}}</view>
+            <view class="groups_logo" style="{{managerspostArrColor1[index]}};">{{managerspostArr[index]}}</view>
+        </view>
+    </view>
+</scroll-view>

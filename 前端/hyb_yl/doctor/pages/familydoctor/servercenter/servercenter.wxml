@@ -1,0 +1,106 @@
+<view class="temadnames">
+    <view>{{info.title}}</view>
+    <image src="{{info.advertisement}}"></image>
+</view>
+<view class="temadzhicheng">
+    <view class="temadzhicheng-left">
+        <view>最高医务职称 {{info.zhicheng}}</view>
+        <view>
+            <text></text>{{info.c_name}}</view>
+    </view>
+    <view bindtap="collect" class="temadzhicheng-right">{{collect?'已关注':'关注'}}</view>
+</view>
+<view class="shanchangtext">{{info.content}}</view>
+<view class="positive">
+    <view>
+        <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/start.png?sign=2781e5cba6de637a561ef961e73f54eb&t=1591782293" wx:for="{{item.score}}"></image>
+        <text>{{info.score}}</text>
+    </view>
+    <view>
+        <text>{{info.times}}</text>
+        <text>分钟响应</text>
+    </view>
+    <view>
+        <text>{{info.xn_answer}}</text>
+        <text>月回答</text>
+    </view>
+    <view>
+        <text>{{info.xn_chufang}}</text>
+        <text>月处方</text>
+    </view>
+</view>
+<view bindtap="teamlist" class="teamgroup {{update?'groupup':'groupdow'}}">团队成员</view>
+<view class="searchresult" wx:if="{{update}}">
+    <view bindtap="doctoritem" class="yishneginfo" wx:for="{{info.zhuanjia}}" wx:key="d">
+        <view class="info-img">
+            <image src="{{item.advertisement}}"></image>
+        </view>
+        <view class="userinfo-body">
+            <view class="doctor-info">
+                <text class="doctor-name">{{item.z_name}}</text>
+                <text class="doctor-section">{{item.zhicheng}}</text>
+            </view>
+            <view class="doctor-hospital">
+                <text class="doctor-section-info">{{item.keshis}}</text>
+                <text class="doctor-hosptial-name">{{item.jigou}}</text>
+            </view>
+            <view class="doctor-tags">
+        擅长：{{item.authority}}
+      </view>
+            <view class="doctor-answer-star">
+                <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/start.png?sign=2781e5cba6de637a561ef961e73f54eb&t=1591782293" wx:for="{{item.score}}"></image>
+                <view class="doctor-star">{{item.score}}</view>
+                <view class="answer-count">月回答{{item.xn_reoly}}</view>
+                <view class="prescription-count"> 月处方{{item.xn_cf}} </view>
+                <view class="reply-time-str">{{item.xytime}}分钟响应</view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="servebox">服务包</view>
+<view class="scrollBox">
+    <scroll-view scrollX class="scroll-view">
+        <view bindtap="askdoctor" class="scroll-item" data-hyzhuiw="{{item.hyzhuiw}}" data-key_words="{{item.key_words}}" data-money="{{info.vip?item.hymoney:item['ptmoney']}}" data-num="0" data-ptzhuiw="{{item.ptzhuiw}}" data-time_leng="{{item.time_leng}}" data-url="{{item.url}}&tid={{id}}" data-zid="{{info['id']}}" wx:for="{{info.server}}">
+            <view class="scroll-itembox">
+                <image src="{{item.icon}}"></image>
+                <view class="wenzhenbao">
+                    <view>{{item.info.ftitle}}</view>
+                    <view>
+                        <rich-text nodes="{{item.server_content}}"></rich-text>
+                    </view>
+                    <view>￥{{info.vip?item.hymoney:item['ptmoney']}}</view>
+                </view>
+            </view>
+        </view>
+    </scroll-view>
+</view>
+<view class="servebox">擅长方向</view>
+<view class="question-tabs">
+    <view class="question-tabs-item" wx:for="{{info.label}}" wx:key="q">{{item}}</view>
+</view>
+<view class="evaluate">
+    <view class="evaluateitem" wx:for="{{pingjia}}">
+        <view class="question-tit">
+            <image class="userhead" src="{{item.u_thumb}}"></image>
+            <view>{{item.u_name}}</view>
+        </view>
+        <text class="public-question-content">{{item.content}}</text>
+        <view class="public-question-count">{{item.created}}</view>
+    </view>
+</view>
+<view class="more" wx:if="{{pingjia.length>10}}">
+    <view bindtap="more" class="more-nav"> 更多问题 </view>
+</view>
+<view class="fixedfoot">
+    <view class="posfix">
+        <view bindtap="navicate">
+            <image mode="aspectFit" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/index_hover.png?sign=aca92de1d718d91eecaf7083ee3c671c&t=1590657257"></image>
+            <text>首页</text>
+        </view>
+        <button ariaDisabled="false" hoverClass="none" openType="share" role="button">
+            <image mode="aspectFit" role="img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/%E6%96%B0%E7%89%88%E5%8C%BB%E7%96%97icon/share.png?sign=dcec55393ac23c52d0698d843f48b428&t=1590657300"></image>
+            <text>分享</text>
+        </button>
+    </view>
+    <view bindtap="team" class="clickbtn">点击签约{{info.title}}</view>
+</view>

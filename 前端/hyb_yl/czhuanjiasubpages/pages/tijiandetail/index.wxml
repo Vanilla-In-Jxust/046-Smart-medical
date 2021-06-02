@@ -1,0 +1,43 @@
+<view class="all_one" wx:if="{{all_num==0||all_num==4}}">
+    <view class="one">
+        <view class="sign">
+            <text class="sign_l">医生姓名</text>
+            <text class="sign_r">{{z_name}}</text>
+        </view>
+        <view class="sign">
+            <text class="sign_l">订单名称</text>
+            <text class="sign_r">{{name}}</text>
+        </view>
+        <view class="sign">
+            <text class="sign_l">订单编号</text>
+            <text class="sign_r">{{order}}</text>
+        </view>
+        <view class="sign">
+            <text class="sign_l">患者姓名</text>
+            <text class="sign_r">{{usernames}}</text>
+        </view>
+    </view>
+    <view class="two">
+        <view class="sign">
+            <text class="signs_l">总价</text>
+            <text class="signs_r">￥{{money}}</text>
+        </view>
+        <view class="sign">
+            <text decode class="signs_l">优惠券&nbsp;&nbsp;<text style="color:#ed9a56;font-size:20rpx;">无可用</text>
+            </text>
+            <text style="margin-right:30rpx;color:#333">未使用</text>
+            <view class="arrow"></view>
+        </view>
+    </view>
+    <view class="state">
+        <view class="posfix">
+            <view class="posf_l">
+                <text>还需支付:</text>
+                <text>￥{{money}}</text>
+            </view>
+            <view class="posf_r">
+                <button bindgetuserinfo="onGotUserInfo" disabled="{{disableJoin}}" openType="getUserInfo" plain="true">去支付</button>
+            </view>
+        </view>
+    </view>
+</view>

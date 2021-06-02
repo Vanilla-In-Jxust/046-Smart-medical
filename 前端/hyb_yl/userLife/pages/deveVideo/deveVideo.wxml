@@ -1,0 +1,21 @@
+<view class="videobox">
+    <video controls danmuBtn enableDanmu class="" id="myVideo" src="{{detail.h_video}}"></video>
+</view>
+<view class="oval">
+    <view class="c3 hjTitle">{{detail.h_title}}</view>
+    <view class="doctorArr">
+        <image class="doctorImg" src="{{detail.h_pic}}"></image>
+        <view class="doctorRight">
+            <view class="df doctorIntr">
+                <view>李伟</view>
+                <view>主治医师</view>
+                <view>儿科</view>
+                <view>背景儿童医院</view>
+            </view>
+            <view class="df jcsb">
+                <view class="time">2020-02-05</view>
+                <view class="attention">关注</view>
+            </view>
+        </view>
+    </view>
+</view>

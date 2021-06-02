@@ -1,0 +1,317 @@
+view {
+    box-sizing: border-box;
+}
+
+page {
+    background: #f1f2f6;
+}
+
+.tab {
+    width: 100%;
+    height: 88rpx;
+    padding: 0 30rpx;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1rpx solid #e1e1e1;
+    background: #fff;
+}
+
+.tab .son {
+    width: 15%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+}
+
+.tab .active {
+    color: #0087E0;
+    border-bottom: 4rpx solid #0087E0;
+}
+
+.center1 {
+    width: 100%;
+    padding: 0 0 30rpx;
+    background: #f1f2f6;
+}
+
+.center1 .order {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 20rpx;
+    padding-left: 25rpx;
+}
+
+.center1 .order .header {
+    width: 100%;
+    border-bottom: 1rpx solid #ececec;
+    display: flex;
+    font-size: 30rpx;
+}
+
+.center1 .order .header .time {
+    width: 70%;
+    padding: 20rpx 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 30rpx;
+    color: #B9B9B9;
+    font-size: 24rpx;
+}
+
+.center1 .order .header .status {
+    width: 30%;
+    padding: 20rpx 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #4E525C;
+    font-weight: 700;
+}
+
+.center1 .order .header .status .del {
+    width: 42rpx;
+    height: 42rpx;
+    margin-left: 24rpx;
+}
+
+.center1 .order .header .nostatus {
+    width: 30%;
+    padding: 20rpx 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c2c1c6;
+}
+
+.center1 .load {
+    width: 100%;
+    background: #fff;
+    padding: 30rpx;
+    display: flex;
+}
+
+.center1 .car {
+    width: 10%;
+    height: 100%;
+    text-align: center;
+}
+
+.center1 .car image {
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.center1 .info {
+    width: 90%;
+    height: 100%;
+}
+
+.center1 .info .address {
+    width: 100%;
+    height: 60%;
+    font-size: 28rpx;
+    margin-bottom: 6rpx;
+}
+
+.center1 .info .time {
+    width: 100%;
+    height: 40%;
+    font-size: 26rpx;
+    display: flex;
+    align-items: center;
+}
+
+.center1 .goods {
+    width: 100%;
+    padding: 30rpx;
+    background: #fafafa;
+    display: flex;
+}
+
+.center1 .goods .good {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center1 .goods image {
+    width: 150rpx;
+    height: 150rpx;
+    display: block;
+}
+
+.center1 .goods .info {
+    width: 70%;
+    padding: 30rpx 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+    color: #4c4c4c;
+}
+
+.center1 .num {
+    width: 100%;
+    padding: 20rpx 30rpx;
+    padding-left: 0;
+    background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 30rpx;
+    border-top: 1rpx solid #F7F7F7;
+    border-bottom: 1rpx solid #F7F7F7;
+}
+
+.center1 .num .totalMoney {
+    color: #EA4646;
+}
+
+.center1 .operate {
+    width: 100%;
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    padding-left: 0;
+}
+
+.df_right {
+    background: #fff;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20rpx 30rpx;
+    padding-left: 0;
+}
+
+.shanchuBtn {
+    font-size: 26rpx;
+    color: #999;
+    width: 160rpx;
+    text-align: center;
+    padding: 10rpx 0;
+}
+
+.center1 .operate .son {
+    width: 160rpx;
+    padding: 10rpx 0;
+    font-size: 22rpx;
+    border: 1rpx solid #eeeeee;
+    border-radius: 10rpx;
+    margin-left: 14rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center1 .operate .again {
+    color: #ffa19a;
+    border: 1rpx solid #ffa19a;
+}
+
+.center1 .noOrder {
+    width: 100%;
+    background: #fff;
+    padding-bottom: 70rpx;
+}
+
+.center1 .noOrder .pic {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80rpx 0 20rpx 0;
+}
+
+.center1 .noOrder .pic image {
+    display: block;
+    width: 180rpx;
+    height: 200rpx;
+}
+
+.center1 .noOrder .no {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30rpx;
+    color: #959595;
+}
+
+.nonelist {
+    text-align: center;
+    padding-top: 200rpx;
+}
+
+.nonelist image {
+    margin-bottom: 20rpx;
+    width: 510rpx;
+    height: 230rpx;
+}
+
+.drupmes {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 25rpx;
+    padding-left: 0;
+}
+
+.drupmes-img {
+    width: 150rpx;
+    height: 150rpx;
+    border: 1rpx solid #FAFAFA;
+    text-align: center;
+}
+
+.drupmes-img image {
+    object-fit: contain;
+}
+
+.drupmesbox {
+    width: 75%;
+}
+
+.drupmes-mess {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10rpx;
+}
+
+.drupmes-mess view:first-child {
+    font-size: 26rpx;
+    color: #333;
+    font-weight: bold;
+}
+
+.state_text {
+    font-size: 26rpx;
+    color: #333;
+    text-align: right;
+}
+
+.drupmes-mess view:last-child {
+    font-size: 26rpx;
+    color: #454545;
+}
+
+.drupmes-site {
+    font-size: 26rpx;
+    color: #A1A1A1;
+    margin-bottom: 10rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.drupmes-price {
+    font-size: 34rpx;
+    color: #E83535;
+}

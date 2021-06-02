@@ -1,0 +1,156 @@
+.coupon-tab {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 88rpx;
+    font-size: 30rpx;
+    background: #fff;
+    border-bottom: 1rpx solid rgb(243,243,243);
+}
+
+.coupon-item {
+    position: relative;
+    text-align: center;
+    line-height: 88rpx;
+    width: 33.33%;
+    height: 100%;
+}
+
+.coupon-item-act {
+    color: #0087E0;
+}
+
+.coupon-item-act::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 110rpx;
+    height: 5rpx;
+    background: #0087E0;
+}
+
+.coupon-con {
+    padding: 30rpx;
+    background: #fff;
+}
+
+.coupon-con-item {
+    margin-bottom: 26rpx;
+    background: #fff;
+    box-shadow: 0 2rpx 10rpx rgb(230,230,230);
+    border-radius: 10rpx;
+    overflow: hidden;
+    color: rgb(53,53,53);
+}
+
+.cou-top {
+    padding: 0 30rpx 20rpx 30rpx;
+}
+
+.cou-t-tit {
+    margin-top: 20rpx;
+    margin-bottom: 15rpx;
+    font-size: 32rpx;
+}
+
+.cou-fh {
+    color: #ccc;
+    border-top: 10rpx solid #CCCCCC;
+}
+
+.cou-fhs {
+    color: #333;
+    border-top: 10rpx solid #0087E0;
+}
+
+.cou-t-lib {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cou-lib-l {
+    width: 540rpx;
+}
+
+.cou-lib-l>view {
+    margin-right: 15rpx;
+    margin-bottom: 18rpx;
+    font-size: 24rpx;
+    padding: 2rpx 8rpx;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cou-price {
+    display: flex;
+    align-items: center;
+    font-size: 62rpx;
+}
+
+.cou-price view {
+    font-size: 35rpx;
+}
+
+.cou-bo-time {
+    font-size: 28rpx;
+    color: #ccc;
+    padding: 20rpx 30rpx;
+    border-top: 1rpx dashed #ccc;
+}
+
+.coupon-dh {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15rpx 30rpx;
+    position: fixed;
+    top: 88rpx;
+    left: 0;
+    background: #fff;
+}
+
+.coupon-dh input {
+    width: 520rpx;
+    height: 70rpx;
+    background: #fff;
+    border-radius: 10rpx;
+    padding-left: 20rpx;
+}
+
+.coupon-dh-btn {
+    width: 130rpx;
+    height: 70rpx;
+    background: #ccc;
+    font-size: 28rpx;
+    border-radius: 8rpx;
+    color: #fff;
+    text-align: center;
+    line-height: 70rpx;
+}
+
+.coupon-dh-btn-act {
+    background: #0087E0;
+}
+
+.tab {
+    display: inline-block;
+    padding: 5rpx 10rpx;
+    border-radius: 10rpx;
+    margin-right: 10rpx;
+    background: #eaeaea;
+    font-size: 20rpx;
+}
+
+.h120 {
+    height: 120rpx;
+    line-height: 120rpx;
+}

@@ -1,0 +1,34 @@
+<scroll-view bindscroll="bindscroll" bindscrolltolower="moreState" class="more_scorll" scrollTop="{{scrollTop}}" scrollY="true" wx:if="{{!oneBoo}}">
+    <view class="pad_24 public_white {{index==0?'border_top':'margin_top'}}" wx:for="{{communityListOne}}" wx:key="{{ index }}">
+        <navigator hoverClass="className" url="/hyb_yl/userLife/pages/dynamicDetails/dynamicDetails?a_id={{item.a_id}}">
+            <view class="condition_head center">
+                <image class="condition_head_img" mode="aspectFill" src="{{item.fabuzhe_thumb?item.fabuzhe_thumb:'/assets/shop_images/head.png'}}"></image>
+                <view class="flex_column">
+                    <text class="font_si14 font_co333 condition_head_name">{{item.fabuzhe_name?item.fabuzhe_name:'匿名'}}</text>
+                    <text class="font_si12 font_co999" wx:if="{{item.user_identity==1}}">{{item['zhuanjia_info']}}</text>
+                </view>
+            </view>
+            <view class="condition_content condition_content_com font_si16 font_co333">{{item.contents}}
+				<view class="font_co3b font_si16 condition_content_com_position" wx:if="{{item.tcontentText&&item.contents.length>130}}">
+                    <text class="test_text font_co333">...</text>全文</view>
+            </view>
+        </navigator>
+        <view class="center condition_img_view" data-a_id="{{item.a_id}}" wx:if="{{item.sharepic}}">
+            <image bindtap="previewImage" class="condition_img {{index%3==0?'':'condition_img_right'}}" data-data="{{item.sharepic}}" data-index="{{index}}" data-url="{{value}}" lazyLoad="true" mode="aspectFill" src="{{value}}" wx:for="{{item.sharepic}}" wx:for-item="value" wx:key="index"></image>
+        </view>
+        <view class="dyname-box">
+            <view class="dyname-time">{{item.times}}</view>
+            <view class="center comment_view height_88 font_si12 font_co999">
+                <view bindtap="{{currindex==1?'':'toLike'}}" class="center comment_view_left" data-index="1" data-status="{{dianj}}">
+                    <image class="review_img praise_img" src="{{item.dianzan!=1?'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/dzhan1.png?sign=544dc9242213c29ea2e7db7065a386b9&t=1547194577':'https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/Dzhan.png?sign=e93964bb7f659120d925ccacfa1a3bed&t=1577667833'}}"></image>
+                    <text>{{item.dianj}}</text>
+                </view>
+                <view bindtap="goComment" class="center com_view">
+                    <image class="review_img" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/zixun.png?sign=9d1aadeee6229adc3e063e8ed7cbaa93&t=1591083042"></image>
+                    <text>{{item.pinglunnum}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="font_co999 font_si14 more_text" hidden="{{moreBooOne}}">没有更多了~</view>
+</scroll-view>

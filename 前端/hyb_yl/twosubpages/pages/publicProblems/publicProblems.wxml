@@ -1,0 +1,46 @@
+<view class="problems-box">
+    <view class="pro-search">
+        <image mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/find_search.png?sign=d1e3ae3ca5e5d98c2665b01116021f9c&t=1591670106"></image>
+        <input bindconfirm="searchs" bindinput="changekeyword" placeholder="搜索公开问题" placeholderStyle="color:#aaa;font-size:30rpx"></input>
+    </view>
+    <view class="tab-depar">
+        <scroll-view scrollX class="s-depar" lowerThreshold="50%" upperThreshold="50%" wx:if="{{!deparshow}}">
+            <view bindtap="departab" class="depar-item {{tabindex==index?'depar-item-act':''}} " data-dex="{{index}}" data-id="{{item.id}}" wx:for="{{keshi_arr}}" wx:key="index">{{item.name}}</view>
+        </scroll-view>
+        <view class="selectdepar" wx:else>选择科室</view>
+        <view class="depar-more">
+            <image bindtap="deparlist" class="depar-more-icon" mode="widthFix" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/item_08.png?sign=64ff48c148c599e5a25a8ea4f623b965&t=1591670133"></image>
+        </view>
+    </view>
+</view>
+<view class="selectlistbox {{deparshow?'listshow':''}}">
+    <view class="selectlist-c">
+        <view bindtap="departab" class="select-list-item {{tabindex==index?'select-list-item-act':''}}" data-dex="{{index}}" data-id="{{item.id}}" wx:for="{{keshi_arr}}" wx:key="index">{{item.name}}</view>
+    </view>
+</view>
+<view class="bar"></view>
+<view class="pro-list-tab">
+    <view class="pro-list-box {{isshow==0?'pro-list-box-show':''}}">
+        <view bindtap="label_change" class="pro-list-tindex" data-title="{{item}}" wx:for="{{label_arr}}" wx:key="index">{{item}}</view>
+    </view>
+    <view bindtap="opend" class="pro-more">
+        <view>{{showt}}</view>
+        <image mode="widthFix" src="../../../images/down-h.png"></image>
+    </view>
+</view>
+<view class="proa-infor">
+    <view bindtap="proaInfor" class="proa-in-item" data-id="{{item.id}}" data-state="{{item.state}}" data-typs="{{item.typs}}" wx:for="{{list}}" wx:key="index">
+        <view class="name_box">
+            <image class="userhead" src="https://6a69-jin5201-a4503e-1257013711.tcb.qcloud.la/header_01.png?sign=f9f8c8a1a95aac19e1d32cd26aa3381f&t=1591177626"></image>
+            <view class="name">{{item.names}}</view>
+        </view>
+        <view class="proa-in-title" wx:if="{{item.typs=='twen'}}">{{item.content}}</view>
+        <view class="proa-in-title" wx:if="{{item.typs=='answer'}}">{{item.title}}</view>
+        <view class="proa-in-user">
+            <image class="proa-pho" src="{{item.advertisement}}"></image>
+            <view class="proa-name">{{item.z_name}}</view>
+            <view class="proa-tx">{{item.zhicheng}}</view>
+            <view class="proa-pnum">已帮助{{item.help}}人</view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,34 @@
+.h240 {
+    height: 240rpx;
+}
+
+.mt190 {
+    margin-top: 190rpx;
+}
+
+.w106 {
+    width: 106rpx;
+}
+
+.h106 {
+    height: 106rpx;
+}
+
+.del {
+    right: -20rpx;
+    top: -20rpx;
+    width: 40rpx;
+    height: 40rpx;
+    background-color: #fb8a46;
+    border-radius: 50%;
+}
+
+.h86 {
+    height: 86rpx;
+}
+
+.btn_tijiao {
+    width: 690rpx;
+    height: 96rpx;
+    margin: 40rpx auto 0;
+}

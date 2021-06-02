@@ -1,0 +1,64 @@
+<view class="nav">
+    <view class="swiper_box" wx:if="{{tixian_list.length>0}}">
+        <swiper autoplay="true" vertical="true">
+            <swiper-item wx:for="{{tixian_list}}">
+                <image mode="widthFix" src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/laba.png?sign=c99e85daa2fc1e9c360b1b84fad51ea0&t=1595559460" style="width:40rpx;height:40rpx;"></image> {{item.name}}成功提现{{item.money}}元</swiper-item>
+        </swiper>
+    </view>
+    <view class="money1">
+        <view>可提现金额</view>
+        <view class="c9 fs24">￥{{list.money}}</view>
+    </view>
+</view>
+<form bindsubmit="subClick">
+    <view class="mt20 bsbb pl18 pr18 bgf">
+        <view class="money_title">
+            <view>选择体现金额</view>
+            <view bindtap="mingClick" class="btn_text">提现记录 ></view>
+        </view>
+        <view class="money_box">
+            <view bindtap="money_chose" class="money {{money_index==index?'monye_active':''}}" data-index="{{index}}" data-money="{{item}}" wx:for="{{set.money}}">{{item}}元
+				<image class="jiaobiao" data-index="{{index}}" mode="widthFix" src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/jiaobiao.png?sign=f98dd75397f8be4e6d6a02a2b95fcc02&t=1595557161" style="width:40rpx;height:40rpx;" wx:if="{{money_index==index}}"></image>
+            </view>
+        </view>
+        <view class="rule">
+            <view class="rule_title">提现兑换说明：</view>
+            <view>
+                <rich-text nodes="{{set.content}}"></rich-text>
+            </view>
+        </view>
+    </view>
+    <view class="tixianfangshi">
+        <view class="tixain_title">提现方式</view>
+        <block wx:for="{{set.pay_type}}">
+            <view class="df">
+                <view class="df pdtb24">
+                    <image mode="widthFix" src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/weixin.png?sign=4530184e45291d18a3a62017064c6861&t=1595557962" style="width:40rpx;height:40rpx;margin-right:20rpx;"></image> {{item}}
+			</view>
+                <view bindtap="choosetype" data-index="{{index}}" data-name="{{item}}">
+                    <image mode="widthFix" src="https://696d-image-ac66k-1302520890.tcb.qcloud.la/checked.png?sign=86d57105fbc4d20d20833d4e5b6544ff&t=1595558279" style="width:40rpx;height:40rpx"></image>
+                </view>
+            </view>
+            <view class="rule" wx:if="{{item=='微信'}}">
+                <rich-text nodes="{{set.weixin_content}}"></rich-text>
+            </view>
+            <view class="rule" wx:if="{{item=='支付宝'}}">
+                <rich-text nodes="{{set.zfb_content}}"></rich-text>
+            </view>
+            <view class="rule" wx:if="{{item=='银行卡'}}">
+                <rich-text nodes="{{set.bank_content}}"></rich-text>
+            </view>
+        </block>
+    </view>
+    <view class="mt50 bsbb pl18 pr18">
+        <radio-group class="radio-group" name="read">
+            <label class="radio fs26 c9 df aic jcfe">
+                <radio checked="{{checked}}" value="true"></radio>
+                <text bindtap="xuzhi">我已阅读并同意提现须知</text>
+            </label>
+        </radio-group>
+        <view class="mt20">
+            <button class="bgc cf fs32 ti-btn" formType="submit">确认提现</button>
+        </view>
+    </view>
+</form>

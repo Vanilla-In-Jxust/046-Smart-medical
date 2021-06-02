@@ -1,0 +1,102 @@
+page {
+    background: #fff;
+}
+
+.record {
+    padding: 25rpx;
+}
+
+.record-item {
+    position: relative;
+    width: 700rpx;
+    height: 350rpx;
+    margin-bottom: 25rpx;
+    overflow: hidden;
+}
+
+.vipbg {
+    width: 100%;
+}
+
+.record-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 640rpx;
+    height: 290rpx;
+    padding: 30rpx;
+    z-index: 1;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardt-le {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-v {
+    display: flex;
+    align-items: center;
+    font-size: 32rpx;
+    color: #333;
+    font-weight: 600;
+}
+
+.vip-icon {
+    width: 36rpx;
+    margin-right: 10rpx;
+}
+
+.card-pri {
+    display: flex;
+    align-items: center;
+    margin-top: 30rpx;
+    font-size: 24rpx;
+    color: #333;
+}
+
+.price {
+    font-size: 60rpx;
+    font-weight: 600;
+}
+
+.card-xf {
+    padding: 14rpx 33rpx;
+    border-radius: 32rpx;
+    background: #0087E0;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.card-tip {
+    margin-top: 15rpx;
+    font-size: 26rpx;
+    color: #0087E0;
+    line-height: 1.6;
+}
+
+.card-time {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25rpx;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.allcolor {
+    color: #E6C27E;
+}
+
+.allbg {
+    background: #40ba96;
+}
+
+.renew {
+    background: #E6C27E;
+}

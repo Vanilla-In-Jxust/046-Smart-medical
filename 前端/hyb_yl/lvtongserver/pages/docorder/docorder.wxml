@@ -1,0 +1,33 @@
+<view class="doc-order-tab" wx:if="{{did!=''||zid!=''}}">
+    <view bindtap="doctab" class="doc-tab-item {{docindex==index?'doc-tab-item-act':''}}" data-dex="{{index}}" wx:for="{{tabitem}}" wx:key="key">{{item}}</view>
+</view>
+<view style="height:100rpx;" wx:if="{{did!=''||zid!=''}}"></view>
+<view class="doc-list-box" wx:if="{{!list.length==0}}">
+    <view bindtap="getchar" class="doc-list-item" data-back_orser="{{item.back_orser}}" data-did="{{item.did}}" data-id="{{item.id}}" data-ifpay="{{item.ifpay}}" data-j_id="{{item.j_id}}" data-key_words="{{item.key_words}}" data-openid="{{item.openid}}" data-zid="{{item.z_id}}" wx:for="{{list}}" wx:key="key">
+        <view class="doc-list-time">
+            <view>时间：{{item.created}} </view>
+            <view class="doc-state">
+                <view class="doc-c" wx:if="{{item.ifpay==0}}">待支付</view>
+                <view class="doc-cc" wx:if="{{item.ifpay==1}}">待接诊</view>
+                <view class="doc-cc" wx:if="{{item.ifpay==2}}">已接诊</view>
+                <view class="doc-cc" wx:if="{{item.ifpay==3}}">待评价</view>
+                <view class="doc-cc" wx:if="{{item.ifpay==4}}">已评价</view>
+                <view class="doc-cc" wx:if="{{item.ifpay==5}}">申请退款</view>
+                <view class="doc-cc" wx:if="{{item.ifpay==6}}">退款成功</view>
+                <view class="doc-cc" wx:if="{{item.ifpay==7}}">订单关闭</view>
+                <view class="doc-cc" wx:if="{{item.ifpay==8}}">已取消</view>
+            </view>
+        </view>
+        <view class="doc-infor">
+            <view class="doc-in-ri">
+                <view class="doc-ri-name">{{item.names}}
+					<view>{{item.sex}} {{item.age}}岁</view>
+                </view>
+                <view class="doc-des">病情描述：{{item.content.text}}</view>
+                <view class="doc-des">订单号:{{item.orders}}</view>
+            </view>
+            <view catchtap="jiezhen" class="spbtn" data-back_orser="{{item.back_orser}}" data-id="{{item.id}}" data-j_id="{{item.j_id}}" data-openid="{{item.openid}}" wx:if="{{item.ifpay=='1'}}">确认接诊</view>
+        </view>
+    </view>
+</view>
+<view class="doc-no" wx:else>暂无数据显示</view>

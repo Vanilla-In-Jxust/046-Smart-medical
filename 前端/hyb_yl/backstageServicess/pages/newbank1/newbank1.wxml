@@ -1,0 +1,32 @@
+<view class="wrap">
+    <view bindtap="gettMarginFlag" class="wrap-seet">
+        <image class="seet-img {{marginFlag?'seet_mg_left':''}}" src="/assets/images/wzseet.png"></image>
+        <input bindinput="getText" class="input {{marginFlag?'input_flag':''}}" focus="{{marginFlag}}" placeholder="搜索"></input>
+    </view>
+</view>
+<view style="height: 104rpx;"></view>
+<view wx:if="{{!searchFlag}}">
+    <view class="bank" wx:if="{{wapList.hotBanks.length>0}}">热门银行</view>
+    <view bindtap="chooseWap" class="for" data-current="1" data-index="{{index}}" wx:for="{{wapList.hotBanks}}" wx:key="{{index}}">
+        <view class="forImgBox">
+            <image class="forImg" src="{{item.bankLogo?item.bankLogo:'/assets/images/wap_img.png'}}"></image>
+        </view>
+        <view class="bankname">{{item.bankName}}</view>
+    </view>
+    <view class="bank" wx:if="{{wapList.hotBanks.length>0}}">其他</view>
+    <view bindtap="chooseWap" class="for" data-current="2" data-index="{{index}}" wx:for="{{wapList.banks}}" wx:key="{{index}}">
+        <view class="forImgBox">
+            <image class="forImg" src="{{item.bankLogo?item.bankLogo:'/assets/images/wap_img.png'}}"></image>
+        </view>
+        <view class="bankname">{{item.bankName}}</view>
+    </view>
+</view>
+<view wx:if="{{searchFlag}}">
+    <view class="bank" wx:if="{{searchList.length>0}}">找到{{searchList.length}}个</view>
+    <view bindtap="chooseWap" class="for" data-current="3" data-index="{{index}}" wx:for="{{searchList}}" wx:key="{{index}}">
+        <view class="forImgBox">
+            <image class="forImg" src="{{item.bankLogo?item.bankLogo:'/assets/images/wap_img.png'}}"></image>
+        </view>
+        <view class="bankname">{{item.bankName}}</view>
+    </view>
+</view>

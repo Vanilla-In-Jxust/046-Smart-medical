@@ -1,0 +1,227 @@
+.intro_head_heal {
+    height: 180rpx;
+    overflow: hidden;
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    align-items: center;
+}
+
+.more_img_heal {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 25rpx;
+}
+
+.teamName {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.change_mode {
+    line-height: 100rpx;
+    text-align: center;
+}
+
+.mode {
+}
+
+.mode_type_img {
+    flex: 1;
+    align-items: center;
+    position: relative;
+    height: 240rpx;
+}
+
+.type_img {
+    margin-top: 26rpx;
+    width: 52rpx;
+    height: 52rpx;
+}
+
+.type_text {
+    margin: 15rpx 0;
+}
+
+.type_time {
+    margin-bottom: 10rpx;
+}
+
+.type_active {
+    background-color: #f7f8ff;
+    border: 1rpx solid #3b4ca9;
+}
+
+.active_img {
+    width: 40rpx;
+    height: 40rpx;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.state {
+    padding: 20rpx 30rpx 0;
+}
+
+.state_text {
+    display: flex;
+    margin-top: 30rpx;
+    line-height: 40rpx;
+}
+
+.posi_fiexd {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    height: 100rpx;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img_btn {
+    height: 80rpx;
+}
+
+.line_thorugh {
+    text-decoration: line-through;
+}
+
+.no_service {
+    height: 500rpx;
+    line-height: 500rpx;
+    text-align: center;
+}
+
+.teamName {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 30rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.regulations {
+    font-size: 30rpx;
+    line-height: 50rpx;
+    padding: 0 20rpx;
+    box-sizing: border-box;
+}
+
+.rule {
+    padding: 20rpx 0;
+    box-sizing: border-box;
+}
+
+.border {
+    border: 1rpx solid #fff;
+}
+
+.modal {
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    justify-content: center;
+}
+
+.modal_view {
+    width: 600rpx;
+    height: 500rpx;
+    background-color: #ffffff;
+    border-radius: 15rpx;
+    position: relative;
+}
+
+.modal_title {
+    height: 96rpx;
+    border-radius: 15rpx 15rpx 0 0;
+    line-height: 100rpx;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.checkbox_view {
+    width: 400rpx;
+    height: 120rpx;
+    background-color: #fff;
+    padding: 80rpx 40rpx;
+    text-align: center;
+    margin: 0 auto;
+}
+
+checkbox {
+    margin-right: 5rpx;
+    z-index: 10000;
+}
+
+.modal_content {
+    height: 180rpx;
+    padding: 40rpx 30rpx 0 40rpx;
+    background-color: #fafafa;
+}
+
+.hint {
+    line-height: 40rpx;
+    margin-top: 20rpx;
+}
+
+.modal_bottom {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100rpx;
+    border-radius: 0 0 16rpx 15rpx;
+}
+
+.modal_bottom_left {
+    border-radius: 0 0 0 15rpx;
+}
+
+.modal_bottom view {
+    flex: 1;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.modal_bottom_right {
+    border-radius: 0 0 15rpx 0;
+}
+
+.modal_bottom view {
+    flex: 1;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.modal_bottom view {
+    flex: 1;
+    text-align: center;
+    line-height: 100rpx;
+}
+
+.agreement_right {
+    padding-left: 6rpx;
+}
+
+.font36 {
+    font-size: 36rpx;
+    text-align: center;
+}

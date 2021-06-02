@@ -1,0 +1,11 @@
+<view class="box">
+    <view class="box_left">
+        <view bindtap="changeMenu" class="{{idIndex==index?'active':''}}" data-ctname="{{item.ctname}}" data-id="{{item.id}}" data-index="{{index}}" id="NAV{{index}}" wx:for="{{keshi}}">{{item.ctname}}</view>
+    </view>
+    <scroll-view scrollY class="scroll">
+        <view>
+            <view class="title">{{ctname}}</view>
+            <view bindtap="enterbt" class="cont_text" data-id="{{item.id}}" data-name="{{item.name}}" wx:for="{{parks}}">{{item.name}}</view>
+        </view>
+    </scroll-view>
+</view>

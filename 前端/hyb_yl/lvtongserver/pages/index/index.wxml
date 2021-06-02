@@ -1,0 +1,79 @@
+<view class="expert-bg" style="background:{{bg_color}}">
+    <view style="display:flex;align-items: center">
+        <image class="expert-icon" src="{{thumb}}"></image>
+        <view class="expert-ri">
+            <view class="expert-one">
+                <view class="expert-tit">{{docinfo.title}} <text style="color:{{bg_color}}">{{docinfo.groupid}}</text>
+                </view>
+            </view>
+            <view class="expert-doc">{{docinfo.hospital}}</view>
+        </view>
+    </view>
+    <view class="shanchang">
+        <view style="white-space: nowrap;font-size:26rpx">擅长:</view>
+        <view class="label_box">
+            <view class="label" style="color:{{bg_color}}" wx:for="{{docinfo.authority}}" wx:for-item="tabel">{{tabel}}</view>
+        </view>
+    </view>
+    <view class="expert-tip"> 简介：{{docinfo.content}} </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">导诊服务</view>
+    <view class="doc-vienna-list">
+        <view bindtap="hzwenzhen" class="doc-vienna-item" data-did="{{id}}" data-keyword="{{item.keyword}}" data-title="{{item.title}}" wx:for="{{docinfo.list}}" wx:key="key">
+            <image src="{{item.thumb}}"></image>
+            <view class="doc-vienna-ri">
+                <view class="doc-vi-t">{{item.title}}
+					<view>{{item.num}}</view>
+                </view>
+                <view class="doc-vi-tip"> {{item.content}} </view>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">抢单大厅</view>
+    <view class="doc-service">
+        <view bindtap="hzwenzhen" class="doc-ser-item" data-did="" data-keyword="{{item.keyword}}" data-title="{{item.title}}" wx:for="{{docinfo.list}}" wx:key="key">
+            <image src="{{item.thumb}}"></image>
+            <view>{{item.title}}</view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">经营数据</view>
+    <view class="doc-data">
+        <view class="doc-data-item">
+            <view>{{docinfo.jiuzhen_money}}</view>
+            <view class="doc-data-tip">预约就诊</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.zhuyuan_money}}</view>
+            <view class="doc-data-tip">住院安排</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.shoushu_money}}</view>
+            <view class="doc-data-tip">手术安排</view>
+        </view>
+    </view>
+</view>
+<view class="doc-vienna">
+    <view class="doc-tit">财务数据</view>
+    <view class="doc-data">
+        <view class="doc-data-item">
+            <view>{{docinfo.money}}</view>
+            <view class="doc-data-tip">总收益</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.pay?docinfo.pay:0}}</view>
+            <view class="doc-data-tip">总支出</view>
+        </view>
+        <view class="doc-data-item">
+            <view>{{docinfo.pay_money}}</view>
+            <view class="doc-data-tip">未结算订单</view>
+        </view>
+    </view>
+</view>
+<view style="height:134rpx;"></view>
+<import src="../../../../template/lvtongTemplate.wxml"></import>
+<template is="tabBar" data="{{tabBar:bindData.tabBar}}"></template>

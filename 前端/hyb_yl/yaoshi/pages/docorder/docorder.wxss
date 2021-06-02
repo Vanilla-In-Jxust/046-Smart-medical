@@ -1,0 +1,73 @@
+page {
+    background: #FAFAFA;
+}
+
+view {
+    box-sizing: border-box;
+}
+
+.prescriptionitem {
+    width: 100%;
+    padding: 25rpx;
+    background: #fff;
+}
+
+.diseases {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.diseases view:first-child {
+    font-size: 32rpx;
+    color: #333;
+    font-weight: 700;
+}
+
+.diseases view:last-child {
+    font-size: 28rpx;
+    color: #C0C0C0;
+}
+
+.proposal {
+    font-size: 30rpx;
+    color: #949494;
+    margin-top: 20rpx;
+}
+
+.ptbottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 25rpx;
+}
+
+.pttimes {
+    font-size: 26rpx;
+    color: #A7A7A7;
+}
+
+.pttimes view:last-child {
+    color: #BABABA;
+    margin-top: 5rpx;
+}
+
+.ptbtn {
+    padding: 10rpx 25rpx;
+    background: #0087E0;
+    color: #fff;
+    font-size: 32rpx;
+    position: relative;
+    border-radius: 10rpx;
+}
+
+.ptbtn text {
+    padding: 3rpx 10rpx;
+    font-size: 22rpx;
+    color: #fff;
+    background: #EF6155;
+    border-radius: 10rpx;
+    position: absolute;
+    top: -20rpx;
+    right: -10rpx;
+}

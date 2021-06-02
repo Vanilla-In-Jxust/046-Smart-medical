@@ -1,0 +1,210 @@
+page {
+    padding-bottom: 120rpx;
+}
+
+.doc-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 700rpx;
+    padding: 25rpx;
+    border-bottom: 1rpx solid #F6F6F6;
+    background: #fff;
+}
+
+.doc-user-le {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.doc-pho {
+    width: 100rpx;
+    height: 100rpx;
+    margin-right: 25rpx;
+}
+
+.doc-user-name {
+    display: flex;
+    font-size: 36rpx;
+}
+
+.doc-na-tx {
+    margin-left: 15rpx;
+    font-size: 34rpx;
+}
+
+.doc-yy {
+    margin-top: 20rpx;
+    font-size: 30rpx;
+    color: #aaa;
+}
+
+.doc-user-follow {
+    padding: 10rpx 25rpx;
+    font-size: 28rpx;
+    color: #fff;
+    background: #0087E1;
+    border-radius: 60rpx;
+}
+
+.bar {
+    height: 150rpx;
+}
+
+.patientEva {
+    width: 700rpx;
+    padding: 30rpx 25rpx;
+    background: #fff;
+}
+
+.patient-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 26rpx;
+    font-size: 36rpx;
+}
+
+.star-icon {
+    width: 35rpx;
+    height: 35rpx;
+    margin-right: 5rpx;
+}
+
+.patient-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 18rpx;
+    font-size: 32rpx;
+}
+
+.pat-item-tit {
+    width: 170rpx;
+    color: #787878;
+}
+
+.pat-item-con {
+    width: 530rpx;
+    line-height: 45rpx;
+    color: #3a3a3a;
+}
+
+.patient-pro-box {
+    width: 700rpx;
+    margin: 0 auto;
+}
+
+.patient-pro-item {
+    margin: 40rpx 0;
+}
+
+.patient-pro-time {
+    margin-bottom: 25rpx;
+    font-size: 28rpx;
+    color: #787878;
+    text-align: center;
+}
+
+.patient-item-c {
+    width: 640rpx;
+    padding: 40rpx 30rpx;
+    background: #E6EDF5;
+    border-radius: 10rpx;
+    font-size: 32rpx;
+}
+
+.bgcolor {
+    background: #fff;
+}
+
+.patient-tit {
+    margin-bottom: 35rpx;
+}
+
+.patient-con {
+    line-height: 52rpx;
+}
+
+.patient-doc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 32rpx;
+    margin-bottom: 35rpx;
+}
+
+.doc-img {
+    width: 80rpx;
+    height: 80rpx;
+    border-radius: 50%;
+    margin-right: 20rpx;
+}
+
+.problem-bot {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+    z-index: 998;
+}
+
+.pro-btn-le {
+    display: flex;
+    width: 200rpx;
+}
+
+.problem-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    width: 100rpx;
+    line-height: 40rpx;
+    background: #fff;
+    font-size: 26rpx;
+    color: #3a3a3a;
+}
+
+.pro-icon {
+    width: 48rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.pro-icons {
+    width: 34rpx;
+    margin-top: 10rpx;
+    margin-bottom: 10rpx;
+}
+
+.quiz {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 550rpx;
+    height: 100%;
+    background: #0087E1;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+button::after {
+    border: none;
+}
+
+button {
+    padding: 0;
+}
+
+.bottomText {
+    text-align: center;
+    color: #999;
+    line-height: 800rpx;
+    width: 100%;
+    font-size: 32rpx;
+}

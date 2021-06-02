@@ -1,0 +1,22 @@
+<view class="line"></view>
+<view class="comm_content">
+    <textarea bindinput="bindblur" bindlinechange="bindlinechange" class="comm_text" maxlength="-1" name="estimate" placeholder="亲，您对这个商品满意吗？请输入您的评价~" placeholderClass="content" showConfirmBar="false" style="height: {{height}}rpx"></textarea>
+</view>
+<view class="picture">
+    <view class="upload_view" wx:for="{{pathArr}}" wx:key="{{ index }}">
+        <image catchtap="previewImage" class="uploadImage" data-imgindex="{{index}}" mode="aspectFill" src="{{item}}"></image>
+        <icon catchtap="delImage" class="img_icon" color="red" data-index="{{index}}" size="18" type="clear"></icon>
+    </view>
+    <view bindtap="chooseImage" class="add_img" hidden="{{chooseImageBoo}}">
+        <image class="img_in" src="/hyb_yl/images/add.png"></image>
+    </view>
+</view>
+<view class="mg_top10"></view>
+<view class="comm_start">
+    <text class="start_text">商品评价</text>
+    <image class="start" src="{{item.starBoo?'https://lg-o8nytxik-1257013711.cos.ap-shanghai.myqcloud.com/start02.png':'https://lg-o8nytxik-1257013711.cos.ap-shanghai.myqcloud.com/start01.png'}}" wx:for="{{starList}}" wx:key="{{ index }}">
+        <view bindtap="changeStar" class="star_view" data-current="{{index}}"></view>
+    </image>
+    <text class="font_si16 font_co999">{{starText?starText:''}}</text>
+</view>
+<button bindtap="bindFormSubmit" class="btn">提交评价</button>

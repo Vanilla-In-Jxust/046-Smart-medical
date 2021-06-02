@@ -1,0 +1,16 @@
+<view bindtap="todetail" class="prescriptionitem" data-id="{{item.id}}" data-orderStatus="{{item.order.orderStatus}}" data-xufang="{{item.order.xufang}}" wx:for="{{list}}">
+    <view class="diseases">
+        <view>诊断：{{item.conets.text}}</view>
+        <view wx:if="{{item.status=='0'}}">待审核</view>
+        <view wx:if="{{item.status=='1'}}">审核通过</view>
+    </view>
+    <view class="proposal">建议用药（共{{item.sid.length}}种）：<block wx:for="{{item.sid}}" wx:for-item="items" wx:key="items">{{items.sname}}</block>
+    </view>
+    <view class="ptbottom">
+        <view class="pttimes">
+            <view>{{item.names}}</view>
+            <view>{{item.createTime}}</view>
+        </view>
+        <view catchtap="shenhe" class="ptbtn" data-id="{{item.id}}" data-status="1" wx:if="{{item.status=='0'}}">审核通过</view>
+    </view>
+</view>

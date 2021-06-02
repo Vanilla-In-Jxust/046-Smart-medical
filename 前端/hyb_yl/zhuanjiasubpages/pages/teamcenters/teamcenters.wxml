@@ -1,0 +1,107 @@
+<view class="bg">
+    <view class="expert-bg">
+        <image class="expert-icon" src="{{info.thumb}}"></image>
+        <view class="expert-ri">
+            <view class="expert-one">
+                <view class="expert-tit">负责人：{{info.fuze['z_name']}} <text>（{{info.keshi}}{{info.fuze.zhicheng}}）</text>
+                </view>
+                <image bindtap="ishaibao" class="expert-ewm" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/ewm.png?sign=05bf5a614d66d894057a037f5d698606&t=1591609915"></image>
+            </view>
+            <view class="expert-doc">{{info.jigou}}</view>
+        </view>
+    </view>
+    <view class="team-scs" wx:if="{{info.label.length>0}}">
+        <view class="team-sc-tit">擅长：</view>
+        <view class="team-sc-item">
+            <view>
+                <block wx:for="{{info.label}}">{{item}}</block>
+            </view>
+        </view>
+    </view>
+    <view class="expert-tip"> 简介：{{info.content}}</view>
+</view>
+<view class="team-infor">
+    <view class="team-items">
+        <view class="price">￥{{info.moneys}}</view>
+        <view>团队收益</view>
+    </view>
+    <view class="team-items">
+        <view class="price">{{info.nums}}</view>
+        <view>患者数</view>
+    </view>
+    <view class="team-items">
+        <view class="price">{{info.zhuanjia.length}}</view>
+        <view>成员数</view>
+    </view>
+</view>
+<view class="team-work" wx:if="{{info.node.length>0}}">
+    <view class="team-word-le">【团队公告】： <view>{{info.node.title}}</view>
+    </view>
+    <image class="team-next" src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/yjt.png?sign=74f862b9dce3052321641bd0d0d1b166&t=1591692263"></image>
+</view>
+<view class="team-tab">
+    <view bindtap="teamtab" class="team-item {{teamindex==index?'team-item-act':''}} " data-dex="{{index}}" wx:for="{{teamitem}}">{{item}}</view>
+</view>
+<view class="team-list">
+    <view bindtap="zhuanjia" class="team-item-list" data-z_name="{{item.z_name}}" data-zid="{{item.zid}}" wx:if="{{teamindex==0}}" wx:for="{{info.zhuanjia}}">
+        <view class="team-top">
+            <image class="pho" src="{{item.advertisement}}"></image>
+            <view class="team-ri">
+                <view class="team-tit">
+                    <view>{{item.z_name}}</view>
+                    <view class="team-address">{{item.zhicheng}}</view>
+                </view>
+                <view class="team-zc">{{item.keshis}} {{item.jigou}}</view>
+                <view class="team-sc">擅长：{{item.authority}}</view>
+                <view class="team-xx">
+                    <view class="team-start">
+                        <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/start.png?sign=80ff4d1b141e1b4ef937e35c68616d53&t=1591694088"></image>
+                        <view>{{item.score}}</view>
+                    </view>
+                    <view class="team-xx-t">月问答：{{item.xn_reoly}} 月处方：{{item.xn_cf}} {{item.xytime}}分钟响应</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="patient-item" wx:if="{{teamindex==1}}" wx:for="{{people}}">
+        <view class="patient-in">
+            <image src="{{item.u_thumb}}"></image>
+            <view class="patient-ri">
+                <view class="patient-name">{{item.u_name}}
+  					<view>{{item.sex}} {{item.age}}岁</view>
+                </view>
+                <view class="patient-time">签约时间：{{item.start}}</view>
+                <view class="patient-time">到期时间：{{item.end}}</view>
+            </view>
+        </view>
+        <view class="patient-btn">
+            <view class="patient-text">
+                <view>{{item.fuwu}}</view>
+            </view>
+            <view bindtap="see" class="patient-btton" data-id="">查看档案</view>
+        </view>
+        <view class="patient-state-nk" wx:if="{{item.type=='2'}}">
+            <image src="https://7969-yiliao-kvepb-1302281264.tcb.qcloud.la/state-k.png?sign=cd10add8c601b68ec7dfd6939ab44e9b&t=1591608556"></image>
+            <view>年卡</view>
+        </view>
+    </view>
+    <view bindtap="opening" class="service-item" data-state="{{index}}" wx:if="{{teamindex==2}}" wx:for="{{service}}">
+        <image src="{{item.icon}}"></image>
+        <view class="service-ri">
+            <view class="service-top">
+                <view class="service-tit">
+                    <view>{{item.titlme}}</view>
+                    <view class="price">￥{{item.money}}</view>
+                </view>
+                <switch bindchange="twchange" catchtap="twchanges" checked="{{item.stateback==1?'checked':''}}" color="#0087E0" data-index="{{index}}"></switch>
+            </view>
+            <view class="service-tip">
+                <rich-text nodes="{{item.server_content}}"></rich-text>
+            </view>
+            <view class="service-time" wx:if="{{item.stateback==1}}">还剩{{item.endtime}}
+  			</view>
+        </view>
+    </view>
+</view>
+<view bindtap="closeshare" class="share-mask" wx:if="{{isopera}}"></view>
+<canvas bindlongpress="operation" canvasId="canvass" class="canvas" style="width:{{windowWidth*0.8}}px;height:{{windowWidth*0.8*1.79}}px" wx:if="{{isopera}}"></canvas>
